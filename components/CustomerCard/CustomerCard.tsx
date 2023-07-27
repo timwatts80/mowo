@@ -37,7 +37,7 @@ const StateDefault: any = styled('div', {
 }));
 
 const Logo: any = styled('div')({
-  backgroundImage: `url(assets/images/CustomerCard_Logo.png)`,
+  backgroundImage: data.logoSrc,
   backgroundPosition: `center`,
   backgroundSize: `contain`,
   backgroundRepeat: `no-repeat`,
@@ -58,7 +58,7 @@ function CustomerCard(props: CustomerCardProps): JSX.Element {
 
   return (
     <StateDefault className={props.className} data={data}>
-      <Logo></Logo>
+      <Logo data={data}></Logo>
     </StateDefault>
   );
 }

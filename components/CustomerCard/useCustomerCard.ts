@@ -14,7 +14,7 @@
 import React from 'react';
 const useCustomerCard = () => {
   const data: any = {
-    logoSrc: 'url("assets/images/Haskolinn-Logo.png")',
+    logoSrc: 'url("assets/images/CustomerCard_Haskolinn-Logo.png")',
   };
 
   const fns: any = {};
