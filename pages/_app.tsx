@@ -1,6 +1,6 @@
+import '../styles/globals.css'
 import MowoDesignSystemDarkTheme from '../MowoDesignSystemDarkTheme'
 import MowoDesignSystemLightTheme from '../MowoDesignSystemLightTheme'
-
 import type { AppProps } from 'next/app'
 import Header from '../components/Header/Header'
 import ModernWorkplace from '../components/ModernWorkplace/ModernWorkplace'
