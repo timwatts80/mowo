@@ -528,8 +528,7 @@ const Cols1: any = styled('div', {
 
 const LeftCol1: any = styled('div')({
   backgroundImage: `url(assets/images/ModernWorkplace_left_col_1.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `100%`,
+  backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
   borderRadius: `20px`,
   display: `flex`,
@@ -542,6 +541,7 @@ const LeftCol1: any = styled('div')({
   flex: `1`,
   margin: `0px`,
   overflow: `hidden`,
+  backgroundPosition: 'left center',
 });
 
 const RightCol1: any = styled('div')({
