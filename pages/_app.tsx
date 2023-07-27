@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import Header from '../components/Header/Header'
 import ModernWorkplace from '../components/ModernWorkplace/ModernWorkplace'
 import ProductSectionSurfaceHubDevice from '../components/ProductSectionSurfaceHubDevice/ProductSectionSurfaceHubDevice'
+import CustomerCases from 'components/CustomerCases/CustomerCases'
 import Footer from '../components/Footer/Footer'
 import { ThemeProvider } from '@emotion/react'
 
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Header />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
+      <CustomerCases />
       <Footer />
     </ThemeProvider>
   )
