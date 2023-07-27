@@ -18,9 +18,21 @@
 
 
 
+
+export interface CustomerCardProps {
+  className?: any;
+}
+
+
+
+
+
+
+
 export interface ModernWorkplaceProps {
   className?: any;
 }
+
 
 
 
@@ -36,9 +48,11 @@ export interface NavbarProps {
 
 
 
+
 export interface HeaderProps {
   className?: any;
 }
+
 
 
 
@@ -54,9 +68,11 @@ export interface SidebarProps {
 
 
 
+
 export interface Link1Props {
   className?: any;
 }
+
 
 
 
@@ -72,18 +88,11 @@ export interface CustomerCasesProps {
 
 
 
-export interface CustomerCardProps {
-  className?: any;
-}
-
-
-
-
-
 
 export interface FooterProps {
   className?: any;
 }
+
 
 
 
@@ -99,9 +108,11 @@ export interface ProductSectionSurfaceHubDeviceProps {
 
 
 
+
 export interface ProductCardProps {
   className?: any;
 }
+
 
 
 
