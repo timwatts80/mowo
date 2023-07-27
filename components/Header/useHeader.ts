@@ -23,6 +23,8 @@ const variantOptions = {
 };
 
 const useHeader = () => {
+  const handleMenuClick = (): any => {};
+  const handleButtonClick = (): any => {};
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['ScreenDesktop']
   );
@@ -37,7 +39,7 @@ const useHeader = () => {
 
   const data: any = { currentVariant };
 
-  const fns: any = { setCurrentVariant };
+  const fns: any = { setCurrentVariant ,handleMenuClick, handleButtonClick};
 
   return { data, fns };
 };

@@ -381,6 +381,7 @@ const HamburgerMenu: any = styled('div')({
   padding: `6px`,
   boxSizing: `border-box`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
 const Hamburger: any = styled('img')({
@@ -688,6 +689,7 @@ const HamburgerMenu1: any = styled('div')({
   padding: `6px`,
   boxSizing: `border-box`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
 const Hamburger1: any = styled('img')({
@@ -918,7 +920,7 @@ const ButtonOutlined2: any = styled(Button, {
 }));
 
 function Header(props: HeaderProps): JSX.Element {
-  const { data } = useHeader();
+  const { data, fns } = useHeader();
 
   return (
     <ScreenDesktop className={props.className}>
@@ -945,6 +947,7 @@ function Header(props: HeaderProps): JSX.Element {
                       size={'large'}
                       color={'primary'}
                       disabled={false}
+                      onClick={fns.handleButtonClick}
                       data={data}
                     >
                       {'Book a meeting'}
@@ -954,6 +957,7 @@ function Header(props: HeaderProps): JSX.Element {
                       size={'large'}
                       color={'primary'}
                       disabled={false}
+                      onClick={fns.handleButtonClick}
                       data={data}
                     >
                       {'See devices'}
@@ -980,7 +984,7 @@ function Header(props: HeaderProps): JSX.Element {
             />
           </Logo>
           <MenuItems>
-            <HamburgerMenu>
+            <HamburgerMenu onClick={fns.handleMenuClick}>
               <Hamburger
                 src={`assets/images/Header_Hamburger.png`}
                 loading="lazy"
@@ -1043,7 +1047,7 @@ function Header(props: HeaderProps): JSX.Element {
             />
           </Logo1>
           <MenuItems1>
-            <HamburgerMenu1>
+            <HamburgerMenu1 onClick={fns.handleMenuClick}>
               <Hamburger1
                 src={`assets/images/Header_Hamburger_1.png`}
                 loading="lazy"
