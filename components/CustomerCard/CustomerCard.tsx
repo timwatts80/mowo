@@ -36,8 +36,9 @@ const StateDefault: any = styled('div', {
   border: data.isActive ? `1px solid rgba(127, 186, 0, 1)` : 'unset',
 }));
 
-const Logo: any = styled('div')({
-  backgroundImage: data.logoSrc,
+const Logo: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   backgroundPosition: `center`,
   backgroundSize: `contain`,
   backgroundRepeat: `no-repeat`,
@@ -51,7 +52,8 @@ const Logo: any = styled('div')({
   flex: `1`,
   margin: `0px`,
   overflow: `hidden`,
-});
+  backgroundImage: data.logoSrc,
+}));
 
 function CustomerCard(props: CustomerCardProps): JSX.Element {
   const { data } = useCustomerCard();
