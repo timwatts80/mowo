@@ -33,7 +33,7 @@ const useProductSectionSurfaceHubDevice = () => {
     if (breakpointsVariant !== currentVariant) {
       setCurrentVariant(breakpointsVariant);
     }
-  }, [breakpointsVariant]);
+  }, [breakpointsVariant, currentVariant]);
 
   const data: any = { currentVariant };
 

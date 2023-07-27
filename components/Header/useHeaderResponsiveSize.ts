@@ -16,7 +16,7 @@ const useHeaderResponsiveSize = () => {
   const [variant, setVariant] = React.useState<string>('ScreenDesktop');
 
   React.useEffect(() => {
-    const handlerScreenMobile = (e) =>
+    const handlerScreenMobile = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'ScreenMobile' : size));
     const ScreenMobileSize = window.matchMedia('(max-width: 572px)');
     setVariant((size: string) =>
@@ -24,7 +24,7 @@ const useHeaderResponsiveSize = () => {
     );
     ScreenMobileSize.addEventListener('change', handlerScreenMobile);
 
-    const handlerScreenTablet = (e) =>
+    const handlerScreenTablet = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'ScreenTablet' : size));
     const ScreenTabletSize = window.matchMedia(
       '(min-width: 572px) and (max-width: 1104px)'
@@ -34,13 +34,19 @@ const useHeaderResponsiveSize = () => {
     );
     ScreenTabletSize.addEventListener('change', handlerScreenTablet);
 
-    const handlerScreenDesktop = (e) =>
+    const handlerScreenDesktop = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'ScreenDesktop' : size));
     const ScreenDesktopSize = window.matchMedia('(min-width: 1104px)');
     setVariant((size: string) =>
       ScreenDesktopSize.matches ? 'ScreenDesktop' : size
     );
     ScreenDesktopSize.addEventListener('change', handlerScreenDesktop);
+
+    return () => {
+      ScreenMobileSize.removeEventListener('change', handlerScreenMobile);
+      ScreenTabletSize.removeEventListener('change', handlerScreenTablet);
+      ScreenDesktopSize.removeEventListener('change', handlerScreenDesktop);
+    };
   }, []);
 
   return variant;
