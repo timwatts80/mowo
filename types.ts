@@ -14,14 +14,17 @@
  **********************************************************************/
 
 
-export interface HeaderProps {
-  className?: any;
-}
-
 
 export interface NavbarProps {
   className?: any;
 }
+
+
+
+export interface HeaderProps {
+  className?: any;
+}
+
 
 
 export interface SidebarProps {
@@ -29,9 +32,11 @@ export interface SidebarProps {
 }
 
 
+
 export interface Link1Props {
   className?: any;
 }
+
 
 
 export interface ModernWorkplaceProps {
@@ -39,9 +44,11 @@ export interface ModernWorkplaceProps {
 }
 
 
+
 export interface CustomerCasesProps {
   className?: any;
 }
+
 
 
 export interface CustomerCardProps {
@@ -49,9 +56,11 @@ export interface CustomerCardProps {
 }
 
 
+
 export interface FooterProps {
   className?: any;
 }
+
 
 
 export interface ProductSectionSurfaceHubDeviceProps {
@@ -59,9 +68,11 @@ export interface ProductSectionSurfaceHubDeviceProps {
 }
 
 
+
 export interface ProductCardProps {
   className?: any;
 }
+
 
 
 export interface MowoFunProps {

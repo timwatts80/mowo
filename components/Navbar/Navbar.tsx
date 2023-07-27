@@ -30,23 +30,10 @@ const Navbar1: any = styled('div')({
   height: 'auto',
 });
 
-const Logo: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Quest21: any = styled('img')({
+const MowoLogo: any = styled('img')({
   height: `36px`,
   width: `146.59px`,
-  objectFit: `cover`,
+  alignSelf: `stretch`,
   margin: `0px`,
 });
 
@@ -180,13 +167,11 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
 function Navbar(props: NavbarProps): JSX.Element {
   return (
     <Navbar1 className={props.className}>
-      <Logo>
-        <Quest21
-          src={`assets/images/Navbar_Quest2_1.png`}
-          loading="lazy"
-          alt={'Quest2 1'}
-        />
-      </Logo>
+      <MowoLogo
+        src={`assets/images/Navbar_MOWO_Logo.png`}
+        loading="lazy"
+        alt={'MOWO Logo'}
+      />
       <MenuItems>
         <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
         <Solutions>{`Solutions`}</Solutions>
