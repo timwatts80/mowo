@@ -78,7 +78,7 @@ const Description: any = styled('div')(({ theme }: any) => ({
 
 const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
-  color: `rgba(85, 85, 85, 1)`,
+  color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
   fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
@@ -114,10 +114,10 @@ function ProductBox1(props: ProductBox1Props): JSX.Element {
       <ButtonOutlined
         variant="outlined"
         size={'medium'}
-        color={'primary'}
+        color={'info'}
         disabled={false}
       >
-        {'Device details'}
+        {'Device Details'}
       </ButtonOutlined>
       <Rectangle178></Rectangle178>
     </ProductBox11>
