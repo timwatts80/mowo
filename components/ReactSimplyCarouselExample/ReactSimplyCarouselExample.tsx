@@ -1,4 +1,3 @@
-import ProductBox1 from 'components/ProductBox1/ProductBox1';
 import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
 
@@ -59,7 +58,6 @@ function ReactSimplyCarouselExample() {
         {/* here you can also pass any other element attributes. Also, you can use your custom components as slides */}
         <div style={{ width: 300, height: 300, background: '#ff80ed' }}>
           slide 0
-          <ProductBox1 />
         </div>
         <div style={{ width: 300, height: 300, background: '#065535' }}>
           slide 1
