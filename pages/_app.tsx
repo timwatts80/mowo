@@ -9,7 +9,7 @@ import CustomerCases from 'components/CustomerCases/CustomerCases'
 import Footer from '../components/Footer/Footer'
 import { ThemeProvider } from '@emotion/react'
 import React from 'react'
-import ProductList from 'components/ProdustList/ProdustList'
+import ProductList from 'components/ProductList/ProductList'
 import ProductBox1 from 'components/ProductBox1/ProductBox1'
 
 function MyApp({ Component, pageProps }: AppProps) {
