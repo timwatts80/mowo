@@ -35,12 +35,12 @@ const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ProductImage: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
-})(({ fns }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: fns.isState ? `24px 0px 0px 0px` : `0px`,
+  margin: data.isState2 ? `24px 0px 0px 0px` : `0px`,
 }));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
@@ -80,8 +80,8 @@ const Description: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ButtonOutlined: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
-})(({ theme, fns }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -105,11 +105,11 @@ const Rectangle178: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ProductImage2: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
-})(({ fns }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   height: `208px`,
   width: `309px`,
-  margin: fns.isState ? `0px` : `24px 0px 0px 0px`,
+  margin: data.isState2 ? `0px` : `24px 0px 0px 0px`,
 }));
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
@@ -149,8 +149,8 @@ const Description1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ButtonOutlined1: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
-})(({ theme, fns }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -174,65 +174,65 @@ const Rectangle1781: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductBox(props: ProductBoxProps): JSX.Element {
-  const { data, fns } = useProductBox();
+  const { data } = useProductBox();
 
   return (
     <Property1ProductBox1
       className={props.className}
       state={data.onStateChange}
     >
-      {!fns.isState && (
+      {!data.isState2 && (
         <ProductImage
-          fns={fns}
+          data={data}
           src={`assets/images/ProductBox_Product_Image.png`}
           loading="lazy"
           alt={'Product Image'}
         />
       )}
-      {!fns.isState && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
-      {!fns.isState && (
+      {!data.isState2 && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
+      {!data.isState2 && (
         <Description>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description>
       )}
-      {!fns.isState && (
+      {!data.isState2 && (
         <ButtonOutlined
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
-          fns={fns}
+          data={data}
         >
           {'Device Details'}
         </ButtonOutlined>
       )}
-      {!fns.isState && <Rectangle178></Rectangle178>}
-      {fns.isState && (
+      {!data.isState2 && <Rectangle178></Rectangle178>}
+      {data.isState2 && (
         <ProductImage2
-          fns={fns}
+          data={data}
           src={`assets/images/ProductBox_Product_Image_2.png`}
           loading="lazy"
           alt={'Product Image 2'}
         />
       )}
-      {fns.isState && <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>}
-      {fns.isState && (
+      {data.isState2 && <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>}
+      {data.isState2 && (
         <Description1>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description1>
       )}
-      {fns.isState && (
+      {data.isState2 && (
         <ButtonOutlined1
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
-          fns={fns}
+          data={data}
         >
           {'Device Details'}
         </ButtonOutlined1>
       )}
-      {fns.isState && <Rectangle1781></Rectangle1781>}
+      {data.isState2 && <Rectangle1781></Rectangle1781>}
     </Property1ProductBox1>
   );
 }
