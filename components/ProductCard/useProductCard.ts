@@ -24,7 +24,7 @@ const useProductCard = () => {
   const getImageSrc = (): any => {
     return './assets/images/Product-Image-1.png'
   };
-  const handleButtonClick = (): any => { };
+  const handleButtonClick = (): any => {};
 
   const fns: any = { getImageSrc, handleButtonClick };
 

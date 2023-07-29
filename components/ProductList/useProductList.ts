@@ -22,7 +22,7 @@ const useProductList = () => {
       {
         id: 1,
         name: 'Product 1',
-        productTitle: 'Title 1',
+        title: 'Title 1',
         desc: productData.productDesc[0],
       },
       {
