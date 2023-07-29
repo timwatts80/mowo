@@ -17,7 +17,7 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductBoxProps } from 'types';
 
-const ProductBox1: any = styled('div')(({ theme }: any) => ({
+const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
   borderRadius: `10px`,
   display: `flex`,
@@ -101,7 +101,7 @@ const Rectangle178: any = styled('div')(({ theme }: any) => ({
 
 function ProductBox(props: ProductBoxProps): JSX.Element {
   return (
-    <ProductBox1 className={props.className}>
+    <Property1ProductBox1 className={props.className}>
       <ProductImage
         src={`assets/images/ProductBox_Product_Image.png`}
         loading="lazy"
@@ -120,7 +120,7 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
         {'Device Details'}
       </ButtonOutlined>
       <Rectangle178></Rectangle178>
-    </ProductBox1>
+    </Property1ProductBox1>
   );
 }
 
