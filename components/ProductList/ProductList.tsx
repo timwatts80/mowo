@@ -19,36 +19,36 @@ import { ProductListProps } from 'types';
 import useProductList from 'components/ProductList/useProductList';
 
 const ProductList1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  width: '100%',
-  height: `509px`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
+display: `flex`,
+position: `relative`,
+isolation: `isolate`,
+flexDirection: `row`,
+width: '100%',
+height: `509px`,
+justifyContent: `flex-start`,
+alignItems: `flex-start`,
+padding: `0px`,
+boxSizing: `border-box`,
 });
 
 const ProductBox11: any = styled(ProductBox1)(({ theme }: any) => ({
-  width: `311px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
+width: `311px`,
+position: `absolute`,
+left: `0px`,
+top: `0px`,
 }));
 
 function ProductList(props: ProductListProps): JSX.Element {
-  const { data } = useProductList();
+const { data } = useProductList();
 
-  return (
-    <ProductList1 className={props.className}>
-      {data.products &&
-        data.products.map((product: any, index: number) => {
-          return <ProductBox11 key={index} />;
-        })}
-    </ProductList1>
-  );
+return (
+  <ProductList1 className={props.className}>
+    {data.products &&
+      data.products.map((product: any, index: number) => {
+        return <ProductBox11 key={index} />;
+      })}
+  </ProductList1>
+);
 }
 
 export default ProductList;

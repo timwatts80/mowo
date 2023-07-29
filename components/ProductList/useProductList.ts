@@ -12,8 +12,13 @@
  **********************************************************************/
 
 import React from 'react';
+import ProductBox from '../ProductBox/ProductBox';
 const useProductList = () => {
-  const data: any = {};
+  const data: any = {
+    products: [
+      <ProductBox />
+    ]
+  };
 
   const fns: any = {};
 
