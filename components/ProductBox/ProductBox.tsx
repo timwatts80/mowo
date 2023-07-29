@@ -174,10 +174,13 @@ const Rectangle1781: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductBox(props: ProductBoxProps): JSX.Element {
-  const { fns } = useProductBox();
+  const { data, fns } = useProductBox();
 
   return (
-    <Property1ProductBox1 className={props.className}>
+    <Property1ProductBox1
+      className={props.className}
+      state={data.onStateChange}
+    >
       {!fns.isState && (
         <ProductImage
           fns={fns}
