@@ -16,6 +16,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductBoxProps } from 'types';
+import useProductBox from 'components/ProductBox/useProductBox';
 
 const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
@@ -33,12 +34,14 @@ const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   height: 'auto',
 }));
 
-const ProductImage: any = styled('img')({
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: `0px`,
-});
+  margin: fns.isState ? `24px 0px 0px 0px` : `0px`,
+}));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -76,7 +79,9 @@ const Description: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
+const ButtonOutlined: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ theme, fns }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -99,11 +104,13 @@ const Rectangle178: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ProductImage2: any = styled('img')({
+const ProductImage2: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
   height: `208px`,
   width: `309px`,
-  margin: `24px 0px 0px 0px`,
-});
+  margin: fns.isState ? `0px` : `24px 0px 0px 0px`,
+}));
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -141,7 +148,9 @@ const Description1: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ButtonOutlined1: any = styled(Button)(({ theme }: any) => ({
+const ButtonOutlined1: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ theme, fns }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -165,53 +174,62 @@ const Rectangle1781: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductBox(props: ProductBoxProps): JSX.Element {
+  const { fns } = useProductBox();
+
   return (
-    <Property1ProductBox1
-      className={props.className}
-      state={'Property 1=ProductBox2'}
-    >
-      <ProductImage
-        src={`assets/images/ProductBox_Product_Image.png`}
-        loading="lazy"
-        alt={'Product Image'}
-      />
-      <ProductTitle>{`Surface Go 3`}</ProductTitle>
-      <Description>
-        {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-      </Description>
-      <ButtonOutlined
-        variant="outlined"
-        size={'medium'}
-        color={'info'}
-        disabled={false}
-      >
-        {'Device Details'}
-      </ButtonOutlined>
-      <Rectangle178></Rectangle178>
-      {false && (
+    <Property1ProductBox1 className={props.className}>
+      {!fns.isState && (
+        <ProductImage
+          fns={fns}
+          src={`assets/images/ProductBox_Product_Image.png`}
+          loading="lazy"
+          alt={'Product Image'}
+        />
+      )}
+      {!fns.isState && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
+      {!fns.isState && (
+        <Description>
+          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+        </Description>
+      )}
+      {!fns.isState && (
+        <ButtonOutlined
+          variant="outlined"
+          size={'medium'}
+          color={'info'}
+          disabled={false}
+          fns={fns}
+        >
+          {'Device Details'}
+        </ButtonOutlined>
+      )}
+      {!fns.isState && <Rectangle178></Rectangle178>}
+      {fns.isState && (
         <ProductImage2
+          fns={fns}
           src={`assets/images/ProductBox_Product_Image_2.png`}
           loading="lazy"
           alt={'Product Image 2'}
         />
       )}
-      {false && <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>}
-      {false && (
+      {fns.isState && <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>}
+      {fns.isState && (
         <Description1>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description1>
       )}
-      {false && (
+      {fns.isState && (
         <ButtonOutlined1
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
+          fns={fns}
         >
           {'Device Details'}
         </ButtonOutlined1>
       )}
-      {false && <Rectangle1781></Rectangle1781>}
+      {fns.isState && <Rectangle1781></Rectangle1781>}
     </Property1ProductBox1>
   );
 }

@@ -13,9 +13,10 @@
 
 import React from 'react';
 const useProductBox = () => {
+  const isState = (): any => {};
   const data: any = {};
 
-  const fns: any = {};
+  const fns: any = {isState};
 
   return { data, fns };
 };
