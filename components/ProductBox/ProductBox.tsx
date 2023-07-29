@@ -34,8 +34,9 @@ const ProductBox1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ProductImage: any = styled('img')({
-  height: `208px`,
-  width: `309px`,
+  height: `209px`,
+  width: `311px`,
+  objectFit: `cover`,
   margin: `0px`,
 });
 
@@ -106,7 +107,7 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
         loading="lazy"
         alt={'Product Image'}
       />
-      <ProductTitle>{`Surface Laptop Go 2`}</ProductTitle>
+      <ProductTitle>{`Surface Go 3`}</ProductTitle>
       <Description>
         {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
       </Description>
