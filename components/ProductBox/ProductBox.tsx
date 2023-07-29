@@ -40,7 +40,7 @@ const ProductImage: any = styled('img', {
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: data.productVar ? `24px 0px 0px 0px` : `0px`,
+  margin: data.productVAr ? `24px 0px 0px 0px` : `0px`,
 }));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
@@ -109,7 +109,7 @@ const ProductImage2: any = styled('img', {
 })(({ data }: any) => ({
   height: `208px`,
   width: `309px`,
-  margin: data.productVar ? `0px` : `24px 0px 0px 0px`,
+  margin: data.productVAr ? `0px` : `24px 0px 0px 0px`,
 }));
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
@@ -177,8 +177,11 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
   const { data } = useProductBox();
 
   return (
-    <Property1ProductBox1 className={props.className}>
-      {!data.productVar && (
+    <Property1ProductBox1
+      className={props.className}
+      state={'Property 1=ProductBox2'}
+    >
+      {!data.productVAr && (
         <ProductImage
           data={data}
           src={`assets/images/ProductBox_Product_Image.png`}
@@ -186,13 +189,13 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
           alt={'Product Image'}
         />
       )}
-      {!data.productVar && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
-      {!data.productVar && (
+      {!data.productVAr && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
+      {!data.productVAr && (
         <Description>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description>
       )}
-      {!data.productVar && (
+      {!data.productVAr && (
         <ButtonOutlined
           variant="outlined"
           size={'medium'}
@@ -203,8 +206,8 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
           {'Device Details'}
         </ButtonOutlined>
       )}
-      {!data.productVar && <Rectangle178></Rectangle178>}
-      {data.productVar && (
+      {!data.productVAr && <Rectangle178></Rectangle178>}
+      {data.productVAr && (
         <ProductImage2
           data={data}
           src={`assets/images/ProductBox_Product_Image_2.png`}
@@ -212,15 +215,15 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
           alt={'Product Image 2'}
         />
       )}
-      {data.productVar && (
+      {data.productVAr && (
         <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>
       )}
-      {data.productVar && (
+      {data.productVAr && (
         <Description1>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description1>
       )}
-      {data.productVar && (
+      {data.productVAr && (
         <ButtonOutlined1
           variant="outlined"
           size={'medium'}
@@ -231,7 +234,7 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
           {'Device Details'}
         </ButtonOutlined1>
       )}
-      {data.productVar && <Rectangle1781></Rectangle1781>}
+      {data.productVAr && <Rectangle1781></Rectangle1781>}
     </Property1ProductBox1>
   );
 }
