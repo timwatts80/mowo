@@ -11,12 +11,14 @@ import { ThemeProvider } from '@emotion/react'
 import React from 'react'
 import ProductList from 'components/ProductList/ProductList'
 import ProductBox from 'components/ProductBox/ProductBox'
+import ProductCard from 'components/ProductCard/ProductCard'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Header />
+      <ProductCard />
       <ProductList />
       <ReactSimplyCarouselExample />
       <ModernWorkplace />
