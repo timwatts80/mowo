@@ -13,48 +13,35 @@
  **********************************************************************/
 
 import React from 'react';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardProps } from 'types';
+import useProductCard from 'components/ProductCard/useProductCard';
 
-const Property1Desktop: any = styled('div')({
+const ProductCard1: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
   borderRadius: `10px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: `500px`,
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `0px`,
+  padding: `16px 0px 0px 0px`,
   boxSizing: `border-box`,
-});
-
-const ProductCard1: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: `rgba(241, 241, 241, 0.95)`,
-  border: `1px solid rgba(0, 164, 239, 1)`,
-  boxSizing: `border-box`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `space-between`,
-  alignItems: `center`,
-  padding: `15px 0px 45px 0px`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
+  overflow: `hidden`,
+  height: 'auto',
 }));
 
 const ProductImage: any = styled('img')({
-  height: `200px`,
-  width: `300px`,
+  height: `209px`,
+  width: `311px`,
   objectFit: `cover`,
-  alignSelf: `stretch`,
   margin: `0px`,
 });
 
-const Title: any = styled('div')(({ theme }: any) => ({
+const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -62,84 +49,80 @@ const Title: any = styled('div')(({ theme }: any) => ({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `30px`,
+  fontSize: `24px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
+  height: `68px`,
+  width: `311px`,
+  margin: `24px 0px 0px 0px`,
 }));
 
-const DescriptionMax: any = styled('div')(({ theme }: any) => ({
+const Description: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
+  color: theme.palette['MOWO']['black-75'],
   fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
+  fontFamily: `Open Sans`,
   fontWeight: `400`,
-  fontSize: `18px`,
-  letterSpacing: `0px`,
+  fontSize: `16px`,
+  letterSpacing: `-0.3199999928474426px`,
   textDecoration: `none`,
-  lineHeight: `150%`,
+  lineHeight: `20px`,
   textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
+  height: `69px`,
+  width: `273px`,
+  margin: `24px 0px 0px 0px`,
 }));
 
-const Button1: any = styled('div')({
-  border: `1px solid rgba(51, 51, 51, 0.75)`,
-  boxSizing: `border-box`,
-  borderRadius: `6px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  margin: `0px`,
-});
+const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
+  margin: `24px 0px 0px 0px`,
+  color: theme.palette['Info']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Medium'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Medium'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Medium'].textTransform,
+}));
 
-const Details: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `18px`,
-  letterSpacing: `0.15000000596046448px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
-  width: `129px`,
-  height: `34px`,
-  margin: `0px`,
+const Rectangle178: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Secondary']['Main'],
+  alignSelf: `stretch`,
+  height: `15px`,
+  margin: `24px 0px 0px 0px`,
 }));
 
 function ProductCard(props: ProductCardProps): JSX.Element {
+  const { data, fns } = useProductCard();
+
   return (
-    <Property1Desktop className={props.className}>
-      <ProductCard1>
-        <ProductImage
-          src={`assets/images/ProductCard_Product_Image.png`}
-          loading="lazy"
-          alt={'Product Image'}
-        />
-        <Title>{`Title`}</Title>
-        <DescriptionMax>
-          {`Description
-.
-max.`}
-        </DescriptionMax>
-        <Button1>
-          <Details>{`DETAILS`}</Details>
-        </Button1>
-      </ProductCard1>
-    </Property1Desktop>
+    <ProductCard1 className={props.className}>
+      <ProductImage
+        src={fns.getImageSrc}
+        loading="lazy"
+        alt={'Product Image'}
+      />
+      <ProductTitle>{data.productTitle}</ProductTitle>
+      <Description>{data.productDesc}</Description>
+      <ButtonOutlined
+        variant="outlined"
+        size={'medium'}
+        color={'info'}
+        disabled={false}
+        onClick={fns.handleButtonClick}
+      >
+        {'Device Details'}
+      </ButtonOutlined>
+      <Rectangle178></Rectangle178>
+    </ProductCard1>
   );
 }
 
