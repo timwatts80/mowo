@@ -9,11 +9,13 @@ import CustomerCases from 'components/CustomerCases/CustomerCases'
 import Footer from '../components/Footer/Footer'
 import { ThemeProvider } from '@emotion/react'
 import React from 'react'
+import ProductBox1 from 'components/ProductBox1/ProductBox1'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Header />
+      <ProductBox1 />
       <ReactSimplyCarouselExample />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
