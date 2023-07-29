@@ -13,11 +13,12 @@
 
 import React from 'react';
 import ProductBox from '../ProductBox/ProductBox';
+
+const productComponent: React.FC = ProductBox;
+
 const useProductList = () => {
   const data: any = {
-    products: [
-      <ProductBox />
-    ]
+    products: productComponent
   };
 
   const fns: any = {};

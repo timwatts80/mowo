@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import ProductBox1 from 'components/ProductBox1/ProductBox1';
+import ProductBox1 from 'components/ProductBox/ProductBox';
 import { ProductListProps } from 'types';
 import useProductList from 'components/ProductList/useProductList';
 
