@@ -37,10 +37,10 @@ const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
 const ProductImage: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: data.productVar ? `208px` : `209px`,
-  width: data.productVar ? `309px` : `311px`,
-  objectFit: data.productVar ? 'unset' : `cover`,
-  margin: `0px`,
+  height: `209px`,
+  width: `311px`,
+  objectFit: `cover`,
+  margin: data.productVar ? `24px 0px 0px 0px` : `0px`,
 }));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
@@ -104,33 +104,134 @@ const Rectangle178: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
+const ProductImage2: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `208px`,
+  width: `309px`,
+  margin: data.productVar ? `0px` : `24px 0px 0px 0px`,
+}));
+
+const ProductTitle1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
+  textTransform: `none`,
+  height: `68px`,
+  width: `311px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const Description1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['MOWO']['black-75'],
+  fontStyle: `normal`,
+  fontFamily: `Open Sans`,
+  fontWeight: `400`,
+  fontSize: `16px`,
+  letterSpacing: `-0.3199999928474426px`,
+  textDecoration: `none`,
+  lineHeight: `20px`,
+  textTransform: `none`,
+  height: `69px`,
+  width: `273px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ButtonOutlined1: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  margin: `24px 0px 0px 0px`,
+  color: theme.palette['Info']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Medium'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Medium'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Medium'].textTransform,
+}));
+
+const Rectangle1781: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Secondary']['Main'],
+  alignSelf: `stretch`,
+  height: `15px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
 function ProductBox(props: ProductBoxProps): JSX.Element {
   const { data } = useProductBox();
 
   return (
     <Property1ProductBox1 className={props.className}>
-      <ProductImage
-        data={data}
-        src={`assets/images/ProductBox_Product_Image.png`}
-        loading="lazy"
-        alt={'Product Image'}
-      />
-      <ProductTitle>
-        {data.productVar ? `Surface Laptop Go 2` : `Surface Go 3`}
-      </ProductTitle>
-      <Description>
-        {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-      </Description>
-      <ButtonOutlined
-        variant="outlined"
-        size={'medium'}
-        color={'info'}
-        disabled={false}
-        data={data}
-      >
-        {'Device Details'}
-      </ButtonOutlined>
-      <Rectangle178></Rectangle178>
+      {!data.productVar && (
+        <ProductImage
+          data={data}
+          src={`assets/images/ProductBox_Product_Image.png`}
+          loading="lazy"
+          alt={'Product Image'}
+        />
+      )}
+      {!data.productVar && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
+      {!data.productVar && (
+        <Description>
+          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+        </Description>
+      )}
+      {!data.productVar && (
+        <ButtonOutlined
+          variant="outlined"
+          size={'medium'}
+          color={'info'}
+          disabled={false}
+          data={data}
+        >
+          {'Device Details'}
+        </ButtonOutlined>
+      )}
+      {!data.productVar && <Rectangle178></Rectangle178>}
+      {data.productVar && (
+        <ProductImage2
+          data={data}
+          src={`assets/images/ProductBox_Product_Image_2.png`}
+          loading="lazy"
+          alt={'Product Image 2'}
+        />
+      )}
+      {data.productVar && (
+        <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>
+      )}
+      {data.productVar && (
+        <Description1>
+          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+        </Description1>
+      )}
+      {data.productVar && (
+        <ButtonOutlined1
+          variant="outlined"
+          size={'medium'}
+          color={'info'}
+          disabled={false}
+          data={data}
+        >
+          {'Device Details'}
+        </ButtonOutlined1>
+      )}
+      {data.productVar && <Rectangle1781></Rectangle1781>}
     </Property1ProductBox1>
   );
 }
