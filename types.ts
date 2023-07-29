@@ -57,6 +57,10 @@
 
 export interface ProductCardProps {
   className?: any;
+  product: {
+    id: number;
+    name: string;
+  };
 }
 
 

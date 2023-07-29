@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
+import ProductCard from '../ProductCard/ProductCard';
+import useProductList from 'components/ProductList/useProductList';
 
 function ReactSimplyCarouselExample() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const { data } = useProductList();
 
   return (
     <div>
@@ -55,37 +58,10 @@ function ReactSimplyCarouselExample() {
         speed={350}
         easing="ease-out"
       >
-        {/* here you can also pass any other element attributes. Also, you can use your custom components as slides */}
-        <div style={{ width: 300, height: 300, background: '#ff80ed' }}>
-          slide 0
-        </div>
-        <div style={{ width: 300, height: 300, background: '#065535' }}>
-          slide 1
-        </div>
-        <div style={{ width: 300, height: 300, background: '#000000' }}>
-          slide 2
-        </div>
-        <div style={{ width: 300, height: 300, background: '#133337' }}>
-          slide 3
-        </div>
-        <div style={{ width: 300, height: 300, background: '#ffc0cb' }}>
-          slide 4
-        </div>
-        <div style={{ width: 300, height: 300, background: '#ffffff' }}>
-          slide 5
-        </div>
-        <div style={{ width: 300, height: 300, background: '#ffe4e1' }}>
-          slide 6
-        </div>
-        <div style={{ width: 300, height: 300, background: '#008080' }}>
-          slide 7
-        </div>
-        <div style={{ width: 300, height: 300, background: '#ff0000' }}>
-          slide 8
-        </div>
-        <div style={{ width: 300, height: 300, background: '#e6e6fa' }}>
-          slide 9
-        </div>
+        {/* map over the products to render a ProductCard component for each product */}
+        {data.products.map((product: any) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </ReactSimplyCarousel>
     </div>
   );

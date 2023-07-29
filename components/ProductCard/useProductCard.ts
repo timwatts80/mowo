@@ -13,9 +13,18 @@
 
 import React from 'react';
 const useProductCard = () => {
-  const data: any = {};
-  const getImageSrc = (): any => {};
-  const handleButtonClick = (): any => {};
+  const data: any = {
+    productTitle: [
+      'Product Title',
+    ],
+    productDesc: [
+      'Product Description',
+    ],
+  };
+  const getImageSrc = (): any => {
+    return './assets/images/Product-Image-1.png'
+  };
+  const handleButtonClick = (): any => { };
 
   const fns: any = { getImageSrc, handleButtonClick };
 

@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Header />
-      <ProductCard />
       <ProductList />
       <ReactSimplyCarouselExample />
       <ModernWorkplace />

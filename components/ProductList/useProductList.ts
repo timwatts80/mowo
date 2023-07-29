@@ -12,18 +12,26 @@
  **********************************************************************/
 
 import React from 'react';
+import useProductCard from '../ProductCard/useProductCard';
+
 const useProductList = () => {
+  const { data: productData } = useProductCard();
+
   const data: any = {
     products: [
       {
         id: 1,
         name: 'Product 1',
+        productTitle: 'Title 1',
+        desc: productData.productDesc[0],
       },
       {
         id: 2,
         name: 'Product 2',
-      }
-    ]
+        title: productData.productTitle[0],
+        desc: productData.productDesc[0],
+      },
+    ],
   };
 
   const fns: any = {};

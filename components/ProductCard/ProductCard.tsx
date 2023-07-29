@@ -17,6 +17,7 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardProps } from 'types';
 import useProductCard from 'components/ProductCard/useProductCard';
+import useProductList from 'components/ProductList/useProductList';
 
 const ProductCard1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
@@ -101,7 +102,7 @@ const Rectangle178: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductCard(props: ProductCardProps): JSX.Element {
-  const { data, fns } = useProductCard();
+  const { data, fns } = useProductList();
 
   return (
     <ProductCard1 className={props.className}>
