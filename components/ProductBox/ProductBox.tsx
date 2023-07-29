@@ -177,7 +177,7 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
   const { data } = useProductBox();
 
   return (
-    <Property1ProductBox1 className={props.className}>
+    <Property1ProductBox1 className={props.className} state={'state'}>
       {!data.isState2 && (
         <ProductImage
           data={data}
