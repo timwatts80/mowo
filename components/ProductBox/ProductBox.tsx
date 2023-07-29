@@ -16,6 +16,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductBoxProps } from 'types';
+import useProductBox from 'components/ProductBox/useProductBox';
 
 const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
@@ -33,12 +34,14 @@ const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   height: 'auto',
 }));
 
-const ProductImage: any = styled('img')({
-  height: `209px`,
-  width: `311px`,
-  objectFit: `cover`,
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: data.productVar ? `208px` : `209px`,
+  width: data.productVar ? `309px` : `311px`,
+  objectFit: data.productVar ? 'unset' : `cover`,
   margin: `0px`,
-});
+}));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -76,7 +79,9 @@ const Description: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
+const ButtonOutlined: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -100,14 +105,19 @@ const Rectangle178: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductBox(props: ProductBoxProps): JSX.Element {
+  const { data } = useProductBox();
+
   return (
     <Property1ProductBox1 className={props.className}>
       <ProductImage
+        data={data}
         src={`assets/images/ProductBox_Product_Image.png`}
         loading="lazy"
         alt={'Product Image'}
       />
-      <ProductTitle>{`Surface Go 3`}</ProductTitle>
+      <ProductTitle>
+        {data.productVar ? `Surface Laptop Go 2` : `Surface Go 3`}
+      </ProductTitle>
       <Description>
         {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
       </Description>
@@ -116,6 +126,7 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
         size={'medium'}
         color={'info'}
         disabled={false}
+        data={data}
       >
         {'Device Details'}
       </ButtonOutlined>
