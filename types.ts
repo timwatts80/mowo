@@ -38,6 +38,20 @@
 
 
 
+
+export interface ProductListProps {
+  className?: any;
+};
+
+
+
+
+
+
+
+
+
+
 export interface ProductBoxProps {
   className?: any;
 };
@@ -47,9 +61,11 @@ export interface ProductBoxProps {
 
 
 
+
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
 }
+
 
 
 
@@ -105,17 +121,6 @@ export interface ProductCardProps {
 
 
 
-export interface ProductListProps {
-  className?: any;
-};
-
-
-
-
-
-
-
-
 
 export interface ProdustListProps {
   className?: any;
@@ -130,9 +135,11 @@ export interface ProdustListProps {
 
 
 
+
 export interface ProductBox1Props {
   className?: any;
 };
+
 
 
 
@@ -169,9 +176,11 @@ export interface Frame139Props {
 
 
 
+
 export interface ProductBox7Props {
   className?: any;
 };
+
 
 
 
@@ -204,9 +213,11 @@ export interface ProductBox6Props {
 
 
 
+
 export interface ProductBox5Props {
   className?: any;
 };
+
 
 
 
@@ -243,9 +254,11 @@ export interface ProductBox4Props {
 
 
 
+
 export interface ProductBox3Props {
   className?: any;
 };
+
 
 
 
@@ -286,9 +299,11 @@ export interface ProductBox2Props {
 
 
 
+
 export interface CustomerCardProps {
   className?: any;
 }
+
 
 
 
@@ -344,9 +359,11 @@ export interface ModernWorkplaceProps {
 
 
 
+
 export interface NavbarProps {
   className?: any;
 }
+
 
 
 
@@ -402,9 +419,11 @@ export interface HeaderProps {
 
 
 
+
 export interface SidebarProps {
   className?: any;
 }
+
 
 
 
@@ -460,6 +479,7 @@ export interface Link1Props {
 
 
 
+
 export interface CustomerCasesProps {
   className?: any;
 }
@@ -489,9 +509,11 @@ export interface CustomerCasesProps {
 
 
 
+
 export interface FooterProps {
   className?: any;
 }
+
 
 
 
