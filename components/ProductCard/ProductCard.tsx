@@ -110,7 +110,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         loading="lazy"
         alt={'Product Image'}
       />
-      <ProductTitle>{data.products.productTitle}</ProductTitle>
+      <ProductTitle>{data.products.title}</ProductTitle>
       <Description>{data.productDesc}</Description>
       <ButtonOutlined
         variant="outlined"
