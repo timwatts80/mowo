@@ -106,12 +106,12 @@ function ProductCard(props: ProductCardProps): JSX.Element {
   return (
     <ProductCard1 className={props.className}>
       <ProductImage
-        src={fns.getImageSrc}
+        src={data.products.src}
         loading="lazy"
         alt={'Product Image'}
       />
-      <ProductTitle>{data.products.productTitle}</ProductTitle>
-      <Description>{data.productDesc}</Description>
+      <ProductTitle>{data.products.title}</ProductTitle>
+      <Description>{data.products.desc}</Description>
       <ButtonOutlined
         variant="outlined"
         size={'medium'}
