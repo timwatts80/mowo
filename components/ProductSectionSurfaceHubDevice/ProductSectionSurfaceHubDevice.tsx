@@ -14,6 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
+import ProductBox from 'components/ProductBox/ProductBox';
 import ProductCard from 'components/ProductCard/ProductCard';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
@@ -243,12 +244,60 @@ const Products: any = styled('div', {
       : `0px 0px 0px 15px`,
 }));
 
+const ProductBox1: any = styled(ProductBox, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  width: `311px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 15px` : `0px`,
+}));
+
+const ProductBox2: any = styled(ProductBox, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  width: `311px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 15px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `0px`
+      : `0px 0px 0px 30px`,
+}));
+
+const ProductBox3: any = styled(ProductBox, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  width: `311px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 15px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `0px`
+      : `0px 0px 0px 30px`,
+}));
+
+const ProductBox4: any = styled(ProductBox, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  width: `311px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 15px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `0px`
+      : `0px 0px 0px 30px`,
+}));
+
 const ProductCard1: any = styled(ProductCard, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   width: `300px`,
   height: `500px`,
-  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 15px` : `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `0px`
+      : `0px 0px 0px 30px`,
 }));
 
 const ProductCard2: any = styled(ProductCard, {
@@ -265,58 +314,6 @@ const ProductCard2: any = styled(ProductCard, {
 }));
 
 const ProductCard3: any = styled(ProductCard, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `300px`,
-  height: `500px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductCard4: any = styled(ProductCard, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `300px`,
-  height: `500px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductCard5: any = styled(ProductCard, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `300px`,
-  height: `500px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductCard6: any = styled(ProductCard, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `300px`,
-  height: `500px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductCard7: any = styled(ProductCard, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   width: `300px`,
@@ -389,28 +386,28 @@ function ProductSectionSurfaceHubDevice(
           <Products data={data}>
             {!(data.currentVariant === 'ScreenTablet') &&
               !(data.currentVariant === 'ScreenMobile') && (
-                <ProductCard1 data={data} />
+                <ProductBox1 data={data} />
               )}
             {!(data.currentVariant === 'ScreenTablet') &&
               !(data.currentVariant === 'ScreenMobile') && (
-                <ProductCard2 data={data} />
+                <ProductBox2 data={data} />
               )}
             {!(data.currentVariant === 'ScreenTablet') &&
               !(data.currentVariant === 'ScreenMobile') && (
-                <ProductCard3 data={data} />
+                <ProductBox3 data={data} />
               )}
             {!(data.currentVariant === 'ScreenTablet') &&
               !(data.currentVariant === 'ScreenMobile') && (
-                <ProductCard4 data={data} />
+                <ProductBox4 data={data} />
               )}
             {data.currentVariant === 'ScreenTablet' && (
-              <ProductCard5 data={data} />
+              <ProductCard1 data={data} />
             )}
             {data.currentVariant === 'ScreenTablet' && (
-              <ProductCard6 data={data} />
+              <ProductCard2 data={data} />
             )}
             {data.currentVariant === 'ScreenMobile' && (
-              <ProductCard7 data={data} />
+              <ProductCard3 data={data} />
             )}
           </Products>
           <RightArrow data={data}>
