@@ -66,6 +66,9 @@ import { Url } from "url";
 
 export interface ProductBoxProps {
   className?: any;
+  id?: number;
+  title?: string;
+  desc?: string;
 };
 
 
