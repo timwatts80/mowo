@@ -13,9 +13,10 @@
 
 import React from 'react';
 const useProductBox = () => {
+  const handleButtonClick = (): any => {};
   const data: any = {};
 
-  const fns: any = {};
+  const fns: any = {handleButtonClick};
 
   return { data, fns };
 };
