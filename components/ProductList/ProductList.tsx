@@ -44,9 +44,7 @@ function ProductList(props: ProductListProps): JSX.Element {
     <ProductList1 className={props.className}>
       {data.products &&
         data.products.map((product: any, index: number) => {
-          const props = { key: product.id, id: index + 1, isProduct: data[`isProduct${index + 1}`] };
-          console.log(props);
-          return <ProductBox1 {...props} />;
+          return <ProductBox1 key={index} />;
         })}
     </ProductList1>
   );
