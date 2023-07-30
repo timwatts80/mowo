@@ -473,7 +473,7 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
         !data.isProduct6 && (
           <ProductImage
             data={data}
-            src={data.src}
+            src={`assets/images/ProductBox_Product_Image.png`}
             loading="lazy"
             alt={'Product Image'}
           />
@@ -482,12 +482,16 @@ function ProductBox(props: ProductBoxProps): JSX.Element {
         !data.isProduct3 &&
         !data.isProduct4 &&
         !data.isProduct5 &&
-        !data.isProduct6 && <ProductTitle>{data.products.title}</ProductTitle>}
+        !data.isProduct6 && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
       {!data.isProduct2 &&
         !data.isProduct3 &&
         !data.isProduct4 &&
         !data.isProduct5 &&
-        !data.isProduct6 && <Description>{data.products.desc}</Description>}
+        !data.isProduct6 && (
+          <Description>
+            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+          </Description>
+        )}
       {!data.isProduct2 &&
         !data.isProduct3 &&
         !data.isProduct4 &&
