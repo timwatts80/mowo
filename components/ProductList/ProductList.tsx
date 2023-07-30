@@ -38,24 +38,17 @@ const ProductBox1: any = styled(ProductBox)(({ theme }: any) => ({
 }));
 
 function ProductList(props: ProductListProps): JSX.Element {
-  const { data } = useProductList();
-
-  const handleIsProductChange = (index: number) => (value: boolean) => {
-    setData((prevData: any) => ({
-      ...prevData,
-      [`isProduct${index}`]: value,
-    }));
-  };
+  const { data, fns } = useProductList();
 
   return (
     <ProductList1 className={props.className}>
       {data.products &&
-        data.products.map((product: any, index: number) => {
+        data.products.map((product: any) => {
           return (
             <ProductBox1
-              key={index}
-              data={{ ...data }}
-              handleIsProductChange={handleIsProductChange(index + 1)}
+              key={product.id}
+              isProduct={data[`isProduct${product.id}`]}
+              handleIsProductChange={fns.handleIsProductChange(product.id)}
             />
           );
         })}
@@ -64,7 +57,3 @@ function ProductList(props: ProductListProps): JSX.Element {
 }
 
 export default ProductList;
-function setData(arg0: (prevData: any) => any) {
-  throw new Error('Function not implemented.');
-}
-
