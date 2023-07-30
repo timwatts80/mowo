@@ -31,7 +31,7 @@ const ProductList1: any = styled('div')({
   height: 'auto',
 });
 
-const ProductCard1: any = styled(ProductBox)(({ theme }: any) => ({
+const ProductBox1: any = styled(ProductBox)(({ theme }: any) => ({
   width: `311px`,
   zIndex: `0`,
   margin: `0px`,
@@ -44,7 +44,7 @@ function ProductList(props: ProductListProps): JSX.Element {
     <ProductList1 className={props.className}>
       {data.products &&
         data.products.map((product: any, index: number) => {
-          return <ProductCard1 key={product.id} id={index + 1} />;
+          return <ProductBox1 key={product.id} id={index + 1} />;
         })}
     </ProductList1>
   );
