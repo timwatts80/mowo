@@ -14,7 +14,22 @@
 import React from 'react';
 const useProductBox = () => {
   const handleButtonClick = (): any => {};
-  const data: any = {};
+  const data: any = {
+    products: [
+      {
+        id: 1,
+        name: 'Product 1',
+      },
+      {
+        id: 2,
+        name: 'Product 2',
+      },
+      {
+        id: 3,
+        name: 'Product 3',
+      },
+    ],
+  };
 
   const fns: any = {handleButtonClick};
 
