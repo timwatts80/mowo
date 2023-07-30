@@ -22,14 +22,10 @@ const useProductList = () => {
       {
         id: 1,
         name: 'Product 1',
-        title: 'Title 1',
-        desc: productData.productDesc[0],
       },
       {
         id: 2,
         name: 'Product 2',
-        title: productData.productTitle[0],
-        desc: productData.productDesc[0],
       },
     ],
   };

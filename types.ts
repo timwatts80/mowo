@@ -13,6 +13,8 @@
  *
  **********************************************************************/
 
+import { Url } from "url";
+
 
 
 
@@ -62,7 +64,9 @@ export interface ProductCardProps {
   className?: any;
   product: {
     id: number;
-    name: string;
+    title: string;
+    desc: string;
+    src: string;
   };
 }
 

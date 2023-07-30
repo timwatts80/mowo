@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import ProductBox from 'components/ProductBox/ProductBox';
+import ProductCard from 'components/ProductCard/ProductCard';
 import { ProductListProps } from 'types';
 import useProductList from 'components/ProductList/useProductList';
 
@@ -31,7 +31,7 @@ const ProductList1: any = styled('div')({
   height: 'auto',
 });
 
-const ProductBox1: any = styled(ProductBox)(({ theme }: any) => ({
+const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
   width: `311px`,
   zIndex: `0`,
   margin: `0px`,
@@ -44,7 +44,7 @@ function ProductList(props: ProductListProps): JSX.Element {
     <ProductList1 className={props.className}>
       {data.products &&
         data.products.map((product: any, index: number) => {
-          return <ProductBox1 key={index} />;
+          return <ProductCard1 key={index} />;
         })}
     </ProductList1>
   );

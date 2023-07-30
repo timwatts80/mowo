@@ -12,21 +12,28 @@
  **********************************************************************/
 
 import React from 'react';
+
 const useProductCard = () => {
   const data: any = {
-    productTitle: [
-      'Product Title',
-    ],
-    productDesc: [
-      'Product Description',
+    products: [
+      {
+        id: 1,
+        title: 'Title 1',
+        desc: 'Description 1',
+        src: 'assets/images/ProductCard_Product_Image.png',
+      },
+      {
+        id: 2,
+        title: 'Title 2',
+        desc: 'Description 2',
+        src: 'assets/images/ProductCard_Product_Image.png',
+      },
     ],
   };
-  const getImageSrc = (): any => {
-    return './assets/images/Product-Image-1.png'
-  };
+
   const handleButtonClick = (): any => {};
 
-  const fns: any = { getImageSrc, handleButtonClick };
+  const fns: any = { handleButtonClick };
 
   return { data, fns };
 };

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
 import ProductCard from '../ProductCard/ProductCard';
-import useProductList from 'components/ProductList/useProductList';
+import useProductCard from 'components/ProductCard/useProductCard';
 
 function ReactSimplyCarouselExample() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const { data } = useProductList();
+  const { data } = useProductCard();
 
   return (
     <div>
@@ -59,9 +59,13 @@ function ReactSimplyCarouselExample() {
         easing="ease-out"
       >
         {/* map over the products to render a ProductCard component for each product */}
-        {data.products.map((product: any) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+
+        {Array.from({ length: 3 }).map((_, index) =>
+  data.products.map((product: any) => (
+    <ProductCard key={product.id} product={product} />
+  ))
+)}
+
       </ReactSimplyCarousel>
     </div>
   );

@@ -18,6 +18,7 @@ import { styled } from '@mui/material/styles';
 import { ProductCardProps } from 'types';
 import useProductCard from 'components/ProductCard/useProductCard';
 
+
 const ProductCard1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
   borderRadius: `10px`,
@@ -106,12 +107,12 @@ function ProductCard(props: ProductCardProps): JSX.Element {
   return (
     <ProductCard1 className={props.className}>
       <ProductImage
-        src={data.products.src}
+        src={data.products[0].src}
         loading="lazy"
-        alt={'Product Image'}
+        alt={data.products.src}
       />
-      <ProductTitle>{data.products.title}</ProductTitle>
-      <Description>{data.products.desc}</Description>
+      <ProductTitle>{data.products[0].title}</ProductTitle>
+      <Description>{data.products[0].desc}</Description>
       <ButtonOutlined
         variant="outlined"
         size={'medium'}
