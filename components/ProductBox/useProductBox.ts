@@ -12,26 +12,27 @@
  **********************************************************************/
 
 import React from 'react';
+import { useState } from 'react';
+
 const useProductBox = () => {
   const handleButtonClick = (): any => {};
-  const data: any = {
-    products: [
-      {
-        id: 1,
-        name: 'Product 1',
-      },
-      {
-        id: 2,
-        name: 'Product 2',
-      },
-      {
-        id: 3,
-        name: 'Product 3',
-      },
-    ],
+  const [data, setData] = useState({
+    isProduct1: false,
+    isProduct2: false,
+    isProduct3: false,
+    isProduct4: false,
+    isProduct5: false,
+    isProduct6: false,
+  });
+
+  const handleIsProductChange = (index: number) => (value: boolean) => {
+    setData((prevData) => ({
+      ...prevData,
+      [`isProduct${index}`]: value,
+    }));
   };
 
-  const fns: any = {handleButtonClick};
+  const fns: any = {handleButtonClick, handleIsProductChange};
 
   return { data, fns };
 };

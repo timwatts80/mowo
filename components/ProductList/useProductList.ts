@@ -15,7 +15,6 @@ import React from 'react';
 import useProductBox from 'components/ProductBox/useProductBox';
 
 const useProductList = () => {
-  const { data: productData } = useProductBox();
 
   const data: any = {
     products: [
@@ -23,16 +22,19 @@ const useProductList = () => {
         id: 1,
         name: 'Product 1',
         title: 'Product 1',
+        isProduct1: true,
       },
       {
         id: 2,
         name: 'Product 2',
         title: 'Product 2',
+        isProduct2: true,
       },
       {
         id: 3,
         name: 'Product 3',
         title: 'Product 3',
+        isProduct3: true,
       },
     ],
   };
