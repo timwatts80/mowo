@@ -25,7 +25,7 @@ const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: `311px`,
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `16px 0px 0px 0px`,
@@ -34,12 +34,24 @@ const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   height: 'auto',
 }));
 
-const ProductImage: any = styled('img')({
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: `0px`,
-});
+  margin: data.isProduct2
+    ? `24px 0px 0px 0px`
+    : data.isProduct3
+    ? `24px 0px 0px 0px`
+    : data.isProduct4
+    ? `24px 0px 0px 0px`
+    : data.isProduct5
+    ? `24px 0px 0px 0px`
+    : data.isProduct6
+    ? `24px 0px 0px 0px`
+    : `0px`,
+}));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -77,7 +89,9 @@ const Description: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
+const ButtonOutlined: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -100,11 +114,13 @@ const Rectangle178: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ProductImage2: any = styled('img')({
+const ProductImage2: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   height: `208px`,
   width: `309px`,
-  margin: `24px 0px 0px 0px`,
-});
+  margin: data.isProduct2 ? `0px` : `24px 0px 0px 0px`,
+}));
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -142,7 +158,9 @@ const Description1: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ButtonOutlined1: any = styled(Button)(({ theme }: any) => ({
+const ButtonOutlined1: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -165,52 +183,467 @@ const Rectangle1781: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
+const ProductImage1: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `208px`,
+  width: `309px`,
+  objectFit: `cover`,
+  margin: data.isProduct3 ? `0px` : `24px 0px 0px 0px`,
+}));
+
+const ProductTitle2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
+  textTransform: `none`,
+  height: `68px`,
+  width: `311px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const Description2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['MOWO']['black-75'],
+  fontStyle: `normal`,
+  fontFamily: `Open Sans`,
+  fontWeight: `400`,
+  fontSize: `16px`,
+  letterSpacing: `-0.3199999928474426px`,
+  textDecoration: `none`,
+  lineHeight: `20px`,
+  textTransform: `none`,
+  height: `69px`,
+  width: `273px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ButtonOutlined2: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  margin: `24px 0px 0px 0px`,
+  color: theme.palette['Info']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Medium'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Medium'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Medium'].textTransform,
+}));
+
+const Rectangle1782: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Secondary']['Main'],
+  alignSelf: `stretch`,
+  height: `15px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ProductImage3: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `209px`,
+  width: `311px`,
+  objectFit: `cover`,
+  margin: data.isProduct4 ? `0px` : `24px 0px 0px 0px`,
+}));
+
+const ProductTitle3: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
+  textTransform: `none`,
+  height: `68px`,
+  width: `311px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const Description3: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['MOWO']['black-75'],
+  fontStyle: `normal`,
+  fontFamily: `Open Sans`,
+  fontWeight: `400`,
+  fontSize: `16px`,
+  letterSpacing: `-0.3199999928474426px`,
+  textDecoration: `none`,
+  lineHeight: `20px`,
+  textTransform: `none`,
+  height: `69px`,
+  width: `273px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ButtonOutlined3: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  margin: `24px 0px 0px 0px`,
+  color: theme.palette['Info']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Medium'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Medium'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Medium'].textTransform,
+}));
+
+const Rectangle1783: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Secondary']['Main'],
+  alignSelf: `stretch`,
+  height: `15px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ProductImage21: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `208px`,
+  width: `309px`,
+  margin: data.isProduct5 ? `0px` : `24px 0px 0px 0px`,
+}));
+
+const ProductTitle4: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
+  textTransform: `none`,
+  height: `68px`,
+  width: `311px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const Description4: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['MOWO']['black-75'],
+  fontStyle: `normal`,
+  fontFamily: `Open Sans`,
+  fontWeight: `400`,
+  fontSize: `16px`,
+  letterSpacing: `-0.3199999928474426px`,
+  textDecoration: `none`,
+  lineHeight: `20px`,
+  textTransform: `none`,
+  height: `69px`,
+  width: `273px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ButtonOutlined4: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  margin: `24px 0px 0px 0px`,
+  color: theme.palette['Info']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Medium'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Medium'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Medium'].textTransform,
+}));
+
+const Rectangle1784: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Error']['Main'],
+  alignSelf: `stretch`,
+  height: `15px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ProductImage22: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `208px`,
+  width: `309px`,
+  margin: data.isProduct6 ? `0px` : `24px 0px 0px 0px`,
+}));
+
+const ProductTitle5: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
+  textTransform: `none`,
+  height: `68px`,
+  width: `311px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const Description5: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['MOWO']['black-75'],
+  fontStyle: `normal`,
+  fontFamily: `Open Sans`,
+  fontWeight: `400`,
+  fontSize: `16px`,
+  letterSpacing: `-0.3199999928474426px`,
+  textDecoration: `none`,
+  lineHeight: `20px`,
+  textTransform: `none`,
+  height: `69px`,
+  width: `273px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
+const ButtonOutlined5: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  margin: `24px 0px 0px 0px`,
+  color: theme.palette['Info']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Medium'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Medium'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Medium'].textTransform,
+}));
+
+const Rectangle1785: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Success']['Main'],
+  alignSelf: `stretch`,
+  height: `15px`,
+  margin: `24px 0px 0px 0px`,
+}));
+
 function ProductBox(props: ProductBoxProps): JSX.Element {
-  const { data, fns } = useProductBox();
+  const { data } = useProductBox();
 
   return (
     <Property1ProductBox1 className={props.className}>
-      <ProductImage
-        src={`assets/images/ProductBox_Product_Image.png`}
-        loading="lazy"
-        alt={'Product Image'}
-      />
-      <ProductTitle>{data.productTitle}</ProductTitle>
-      <Description>{data.productDescription}</Description>
-      <ButtonOutlined
-        variant="outlined"
-        size={'medium'}
-        color={'info'}
-        disabled={false}
-        onClick={fns.handleButtonClick}
-      >
-        {'Device Details'}
-      </ButtonOutlined>
-      <Rectangle178></Rectangle178>
-      {false && (
+      {!data.isProduct2 &&
+        !data.isProduct3 &&
+        !data.isProduct4 &&
+        !data.isProduct5 &&
+        !data.isProduct6 && (
+          <ProductImage
+            data={data}
+            src={`assets/images/ProductBox_Product_Image.png`}
+            loading="lazy"
+            alt={'Product Image'}
+          />
+        )}
+      {!data.isProduct2 &&
+        !data.isProduct3 &&
+        !data.isProduct4 &&
+        !data.isProduct5 &&
+        !data.isProduct6 && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
+      {!data.isProduct2 &&
+        !data.isProduct3 &&
+        !data.isProduct4 &&
+        !data.isProduct5 &&
+        !data.isProduct6 && (
+          <Description>
+            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+          </Description>
+        )}
+      {!data.isProduct2 &&
+        !data.isProduct3 &&
+        !data.isProduct4 &&
+        !data.isProduct5 &&
+        !data.isProduct6 && (
+          <ButtonOutlined
+            variant="outlined"
+            size={'medium'}
+            color={'info'}
+            disabled={false}
+            data={data}
+          >
+            {'Device Details'}
+          </ButtonOutlined>
+        )}
+      {!data.isProduct2 &&
+        !data.isProduct3 &&
+        !data.isProduct4 &&
+        !data.isProduct5 &&
+        !data.isProduct6 && <Rectangle178></Rectangle178>}
+      {data.isProduct2 && (
         <ProductImage2
+          data={data}
           src={`assets/images/ProductBox_Product_Image_2.png`}
           loading="lazy"
           alt={'Product Image 2'}
         />
       )}
-      {false && <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>}
-      {false && (
+      {data.isProduct2 && (
+        <ProductTitle1>{`Surface Laptop Go 2`}</ProductTitle1>
+      )}
+      {data.isProduct2 && (
         <Description1>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description1>
       )}
-      {false && (
+      {data.isProduct2 && (
         <ButtonOutlined1
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
+          data={data}
         >
           {'Device Details'}
         </ButtonOutlined1>
       )}
-      {false && <Rectangle1781></Rectangle1781>}
+      {data.isProduct2 && <Rectangle1781></Rectangle1781>}
+      {data.isProduct3 && (
+        <ProductImage1
+          data={data}
+          src={`assets/images/ProductBox_Product_Image_1.png`}
+          loading="lazy"
+          alt={'Product Image'}
+        />
+      )}
+      {data.isProduct3 && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
+      {data.isProduct3 && (
+        <Description2>
+          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+        </Description2>
+      )}
+      {data.isProduct3 && (
+        <ButtonOutlined2
+          variant="outlined"
+          size={'medium'}
+          color={'info'}
+          disabled={false}
+          data={data}
+        >
+          {'Device Details'}
+        </ButtonOutlined2>
+      )}
+      {data.isProduct3 && <Rectangle1782></Rectangle1782>}
+      {data.isProduct4 && (
+        <ProductImage3
+          data={data}
+          src={`assets/images/ProductBox_Product_Image_3.png`}
+          loading="lazy"
+          alt={'Product Image'}
+        />
+      )}
+      {data.isProduct4 && <ProductTitle3>{`Surface Laptop 5`}</ProductTitle3>}
+      {data.isProduct4 && (
+        <Description3>
+          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+        </Description3>
+      )}
+      {data.isProduct4 && (
+        <ButtonOutlined3
+          variant="outlined"
+          size={'medium'}
+          color={'info'}
+          disabled={false}
+          data={data}
+        >
+          {'Device Details'}
+        </ButtonOutlined3>
+      )}
+      {data.isProduct4 && <Rectangle1783></Rectangle1783>}
+      {data.isProduct5 && (
+        <ProductImage21
+          data={data}
+          src={`assets/images/ProductBox_Product_Image_2_1.png`}
+          loading="lazy"
+          alt={'Product Image 2'}
+        />
+      )}
+      {data.isProduct5 && <ProductTitle4>{`Item 5`}</ProductTitle4>}
+      {data.isProduct5 && (
+        <Description4>
+          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+        </Description4>
+      )}
+      {data.isProduct5 && (
+        <ButtonOutlined4
+          variant="outlined"
+          size={'medium'}
+          color={'info'}
+          disabled={false}
+          data={data}
+        >
+          {'Device Details'}
+        </ButtonOutlined4>
+      )}
+      {data.isProduct5 && <Rectangle1784></Rectangle1784>}
+      {data.isProduct6 && (
+        <ProductImage22
+          data={data}
+          src={`assets/images/ProductBox_Product_Image_2_2.png`}
+          loading="lazy"
+          alt={'Product Image 2'}
+        />
+      )}
+      {data.isProduct6 && <ProductTitle5>{`Item 6`}</ProductTitle5>}
+      {data.isProduct6 && (
+        <Description5>
+          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+        </Description5>
+      )}
+      {data.isProduct6 && (
+        <ButtonOutlined5
+          variant="outlined"
+          size={'medium'}
+          color={'info'}
+          disabled={false}
+          data={data}
+        >
+          {'Device Details'}
+        </ButtonOutlined5>
+      )}
+      {data.isProduct6 && <Rectangle1785></Rectangle1785>}
     </Property1ProductBox1>
   );
 }
