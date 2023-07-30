@@ -27,6 +27,10 @@ const useProductList = () => {
         id: 2,
         name: 'Product 2',
       },
+      {
+        id: 3,
+        name: 'Product 3',
+      },
     ],
   };
 
