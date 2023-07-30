@@ -25,7 +25,7 @@ const Property1ProductBox1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: `311px`,
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `16px 0px 0px 0px`,
