@@ -40,6 +40,7 @@ const ProductImage: any = styled('img', {
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
+  alignSelf: `stretch`,
   margin: props.isProduct2
     ? `32px 0px 0px 0px`
     : props.isProduct3
@@ -129,7 +130,8 @@ const ProductImage2: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `208px`,
-  width: `309px`,
+  width: `311px`,
+  alignSelf: `stretch`,
   margin: props.isProduct2 ? `0px` : `32px 0px 0px 0px`,
 }));
 
@@ -209,8 +211,9 @@ const ProductImage3: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `208px`,
-  width: `309px`,
+  width: `311px`,
   objectFit: `cover`,
+  alignSelf: `stretch`,
   margin: props.isProduct3 ? `0px` : `32px 0px 0px 0px`,
 }));
 
@@ -292,6 +295,7 @@ const ProductImage1: any = styled('img', {
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
+  alignSelf: `stretch`,
   margin: props.isProduct4 ? `0px` : `32px 0px 0px 0px`,
 }));
 
@@ -371,8 +375,9 @@ const ProductImage31: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `208px`,
-  width: `309px`,
+  width: `311px`,
   objectFit: `cover`,
+  alignSelf: `stretch`,
   margin: props.isProduct5 ? `0px` : `32px 0px 0px 0px`,
 }));
 
@@ -452,8 +457,9 @@ const ProductImage32: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `208px`,
-  width: `309px`,
+  width: `311px`,
   objectFit: `cover`,
+  alignSelf: `stretch`,
   margin: props.isProduct6 ? `0px` : `32px 0px 0px 0px`,
 }));
 
