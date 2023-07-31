@@ -34,6 +34,24 @@ const ProductList1: any = styled('div')({
   height: 'auto',
 });
 
+function PrevArrow(props: any) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <i className="fa fa-chevron-left"></i>
+    </div>
+  );
+}
+
+function NextArrow(props: any) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <i className="fa fa-chevron-right"></i>
+    </div>
+  );
+}
+
 const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
   zIndex: `0`,
   margin: `0px`,
@@ -48,6 +66,8 @@ function ProductList(props: ProductListProps): JSX.Element {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
           breakpoint: 1104, // tablet breakpoint
