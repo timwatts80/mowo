@@ -451,7 +451,7 @@ const ButtonOutlined5: any = styled(Button, {
   textDecoration:
     theme.typography['Components']['Button Font - Medium'].textDecoration,
   textTransform:
-    theme.typography['Components']['Button Font - Medium'].textTransform,
+    theme.typography['Components']['Button Font -s Medium'].textTransform,
 }));
 
 const Rectangle1785: any = styled('div')(({ theme }: any) => ({

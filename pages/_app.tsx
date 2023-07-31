@@ -12,6 +12,7 @@ import React from 'react'
 import ProductList from 'components/ProductList/ProductList'
 import ProductBox from 'components/ProductBox/ProductBox'
 import ProductCard from 'components/ProductCard/ProductCard'
+import ProductCarousel from 'components/ProductCarousel/ProductCarousel'
 
 
 function MyApp({ Component, pageProps }: AppProps) {

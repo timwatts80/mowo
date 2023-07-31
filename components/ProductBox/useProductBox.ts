@@ -14,37 +14,22 @@
 import React, { useState } from 'react';
 
 const useProductBox = () => {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: 'Product 1',
-      title: 'Product 1',
-      isProduct: false,
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      title: 'Product 2',
-      isProduct: false,
-    },
-  ]);
+  const [data, setData] = useState({
+    isProduct: false,
+    isProduct2: false,
+    isProduct3: false,
+    isProduct4: false,
+    isProduct5: false,
+    isProduct6: false,
+  });
 
-  const setState = (newState: any) => {
-    setProducts((prevProducts) => ({ ...prevProducts, ...newState }));
+  const handleButtonClick = (): any => {
+    setData ({ ...data, isProduct: !data.isProduct })
   };
 
-  const handleProductClick = (productId: number, setState: any) => {
-    setState({
-      products: products.map((product) =>
-        product.id === productId ? { ...product, isProduct: !product.isProduct } : product
-      ),
-    });
-  };
+  const fns: any = {handleButtonClick};
 
-  const data: any = { products };
-  const fns: any = { handleProductClick };
-
-  return { data, fns, setState };
+  return { data, fns };
 };
 
 export default useProductBox;

@@ -25,3 +25,18 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+.product-carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.slide.active {
+  opacity: 1;
+}

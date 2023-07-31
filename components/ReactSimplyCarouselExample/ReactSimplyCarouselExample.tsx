@@ -75,7 +75,7 @@ function ReactSimplyCarouselExample(props: ProductListProps) {
       >
         {/* map over the products to render a ProductCard component for each product */}
         
-              <ProductBox isProduct1={false}/>
+              <ProductBox isProduct={true}/>
               <ProductBox isProduct2={true}/>
       
     
