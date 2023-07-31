@@ -26,6 +26,17 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+
+  /* the slides */
+  .slick-slide {
+    margin: 0 7px;
+}
+
+/* the parent */
+.slick-list {
+    margin: 0 -2px;
+}
+
 .slick-arrow.slick-prev::before, .slick-arrow.slick-next::before {
   color: black;
 }
