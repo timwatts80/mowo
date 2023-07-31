@@ -30,12 +30,18 @@ body {
 }
 
 
-/* the slides */
-.slick-slide {
-  margin: 0 7px;
+/* Product Slider */
+.slick-list {
+  margin: 0 -5px;
+}
+
+.slick-slide>div {
+  padding: 0 10px;
 }
 
 .slick-arrow.slick-prev::before,
 .slick-arrow.slick-next::before {
   color: black;
 }
+
+/* End Product Slider */
