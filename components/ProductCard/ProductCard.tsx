@@ -40,7 +40,11 @@ const ProductImage: any = styled('img', {
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: props.isProduct2 ? `24px 0px 0px 0px` : `0px`,
+  margin: props.isProduct2
+    ? `24px 0px 0px 0px`
+    : props.isProduct3
+    ? `24px 0px 0px 0px`
+    : `0px`,
 }));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
@@ -173,12 +177,14 @@ const Rectangle1801: any = styled('div')(({ theme }: any) => ({
   margin: `24px 0px 0px 0px`,
 }));
 
-const ProductImage3: any = styled('img')({
+const ProductImage3: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
+})(({ props }: any) => ({
   height: `208px`,
   width: `309px`,
   objectFit: `cover`,
-  margin: `24px 0px 0px 0px`,
-});
+  margin: props.isProduct3 ? `0px` : `24px 0px 0px 0px`,
+}));
 
 const ProductTitle2: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -246,7 +252,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
 
   return (
     <StateProduct1 className={props.className}>
-      {!props.isProduct2 && (
+      {!props.isProduct2 && !props.isProduct3 && (
         <ProductImage
           props={props}
           src={`assets/images/ProductCard_Product_Image.png`}
@@ -254,13 +260,15 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           alt={'Product Image'}
         />
       )}
-      {!props.isProduct2 && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
-      {!props.isProduct2 && (
+      {!props.isProduct2 && !props.isProduct3 && (
+        <ProductTitle>{`Surface Go 3`}</ProductTitle>
+      )}
+      {!props.isProduct2 && !props.isProduct3 && (
         <Description>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description>
       )}
-      {!props.isProduct2 && (
+      {!props.isProduct2 && !props.isProduct3 && (
         <ButtonOutlined
           variant="outlined"
           size={'medium'}
@@ -272,7 +280,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           {'Device Details'}
         </ButtonOutlined>
       )}
-      {!props.isProduct2 && <Rectangle180></Rectangle180>}
+      {!props.isProduct2 && !props.isProduct3 && <Rectangle180></Rectangle180>}
       {props.isProduct2 && (
         <ProductImage2
           props={props}
@@ -299,20 +307,21 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         </ButtonOutlined1>
       )}
       {props.isProduct2 && <Rectangle1801></Rectangle1801>}
-      {false && (
+      {props.isProduct3 && (
         <ProductImage3
+          props={props}
           src={`assets/images/ProductCard_Product_Image_3.png`}
           loading="lazy"
           alt={'Product Image 3'}
         />
       )}
-      {false && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
-      {false && (
+      {props.isProduct3 && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
+      {props.isProduct3 && (
         <Description2>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description2>
       )}
-      {false && (
+      {props.isProduct3 && (
         <ButtonOutlined2
           variant="outlined"
           size={'medium'}
@@ -323,7 +332,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           {'Device Details'}
         </ButtonOutlined2>
       )}
-      {false && <Rectangle1802></Rectangle1802>}
+      {props.isProduct3 && <Rectangle1802></Rectangle1802>}
     </StateProduct1>
   );
 }
