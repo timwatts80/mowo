@@ -14,11 +14,9 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import ProductBox from 'components/ProductBox/ProductBox';
+import ProductCard from 'components/ProductCard/ProductCard';
 import { ProductListProps } from 'types';
 import useProductList from 'components/ProductList/useProductList';
-import useProductBox from 'components/ProductBox/useProductBox';
-import { ProductBoxProps } from 'types';
 
 const ProductList1: any = styled('div')({
   display: `flex`,
@@ -26,26 +24,28 @@ const ProductList1: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `row`,
   width: '100%',
-  justifyContent: `space-between`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
 });
 
-const ProductBox1: any = styled(ProductBox)<ProductBoxProps>(({ theme }: any) => ({
-  width: `311px`,
+const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
   zIndex: `0`,
   margin: `0px`,
 }));
 
-function ProductBox(props: ProductBoxProps): JSX.Element {
-  const { data } = useProductBox();
+function ProductList(props: ProductListProps): JSX.Element {
+  const { data } = useProductList();
 
   return (
-
-      <ProductBox1 id={data.product[0].id} isProduct={data.products[0].isProduct}/>
-
+    <ProductList1 className={props.className}>
+      {data.products &&
+        data.products.map((product: any, index: number) => {
+          return <ProductCard1 key={index} />;
+        })}
+    </ProductList1>
   );
 }
 
