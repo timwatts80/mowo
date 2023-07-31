@@ -40,7 +40,7 @@ const ProductImage: any = styled('img', {
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: data.isProduct ? `24px 0px 0px 0px` : `0px`,
+  margin: data.isProduct2 ? `24px 0px 0px 0px` : `0px`,
 }));
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
@@ -109,7 +109,7 @@ const ProductImage2: any = styled('img', {
 })(({ data }: any) => ({
   height: `208px`,
   width: `309px`,
-  margin: data.isProduct ? `0px` : `24px 0px 0px 0px`,
+  margin: data.isProduct2 ? `0px` : `24px 0px 0px 0px`,
 }));
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
@@ -246,7 +246,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
 
   return (
     <StateProduct1 className={props.className}>
-      {!data.isProduct && (
+      {!data.isProduct2 && (
         <ProductImage
           data={data}
           src={`assets/images/ProductCard_Product_Image.png`}
@@ -254,26 +254,26 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           alt={'Product Image'}
         />
       )}
-      {!data.isProduct && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
-      {!data.isProduct && (
+      {!data.isProduct2 && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
+      {!data.isProduct2 && (
         <Description>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description>
       )}
-      {!data.isProduct && (
+      {!data.isProduct2 && (
         <ButtonOutlined
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
-          onClick={fns.handleButtonClick}
           data={data}
+          onClick={fns.handleButtonClick}
         >
           {'Device Details'}
         </ButtonOutlined>
       )}
-      {!data.isProduct && <Rectangle180></Rectangle180>}
-      {data.isProduct && (
+      {!data.isProduct2 && <Rectangle180></Rectangle180>}
+      {data.isProduct2 && (
         <ProductImage2
           data={data}
           src={`assets/images/ProductCard_Product_Image_2.png`}
@@ -281,13 +281,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           alt={'Product Image 2'}
         />
       )}
-      {data.isProduct && <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>}
-      {data.isProduct && (
+      {data.isProduct2 && <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>}
+      {data.isProduct2 && (
         <Description1>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description1>
       )}
-      {data.isProduct && (
+      {data.isProduct2 && (
         <ButtonOutlined1
           variant="outlined"
           size={'medium'}
@@ -298,7 +298,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           {'Device Details'}
         </ButtonOutlined1>
       )}
-      {data.isProduct && <Rectangle1801></Rectangle1801>}
+      {data.isProduct2 && <Rectangle1801></Rectangle1801>}
       {false && (
         <ProductImage3
           src={`assets/images/ProductCard_Product_Image_3.png`}
