@@ -22,7 +22,7 @@ const useProductList = () => {
       {
         id: 2,
         name: 'Product 2',
-      }
+      },
     ]
   };
 

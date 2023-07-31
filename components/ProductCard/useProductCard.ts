@@ -15,13 +15,14 @@ import React, { useState } from 'react';
 
 const useProductCard = () => {
   const [data, setData] = useState({
-    isProduct2: true,
+    isProduct2: false,
   });
 
   const handleButtonClick = (): any => {
     setData({ ...data, isProduct2: !data.isProduct2 });
   };
 
+  
   const fns: any = { handleButtonClick };
 
   return { data, fns };

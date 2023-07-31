@@ -1,26 +1,47 @@
 import React, { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
-import ProductBox from '../ProductBox/ProductBox';
-import useProductBox from 'components/ProductBox/useProductBox';
+import ProductCard from '../ProductCard/ProductCard';
+import useProductCard from 'components/ProductCard/useProductCard';
+import useProductList from 'components/ProductList/useProductList';
 import styled from '@emotion/styled';
 import { ProductBoxProps, ProductListProps } from 'types';
 
-const ProductList: any = styled('div')<ProductListProps>({
+const ProductList1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '311px',
-  justifyContent: `space-between`,
+  width: '100%',
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
 });
 
+const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
+  zIndex: `0`,
+  margin: `0px`,
+}));
+
+function ProductList(props: ProductListProps): JSX.Element {
+  const { data } = useProductList();
+
+  return (
+    <ProductList1 className={props.className}>
+      {data.products &&
+        data.products.map((product: any, index: number) => {
+          return <ProductCard1 key={index} />;
+        })}
+    </ProductList1>
+  );
+}
+
+
+
 function ReactSimplyCarouselExample(props: ProductListProps) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const { data } = useProductBox();
+  const { data } = useProductCard();
 
   return (
     <div>
@@ -74,23 +95,7 @@ function ReactSimplyCarouselExample(props: ProductListProps) {
         easing="ease-out"
       >
         {/* map over the products to render a ProductCard component for each product */}
-        
-              <ProductBox isProduct={true}/>
-              <ProductBox isProduct2={true}/>
-      
-    
-
-        {/* {data.products &&
-          data.products.map((product: any, index: number) => {
-            return (
-              <ProductBox1
-                key={index}
-                id={product.id + index}
-                isProduct={product.isProduct1 || product.isProduct2}
-              />
-            );
-          })} */}
-
+        <ProductList />
       </ReactSimplyCarousel>
     </div>
   );
