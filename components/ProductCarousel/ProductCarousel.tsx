@@ -51,15 +51,19 @@ function ProductList(props: ProductListProps): JSX.Element {
   };
 
   return (
-    <div style={{ width: '60%', margin: '0 auto', textAlign: 'center', }}>
-    <Slider {...settings}>
-      {data.products &&
-        data.products.map((product: any, index: number) => {
-          const isProductPropName = `isProduct${index + 1}`; // generate the prop name based on the current index
-          return <ProductCard1 key={index} {...{ [isProductPropName]: true }} />;
-        })}
-    </Slider>
-    </div>
+<div style={{ width: '80%', margin: '0 auto' }}>
+  <Slider {...settings}>
+    {data.products &&
+      data.products.map((product: any, index: number) => {
+        const isProductPropName = `isProduct${index + 1}`; // generate the prop name based on the current index
+        return (
+          <div style={{ margin: '0 10px' }}>
+            <ProductCard1 key={index} {...{ [isProductPropName]: true }} />
+          </div>
+        );
+      })}
+  </Slider>
+</div>
   );
 }
 
