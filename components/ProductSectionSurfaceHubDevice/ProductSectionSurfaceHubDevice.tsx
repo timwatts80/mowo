@@ -229,7 +229,9 @@ function ProductSectionSurfaceHubDevice(
         <UnleashingPotentialF data={data}>
           {`Unleashing Potential for Your Modern Workplace`}
         </UnleashingPotentialF>
-        <Carousel data={data}></Carousel>
+        <Carousel data={data}>
+          <ProductCarousel />
+        </Carousel>
       </Rows>
     </ScreenDesktop>
   );
