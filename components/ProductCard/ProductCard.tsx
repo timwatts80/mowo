@@ -35,14 +35,14 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ProductImage: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: props.isProduct2
+  margin: data.isProduct2
     ? `24px 0px 0px 0px`
-    : props.isProduct3
+    : data.isProduct3
     ? `24px 0px 0px 0px`
     : `0px`,
 }));
@@ -84,8 +84,8 @@ const Description: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ButtonOutlined: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ theme, props }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -109,11 +109,11 @@ const Rectangle180: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ProductImage2: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   height: `208px`,
   width: `309px`,
-  margin: props.isProduct2 ? `0px` : `24px 0px 0px 0px`,
+  margin: data.isProduct2 ? `0px` : `24px 0px 0px 0px`,
 }));
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
@@ -153,8 +153,8 @@ const Description1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ButtonOutlined1: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ theme, props }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -178,12 +178,12 @@ const Rectangle1801: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ProductImage3: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   height: `208px`,
   width: `309px`,
   objectFit: `cover`,
-  margin: props.isProduct3 ? `0px` : `24px 0px 0px 0px`,
+  margin: data.isProduct3 ? `0px` : `24px 0px 0px 0px`,
 }));
 
 const ProductTitle2: any = styled('div')(({ theme }: any) => ({
@@ -223,8 +223,8 @@ const Description2: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ButtonOutlined2: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ theme, props }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `24px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
@@ -248,91 +248,91 @@ const Rectangle1802: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductCard(props: ProductCardProps): JSX.Element {
-  const { fns } = useProductCard();
+  const { data, fns } = useProductCard();
 
   return (
     <StateProduct1 className={props.className}>
-      {!props.isProduct2 && !props.isProduct3 && (
+      {!data.isProduct2 && !data.isProduct3 && (
         <ProductImage
-          props={props}
+          data={data}
           src={`assets/images/ProductCard_Product_Image.png`}
           loading="lazy"
           alt={'Product Image'}
         />
       )}
-      {!props.isProduct2 && !props.isProduct3 && (
+      {!data.isProduct2 && !data.isProduct3 && (
         <ProductTitle>{`Surface Go 3`}</ProductTitle>
       )}
-      {!props.isProduct2 && !props.isProduct3 && (
+      {!data.isProduct2 && !data.isProduct3 && (
         <Description>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description>
       )}
-      {!props.isProduct2 && !props.isProduct3 && (
+      {!data.isProduct2 && !data.isProduct3 && (
         <ButtonOutlined
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
           onClick={fns.handleButtonClick}
-          props={props}
+          data={data}
         >
           {'Device Details'}
         </ButtonOutlined>
       )}
-      {!props.isProduct2 && !props.isProduct3 && <Rectangle180></Rectangle180>}
-      {props.isProduct2 && (
+      {!data.isProduct2 && !data.isProduct3 && <Rectangle180></Rectangle180>}
+      {data.isProduct2 && (
         <ProductImage2
-          props={props}
+          data={data}
           src={`assets/images/ProductCard_Product_Image_2.png`}
           loading="lazy"
           alt={'Product Image 2'}
         />
       )}
-      {props.isProduct2 && <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>}
-      {props.isProduct2 && (
+      {data.isProduct2 && <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>}
+      {data.isProduct2 && (
         <Description1>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description1>
       )}
-      {props.isProduct2 && (
+      {data.isProduct2 && (
         <ButtonOutlined1
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
-          props={props}
+          data={data}
         >
           {'Device Details'}
         </ButtonOutlined1>
       )}
-      {props.isProduct2 && <Rectangle1801></Rectangle1801>}
-      {props.isProduct3 && (
+      {data.isProduct2 && <Rectangle1801></Rectangle1801>}
+      {data.isProduct3 && (
         <ProductImage3
-          props={props}
+          data={data}
           src={`assets/images/ProductCard_Product_Image_3.png`}
           loading="lazy"
           alt={'Product Image 3'}
         />
       )}
-      {props.isProduct3 && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
-      {props.isProduct3 && (
+      {data.isProduct3 && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
+      {data.isProduct3 && (
         <Description2>
           {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
         </Description2>
       )}
-      {props.isProduct3 && (
+      {data.isProduct3 && (
         <ButtonOutlined2
           variant="outlined"
           size={'medium'}
           color={'info'}
           disabled={false}
-          props={props}
+          data={data}
         >
           {'Device Details'}
         </ButtonOutlined2>
       )}
-      {props.isProduct3 && <Rectangle1802></Rectangle1802>}
+      {data.isProduct3 && <Rectangle1802></Rectangle1802>}
     </StateProduct1>
   );
 }
