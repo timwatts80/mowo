@@ -14,8 +14,6 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import ProductBox from 'components/ProductBox/ProductBox';
-import ProductCard from 'components/ProductCard/ProductCard';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
 
@@ -179,12 +177,13 @@ const Carousel: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `flex-start`,
-  padding:
-    data.currentVariant === 'ScreenMobile'
-      ? `15px 0px 0px 0px`
-      : `30px 15px 0px 15px`,
-  boxSizing: `border-box`,
   alignSelf: `stretch`,
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `530px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `515px`
+      : `539px`,
   margin: `15px 0px 0px 0px`,
   overflow:
     data.currentVariant === 'ScreenTablet'
@@ -192,167 +191,6 @@ const Carousel: any = styled('div', {
       : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `hidden`,
-}));
-
-const LeftArrow: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: data.currentVariant === 'ScreenMobile' ? `0px 6px` : `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-  overflow: `hidden`,
-}));
-
-const Arrow1: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  height: `0px`,
-  width: data.currentVariant === 'ScreenMobile' ? `24px` : `48px`,
-  margin: `0px`,
-}));
-
-const Products: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `stretch`,
-  flex: `1`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 10px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 15px`,
-}));
-
-const ProductBox1: any = styled(ProductBox, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `311px`,
-  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 15px` : `0px`,
-}));
-
-const ProductBox2: any = styled(ProductBox, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `311px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductBox3: any = styled(ProductBox, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `311px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductBox4: any = styled(ProductBox, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `311px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductCard1: any = styled(ProductCard, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `300px`,
-  height: `500px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductCard2: any = styled(ProductCard, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `300px`,
-  height: `500px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const ProductCard3: any = styled(ProductCard, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `300px`,
-  height: `500px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 15px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 30px`,
-}));
-
-const RightArrow: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: data.currentVariant === 'ScreenMobile' ? `0px 6px` : `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px 0px 0px 10px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 15px`,
-  overflow: `hidden`,
-}));
-
-const Arrow11: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  height: `0px`,
-  width: data.currentVariant === 'ScreenMobile' ? `24px` : `48px`,
-  margin: `0px`,
 }));
 
 function ProductSectionSurfaceHubDevice(
@@ -374,51 +212,7 @@ function ProductSectionSurfaceHubDevice(
         <UnleashingPotentialF data={data}>
           {`Unleashing Potential for Your Modern Workplace`}
         </UnleashingPotentialF>
-        <Carousel data={data}>
-          <LeftArrow data={data}>
-            <Arrow1
-              data={data}
-              src={`assets/images/ProductSectionSurfaceHubdevices_Arrow_1.png`}
-              loading="lazy"
-              alt={'Arrow 1'}
-            />
-          </LeftArrow>
-          <Products data={data}>
-            {!(data.currentVariant === 'ScreenTablet') &&
-              !(data.currentVariant === 'ScreenMobile') && (
-                <ProductBox1 data={data} />
-              )}
-            {!(data.currentVariant === 'ScreenTablet') &&
-              !(data.currentVariant === 'ScreenMobile') && (
-                <ProductBox2 data={data} />
-              )}
-            {!(data.currentVariant === 'ScreenTablet') &&
-              !(data.currentVariant === 'ScreenMobile') && (
-                <ProductBox3 data={data} />
-              )}
-            {!(data.currentVariant === 'ScreenTablet') &&
-              !(data.currentVariant === 'ScreenMobile') && (
-                <ProductBox4 data={data} />
-              )}
-            {data.currentVariant === 'ScreenTablet' && (
-              <ProductCard1 data={data} />
-            )}
-            {data.currentVariant === 'ScreenTablet' && (
-              <ProductCard2 data={data} />
-            )}
-            {data.currentVariant === 'ScreenMobile' && (
-              <ProductCard3 data={data} />
-            )}
-          </Products>
-          <RightArrow data={data}>
-            <Arrow11
-              data={data}
-              src={`assets/images/ProductSectionSurfaceHubdevices_Arrow_1_1.png`}
-              loading="lazy"
-              alt={'Arrow 1'}
-            />
-          </RightArrow>
-        </Carousel>
+        <Carousel data={data}></Carousel>
       </Rows>
     </ScreenDesktop>
   );
