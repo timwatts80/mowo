@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
@@ -6,18 +5,22 @@
   font-family: 'Gill Sans MT';
   src: local('Gill Sans MT'), url(/assets/fonts/Gill Sans MT - Bold Italic.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'Gill Sans MT';
   src: local('Gill Sans MT'), url(/assets/fonts/Gill Sans MT - Regular.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'Segoe UI';
   src: local('Segoe UI'), url(/assets/fonts/Segoe UI - Bold.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'Segoe UI';
   src: local('Segoe UI'), url(/assets/fonts/Segoe UI - Regular.ttf) format('opentype');
 }
+
 html,
 body {
   padding: 0;
@@ -27,16 +30,12 @@ body {
 }
 
 
-  /* the slides */
-  .slick-slide {
-    margin: 0 7px;
+/* the slides */
+.slick-slide {
+  margin: 0 7px;
 }
 
-/* the parent */
-.slick-list {
-    margin: 0 -2px;
-}
-
-.slick-arrow.slick-prev::before, .slick-arrow.slick-next::before {
+.slick-arrow.slick-prev::before,
+.slick-arrow.slick-next::before {
   color: black;
 }
