@@ -18,10 +18,12 @@ const useProductList = () => {
       {
         id: 1,
         name: 'Product 1',
+        isProduct1: true,
       },
       {
         id: 2,
         name: 'Product 2',
+        isProduct2: true,
       },
     ]
   };

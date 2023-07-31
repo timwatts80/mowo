@@ -79,13 +79,9 @@
 
 export interface ProductCardProps {
   className?: any;
-  product: {
-    id: number;
-    title: string;
-    desc: string;
-    src: string;
+  isProduct?: boolean;
   };
-}
+
 
 
 
@@ -151,6 +147,7 @@ export interface ProductCardProps {
 
 export interface ProductListProps {
   className?: any;
+  isProduct2?: boolean;
 };
 
 
