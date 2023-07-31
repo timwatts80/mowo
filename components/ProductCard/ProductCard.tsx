@@ -48,7 +48,7 @@ const ProductImage: any = styled('img', {
     ? `311px`
     : props.isProduct6
     ? `311px`
-    : 'auto',
+    : '311px',
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
