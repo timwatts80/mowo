@@ -48,6 +48,22 @@ function ProductList(props: ProductListProps): JSX.Element {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+          breakpoint: 1104, // tablet breakpoint
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+          }
+      },
+      {
+          breakpoint: 572, // mobile breakpoint
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+          }
+      }
+  ]
   };
 
   return (
