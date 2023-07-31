@@ -27,7 +27,7 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: '0 10px',
+  padding: `16px 0px 0px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
