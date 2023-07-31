@@ -31,7 +31,7 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   padding: `16px 0px 0px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  width: '100%',
+  width: 'fit-content',
 }));
 
 const ProductImage: any = styled('img', {
