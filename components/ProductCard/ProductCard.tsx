@@ -561,7 +561,17 @@ const Rectangle1804: any = styled('div')(({ theme }: any) => ({
 const ProductImage32: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `208px`,
+  height: props.isProduct2
+    ? `208px`
+    : props.isProduct3
+    ? `208px`
+    : props.isProduct4
+    ? `208px`
+    : props.isProduct5
+    ? `208px`
+    : props.isProduct6
+    ? `208px`
+    : '100%',
   width: props.isProduct2
     ? `311px`
     : props.isProduct3
