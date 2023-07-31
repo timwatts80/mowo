@@ -16,7 +16,6 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
-import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -26,7 +25,7 @@ const ScreenDesktop: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100%',
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems:
     data.currentVariant === 'ScreenTablet'
@@ -229,9 +228,9 @@ function ProductSectionSurfaceHubDevice(
         <UnleashingPotentialF data={data}>
           {`Unleashing Potential for Your Modern Workplace`}
         </UnleashingPotentialF>
-        <Carousel data={data}>
-          <ProductCarousel />
-        </Carousel>
+        <Box1 data={data}>
+          <Carousel data={data}></Carousel>
+        </Box1>
       </Rows>
     </ScreenDesktop>
   );
