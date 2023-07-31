@@ -13,7 +13,18 @@
 
 import React from 'react';
 const useProductList = () => {
-  const data: any = {};
+  const data: any = {
+    products: [
+      {
+        id: 1,
+        name: 'Product 1',
+      },
+      {
+        id: 2,
+        name: 'Product 2',
+      }
+    ]
+  };
 
   const fns: any = {};
 
