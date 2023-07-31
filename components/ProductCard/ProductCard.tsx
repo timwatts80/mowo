@@ -31,7 +31,7 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
-  width: '100%',
+  width: `311px`,
   margin: '0 auto',
 }));
 
