@@ -113,7 +113,8 @@ export interface ProductListProps {
 export interface ProductBoxProps {
   className?: any;
   id?: number;
-  isProduct?: boolean;
+  isProduct1?: boolean;
+  isProduct2?: boolean;
 };
 
 

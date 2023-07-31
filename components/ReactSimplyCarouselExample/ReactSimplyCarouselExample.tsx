@@ -1,17 +1,24 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
 import ProductBox from '../ProductBox/ProductBox';
 import useProductBox from 'components/ProductBox/useProductBox';
 import styled from '@emotion/styled';
-import { ProductBoxProps } from 'types';
+import { ProductBoxProps, ProductListProps } from 'types';
 
-const ProductBox1: any = styled(ProductBox)<ProductBoxProps>(({ theme, ...props }: any) => ({
-  width: `311px`,
-  zIndex: `0`,
-  margin: `0px`,
-}));
+const ProductList: any = styled('div')<ProductListProps>({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  width: '311px',
+  justifyContent: `space-between`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: 'auto',
+});
 
-function ReactSimplyCarouselExample() {
+function ReactSimplyCarouselExample(props: ProductListProps) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const { data } = useProductBox();
 
@@ -58,7 +65,7 @@ function ReactSimplyCarouselExample() {
         }}
         responsiveProps={[
           {
-            itemsToShow: 1,
+            itemsToShow: 2,
             itemsToScroll: 1,
             minWidth: 768,
           },
@@ -67,8 +74,11 @@ function ReactSimplyCarouselExample() {
         easing="ease-out"
       >
         {/* map over the products to render a ProductCard component for each product */}
-        <ProductBox1 data={data} />
-        <ProductBox1 data={data} />
+        
+              <ProductBox isProduct1={false}/>
+              <ProductBox isProduct2={true}/>
+      
+    
 
         {/* {data.products &&
           data.products.map((product: any, index: number) => {
@@ -85,5 +95,6 @@ function ReactSimplyCarouselExample() {
     </div>
   );
 }
+
 
 export default ReactSimplyCarouselExample;
