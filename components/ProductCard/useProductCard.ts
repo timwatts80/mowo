@@ -11,12 +11,18 @@
  *
  **********************************************************************/
 
-import React from 'react';
-const useProductCard = () => {
-  const handleButtonClick = (): any => {};
-  const data: any = {};
+import React, { useState } from 'react';
 
-  const fns: any = {handleButtonClick};
+const useProductCard = () => {
+  const [data, setData] = useState({
+    isProduct2: true,
+  });
+
+  const handleButtonClick = (): any => {
+    setData({ ...data, isProduct2: !data.isProduct2 });
+  };
+
+  const fns: any = { handleButtonClick };
 
   return { data, fns };
 };
