@@ -25,6 +25,11 @@ const useProductList = () => {
         name: 'Product 2',
         isProduct2: true,
       },
+      {
+        id: 3,
+        name: 'Product 3',
+        isProduct3: true,
+      },
     ]
   };
 

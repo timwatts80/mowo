@@ -81,6 +81,8 @@
 export interface ProductCardProps {
   className?: any;
   isProduct?: boolean;
+  isProduct2?: boolean;
+  isProduct3?: boolean;
   };
 
 
