@@ -25,7 +25,7 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: 'auto',
+  height: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `16px 0px 0px 0px`,
@@ -38,7 +38,17 @@ const ProductImage: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `209px`,
-  width: `311px`,
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -131,7 +141,17 @@ const ProductImage2: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `208px`,
-  width: `311px`,
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   alignSelf: `stretch`,
   flex: `1`,
   margin: props.isProduct2 ? `0px` : `32px 0px 0px 0px`,
@@ -213,7 +233,17 @@ const ProductImage3: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `208px`,
-  width: `311px`,
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
