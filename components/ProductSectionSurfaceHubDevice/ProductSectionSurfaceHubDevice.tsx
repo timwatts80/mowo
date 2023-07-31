@@ -16,6 +16,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
+import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -229,7 +230,9 @@ function ProductSectionSurfaceHubDevice(
           {`Unleashing Potential for Your Modern Workplace`}
         </UnleashingPotentialF>
         <Box1 data={data}>
-          <Carousel data={data}></Carousel>
+          <Carousel data={data}>
+            <ProductCarousel />            
+          </Carousel>
         </Box1>
       </Rows>
     </ScreenDesktop>

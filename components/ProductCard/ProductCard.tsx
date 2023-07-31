@@ -570,7 +570,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         !props.isProduct6 && (
           <Frame139>
             <Description>
-              {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+              {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move. Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move. Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
             </Description>
           </Frame139>
         )}
