@@ -32,7 +32,6 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   overflow: `hidden`,
   height: 'auto',
   width: '100%',
-  maxWidth: '90%',
 }));
 
 const ProductImage: any = styled('img', {
