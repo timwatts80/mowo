@@ -70,6 +70,13 @@ function ProductList(props: ProductListProps): JSX.Element {
     nextArrow: <NextArrow />,
     responsive: [
       {
+        breakpoint: 1600, // tablet breakpoint
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+        }
+    },
+      {
           breakpoint: 1104, // tablet breakpoint
           settings: {
               slidesToShow: 2,
