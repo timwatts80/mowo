@@ -13,7 +13,7 @@
  *
  **********************************************************************/
 
-import { Url } from "url";
+
 
 
 
@@ -113,8 +113,7 @@ export interface ProductListProps {
 export interface ProductBoxProps {
   className?: any;
   id?: number;
-  title?: string;
-  desc?: string;
+  isProduct?: boolean;
 };
 
 

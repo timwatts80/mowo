@@ -17,6 +17,8 @@ import { styled } from '@mui/material/styles';
 import ProductBox from 'components/ProductBox/ProductBox';
 import { ProductListProps } from 'types';
 import useProductList from 'components/ProductList/useProductList';
+import useProductBox from 'components/ProductBox/useProductBox';
+import { ProductBoxProps } from 'types';
 
 const ProductList1: any = styled('div')({
   display: `flex`,
@@ -31,28 +33,19 @@ const ProductList1: any = styled('div')({
   height: 'auto',
 });
 
-const ProductBox1: any = styled(ProductBox)(({ theme }: any) => ({
+const ProductBox1: any = styled(ProductBox)<ProductBoxProps>(({ theme }: any) => ({
   width: `311px`,
   zIndex: `0`,
   margin: `0px`,
 }));
 
-function ProductList(props: ProductListProps): JSX.Element {
-  const { data, fns } = useProductList();
+function ProductBox(props: ProductBoxProps): JSX.Element {
+  const { data } = useProductBox();
 
   return (
-    <ProductList1 className={props.className}>
-      {data.products &&
-        data.products.map((product: any) => {
-          return (
-            <ProductBox1
-              key={product.id}
-              isProduct={data[`isProduct${product.id}`]}
-              handleIsProductChange={fns.handleIsProductChange(product.id)}
-            />
-          );
-        })}
-    </ProductList1>
+
+      <ProductBox1 id={data.product[0].id} isProduct={data.products[0].isProduct}/>
+
   );
 }
 
