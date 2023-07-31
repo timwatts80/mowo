@@ -31,15 +31,20 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   padding: `16px 0px 0px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  width: '100%',
+  width: 'fit-content',
 }));
 
-const ProductImage: any = styled('img', {
+const ImageContainer: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `209px`,
-  width: `311px`,
-  objectFit: `cover`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: props.isProduct2
@@ -53,7 +58,19 @@ const ProductImage: any = styled('img', {
     : props.isProduct6
     ? `32px 0px 0px 0px`
     : `0px`,
+  height: '100%',
+  textAlign: 'center',
+  width: '100%',
 }));
+
+const ProductImage: any = styled('img')({
+  height: `209px`,
+  width: `311px`,
+  objectFit: `cover`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `0px`,
+});
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -127,15 +144,29 @@ const Rectangle180: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
-const ProductImage2: any = styled('img', {
+const ImageContainer1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `208px`,
-  width: `311px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: props.isProduct2 ? `0px` : `32px 0px 0px 0px`,
 }));
+
+const ProductImage2: any = styled('img')({
+  height: `208px`,
+  width: `311px`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `0px`,
+});
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -209,16 +240,30 @@ const Rectangle1801: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
-const ProductImage3: any = styled('img', {
+const ImageContainer2: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: props.isProduct3 ? `0px` : `32px 0px 0px 0px`,
+}));
+
+const ProductImage3: any = styled('img')({
   height: `208px`,
   width: `311px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct3 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
 const ProductTitle2: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -292,16 +337,30 @@ const Rectangle1802: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
-const ProductImage1: any = styled('img', {
+const ImageContainer3: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: props.isProduct4 ? `0px` : `32px 0px 0px 0px`,
+}));
+
+const ProductImage1: any = styled('img')({
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct4 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
 const ProductTitle3: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -375,16 +434,30 @@ const Rectangle1803: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
-const ProductImage31: any = styled('img', {
+const ImageContainer4: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: props.isProduct5 ? `0px` : `32px 0px 0px 0px`,
+}));
+
+const ProductImage31: any = styled('img')({
   height: `208px`,
   width: `311px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct5 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
 const ProductTitle4: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -458,16 +531,30 @@ const Rectangle1804: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
-const ProductImage32: any = styled('img', {
+const ImageContainer5: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: props.isProduct6 ? `0px` : `32px 0px 0px 0px`,
+}));
+
+const ProductImage32: any = styled('img')({
   height: `208px`,
   width: `311px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct6 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
 const ProductTitle5: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -551,12 +638,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         !props.isProduct4 &&
         !props.isProduct5 &&
         !props.isProduct6 && (
-          <ProductImage
-            props={props}
-            src={`assets/images/ProductCard_Product_Image.png`}
-            loading="lazy"
-            alt={'Product Image'}
-          />
+          <ImageContainer props={props}>
+            <ProductImage
+              src={`assets/images/ProductCard_Product_Image.png`}
+              loading="lazy"
+              alt={'Product Image'}
+            />
+          </ImageContainer>
         )}
       {!props.isProduct2 &&
         !props.isProduct3 &&
@@ -596,12 +684,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         !props.isProduct5 &&
         !props.isProduct6 && <Rectangle180></Rectangle180>}
       {props.isProduct2 && (
-        <ProductImage2
-          props={props}
-          src={`assets/images/ProductCard_Product_Image_2.png`}
-          loading="lazy"
-          alt={'Product Image 2'}
-        />
+        <ImageContainer1 props={props}>
+          <ProductImage2
+            src={`assets/images/ProductCard_Product_Image_2.png`}
+            loading="lazy"
+            alt={'Product Image 2'}
+          />
+        </ImageContainer1>
       )}
       {props.isProduct2 && <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>}
       {props.isProduct2 && (
@@ -624,12 +713,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct2 && <Rectangle1801></Rectangle1801>}
       {props.isProduct3 && (
-        <ProductImage3
-          props={props}
-          src={`assets/images/ProductCard_Product_Image_3.png`}
-          loading="lazy"
-          alt={'Product Image 3'}
-        />
+        <ImageContainer2 props={props}>
+          <ProductImage3
+            src={`assets/images/ProductCard_Product_Image_3.png`}
+            loading="lazy"
+            alt={'Product Image 3'}
+          />
+        </ImageContainer2>
       )}
       {props.isProduct3 && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
       {props.isProduct3 && (
@@ -652,12 +742,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct3 && <Rectangle1802></Rectangle1802>}
       {props.isProduct4 && (
-        <ProductImage1
-          props={props}
-          src={`assets/images/ProductCard_Product_Image_1.png`}
-          loading="lazy"
-          alt={'Product Image'}
-        />
+        <ImageContainer3 props={props}>
+          <ProductImage1
+            src={`assets/images/ProductCard_Product_Image_1.png`}
+            loading="lazy"
+            alt={'Product Image'}
+          />
+        </ImageContainer3>
       )}
       {props.isProduct4 && <ProductTitle3>{`Surface Laptop 5`}</ProductTitle3>}
       {props.isProduct4 && (
@@ -680,12 +771,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct4 && <Rectangle1803></Rectangle1803>}
       {props.isProduct5 && (
-        <ProductImage31
-          props={props}
-          src={`assets/images/ProductCard_Product_Image_3_1.png`}
-          loading="lazy"
-          alt={'Product Image 3'}
-        />
+        <ImageContainer4 props={props}>
+          <ProductImage31
+            src={`assets/images/ProductCard_Product_Image_3_1.png`}
+            loading="lazy"
+            alt={'Product Image 3'}
+          />
+        </ImageContainer4>
       )}
       {props.isProduct5 && <ProductTitle4>{`Item 5`}</ProductTitle4>}
       {props.isProduct5 && (
@@ -708,12 +800,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct5 && <Rectangle1804></Rectangle1804>}
       {props.isProduct6 && (
-        <ProductImage32
-          props={props}
-          src={`assets/images/ProductCard_Product_Image_3_2.png`}
-          loading="lazy"
-          alt={'Product Image 3'}
-        />
+        <ImageContainer5 props={props}>
+          <ProductImage32
+            src={`assets/images/ProductCard_Product_Image_3_2.png`}
+            loading="lazy"
+            alt={'Product Image 3'}
+          />
+        </ImageContainer5>
       )}
       {props.isProduct6 && <ProductTitle5>{`Item 6`}</ProductTitle5>}
       {props.isProduct6 && (
