@@ -30,8 +30,8 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   padding: `16px 0px 0px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: '100%',
-  width: '100%',
+  height: 'auto',
+  width: '100vw',
 }));
 
 const ProductImage: any = styled('img', {
@@ -41,15 +41,15 @@ const ProductImage: any = styled('img', {
   width: `311px`,
   objectFit: `cover`,
   margin: props.isProduct2
-    ? `24px 0px 0px 0px`
+    ? `32px 0px 0px 0px`
     : props.isProduct3
-    ? `24px 0px 0px 0px`
+    ? `32px 0px 0px 0px`
     : props.isProduct4
-    ? `24px 0px 0px 0px`
+    ? `32px 0px 0px 0px`
     : props.isProduct5
-    ? `24px 0px 0px 0px`
+    ? `32px 0px 0px 0px`
     : props.isProduct6
-    ? `24px 0px 0px 0px`
+    ? `32px 0px 0px 0px`
     : `0px`,
 }));
 
@@ -66,9 +66,8 @@ const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  height: `68px`,
   width: `311px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const Description: any = styled('div')(({ theme }: any) => ({
@@ -84,15 +83,14 @@ const Description: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  height: `69px`,
   width: `273px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ButtonOutlined: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ theme, props }: any) => ({
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
@@ -111,7 +109,7 @@ const Rectangle180: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ProductImage2: any = styled('img', {
@@ -119,7 +117,7 @@ const ProductImage2: any = styled('img', {
 })(({ props }: any) => ({
   height: `208px`,
   width: `309px`,
-  margin: props.isProduct2 ? `0px` : `24px 0px 0px 0px`,
+  margin: props.isProduct2 ? `0px` : `32px 0px 0px 0px`,
 }));
 
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
@@ -135,9 +133,8 @@ const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  height: `68px`,
   width: `311px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const Description1: any = styled('div')(({ theme }: any) => ({
@@ -153,15 +150,14 @@ const Description1: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  height: `69px`,
   width: `273px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ButtonOutlined1: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ theme, props }: any) => ({
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
@@ -180,7 +176,7 @@ const Rectangle1801: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ProductImage3: any = styled('img', {
@@ -189,7 +185,7 @@ const ProductImage3: any = styled('img', {
   height: `208px`,
   width: `309px`,
   objectFit: `cover`,
-  margin: props.isProduct3 ? `0px` : `24px 0px 0px 0px`,
+  margin: props.isProduct3 ? `0px` : `32px 0px 0px 0px`,
 }));
 
 const ProductTitle2: any = styled('div')(({ theme }: any) => ({
@@ -205,9 +201,8 @@ const ProductTitle2: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  height: `68px`,
   width: `311px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const Description2: any = styled('div')(({ theme }: any) => ({
@@ -223,15 +218,14 @@ const Description2: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  height: `69px`,
   width: `273px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ButtonOutlined2: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ theme, props }: any) => ({
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
@@ -250,7 +244,7 @@ const Rectangle1802: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ProductImage1: any = styled('img', {
@@ -259,7 +253,7 @@ const ProductImage1: any = styled('img', {
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
-  margin: props.isProduct4 ? `0px` : `24px 0px 0px 0px`,
+  margin: props.isProduct4 ? `0px` : `32px 0px 0px 0px`,
 }));
 
 const ProductTitle3: any = styled('div')(({ theme }: any) => ({
@@ -275,9 +269,8 @@ const ProductTitle3: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  height: `68px`,
   width: `311px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const Description3: any = styled('div')(({ theme }: any) => ({
@@ -293,15 +286,14 @@ const Description3: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  height: `69px`,
   width: `273px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ButtonOutlined3: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ theme, props }: any) => ({
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
@@ -320,7 +312,7 @@ const Rectangle1803: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ProductImage31: any = styled('img', {
@@ -329,7 +321,7 @@ const ProductImage31: any = styled('img', {
   height: `208px`,
   width: `309px`,
   objectFit: `cover`,
-  margin: props.isProduct5 ? `0px` : `24px 0px 0px 0px`,
+  margin: props.isProduct5 ? `0px` : `32px 0px 0px 0px`,
 }));
 
 const ProductTitle4: any = styled('div')(({ theme }: any) => ({
@@ -345,9 +337,8 @@ const ProductTitle4: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  height: `68px`,
   width: `311px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const Description4: any = styled('div')(({ theme }: any) => ({
@@ -363,15 +354,14 @@ const Description4: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  height: `69px`,
   width: `273px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ButtonOutlined4: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ theme, props }: any) => ({
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
@@ -390,7 +380,7 @@ const Rectangle1804: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Primary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ProductImage32: any = styled('img', {
@@ -399,7 +389,7 @@ const ProductImage32: any = styled('img', {
   height: `208px`,
   width: `309px`,
   objectFit: `cover`,
-  margin: props.isProduct6 ? `0px` : `24px 0px 0px 0px`,
+  margin: props.isProduct6 ? `0px` : `32px 0px 0px 0px`,
 }));
 
 const ProductTitle5: any = styled('div')(({ theme }: any) => ({
@@ -415,9 +405,8 @@ const ProductTitle5: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  height: `68px`,
   width: `311px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const Description5: any = styled('div')(({ theme }: any) => ({
@@ -433,15 +422,14 @@ const Description5: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  height: `69px`,
   width: `273px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 const ButtonOutlined5: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ theme, props }: any) => ({
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
   color: theme.palette['Info']['Main'],
   fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
@@ -460,7 +448,7 @@ const Rectangle1805: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Warning']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
-  margin: `24px 0px 0px 0px`,
+  margin: `32px 0px 0px 0px`,
 }));
 
 function ProductCard(props: ProductCardProps): JSX.Element {
