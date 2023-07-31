@@ -17,13 +17,16 @@ import { styled } from '@mui/material/styles';
 import ProductCard from 'components/ProductCard/ProductCard';
 import { ProductListProps } from 'types';
 import useProductList from 'components/ProductList/useProductList';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const ProductList1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100%',
+  width: '75%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
@@ -39,14 +42,24 @@ const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
 function ProductList(props: ProductListProps): JSX.Element {
   const { data } = useProductList();
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
   return (
-    <ProductList1 className={props.className}>
+    <div style={{ width: '60%', margin: '0 auto' }}>
+    <Slider {...settings}>
       {data.products &&
         data.products.map((product: any, index: number) => {
           const isProductPropName = `isProduct${index + 1}`; // generate the prop name based on the current index
           return <ProductCard1 key={index} {...{ [isProductPropName]: true }} />;
         })}
-    </ProductList1>
+    </Slider>
+    </div>
   );
 }
 
