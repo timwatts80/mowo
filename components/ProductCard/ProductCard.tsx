@@ -150,8 +150,28 @@ const Rectangle180: any = styled('div')(({ theme }: any) => ({
 const ProductImage2: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `208px`,
-  width: `311px`,
+  height: props.isProduct2
+    ? `208px`
+    : props.isProduct3
+    ? `208px`
+    : props.isProduct4
+    ? `208px`
+    : props.isProduct5
+    ? `208px`
+    : props.isProduct6
+    ? `208px`
+    : '100%',
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   alignSelf: `stretch`,
   flex: `1`,
   margin: props.isProduct2 ? `0px` : `32px 0px 0px 0px`,
@@ -232,8 +252,28 @@ const Rectangle1801: any = styled('div')(({ theme }: any) => ({
 const ProductImage3: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `208px`,
-  width: `311px`,
+  height: props.isProduct2
+    ? `208px`
+    : props.isProduct3
+    ? `208px`
+    : props.isProduct4
+    ? `208px`
+    : props.isProduct5
+    ? `208px`
+    : props.isProduct6
+    ? `208px`
+    : '100%',
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -315,8 +355,28 @@ const Rectangle1802: any = styled('div')(({ theme }: any) => ({
 const ProductImage1: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `209px`,
-  width: `311px`,
+  height: props.isProduct2
+    ? `209px`
+    : props.isProduct3
+    ? `209px`
+    : props.isProduct4
+    ? `209px`
+    : props.isProduct5
+    ? `209px`
+    : props.isProduct6
+    ? `209px`
+    : '100%',
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -398,8 +458,28 @@ const Rectangle1803: any = styled('div')(({ theme }: any) => ({
 const ProductImage31: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `208px`,
-  width: `311px`,
+  height: props.isProduct2
+    ? `208px`
+    : props.isProduct3
+    ? `208px`
+    : props.isProduct4
+    ? `208px`
+    : props.isProduct5
+    ? `208px`
+    : props.isProduct6
+    ? `208px`
+    : '100%',
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -482,7 +562,17 @@ const ProductImage32: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   height: `208px`,
-  width: `311px`,
+  width: props.isProduct2
+    ? `311px`
+    : props.isProduct3
+    ? `311px`
+    : props.isProduct4
+    ? `311px`
+    : props.isProduct5
+    ? `311px`
+    : props.isProduct6
+    ? `311px`
+    : '100%',
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
