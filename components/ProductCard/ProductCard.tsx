@@ -27,12 +27,11 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `16px 0px 0px 0px`,
+  padding: '0 10px',
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
   width: '100%',
-  marginLeft: '15px',
 }));
 
 const ProductImage: any = styled('img', {
