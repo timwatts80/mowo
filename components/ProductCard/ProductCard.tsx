@@ -70,6 +70,19 @@ const ProductTitle: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
+const Frame139: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const Description: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -83,8 +96,8 @@ const Description: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  width: `273px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const ButtonOutlined: any = styled(Button, {
@@ -137,6 +150,19 @@ const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
+const Frame140: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const Description1: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -150,8 +176,8 @@ const Description1: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  width: `273px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const ButtonOutlined1: any = styled(Button, {
@@ -205,6 +231,19 @@ const ProductTitle2: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
+const Frame141: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const Description2: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -218,8 +257,8 @@ const Description2: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  width: `273px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const ButtonOutlined2: any = styled(Button, {
@@ -273,6 +312,19 @@ const ProductTitle3: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
+const Frame142: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const Description3: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -286,8 +338,8 @@ const Description3: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  width: `273px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const ButtonOutlined3: any = styled(Button, {
@@ -341,6 +393,19 @@ const ProductTitle4: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
+const Frame143: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const Description4: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -354,8 +419,8 @@ const Description4: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  width: `273px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const ButtonOutlined4: any = styled(Button, {
@@ -409,6 +474,19 @@ const ProductTitle5: any = styled('div')(({ theme }: any) => ({
   margin: `32px 0px 0px 0px`,
 }));
 
+const Frame144: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const Description5: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -422,8 +500,8 @@ const Description5: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `20px`,
   textTransform: `none`,
-  width: `273px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const ButtonOutlined5: any = styled(Button, {
@@ -478,9 +556,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         !props.isProduct4 &&
         !props.isProduct5 &&
         !props.isProduct6 && (
-          <Description>
-            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-          </Description>
+          <Frame139>
+            <Description>
+              {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+            </Description>
+          </Frame139>
         )}
       {!props.isProduct2 &&
         !props.isProduct3 &&
@@ -513,9 +593,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct2 && <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>}
       {props.isProduct2 && (
-        <Description1>
-          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-        </Description1>
+        <Frame140>
+          <Description1>
+            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+          </Description1>
+        </Frame140>
       )}
       {props.isProduct2 && (
         <ButtonOutlined1
@@ -539,9 +621,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct3 && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
       {props.isProduct3 && (
-        <Description2>
-          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-        </Description2>
+        <Frame141>
+          <Description2>
+            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+          </Description2>
+        </Frame141>
       )}
       {props.isProduct3 && (
         <ButtonOutlined2
@@ -565,9 +649,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct4 && <ProductTitle3>{`Surface Laptop 5`}</ProductTitle3>}
       {props.isProduct4 && (
-        <Description3>
-          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-        </Description3>
+        <Frame142>
+          <Description3>
+            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+          </Description3>
+        </Frame142>
       )}
       {props.isProduct4 && (
         <ButtonOutlined3
@@ -591,9 +677,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct5 && <ProductTitle4>{`Item 5`}</ProductTitle4>}
       {props.isProduct5 && (
-        <Description4>
-          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-        </Description4>
+        <Frame143>
+          <Description4>
+            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+          </Description4>
+        </Frame143>
       )}
       {props.isProduct5 && (
         <ButtonOutlined4
@@ -617,9 +705,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       )}
       {props.isProduct6 && <ProductTitle5>{`Item 6`}</ProductTitle5>}
       {props.isProduct6 && (
-        <Description5>
-          {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-        </Description5>
+        <Frame144>
+          <Description5>
+            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+          </Description5>
+        </Frame144>
       )}
       {props.isProduct6 && (
         <ButtonOutlined5
