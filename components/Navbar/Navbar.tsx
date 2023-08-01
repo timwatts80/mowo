@@ -16,19 +16,42 @@ import React from 'react';
 import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
+import SidebarMobile from 'components/SidebarMobile/SidebarMobile';
 import { NavbarProps } from 'types';
-import useDialogueSample from 'components/Navbar/useNavbar';
+import useNavbar from 'components/Navbar/useNavbar';
 
-const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Background']['Background'],
+const ScreenDesktop: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  backgroundColor:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : theme.palette['Background']['Background'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
-  width: '100vw',
-  justifyContent: `space-between`,
+  flexDirection:
+    data.currentVariant === 'ScreenTablet'
+      ? `column`
+      : data.currentVariant === 'ScreenMobile'
+      ? `column`
+      : `row`,
+  width: '100%',
+  justifyContent:
+    data.currentVariant === 'ScreenTablet'
+      ? `flex-start`
+      : data.currentVariant === 'ScreenMobile'
+      ? `flex-start`
+      : `space-between`,
   alignItems: `flex-start`,
-  padding: `16px 60px`,
+  padding:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `0px`
+      : `16px 60px`,
   boxSizing: `border-box`,
   height: 'auto',
 }));
@@ -150,7 +173,9 @@ const Hamburger: any = styled('img')({
   margin: `0px`,
 });
 
-const ButtonContained: any = styled(Button)(({ theme }: any) => ({
+const ButtonContained: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   alignSelf: `stretch`,
   margin: `0px 0px 0px 48px`,
   color: theme.palette['Primary']['Contrast'],
@@ -167,7 +192,9 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const ToolBar: any = styled('div')(({ theme }: any) => ({
+const ToolBar: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
   display: `flex`,
   position: `relative`,
@@ -178,7 +205,12 @@ const ToolBar: any = styled('div')(({ theme }: any) => ({
   padding: `16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  width: `768px`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `768px`,
   margin: `0px`,
 }));
 
@@ -227,7 +259,9 @@ const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const ToolBar1: any = styled('div')(({ theme }: any) => ({
+const ToolBar1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
   display: `flex`,
   position: `relative`,
@@ -238,7 +272,12 @@ const ToolBar1: any = styled('div')(({ theme }: any) => ({
   padding: `16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  width: `375px`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `375px`,
   margin: `0px`,
 }));
 
@@ -280,48 +319,55 @@ const NavFrame1: any = styled('div')({
   top: `0px`,
 });
 
-const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
+const Sidebar2: any = styled(SidebarMobile)(({ theme }: any) => ({
   width: `375px`,
   height: `758px`,
   margin: `0px`,
 }));
 
 function Navbar(props: NavbarProps): JSX.Element {
-  const { data, fns } = useDialogueSample();
+  const { data, fns } = useNavbar();
 
   return (
-    <ScreenDesktop className={props.className}>
-      <MowoLogo
-        src={`assets/images/Navbar_MOWO_Logo.png`}
-        loading="lazy"
-        alt={'MOWO Logo'}
-      />
-      <MenuItems>
-        <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
-        <Solutions>{`Solutions`}</Solutions>
-        <Devices>{`Devices`}</Devices>
-        <Cases>{`Cases`}</Cases>
-        <Contact>{`Contact`}</Contact>
-        {false && (
-          <HamburgerMenu>
-            <Hamburger
-              src={`assets/images/Navbar_Hamburger.png`}
-              loading="lazy"
-              alt={'Hamburger'}
-            />
-          </HamburgerMenu>
+    <ScreenDesktop className={props.className} data={data}>
+      {!(data.currentVariant === 'ScreenTablet') &&
+        !(data.currentVariant === 'ScreenMobile') && (
+          <MowoLogo
+            src={`assets/images/Navbar_MOWO_Logo.png`}
+            loading="lazy"
+            alt={'MOWO Logo'}
+          />
         )}
-        <ButtonContained
-          variant="contained"
-          size={'medium'}
-          color={'primary'}
-          disabled={false}
-        >
-          {'Book a meeting'}
-        </ButtonContained>
-      </MenuItems>
-      {false && (
-        <ToolBar>
+      {!(data.currentVariant === 'ScreenTablet') &&
+        !(data.currentVariant === 'ScreenMobile') && (
+          <MenuItems>
+            <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
+            <Solutions>{`Solutions`}</Solutions>
+            <Devices>{`Devices`}</Devices>
+            <Cases>{`Cases`}</Cases>
+            <Contact>{`Contact`}</Contact>
+            {false && (
+              <HamburgerMenu>
+                <Hamburger
+                  src={`assets/images/Navbar_Hamburger.png`}
+                  loading="lazy"
+                  alt={'Hamburger'}
+                />
+              </HamburgerMenu>
+            )}
+            <ButtonContained
+              variant="contained"
+              size={'medium'}
+              color={'primary'}
+              disabled={false}
+              data={data}
+            >
+              {'Book a meeting'}
+            </ButtonContained>
+          </MenuItems>
+        )}
+      {data.currentVariant === 'ScreenTablet' && (
+        <ToolBar data={data}>
           <Quest21
             src={`assets/images/Navbar_Quest2_1.png`}
             loading="lazy"
@@ -341,8 +387,8 @@ function Navbar(props: NavbarProps): JSX.Element {
           <Sidebar1 open={data.isDialogueOpen} onClose={fns.toggleDialogue} />
         </NavFrame>
       </Dialog>
-      {false && (
-        <ToolBar1>
+      {data.currentVariant === 'ScreenMobile' && (
+        <ToolBar1 data={data}>
           <Quest211
             src={`assets/images/Navbar_Quest2_1_1.png`}
             loading="lazy"
@@ -357,7 +403,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu2>
         </ToolBar1>
       )}
-      {false && (
+      {data.currentVariant === 'ScreenMobile' && (
         <NavFrame1>
           <Sidebar2 />
         </NavFrame1>
