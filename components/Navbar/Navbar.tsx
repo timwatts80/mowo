@@ -16,7 +16,7 @@ import React from 'react';
 import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
-import SidebarMobile from 'components/SidebarMobile/SidebarMobile';
+import SidebarMobile from 'components/Sidebar/Sidebar';
 import { NavbarProps } from 'types';
 import useNavbar from 'components/Navbar/useNavbar';
 

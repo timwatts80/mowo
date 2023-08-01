@@ -11,13 +11,13 @@ import { ThemeProvider } from '@emotion/react'
 import React from 'react'
 import ProductCarousel from 'components/ProductCarousel/ProductCarousel'
 import ContactUs from 'components/ContactUs/ContactUs'
-import NavBar from 'components/NavBar/NavBar'
+
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
-      <NavBar />
+      
       <Header />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
