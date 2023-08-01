@@ -173,36 +173,34 @@ function Sidebar(props: SidebarProps): JSX.Element {
   const { data } = useSidebar();
 
   return (
-    props.open && (
-      <ScreenTablet className={props.className}>
-        <MenuItems>
-          <CloseFrame>
-            <Close>
-              <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
-            </Close>
-          </CloseFrame>
-          <LogoPosition>
-            <Logo></Logo>
-          </LogoPosition>
-          <Items>
-            <Link2 />
-            <Link3 />
-            <Link4 />
-            <Link5 />
-            <Link6 />
-            <ButtonContained
-              variant="contained"
-              size={'medium'}
-              color={'primary'}
-              disabled={false}
-              data={data}
-            >
-              {'Book a meeting'}
-            </ButtonContained>
-          </Items>
-        </MenuItems>
-      </ScreenTablet>
-    )
+    <ScreenTablet className={props.className}>
+      <MenuItems>
+        <CloseFrame>
+          <Close>
+            <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
+          </Close>
+        </CloseFrame>
+        <LogoPosition>
+          <Logo></Logo>
+        </LogoPosition>
+        <Items>
+          <Link2 />
+          <Link3 />
+          <Link4 />
+          <Link5 />
+          <Link6 />
+          <ButtonContained
+            variant="contained"
+            size={'medium'}
+            color={'primary'}
+            disabled={false}
+            data={data}
+          >
+            {'Book a meeting'}
+          </ButtonContained>
+        </Items>
+      </MenuItems>
+    </ScreenTablet>
   );
 }
 
