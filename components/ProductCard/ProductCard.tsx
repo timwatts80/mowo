@@ -26,12 +26,12 @@ const StateProduct1: any = styled('div')(({ theme }: any) => ({
   isolation: `isolate`,
   flexDirection: `column`,
   height: '100%',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `16px 0px 0px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  width: '100%',
 }));
 
 const ImageContainer: any = styled('div', {
@@ -59,7 +59,6 @@ const ImageContainer: any = styled('div', {
     ? `32px 0px 0px 0px`
     : `0px`,
   height: '100%',
-  textAlign: 'center',
   width: '100%',
 }));
 
@@ -70,6 +69,19 @@ const ProductImage: any = styled('img')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
+});
+
+const Frame150: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
 });
 
 const ProductTitle: any = styled('div')(({ theme }: any) => ({
@@ -85,8 +97,8 @@ const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  width: `311px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const Frame139: any = styled('div')({
@@ -168,6 +180,19 @@ const ProductImage2: any = styled('img')({
   margin: `0px`,
 });
 
+const Frame149: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `space-between`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -181,8 +206,8 @@ const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  width: `311px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const Frame140: any = styled('div')({
@@ -265,6 +290,19 @@ const ProductImage3: any = styled('img')({
   margin: `0px`,
 });
 
+const Frame148: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const ProductTitle2: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -278,8 +316,8 @@ const ProductTitle2: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  width: `311px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const Frame141: any = styled('div')({
@@ -362,6 +400,19 @@ const ProductImage1: any = styled('img')({
   margin: `0px`,
 });
 
+const Frame147: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const ProductTitle3: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -375,8 +426,8 @@ const ProductTitle3: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  width: `311px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const Frame142: any = styled('div')({
@@ -459,6 +510,19 @@ const ProductImage31: any = styled('img')({
   margin: `0px`,
 });
 
+const Frame146: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `space-between`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const ProductTitle4: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -472,8 +536,8 @@ const ProductTitle4: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  width: `311px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const Frame143: any = styled('div')({
@@ -556,6 +620,19 @@ const ProductImage32: any = styled('img')({
   margin: `0px`,
 });
 
+const Frame145: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
 const ProductTitle5: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
@@ -569,8 +646,8 @@ const ProductTitle5: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  width: `311px`,
-  margin: `32px 0px 0px 0px`,
+  flex: `1`,
+  margin: `0px`,
 }));
 
 const Frame144: any = styled('div')({
@@ -650,7 +727,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         !props.isProduct3 &&
         !props.isProduct4 &&
         !props.isProduct5 &&
-        !props.isProduct6 && <ProductTitle>{`Surface Go 3`}</ProductTitle>}
+        !props.isProduct6 && (
+          <Frame150>
+            <ProductTitle>{`Surface Go 3`}</ProductTitle>
+          </Frame150>
+        )}
       {!props.isProduct2 &&
         !props.isProduct3 &&
         !props.isProduct4 &&
@@ -692,7 +773,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           />
         </ImageContainer1>
       )}
-      {props.isProduct2 && <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>}
+      {props.isProduct2 && (
+        <Frame149>
+          <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>
+        </Frame149>
+      )}
       {props.isProduct2 && (
         <Frame140>
           <Description1>
@@ -721,7 +806,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           />
         </ImageContainer2>
       )}
-      {props.isProduct3 && <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>}
+      {props.isProduct3 && (
+        <Frame148>
+          <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>
+        </Frame148>
+      )}
       {props.isProduct3 && (
         <Frame141>
           <Description2>
@@ -750,7 +839,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           />
         </ImageContainer3>
       )}
-      {props.isProduct4 && <ProductTitle3>{`Surface Laptop 5`}</ProductTitle3>}
+      {props.isProduct4 && (
+        <Frame147>
+          <ProductTitle3>{`Surface Laptop 5`}</ProductTitle3>
+        </Frame147>
+      )}
       {props.isProduct4 && (
         <Frame142>
           <Description3>
@@ -779,7 +872,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           />
         </ImageContainer4>
       )}
-      {props.isProduct5 && <ProductTitle4>{`Item 5`}</ProductTitle4>}
+      {props.isProduct5 && (
+        <Frame146>
+          <ProductTitle4>{`Item 5`}</ProductTitle4>
+        </Frame146>
+      )}
       {props.isProduct5 && (
         <Frame143>
           <Description4>
@@ -808,7 +905,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           />
         </ImageContainer5>
       )}
-      {props.isProduct6 && <ProductTitle5>{`Item 6`}</ProductTitle5>}
+      {props.isProduct6 && (
+        <Frame145>
+          <ProductTitle5>{`Item 6`}</ProductTitle5>
+        </Frame145>
+      )}
       {props.isProduct6 && (
         <Frame144>
           <Description5>
