@@ -17,7 +17,6 @@ import ContactUs from 'components/ContactUs/ContactUs'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
-      
       <Header />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
