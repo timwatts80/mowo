@@ -16,6 +16,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
+import SidebarMobile from 'components/SidebarMobile/SidebarMobile';
 import { HeaderProps } from 'types';
 import useHeader from 'components/Header/useHeader';
 
@@ -306,77 +307,6 @@ const Pic3: any = styled('div')({
   overflow: `hidden`,
 });
 
-const Navbar: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `space-between`,
-  alignItems: `flex-start`,
-  padding: `16px 60px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `7px 0px 0px 0px`,
-}));
-
-const Logo: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Quest21: any = styled('img')({
-  height: `36px`,
-  width: `146.59px`,
-  objectFit: `cover`,
-  margin: `0px`,
-});
-
-const MenuItems: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const HamburgerMenu: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `6px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-  cursor: `pointer`,
-});
-
-const Hamburger: any = styled('img')({
-  height: `15px`,
-  width: `21px`,
-  margin: `0px`,
-});
-
 const Sidebar1: any = styled(Sidebar, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
@@ -404,7 +334,7 @@ const Hero1: any = styled('div', {
   alignSelf: `stretch`,
   margin:
     data.currentVariant === 'ScreenTablet'
-      ? `9px 0px 0px 0px`
+      ? `0px`
       : data.currentVariant === 'ScreenMobile'
       ? `0px`
       : `7px 0px 0px 0px`,
@@ -614,78 +544,7 @@ const Pic4: any = styled('div')({
   overflow: `hidden`,
 });
 
-const Navbar1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `space-between`,
-  alignItems: `flex-start`,
-  padding: `16px 30px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `9px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `7px 0px 0px 0px`,
-}));
-
-const Logo1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Quest211: any = styled('img')({
-  height: `29.28px`,
-  width: `119.21px`,
-  objectFit: `cover`,
-  margin: `0px`,
-});
-
-const MenuItems1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const HamburgerMenu1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `6px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-  cursor: `pointer`,
-});
-
-const Hamburger1: any = styled('img')({
-  height: `15px`,
-  width: `21px`,
-  margin: `0px`,
-});
-
-const Sidebar2: any = styled(Sidebar, {
+const Sidebar2: any = styled(SidebarMobile, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   alignSelf: `stretch`,
@@ -959,26 +818,6 @@ function Header(props: HeaderProps): JSX.Element {
             </FillHero>
           </Hero>
         )}
-      {data.currentVariant === 'ScreenTablet' && (
-        <Navbar data={data}>
-          <Logo>
-            <Quest21
-              src={`assets/images/Header_Quest2_1.png`}
-              loading="lazy"
-              alt={'Quest2 1'}
-            />
-          </Logo>
-          <MenuItems>
-            <HamburgerMenu onClick={fns.handleMenuClick}>
-              <Hamburger
-                src={`assets/images/Header_Hamburger.png`}
-                loading="lazy"
-                alt={'Hamburger'}
-              />
-            </HamburgerMenu>
-          </MenuItems>
-        </Navbar>
-      )}
       {false && <Sidebar1 data={data} />}
       {data.currentVariant === 'ScreenTablet' && (
         <Hero1 data={data}>
@@ -1021,26 +860,6 @@ function Header(props: HeaderProps): JSX.Element {
             </Video1>
           </FillHero1>
         </Hero1>
-      )}
-      {data.currentVariant === 'ScreenMobile' && (
-        <Navbar1 data={data}>
-          <Logo1>
-            <Quest211
-              src={`assets/images/Header_Quest2_1_1.png`}
-              loading="lazy"
-              alt={'Quest2 1'}
-            />
-          </Logo1>
-          <MenuItems1>
-            <HamburgerMenu1 onClick={fns.handleMenuClick}>
-              <Hamburger1
-                src={`assets/images/Header_Hamburger_1.png`}
-                loading="lazy"
-                alt={'Hamburger'}
-              />
-            </HamburgerMenu1>
-          </MenuItems1>
-        </Navbar1>
       )}
       {false && <Sidebar2 data={data} />}
       {data.currentVariant === 'ScreenMobile' && (
