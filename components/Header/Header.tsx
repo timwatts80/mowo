@@ -16,7 +16,6 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
-import SidebarMobile from 'components/SidebarMobile/SidebarMobile';
 import { HeaderProps } from 'types';
 import useHeader from 'components/Header/useHeader';
 
