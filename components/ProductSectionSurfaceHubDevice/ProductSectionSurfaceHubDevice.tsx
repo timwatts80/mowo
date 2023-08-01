@@ -14,6 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
+import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
 
@@ -170,10 +171,18 @@ const Box1: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
+  padding: `24px 0px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `568px`,
   margin: `15px 0px 0px 0px`,
 });
+
+const ProductCarousel1: any = styled(ProductCarousel)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `0px`,
+}));
 
 function ProductSectionSurfaceHubDevice(
   props: ProductSectionSurfaceHubDeviceProps
@@ -194,7 +203,9 @@ function ProductSectionSurfaceHubDevice(
         <UnleashingPotentialF data={data}>
           {`Unleashing Potential for Your Modern Workplace`}
         </UnleashingPotentialF>
-        <Box1></Box1>
+        <Box1>
+          <ProductCarousel1 />
+        </Box1>
       </Rows>
     </ScreenDesktop>
   );
