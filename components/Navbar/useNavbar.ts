@@ -12,13 +12,19 @@
  **********************************************************************/
 
 import React from 'react';
-const useNavbar = () => {
-  const data: any = {};
-  const toggleDialogue = (): any => {};
+const useDialogSample = () => {
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
-  const fns: any = { toggleDialogue };
+  let data: any = {isDialogOpen};
+  const toggleDialog = (): any => {
+    setIsDialogOpen(!isDialogOpen);
+  };
+
+  let fns: any = { toggleDialog };
 
   return { data, fns };
 };
 
-export default useNavbar;
+export default useDialogSample;
+
+

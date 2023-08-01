@@ -17,7 +17,7 @@ import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
 import { NavbarProps } from 'types';
-import useNavbar from 'components/Navbar/useNavbar';
+import useDialogueSample from 'components/Navbar/useNavbar';
 
 const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
@@ -287,7 +287,7 @@ const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
 }));
 
 function Navbar(props: NavbarProps): JSX.Element {
-  const { data, fns } = useNavbar();
+  const { data, fns } = useDialogueSample();
 
   return (
     <ScreenDesktop className={props.className}>
