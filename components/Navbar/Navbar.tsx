@@ -16,7 +16,7 @@ import React from 'react';
 import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
-import SidebarMobile from 'components/Sidebar/Sidebar';
+import SidebarMobile from 'components/SidebarMobile/SidebarMobile';
 import { NavbarProps } from 'types';
 import useNavbar from 'components/Navbar/useNavbar';
 
@@ -403,7 +403,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu2>
         </ToolBar1>
       )}
-      {data.currentVariant === 'ScreenMobile' && (
+      {false && (
         <NavFrame1>
           <Sidebar2 />
         </NavFrame1>
