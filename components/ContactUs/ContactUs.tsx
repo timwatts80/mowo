@@ -51,7 +51,7 @@ const Desktop: any = styled('div', {
       : `60px 100px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: 'fit-content',
+  width: '100vw',
 }));
 
 const Form1: any = styled('div', {
