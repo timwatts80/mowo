@@ -15,6 +15,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import Sidebar from 'components/Sidebar/Sidebar';
 import { NavbarProps } from 'types';
 import useNavbar from 'components/Navbar/useNavbar';
 
@@ -238,6 +239,14 @@ const Hamburger1: any = styled('img')({
   margin: `0px`,
 });
 
+const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
+  width: `768px`,
+  height: `754px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+}));
+
 const ToolBar1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
@@ -284,6 +293,14 @@ const Hamburger2: any = styled('img')({
   width: `21px`,
   margin: `0px`,
 });
+
+const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
+  width: `375px`,
+  height: `754px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+}));
 
 function Navbar(props: NavbarProps): JSX.Element {
   const { data, fns } = useNavbar();
@@ -342,6 +359,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu1>
         </ToolBar>
       )}
+      {data.currentVariant === 'ScreenTablet' && <Sidebar1 />}
       {data.currentVariant === 'ScreenMobile' && (
         <ToolBar1 data={data}>
           <Quest211
@@ -358,6 +376,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu2>
         </ToolBar1>
       )}
+      {data.currentVariant === 'ScreenMobile' && <Sidebar2 />}
     </ScreenDesktop>
   );
 }
