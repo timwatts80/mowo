@@ -15,7 +15,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Navbar from 'components/Navbar/Navbar';
 import Sidebar from 'components/Sidebar/Sidebar';
 import { HeaderProps } from 'types';
 import useHeader from 'components/Header/useHeader';
@@ -35,13 +34,6 @@ const ScreenDesktop: any = styled('div')({
   height: 'auto',
 });
 
-const Navbar1: any = styled(Navbar, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  alignSelf: `stretch`,
-  margin: data.currentVariant === 'ScreenTablet' ? `9px 0px 0px 0px` : `0px`,
-}));
-
 const Hero: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
@@ -54,12 +46,7 @@ const Hero: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `9px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `7px 0px 0px 0px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `9px 0px 0px 0px` : `0px`,
   overflow: `hidden`,
 }));
 
@@ -319,7 +306,7 @@ const Pic3: any = styled('div')({
   overflow: `hidden`,
 });
 
-const Navbar2: any = styled('div', {
+const Navbar: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   display: `flex`,
@@ -627,7 +614,7 @@ const Pic4: any = styled('div')({
   overflow: `hidden`,
 });
 
-const Navbar3: any = styled('div', {
+const Navbar1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   display: `flex`,
@@ -925,8 +912,6 @@ function Header(props: HeaderProps): JSX.Element {
   return (
     <ScreenDesktop className={props.className}>
       {!(data.currentVariant === 'ScreenTablet') &&
-        !(data.currentVariant === 'ScreenMobile') && <Navbar1 data={data} />}
-      {!(data.currentVariant === 'ScreenTablet') &&
         !(data.currentVariant === 'ScreenMobile') && (
           <Hero data={data}>
             <FillHero>
@@ -975,7 +960,7 @@ function Header(props: HeaderProps): JSX.Element {
           </Hero>
         )}
       {data.currentVariant === 'ScreenTablet' && (
-        <Navbar2 data={data}>
+        <Navbar data={data}>
           <Logo>
             <Quest21
               src={`assets/images/Header_Quest2_1.png`}
@@ -992,7 +977,7 @@ function Header(props: HeaderProps): JSX.Element {
               />
             </HamburgerMenu>
           </MenuItems>
-        </Navbar2>
+        </Navbar>
       )}
       {false && <Sidebar1 data={data} />}
       {data.currentVariant === 'ScreenTablet' && (
@@ -1038,7 +1023,7 @@ function Header(props: HeaderProps): JSX.Element {
         </Hero1>
       )}
       {data.currentVariant === 'ScreenMobile' && (
-        <Navbar3 data={data}>
+        <Navbar1 data={data}>
           <Logo1>
             <Quest211
               src={`assets/images/Header_Quest2_1_1.png`}
@@ -1055,7 +1040,7 @@ function Header(props: HeaderProps): JSX.Element {
               />
             </HamburgerMenu1>
           </MenuItems1>
-        </Navbar3>
+        </Navbar1>
       )}
       {false && <Sidebar2 data={data} />}
       {data.currentVariant === 'ScreenMobile' && (
