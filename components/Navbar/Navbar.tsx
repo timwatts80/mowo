@@ -17,6 +17,7 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { NavbarProps } from 'types';
 import useNavbar from 'components/Navbar/useNavbar';
+import Sidebar from 'components/Sidebar/Sidebar';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -289,6 +290,12 @@ const Hamburger2: any = styled('img')({
 function Navbar(props: NavbarProps): JSX.Element {
   const { data } = useNavbar();
 
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState<boolean>(false);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <ScreenDesktop className={props.className} data={data}>
       {!(data.currentVariant === 'ScreenTablet') &&
@@ -315,6 +322,7 @@ function Navbar(props: NavbarProps): JSX.Element {
                   alt={'Hamburger'}
                 />
               </HamburgerMenu>
+              {isSidebarOpen && <Sidebar open={} onClose={}/>}
             )}
             <ButtonContained
               variant="contained"
