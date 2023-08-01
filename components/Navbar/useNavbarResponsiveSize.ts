@@ -42,6 +42,8 @@ const useNavbarResponsiveSize = () => {
     );
     ScreenDesktopSize.addEventListener('change', handlerScreenDesktop);
 
+    console.log('Current variant:', variant);
+
     return () => {
       ScreenMobileSize.removeEventListener('change', handlerScreenMobile);
       ScreenTabletSize.removeEventListener('change', handlerScreenTablet);

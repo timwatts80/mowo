@@ -12,6 +12,7 @@ import React from 'react'
 import ProductCarousel from 'components/ProductCarousel/ProductCarousel'
 import ContactUs from 'components/ContactUs/ContactUs'
 import Navbar from 'components/Navbar/Navbar'
+import Sidebar from 'components/Sidebar/Sidebar'
 
 
 
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
+      <Sidebar />
       <Header />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />

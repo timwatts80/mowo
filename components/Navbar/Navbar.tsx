@@ -245,6 +245,7 @@ const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
   position: `absolute`,
   left: `0px`,
   top: `0px`,
+  zindex: '100',
 }));
 
 const ToolBar1: any = styled('div', {
@@ -359,7 +360,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu1>
         </ToolBar>
       )}
-      {data.currentVariant === 'ScreenTablet' && <Sidebar1 />}
+      {data.currentVariant === 'ScreenTablet' && <Sidebar1 open={true} onClose={() => {}}/>}
       {data.currentVariant === 'ScreenMobile' && (
         <ToolBar1 data={data}>
           <Quest211
