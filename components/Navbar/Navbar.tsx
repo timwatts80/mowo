@@ -277,6 +277,7 @@ const HamburgerMenu2: any = styled('div')({
   padding: `6px`,
   boxSizing: `border-box`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
 const Hamburger2: any = styled('img')({
@@ -286,7 +287,7 @@ const Hamburger2: any = styled('img')({
 });
 
 function Navbar(props: NavbarProps): JSX.Element {
-  const { data, fns } = useNavbar();
+  const { data } = useNavbar();
 
   return (
     <ScreenDesktop className={props.className} data={data}>
@@ -333,7 +334,7 @@ function Navbar(props: NavbarProps): JSX.Element {
             loading="lazy"
             alt={'Quest2 1'}
           />
-          <HamburgerMenu1 onClick={fns.toggleDialogue}>
+          <HamburgerMenu1 onClick={handleSidebarToggle}>
             <Hamburger1
               src={`assets/images/Navbar_Hamburger_1.png`}
               loading="lazy"
@@ -349,7 +350,7 @@ function Navbar(props: NavbarProps): JSX.Element {
             loading="lazy"
             alt={'Quest2 1'}
           />
-          <HamburgerMenu2>
+          <HamburgerMenu2 onClick={handleSidebarToggle}>
             <Hamburger2
               src={`assets/images/Navbar_Hamburger_2.png`}
               loading="lazy"
