@@ -65,7 +65,7 @@ const ImageContainer: any = styled('div', {
 const ProductImage: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
-  height: `209px`,
+  height: `208px`,
   width: `311px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
@@ -416,7 +416,7 @@ const ImageContainer3: any = styled('div', {
 }));
 
 const ProductImage1: any = styled('img')({
-  height: `209px`,
+  height: `208px`,
   width: `311px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
