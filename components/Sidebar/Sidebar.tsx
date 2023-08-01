@@ -17,7 +17,6 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Link1 from 'components/Link1/Link1';
 import { SidebarProps } from 'types';
-import useSidebar from 'components/Sidebar/useSidebar';
 
 const ScreenTablet: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Paper'],
@@ -151,9 +150,7 @@ const Link6: any = styled(Link1)(({ theme }: any) => ({
   margin: `26px 0px 0px 0px`,
 }));
 
-const ButtonContained: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const ButtonContained: any = styled(Button)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
   color: theme.palette['Primary']['Contrast'],
@@ -171,37 +168,36 @@ const ButtonContained: any = styled(Button, {
 }));
 
 function Sidebar(props: SidebarProps): JSX.Element {
-  const { data } = useSidebar();
-
   return (
-    <ScreenTablet className={props.className}>
-      <MenuItems>
-        <CloseFrame>
-          <Close onClick={props.onClose}>
-            <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
-          </Close>
-        </CloseFrame>
-        <LogoPosition>
-          <Logo></Logo>
-        </LogoPosition>
-        <Items>
-          <Link2 />
-          <Link3 />
-          <Link4 />
-          <Link5 />
-          <Link6 />
-          <ButtonContained
-            variant="contained"
-            size={'medium'}
-            color={'primary'}
-            disabled={false}
-            data={data}
-          >
-            {'Book a meeting'}
-          </ButtonContained>
-        </Items>
-      </MenuItems>
-    </ScreenTablet>
+    props.open && (
+      <ScreenTablet className={props.className}>
+        <MenuItems>
+          <CloseFrame>
+            <Close onClick={props.onClose}>
+              <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
+            </Close>
+          </CloseFrame>
+          <LogoPosition>
+            <Logo></Logo>
+          </LogoPosition>
+          <Items>
+            <Link2 />
+            <Link3 />
+            <Link4 />
+            <Link5 />
+            <Link6 />
+            <ButtonContained
+              variant="contained"
+              size={'medium'}
+              color={'primary'}
+              disabled={false}
+            >
+              {'Book a meeting'}
+            </ButtonContained>
+          </Items>
+        </MenuItems>
+      </ScreenTablet>
+    )
   );
 }
 
