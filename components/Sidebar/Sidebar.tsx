@@ -17,6 +17,7 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Link1 from 'components/Link1/Link1';
 import { SidebarProps } from 'types';
+import useSidebar from 'components/Sidebar/useSidebar';
 
 const ScreenTablet: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Paper'],
@@ -71,7 +72,6 @@ const Close: any = styled('div')({
   padding: `10px`,
   boxSizing: `border-box`,
   margin: `0px`,
-  cursor: `pointer`,
 });
 
 const X: any = styled('img')({
@@ -150,7 +150,9 @@ const Link6: any = styled(Link1)(({ theme }: any) => ({
   margin: `26px 0px 0px 0px`,
 }));
 
-const ButtonContained: any = styled(Button)(({ theme }: any) => ({
+const ButtonContained: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
   color: theme.palette['Primary']['Contrast'],
@@ -168,12 +170,14 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
 }));
 
 function Sidebar(props: SidebarProps): JSX.Element {
+  const { data } = useSidebar();
+
   return (
     props.open && (
       <ScreenTablet className={props.className}>
         <MenuItems>
           <CloseFrame>
-            <Close onClick={props.onClose}>
+            <Close>
               <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
             </Close>
           </CloseFrame>
@@ -191,6 +195,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
               size={'medium'}
               color={'primary'}
               disabled={false}
+              data={data}
             >
               {'Book a meeting'}
             </ButtonContained>
