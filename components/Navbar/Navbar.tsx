@@ -13,17 +13,19 @@
  **********************************************************************/
 
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import Sidebar from 'components/Sidebar/Sidebar';
 import { NavbarProps } from 'types';
+import useNavbar from 'components/Navbar/useNavbar';
 
-const Navbar1: any = styled('div')(({ theme }: any) => ({
+const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100%',
+  width: '100vw',
   justifyContent: `space-between`,
   alignItems: `flex-start`,
   padding: `16px 60px`,
@@ -165,9 +167,130 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
+const ToolBar: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Background']['Background'],
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `space-between`,
+  alignItems: `flex-start`,
+  padding: `16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width: `768px`,
+  margin: `0px`,
+}));
+
+const Quest21: any = styled('img')({
+  height: `29.28px`,
+  width: `119.21px`,
+  objectFit: `cover`,
+  margin: `0px`,
+});
+
+const HamburgerMenu1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `6px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+  cursor: `pointer`,
+});
+
+const Hamburger1: any = styled('img')({
+  height: `15px`,
+  width: `21px`,
+  margin: `0px`,
+});
+
+const NavFrame: any = styled('div')({
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
+  height: `754px`,
+  width: `768px`,
+  margin: `0px`,
+}));
+
+const ToolBar1: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Background']['Background'],
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `space-between`,
+  alignItems: `flex-start`,
+  padding: `16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width: `375px`,
+  margin: `0px`,
+}));
+
+const Quest211: any = styled('img')({
+  height: `29.28px`,
+  width: `119.21px`,
+  objectFit: `cover`,
+  margin: `0px`,
+});
+
+const HamburgerMenu2: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `6px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+});
+
+const Hamburger2: any = styled('img')({
+  height: `15px`,
+  width: `21px`,
+  margin: `0px`,
+});
+
+const NavFrame1: any = styled('div')({
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
+  width: `375px`,
+  height: `758px`,
+  margin: `0px`,
+}));
+
 function Navbar(props: NavbarProps): JSX.Element {
+  const { data, fns } = useNavbar();
+
   return (
-    <Navbar1 className={props.className}>
+    <ScreenDesktop className={props.className}>
       <MowoLogo
         src={`assets/images/Navbar_MOWO_Logo.png`}
         loading="lazy"
@@ -197,7 +320,49 @@ function Navbar(props: NavbarProps): JSX.Element {
           {'Book a meeting'}
         </ButtonContained>
       </MenuItems>
-    </Navbar1>
+      {false && (
+        <ToolBar>
+          <Quest21
+            src={`assets/images/Navbar_Quest2_1.png`}
+            loading="lazy"
+            alt={'Quest2 1'}
+          />
+          <HamburgerMenu1 onClick={fns.toggleDialogue}>
+            <Hamburger1
+              src={`assets/images/Navbar_Hamburger_1.png`}
+              loading="lazy"
+              alt={'Hamburger'}
+            />
+          </HamburgerMenu1>
+        </ToolBar>
+      )}
+      <Dialog open={'data.isDialogueOpen'} onClose={undefined}>
+        <NavFrame>
+          <Sidebar1 open={data.isDialogueOpen} onClose={fns.toggleDialogue} />
+        </NavFrame>
+      </Dialog>
+      {false && (
+        <ToolBar1>
+          <Quest211
+            src={`assets/images/Navbar_Quest2_1_1.png`}
+            loading="lazy"
+            alt={'Quest2 1'}
+          />
+          <HamburgerMenu2>
+            <Hamburger2
+              src={`assets/images/Navbar_Hamburger_2.png`}
+              loading="lazy"
+              alt={'Hamburger'}
+            />
+          </HamburgerMenu2>
+        </ToolBar1>
+      )}
+      {false && (
+        <NavFrame1>
+          <Sidebar2 />
+        </NavFrame1>
+      )}
+    </ScreenDesktop>
   );
 }
 
