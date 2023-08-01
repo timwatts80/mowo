@@ -17,7 +17,6 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Link1 from 'components/Link1/Link1';
 import { SidebarProps } from 'types';
-import useSidebar from 'components/Sidebar/useSidebar';
 
 const ScreenTablet: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Paper'],
@@ -49,6 +48,19 @@ const MenuItems: any = styled('div')({
   margin: `0px`,
 });
 
+const CloseFrame: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-end`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
 const Close: any = styled('div')({
   display: `flex`,
   position: `relative`,
@@ -56,10 +68,10 @@ const Close: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-end`,
   alignItems: `center`,
-  padding: `0px`,
+  padding: `10px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
 const X: any = styled('img')({
@@ -68,9 +80,7 @@ const X: any = styled('img')({
   margin: `0px`,
 });
 
-const LogoPosition: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const LogoPosition: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -80,13 +90,11 @@ const LogoPosition: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: data.isMobile ? `60px` : `90px`,
+  height: `90px`,
   margin: `26px 0px 0px 0px`,
-}));
+});
 
-const Logo: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Logo: any = styled('div')({
   backgroundImage: `url(assets/images/sidebar_logo.png)`,
   backgroundPosition: `center`,
   backgroundSize: `contain`,
@@ -95,31 +103,27 @@ const Logo: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: data.isMobile ? `flex-start` : `center`,
+  justifyContent: `center`,
   alignItems: `center`,
   alignSelf: `stretch`,
-  flex: data.isMobile ? 'unset' : `1`,
+  flex: `1`,
   margin: `0px`,
   overflow: `hidden`,
-  height: data.isMobile ? `60px` : 'unset',
-}));
+});
 
-const Items: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Items: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: data.isMobile ? `0px 15px` : `30px 0px`,
+  padding: `30px 0px`,
   boxSizing: `border-box`,
   flex: `1`,
-  width: data.isMobile ? 'unset' : `300px`,
+  width: `300px`,
   margin: `26px 0px 0px 0px`,
-  alignSelf: data.isMobile ? `stretch` : 'unset',
-}));
+});
 
 const Link2: any = styled(Link1)(({ theme }: any) => ({
   alignSelf: `stretch`,
@@ -146,9 +150,7 @@ const Link6: any = styled(Link1)(({ theme }: any) => ({
   margin: `26px 0px 0px 0px`,
 }));
 
-const ButtonContained: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const ButtonContained: any = styled(Button)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
   color: theme.palette['Primary']['Contrast'],
@@ -166,35 +168,36 @@ const ButtonContained: any = styled(Button, {
 }));
 
 function Sidebar(props: SidebarProps): JSX.Element {
-  const { data } = useSidebar();
-
   return (
-    <ScreenTablet className={props.className}>
-      <MenuItems>
-        <Close>
-          <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
-        </Close>
-        <LogoPosition data={data}>
-          <Logo data={data}></Logo>
-        </LogoPosition>
-        <Items data={data}>
-          <Link2 />
-          <Link3 />
-          <Link4 />
-          <Link5 />
-          <Link6 />
-          <ButtonContained
-            variant="contained"
-            size={'medium'}
-            color={'primary'}
-            disabled={false}
-            data={data}
-          >
-            {'Book a meeting'}
-          </ButtonContained>
-        </Items>
-      </MenuItems>
-    </ScreenTablet>
+    props.open && (
+      <ScreenTablet className={props.className}>
+        <MenuItems>
+          <CloseFrame>
+            <Close onClick={props.onClose}>
+              <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
+            </Close>
+          </CloseFrame>
+          <LogoPosition>
+            <Logo></Logo>
+          </LogoPosition>
+          <Items>
+            <Link2 />
+            <Link3 />
+            <Link4 />
+            <Link5 />
+            <Link6 />
+            <ButtonContained
+              variant="contained"
+              size={'medium'}
+              color={'primary'}
+              disabled={false}
+            >
+              {'Book a meeting'}
+            </ButtonContained>
+          </Items>
+        </MenuItems>
+      </ScreenTablet>
+    )
   );
 }
 
