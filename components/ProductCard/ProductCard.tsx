@@ -58,18 +58,30 @@ const ImageContainer: any = styled('div', {
     : props.isProduct6
     ? `32px 0px 0px 0px`
     : `0px`,
-  height: '100%',
+  height: 'auto',
   width: '100%',
 }));
 
-const ProductImage: any = styled('img')({
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
+})(({ props }: any) => ({
   height: `209px`,
   width: `311px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: `0px`,
-});
+  margin: props.isProduct2
+    ? `0px`
+    : props.isProduct3
+    ? `0px`
+    : props.isProduct4
+    ? `0px`
+    : props.isProduct5
+    ? `0px`
+    : props.isProduct6
+    ? `0px`
+    : '0 auto',
+}));
 
 const Frame150: any = styled('div')({
   display: `flex`,
@@ -729,6 +741,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         !props.isProduct6 && (
           <ImageContainer props={props}>
             <ProductImage
+              props={props}
               src={`assets/images/ProductCard_Product_Image.png`}
               loading="lazy"
               alt={'Product Image'}
