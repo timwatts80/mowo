@@ -16,7 +16,6 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
-import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -26,7 +25,7 @@ const ScreenDesktop: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100vw',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems:
     data.currentVariant === 'ScreenTablet'
@@ -160,55 +159,21 @@ const UnleashingPotentialF: any = styled('div', {
   margin: `15px 0px 0px 0px`,
 }));
 
-const Box1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: data.currentVariant === 'ScreenMobile' ? `row` : `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `24px 0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-}));
-
-const Carousel: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  backgroundImage: `url(assets/images/ProductSectionSurfaceHubdevices_carousel.png)`,
+const Box1: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductSectionSurfaceHubdevices_Box.png)`,
   backgroundPosition: `center`,
-  backgroundSize:
-    data.currentVariant === 'ScreenTablet'
-      ? `100%`
-      : data.currentVariant === 'ScreenMobile'
-      ? `100%`
-      : `contain`,
+  backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: `flex-start`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? 'unset' : `stretch`,
-  height:
-    data.currentVariant === 'ScreenTablet'
-      ? `530px`
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `539px`,
-  margin: `0px`,
-  overflow:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `hidden`,
-  flex: data.currentVariant === 'ScreenMobile' ? `1` : 'unset',
-}));
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  height: `568px`,
+  margin: `15px 0px 0px 0px`,
+});
 
 function ProductSectionSurfaceHubDevice(
   props: ProductSectionSurfaceHubDeviceProps
@@ -229,11 +194,7 @@ function ProductSectionSurfaceHubDevice(
         <UnleashingPotentialF data={data}>
           {`Unleashing Potential for Your Modern Workplace`}
         </UnleashingPotentialF>
-        <Box1 data={data}>
-          <Carousel data={data}>
-            <ProductCarousel />            
-          </Carousel>
-        </Box1>
+        <Box1></Box1>
       </Rows>
     </ScreenDesktop>
   );
