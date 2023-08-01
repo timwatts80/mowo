@@ -10,6 +10,7 @@ import Footer from '../components/Footer/Footer'
 import { ThemeProvider } from '@emotion/react'
 import React from 'react'
 import ProductCarousel from 'components/ProductCarousel/ProductCarousel'
+import ContactUs from 'components/ContactUs/ContactUs'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
       <CustomerCases />
+      <ContactUs />
       <Footer />
     </ThemeProvider>
   )
