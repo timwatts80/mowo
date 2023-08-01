@@ -13,10 +13,8 @@
  **********************************************************************/
 
 import React from 'react';
-import { Button, Dialog } from '@mui/material';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Sidebar from 'components/Sidebar/Sidebar';
-import SidebarMobile from 'components/SidebarMobile/SidebarMobile';
 import { NavbarProps } from 'types';
 import useNavbar from 'components/Navbar/useNavbar';
 
@@ -240,25 +238,6 @@ const Hamburger1: any = styled('img')({
   margin: `0px`,
 });
 
-const NavFrame: any = styled('div')({
-  display: `flex`,
-  position: `absolute`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
-  height: `754px`,
-  width: `768px`,
-  margin: `0px`,
-}));
-
 const ToolBar1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
@@ -305,25 +284,6 @@ const Hamburger2: any = styled('img')({
   width: `21px`,
   margin: `0px`,
 });
-
-const NavFrame1: any = styled('div')({
-  display: `flex`,
-  position: `absolute`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Sidebar2: any = styled(SidebarMobile)(({ theme }: any) => ({
-  width: `375px`,
-  height: `758px`,
-  margin: `0px`,
-}));
 
 function Navbar(props: NavbarProps): JSX.Element {
   const { data, fns } = useNavbar();
@@ -382,11 +342,6 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu1>
         </ToolBar>
       )}
-      <Dialog open={data.isDialogueOpen} onClose={undefined}>
-        <NavFrame>
-          <Sidebar1 open={data.isDialogueOpen} onClose={fns.toggleDialogue} />
-        </NavFrame>
-      </Dialog>
       {data.currentVariant === 'ScreenMobile' && (
         <ToolBar1 data={data}>
           <Quest211
@@ -402,11 +357,6 @@ function Navbar(props: NavbarProps): JSX.Element {
             />
           </HamburgerMenu2>
         </ToolBar1>
-      )}
-      {false && (
-        <NavFrame1>
-          <Sidebar2 />
-        </NavFrame1>
       )}
     </ScreenDesktop>
   );
