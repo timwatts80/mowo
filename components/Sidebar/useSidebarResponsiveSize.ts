@@ -16,7 +16,7 @@ const useSidebarResponsiveSize = () => {
   const [variant, setVariant] = React.useState<string>('ScreenTablet');
 
   React.useEffect(() => {
-    const handlerScreenMobile = (e) =>
+    const handlerScreenMobile = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'ScreenMobile' : size));
     const ScreenMobileSize = window.matchMedia('(max-width: 572px)');
     setVariant((size: string) =>
@@ -24,13 +24,18 @@ const useSidebarResponsiveSize = () => {
     );
     ScreenMobileSize.addEventListener('change', handlerScreenMobile);
 
-    const handlerScreenTablet = (e) =>
+    const handlerScreenTablet = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'ScreenTablet' : size));
     const ScreenTabletSize = window.matchMedia('(min-width: 572px)');
     setVariant((size: string) =>
       ScreenTabletSize.matches ? 'ScreenTablet' : size
     );
     ScreenTabletSize.addEventListener('change', handlerScreenTablet);
+
+    return () => {
+      ScreenMobileSize.removeEventListener('change', handlerScreenMobile);
+      ScreenTabletSize.removeEventListener('change', handlerScreenTablet);
+    };
   }, []);
 
   return variant;

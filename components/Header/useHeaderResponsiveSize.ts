@@ -16,7 +16,7 @@ const useHeaderResponsiveSize = () => {
   const [variant, setVariant] = React.useState<string>('Property1Desktop');
 
   React.useEffect(() => {
-    const handlerProperty1Mobile = (e) =>
+    const handlerProperty1Mobile = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'Property1Mobile' : size));
     const Property1MobileSize = window.matchMedia('(max-width: 572px)');
     setVariant((size: string) =>
@@ -24,7 +24,7 @@ const useHeaderResponsiveSize = () => {
     );
     Property1MobileSize.addEventListener('change', handlerProperty1Mobile);
 
-    const handlerProperty1Tablet = (e) =>
+    const handlerProperty1Tablet = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'Property1Tablet' : size));
     const Property1TabletSize = window.matchMedia(
       '(min-width: 572px) and (max-width: 1104px)'
@@ -34,13 +34,19 @@ const useHeaderResponsiveSize = () => {
     );
     Property1TabletSize.addEventListener('change', handlerProperty1Tablet);
 
-    const handlerProperty1Desktop = (e) =>
+    const handlerProperty1Desktop = (e: MediaQueryListEvent) =>
       setVariant((size: string) => (e.matches ? 'Property1Desktop' : size));
     const Property1DesktopSize = window.matchMedia('(min-width: 1104px)');
     setVariant((size: string) =>
       Property1DesktopSize.matches ? 'Property1Desktop' : size
     );
     Property1DesktopSize.addEventListener('change', handlerProperty1Desktop);
+
+    return () => {
+      Property1MobileSize.removeEventListener('change', handlerProperty1Mobile);
+      Property1TabletSize.removeEventListener('change', handlerProperty1Tablet);
+      Property1DesktopSize.removeEventListener('change', handlerProperty1Desktop);
+    };
   }, []);
 
   return variant;
