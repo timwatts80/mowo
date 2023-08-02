@@ -12,38 +12,38 @@
 
 import React from 'react';
 
-const useContactUsResponsiveSize = () => {
-  const [variant, setVariant] = React.useState<string>('Desktop');
+const useFooterResponsiveSize = () => {
+  const [variant, setVariant] = React.useState<string>('ScreenDesktop');
 
   React.useEffect(() => {
-    const handlerMobile = (e: MediaQueryListEvent) =>
-      setVariant((size: string) => (e.matches ? 'Mobile' : size));
-    const MobileSize = window.matchMedia('(max-width: 572px)');
-    setVariant((size: string) => (MobileSize.matches ? 'Mobile' : size));
-    MobileSize.addEventListener('change', handlerMobile);
+    const handlerScreenMobile = (e: MediaQueryListEvent) =>
+      setVariant((size: string) => (e.matches ? 'ScreenMobile' : size));
+    const ScreenMobileSize = window.matchMedia('(max-width: 572px)');
+    setVariant((size: string) =>
+      ScreenMobileSize.matches ? 'ScreenMobile' : size
+    );
+    ScreenMobileSize.addEventListener('change', handlerScreenMobile);
 
-    const handlerTablet = (e: MediaQueryListEvent) =>
-      setVariant((size: string) => (e.matches ? 'Tablet' : size));
-    const TabletSize = window.matchMedia(
+    const handlerScreenTablet = (e: MediaQueryListEvent) =>
+      setVariant((size: string) => (e.matches ? 'ScreenTablet' : size));
+    const ScreenTabletSize = window.matchMedia(
       '(min-width: 572px) and (max-width: 1104px)'
     );
-    setVariant((size: string) => (TabletSize.matches ? 'Tablet' : size));
-    TabletSize.addEventListener('change', handlerTablet);
+    setVariant((size: string) =>
+      ScreenTabletSize.matches ? 'ScreenTablet' : size
+    );
+    ScreenTabletSize.addEventListener('change', handlerScreenTablet);
 
-    const handlerDesktop = (e: MediaQueryListEvent) =>
-      setVariant((size: string) => (e.matches ? 'Desktop' : size));
-    const DesktopSize = window.matchMedia('(min-width: 1104px)');
-    setVariant((size: string) => (DesktopSize.matches ? 'Desktop' : size));
-    DesktopSize.addEventListener('change', handlerDesktop);
-
-    return () => {
-      MobileSize.removeEventListener('change', handlerMobile);
-      TabletSize.removeEventListener('change', handlerTablet);
-      DesktopSize.removeEventListener('change', handlerDesktop);
-    };
+    const handlerScreenDesktop = (e: MediaQueryListEvent) =>
+      setVariant((size: string) => (e.matches ? 'ScreenDesktop' : size));
+    const ScreenDesktopSize = window.matchMedia('(min-width: 1104px)');
+    setVariant((size: string) =>
+      ScreenDesktopSize.matches ? 'ScreenDesktop' : size
+    );
+    ScreenDesktopSize.addEventListener('change', handlerScreenDesktop);
   }, []);
 
   return variant;
 };
 
-export default useContactUsResponsiveSize;
+export default useFooterResponsiveSize;
