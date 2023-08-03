@@ -15,39 +15,24 @@
 import React from 'react';
 import { Rating, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Recommend1 from 'components/Recommend1/Recommend1';
 import { ProductPageProps } from 'types';
 import useProductPage from 'components/ProductPage/useProductPage';
 
-const ScreenDesktop: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection:
-    data.currentVariant === 'ScreenTablet'
-      ? `column`
-      : data.currentVariant === 'ScreenMobile'
-      ? `column`
-      : `row`,
+  flexDirection: `row`,
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding:
-    data.currentVariant === 'ScreenTablet'
-      ? `100px 70px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `60px 10px`
-      : `127px 48px`,
+  padding: `127px 48px`,
   boxSizing: `border-box`,
   height: 'auto',
 }));
 
-const Col1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Col1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -56,24 +41,11 @@ const Col1: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  flex:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `1`,
+  flex: `1`,
   margin: `0px`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? `stretch`
-      : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
-}));
+});
 
-const MainImage: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const MainImage: any = styled('div')({
   backgroundImage: `url(assets/images/ProductPage_main_image.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
@@ -86,49 +58,24 @@ const MainImage: any = styled('div', {
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  height:
-    data.currentVariant === 'ScreenTablet'
-      ? `719px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `434px`
-      : `877px`,
+  height: `877px`,
   margin: `0px`,
-}));
+});
 
-const Col2: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Col2: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: data.currentVariant === 'ScreenMobile' ? `0px 10px` : `0px`,
+  padding: `0px`,
   boxSizing: `border-box`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `547px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px 0px 0px 75px`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? `stretch`
-      : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
-}));
+  width: `547px`,
+  margin: `0px 0px 0px 75px`,
+});
 
-const Details: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Details: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -138,17 +85,9 @@ const Details: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `0px`,
-  flex:
-    data.currentVariant === 'ScreenTablet'
-      ? `1`
-      : data.currentVariant === 'ScreenMobile'
-      ? `1`
-      : 'unset',
-}));
+});
 
-const Top: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Top: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -158,55 +97,25 @@ const Top: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `0px`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
-}));
+});
 
-const Title: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const Title: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(0, 0, 0, 1)`,
-  fontStyle:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].fontStyle
-      : theme.typography['Typography']['H3'].fontStyle,
-  fontFamily:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].fontFamily
-      : theme.typography['Typography']['H3'].fontFamily,
-  fontWeight:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].fontWeight
-      : theme.typography['Typography']['H3'].fontWeight,
-  fontSize:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].fontSize
-      : theme.typography['Typography']['H3'].fontSize,
-  letterSpacing:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].letterSpacing
-      : theme.typography['Typography']['H3'].letterSpacing,
-  lineHeight:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].lineHeight
-      : theme.typography['Typography']['H3'].lineHeight,
-  textDecoration:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].textDecoration
-      : theme.typography['Typography']['H3'].textDecoration,
-  textTransform:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['H4'].textTransform
-      : theme.typography['Typography']['H3'].textTransform,
+  fontStyle: theme.typography['Typography']['H3'].fontStyle,
+  fontFamily: theme.typography['Typography']['H3'].fontFamily,
+  fontWeight: theme.typography['Typography']['H3'].fontWeight,
+  fontSize: theme.typography['Typography']['H3'].fontSize,
+  letterSpacing: theme.typography['Typography']['H3'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H3'].lineHeight,
+  textDecoration: theme.typography['Typography']['H3'].textDecoration,
+  textTransform: theme.typography['Typography']['H3'].textTransform,
   margin: `0px`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
-const Price: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const Price: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -219,15 +128,10 @@ const Price: any = styled('div', {
   lineHeight: theme.typography['Typography']['H5'].lineHeight,
   textDecoration: theme.typography['Typography']['H5'].textDecoration,
   textTransform: theme.typography['Typography']['H5'].textTransform,
-  margin:
-    data.currentVariant === 'ScreenMobile'
-      ? `6px 0px 0px 0px`
-      : `14px 0px 0px 0px`,
+  margin: `14px 0px 0px 0px`,
 }));
 
-const Row: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Row: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -236,11 +140,8 @@ const Row: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'ScreenMobile'
-      ? `6px 0px 0px 0px`
-      : `14px 0px 0px 0px`,
-}));
+  margin: `14px 0px 0px 0px`,
+});
 
 const Q40: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
@@ -262,9 +163,7 @@ const Rating1: any = styled(Rating)(({ theme }: any) => ({
   margin: `0px 0px 0px 6px`,
 }));
 
-const Description: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Description: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -274,17 +173,9 @@ const Description: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `44px 0px 0px 0px`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? `stretch`
-      : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
-}));
+});
 
-const Description1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const Description1: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -298,17 +189,9 @@ const Description1: any = styled('div', {
   textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
   textTransform: theme.typography['Components']['Alert Title'].textTransform,
   margin: `0px`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? `stretch`
-      : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
 }));
 
-const ExperienceAnExquisit: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const ExperienceAnExquisit: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -321,24 +204,11 @@ const ExperienceAnExquisit: any = styled('div', {
   lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
   textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
   textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `519px`,
+  width: `519px`,
   margin: `15px 0px 0px 0px`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? `stretch`
-      : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
 }));
 
-const AddShare: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const AddShare: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -348,12 +218,9 @@ const AddShare: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `44px 0px 0px 0px`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
-}));
+});
 
-const ShopBtn1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Text']['Primary'],
   display: `flex`,
   position: `relative`,
@@ -361,53 +228,27 @@ const ShopBtn1: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: data.currentVariant === 'ScreenMobile' ? `10px 0px` : `16px 0px`,
+  padding: `16px 0px`,
   boxSizing: `border-box`,
-  width: data.currentVariant === 'ScreenMobile' ? `200px` : `327px`,
+  width: `327px`,
   margin: `0px`,
   overflow: `hidden`,
   cursor: `pointer`,
 }));
 
-const CheckOut: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const CheckOut: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(255, 255, 255, 1)`,
-  fontStyle:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontStyle
-      : theme.typography['Typography']['H6'].fontStyle,
-  fontFamily:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontFamily
-      : theme.typography['Typography']['H6'].fontFamily,
-  fontWeight:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontWeight
-      : theme.typography['Typography']['H6'].fontWeight,
-  fontSize:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontSize
-      : theme.typography['Typography']['H6'].fontSize,
-  letterSpacing:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].letterSpacing
-      : theme.typography['Typography']['H6'].letterSpacing,
-  lineHeight:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].lineHeight
-      : theme.typography['Typography']['H6'].lineHeight,
-  textDecoration:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].textDecoration
-      : theme.typography['Typography']['H6'].textDecoration,
-  textTransform:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].textTransform
-      : theme.typography['Typography']['H6'].textTransform,
+  fontStyle: theme.typography['Typography']['H6'].fontStyle,
+  fontFamily: theme.typography['Typography']['H6'].fontFamily,
+  fontWeight: theme.typography['Typography']['H6'].fontWeight,
+  fontSize: theme.typography['Typography']['H6'].fontSize,
+  letterSpacing: theme.typography['Typography']['H6'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H6'].lineHeight,
+  textDecoration: theme.typography['Typography']['H6'].textDecoration,
+  textTransform: theme.typography['Typography']['H6'].textTransform,
   margin: `0px`,
 }));
 
@@ -510,39 +351,305 @@ const AppleCarrotBeetCeler: any = styled('div')(({ theme }: any) => ({
   margin: `15px 0px 0px 0px`,
 }));
 
-const Recommend11: any = styled(Recommend1)(({ theme }: any) => ({
+const Recommend1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `44px 0px 0px 0px`,
+});
+
+const Title1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['H6'].fontStyle,
+  fontFamily: theme.typography['Typography']['H6'].fontFamily,
+  fontWeight: theme.typography['Typography']['H6'].fontWeight,
+  fontSize: theme.typography['Typography']['H6'].fontSize,
+  letterSpacing: theme.typography['Typography']['H6'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H6'].lineHeight,
+  textDecoration: theme.typography['Typography']['H6'].textDecoration,
+  textTransform: theme.typography['Typography']['H6'].textTransform,
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Thumbs: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `10px 0px 0px 0px`,
+});
+
+const Recomend1: any = styled('div')({
+  borderRadius: `4px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  flex: `1`,
+  margin: `0px`,
+});
+
+const Image1: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductPage_image.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  alignSelf: `stretch`,
+  height: `152px`,
+  margin: `0px`,
+});
+
+const Description2: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `8px 0px 0px 0px`,
+});
+
+const RoyalCrush: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Q895: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
+  margin: `2px 0px 0px 0px`,
+}));
+
+const Recomend11: any = styled('div')({
+  borderRadius: `4px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  flex: `1`,
+  margin: `0px 0px 0px 20px`,
+});
+
+const Image2: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductPage_image_1.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  alignSelf: `stretch`,
+  height: `152px`,
+  margin: `0px`,
+});
+
+const Description3: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `8px 0px 0px 0px`,
+});
+
+const RoyalCrush1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Q8951: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
+  margin: `2px 0px 0px 0px`,
+}));
+
+const Recomend12: any = styled('div')({
+  borderRadius: `4px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  flex: `1`,
+  margin: `0px 0px 0px 20px`,
+});
+
+const Image3: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductPage_image_2.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  alignSelf: `stretch`,
+  height: `152px`,
+  margin: `0px`,
+});
+
+const Description4: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `8px 0px 0px 0px`,
+});
+
+const RoyalCrush2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
+const Q8952: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
+  margin: `2px 0px 0px 0px`,
 }));
 
 function ProductPage(props: ProductPageProps): JSX.Element {
-  const { data, fns } = useProductPage();
+  const { fns } = useProductPage();
 
   return (
     props.open && (
-      <ScreenDesktop className={props.className} data={data}>
-        <Col1 data={data}>
-          <MainImage data={data}></MainImage>
+      <ScreenDesktop className={props.className}>
+        <Col1>
+          <MainImage></MainImage>
         </Col1>
-        <Col2 data={data}>
-          <Details data={data}>
-            <Top data={data}>
-              <Title data={data}>{`Fancy Fusion`}</Title>
-              <Price data={data}>{`$8.95`}</Price>
-              <Row data={data}>
+        <Col2>
+          <Details>
+            <Top>
+              <Title>{`Fancy Fusion`}</Title>
+              <Price>{`$8.95`}</Price>
+              <Row>
                 <Q40>{`4.0`}</Q40>
                 <Rating1 size={'small'} disabled={false} />
               </Row>
             </Top>
-            <Description data={data}>
-              <Description1 data={data}>{`Description`}</Description1>
-              <ExperienceAnExquisit data={data}>
+            <Description>
+              <Description1>{`Description`}</Description1>
+              <ExperienceAnExquisit>
                 {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
               </ExperienceAnExquisit>
             </Description>
-            <AddShare data={data}>
-              <ShopBtn1 onClick={fns.toggleDialog} data={data}>
-                <CheckOut data={data}>{`ADD TO BAG`}</CheckOut>
+            <AddShare>
+              <ShopBtn1 onClick={fns.toggleDialog}>
+                <CheckOut>{`ADD TO BAG`}</CheckOut>
               </ShopBtn1>
               <IconButton>
                 <Container>
@@ -563,7 +670,32 @@ function ProductPage(props: ProductPageProps): JSX.Element {
                 {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
               </AppleCarrotBeetCeler>
             </Ingredients>
-            <Recommend11 />
+            <Recommend1>
+              <Title1>{`You might also like`}</Title1>
+              <Thumbs>
+                <Recomend1>
+                  <Image1></Image1>
+                  <Description2>
+                    <RoyalCrush>{`Royal Crush`}</RoyalCrush>
+                    <Q895>{`$8.95`}</Q895>
+                  </Description2>
+                </Recomend1>
+                <Recomend11>
+                  <Image2></Image2>
+                  <Description3>
+                    <RoyalCrush1>{`Haute Sip`}</RoyalCrush1>
+                    <Q8951>{`$8.95`}</Q8951>
+                  </Description3>
+                </Recomend11>
+                <Recomend12>
+                  <Image3></Image3>
+                  <Description4>
+                    <RoyalCrush2>{`Signature Squeez`}</RoyalCrush2>
+                    <Q8952>{`$8.95`}</Q8952>
+                  </Description4>
+                </Recomend12>
+              </Thumbs>
+            </Recommend1>
           </Details>
         </Col2>
       </ScreenDesktop>
