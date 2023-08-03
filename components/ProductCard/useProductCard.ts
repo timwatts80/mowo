@@ -13,11 +13,14 @@
 
 import React from 'react';
 const useProductCard = () => {
-  const toggleDialog = (): any => {};
-  const data: any = {};
-  const handleButtonClick = (): any => {};
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
-  const fns: any = { handleButtonClick ,toggleDialog};
+  let data: any = {isDialogOpen};
+  const toggleDialog = (): any => {
+    setIsDialogOpen(!isDialogOpen);
+  };
+
+  let fns: any = { toggleDialog };
 
   return { data, fns };
 };
