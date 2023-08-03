@@ -367,7 +367,6 @@ export interface ProductPage1Props {
 
 
 
-
 export interface ProductModalProps {
   className?: any;
   open: any;
