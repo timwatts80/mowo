@@ -355,12 +355,6 @@ export interface ProductPageProps {
 
 
 
-export interface ProductPage1Props {
-  className?: any;
-};
-
-
-
 
 
 
