@@ -16,7 +16,6 @@ import React from 'react';
 import { Rating, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductPageProps } from 'types';
-import useProductPage from 'components/ProductPage/useProductPage';
 
 const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
@@ -623,8 +622,6 @@ const Q8952: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductPage(props: ProductPageProps): JSX.Element {
-  const { fns } = useProductPage();
-
   return (
     props.open && (
       <ScreenDesktop className={props.className}>
@@ -648,7 +645,7 @@ function ProductPage(props: ProductPageProps): JSX.Element {
               </ExperienceAnExquisit>
             </Description>
             <AddShare>
-              <ShopBtn1 onClick={fns.toggleDialog}>
+              <ShopBtn1 onClick={props.onClose}>
                 <CheckOut>{`ADD TO BAG`}</CheckOut>
               </ShopBtn1>
               <IconButton>
