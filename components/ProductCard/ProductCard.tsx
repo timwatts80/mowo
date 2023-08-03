@@ -927,7 +927,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
             <Bottomaccentcolor></Bottomaccentcolor>
           </Productcardframe>
         )}
-      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
+      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog} maxWidth={false}>
         <Productmodalframe>
           <ProductPage1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
         </Productmodalframe>
