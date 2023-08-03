@@ -13,40 +13,42 @@
  **********************************************************************/
 
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import ProductPage from 'components/ProductPage/ProductPage';
 import { ProductCardProps } from 'types';
 import useProductCard from 'components/ProductCard/useProductCard';
 
-const StateProduct1: any = styled('div')(({ theme }: any) => ({
+const StateProduct1: any = styled('div')({
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  overflow: `hidden`,
+  height: 'auto',
+  width: 'fit-content',
+});
+
+const Productcardframe: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
+})(({ theme, props }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
   borderRadius: `10px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: '100%',
-  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `16px 0px 0px 0px`,
   boxSizing: `border-box`,
-  overflow: `hidden`,
-}));
-
-const ImageContainer: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
+  height: `496px`,
+  width: `311px`,
   margin: props.isProduct2
     ? `32px 0px 0px 0px`
     : props.isProduct3
@@ -58,32 +60,42 @@ const ImageContainer: any = styled('div', {
     : props.isProduct6
     ? `32px 0px 0px 0px`
     : `0px`,
-  height: 'auto',
-  width: '100%',
+  overflow: `hidden`,
 }));
 
-const ProductImage: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
-  height: `208px`,
-  width: `311px`,
-  objectFit: `cover`,
+const Imagecontainer: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct2
-    ? `0px`
-    : props.isProduct3
-    ? `0px`
-    : props.isProduct4
-    ? `0px`
-    : props.isProduct5
-    ? `0px`
-    : props.isProduct6
-    ? `0px`
-    : '0 auto',
-}));
+  margin: `0px`,
+  height: 'auto',
+  width: '100%',
+});
 
-const Frame150: any = styled('div')({
+const Image1: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductCard_image.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `0px`,
+});
+
+const Titlecontainer: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -96,7 +108,7 @@ const Frame150: any = styled('div')({
   margin: `32px 0px 0px 0px`,
 });
 
-const ProductTitle: any = styled('div')(({ theme }: any) => ({
+const Producttitle: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -113,7 +125,7 @@ const ProductTitle: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Frame139: any = styled('div')({
+const Descriptioncontainer: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -161,16 +173,50 @@ const ButtonOutlined: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Rectangle180: any = styled('div')(({ theme }: any) => ({
+const Bottomaccentcolor: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
   margin: `32px 0px 0px 0px`,
 }));
 
-const ImageContainer1: any = styled('div', {
+const Productmodalframe: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `32px 0px 0px 0px`,
+});
+
+const ProductPage1: any = styled(ProductPage)(({ theme }: any) => ({
+  width: `1440px`,
+  margin: `0px`,
+}));
+
+const Productcardframe1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+})(({ theme, props }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px 0px 0px`,
+  boxSizing: `border-box`,
+  height: `496px`,
+  width: `311px`,
+  margin: props.isProduct2 ? `0px` : `32px 0px 0px 0px`,
+  overflow: `hidden`,
+}));
+
+const Imagecontainer1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -181,35 +227,31 @@ const ImageContainer1: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct2 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
-const ProductImage2: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
-  height: `208px`,
-  width: props.isProduct2
-    ? `311px`
-    : props.isProduct3
-    ? `311px`
-    : props.isProduct4
-    ? `311px`
-    : props.isProduct5
-    ? `311px`
-    : props.isProduct6
-    ? `311px`
-    : 'auto',
+const Image2: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductCard_image_1.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-}));
+});
 
-const Frame149: any = styled('div')({
+const Titlecontainer1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `space-between`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px 16px`,
   boxSizing: `border-box`,
@@ -217,7 +259,7 @@ const Frame149: any = styled('div')({
   margin: `32px 0px 0px 0px`,
 });
 
-const ProductTitle1: any = styled('div')(({ theme }: any) => ({
+const Producttitle1: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -234,7 +276,7 @@ const ProductTitle1: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Frame140: any = styled('div')({
+const Descriptioncontainer1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -282,16 +324,38 @@ const ButtonOutlined1: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Rectangle1801: any = styled('div')(({ theme }: any) => ({
+const Bottomaccentcolor1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
   margin: `32px 0px 0px 0px`,
 }));
 
-const ImageContainer2: any = styled('div', {
+const ProductPage2: any = styled(ProductPage)(({ theme }: any) => ({
+  width: `1440px`,
+  margin: `32px 0px 0px 0px`,
+}));
+
+const Productcardframe2: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+})(({ theme, props }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px 0px 0px`,
+  boxSizing: `border-box`,
+  height: `496px`,
+  width: `311px`,
+  margin: props.isProduct3 ? `0px` : `32px 0px 0px 0px`,
+  overflow: `hidden`,
+}));
+
+const Imagecontainer2: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -302,19 +366,26 @@ const ImageContainer2: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct3 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
-const ProductImage3: any = styled('img')({
-  height: `208px`,
-  width: `311px`,
-  objectFit: `cover`,
+const Image3: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductCard_image_2.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
 });
 
-const Frame148: any = styled('div')({
+const Titlecontainer2: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -327,7 +398,7 @@ const Frame148: any = styled('div')({
   margin: `32px 0px 0px 0px`,
 });
 
-const ProductTitle2: any = styled('div')(({ theme }: any) => ({
+const Producttitle2: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -344,7 +415,7 @@ const ProductTitle2: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Frame141: any = styled('div')({
+const Descriptioncontainer2: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -392,16 +463,38 @@ const ButtonOutlined2: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Rectangle1802: any = styled('div')(({ theme }: any) => ({
+const Bottomaccentcolor2: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
   margin: `32px 0px 0px 0px`,
 }));
 
-const ImageContainer3: any = styled('div', {
+const ProductPage3: any = styled(ProductPage)(({ theme }: any) => ({
+  width: `1440px`,
+  margin: `32px 0px 0px 0px`,
+}));
+
+const Productcardframe3: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+})(({ theme, props }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px 0px 0px`,
+  boxSizing: `border-box`,
+  height: `496px`,
+  width: `311px`,
+  margin: props.isProduct4 ? `0px` : `32px 0px 0px 0px`,
+  overflow: `hidden`,
+}));
+
+const Imagecontainer3: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -412,19 +505,26 @@ const ImageContainer3: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct4 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
-const ProductImage1: any = styled('img')({
-  height: `208px`,
-  width: `311px`,
-  objectFit: `cover`,
+const Image4: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductCard_image_3.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
 });
 
-const Frame147: any = styled('div')({
+const Titlecontainer3: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -437,7 +537,7 @@ const Frame147: any = styled('div')({
   margin: `32px 0px 0px 0px`,
 });
 
-const ProductTitle3: any = styled('div')(({ theme }: any) => ({
+const Producttitle3: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -454,7 +554,7 @@ const ProductTitle3: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Frame142: any = styled('div')({
+const Descriptioncontainer3: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -502,16 +602,38 @@ const ButtonOutlined3: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Rectangle1803: any = styled('div')(({ theme }: any) => ({
+const Bottomaccentcolor3: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
   margin: `32px 0px 0px 0px`,
 }));
 
-const ImageContainer4: any = styled('div', {
+const ProductPage4: any = styled(ProductPage)(({ theme }: any) => ({
+  width: `1440px`,
+  margin: `32px 0px 0px 0px`,
+}));
+
+const Productcardframe4: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+})(({ theme, props }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px 0px 0px`,
+  boxSizing: `border-box`,
+  height: `496px`,
+  width: `311px`,
+  margin: props.isProduct5 ? `0px` : `32px 0px 0px 0px`,
+  overflow: `hidden`,
+}));
+
+const Imagecontainer4: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -522,24 +644,31 @@ const ImageContainer4: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct5 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
-const ProductImage31: any = styled('img')({
-  height: `208px`,
-  width: `311px`,
-  objectFit: `cover`,
+const Image5: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductCard_image_4.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
 });
 
-const Frame146: any = styled('div')({
+const Titlecontainer4: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `space-between`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px 16px`,
   boxSizing: `border-box`,
@@ -547,7 +676,7 @@ const Frame146: any = styled('div')({
   margin: `32px 0px 0px 0px`,
 });
 
-const ProductTitle4: any = styled('div')(({ theme }: any) => ({
+const Producttitle4: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -564,7 +693,7 @@ const ProductTitle4: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Frame143: any = styled('div')({
+const Descriptioncontainer4: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -612,16 +741,38 @@ const ButtonOutlined4: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Rectangle1804: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Primary']['Main'],
+const Bottomaccentcolor4: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Error']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
   margin: `32px 0px 0px 0px`,
 }));
 
-const ImageContainer5: any = styled('div', {
+const ProductPage5: any = styled(ProductPage)(({ theme }: any) => ({
+  width: `1440px`,
+  margin: `32px 0px 0px 0px`,
+}));
+
+const Productcardframe5: any = styled('div', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+})(({ theme, props }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px 0px 0px`,
+  boxSizing: `border-box`,
+  height: `496px`,
+  width: `311px`,
+  margin: props.isProduct6 ? `0px` : `32px 0px 0px 0px`,
+  overflow: `hidden`,
+}));
+
+const Imagecontainer5: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -632,19 +783,26 @@ const ImageContainer5: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: props.isProduct6 ? `0px` : `32px 0px 0px 0px`,
-}));
+  margin: `0px`,
+});
 
-const ProductImage32: any = styled('img')({
-  height: `208px`,
-  width: `311px`,
-  objectFit: `cover`,
+const Image6: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductCard_image_5.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
 });
 
-const Frame145: any = styled('div')({
+const Titlecontainer5: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -657,7 +815,7 @@ const Frame145: any = styled('div')({
   margin: `32px 0px 0px 0px`,
 });
 
-const ProductTitle5: any = styled('div')(({ theme }: any) => ({
+const Producttitle5: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -674,7 +832,7 @@ const ProductTitle5: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Frame144: any = styled('div')({
+const Descriptioncontainer5: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -722,15 +880,20 @@ const ButtonOutlined5: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Rectangle1805: any = styled('div')(({ theme }: any) => ({
+const Bottomaccentcolor5: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Warning']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
   margin: `32px 0px 0px 0px`,
 }));
 
+const ProductPage6: any = styled(ProductPage)(({ theme }: any) => ({
+  width: `1440px`,
+  margin: `32px 0px 0px 0px`,
+}));
+
 function ProductCard(props: ProductCardProps): JSX.Element {
-  const { fns } = useProductCard();
+  const { data, fns } = useProductCard();
 
   return (
     <StateProduct1 className={props.className}>
@@ -739,222 +902,166 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         !props.isProduct4 &&
         !props.isProduct5 &&
         !props.isProduct6 && (
-          <ImageContainer props={props}>
-            <ProductImage
+          <Productcardframe props={props}>
+            <Imagecontainer>
+              <Image1></Image1>
+            </Imagecontainer>
+            <Titlecontainer>
+              <Producttitle>{`Surface Go 3`}</Producttitle>
+            </Titlecontainer>
+            <Descriptioncontainer>
+              <Description>
+                {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+              </Description>
+            </Descriptioncontainer>
+            <ButtonOutlined
+              variant="outlined"
+              size={'medium'}
+              color={'info'}
+              disabled={false}
+              onClick={fns.toggleDialog}
               props={props}
-              src={`assets/images/ProductCard_Product_Image.png`}
-              loading="lazy"
-              alt={'Product Image'}
-            />
-          </ImageContainer>
+            >
+              {'Device Details'}
+            </ButtonOutlined>
+            <Bottomaccentcolor></Bottomaccentcolor>
+          </Productcardframe>
         )}
-      {!props.isProduct2 &&
-        !props.isProduct3 &&
-        !props.isProduct4 &&
-        !props.isProduct5 &&
-        !props.isProduct6 && (
-          <Frame150>
-            <ProductTitle>{`Surface Go 3`}</ProductTitle>
-          </Frame150>
-        )}
-      {!props.isProduct2 &&
-        !props.isProduct3 &&
-        !props.isProduct4 &&
-        !props.isProduct5 &&
-        !props.isProduct6 && (
-          <Frame139>
-            <Description>
+      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
+        <Productmodalframe>
+          <ProductPage1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
+        </Productmodalframe>
+      </Dialog>
+      {props.isProduct2 && (
+        <Productcardframe1 props={props}>
+          <Imagecontainer1>
+            <Image2></Image2>
+          </Imagecontainer1>
+          <Titlecontainer1>
+            <Producttitle1>{`Surface Laptop 2`}</Producttitle1>
+          </Titlecontainer1>
+          <Descriptioncontainer1>
+            <Description1>
               {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-            </Description>
-          </Frame139>
-        )}
-      {!props.isProduct2 &&
-        !props.isProduct3 &&
-        !props.isProduct4 &&
-        !props.isProduct5 &&
-        !props.isProduct6 && (
-          <ButtonOutlined
+            </Description1>
+          </Descriptioncontainer1>
+          <ButtonOutlined1
             variant="outlined"
             size={'medium'}
             color={'info'}
             disabled={false}
-            onClick={fns.handleButtonClick}
             props={props}
           >
             {'Device Details'}
-          </ButtonOutlined>
-        )}
-      {!props.isProduct2 &&
-        !props.isProduct3 &&
-        !props.isProduct4 &&
-        !props.isProduct5 &&
-        !props.isProduct6 && <Rectangle180></Rectangle180>}
-      {props.isProduct2 && (
-        <ImageContainer1 props={props}>
-          <ProductImage2
+          </ButtonOutlined1>
+          <Bottomaccentcolor1></Bottomaccentcolor1>
+        </Productcardframe1>
+      )}
+      {props.isProduct2 && <ProductPage2 />}
+      {props.isProduct3 && (
+        <Productcardframe2 props={props}>
+          <Imagecontainer2>
+            <Image3></Image3>
+          </Imagecontainer2>
+          <Titlecontainer2>
+            <Producttitle2>{`Surface Pro 9`}</Producttitle2>
+          </Titlecontainer2>
+          <Descriptioncontainer2>
+            <Description2>
+              {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+            </Description2>
+          </Descriptioncontainer2>
+          <ButtonOutlined2
+            variant="outlined"
+            size={'medium'}
+            color={'info'}
+            disabled={false}
             props={props}
-            src={`assets/images/ProductCard_Product_Image_2.png`}
-            loading="lazy"
-            alt={'Product Image 2'}
-          />
-        </ImageContainer1>
+          >
+            {'Device Details'}
+          </ButtonOutlined2>
+          <Bottomaccentcolor2></Bottomaccentcolor2>
+        </Productcardframe2>
       )}
-      {props.isProduct2 && (
-        <Frame149>
-          <ProductTitle1>{`Surface Laptop 2`}</ProductTitle1>
-        </Frame149>
-      )}
-      {props.isProduct2 && (
-        <Frame140>
-          <Description1>
-            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-          </Description1>
-        </Frame140>
-      )}
-      {props.isProduct2 && (
-        <ButtonOutlined1
-          variant="outlined"
-          size={'medium'}
-          color={'info'}
-          disabled={false}
-          props={props}
-        >
-          {'Device Details'}
-        </ButtonOutlined1>
-      )}
-      {props.isProduct2 && <Rectangle1801></Rectangle1801>}
-      {props.isProduct3 && (
-        <ImageContainer2 props={props}>
-          <ProductImage3
-            src={`assets/images/ProductCard_Product_Image_3.png`}
-            loading="lazy"
-            alt={'Product Image 3'}
-          />
-        </ImageContainer2>
-      )}
-      {props.isProduct3 && (
-        <Frame148>
-          <ProductTitle2>{`Surface Pro 9`}</ProductTitle2>
-        </Frame148>
-      )}
-      {props.isProduct3 && (
-        <Frame141>
-          <Description2>
-            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-          </Description2>
-        </Frame141>
-      )}
-      {props.isProduct3 && (
-        <ButtonOutlined2
-          variant="outlined"
-          size={'medium'}
-          color={'info'}
-          disabled={false}
-          props={props}
-        >
-          {'Device Details'}
-        </ButtonOutlined2>
-      )}
-      {props.isProduct3 && <Rectangle1802></Rectangle1802>}
+      {props.isProduct3 && <ProductPage3 />}
       {props.isProduct4 && (
-        <ImageContainer3 props={props}>
-          <ProductImage1
-            src={`assets/images/ProductCard_Product_Image_1.png`}
-            loading="lazy"
-            alt={'Product Image'}
-          />
-        </ImageContainer3>
+        <Productcardframe3 props={props}>
+          <Imagecontainer3>
+            <Image4></Image4>
+          </Imagecontainer3>
+          <Titlecontainer3>
+            <Producttitle3>{`Surface Laptop 5`}</Producttitle3>
+          </Titlecontainer3>
+          <Descriptioncontainer3>
+            <Description3>
+              {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+            </Description3>
+          </Descriptioncontainer3>
+          <ButtonOutlined3
+            variant="outlined"
+            size={'medium'}
+            color={'info'}
+            disabled={false}
+            props={props}
+          >
+            {'Device Details'}
+          </ButtonOutlined3>
+          <Bottomaccentcolor3></Bottomaccentcolor3>
+        </Productcardframe3>
       )}
-      {props.isProduct4 && (
-        <Frame147>
-          <ProductTitle3>{`Surface Laptop 5`}</ProductTitle3>
-        </Frame147>
-      )}
-      {props.isProduct4 && (
-        <Frame142>
-          <Description3>
-            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-          </Description3>
-        </Frame142>
-      )}
-      {props.isProduct4 && (
-        <ButtonOutlined3
-          variant="outlined"
-          size={'medium'}
-          color={'info'}
-          disabled={false}
-          props={props}
-        >
-          {'Device Details'}
-        </ButtonOutlined3>
-      )}
-      {props.isProduct4 && <Rectangle1803></Rectangle1803>}
+      {props.isProduct4 && <ProductPage4 />}
       {props.isProduct5 && (
-        <ImageContainer4 props={props}>
-          <ProductImage31
-            src={`assets/images/ProductCard_Product_Image_3_1.png`}
-            loading="lazy"
-            alt={'Product Image 3'}
-          />
-        </ImageContainer4>
+        <Productcardframe4 props={props}>
+          <Imagecontainer4>
+            <Image5></Image5>
+          </Imagecontainer4>
+          <Titlecontainer4>
+            <Producttitle4>{`Item 5`}</Producttitle4>
+          </Titlecontainer4>
+          <Descriptioncontainer4>
+            <Description4>
+              {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+            </Description4>
+          </Descriptioncontainer4>
+          <ButtonOutlined4
+            variant="outlined"
+            size={'medium'}
+            color={'info'}
+            disabled={false}
+            props={props}
+          >
+            {'Device Details'}
+          </ButtonOutlined4>
+          <Bottomaccentcolor4></Bottomaccentcolor4>
+        </Productcardframe4>
       )}
-      {props.isProduct5 && (
-        <Frame146>
-          <ProductTitle4>{`Item 5`}</ProductTitle4>
-        </Frame146>
-      )}
-      {props.isProduct5 && (
-        <Frame143>
-          <Description4>
-            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-          </Description4>
-        </Frame143>
-      )}
-      {props.isProduct5 && (
-        <ButtonOutlined4
-          variant="outlined"
-          size={'medium'}
-          color={'info'}
-          disabled={false}
-          props={props}
-        >
-          {'Device Details'}
-        </ButtonOutlined4>
-      )}
-      {props.isProduct5 && <Rectangle1804></Rectangle1804>}
+      {props.isProduct5 && <ProductPage5 />}
       {props.isProduct6 && (
-        <ImageContainer5 props={props}>
-          <ProductImage32
-            src={`assets/images/ProductCard_Product_Image_3_2.png`}
-            loading="lazy"
-            alt={'Product Image 3'}
-          />
-        </ImageContainer5>
+        <Productcardframe5 props={props}>
+          <Imagecontainer5>
+            <Image6></Image6>
+          </Imagecontainer5>
+          <Titlecontainer5>
+            <Producttitle5>{`Item 6`}</Producttitle5>
+          </Titlecontainer5>
+          <Descriptioncontainer5>
+            <Description5>
+              {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+            </Description5>
+          </Descriptioncontainer5>
+          <ButtonOutlined5
+            variant="outlined"
+            size={'medium'}
+            color={'info'}
+            disabled={false}
+            props={props}
+          >
+            {'Device Details'}
+          </ButtonOutlined5>
+          <Bottomaccentcolor5></Bottomaccentcolor5>
+        </Productcardframe5>
       )}
-      {props.isProduct6 && (
-        <Frame145>
-          <ProductTitle5>{`Item 6`}</ProductTitle5>
-        </Frame145>
-      )}
-      {props.isProduct6 && (
-        <Frame144>
-          <Description5>
-            {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-          </Description5>
-        </Frame144>
-      )}
-      {props.isProduct6 && (
-        <ButtonOutlined5
-          variant="outlined"
-          size={'medium'}
-          color={'info'}
-          disabled={false}
-          props={props}
-        >
-          {'Device Details'}
-        </ButtonOutlined5>
-      )}
-      {props.isProduct6 && <Rectangle1805></Rectangle1805>}
+      {props.isProduct6 && <ProductPage6 />}
     </StateProduct1>
   );
 }
