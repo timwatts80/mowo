@@ -31,6 +31,7 @@ const Desktop: any = styled('div', {
       : data.currentVariant === 'Mobile'
       ? `column`
       : `row`,
+  width: '100vw',
   justifyContent:
     data.currentVariant === 'Tablet'
       ? `center`
@@ -51,7 +52,6 @@ const Desktop: any = styled('div', {
       : `60px 100px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: '100vw',
 }));
 
 const Form1: any = styled('div', {
@@ -66,14 +66,20 @@ const Form1: any = styled('div', {
   alignItems: `flex-start`,
   padding: `40px`,
   boxSizing: `border-box`,
-  width: `645px`,
+  flex: `1`,
   margin:
     data.currentVariant === 'Tablet'
-      ? `60px 0px 0px 0px`
+      ? `24px 0px 0px 0px`
       : data.currentVariant === 'Mobile'
-      ? `60px 0px 0px 0px`
+      ? `24px 0px 0px 0px`
       : `0px`,
   overflow: `hidden`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? `570px`
+      : data.currentVariant === 'Mobile'
+      ? `570px`
+      : 'unset',
 }));
 
 const ContactUs1Span1: any = styled('span')({
@@ -222,33 +228,33 @@ const ButtonContained: any = styled(Button)({
   margin: `0px`,
 });
 
-const ÞaðErLíkaSpurningUmA: any = styled('div', {
+const Frame141: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(105, 105, 105, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `18px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `160.0000023841858%`,
-  textTransform: `none`,
-  width: `478px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `40px`,
+  boxSizing: `border-box`,
+  flex: `1`,
   margin:
     data.currentVariant === 'Tablet'
-      ? `60px 0px 0px 0px`
+      ? `24px 0px 0px 0px`
       : data.currentVariant === 'Mobile'
-      ? `60px 0px 0px 0px`
-      : `0px 0px 0px 117px`,
+      ? `24px 0px 0px 0px`
+      : `0px 0px 0px 100px`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? `570px`
+      : data.currentVariant === 'Mobile'
+      ? `570px`
+      : 'unset',
 }));
 
-const ÞaðErLíkaSpurningUmA1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const ÞaðErLíkaSpurningUmA: any = styled('div')({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -261,6 +267,21 @@ const ÞaðErLíkaSpurningUmA1: any = styled('div', {
   textDecoration: `none`,
   lineHeight: `160.0000023841858%`,
   textTransform: `none`,
+  flex: `1`,
+  margin: `0px`,
+});
+
+const Frame139: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `flex-start`,
+  padding: `40px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   width:
     data.currentVariant === 'Tablet'
@@ -272,9 +293,26 @@ const ÞaðErLíkaSpurningUmA1: any = styled('div', {
     data.currentVariant === 'Tablet'
       ? `0px`
       : data.currentVariant === 'Mobile'
-      ? `60px 0px 0px 0px`
-      : `0px 0px 0px 117px`,
+      ? `24px 0px 0px 0px`
+      : `0px 0px 0px 100px`,
 }));
+
+const ÞaðErLíkaSpurningUmA1: any = styled('div')({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(105, 105, 105, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `400`,
+  fontSize: `18px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `160.0000023841858%`,
+  textTransform: `none`,
+  flex: `1`,
+  margin: `0px`,
+});
 
 const Form11: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -297,10 +335,10 @@ const Form11: any = styled('div', {
       : `568px`,
   margin:
     data.currentVariant === 'Tablet'
-      ? `60px 0px 0px 0px`
+      ? `24px 0px 0px 0px`
       : data.currentVariant === 'Mobile'
-      ? `60px 0px 0px 0px`
-      : `0px 0px 0px 117px`,
+      ? `24px 0px 0px 0px`
+      : `0px 0px 0px 100px`,
   overflow: `hidden`,
 }));
 
@@ -450,9 +488,33 @@ const ButtonContained1: any = styled(Button)({
   margin: `0px`,
 });
 
-const ÞaðErLíkaSpurningUmA2: any = styled('div', {
+const Frame140: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `flex-start`,
+  padding: `40px 0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? 'unset'
+      : data.currentVariant === 'Mobile'
+      ? 'unset'
+      : `327px`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `24px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `0px`
+      : `0px 0px 0px 100px`,
+}));
+
+const ÞaðErLíkaSpurningUmA2: any = styled('div')({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -465,20 +527,9 @@ const ÞaðErLíkaSpurningUmA2: any = styled('div', {
   textDecoration: `none`,
   lineHeight: `160.0000023841858%`,
   textTransform: `none`,
-  alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'Tablet'
-      ? 'unset'
-      : data.currentVariant === 'Mobile'
-      ? 'unset'
-      : `327px`,
-  margin:
-    data.currentVariant === 'Tablet'
-      ? `60px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
-      ? `0px`
-      : `0px 0px 0px 117px`,
-}));
+  flex: `1`,
+  margin: `0px`,
+});
 
 const Form12: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -501,10 +552,10 @@ const Form12: any = styled('div', {
       : `327px`,
   margin:
     data.currentVariant === 'Tablet'
-      ? `60px 0px 0px 0px`
+      ? `24px 0px 0px 0px`
       : data.currentVariant === 'Mobile'
-      ? `60px 0px 0px 0px`
-      : `0px 0px 0px 117px`,
+      ? `24px 0px 0px 0px`
+      : `0px 0px 0px 100px`,
   overflow: `hidden`,
 }));
 
@@ -669,14 +720,18 @@ function ContactUs(props: ContactUsProps): JSX.Element {
         )}
       {!(data.currentVariant === 'Tablet') &&
         !(data.currentVariant === 'Mobile') && (
-          <ÞaðErLíkaSpurningUmA data={data}>
-            {`Það er líka spurning um að setja frekar 3 paragraphs hér eins og í Modern Workplace uppi og nota punktana 3 frá GPT - Certified partner, end-to-end solutions og það?`}
-          </ÞaðErLíkaSpurningUmA>
+          <Frame141 data={data}>
+            <ÞaðErLíkaSpurningUmA>
+              {`Það er líka spurning um að setja frekar 3 paragraphs hér eins og í Modern Workplace uppi og nota punktana 3 frá GPT - Certified partner, end-to-end solutions og það?`}
+            </ÞaðErLíkaSpurningUmA>
+          </Frame141>
         )}
       {data.currentVariant === 'Tablet' && (
-        <ÞaðErLíkaSpurningUmA1 data={data}>
-          {`Það er líka spurning um að setja frekar 3 paragraphs hér eins og í Modern Workplace uppi og nota punktana 3 frá GPT - Certified partner, end-to-end solutions og það?`}
-        </ÞaðErLíkaSpurningUmA1>
+        <Frame139 data={data}>
+          <ÞaðErLíkaSpurningUmA1>
+            {`Það er líka spurning um að setja frekar 3 paragraphs hér eins og í Modern Workplace uppi og nota punktana 3 frá GPT - Certified partner, end-to-end solutions og það?`}
+          </ÞaðErLíkaSpurningUmA1>
+        </Frame139>
       )}
       {data.currentVariant === 'Tablet' && (
         <Form11 data={data}>
@@ -725,9 +780,11 @@ function ContactUs(props: ContactUsProps): JSX.Element {
         </Form11>
       )}
       {data.currentVariant === 'Mobile' && (
-        <ÞaðErLíkaSpurningUmA2 data={data}>
-          {`Það er líka spurning um að setja frekar 3 paragraphs hér eins og í Modern Workplace uppi og nota punktana 3 frá GPT - Certified partner, end-to-end solutions og það?`}
-        </ÞaðErLíkaSpurningUmA2>
+        <Frame140 data={data}>
+          <ÞaðErLíkaSpurningUmA2>
+            {`Það er líka spurning um að setja frekar 3 paragraphs hér eins og í Modern Workplace uppi og nota punktana 3 frá GPT - Certified partner, end-to-end solutions og það?`}
+          </ÞaðErLíkaSpurningUmA2>
+        </Frame140>
       )}
       {data.currentVariant === 'Mobile' && (
         <Form12 data={data}>
