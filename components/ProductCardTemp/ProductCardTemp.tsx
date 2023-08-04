@@ -48,8 +48,9 @@ const Imagecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductImage: any = styled('img')({
-  // backgroundImage: `url(assets/images/ProductCardTemp_Product_Image.png)`,
+const ProductImage: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
+})(({ props }: any) => ({
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -62,7 +63,8 @@ const ProductImage: any = styled('img')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-});
+  backgroundImage: props.products.image,
+}));
 
 const Titlecontainer: any = styled('div')({
   display: `flex`,
@@ -156,7 +158,7 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
         <ProductImage
-          src={props.products.image}
+          props={props}
           alt={'Product Image'}
           loading={'lazy'}
         ></ProductImage>
