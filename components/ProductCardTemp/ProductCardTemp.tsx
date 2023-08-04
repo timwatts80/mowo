@@ -156,16 +156,16 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
         <ProductImage
-          src={props.product.image}
+          src={props.products.image}
           alt={'Product Image'}
           loading={'lazy'}
         ></ProductImage>
       </Imagecontainer>
       <Titlecontainer>
-        <ProductTitle>{props.product.title}</ProductTitle>
+        <ProductTitle>{props.products.title}</ProductTitle>
       </Titlecontainer>
       <Descriptioncontainer>
-        <Description>{props.product.description}</Description>
+        <Description>{props.products.description}</Description>
       </Descriptioncontainer>
       <ButtonOutlined
         variant="outlined"
