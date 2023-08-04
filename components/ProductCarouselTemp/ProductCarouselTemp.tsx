@@ -47,7 +47,7 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 1600, // tablet breakpoint
