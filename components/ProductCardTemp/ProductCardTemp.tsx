@@ -146,7 +146,7 @@ const Bottomaccentcolor: any = styled('div', {
   alignSelf: `stretch`,
   height: `16px`,
   margin: `32px 0px 0px 0px`,
-  backgroundColor: props.product.stripeColor,
+  backgroundColor: props.products.stripeColor,
 }));
 
 function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
@@ -156,16 +156,16 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
         <ProductImage
-          src={props.products.image}
+          src={props.product.image}
           alt={'Product Image'}
           loading={'lazy'}
         ></ProductImage>
       </Imagecontainer>
       <Titlecontainer>
-        <ProductTitle>{props.products.title}</ProductTitle>
+        <ProductTitle>{props.product.title}</ProductTitle>
       </Titlecontainer>
       <Descriptioncontainer>
-        <Description>{props.products.description}</Description>
+        <Description>{props.product.description}</Description>
       </Descriptioncontainer>
       <ButtonOutlined
         variant="outlined"
