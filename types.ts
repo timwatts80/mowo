@@ -84,7 +84,7 @@ export interface HeaderProps {
 }
 
 
-export interface ProductListProps {
+export interface ProductCarouselTempProps {
   className?: any;
 };
 

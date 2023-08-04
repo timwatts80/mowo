@@ -15,7 +15,7 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import ProductCardTemp from 'components/ProductCardTemp/ProductCardTemp';
-import { ProductListProps } from 'types';
+import { ProductCarouselTempProps } from 'types';
 import useProductList from 'components/ProductCarousel/useProductCarousel';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -39,7 +39,7 @@ const ProductCard1: any = styled(ProductCardTemp)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-function ProductList(props: ProductListProps): JSX.Element {
+function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
   const { data } = useProductList();
 
   const settings = {
@@ -88,4 +88,4 @@ function ProductList(props: ProductListProps): JSX.Element {
   );
 }
 
-export default ProductList;
+export default ProductCarouselTemp;
