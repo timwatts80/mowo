@@ -155,7 +155,11 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
   return (
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
-        <ProductImage src={props.product.image} loading={'lazy'}></ProductImage>
+        <ProductImage
+          src={props.product.image}
+          alt={'Product Image'}
+          loading={'lazy'}
+        ></ProductImage>
       </Imagecontainer>
       <Titlecontainer>
         <ProductTitle>{props.product.title}</ProductTitle>
