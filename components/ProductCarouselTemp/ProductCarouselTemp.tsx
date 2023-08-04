@@ -47,7 +47,7 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1600, // tablet breakpoint
@@ -76,8 +76,8 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
   return (
     <div style={{ maxWidth: '70%', margin: '0 auto' }}>
       <Slider {...settings}>
-        {data.catalogproducts &&
-          data.catalogproducts.map((product: any, index: number) => {
+        {data.products &&
+          data.products.map((product: any, index: number) => {
             return <ProductCard1 key={index} products={product} />;
           })}
       </Slider>

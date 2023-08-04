@@ -48,8 +48,8 @@ const Imagecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductImage: any = styled('div')({
-  backgroundImage: `url(assets/images/ProductCardTemp_Product_Image.png)`,
+const ProductImage: any = styled('img')({
+  // backgroundImage: `url(assets/images/ProductCardTemp_Product_Image.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
