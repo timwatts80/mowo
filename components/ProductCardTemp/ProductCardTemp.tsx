@@ -160,7 +160,7 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
         <Image1 props={props}></Image1>
       </Imagecontainer>
       <Titlecontainer>
-        <Producttitle>{props.item.title}</Producttitle>
+        <Producttitle>{props.product.title}</Producttitle>
       </Titlecontainer>
       <Descriptioncontainer>
         <Description>{props.product.description}</Description>
