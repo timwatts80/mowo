@@ -16,7 +16,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import ProductCardTemp from 'components/ProductCardTemp/ProductCardTemp';
 import { ProductCarouselTempProps } from 'types';
-import useProductList from 'components/ProductCarousel/useProductCarousel';
+import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCarouselTemp';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -40,7 +40,7 @@ const ProductCard1: any = styled(ProductCardTemp)(({ theme }: any) => ({
 }));
 
 function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
-  const { data } = useProductList();
+  const { data } = useProductCarouselTemp();
 
   const settings = {
     dots: true,
@@ -76,12 +76,9 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
   return (
     <div style={{ maxWidth: '70%', margin: '0 auto' }}>
       <Slider {...settings}>
-        {data.products &&
-          data.products.map((product: any, index: number) => {
-            const isProductPropName = `isProduct${index + 1}`; // generate the prop name based on the current index
-            return (
-              <ProductCard1 key={index} {...{ [isProductPropName]: true }} />
-            );
+        {data.catalogproducts &&
+          data.catalogproducts.map((product: any, index: number) => {
+            return <ProductCard1 key={index} products={product} />;
           })}
       </Slider>
     </div>

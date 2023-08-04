@@ -16,7 +16,7 @@
 
 export interface ProductCardTempProps {
   className?: any;
-  product: any;
+  products: any;
 };
 
 
