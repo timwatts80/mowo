@@ -44,13 +44,12 @@ const Imagecontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  flex: `1`,
+  height: `208px`,
   margin: `0px`,
 });
 
-const ProductImage: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+const ProductImage: any = styled('div')({
+  backgroundImage: `url(assets/images/ProductCardTemp_Product_Image.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -60,11 +59,19 @@ const ProductImage: any = styled('div', {
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-  backgroundImage: props.products.image,
-}));
+});
+
+const Q15: any = styled('img')({
+  height: `208px`,
+  width: `258px`,
+  objectFit: `cover`,
+  margin: `0px`,
+});
 
 const Titlecontainer: any = styled('div')({
   display: `flex`,
@@ -157,7 +164,9 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
   return (
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
-        <ProductImage props={props} alt={'Product Image'}></ProductImage>
+        <ProductImage src={props.products.image}>
+          <Q15 src={props.product.image} loading="lazy" alt={'Product Image'} />
+        </ProductImage>
       </Imagecontainer>
       <Titlecontainer>
         <ProductTitle>{props.products.title}</ProductTitle>
