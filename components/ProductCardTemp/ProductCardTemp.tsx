@@ -63,7 +63,7 @@ const ProductImage: any = styled('div', {
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-  backgroundImage: props.products.image.src,
+  backgroundImage: props.products.image,
 }));
 
 const Titlecontainer: any = styled('div')({
