@@ -48,7 +48,7 @@ const Imagecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductImage: any = styled('div', {
+const ProductImage: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   backgroundPosition: `center`,
