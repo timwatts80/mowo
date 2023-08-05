@@ -49,8 +49,8 @@ const Imagecontainer: any = styled('div')({
 });
 
 const ProductImage: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ props }: any) => ({
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -63,7 +63,7 @@ const ProductImage: any = styled('div', {
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-  backgroundImage: props.products.image,
+  backgroundImage: data.products.image,
 }));
 
 const Titlecontainer: any = styled('div')({
@@ -152,16 +152,12 @@ const Bottomaccentcolor: any = styled('div', {
 }));
 
 function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
-  const { fns } = useProductCardTemp();
+  const { data, fns } = useProductCardTemp();
 
   return (
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
-        <ProductImage
-          props={props}
-          alt={'Product Image'}
-          loading={'lazy'}
-        ></ProductImage>
+        <ProductImage data={data} alt={'Product Image'}></ProductImage>
       </Imagecontainer>
       <Titlecontainer>
         <ProductTitle>{props.products.title}</ProductTitle>
