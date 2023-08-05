@@ -49,7 +49,6 @@ const Imagecontainer: any = styled('div')({
 });
 
 const ProductImage: any = styled('div')({
-  backgroundImage: `url(assets/images/ProductCardTemp_Product_Image.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -164,9 +163,9 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
   return (
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
-        <ProductImage src={props.products.image}>
+        <ProductImage>
           <Q15
-            src={props.products.image}
+            src={props.products.image.src}
             loading="lazy"
             alt={'Product Image'}
           />
