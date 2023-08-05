@@ -48,7 +48,7 @@ const Imagecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ImgProductImage: any = styled('div', {
+const ImgProductImage: any = styled('img', {
   shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
 })(({ props }: any) => ({
   backgroundPosition: `center`,
@@ -158,7 +158,7 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
         <ImgProductImage
-          props={props}
+          src={props.products.image}
           alt={'Product Image'}
           loading={'lazy'}
         ></ImgProductImage>
