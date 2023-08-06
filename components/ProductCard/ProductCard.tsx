@@ -13,10 +13,9 @@
  **********************************************************************/
 
 import React from 'react';
-import { Dialog } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Card27 from 'components/Card27/Card27';
-import ProductCardTemp from 'components/ProductCardTemp/ProductCardTemp';
 import { ProductCardProps } from 'types';
 import useProductCard from 'components/ProductCard/useProductCard';
 
@@ -68,9 +67,138 @@ const Productcardcontainer: any = styled('div')({
   top: `0px`,
 });
 
-const ProductCardTemp1: any = styled(ProductCardTemp)(({ theme }: any) => ({
+const ProductCardTemp: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px 0px 0px`,
+  boxSizing: `border-box`,
   width: `311px`,
   height: `496px`,
+  margin: `0px`,
+  overflow: `hidden`,
+}));
+
+const Imagecontainer: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  height: `208px`,
+  margin: `0px`,
+});
+
+const ProductImage: any = styled('img')({
+  height: `208px`,
+  width: `258px`,
+  objectFit: `cover`,
+  flex: `1`,
+  margin: `0px`,
+});
+
+const Titlecontainer: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
+const ProductTitle: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
+  textTransform: `none`,
+  flex: `1`,
+  margin: `0px`,
+}));
+
+const Descriptioncontainer: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 16px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
+const Description: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['MOWO']['black-75'],
+  fontStyle: `normal`,
+  fontFamily: `Open Sans`,
+  fontWeight: `400`,
+  fontSize: `16px`,
+  letterSpacing: `-0.3199999928474426px`,
+  textDecoration: `none`,
+  lineHeight: `20px`,
+  textTransform: `none`,
+  flex: `1`,
+  margin: `0px`,
+}));
+
+const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
+  margin: `32px 0px 0px 0px`,
+  color: theme.palette['Info']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Medium'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Medium'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Medium'].textTransform,
+}));
+
+const Bottomaccent: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
+const Bottomaccentcolor: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Secondary']['Main'],
+  alignSelf: `stretch`,
+  height: `16px`,
   margin: `0px`,
 }));
 
@@ -85,7 +213,33 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         </Productdialogcontain>
       </Dialog>
       <Productcardcontainer>
-        <ProductCardTemp1 />
+        <ProductCardTemp>
+          <Imagecontainer>
+            <ProductImage
+              src={props.products.image.src}
+              loading="lazy"
+              alt={'product image'}
+            />
+          </Imagecontainer>
+          <Titlecontainer>
+            <ProductTitle>{props.products.title}</ProductTitle>
+          </Titlecontainer>
+          <Descriptioncontainer>
+            <Description>{props.products.description}</Description>
+          </Descriptioncontainer>
+          <ButtonOutlined
+            variant="outlined"
+            size={'medium'}
+            color={'info'}
+            disabled={false}
+            onClick={fns.toggleDialog}
+          >
+            {'Device Details'}
+          </ButtonOutlined>
+          <Bottomaccent>
+            <Bottomaccentcolor></Bottomaccentcolor>
+          </Bottomaccent>
+        </ProductCardTemp>
       </Productcardcontainer>
     </ProductCard1>
   );
