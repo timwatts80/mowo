@@ -63,11 +63,13 @@ const ProductImage: any = styled('div')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
+  width: '100%',
+  height: '208px',
 });
 
 const Q15: any = styled('img')({
-  height: `208px`,
-  width: `258px`,
+  height: `100%`,
+  width: `100%`,
   objectFit: `cover`,
   margin: `0px`,
 });
