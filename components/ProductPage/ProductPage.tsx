@@ -13,7 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
-import { Rating, Divider } from '@mui/material';
+import { Rating, Button, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductPageProps } from 'types';
 import useProductPage from 'components/ProductPage/useProductPage';
@@ -370,9 +370,30 @@ const AddShare: any = styled('div', {
   alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
-const ShopBtn1: any = styled('div', {
+const ButtonContained: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 30px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `0px 0px 0px 30px`
+      : `0px`,
+  color: theme.palette['Primary']['Contrast'],
+  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Large'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Large'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Large'].textTransform,
+}));
+
+const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Text']['Primary'],
   display: `flex`,
   position: `relative`,
@@ -380,53 +401,26 @@ const ShopBtn1: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: data.currentVariant === 'ScreenMobile' ? `10px 0px` : `16px 0px`,
+  padding: `16px 0px`,
   boxSizing: `border-box`,
-  width: data.currentVariant === 'ScreenMobile' ? `200px` : `327px`,
-  margin: `0px`,
+  width: `327px`,
+  margin: `0px 0px 0px 30px`,
   overflow: `hidden`,
-  cursor: `pointer`,
 }));
 
-const CheckOut: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const CheckOut: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(255, 255, 255, 1)`,
-  fontStyle:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontStyle
-      : theme.typography['Typography']['H6'].fontStyle,
-  fontFamily:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontFamily
-      : theme.typography['Typography']['H6'].fontFamily,
-  fontWeight:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontWeight
-      : theme.typography['Typography']['H6'].fontWeight,
-  fontSize:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].fontSize
-      : theme.typography['Typography']['H6'].fontSize,
-  letterSpacing:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].letterSpacing
-      : theme.typography['Typography']['H6'].letterSpacing,
-  lineHeight:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].lineHeight
-      : theme.typography['Typography']['H6'].lineHeight,
-  textDecoration:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].textDecoration
-      : theme.typography['Typography']['H6'].textDecoration,
-  textTransform:
-    data.currentVariant === 'ScreenMobile'
-      ? theme.typography['Typography']['Body 1'].textTransform
-      : theme.typography['Typography']['H6'].textTransform,
+  fontStyle: theme.typography['Typography']['H6'].fontStyle,
+  fontFamily: theme.typography['Typography']['H6'].fontFamily,
+  fontWeight: theme.typography['Typography']['H6'].fontWeight,
+  fontSize: theme.typography['Typography']['H6'].fontSize,
+  letterSpacing: theme.typography['Typography']['H6'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H6'].lineHeight,
+  textDecoration: theme.typography['Typography']['H6'].textDecoration,
+  textTransform: theme.typography['Typography']['H6'].textTransform,
   margin: `0px`,
 }));
 
@@ -470,6 +464,166 @@ const IconShare: any = styled('div')({
 });
 
 const Share: any = styled('img')({
+  height: `16px`,
+  width: `16px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `4px`,
+});
+
+const ShopBtn11: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  backgroundColor: theme.palette['Text']['Primary'],
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `16px 0px`,
+  boxSizing: `border-box`,
+  width: `327px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `0px` : `0px 0px 0px 30px`,
+  overflow: `hidden`,
+}));
+
+const CheckOut1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(255, 255, 255, 1)`,
+  fontStyle: theme.typography['Typography']['H6'].fontStyle,
+  fontFamily: theme.typography['Typography']['H6'].fontFamily,
+  fontWeight: theme.typography['Typography']['H6'].fontWeight,
+  fontSize: theme.typography['Typography']['H6'].fontSize,
+  letterSpacing: theme.typography['Typography']['H6'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H6'].lineHeight,
+  textDecoration: theme.typography['Typography']['H6'].textDecoration,
+  textTransform: theme.typography['Typography']['H6'].textTransform,
+  margin: `0px`,
+}));
+
+const IconButton1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px 0px 0px 30px`,
+});
+
+const Container1: any = styled('div')({
+  borderRadius: `48px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `4px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+});
+
+const IconShare1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `24px`,
+  height: `24px`,
+  margin: `0px`,
+});
+
+const Share1: any = styled('img')({
+  height: `16px`,
+  width: `16px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `4px`,
+});
+
+const ShopBtn12: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  backgroundColor: theme.palette['Text']['Primary'],
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px 0px`,
+  boxSizing: `border-box`,
+  width: `200px`,
+  margin: data.currentVariant === 'ScreenMobile' ? `0px` : `0px 0px 0px 30px`,
+  overflow: `hidden`,
+}));
+
+const CheckOut2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(255, 255, 255, 1)`,
+  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 1'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 1'].textTransform,
+  margin: `0px`,
+}));
+
+const IconButton2: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px 0px 0px 30px`,
+});
+
+const Container2: any = styled('div')({
+  borderRadius: `48px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `4px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+});
+
+const IconShare2: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `24px`,
+  height: `24px`,
+  margin: `0px`,
+});
+
+const Share2: any = styled('img')({
   height: `16px`,
   width: `16px`,
   position: `absolute`,
@@ -691,7 +845,9 @@ const Description3: any = styled('div')({
   margin: `8px 0px 0px 0px`,
 });
 
-const RoyalCrush1: any = styled('div')(({ theme }: any) => ({
+const HauteSip: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -705,10 +861,85 @@ const RoyalCrush1: any = styled('div')(({ theme }: any) => ({
   textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
   textTransform: theme.typography['Typography']['Body 2'].textTransform,
   alignSelf: `stretch`,
-  margin: `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `2px 0px 0px 0px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `2px 0px 0px 0px`
+      : `0px`,
 }));
 
 const Q8951: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
+  margin: `2px 0px 0px 0px`,
+}));
+
+const RoyalCrush1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
+  alignSelf: `stretch`,
+  margin: data.currentVariant === 'ScreenTablet' ? `0px` : `2px 0px 0px 0px`,
+}));
+
+const Q8952: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
+  margin: `2px 0px 0px 0px`,
+}));
+
+const RoyalCrush2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
+  alignSelf: `stretch`,
+  margin: data.currentVariant === 'ScreenMobile' ? `0px` : `2px 0px 0px 0px`,
+}));
+
+const Q8953: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -767,7 +998,9 @@ const Description4: any = styled('div')({
   margin: `8px 0px 0px 0px`,
 });
 
-const RoyalCrush2: any = styled('div')(({ theme }: any) => ({
+const SignatureSqueez: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -781,10 +1014,85 @@ const RoyalCrush2: any = styled('div')(({ theme }: any) => ({
   textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
   textTransform: theme.typography['Typography']['Body 2'].textTransform,
   alignSelf: `stretch`,
-  margin: `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `2px 0px 0px 0px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `2px 0px 0px 0px`
+      : `0px`,
 }));
 
-const Q8952: any = styled('div')(({ theme }: any) => ({
+const Q8954: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
+  margin: `2px 0px 0px 0px`,
+}));
+
+const RoyalCrush3: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
+  alignSelf: `stretch`,
+  margin: data.currentVariant === 'ScreenTablet' ? `0px` : `2px 0px 0px 0px`,
+}));
+
+const Q8955: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
+  margin: `2px 0px 0px 0px`,
+}));
+
+const RoyalCrush4: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
+  alignSelf: `stretch`,
+  margin: data.currentVariant === 'ScreenMobile' ? `0px` : `2px 0px 0px 0px`,
+}));
+
+const Q8956: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -833,20 +1141,75 @@ function ProductPage(props: ProductPageProps): JSX.Element {
               </ExperienceAnExquisit>
             </Description>
             <AddShare data={data}>
-              <ShopBtn1 onClick={props.onClose} data={data}>
-                <CheckOut data={data}>{`ADD TO BAG`}</CheckOut>
-              </ShopBtn1>
-              <IconButton>
-                <Container>
-                  <IconShare>
-                    <Share
-                      src={`assets/images/ProductPage_share.png`}
-                      loading="lazy"
-                      alt={'share'}
-                    />
-                  </IconShare>
-                </Container>
-              </IconButton>
+              {!(data.currentVariant === 'ScreenTablet') &&
+                !(data.currentVariant === 'ScreenMobile') && (
+                  <ButtonContained
+                    variant="contained"
+                    size={'large'}
+                    color={'primary'}
+                    disabled={false}
+                    onClick={props.onClose}
+                    data={data}
+                  >
+                    {'Large'}
+                  </ButtonContained>
+                )}
+              {!(data.currentVariant === 'ScreenTablet') &&
+                !(data.currentVariant === 'ScreenMobile') && (
+                  <ShopBtn1>
+                    <CheckOut>{`ADD TO BAG`}</CheckOut>
+                  </ShopBtn1>
+                )}
+              {!(data.currentVariant === 'ScreenTablet') &&
+                !(data.currentVariant === 'ScreenMobile') && (
+                  <IconButton>
+                    <Container>
+                      <IconShare>
+                        <Share
+                          src={`assets/images/ProductPage_share.png`}
+                          loading="lazy"
+                          alt={'share'}
+                        />
+                      </IconShare>
+                    </Container>
+                  </IconButton>
+                )}
+              {data.currentVariant === 'ScreenTablet' && (
+                <ShopBtn11 data={data}>
+                  <CheckOut1>{`ADD TO BAG`}</CheckOut1>
+                </ShopBtn11>
+              )}
+              {data.currentVariant === 'ScreenTablet' && (
+                <IconButton1>
+                  <Container1>
+                    <IconShare1>
+                      <Share1
+                        src={`assets/images/ProductPage_share_1.png`}
+                        loading="lazy"
+                        alt={'share'}
+                      />
+                    </IconShare1>
+                  </Container1>
+                </IconButton1>
+              )}
+              {data.currentVariant === 'ScreenMobile' && (
+                <ShopBtn12 data={data}>
+                  <CheckOut2>{`ADD TO BAG`}</CheckOut2>
+                </ShopBtn12>
+              )}
+              {data.currentVariant === 'ScreenMobile' && (
+                <IconButton2>
+                  <Container2>
+                    <IconShare2>
+                      <Share2
+                        src={`assets/images/ProductPage_share_2.png`}
+                        loading="lazy"
+                        alt={'share'}
+                      />
+                    </IconShare2>
+                  </Container2>
+                </IconButton2>
+              )}
             </AddShare>
             <DividerHorizontal orientation="horizontal" />
             <Ingredients>
@@ -868,15 +1231,57 @@ function ProductPage(props: ProductPageProps): JSX.Element {
                 <Recomend11>
                   <Image2></Image2>
                   <Description3>
-                    <RoyalCrush1>{`Haute Sip`}</RoyalCrush1>
-                    <Q8951>{`$8.95`}</Q8951>
+                    {!(data.currentVariant === 'ScreenTablet') &&
+                      !(data.currentVariant === 'ScreenMobile') && (
+                        <HauteSip data={data}>{`Haute Sip`}</HauteSip>
+                      )}
+                    {!(data.currentVariant === 'ScreenTablet') &&
+                      !(data.currentVariant === 'ScreenMobile') && (
+                        <Q8951>{`$8.95`}</Q8951>
+                      )}
+                    {data.currentVariant === 'ScreenTablet' && (
+                      <RoyalCrush1 data={data}>{`Haute Sip`}</RoyalCrush1>
+                    )}
+                    {data.currentVariant === 'ScreenTablet' && (
+                      <Q8952>{`$8.95`}</Q8952>
+                    )}
+                    {data.currentVariant === 'ScreenMobile' && (
+                      <RoyalCrush2 data={data}>{`Haute Sip`}</RoyalCrush2>
+                    )}
+                    {data.currentVariant === 'ScreenMobile' && (
+                      <Q8953>{`$8.95`}</Q8953>
+                    )}
                   </Description3>
                 </Recomend11>
                 <Recomend12>
                   <Image3></Image3>
                   <Description4>
-                    <RoyalCrush2>{`Signature Squeez`}</RoyalCrush2>
-                    <Q8952>{`$8.95`}</Q8952>
+                    {!(data.currentVariant === 'ScreenTablet') &&
+                      !(data.currentVariant === 'ScreenMobile') && (
+                        <SignatureSqueez data={data}>
+                          {`Signature Squeez`}
+                        </SignatureSqueez>
+                      )}
+                    {!(data.currentVariant === 'ScreenTablet') &&
+                      !(data.currentVariant === 'ScreenMobile') && (
+                        <Q8954>{`$8.95`}</Q8954>
+                      )}
+                    {data.currentVariant === 'ScreenTablet' && (
+                      <RoyalCrush3 data={data}>
+                        {`Signature Squeez`}
+                      </RoyalCrush3>
+                    )}
+                    {data.currentVariant === 'ScreenTablet' && (
+                      <Q8955>{`$8.95`}</Q8955>
+                    )}
+                    {data.currentVariant === 'ScreenMobile' && (
+                      <RoyalCrush4 data={data}>
+                        {`Signature Squeez`}
+                      </RoyalCrush4>
+                    )}
+                    {data.currentVariant === 'ScreenMobile' && (
+                      <Q8956>{`$8.95`}</Q8956>
+                    )}
                   </Description4>
                 </Recomend12>
               </Thumbs>
