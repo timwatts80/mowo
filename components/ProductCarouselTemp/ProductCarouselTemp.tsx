@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import ProductCardTemp from 'components/ProductCardTemp/ProductCardTemp';
+import ProductCard from 'components/ProductCard/ProductCard';
 import { ProductCarouselTempProps } from 'types';
 import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCarouselTemp';
 import Slider from 'react-slick';
@@ -34,7 +34,7 @@ const ProductList1: any = styled('div')({
   height: 'auto',
 });
 
-const ProductCard1: any = styled(ProductCardTemp)(({ theme }: any) => ({
+const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
   zIndex: `0`,
   margin: `0px`,
 }));
