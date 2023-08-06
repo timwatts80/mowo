@@ -205,7 +205,7 @@ function Card27(props: Card27Props): JSX.Element {
       <Card271 className={props.className}>
         <Top>
           <TopTxt>
-            <Title>{props.products.title}</Title>
+            <Title>{`Card Title`}</Title>
             <Details>{`Lorem ipsum test to be seen.`}</Details>
           </TopTxt>
           <Side>
