@@ -1109,7 +1109,7 @@ const Q8956: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductPage(props: ProductPageProps): JSX.Element {
-  const { data } = useProductPage();
+  const { data, fns } = useProductPage();
 
   return (
     props.open && (
@@ -1118,7 +1118,7 @@ function ProductPage(props: ProductPageProps): JSX.Element {
           <Imagecontainer data={data}>
             <ProductImage
               data={data}
-              src={props.product.image.src}
+              src={props.products.image.src}
               loading="lazy"
               alt={'product image'}
             />
