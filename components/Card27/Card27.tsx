@@ -176,41 +176,44 @@ const ButtonText: any = styled(Button)(({ theme }: any) => ({
 
 function Card27(props: Card27Props): JSX.Element {
   return (
-    <Card271 className={props.className}>
-      <Top>
-        <TopTxt>
-          <Title>{`Card Title`}</Title>
-          <Details>{`Lorem ipsum test to be seen.`}</Details>
-        </TopTxt>
-        <Side>
-          <IconX2
-            fontSize={'inherit'}
-            htmlColor="rgba(0, 0, 0, 1)"
-            component={IconX1}
-          />
-        </Side>
-      </Top>
-      <Content>
-        <Btns>
-          <ButtonContained
-            variant="contained"
-            size={'large'}
-            color={'primary'}
-            disabled={false}
-          >
-            {'Download'}
-          </ButtonContained>
-          <ButtonText
-            variant="text"
-            size={'large'}
-            color={'primary'}
-            disabled={false}
-          >
-            {'Skip'}
-          </ButtonText>
-        </Btns>
-      </Content>
-    </Card271>
+    props.open && (
+      <Card271 className={props.className}>
+        <Top>
+          <TopTxt>
+            <Title>{`Card Title`}</Title>
+            <Details>{`Lorem ipsum test to be seen.`}</Details>
+          </TopTxt>
+          <Side>
+            <IconX2
+              fontSize={'inherit'}
+              htmlColor="rgba(0, 0, 0, 1)"
+              component={IconX1}
+            />
+          </Side>
+        </Top>
+        <Content>
+          <Btns>
+            <ButtonContained
+              variant="contained"
+              size={'large'}
+              color={'primary'}
+              disabled={false}
+              onClick={props.onClose}
+            >
+              {'Download'}
+            </ButtonContained>
+            <ButtonText
+              variant="text"
+              size={'large'}
+              color={'primary'}
+              disabled={false}
+            >
+              {'Skip'}
+            </ButtonText>
+          </Btns>
+        </Content>
+      </Card271>
+    )
   );
 }
 
