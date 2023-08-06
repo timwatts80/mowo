@@ -15,6 +15,7 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import ProductCard from 'components/ProductCard/ProductCard';
+import Card27 from 'components/Card27/Card27';
 import { ProductCarouselTempProps } from 'types';
 import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCarouselTemp';
 import Slider from 'react-slick';
@@ -37,6 +38,10 @@ const ProductList1: any = styled('div')({
 const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
   zIndex: `0`,
   margin: `0px`,
+}));
+
+const ProductModal: any = styled(Card27)(({ theme }: any) => ({
+
 }));
 
 function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
@@ -73,16 +78,21 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
     ]
   };
 
-  return (
-    <div style={{ maxWidth: '70%', margin: '0 auto' }}>
-      <Slider {...settings}>
-        {data.products &&
-          data.products.map((product: any, index: number) => {
-            return <ProductCard1 key={index} products={product} />;
-          })}
-      </Slider>
-    </div>
-  );
+return (
+  <div style={{ maxWidth: '70%', margin: '0 auto' }}>
+    <Slider {...settings}>
+      {data.products &&
+        data.products.map((product: any, index: number) => {
+          return (
+            <React.Fragment key={index}>
+              <ProductCard1 products={product} />
+              <Card27 products={product} />
+            </React.Fragment>
+          );
+        })}
+    </Slider>
+  </div>
+);
 }
 
 export default ProductCarouselTemp;

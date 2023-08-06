@@ -49,8 +49,9 @@
 
 export interface Card27Props {
   className?: any;
-  open: any;
-  onClose: any;
+  open?: any;
+  onClose?: any;
+  products: any;
 };
 
 
