@@ -73,10 +73,6 @@ const useProductCarouselTemp = () => {
     }
   ];
 
-  // let [indicator, setIndicator] = useState(0);
-  // let [numberofcards, setNumberofcards] = useState(4);
-  // let productproducts = products.slice(indicator, (numberofcards + indicator));
-
   let data = { products }
 
   const fns: any = {};
