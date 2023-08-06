@@ -24,37 +24,17 @@ const ProductCard1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100%',
-  height: 'auto',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
+  height: 'auto',
+  width: 'fit-content',
 });
-
-const Productdialogcontain: any = styled('div')({
-  display: `flex`,
-  position: `absolute`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `10px`,
-  boxSizing: `border-box`,
-  width: `1460px`,
-  height: `1030px`,
-  left: `349px`,
-  top: `0px`,
-});
-
-const Card271: any = styled(Card27)(({ theme }: any) => ({
-  width: `460px`,
-  margin: `0px`,
-}));
 
 const Productcardcontainer: any = styled('div')({
   display: `flex`,
-  position: `absolute`,
+  position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-start`,
@@ -63,8 +43,7 @@ const Productcardcontainer: any = styled('div')({
   boxSizing: `border-box`,
   width: `331px`,
   height: `516px`,
-  left: `0px`,
-  top: `0px`,
+  margin: `0px`,
 });
 
 const ProductCardTemp: any = styled('div')(({ theme }: any) => ({
@@ -202,16 +181,28 @@ const Bottomaccentcolor: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
+const Productdialogcontain: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  margin: `0px 0px 0px 18px`,
+});
+
+const Card271: any = styled(Card27)(({ theme }: any) => ({
+  width: `460px`,
+  margin: `0px`,
+}));
+
 function ProductCard(props: ProductCardProps): JSX.Element {
   const { data, fns } = useProductCard();
 
   return (
     <ProductCard1 className={props.className}>
-      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
-        <Productdialogcontain>
-          <Card271 open={data.isDialogOpen} onClose={fns.toggleDialog} />
-        </Productdialogcontain>
-      </Dialog>
       <Productcardcontainer>
         <ProductCardTemp>
           <Imagecontainer>
@@ -241,6 +232,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           </Bottomaccent>
         </ProductCardTemp>
       </Productcardcontainer>
+      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
+        <Productdialogcontain>
+          <Card271 open={data.isDialogOpen} onClose={fns.toggleDialog} />
+        </Productdialogcontain>
+      </Dialog>
     </ProductCard1>
   );
 }
