@@ -25,7 +25,7 @@ const ProductCard1: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `row`,
   width: '100%',
-  height: 'auto',
+  height: `1030px`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
