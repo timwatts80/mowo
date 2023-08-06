@@ -131,13 +131,24 @@ const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Bottomaccentcolor: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['props'].includes(prop.toString()),
-})(({ theme, props }: any) => ({
+const Bottomaccent: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
+const Bottomaccentcolor: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Secondary']['Main'],
   alignSelf: `stretch`,
   height: `16px`,
-  margin: `32px 0px 0px 0px`,
-  backgroundColor: props.products.stripeColor,
+  margin: `0px`,
 }));
 
 function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
@@ -167,7 +178,9 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
       >
         {'Device Details'}
       </ButtonOutlined>
-      <Bottomaccentcolor props={props}></Bottomaccentcolor>
+      <Bottomaccent>
+        <Bottomaccentcolor></Bottomaccentcolor>
+      </Bottomaccent>
     </ProductCardTemp1>
   );
 }
