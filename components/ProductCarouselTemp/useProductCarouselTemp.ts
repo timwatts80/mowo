@@ -27,7 +27,7 @@ const useProductCarouselTemp = () => {
       product_id: 1,
       image: product1,
       title: "Surface Go 3",
-      description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
+      description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move. Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
     {
       product_id: 2,
