@@ -50,7 +50,7 @@ const Imagecontainer: any = styled('div')({
 
 const ProductImage: any = styled('img')({
   height: `208px`,
-  width: '100%',
+  width: 'auto',
   objectFit: `cover`,
   margin: `0px`,
 });
