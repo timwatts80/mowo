@@ -25,7 +25,7 @@ const Card271: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: 'fit-content',
+  width: '100%',
   justifyContent: `center`,
   alignItems: `flex-start`,
   padding: `30px`,
@@ -205,7 +205,7 @@ function Card27(props: Card27Props): JSX.Element {
       <Card271 className={props.className}>
         <Top>
           <TopTxt>
-            <Title>{`Card Title`}</Title>
+            <Title>{props.products.title}</Title>
             <Details>{`Lorem ipsum test to be seen.`}</Details>
           </TopTxt>
           <Side>
