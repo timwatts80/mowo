@@ -13,9 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
-import SvgIcon from '@mui/material/SvgIcon';
-import { Button, SvgIcon } from '@mui/material';
-import IconX1 from 'public/assets/images/_IconX.svg';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Card27Props } from 'types';
 
@@ -106,15 +104,42 @@ const Side: any = styled('div')({
   margin: `0px`,
 });
 
-const IconX2: any = styled(SvgIcon)({
-  alignSelf: `stretch`,
-  flex: `1`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
+const Icon1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   width: `20px`,
   height: `20px`,
   margin: `0px`,
+  cursor: `pointer`,
+});
+
+const IconX: any = styled('div')({
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const Close: any = styled('img')({
+  height: `10.29px`,
+  width: `10.29px`,
+  position: `absolute`,
+  left: `5px`,
+  top: `5px`,
 });
 
 const Content: any = styled('div')({
@@ -184,11 +209,15 @@ function Card27(props: Card27Props): JSX.Element {
             <Details>{`Lorem ipsum test to be seen.`}</Details>
           </TopTxt>
           <Side>
-            <IconX2
-              fontSize={'inherit'}
-              htmlColor="rgba(0, 0, 0, 1)"
-              component={IconX1}
-            />
+            <Icon1 onClick={props.onClose}>
+              <IconX>
+                <Close
+                  src={`assets/images/Card27_Close.png`}
+                  loading="lazy"
+                  alt={'Close'}
+                />
+              </IconX>
+            </Icon1>
           </Side>
         </Top>
         <Content>
@@ -198,7 +227,6 @@ function Card27(props: Card27Props): JSX.Element {
               size={'large'}
               color={'primary'}
               disabled={false}
-              onClick={props.onClose}
             >
               {'Download'}
             </ButtonContained>
