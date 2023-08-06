@@ -116,6 +116,7 @@ export interface ProductPageProps {
   className?: any;
   open: any;
   onClose: any;
+  products: any;
 };
 
 
