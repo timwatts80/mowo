@@ -16,7 +16,7 @@ const useProductCard = () => {
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   let data: any = {isDialogOpen};
-  const toggleDialog = (): any => {
+  const toggleDialog = (param1:any): any => {
     setIsDialogOpen(!isDialogOpen);
   };
 
