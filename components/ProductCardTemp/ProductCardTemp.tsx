@@ -25,7 +25,7 @@ const ProductCardTemp1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: 'auto',
+  height: `496px`,
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
