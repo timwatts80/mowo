@@ -13,10 +13,11 @@
 
 import React from 'react';
 const useProductCardTemp = () => {
+  const toggleDialog = (): any => {};
   const data: any = {};
   const toggleDialogue = (): any => {};
 
-  const fns: any = { toggleDialogue };
+  const fns: any = { toggleDialogue ,toggleDialog};
 
   return { data, fns };
 };

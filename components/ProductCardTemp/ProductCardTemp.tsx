@@ -25,8 +25,8 @@ const ProductCardTemp1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: '100%',
-  width: `311px`,
+  height: `496px`,
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `16px 0px 0px 0px`,
@@ -50,8 +50,9 @@ const Imagecontainer: any = styled('div')({
 
 const ProductImage: any = styled('img')({
   height: `208px`,
-  width: 'auto',
+  width: `258px`,
   objectFit: `cover`,
+  flex: `1`,
   margin: `0px`,
 });
 
@@ -152,7 +153,7 @@ const Bottomaccentcolor: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
-  const { data, fns } = useProductCardTemp();
+  const { fns } = useProductCardTemp();
 
   return (
     <ProductCardTemp1 className={props.className}>
@@ -160,7 +161,7 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
         <ProductImage
           src={props.products.image.src}
           loading="lazy"
-          alt={'Product Image'}
+          alt={'product image'}
         />
       </Imagecontainer>
       <Titlecontainer>
@@ -174,7 +175,7 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
         size={'medium'}
         color={'info'}
         disabled={false}
-        onClick={fns.toggleDialogue}
+        onClick={fns.toggleDialog}
       >
         {'Device Details'}
       </ButtonOutlined>
