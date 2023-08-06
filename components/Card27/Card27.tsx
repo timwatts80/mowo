@@ -25,12 +25,12 @@ const Card271: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: `460px`,
   justifyContent: `center`,
   alignItems: `flex-start`,
   padding: `30px`,
   boxSizing: `border-box`,
-  height: 'auto',
+  height: `182px`,
 }));
 
 const Top: any = styled('div')({
