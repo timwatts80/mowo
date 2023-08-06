@@ -152,7 +152,7 @@ const Bottomaccentcolor: any = styled('div')(({ theme }: any) => ({
 }));
 
 function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
-  const { fns } = useProductCardTemp();
+  const { data, fns } = useProductCardTemp();
 
   return (
     <ProductCardTemp1 className={props.className}>
