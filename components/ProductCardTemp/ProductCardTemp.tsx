@@ -48,28 +48,9 @@ const Imagecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductImage: any = styled('div')({
-  backgroundPosition: `center`,
-  backgroundSize: `cover`,
-  backgroundRepeat: `no-repeat`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
+const ProductImage: any = styled('img')({
+  height: `208px`,
   width: '100%',
-  height: '208px',
-});
-
-const Q15: any = styled('img')({
-  height: `100%`,
-  width: `100%`,
   objectFit: `cover`,
   margin: `0px`,
 });
@@ -165,13 +146,11 @@ function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
   return (
     <ProductCardTemp1 className={props.className}>
       <Imagecontainer>
-        <ProductImage>
-          <Q15
-            src={props.products.image.src}
-            loading="lazy"
-            alt={'Product Image'}
-          />
-        </ProductImage>
+        <ProductImage
+          src={props.products.image}
+          loading="lazy"
+          alt={'Product Image'}
+        />
       </Imagecontainer>
       <Titlecontainer>
         <ProductTitle>{props.products.title}</ProductTitle>
