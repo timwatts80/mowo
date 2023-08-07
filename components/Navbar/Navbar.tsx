@@ -300,11 +300,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu1>
         </ToolBar>
       )}
-      <Dialog
-        maxWidth={false}
-        open={data.isDialogOpen}
-        onClose={fns.toggleDialog}
-      >
+      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
         <Sidebarcontainer data={data}>
           <Sidebar1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
         </Sidebarcontainer>
