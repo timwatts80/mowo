@@ -31,6 +31,7 @@ const Property1Desktop: any = styled('div')({
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
+  margin: '0 auto',
   maxWidth: '1440px',
 });
 
