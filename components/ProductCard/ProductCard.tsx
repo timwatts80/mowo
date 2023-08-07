@@ -624,74 +624,69 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         onClose={fns.toggleDialog}
       >
         <Productdialogcontain>
-          {props.open && (
-            <ProductPageTest
-              open={data.isDialogOpen}
-              onClose={fns.toggleDialog}
-            >
-              <Col1>
-                <Imagecontainer1>
-                  <ProductImage1
-                    src={`assets/images/ProductCard_product_image_1.png`}
+          <ProductPageTest open={data.isDialogOpen} onClose={fns.toggleDialog}>
+            <Col1>
+              <Imagecontainer1>
+                <ProductImage1
+                  src={`assets/images/ProductCard_product_image_1.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+              </Imagecontainer1>
+            </Col1>
+            <Col2>
+              <Details>
+                <Top>
+                  <Title>{`Fancy Fusion`}</Title>
+                  <Price>{`$8.95`}</Price>
+                  <Row>
+                    <Q40>{`4.0`}</Q40>
+                    <Rating1 size={'small'} disabled={false} />
+                  </Row>
+                </Top>
+                <Description1>
+                  <Description2>{`Description`}</Description2>
+                  <ExperienceAnExquisit>
+                    {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+                  </ExperienceAnExquisit>
+                </Description1>
+                <AddShare>
+                  <ShopBtn1>
+                    <CheckOut>{`ADD TO BAG`}</CheckOut>
+                  </ShopBtn1>
+                  <IconButton>
+                    <Container>
+                      <IconShare>
+                        <Share
+                          src={`assets/images/ProductCard_share.png`}
+                          loading="lazy"
+                          alt={'share'}
+                        />
+                      </IconShare>
+                    </Container>
+                  </IconButton>
+                </AddShare>
+                <DividerHorizontal orientation="horizontal" />
+                <Ingredients>
+                  <Ingredients1>{`Ingredients`}</Ingredients1>
+                  <AppleCarrotBeetCeler>
+                    {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
+                  </AppleCarrotBeetCeler>
+                </Ingredients>
+              </Details>
+            </Col2>
+            <Side onClick={props.onClose}>
+              <Icon1>
+                <IconX>
+                  <Close
+                    src={`assets/images/ProductCard_Close.png`}
                     loading="lazy"
-                    alt={'product image'}
+                    alt={'Close'}
                   />
-                </Imagecontainer1>
-              </Col1>
-              <Col2>
-                <Details>
-                  <Top>
-                    <Title>{`Fancy Fusion`}</Title>
-                    <Price>{`$8.95`}</Price>
-                    <Row>
-                      <Q40>{`4.0`}</Q40>
-                      <Rating1 size={'small'} disabled={false} />
-                    </Row>
-                  </Top>
-                  <Description1>
-                    <Description2>{`Description`}</Description2>
-                    <ExperienceAnExquisit>
-                      {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
-                    </ExperienceAnExquisit>
-                  </Description1>
-                  <AddShare>
-                    <ShopBtn1>
-                      <CheckOut>{`ADD TO BAG`}</CheckOut>
-                    </ShopBtn1>
-                    <IconButton>
-                      <Container>
-                        <IconShare>
-                          <Share
-                            src={`assets/images/ProductCard_share.png`}
-                            loading="lazy"
-                            alt={'share'}
-                          />
-                        </IconShare>
-                      </Container>
-                    </IconButton>
-                  </AddShare>
-                  <DividerHorizontal orientation="horizontal" />
-                  <Ingredients>
-                    <Ingredients1>{`Ingredients`}</Ingredients1>
-                    <AppleCarrotBeetCeler>
-                      {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
-                    </AppleCarrotBeetCeler>
-                  </Ingredients>
-                </Details>
-              </Col2>
-              <Side onClick={props.onClose}>
-                <Icon1>
-                  <IconX>
-                    <Close
-                      src={`assets/images/ProductCard_Close.png`}
-                      loading="lazy"
-                      alt={'Close'}
-                    />
-                  </IconX>
-                </Icon1>
-              </Side>
-            </ProductPageTest>
-          )}
+                </IconX>
+              </Icon1>
+            </Side>
+          </ProductPageTest>
         </Productdialogcontain>
       </Dialog>
     </ProductCard1>
