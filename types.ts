@@ -65,6 +65,8 @@
 export interface ProductCardProps {
   className?: any;
   products: any;
+  open: any;
+  onClose: any;
   };
 
 
