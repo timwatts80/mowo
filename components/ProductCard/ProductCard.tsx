@@ -672,7 +672,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                     size={'large'}
                     color={'primary'}
                     disabled={false}
-                    onClick={props.onClose}
+                    onClick={fns.toggleDialog}
                   >
                     {'Large'}
                   </ButtonContained>
