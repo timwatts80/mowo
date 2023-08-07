@@ -18,6 +18,7 @@ import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
 import { NavbarProps } from 'types';
 import useNavbar from 'components/Navbar/useNavbar';
+import { Fullscreen } from '@mui/icons-material';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
