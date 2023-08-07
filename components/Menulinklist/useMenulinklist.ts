@@ -16,13 +16,28 @@ const useMenulinklist = () => {
 const menuLinks = [
   {
     id: 1,
-    title: "Home",
+    title: "Modern Workplace",
     url: "/",
   },
   {
     id: 2,
-    title: "About",
-    url: "/about",
+    title: "Solutions",
+    url: "/",
+  },
+  {
+    id: 3,
+    title: "Devices",
+    url: "/",
+  },
+  {
+    id: 4,
+    title: "Cases",
+    url: "/",
+  },
+  {
+    id: 5,
+    title: "Contact",
+    url: "/",
   },
 ];
 

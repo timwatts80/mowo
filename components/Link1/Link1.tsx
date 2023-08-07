@@ -60,11 +60,19 @@ const ModernWorkplace: any = styled('div', {
 }));
 
 function Link1(props: Link1Props): JSX.Element {
-  const { data } = useLink1();
+  const { data, fns } = useLink1();
 
   return (
-    <StateDefault className={props.className} data={data}>
-      <ModernWorkplace data={data}>{props.menuLinks.title}</ModernWorkplace>
+    <StateDefault 
+      className={props.className}
+      data={data}
+      onFocus={fns.handleFocus}
+      onBlur={fns.handleBlur}
+      onMouseEnter={fns.handleMouseEnter}
+      onMouseLeave={fns.handleMouseLeave}
+      tabIndex={0}
+      >
+      <ModernWorkplace data={data} fns={fns}>{props.menuLinks.title}</ModernWorkplace>
     </StateDefault>
   );
 }
