@@ -23,7 +23,7 @@ const ProductPageTest1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: `1440px`,
+  width: 'fit-content',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `64px 48px`,
@@ -41,7 +41,7 @@ const Col1: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   flex: `1`,
-  height: `562px`,
+  height: `460px`,
   margin: `0px`,
 });
 
@@ -60,8 +60,8 @@ const Imagecontainer: any = styled('div')({
 });
 
 const ProductImage: any = styled('img')({
-  height: `562px`,
-  width: `627px`,
+  height: `460px`,
+  width: `587px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -77,7 +77,7 @@ const Col2: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `547px`,
+  flex: `1`,
   margin: `0px 0px 0px 75px`,
 });
 
@@ -179,6 +179,7 @@ const Description: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
+  alignSelf: `stretch`,
   margin: `44px 0px 0px 0px`,
 });
 
@@ -195,6 +196,7 @@ const Description1: any = styled('div')(({ theme }: any) => ({
   lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
   textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
   textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  alignSelf: `stretch`,
   margin: `0px`,
 }));
 
@@ -211,7 +213,7 @@ const ExperienceAnExquisit: any = styled('div')(({ theme }: any) => ({
   lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
   textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
   textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  width: `519px`,
+  alignSelf: `stretch`,
   margin: `15px 0px 0px 0px`,
 }));
 
