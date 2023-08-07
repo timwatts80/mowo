@@ -23,7 +23,7 @@ const ProductPageTest1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100%',
+  width: 'fit-content',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `64px 48px`,
