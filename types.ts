@@ -52,10 +52,12 @@
 
 
 
+
 export interface ProductCardProps {
   className?: any;
   products: any;
   };
+
 
 
 
@@ -106,6 +108,7 @@ export interface ProductPageTestProps {
 
 
 
+
 export interface Card27Props {
   className?: any;
   open?: any;
@@ -134,10 +137,12 @@ export interface Card27Props {
 
 
 
+
 export interface ProductCardTempProps {
   className?: any;
   products: any;
 };
+
 
 
 
@@ -224,9 +229,11 @@ export interface ProductPageProps {
 
 
 
+
 export interface ContactUsProps {
   className?: any;
 };
+
 
 
 
@@ -312,9 +319,11 @@ export interface ProductModalProps {
 
 
 
+
 export interface DialogSampleProps {
   className?: any;
 };
+
 
 
 
@@ -400,6 +409,7 @@ export interface ContactUsSampleProps {
 
 
 
+
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
 }
@@ -443,9 +453,11 @@ export interface ProductSectionSurfaceHubDeviceProps {
 
 
 
+
 export interface NavbarProps {
   className?: any;
 }
+
 
 
 
@@ -531,6 +543,7 @@ export interface SidebarProps {
 
 
 
+
 export interface HeaderProps {
   className?: any;
 }
@@ -574,9 +587,11 @@ export interface HeaderProps {
 
 
 
+
 export interface ProductCarouselTempProps {
   className?: any;
 };
+
 
 
 
@@ -662,9 +677,11 @@ export interface ProductBoxProps {
 
 
 
+
 export interface ProductBox2Props {
   className?: any;
 };
+
 
 
 
@@ -748,9 +765,11 @@ export interface ProdustListProps {
 
 
 
+
 export interface ProductBox1Props {
   className?: any;
 };
+
 
 
 
@@ -834,9 +853,11 @@ export interface Frame139Props {
 
 
 
+
 export interface ProductBox7Props {
   className?: any;
 };
+
 
 
 
@@ -920,9 +941,11 @@ export interface ProductBox6Props {
 
 
 
+
 export interface ProductBox5Props {
   className?: any;
 };
+
 
 
 
@@ -1006,9 +1029,11 @@ export interface ProductBox4Props {
 
 
 
+
 export interface ProductBox3Props {
   className?: any;
 };
+
 
 
 
@@ -1092,9 +1117,11 @@ export interface CustomerCardProps {
 
 
 
+
 export interface ModernWorkplaceProps {
   className?: any;
 }
+
 
 
 
@@ -1178,6 +1205,7 @@ export interface Link1Props {
 
 
 
+
 export interface CustomerCasesProps {
   className?: any;
 }
@@ -1221,9 +1249,11 @@ export interface CustomerCasesProps {
 
 
 
+
 export interface FooterProps {
   className?: any;
 }
+
 
 
 
