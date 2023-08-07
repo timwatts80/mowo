@@ -29,8 +29,6 @@ const ScreenDesktop: any = styled('div')({
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
-  margin: '0 auto',
-  maxWidth: '1440px',
 });
 
 const Rows: any = styled('div', {
@@ -56,8 +54,14 @@ const Rows: any = styled('div', {
       : `90px 90px 75px 90px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `0px`,
+  margin: '0 auto',
   overflow: `hidden`,
+  maxWidth:
+    data.currentVariant === 'ScreenTablet'
+      ? `unset`
+      : data.currentVariant === 'ScreenMobile'
+      ? `unset`
+      : `1440px`,
 }));
 
 const UnleashThePowerOfModSpan1: any = styled('span', {
