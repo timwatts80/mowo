@@ -17,7 +17,8 @@ import { styled } from '@mui/material/styles';
 import { FooterProps } from 'types';
 import useFooter from 'components/Footer/useFooter';
 
-const ScreenDesktop: any = styled('div')({
+const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(248, 248, 248, 1)`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -29,12 +30,11 @@ const ScreenDesktop: any = styled('div')({
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
-});
+}));
 
 const Cols: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  backgroundColor: `rgba(248, 248, 248, 1)`,
+})(({ data }: any) => ({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -742,8 +742,7 @@ const Rectangle176: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Rows: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: `rgba(248, 248, 248, 1)`,
+const Rows: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -755,7 +754,7 @@ const Rows: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
   overflow: `hidden`,
-}));
+});
 
 const TopRow: any = styled('div')({
   display: `flex`,
@@ -1450,8 +1449,7 @@ const Rectangle1761: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Rows1: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: `rgba(248, 248, 248, 1)`,
+const Rows1: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1464,7 +1462,7 @@ const Rows1: any = styled('div')(({ theme }: any) => ({
   flex: `1`,
   margin: `0px`,
   overflow: `hidden`,
-}));
+});
 
 const TopRow1: any = styled('div')({
   display: `flex`,
