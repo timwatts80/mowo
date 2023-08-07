@@ -630,7 +630,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
             <Col1>
               <Imagecontainer1>
                 <ProductImage1
-                  src={`assets/images/ProductCard_product_image_1.png`}
+                  src={props.product.image.src}
                   loading="lazy"
                   alt={'product image'}
                 />
