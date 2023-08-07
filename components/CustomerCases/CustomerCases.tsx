@@ -21,7 +21,8 @@ import CustomerCard from 'components/CustomerCard/CustomerCard';
 import { CustomerCasesProps } from 'types';
 import useCustomerCases from 'components/CustomerCases/useCustomerCases';
 
-const ScreenDesktop: any = styled('div')({
+const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(248, 248, 248, 1)`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -33,12 +34,11 @@ const ScreenDesktop: any = styled('div')({
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
-});
+}));
 
 const Rows: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  backgroundColor: `rgba(248, 248, 248, 1)`,
+})(({ data }: any) => ({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
