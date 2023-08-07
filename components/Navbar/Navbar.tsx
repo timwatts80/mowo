@@ -224,12 +224,13 @@ const Sidebarcontainer: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
+  width: `768px`,
   margin: data.currentVariant === 'ScreenMobile' ? `10px 0px 0px 0px` : `0px`,
 }));
 
 const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
+  alignSelf: `stretch`,
   height: `754px`,
-  width: `768px`,
   margin: `0px`,
 }));
 
@@ -298,11 +299,18 @@ const Sidebarcontainer1: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `375px`,
   margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
 }));
 
 const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
-  width: `375px`,
+  flex: `1`,
   height: `754px`,
   margin: `0px`,
 }));
