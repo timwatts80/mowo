@@ -63,8 +63,6 @@ export interface Card27Props {
   open?: any;
   onClose?: any;
   products: any;
-  open: any;
-  onClose: any;
 };
 
 
