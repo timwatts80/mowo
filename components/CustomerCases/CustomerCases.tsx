@@ -47,15 +47,21 @@ const Rows: any = styled('div', {
   alignItems: `center`,
   padding:
     data.currentVariant === 'ScreenTablet'
-      ? `60px 60px 120px 60px`
+      ? `60px 45px 120px 45px`
       : data.currentVariant === 'ScreenMobile'
       ? `30px`
-      : `90px 90px 150px 90px`,
+      : `90px 60px 150px 60px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: `0px`,
+  margin: '0 auto',
   overflow: `hidden`,
+  maxWidth:
+    data.currentVariant === 'ScreenTablet'
+      ? `unset`
+      : data.currentVariant === 'ScreenMobile'
+      ? `unset`
+      : `1440px`,
 }));
 
 const EmpoweringSuccessStoSpan1: any = styled('span', {
