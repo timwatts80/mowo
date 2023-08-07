@@ -404,6 +404,22 @@ const AddShare: any = styled('div')({
   margin: `44px 0px 0px 0px`,
 });
 
+const ButtonContained: any = styled(Button)(({ theme }: any) => ({
+  margin: `0px`,
+  color: theme.palette['Primary']['Contrast'],
+  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Large'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Large'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Large'].textTransform,
+}));
+
 const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Text']['Primary'],
   display: `flex`,
@@ -415,7 +431,7 @@ const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   padding: `16px 0px`,
   boxSizing: `border-box`,
   width: `327px`,
-  margin: `0px`,
+  margin: `0px 0px 0px 30px`,
   overflow: `hidden`,
 }));
 
@@ -651,6 +667,15 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                   </ExperienceAnExquisit>
                 </Description1>
                 <AddShare>
+                  <ButtonContained
+                    variant="contained"
+                    size={'large'}
+                    color={'primary'}
+                    disabled={false}
+                    onClick={props.onClose}
+                  >
+                    {'Large'}
+                  </ButtonContained>
                   <ShopBtn1>
                     <CheckOut>{`ADD TO BAG`}</CheckOut>
                   </ShopBtn1>
