@@ -26,12 +26,12 @@ const ScreenDesktop: any = styled('div', {
   position: `sticky`,
   isolation: `isolate`,
   flexDirection: `column`,
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: '100vw',
   top: `0`,
   zIndex: `3000`,
 }));
@@ -59,19 +59,8 @@ const ToolBar: any = styled('div', {
       ? `16px`
       : `16px 32px`,
   boxSizing: `border-box`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `1320px`,
+  alignSelf: `stretch`,
   margin: `0px`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? `stretch`
-      : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
 }));
 
 const Logocontainer: any = styled('div')({
