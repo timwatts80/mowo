@@ -28,7 +28,7 @@ const ScreenDesktop: any = styled('div', {
       ? 'unset'
       : theme.palette['Background']['Background'],
   display: `flex`,
-  position: `relative`,
+  position: `sticky`,
   isolation: `isolate`,
   flexDirection:
     data.currentVariant === 'ScreenTablet'
@@ -52,6 +52,8 @@ const ScreenDesktop: any = styled('div', {
       : `16px 60px`,
   boxSizing: `border-box`,
   height: 'auto',
+  top: `0`,
+  zIndex: `3000`,
 }));
 
 const MowoLogo: any = styled('img')({
