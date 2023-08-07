@@ -11,11 +11,28 @@
  *
  **********************************************************************/
 
-import React from 'react';
-const useLink1 = () => {
-  const data: any = {};
+import React, { useState } from 'react';
 
-  const fns: any = {};
+const useLink1 = () => {
+  const [isFocus, setIsFocus] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+
+  const data: any = { isFocus, isHover };
+
+  const fns: any = {
+    handleFocus: () => {
+      setIsFocus(true);
+    },
+    handleBlur: () => {
+      setIsFocus(false);
+    },
+    handleMouseEnter: () => {
+      setIsHover(true);
+    },
+    handleMouseLeave: () => {
+      setIsHover(false);
+    },
+  };
 
   return { data, fns };
 };
