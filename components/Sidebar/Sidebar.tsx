@@ -33,8 +33,21 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
-  maxWidth: '500px',
 }));
+
+const Sidebarcontent: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: '0 auto',
+  maxWidth: '550px',
+});
 
 const CloseFrame: any = styled('div')({
   display: `flex`,
@@ -202,38 +215,40 @@ function Sidebar(props: SidebarProps): JSX.Element {
   return (
     props.open && (
       <Sidebar1 className={props.className}>
-        <CloseFrame>
-          <Close onClick={props.onClose}>
-            <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
-          </Close>
-        </CloseFrame>
-        <MenuItems>
-          <LogoPosition>
-            <Logo></Logo>
-          </LogoPosition>
-          <Items>
-            {false && (
-              <Frame142>
-                <Link2 />
-                <Link3 />
-                <Link4 />
-                <Link5 />
-                <Link6 />
-              </Frame142>
-            )}
-            <Frame143>
-              <Menulinklist1 />
-            </Frame143>
-            <ButtonContained
-              variant="contained"
-              size={'medium'}
-              color={'primary'}
-              disabled={false}
-            >
-              {'Book a meeting'}
-            </ButtonContained>
-          </Items>
-        </MenuItems>
+        <Sidebarcontent>
+          <CloseFrame>
+            <Close onClick={props.onClose}>
+              <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
+            </Close>
+          </CloseFrame>
+          <MenuItems>
+            <LogoPosition>
+              <Logo></Logo>
+            </LogoPosition>
+            <Items>
+              {false && (
+                <Frame142>
+                  <Link2 />
+                  <Link3 />
+                  <Link4 />
+                  <Link5 />
+                  <Link6 />
+                </Frame142>
+              )}
+              <Frame143>
+                <Menulinklist1 />
+              </Frame143>
+              <ButtonContained
+                variant="contained"
+                size={'medium'}
+                color={'primary'}
+                disabled={false}
+              >
+                {'Book a meeting'}
+              </ButtonContained>
+            </Items>
+          </MenuItems>
+        </Sidebarcontent>
       </Sidebar1>
     )
   );
