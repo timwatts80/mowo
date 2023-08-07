@@ -43,18 +43,14 @@ const ScreenDesktop: any = styled('div', {
   zIndex: `3000`,
 }));
 
-const MowoLogo: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const MowoLogo: any = styled('img')({
   height: `36px`,
   width: `146.59px`,
   alignSelf: `stretch`,
-  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
-}));
+  margin: `0px`,
+});
 
-const MenuItems: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const MenuItems: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -63,8 +59,8 @@ const MenuItems: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
-}));
+  margin: `0px`,
+});
 
 const ModernWorkplace: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
@@ -183,28 +179,6 @@ const ButtonContained: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const Sidebarcontainer: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width: data.currentVariant === 'ScreenTablet' ? 'unset' : `768px`,
-  margin: `0px`,
-}));
-
-const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  height: `754px`,
-  margin: `0px`,
-}));
-
 const ToolBar: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
@@ -220,7 +194,7 @@ const ToolBar: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   width: data.currentVariant === 'ScreenTablet' ? 'unset' : `768px`,
-  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
+  margin: `0px`,
 }));
 
 const Quest21: any = styled('img')({
@@ -249,6 +223,28 @@ const Hamburger1: any = styled('img')({
   margin: `0px`,
 });
 
+const Sidebarcontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width: data.currentVariant === 'ScreenTablet' ? 'unset' : `768px`,
+  margin: `0px`,
+}));
+
+const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  height: `754px`,
+  margin: `0px`,
+}));
+
 function Navbar(props: NavbarProps): JSX.Element {
   const { data, fns } = useNavbar();
 
@@ -256,14 +252,13 @@ function Navbar(props: NavbarProps): JSX.Element {
     <ScreenDesktop className={props.className} data={data}>
       {!(data.currentVariant === 'ScreenTablet') && (
         <MowoLogo
-          data={data}
           src={`assets/images/Navbar_MOWO_Logo.png`}
           loading="lazy"
           alt={'MOWO Logo'}
         />
       )}
       {!(data.currentVariant === 'ScreenTablet') && (
-        <MenuItems data={data}>
+        <MenuItems>
           <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
           <Solutions>{`Solutions`}</Solutions>
           <Devices>{`Devices`}</Devices>
@@ -289,15 +284,6 @@ function Navbar(props: NavbarProps): JSX.Element {
           </ButtonContained>
         </MenuItems>
       )}
-      <Dialog
-        maxWidth={false}
-        open={data.isDialogOpen}
-        onClose={fns.toggleDialog}
-      >
-        <Sidebarcontainer data={data}>
-          <Sidebar1 open={data.isDoalogOpen} onClose={fns.toggleDialog} />
-        </Sidebarcontainer>
-      </Dialog>
       {data.currentVariant === 'ScreenTablet' && (
         <ToolBar data={data}>
           <Quest21
@@ -314,6 +300,15 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu1>
         </ToolBar>
       )}
+      <Dialog
+        maxWidth={false}
+        open={data.isDialogOpen}
+        onClose={fns.toggleDialog}
+      >
+        <Sidebarcontainer data={data}>
+          <Sidebar1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
+        </Sidebarcontainer>
+      </Dialog>
     </ScreenDesktop>
   );
 }
