@@ -45,8 +45,7 @@ const Sidebarcontent: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: '0 auto',
-  maxWidth: '550px',
+  margin: `0px`,
 });
 
 const CloseFrame: any = styled('div')({
