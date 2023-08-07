@@ -679,7 +679,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                   </Ingredients>
                 </Details>
               </Col2>
-              <Side onClick={props.OnClose}>
+              <Side onClick={props.onClose}>
                 <Icon1>
                   <IconX>
                     <Close
