@@ -31,7 +31,9 @@ const ScreenDesktop: any = styled('div')({
   height: 'auto',
 });
 
-const Cols: any = styled('div')(({ theme }: any) => ({
+const Cols: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   backgroundColor: `rgba(248, 248, 248, 1)`,
   display: `flex`,
   position: `relative`,
@@ -39,12 +41,18 @@ const Cols: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `45px 90px 30px 90px`,
+  padding: `45px 60px 30px 60px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `194px`,
-  margin: `0px`,
+  margin: '0 auto',
   overflow: `hidden`,
+  maxWidth:
+    data.currentVariant === 'ScreenTablet'
+      ? `unset`
+      : data.currentVariant === 'ScreenMobile'
+      ? `unset`
+      : `1440px`,
 }));
 
 const LeftRows: any = styled('div')({
@@ -742,7 +750,7 @@ const Rows: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `30px 30px 0px 30px`,
+  padding: `30px 45px 0px 45px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -769,7 +777,7 @@ const LeftRows1: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `0px 30px 0px 60px`,
+  padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -989,11 +997,11 @@ const RightRows1: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `15px 30px`,
+  padding: `15px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: `0px 0px 0px 10px`,
+  margin: `0px 0px 0px 30px`,
   overflow: `hidden`,
 });
 
@@ -1146,7 +1154,7 @@ const BottomRow: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `flex-end`,
-  padding: `18px 15px`,
+  padding: `18px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `15px 0px 0px 0px`,
@@ -1465,7 +1473,7 @@ const TopRow1: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `0px 30px`,
+  padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -1693,7 +1701,7 @@ const MiddleRow: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `0px 30px`,
+  padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -2134,7 +2142,7 @@ function Footer(props: FooterProps): JSX.Element {
     <ScreenDesktop className={props.className}>
       {!(data.currentVariant === 'ScreenTablet') &&
         !(data.currentVariant === 'ScreenMobile') && (
-          <Cols>
+          <Cols data={data}>
             <LeftRows>
               <LogoSocial>
                 <LogoContainer>
