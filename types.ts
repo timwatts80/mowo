@@ -89,6 +89,8 @@
 
 export interface NavbarProps {
   className?: any;
+  open?: any;
+  onClose?: any;
 }
 
 
@@ -167,8 +169,8 @@ export interface NavbarProps {
 
 export interface SidebarProps {
   className?: any;
-  open: any;
-  onClose: any;
+  open?: any;
+  onClose?: any;
 }
 
 
