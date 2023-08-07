@@ -39,8 +39,7 @@ const ScreenDesktop: any = styled('div', {
 const ToolBar: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
-  opacity: `0.800000011920929`,
-  backgroundColor: theme.palette['Background']['Background'],
+  backgroundColor: theme.palette['MOWO']['white-75'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -220,41 +219,18 @@ const ButtonContained: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
-const HamburgerMenu1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const HamburgerMenu1: any = styled('div')({
   display: `flex`,
-  position:
-    data.currentVariant === 'ScreenTablet'
-      ? `relative`
-      : data.currentVariant === 'ScreenMobile'
-      ? `relative`
-      : `absolute`,
+  position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `6px`,
   boxSizing: `border-box`,
-  left:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `1287px`,
-  top:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `5px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : 'unset',
-}));
+  margin: `0px`,
+  cursor: `pointer`,
+});
 
 const Hamburger1: any = styled('img')({
   height: `15px`,
@@ -322,16 +298,13 @@ function Navbar(props: NavbarProps): JSX.Element {
               </ButtonContained>
             </MenuItems>
           )}
-        {(data.currentVariant === 'ScreenTablet' ||
-          data.currentVariant === 'ScreenMobile') && (
-          <HamburgerMenu1 data={data}>
-            <Hamburger1
-              src={`assets/images/Navbar_Hamburger_1.png`}
-              loading="lazy"
-              alt={'Hamburger'}
-            />
-          </HamburgerMenu1>
-        )}
+        <HamburgerMenu1 onClick={fns.toggleDialog}>
+          <Hamburger1
+            src={`assets/images/Navbar_Hamburger_1.png`}
+            loading="lazy"
+            alt={'Hamburger'}
+          />
+        </HamburgerMenu1>
       </ToolBar>
       <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
         <Sidebarcontainer>
