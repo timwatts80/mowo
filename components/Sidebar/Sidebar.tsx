@@ -29,24 +29,11 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `22px 30px 60px 30px`,
+  padding: `22px 30px 75px 30px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: 'auto!important',
+  height: 'auto',
 }));
-
-const Sidebarcontent: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
 
 const CloseFrame: any = styled('div')({
   display: `flex`,
@@ -67,16 +54,60 @@ const Close: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-end`,
-  alignItems: `center`,
-  padding: `10px`,
+  alignItems: `flex-start`,
+  padding: `0px`,
   boxSizing: `border-box`,
   margin: `0px`,
   cursor: `pointer`,
 });
 
-const X: any = styled('img')({
-  height: `18px`,
-  width: `18px`,
+const Icon1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `28px`,
+  height: `28px`,
+  margin: `0px`,
+});
+
+const IconX: any = styled('div')({
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const Close1: any = styled('img')({
+  height: `14.41px`,
+  width: `14.41px`,
+  position: `absolute`,
+  left: `7px`,
+  top: `7px`,
+});
+
+const Sidebarcontent: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `35px 0px 0px 0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
   margin: `0px`,
 });
 
@@ -214,12 +245,20 @@ function Sidebar(props: SidebarProps): JSX.Element {
   return (
     props.open && (
       <Sidebar1 className={props.className}>
+        <CloseFrame>
+          <Close onClick={props.onClose}>
+            <Icon1>
+              <IconX>
+                <Close1
+                  src={`assets/images/sidebar_Close.png`}
+                  loading="lazy"
+                  alt={'Close'}
+                />
+              </IconX>
+            </Icon1>
+          </Close>
+        </CloseFrame>
         <Sidebarcontent>
-          <CloseFrame>
-            <Close onClick={props.onClose}>
-              <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
-            </Close>
-          </CloseFrame>
           <MenuItems>
             <LogoPosition>
               <Logo></Logo>
