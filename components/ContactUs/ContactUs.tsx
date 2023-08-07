@@ -31,7 +31,7 @@ const Desktop: any = styled('div', {
       : data.currentVariant === 'Mobile'
       ? `column`
       : `row`,
-  width: '100vw',
+  width: '100%',
   justifyContent:
     data.currentVariant === 'Tablet'
       ? `center`
@@ -46,12 +46,19 @@ const Desktop: any = styled('div', {
       : `center`,
   padding:
     data.currentVariant === 'Tablet'
-      ? `30px 100px`
+      ? `30px 45px`
       : data.currentVariant === 'Mobile'
-      ? `24px`
-      : `60px 100px`,
+      ? `24px 30px`
+      : `60px`,
   boxSizing: `border-box`,
   height: 'auto',
+  margin: '0 auto',
+  maxWidth:
+    data.currentVariant === 'Tablet'
+      ? `unset`
+      : data.currentVariant === 'Mobile'
+      ? `unset`
+      : `1440px`,
 }));
 
 const Form1: any = styled('div', {
@@ -76,9 +83,9 @@ const Form1: any = styled('div', {
   overflow: `hidden`,
   width:
     data.currentVariant === 'Tablet'
-      ? `570px`
+      ? `610px`
       : data.currentVariant === 'Mobile'
-      ? `570px`
+      ? `610px`
       : 'unset',
 }));
 
@@ -248,9 +255,9 @@ const Frame141: any = styled('div', {
       : `0px 0px 0px 100px`,
   width:
     data.currentVariant === 'Tablet'
-      ? `570px`
+      ? `610px`
       : data.currentVariant === 'Mobile'
-      ? `570px`
+      ? `610px`
       : 'unset',
 }));
 
@@ -288,7 +295,7 @@ const Frame139: any = styled('div', {
       ? 'unset'
       : data.currentVariant === 'Mobile'
       ? 'unset'
-      : `568px`,
+      : `678px`,
   margin:
     data.currentVariant === 'Tablet'
       ? `0px`
@@ -332,7 +339,7 @@ const Form11: any = styled('div', {
       ? 'unset'
       : data.currentVariant === 'Mobile'
       ? 'unset'
-      : `568px`,
+      : `678px`,
   margin:
     data.currentVariant === 'Tablet'
       ? `24px 0px 0px 0px`
@@ -505,7 +512,7 @@ const Frame140: any = styled('div', {
       ? 'unset'
       : data.currentVariant === 'Mobile'
       ? 'unset'
-      : `327px`,
+      : `315px`,
   margin:
     data.currentVariant === 'Tablet'
       ? `24px 0px 0px 0px`
@@ -549,7 +556,7 @@ const Form12: any = styled('div', {
       ? 'unset'
       : data.currentVariant === 'Mobile'
       ? 'unset'
-      : `327px`,
+      : `315px`,
   margin:
     data.currentVariant === 'Tablet'
       ? `24px 0px 0px 0px`
