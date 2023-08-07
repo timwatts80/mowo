@@ -544,6 +544,7 @@ const Side: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `0px 0px 0px 75px`,
+  cursor: `pointer`,
 });
 
 const Icon1: any = styled('div')({
@@ -622,7 +623,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >
-        <Productdialogcontain props={'open'}>
+        <Productdialogcontain>
           {props.open && (
             <ProductPageTest
               open={data.isDialogOpen}
@@ -678,7 +679,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                   </Ingredients>
                 </Details>
               </Col2>
-              <Side>
+              <Side onClick={props.OnClose}>
                 <Icon1>
                   <IconX>
                     <Close
