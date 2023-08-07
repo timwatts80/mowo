@@ -249,7 +249,8 @@ const Sidebarcontainer: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
-  width: '100%',
+  maxWidth: '100%',
+  width: `'100vw'`,
 });
 
 const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
