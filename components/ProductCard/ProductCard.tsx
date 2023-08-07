@@ -202,7 +202,7 @@ const ProductPageTest: any = styled('div')(({ theme }: any) => ({
   alignItems: `flex-start`,
   padding: `64px 48px`,
   boxSizing: `border-box`,
-  width: `1440px`,
+  width: `1080px`,
   margin: `0px`,
 }));
 
@@ -216,7 +216,7 @@ const Col1: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   flex: `1`,
-  height: `460px`,
+  height: `307px`,
   margin: `0px`,
 });
 
@@ -235,8 +235,8 @@ const Imagecontainer1: any = styled('div')({
 });
 
 const ProductImage1: any = styled('img')({
-  height: `460px`,
-  width: `587px`,
+  height: `307px`,
+  width: `454.5px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -404,22 +404,6 @@ const AddShare: any = styled('div')({
   margin: `44px 0px 0px 0px`,
 });
 
-const ButtonContained: any = styled(Button)(({ theme }: any) => ({
-  margin: `0px`,
-  color: theme.palette['Primary']['Contrast'],
-  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
-  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
-  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
-  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
-  letterSpacing:
-    theme.typography['Components']['Button Font - Large'].letterSpacing,
-  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
-  textDecoration:
-    theme.typography['Components']['Button Font - Large'].textDecoration,
-  textTransform:
-    theme.typography['Components']['Button Font - Large'].textTransform,
-}));
-
 const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Text']['Primary'],
   display: `flex`,
@@ -431,7 +415,7 @@ const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   padding: `16px 0px`,
   boxSizing: `border-box`,
   width: `327px`,
-  margin: `0px 0px 0px 30px`,
+  margin: `0px`,
   overflow: `hidden`,
 }));
 
@@ -552,14 +536,15 @@ const AppleCarrotBeetCeler: any = styled('div')(({ theme }: any) => ({
 
 const Side: any = styled('div')({
   display: `flex`,
-  position: `relative`,
+  position: `absolute`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-end`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin: `0px 0px 0px 75px`,
+  left: `1018px`,
+  top: `34px`,
   cursor: `pointer`,
 });
 
@@ -572,9 +557,10 @@ const Icon1: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `20px`,
-  height: `20px`,
+  width: `28px`,
+  height: `28px`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
 const IconX: any = styled('div')({
@@ -593,11 +579,11 @@ const IconX: any = styled('div')({
 });
 
 const Close: any = styled('img')({
-  height: `10.29px`,
-  width: `10.29px`,
+  height: `14.41px`,
+  width: `14.41px`,
   position: `absolute`,
-  left: `5px`,
-  top: `5px`,
+  left: `7px`,
+  top: `7px`,
 });
 
 function ProductCard(props: ProductCardProps): JSX.Element {
@@ -667,15 +653,6 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                   </ExperienceAnExquisit>
                 </Description1>
                 <AddShare>
-                  <ButtonContained
-                    variant="contained"
-                    size={'large'}
-                    color={'primary'}
-                    disabled={false}
-                    onClick={fns.toggleDialog}
-                  >
-                    {'Large'}
-                  </ButtonContained>
                   <ShopBtn1>
                     <CheckOut>{`ADD TO BAG`}</CheckOut>
                   </ShopBtn1>
@@ -701,7 +678,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
               </Details>
             </Col2>
             <Side onClick={props.onClose}>
-              <Icon1>
+              <Icon1 onClick={fns.toggleDialog}>
                 <IconX>
                   <Close
                     src={`assets/images/ProductCard_Close.png`}
