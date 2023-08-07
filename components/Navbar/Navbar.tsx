@@ -327,6 +327,7 @@ const HamburgerMenu2: any = styled('div')({
   padding: `6px`,
   boxSizing: `border-box`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
 const Hamburger2: any = styled('img')({
@@ -434,7 +435,7 @@ function Navbar(props: NavbarProps): JSX.Element {
             loading="lazy"
             alt={'Quest2 1'}
           />
-          <HamburgerMenu2>
+          <HamburgerMenu2 onClick={fns.toggleDialog}>
             <Hamburger2
               src={`assets/images/Navbar_Hamburger_2.png`}
               loading="lazy"
@@ -443,11 +444,15 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu2>
         </ToolBar1>
       )}
-      {data.currentVariant === 'ScreenMobile' && (
+      <Dialog
+        maxWidth={false}
+        open={data.isDialogOpen}
+        onClose={fns.toggleDialog}
+      >
         <Sidebarcontainer1 data={data}>
-          <Sidebar2 />
+          <Sidebar2 open={data.isDialogOpen} onClose={fns.toggleDialg} />
         </Sidebarcontainer1>
-      )}
+      </Dialog>
     </ScreenDesktop>
   );
 }
