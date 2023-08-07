@@ -191,6 +191,7 @@ const Productdialogcontain: any = styled('div')({
   padding: `10px`,
   boxSizing: `border-box`,
   margin: `0px 0px 0px 18px`,
+  maxWidth: `false`,
 });
 
 const ProductPageTest1: any = styled(ProductPageTest)(({ theme }: any) => ({
