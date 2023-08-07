@@ -213,6 +213,26 @@ const ButtonContained: any = styled(Button, {
     theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
+const Sidebarcontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: data.currentVariant === 'ScreenMobile' ? `10px 0px 0px 0px` : `0px`,
+}));
+
+const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
+  height: `754px`,
+  width: `768px`,
+  margin: `0px`,
+}));
+
 const ToolBar: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
@@ -233,7 +253,12 @@ const ToolBar: any = styled('div', {
       : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `768px`,
-  margin: data.currentVariant === 'ScreenMobile' ? `10px 0px 0px 0px` : `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `10px 0px 0px 0px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
 }));
 
 const Quest21: any = styled('img')({
@@ -262,28 +287,23 @@ const Hamburger1: any = styled('img')({
   margin: `0px`,
 });
 
-const Sidebarcontainer: any = styled('div', {
+const Sidebarcontainer1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `column`,
+  flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `10px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `10px 0px 0px 0px`
-      : `0px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
 }));
 
-const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
+const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
+  width: `375px`,
   height: `754px`,
-  width: `768px`,
   margin: `0px`,
 }));
 
@@ -307,7 +327,12 @@ const ToolBar1: any = styled('div', {
       : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `375px`,
-  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `10px 0px 0px 0px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
 }));
 
 const Quest211: any = styled('img')({
@@ -335,31 +360,6 @@ const Hamburger2: any = styled('img')({
   width: `21px`,
   margin: `0px`,
 });
-
-const Sidebarcontainer1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `10px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `10px 0px 0px 0px`
-      : `0px`,
-}));
-
-const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
-  width: `375px`,
-  height: `754px`,
-  margin: `0px`,
-}));
 
 function Navbar(props: NavbarProps): JSX.Element {
   const { data, fns } = useNavbar();
@@ -403,6 +403,15 @@ function Navbar(props: NavbarProps): JSX.Element {
             </ButtonContained>
           </MenuItems>
         )}
+      <Dialog
+        maxWidth={'md'}
+        open={data.isDialogOpen}
+        onClose={fns.toggleDialog}
+      >
+        <Sidebarcontainer data={data}>
+          <Sidebar1 open={data.isDoalogOpen} onClose={fns.toggleDialog} />
+        </Sidebarcontainer>
+      </Dialog>
       {data.currentVariant === 'ScreenTablet' && (
         <ToolBar data={data}>
           <Quest21
@@ -424,9 +433,9 @@ function Navbar(props: NavbarProps): JSX.Element {
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >
-        <Sidebarcontainer data={data}>
-          <Sidebar1 open={data.isDoalogOpen} onClose={fns.toggleDialog} />
-        </Sidebarcontainer>
+        <Sidebarcontainer1 data={data}>
+          <Sidebar2 open={data.isDialogOpen} onClose={fns.toggleDialg} />
+        </Sidebarcontainer1>
       </Dialog>
       {data.currentVariant === 'ScreenMobile' && (
         <ToolBar1 data={data}>
@@ -444,15 +453,6 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu2>
         </ToolBar1>
       )}
-      <Dialog
-        maxWidth={false}
-        open={data.isDialogOpen}
-        onClose={fns.toggleDialog}
-      >
-        <Sidebarcontainer1 data={data}>
-          <Sidebar2 open={data.isDialogOpen} onClose={fns.toggleDialg} />
-        </Sidebarcontainer1>
-      </Dialog>
     </ScreenDesktop>
   );
 }
