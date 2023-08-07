@@ -234,11 +234,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       </Productcardcontainer>
       <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
         <Productdialogcontain>
-          <ProductPageTest1
-            open={data.isDialogOpen}
-            onClose={fns.toggleDialog}
-            maxWidth={false}
-          />
+          <ProductPageTest1 open={data.isDialogOpen} />
         </Productdialogcontain>
       </Dialog>
     </ProductCard1>
