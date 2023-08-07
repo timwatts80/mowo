@@ -22,6 +22,7 @@ const variantOptions = {
 };
 
 const useSidebar = () => {
+  const toggleDialog = (): any => {};
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['ScreenTablet']
   );
@@ -36,7 +37,7 @@ const useSidebar = () => {
 
   const data: any = { currentVariant };
 
-  const fns: any = { setCurrentVariant };
+  const fns: any = { setCurrentVariant ,toggleDialog};
 
   return { data, fns };
 };
