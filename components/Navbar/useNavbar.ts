@@ -26,6 +26,7 @@ const useNavbar = () => {
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['ScreenDesktop']
   );
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   const breakpointsVariant = useNavbarResponsiveSize();
 
@@ -35,8 +36,10 @@ const useNavbar = () => {
     }
   }, [breakpointsVariant]);
 
-  const data: any = { currentVariant };
-  const toggleDialog = (): any => {};
+  const data: any = { currentVariant, isDialogOpen };
+  const toggleDialog = (): any => {
+    setIsDialogOpen(!isDialogOpen)
+  };
 
   const fns: any = { toggleDialog, setCurrentVariant };
 
