@@ -178,7 +178,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
       <ScreenTablet className={props.className}>
         <MenuItems>
           <CloseFrame>
-            <Close onClick={fns.toggleDialog}>
+            <Close onClick={fns.onClose}>
               <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
             </Close>
           </CloseFrame>
