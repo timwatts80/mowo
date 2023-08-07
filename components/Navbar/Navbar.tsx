@@ -23,40 +23,20 @@ const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   opacity:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `0.800000011920929`,
+    data.currentVariant === 'ScreenTablet' ? 'unset' : `0.800000011920929`,
   backgroundColor:
     data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : theme.palette['Background']['Background'],
   display: `flex`,
   position: `sticky`,
   isolation: `isolate`,
-  flexDirection:
-    data.currentVariant === 'ScreenTablet'
-      ? `column`
-      : data.currentVariant === 'ScreenMobile'
-      ? `column`
-      : `row`,
+  flexDirection: data.currentVariant === 'ScreenTablet' ? `column` : `row`,
   width: '100%',
   justifyContent:
-    data.currentVariant === 'ScreenTablet'
-      ? `flex-start`
-      : data.currentVariant === 'ScreenMobile'
-      ? `flex-start`
-      : `space-between`,
+    data.currentVariant === 'ScreenTablet' ? `flex-start` : `space-between`,
   alignItems: `flex-start`,
-  padding:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `16px 60px`,
+  padding: data.currentVariant === 'ScreenTablet' ? `0px` : `16px 60px`,
   boxSizing: `border-box`,
   height: 'auto',
   top: `0`,
@@ -69,12 +49,7 @@ const MowoLogo: any = styled('img', {
   height: `36px`,
   width: `146.59px`,
   alignSelf: `stretch`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `10px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `10px 0px 0px 0px`
-      : `0px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
 }));
 
 const MenuItems: any = styled('div', {
@@ -88,12 +63,7 @@ const MenuItems: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `10px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `10px 0px 0px 0px`
-      : `0px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
 }));
 
 const ModernWorkplace: any = styled('div')(({ theme }: any) => ({
@@ -224,8 +194,9 @@ const Sidebarcontainer: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `768px`,
-  margin: data.currentVariant === 'ScreenMobile' ? `10px 0px 0px 0px` : `0px`,
+  alignSelf: `stretch`,
+  width: data.currentVariant === 'ScreenTablet' ? 'unset' : `768px`,
+  margin: `0px`,
 }));
 
 const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
@@ -248,18 +219,8 @@ const ToolBar: any = styled('div', {
   padding: `16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `768px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `10px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `10px 0px 0px 0px`
-      : `0px`,
+  width: data.currentVariant === 'ScreenTablet' ? 'unset' : `768px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
 }));
 
 const Quest21: any = styled('img')({
@@ -288,131 +249,48 @@ const Hamburger1: any = styled('img')({
   margin: `0px`,
 });
 
-const Sidebarcontainer1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `375px`,
-  margin: data.currentVariant === 'ScreenTablet' ? `10px 0px 0px 0px` : `0px`,
-}));
-
-const Sidebar2: any = styled(Sidebar)(({ theme }: any) => ({
-  flex: `1`,
-  height: `754px`,
-  margin: `0px`,
-}));
-
-const ToolBar1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  opacity: `0.800000011920929`,
-  backgroundColor: theme.palette['Background']['Background'],
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `space-between`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `375px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `10px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `10px 0px 0px 0px`
-      : `0px`,
-}));
-
-const Quest211: any = styled('img')({
-  height: `29.28px`,
-  width: `119.21px`,
-  objectFit: `cover`,
-  margin: `0px`,
-});
-
-const HamburgerMenu2: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `6px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-  cursor: `pointer`,
-});
-
-const Hamburger2: any = styled('img')({
-  height: `15px`,
-  width: `21px`,
-  margin: `0px`,
-});
-
 function Navbar(props: NavbarProps): JSX.Element {
   const { data, fns } = useNavbar();
 
   return (
     <ScreenDesktop className={props.className} data={data}>
-      {!(data.currentVariant === 'ScreenTablet') &&
-        !(data.currentVariant === 'ScreenMobile') && (
-          <MowoLogo
+      {!(data.currentVariant === 'ScreenTablet') && (
+        <MowoLogo
+          data={data}
+          src={`assets/images/Navbar_MOWO_Logo.png`}
+          loading="lazy"
+          alt={'MOWO Logo'}
+        />
+      )}
+      {!(data.currentVariant === 'ScreenTablet') && (
+        <MenuItems data={data}>
+          <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
+          <Solutions>{`Solutions`}</Solutions>
+          <Devices>{`Devices`}</Devices>
+          <Cases>{`Cases`}</Cases>
+          <Contact>{`Contact`}</Contact>
+          {false && (
+            <HamburgerMenu>
+              <Hamburger
+                src={`assets/images/Navbar_Hamburger.png`}
+                loading="lazy"
+                alt={'Hamburger'}
+              />
+            </HamburgerMenu>
+          )}
+          <ButtonContained
+            variant="contained"
+            size={'medium'}
+            color={'primary'}
+            disabled={false}
             data={data}
-            src={`assets/images/Navbar_MOWO_Logo.png`}
-            loading="lazy"
-            alt={'MOWO Logo'}
-          />
-        )}
-      {!(data.currentVariant === 'ScreenTablet') &&
-        !(data.currentVariant === 'ScreenMobile') && (
-          <MenuItems data={data}>
-            <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
-            <Solutions>{`Solutions`}</Solutions>
-            <Devices>{`Devices`}</Devices>
-            <Cases>{`Cases`}</Cases>
-            <Contact>{`Contact`}</Contact>
-            {false && (
-              <HamburgerMenu>
-                <Hamburger
-                  src={`assets/images/Navbar_Hamburger.png`}
-                  loading="lazy"
-                  alt={'Hamburger'}
-                />
-              </HamburgerMenu>
-            )}
-            <ButtonContained
-              variant="contained"
-              size={'medium'}
-              color={'primary'}
-              disabled={false}
-              data={data}
-            >
-              {'Book a meeting'}
-            </ButtonContained>
-          </MenuItems>
-        )}
+          >
+            {'Book a meeting'}
+          </ButtonContained>
+        </MenuItems>
+      )}
       <Dialog
-        maxWidth={'lg'}
+        maxWidth={false}
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >
@@ -435,31 +313,6 @@ function Navbar(props: NavbarProps): JSX.Element {
             />
           </HamburgerMenu1>
         </ToolBar>
-      )}
-      <Dialog
-        maxWidth={false}
-        open={data.isDialogOpen}
-        onClose={fns.toggleDialog}
-      >
-        <Sidebarcontainer1 data={data}>
-          <Sidebar2 open={data.isDialogOpen} onClose={fns.toggleDialg} />
-        </Sidebarcontainer1>
-      </Dialog>
-      {data.currentVariant === 'ScreenMobile' && (
-        <ToolBar1 data={data}>
-          <Quest211
-            src={`assets/images/Navbar_Quest2_1_1.png`}
-            loading="lazy"
-            alt={'Quest2 1'}
-          />
-          <HamburgerMenu2 onClick={fns.toggleDialog}>
-            <Hamburger2
-              src={`assets/images/Navbar_Hamburger_2.png`}
-              loading="lazy"
-              alt={'Hamburger'}
-            />
-          </HamburgerMenu2>
-        </ToolBar1>
       )}
     </ScreenDesktop>
   );
