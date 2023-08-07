@@ -653,7 +653,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
             <Col2>
               <Details>
                 <Top>
-                  <Title>{`Fancy Fusion`}</Title>
+                  <Title>{props.products.title}</Title>
                   <Price>{`$8.95`}</Price>
                   <Row>
                     <Q40>{`4.0`}</Q40>
