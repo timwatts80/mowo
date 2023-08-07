@@ -28,11 +28,12 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   width: '100%',
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+  alignItems: `center`,
   padding: `22px 30px 60px 30px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
+  maxWidth: '500px',
 }));
 
 const CloseFrame: any = styled('div')({
@@ -74,7 +75,7 @@ const MenuItems: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `0px 65px`,
+  padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
