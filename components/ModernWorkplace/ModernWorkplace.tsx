@@ -17,7 +17,8 @@ import { styled } from '@mui/material/styles';
 import { ModernWorkplaceProps } from 'types';
 import useModernWorkplace from 'components/ModernWorkplace/useModernWorkplace';
 
-const ScreenDesktop: any = styled('div')({
+const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(248, 248, 248, 1)`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -29,17 +30,11 @@ const ScreenDesktop: any = styled('div')({
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
-});
+}));
 
 const Rows: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  backgroundColor:
-    data.currentVariant === 'ScreenTablet'
-      ? `rgba(255, 255, 255, 1)`
-      : data.currentVariant === 'ScreenMobile'
-      ? `rgba(255, 255, 255, 1)`
-      : `rgba(248, 248, 248, 1)`,
+})(({ data }: any) => ({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
