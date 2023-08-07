@@ -484,7 +484,7 @@ const Ingredients: any = styled('div')({
   margin: `44px 0px 0px 0px`,
 });
 
-const Ingredients1: any = styled('div')(({ theme }: any) => ({
+const Specifications: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -501,7 +501,7 @@ const Ingredients1: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const AppleCarrotBeetCeler: any = styled('div')(({ theme }: any) => ({
+const LoremIpsumDolorSitAm: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -653,10 +653,10 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                 </AddShare>
                 <DividerHorizontal orientation="horizontal" />
                 <Ingredients>
-                  <Ingredients1>{`Ingredients`}</Ingredients1>
-                  <AppleCarrotBeetCeler>
-                    {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
-                  </AppleCarrotBeetCeler>
+                  <Specifications>{`Specifications`}</Specifications>
+                  <LoremIpsumDolorSitAm>
+                    {`Lorem, Ipsum, Dolor, Sit, Amet`}
+                  </LoremIpsumDolorSitAm>
                 </Ingredients>
               </Details>
             </Col2>
