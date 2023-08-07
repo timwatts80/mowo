@@ -16,6 +16,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Link1 from 'components/Link1/Link1';
+import Menulinklist from 'components/Menulinklist/Menulinklist';
 import { SidebarProps } from 'types';
 
 const Sidebar1: any = styled('div')(({ theme }: any) => ({
@@ -25,28 +26,14 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: 'auto',
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px 30px 20px 30px`,
+  padding: `22px 30px 60px 30px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
+  height: 'auto',
 }));
-
-const MenuItems: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
 
 const CloseFrame: any = styled('div')({
   display: `flex`,
@@ -80,6 +67,19 @@ const X: any = styled('img')({
   margin: `0px`,
 });
 
+const MenuItems: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 65px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
 const LogoPosition: any = styled('div')({
   display: `flex`,
   position: `relative`,
@@ -91,7 +91,7 @@ const LogoPosition: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `90px`,
-  margin: `26px 0px 0px 0px`,
+  margin: `0px`,
 });
 
 const Logo: any = styled('div')({
@@ -118,10 +118,22 @@ const Items: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `30px 0px`,
+  padding: `0px`,
   boxSizing: `border-box`,
-  flex: `1`,
-  width: `300px`,
+  alignSelf: `stretch`,
+  margin: `26px 0px 0px 0px`,
+});
+
+const Frame142: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
 });
 
@@ -150,6 +162,24 @@ const Link6: any = styled(Link1)(({ theme }: any) => ({
   margin: `26px 0px 0px 0px`,
 }));
 
+const Frame143: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
+const Menulinklist1: any = styled(Menulinklist)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+}));
+
 const ButtonContained: any = styled(Button)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
@@ -171,21 +201,28 @@ function Sidebar(props: SidebarProps): JSX.Element {
   return (
     props.open && (
       <Sidebar1 className={props.className}>
+        <CloseFrame>
+          <Close onClick={props.onClose}>
+            <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
+          </Close>
+        </CloseFrame>
         <MenuItems>
-          <CloseFrame>
-            <Close onClick={props.onClose}>
-              <X src={`assets/images/sidebar_x.png`} loading="lazy" alt={'x'} />
-            </Close>
-          </CloseFrame>
           <LogoPosition>
             <Logo></Logo>
           </LogoPosition>
           <Items>
-            <Link2 />
-            <Link3 />
-            <Link4 />
-            <Link5 />
-            <Link6 />
+            {false && (
+              <Frame142>
+                <Link2 />
+                <Link3 />
+                <Link4 />
+                <Link5 />
+                <Link6 />
+              </Frame142>
+            )}
+            <Frame143>
+              <Menulinklist1 />
+            </Frame143>
             <ButtonContained
               variant="contained"
               size={'medium'}
