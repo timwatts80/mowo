@@ -17,7 +17,9 @@ import { styled } from '@mui/material/styles';
 import { Link1Props } from 'types';
 import useLink1 from 'components/Link1/useLink1';
 
-const StateDefault: any = styled('div')({
+const StateDefault: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -28,13 +30,22 @@ const StateDefault: any = styled('div')({
   padding: `9px 0px`,
   boxSizing: `border-box`,
   height: 'auto',
-});
+  backgroundColor: data.isFocus
+    ? theme.palette['Primary']['Shades']['8p']
+    : 'unset',
+}));
 
-const ModernWorkplace: any = styled('div')(({ theme }: any) => ({
+const ModernWorkplace: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 0.98)`,
+  color: data.isHover
+    ? theme.palette['Primary']['Main']
+    : data.isFocus
+    ? theme.palette['Primary']['Main']
+    : `rgba(0, 0, 0, 0.98)`,
   fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
   fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
   fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
@@ -43,16 +54,17 @@ const ModernWorkplace: any = styled('div')(({ theme }: any) => ({
   lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
   textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
   textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  flex: `1`,
+  flex: data.isFocus ? 'unset' : `1`,
   margin: `0px`,
+  width: data.isFocus ? `248px` : 'unset',
 }));
 
 function Link1(props: Link1Props): JSX.Element {
   const { data } = useLink1();
 
   return (
-    <StateDefault className={props.className}>
-      <ModernWorkplace>{data.menuItemText}</ModernWorkplace>
+    <StateDefault className={props.className} data={data}>
+      <ModernWorkplace data={data}>{data.menuItemText}</ModernWorkplace>
     </StateDefault>
   );
 }
