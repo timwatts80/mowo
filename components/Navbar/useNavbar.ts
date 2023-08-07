@@ -23,6 +23,7 @@ const variantOptions = {
 };
 
 const useNavbar = () => {
+  const toggleDialog = (): any => {};
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['ScreenDesktop']
   );
@@ -38,7 +39,7 @@ const useNavbar = () => {
   const data: any = { currentVariant };
   const toggleDialogue = (): any => {};
 
-  const fns: any = { toggleDialogue, setCurrentVariant };
+  const fns: any = { toggleDialogue, setCurrentVariant ,toggleDialog};
 
   return { data, fns };
 };
