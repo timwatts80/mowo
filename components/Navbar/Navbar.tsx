@@ -298,15 +298,23 @@ function Navbar(props: NavbarProps): JSX.Element {
               </ButtonContained>
             </MenuItems>
           )}
-        <HamburgerMenu1 onClick={fns.toggleDialog}>
-          <Hamburger1
-            src={`assets/images/Navbar_Hamburger_1.png`}
-            loading="lazy"
-            alt={'Hamburger'}
-          />
-        </HamburgerMenu1>
+        {(data.currentVariant === 'ScreenTablet' ||
+          data.currentVariant === 'ScreenMobile') && (
+          <HamburgerMenu1 onClick={fns.toggleDialog}>
+            <Hamburger1
+              src={`assets/images/Navbar_Hamburger_1.png`}
+              loading="lazy"
+              alt={'Hamburger'}
+            />
+          </HamburgerMenu1>
+        )}
       </ToolBar>
-      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
+      <Dialog
+        id={'mobile_menu'}
+        maxWidth={'lg'}
+        open={data.isDialogOpen}
+        onClose={fns.toggleDialog}
+      >
         <Sidebarcontainer>
           <Sidebar1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
         </Sidebarcontainer>
