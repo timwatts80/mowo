@@ -36,7 +36,7 @@ const useNavbar = () => {
     }
   }, [breakpointsVariant]);
 
-  const data: any = { currentVariant, isDialogOpen };
+  let data: any = { currentVariant, isDialogOpen };
   const toggleDialog = (): any => {
     setIsDialogOpen(!isDialogOpen)
   };
