@@ -339,6 +339,7 @@ export interface SidebarProps {
 
 export interface Link1Props {
   className?: any;
+  menuLinks: any;
 }
 
 

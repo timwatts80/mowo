@@ -14,6 +14,7 @@ import Navbar from 'components/Navbar/Navbar'
 import Sidebar from 'components/Sidebar/Sidebar'
 import DialogSample from 'components/DialogSample/DialogSample'
 import ProductCarouselTemp from 'components/ProductCarouselTemp/ProductCarouselTemp'
+import Menulinklist from 'components/Menulinklist/Menulinklist'
 
 
 
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
+      <Menulinklist />
       <Header />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />

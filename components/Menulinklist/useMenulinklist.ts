@@ -13,7 +13,20 @@
 
 import React from 'react';
 const useMenulinklist = () => {
-  const data: any = {};
+const menuLinks = [
+  {
+    id: 1,
+    title: "Home",
+    url: "/",
+  },
+  {
+    id: 2,
+    title: "About",
+    url: "/about",
+  },
+];
+
+  let data: any = { menuLinks };
 
   const fns: any = {};
 
