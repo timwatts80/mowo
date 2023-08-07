@@ -22,7 +22,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
-      <Menulinklist />
       <Header />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />

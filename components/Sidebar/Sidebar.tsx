@@ -32,7 +32,7 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   padding: `22px 30px 60px 30px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: 'auto',
+  height: 'auto!important',
 }));
 
 const Sidebarcontent: any = styled('div')({
