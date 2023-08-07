@@ -50,7 +50,7 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1600, // tablet breakpoint
+        breakpoint: 1439, // tablet breakpoint
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1
@@ -74,7 +74,7 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
   };
 
   return (
-    <div style={{ maxWidth: '70%', margin: '0 auto' }}>
+    <div style={{ width: '90%', maxWidth: '1440px', margin: '0 auto' }}>
       <Slider {...settings}>
         {data.products &&
           data.products.map((product: any, index: number) => {
