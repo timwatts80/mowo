@@ -240,7 +240,6 @@ function ProductCard(props: ProductCardProps): JSX.Element {
       </Productcardcontainer>
       <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
         <Productdialogcontain>
-          {false && <Card271 />}
           <ProductPageTest1 />
         </Productdialogcontain>
       </Dialog>
