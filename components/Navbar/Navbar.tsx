@@ -412,7 +412,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           </MenuItems>
         )}
       <Dialog
-        maxWidth={'md'}
+        maxWidth={'lg'}
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >

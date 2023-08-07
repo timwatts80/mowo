@@ -187,8 +187,6 @@ export interface SidebarProps {
   className?: any;
   open?: any;
   onClose?: any;
-  open: any;
-  onClose: any;
 }
 
 
