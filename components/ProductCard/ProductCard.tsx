@@ -232,7 +232,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           </Bottomaccent>
         </ProductCardTemp>
       </Productcardcontainer>
-      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog} maxWidth="false">
+      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
         <Productdialogcontain>
           <ProductPageTest1
             open={data.isDialogOpen}
