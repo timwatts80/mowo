@@ -100,98 +100,6 @@
 
 
 
-export interface NavbarProps {
-  className?: any;
-  open?: any;
-  onClose?: any;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export interface SidebarProps {
   className?: any;
@@ -200,6 +108,101 @@ export interface SidebarProps {
   open: any;
   onClose: any;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export interface NavbarProps {
+  className?: any;
+  open?: any;
+  onClose?: any;
+}
+
 
 
 
@@ -379,9 +382,11 @@ export interface Link1Props {
 
 
 
+
 export interface FooterProps {
   className?: any;
 }
+
 
 
 
@@ -561,9 +566,11 @@ export interface CustomerCasesProps {
 
 
 
+
 export interface ContactUsProps {
   className?: any;
 };
+
 
 
 
@@ -743,9 +750,11 @@ export interface ModernWorkplaceProps {
 
 
 
+
 export interface HeaderProps {
   className?: any;
 }
+
 
 
 
@@ -928,11 +937,13 @@ export interface ProductCardProps {
 
 
 
+
 export interface ProductPageTestProps {
   className?: any;
   open: any;
   onClose: any;
 };
+
 
 
 
@@ -1062,10 +1073,12 @@ export interface Card27Props {
 
 
 
+
 export interface ProductCardTempProps {
   className?: any;
   products: any;
 };
+
 
 
 
@@ -1248,6 +1261,7 @@ export interface ProductPageProps {
 
 
 
+
 export interface ProductModalProps {
   className?: any;
   open: any;
@@ -1341,9 +1355,11 @@ export interface ProductModalProps {
 
 
 
+
 export interface DialogSampleProps {
   className?: any;
 };
+
 
 
 
@@ -1525,6 +1541,7 @@ export interface ContactUsSampleProps {
 
 
 
+
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
 }
@@ -1616,9 +1633,11 @@ export interface ProductSectionSurfaceHubDeviceProps {
 
 
 
+
 export interface ProductCarouselTempProps {
   className?: any;
 };
+
 
 
 
@@ -1800,9 +1819,11 @@ export interface ProductBoxProps {
 
 
 
+
 export interface ProductBox2Props {
   className?: any;
 };
+
 
 
 
@@ -1982,9 +2003,11 @@ export interface ProdustListProps {
 
 
 
+
 export interface ProductBox1Props {
   className?: any;
 };
+
 
 
 
@@ -2164,9 +2187,11 @@ export interface Frame139Props {
 
 
 
+
 export interface ProductBox7Props {
   className?: any;
 };
+
 
 
 
@@ -2346,9 +2371,11 @@ export interface ProductBox6Props {
 
 
 
+
 export interface ProductBox5Props {
   className?: any;
 };
+
 
 
 
@@ -2528,6 +2555,7 @@ export interface ProductBox4Props {
 
 
 
+
 export interface ProductBox3Props {
   className?: any;
 };
@@ -2619,9 +2647,11 @@ export interface ProductBox3Props {
 
 
 
+
 export interface CustomerCardProps {
   className?: any;
 }
+
 
 
 
