@@ -297,22 +297,6 @@ const Title: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Price: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 1)`,
-  fontStyle: theme.typography['Typography']['H5'].fontStyle,
-  fontFamily: theme.typography['Typography']['H5'].fontFamily,
-  fontWeight: theme.typography['Typography']['H5'].fontWeight,
-  fontSize: theme.typography['Typography']['H5'].fontSize,
-  letterSpacing: theme.typography['Typography']['H5'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H5'].lineHeight,
-  textDecoration: theme.typography['Typography']['H5'].textDecoration,
-  textTransform: theme.typography['Typography']['H5'].textTransform,
-  margin: `14px 0px 0px 0px`,
-}));
-
 const Row: any = styled('div')({
   display: `flex`,
   position: `relative`,
@@ -640,7 +624,6 @@ function ProductCard(props: ProductCardProps): JSX.Element {
               <Details>
                 <Top>
                   <Title>{props.products.title}</Title>
-                  <Price>{`$8.95`}</Price>
                   <Row>
                     <Q40>{`4.0`}</Q40>
                     <Rating1 size={'small'} disabled={false} />
@@ -649,7 +632,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                 <Description1>
                   <Description2>{`Description`}</Description2>
                   <ExperienceAnExquisit>
-                    {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+                    {props.products.description}
                   </ExperienceAnExquisit>
                 </Description1>
                 <AddShare>
