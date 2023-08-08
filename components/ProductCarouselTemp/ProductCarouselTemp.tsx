@@ -36,7 +36,7 @@ const ProductList1: any = styled('div')({
 
 const ProductCard1: any = styled(ProductCard)(({ theme }: any) => ({
   zIndex: `0`,
-  margin: `0px`,
+  margin: `0px auto`,
 }));
 
 function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
@@ -60,21 +60,22 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
         breakpoint: 1104, // tablet breakpoint
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          initialSlide: 2,
         }
       },
       {
         breakpoint: 572, // mobile breakpoint
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
         }
       }
     ]
   };
 
   return (
-    <div style={{ width: '90%', maxWidth: '1440px', margin: '0 auto' }}>
+    <div style={{ width: '80%', maxWidth: '1440px', margin: '0 auto',}}>
       <Slider {...settings}>
         {data.products &&
           data.products.map((product: any, index: number) => {
