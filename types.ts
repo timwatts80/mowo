@@ -359,7 +359,6 @@ export interface Link1Props {
 
 
 
-
 export interface MenulinklistProps {
   className?: any;
 };
@@ -2431,7 +2430,7 @@ export interface ProductBox2Props {
 
 
 
-export interface ProdustListProps {
+export interface ProductListProps {
   className?: any;
 };
 

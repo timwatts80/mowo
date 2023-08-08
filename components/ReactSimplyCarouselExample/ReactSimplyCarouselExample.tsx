@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
 import ProductCard from '../ProductCard/ProductCard';
 import useProductCard from 'components/ProductCard/useProductCard';
-import useProductList from 'components/ProductCarousel/useProductCarousel';
+import useProductList from 'components/ProductCarouselTemp/useProductCarouselTemp';
 import styled from '@emotion/styled';
 import { ProductBoxProps, ProductListProps } from 'types';
 
