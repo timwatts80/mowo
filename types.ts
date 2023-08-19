@@ -1206,7 +1206,7 @@ export interface ProductCardProps {
   products: any;
   open: any;
   onClose: any;
-  };
+};
 
 
 
@@ -2219,7 +2219,7 @@ export interface ProductCarouselTempProps {
 export interface ProductBoxProps {
   className?: any;
   id?: number;
-  data? : any;
+  data?: any;
 };
 
 
