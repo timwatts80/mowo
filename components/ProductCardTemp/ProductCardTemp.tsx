@@ -15,26 +15,23 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { ProductCardTempProps } from 'types';
-import { animated, useSpring, easings } from 'react-spring';
 import useProductCardTemp from 'components/ProductCardTemp/useProductCardTemp';
 
-const ProductCardTemp1: any = animated(
-  styled('div')(({ theme }: any) => ({
-    backgroundColor: `rgba(241, 241, 241, 0.95)`,
-    borderRadius: `10px`,
-    display: `flex`,
-    position: `relative`,
-    isolation: `isolate`,
-    flexDirection: `column`,
-    height: '100%',
-    width: '100%',
-    justifyContent: `flex-start`,
-    alignItems: `center`,
-    padding: `16px 0px 0px 0px`,
-    boxSizing: `border-box`,
-    overflow: `hidden`,
-  }))
-);
+const ProductCardTemp1: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(241, 241, 241, 0.95)`,
+  borderRadius: `10px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  height: '100%',
+  width: '100%',
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `16px 0px 0px 0px`,
+  boxSizing: `border-box`,
+  overflow: `hidden`,
+}));
 
 const Imagecontainer: any = styled('div')({
   display: `flex`,
@@ -61,25 +58,8 @@ const ProductImage: any = styled('img')({
 function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
   const { data, fns } = useProductCardTemp();
 
-  const [ProductCardTemp1Spring, ProductCardTemp1Api] = useSpring(() => ({
-    config: {
-      duration: 250,
-      easing: easings['easeInOutQuad'],
-    },
-    delay: 0,
-    from: { transform: 'translateX(0px)' },
-  }));
   return (
-    <ProductCardTemp1
-      onClick={() => {
-        ProductCardTemp1Api.start({
-          ...{ transform: 'translateX(-300px)' },
-          delay: 0,
-        });
-      }}
-      className={props.className}
-      style={{ ...ProductCardTemp1Spring }}
-    >
+    <ProductCardTemp1 className={props.className}>
       {data.products &&
         data.products.map((product: any, index: number) => {
           return (
