@@ -17,14 +17,11 @@ import ProductCarouselTemp from 'components/ProductCarouselTemp/ProductCarouselT
 import Menulinklist from 'components/Menulinklist/Menulinklist'
 
 
-
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
-      
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
       <CustomerCases />
