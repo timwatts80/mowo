@@ -13,26 +13,28 @@
  **********************************************************************/
 
 import React from 'react';
-import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardTempProps } from 'types';
+import { animated, useSpring, easings } from 'react-spring';
 import useProductCardTemp from 'components/ProductCardTemp/useProductCardTemp';
 
-const ProductCardTemp1: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: `rgba(241, 241, 241, 0.95)`,
-  borderRadius: `10px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  height: `496px`,
-  width: '100%',
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `16px 0px 0px 0px`,
-  boxSizing: `border-box`,
-  overflow: `hidden`,
-}));
+const ProductCardTemp1: any = animated(
+  styled('div')(({ theme }: any) => ({
+    backgroundColor: `rgba(241, 241, 241, 0.95)`,
+    borderRadius: `10px`,
+    display: `flex`,
+    position: `relative`,
+    isolation: `isolate`,
+    flexDirection: `column`,
+    height: '100%',
+    width: '100%',
+    justifyContent: `flex-start`,
+    alignItems: `center`,
+    padding: `16px 0px 0px 0px`,
+    boxSizing: `border-box`,
+    overflow: `hidden`,
+  }))
+);
 
 const Imagecontainer: any = styled('div')({
   display: `flex`,
@@ -56,132 +58,40 @@ const ProductImage: any = styled('img')({
   margin: `0px`,
 });
 
-const Titlecontainer: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px 16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `32px 0px 0px 0px`,
-});
-
-const ProductTitle: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `24px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
-  flex: `1`,
-  margin: `0px`,
-}));
-
-const Descriptioncontainer: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px 16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `32px 0px 0px 0px`,
-});
-
-const Description: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['MOWO']['black-75'],
-  fontStyle: `normal`,
-  fontFamily: `Open Sans`,
-  fontWeight: `400`,
-  fontSize: `16px`,
-  letterSpacing: `-0.3199999928474426px`,
-  textDecoration: `none`,
-  lineHeight: `20px`,
-  textTransform: `none`,
-  flex: `1`,
-  margin: `0px`,
-}));
-
-const ButtonOutlined: any = styled(Button)(({ theme }: any) => ({
-  margin: `32px 0px 0px 0px`,
-  color: theme.palette['Info']['Main'],
-  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
-  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
-  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
-  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
-  letterSpacing:
-    theme.typography['Components']['Button Font - Medium'].letterSpacing,
-  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
-  textDecoration:
-    theme.typography['Components']['Button Font - Medium'].textDecoration,
-  textTransform:
-    theme.typography['Components']['Button Font - Medium'].textTransform,
-}));
-
-const Bottomaccent: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `32px 0px 0px 0px`,
-});
-
-const Bottomaccentcolor: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Secondary']['Main'],
-  alignSelf: `stretch`,
-  height: `16px`,
-  margin: `0px`,
-}));
-
 function ProductCardTemp(props: ProductCardTempProps): JSX.Element {
-  const { fns } = useProductCardTemp();
+  const { data, fns } = useProductCardTemp();
 
+  const [ProductCardTemp1Spring, ProductCardTemp1Api] = useSpring(() => ({
+    config: {
+      duration: 250,
+      easing: easings['easeInOutQuad'],
+    },
+    delay: 0,
+    from: { transform: 'translateX(0px)' },
+  }));
   return (
-    <ProductCardTemp1 className={props.className}>
-      <Imagecontainer>
-        <ProductImage
-          src={props.products.image.src}
-          loading="lazy"
-          alt={'product image'}
-        />
-      </Imagecontainer>
-      <Titlecontainer>
-        <ProductTitle>{props.products.title}</ProductTitle>
-      </Titlecontainer>
-      <Descriptioncontainer>
-        <Description>{props.products.description}</Description>
-      </Descriptioncontainer>
-      <ButtonOutlined
-        variant="outlined"
-        size={'medium'}
-        color={'info'}
-        disabled={false}
-        onClick={fns.toggleDialog}
-      >
-        {'Device Details'}
-      </ButtonOutlined>
-      <Bottomaccent>
-        <Bottomaccentcolor></Bottomaccentcolor>
-      </Bottomaccent>
+    <ProductCardTemp1
+      onClick={() => {
+        ProductCardTemp1Api.start({
+          ...{ transform: 'translateX(-300px)' },
+          delay: 0,
+        });
+      }}
+      className={props.className}
+      style={{ ...ProductCardTemp1Spring }}
+    >
+      {data.productCards &&
+        data.productCards.map((productCard: any, index: number) => {
+          return (
+            <Imagecontainer key={index}>
+              <ProductImage
+                src={props.products.image.src}
+                loading="lazy"
+                alt={'product image'}
+              />
+            </Imagecontainer>
+          );
+        })}
     </ProductCardTemp1>
   );
 }
