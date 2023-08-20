@@ -148,6 +148,7 @@ export interface ProductCardNewProps {
 
 export interface ProductCardListProps {
   className?: any;
+  isVisible: any;
 };
 
 

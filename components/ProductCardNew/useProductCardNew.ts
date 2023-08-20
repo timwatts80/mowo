@@ -11,7 +11,7 @@
  *
  **********************************************************************/
 
-import React, { useState } from 'react';
+import React from 'react';
 
 /* These are the possible values for the current variant. Use this to change the currentVariant dynamically.
 Please don't modify */
@@ -26,25 +26,7 @@ const useProductCardNew = () => {
   );
   const [previousVariant, setPreviousVariant] = React.useState<string>('');
 
-  const items = [
-    {
-      title: 'Product 1',
-      description: 'This is product 1',
-      image: '',
-    },
-    {
-      title: 'Product 2',
-      description: 'This is product 2',
-      image: '',
-    },
-    {
-      title: 'Product 3',
-      description: 'This is product 3',
-      image: '',
-    },
-  ]
-  let [index, setIndex] = useState();
-  let data: any = { currentVariant, previousVariant, items };
+  const data: any = { currentVariant, previousVariant };
   const getImageSrc = (): any => {};
 
   const fns: any = { getImageSrc, setCurrentVariant, setPreviousVariant };

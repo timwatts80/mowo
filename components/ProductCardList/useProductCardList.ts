@@ -33,9 +33,8 @@ const useProductCardList = () => {
   ]
   let [index, setIndex] = useState();
   let data: any = { items, index};
-  const isItemVisible = (param1: any): any => {};
 
-  const fns: any = { isItemVisible };
+  const fns: any = {};
 
   return { data, fns };
 };
