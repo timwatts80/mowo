@@ -15,6 +15,7 @@ import Sidebar from 'components/Sidebar/Sidebar'
 import DialogSample from 'components/DialogSample/DialogSample'
 import ProductCarouselTemp from 'components/ProductCarouselTemp/ProductCarouselTemp'
 import Menulinklist from 'components/Menulinklist/Menulinklist'
+import ProductCardList from 'components/ProductCardList/ProductCardList'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
+      <ProductCardList />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
       <CustomerCases />

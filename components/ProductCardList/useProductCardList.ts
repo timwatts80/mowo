@@ -11,9 +11,28 @@
  *
  **********************************************************************/
 
-import React from 'react';
+import React, { useState } from 'react';
+
 const useProductCardList = () => {
-  const data: any = {};
+  const items = [
+    {
+      title: 'Product 1',
+      description: 'This is product 1',
+      image: '',
+    },
+    {
+      title: 'Product 2',
+      description: 'This is product 2',
+      image: '',
+    },
+    {
+      title: 'Product 3',
+      description: 'This is product 3',
+      image: '',
+    },
+  ]
+  let [index, setIndex] = useState();
+  let data: any = { items, index};
   const isItemVisible = (param1: any): any => {};
 
   const fns: any = { isItemVisible };

@@ -133,6 +133,7 @@
 
 export interface ProductCardListProps {
   className?: any;
+  easing: string;
 };
 
 
