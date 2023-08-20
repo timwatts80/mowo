@@ -431,7 +431,7 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
         style={{ ...ProductinfocontainerStateStyles }}
       >
         <Titlecontainer data={data} style={{ ...TitlecontainerStateStyles }}>
-          <ProductTitle>{'data.items.title'}</ProductTitle>
+          <ProductTitle>{data.items.title}</ProductTitle>
         </Titlecontainer>
         <Detailscontainer
           data={data}
