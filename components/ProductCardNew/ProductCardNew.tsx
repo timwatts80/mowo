@@ -431,13 +431,13 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
         style={{ ...ProductinfocontainerStateStyles }}
       >
         <Titlecontainer data={data} style={{ ...TitlecontainerStateStyles }}>
-          <ProductTitle>{'data.item.title'}</ProductTitle>
+          <ProductTitle>{'data.items.title'}</ProductTitle>
         </Titlecontainer>
         <Detailscontainer
           data={data}
           style={{ ...DetailscontainerStateStyles }}
         >
-          <Description>{data.item.description}</Description>
+          <Description>{data.items.description}</Description>
         </Detailscontainer>
         <Button1 data={data} style={{ ...Button1StateStyles }}>
           <ButtonContained
