@@ -412,7 +412,7 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
       <Imagecontainer data={data} style={{ ...ImagecontainerStateStyles }}>
         <ProductImage
           data={data}
-          src={data.items.image}
+          src={data.items.image.src}
           loading="lazy"
           alt={'Product Image'}
           style={{ ...ProductImageStateStyles }}
