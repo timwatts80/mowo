@@ -14,7 +14,6 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import ProductCardNew from 'components/ProductCardNew/ProductCardNew';
 import { ProductCardListProps } from 'types';
 import useProductCardList from 'components/ProductCardList/useProductCardList';
 
@@ -26,18 +25,68 @@ const ProductCardList1: any = styled('div')({
   flexDirection: `row`,
   width: '100%',
   height: 'auto',
-  justifyContent: `space-between`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `48px`,
+  padding: `0px`,
   boxSizing: `border-box`,
 });
 
-const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
-  width: `311px`,
-  height: `448px`,
-  zIndex: `0`,
+const Slideleft: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px 24px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width: `84px`,
+  zIndex: `2`,
   margin: `0px`,
-}));
+});
+
+const Icon1: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `36px`,
+  height: `36px`,
+  margin: `0px`,
+});
+
+const IconArrowLeft: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const ArrowL: any = styled('img')({
+  height: `21px`,
+  width: `24px`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  position: `absolute`,
+  left: `6px`,
+  top: `8px`,
+});
 
 function ProductCardList(props: ProductCardListProps): JSX.Element {
   const { data } = useProductCardList();
@@ -46,7 +95,19 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
     <ProductCardList1 className={props.className} gap={'20px'}>
       {data.items &&
         data.items.map((item: any, index: number) => {
-          return <ProductCardNew1 key={index} {...item} />;
+          return (
+            <Slideleft key={index}>
+              <Icon1>
+                <IconArrowLeft>
+                  <ArrowL
+                    src={`assets/images/ProductCardList_Arrow_L.png`}
+                    loading="lazy"
+                    alt={'Arrow L'}
+                  />
+                </IconArrowLeft>
+              </Icon1>
+            </Slideleft>
+          );
         })}
     </ProductCardList1>
   );
