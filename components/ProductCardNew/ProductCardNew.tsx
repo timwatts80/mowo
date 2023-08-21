@@ -200,11 +200,7 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
   return (
     <StateDefault className={props.className}>
       <Imagecontainer>
-        <ProductImage
-          src={data.items.image.src}
-          loading="lazy"
-          alt={'Product Image'}
-        />
+        <ProductImage src={props.src} loading="lazy" alt={'Product Image'} />
       </Imagecontainer>
       {false && (
         <Productcardbackgroun>
