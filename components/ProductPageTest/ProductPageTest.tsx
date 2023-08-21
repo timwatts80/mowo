@@ -492,71 +492,69 @@ function ProductPageTest(props: ProductPageTestProps): JSX.Element {
   const { data } = useProductPageTest();
 
   return (
-    props.open && (
-      <ScreenDesktop className={props.className} data={data}>
-        <Col1 data={data}>
-          <Imagecontainer>
-            <ProductImage
-              data={data}
-              src={`assets/images/ProductPageTest_product_image.png`}
+    <ScreenDesktop className={props.className} data={data}>
+      <Col1 data={data}>
+        <Imagecontainer>
+          <ProductImage
+            data={data}
+            src={`assets/images/ProductPageTest_product_image.png`}
+            loading="lazy"
+            alt={'product image'}
+          />
+        </Imagecontainer>
+      </Col1>
+      <Col2 data={data}>
+        <Details>
+          <Top>
+            <Title>{`Fancy Fusion`}</Title>
+            <Row>
+              <Q40>{`4.0`}</Q40>
+              <Rating1 size={'small'} disabled={false} />
+            </Row>
+          </Top>
+          <Description>
+            <Description1>{`Description`}</Description1>
+            <ExperienceAnExquisit>
+              {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+            </ExperienceAnExquisit>
+          </Description>
+          <AddShare data={data}>
+            <ShopBtn1 data={data}>
+              <CheckOut>{`ADD TO BAG`}</CheckOut>
+            </ShopBtn1>
+            <IconButton>
+              <Container>
+                <IconShare>
+                  <Share
+                    src={`assets/images/ProductPageTest_share.png`}
+                    loading="lazy"
+                    alt={'share'}
+                  />
+                </IconShare>
+              </Container>
+            </IconButton>
+          </AddShare>
+          <DividerHorizontal orientation="horizontal" />
+          <Ingredients>
+            <Specifications>{`Specifications`}</Specifications>
+            <LoremIpsumDolorSitAm>
+              {`Lorem, Ipsum, Dolor, Sit, Amet`}
+            </LoremIpsumDolorSitAm>
+          </Ingredients>
+        </Details>
+      </Col2>
+      <Close onClick={props.onClose} data={data}>
+        <Icon1>
+          <IconX>
+            <Close1
+              src={`assets/images/ProductPageTest_Close.png`}
               loading="lazy"
-              alt={'product image'}
+              alt={'Close'}
             />
-          </Imagecontainer>
-        </Col1>
-        <Col2 data={data}>
-          <Details>
-            <Top>
-              <Title>{`Fancy Fusion`}</Title>
-              <Row>
-                <Q40>{`4.0`}</Q40>
-                <Rating1 size={'small'} disabled={false} />
-              </Row>
-            </Top>
-            <Description>
-              <Description1>{`Description`}</Description1>
-              <ExperienceAnExquisit>
-                {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
-              </ExperienceAnExquisit>
-            </Description>
-            <AddShare data={data}>
-              <ShopBtn1 data={data}>
-                <CheckOut>{`ADD TO BAG`}</CheckOut>
-              </ShopBtn1>
-              <IconButton>
-                <Container>
-                  <IconShare>
-                    <Share
-                      src={`assets/images/ProductPageTest_share.png`}
-                      loading="lazy"
-                      alt={'share'}
-                    />
-                  </IconShare>
-                </Container>
-              </IconButton>
-            </AddShare>
-            <DividerHorizontal orientation="horizontal" />
-            <Ingredients>
-              <Specifications>{`Specifications`}</Specifications>
-              <LoremIpsumDolorSitAm>
-                {`Lorem, Ipsum, Dolor, Sit, Amet`}
-              </LoremIpsumDolorSitAm>
-            </Ingredients>
-          </Details>
-        </Col2>
-        <Close onClick={props.onClose} data={data}>
-          <Icon1>
-            <IconX>
-              <Close1
-                src={`assets/images/ProductPageTest_Close.png`}
-                loading="lazy"
-                alt={'Close'}
-              />
-            </IconX>
-          </Icon1>
-        </Close>
-      </ScreenDesktop>
-    )
+          </IconX>
+        </Icon1>
+      </Close>
+    </ScreenDesktop>
   );
 }
 
