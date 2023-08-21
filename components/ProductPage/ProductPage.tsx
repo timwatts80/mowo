@@ -15,7 +15,6 @@
 import React from 'react';
 import { Rating, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Icon1 from 'components/Icon1/Icon1';
 import { ProductPageProps } from 'types';
 import useProductPage from 'components/ProductPage/useProductPage';
 
@@ -35,17 +34,12 @@ const ScreenDesktop: any = styled('div', {
       : `row`,
   width: '100%',
   justifyContent: `flex-start`,
-  alignItems:
-    data.currentVariant === 'ScreenTablet'
-      ? `flex-end`
-      : data.currentVariant === 'ScreenMobile'
-      ? `flex-end`
-      : `flex-start`,
+  alignItems: `flex-start`,
   padding:
     data.currentVariant === 'ScreenTablet'
-      ? `70px 70px 100px 70px`
+      ? `100px 70px`
       : data.currentVariant === 'ScreenMobile'
-      ? `10px 10px 60px 10px`
+      ? `60px 10px`
       : `64px 48px`,
   boxSizing: `border-box`,
   height: 'auto',
@@ -63,28 +57,30 @@ const Col1: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  flex: `1`,
+  flex:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `1`,
   height:
     data.currentVariant === 'ScreenTablet'
       ? 'unset'
       : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
+      ? `268px`
       : `562px`,
-  margin:
+  margin: `0px`,
+  alignSelf:
     data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
+      ? `stretch`
       : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? `619px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `619px`
+      ? `stretch`
       : 'unset',
 }));
 
-const Imagecontainer: any = styled('div')({
+const Imagecontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -95,18 +91,31 @@ const Imagecontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  flex: `1`,
+  flex: data.currentVariant === 'ScreenTablet' ? 'unset' : `1`,
   margin: `0px`,
-});
+  height: data.currentVariant === 'ScreenTablet' ? `492px` : 'unset',
+}));
 
-const ProductImage: any = styled('img')({
-  height: `562px`,
-  width: `619px`,
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `492px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `268px`
+      : `562px`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? `628px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `355px`
+      : `722px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-});
+}));
 
 const Col2: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -118,18 +127,31 @@ const Col2: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `0px`,
+  padding: data.currentVariant === 'ScreenMobile' ? `0px 10px` : `0px`,
   boxSizing: `border-box`,
-  width: `547px`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `547px`,
   margin:
     data.currentVariant === 'ScreenTablet'
       ? `50px 0px 0px 0px`
       : data.currentVariant === 'ScreenMobile'
       ? `40px 0px 0px 0px`
       : `0px 0px 0px 75px`,
+  alignSelf:
+    data.currentVariant === 'ScreenTablet'
+      ? `stretch`
+      : data.currentVariant === 'ScreenMobile'
+      ? `stretch`
+      : 'unset',
 }));
 
-const Details: any = styled('div')({
+const Details: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -140,9 +162,17 @@ const Details: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `0px`,
-});
+  flex:
+    data.currentVariant === 'ScreenTablet'
+      ? `1`
+      : data.currentVariant === 'ScreenMobile'
+      ? `1`
+      : 'unset',
+}));
 
-const Top: any = styled('div')({
+const Top: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -153,25 +183,55 @@ const Top: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `0px`,
-});
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+}));
 
-const Title: any = styled('div')(({ theme }: any) => ({
+const Title: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(0, 0, 0, 1)`,
-  fontStyle: theme.typography['Typography']['H3'].fontStyle,
-  fontFamily: theme.typography['Typography']['H3'].fontFamily,
-  fontWeight: theme.typography['Typography']['H3'].fontWeight,
-  fontSize: theme.typography['Typography']['H3'].fontSize,
-  letterSpacing: theme.typography['Typography']['H3'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H3'].lineHeight,
-  textDecoration: theme.typography['Typography']['H3'].textDecoration,
-  textTransform: theme.typography['Typography']['H3'].textTransform,
+  fontStyle:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].fontStyle
+      : theme.typography['Typography']['H3'].fontStyle,
+  fontFamily:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].fontFamily
+      : theme.typography['Typography']['H3'].fontFamily,
+  fontWeight:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].fontWeight
+      : theme.typography['Typography']['H3'].fontWeight,
+  fontSize:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].fontSize
+      : theme.typography['Typography']['H3'].fontSize,
+  letterSpacing:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].letterSpacing
+      : theme.typography['Typography']['H3'].letterSpacing,
+  lineHeight:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].lineHeight
+      : theme.typography['Typography']['H3'].lineHeight,
+  textDecoration:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].textDecoration
+      : theme.typography['Typography']['H3'].textDecoration,
+  textTransform:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['H4'].textTransform
+      : theme.typography['Typography']['H3'].textTransform,
   margin: `0px`,
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
-const Price: any = styled('div')(({ theme }: any) => ({
+const Price: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -184,10 +244,15 @@ const Price: any = styled('div')(({ theme }: any) => ({
   lineHeight: theme.typography['Typography']['H5'].lineHeight,
   textDecoration: theme.typography['Typography']['H5'].textDecoration,
   textTransform: theme.typography['Typography']['H5'].textTransform,
-  margin: `14px 0px 0px 0px`,
+  margin:
+    data.currentVariant === 'ScreenMobile'
+      ? `6px 0px 0px 0px`
+      : `14px 0px 0px 0px`,
 }));
 
-const Row: any = styled('div')({
+const Row: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -197,8 +262,11 @@ const Row: any = styled('div')({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin: `14px 0px 0px 0px`,
-});
+  margin:
+    data.currentVariant === 'ScreenMobile'
+      ? `6px 0px 0px 0px`
+      : `14px 0px 0px 0px`,
+}));
 
 const Q40: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
@@ -220,7 +288,9 @@ const Rating1: any = styled(Rating)(({ theme }: any) => ({
   margin: `0px 0px 0px 6px`,
 }));
 
-const Description: any = styled('div')({
+const Description: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -231,9 +301,17 @@ const Description: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `44px 0px 0px 0px`,
-});
+  alignSelf:
+    data.currentVariant === 'ScreenTablet'
+      ? `stretch`
+      : data.currentVariant === 'ScreenMobile'
+      ? `stretch`
+      : 'unset',
+}));
 
-const Description1: any = styled('div')(({ theme }: any) => ({
+const Description1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -247,9 +325,17 @@ const Description1: any = styled('div')(({ theme }: any) => ({
   textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
   textTransform: theme.typography['Components']['Alert Title'].textTransform,
   margin: `0px`,
+  alignSelf:
+    data.currentVariant === 'ScreenTablet'
+      ? `stretch`
+      : data.currentVariant === 'ScreenMobile'
+      ? `stretch`
+      : 'unset',
 }));
 
-const ExperienceAnExquisit: any = styled('div')(({ theme }: any) => ({
+const ExperienceAnExquisit: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -262,11 +348,24 @@ const ExperienceAnExquisit: any = styled('div')(({ theme }: any) => ({
   lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
   textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
   textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  width: `519px`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `519px`,
   margin: `15px 0px 0px 0px`,
+  alignSelf:
+    data.currentVariant === 'ScreenTablet'
+      ? `stretch`
+      : data.currentVariant === 'ScreenMobile'
+      ? `stretch`
+      : 'unset',
 }));
 
-const AddShare: any = styled('div')({
+const AddShare: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -277,9 +376,12 @@ const AddShare: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `44px 0px 0px 0px`,
-});
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+}));
 
-const ShopBtn1: any = styled('div')(({ theme }: any) => ({
+const ShopBtn1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   backgroundColor: theme.palette['Text']['Primary'],
   borderRadius: `0px`,
   display: `flex`,
@@ -288,26 +390,52 @@ const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `16px 0px`,
+  padding: data.currentVariant === 'ScreenMobile' ? `10px 0px` : `16px 0px`,
   boxSizing: `border-box`,
-  width: `327px`,
+  width: data.currentVariant === 'ScreenMobile' ? `200px` : `327px`,
   margin: `0px`,
   overflow: `hidden`,
 }));
 
-const CheckOut: any = styled('div')(({ theme }: any) => ({
+const CheckOut: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(255, 255, 255, 1)`,
-  fontStyle: theme.typography['Typography']['H6'].fontStyle,
-  fontFamily: theme.typography['Typography']['H6'].fontFamily,
-  fontWeight: theme.typography['Typography']['H6'].fontWeight,
-  fontSize: theme.typography['Typography']['H6'].fontSize,
-  letterSpacing: theme.typography['Typography']['H6'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H6'].lineHeight,
-  textDecoration: theme.typography['Typography']['H6'].textDecoration,
-  textTransform: theme.typography['Typography']['H6'].textTransform,
+  fontStyle:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].fontStyle
+      : theme.typography['Typography']['H6'].fontStyle,
+  fontFamily:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].fontFamily
+      : theme.typography['Typography']['H6'].fontFamily,
+  fontWeight:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].fontWeight
+      : theme.typography['Typography']['H6'].fontWeight,
+  fontSize:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].fontSize
+      : theme.typography['Typography']['H6'].fontSize,
+  letterSpacing:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].letterSpacing
+      : theme.typography['Typography']['H6'].letterSpacing,
+  lineHeight:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].lineHeight
+      : theme.typography['Typography']['H6'].lineHeight,
+  textDecoration:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].textDecoration
+      : theme.typography['Typography']['H6'].textDecoration,
+  textTransform:
+    data.currentVariant === 'ScreenMobile'
+      ? theme.typography['Typography']['Body 1'].textTransform
+      : theme.typography['Typography']['H6'].textTransform,
   margin: `0px`,
 }));
 
@@ -413,958 +541,140 @@ const AppleCarrotBeetCeler: any = styled('div')(({ theme }: any) => ({
   margin: `15px 0px 0px 0px`,
 }));
 
-const Icon2: any = styled(Icon1, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `28px`,
-  height: `28px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px 0px 0px 75px`,
-}));
-
-const Icon3: any = styled(Icon1, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  width: `28px`,
-  height: `28px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px 0px 0px 75px`,
-}));
-
-const Col11: any = styled('div', {
+const Close: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `628px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px 0px 0px 75px`,
-}));
-
-const Imagecontainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  height: `492px`,
-  margin: `0px`,
-});
-
-const ProductImage1: any = styled('img')({
-  height: `492px`,
-  width: `628px`,
-  objectFit: `cover`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Col21: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `628px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px 0px 0px 75px`,
-}));
-
-const Details1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Top1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const Title1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 1)`,
-  fontStyle: theme.typography['Typography']['H3'].fontStyle,
-  fontFamily: theme.typography['Typography']['H3'].fontFamily,
-  fontWeight: theme.typography['Typography']['H3'].fontWeight,
-  fontSize: theme.typography['Typography']['H3'].fontSize,
-  letterSpacing: theme.typography['Typography']['H3'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H3'].lineHeight,
-  textDecoration: theme.typography['Typography']['H3'].textDecoration,
-  textTransform: theme.typography['Typography']['H3'].textTransform,
-  margin: `0px`,
-}));
-
-const Price1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 1)`,
-  fontStyle: theme.typography['Typography']['H5'].fontStyle,
-  fontFamily: theme.typography['Typography']['H5'].fontFamily,
-  fontWeight: theme.typography['Typography']['H5'].fontWeight,
-  fontSize: theme.typography['Typography']['H5'].fontSize,
-  letterSpacing: theme.typography['Typography']['H5'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H5'].lineHeight,
-  textDecoration: theme.typography['Typography']['H5'].textDecoration,
-  textTransform: theme.typography['Typography']['H5'].textTransform,
-  margin: `14px 0px 0px 0px`,
-}));
-
-const Row1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `14px 0px 0px 0px`,
-});
-
-const Q401: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 2'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 2'].textTransform,
-  margin: `0px`,
-}));
-
-const Rating2: any = styled(Rating)(({ theme }: any) => ({
-  margin: `0px 0px 0px 6px`,
-}));
-
-const Description2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `44px 0px 0px 0px`,
-});
-
-const Description3: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const ExperienceAnExquisit1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(80, 80, 80, 1)`,
-  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 1'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-}));
-
-const AddShare1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `44px 0px 0px 0px`,
-});
-
-const ShopBtn11: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Text']['Primary'],
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `16px 0px`,
-  boxSizing: `border-box`,
-  width: `327px`,
-  margin: `0px`,
-  overflow: `hidden`,
-}));
-
-const CheckOut1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(255, 255, 255, 1)`,
-  fontStyle: theme.typography['Typography']['H6'].fontStyle,
-  fontFamily: theme.typography['Typography']['H6'].fontFamily,
-  fontWeight: theme.typography['Typography']['H6'].fontWeight,
-  fontSize: theme.typography['Typography']['H6'].fontSize,
-  letterSpacing: theme.typography['Typography']['H6'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H6'].lineHeight,
-  textDecoration: theme.typography['Typography']['H6'].textDecoration,
-  textTransform: theme.typography['Typography']['H6'].textTransform,
-  margin: `0px`,
-}));
-
-const IconButton1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px 0px 0px 30px`,
-});
-
-const Container1: any = styled('div')({
-  borderRadius: `48px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `4px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const IconShare1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `24px`,
-  height: `24px`,
-  margin: `0px`,
-});
-
-const Share1: any = styled('img')({
-  height: `16px`,
-  width: `16px`,
   position: `absolute`,
-  left: `4px`,
-  top: `4px`,
-});
-
-const DividerHorizontal1: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `44px 0px 0px 0px`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-end`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  left:
+    data.currentVariant === 'ScreenTablet'
+      ? `720px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `337px`
+      : `1378px`,
+  top:
+    data.currentVariant === 'ScreenTablet'
+      ? `20px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px`
+      : `34px`,
 }));
 
-const Ingredients2: any = styled('div')({
+const Icon1: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `column`,
+  flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `44px 0px 0px 0px`,
-});
-
-const Ingredients3: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const AppleCarrotBeetCeler1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(80, 80, 80, 1)`,
-  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 1'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-}));
-
-const Icon4: any = styled(Icon1, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
   width: `28px`,
   height: `28px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `0px 0px 0px 75px`,
-}));
-
-const Col12: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `355px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px 0px 0px 75px`,
-  height:
-    data.currentVariant === 'ScreenTablet'
-      ? `268px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `268px`
-      : 'unset',
-}));
-
-const Imagecontainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
-const ProductImage2: any = styled('img')({
-  height: `268px`,
-  width: `355px`,
-  objectFit: `cover`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Col22: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const IconX: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px 10px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `355px`,
-  margin:
-    data.currentVariant === 'ScreenTablet'
-      ? `50px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `40px 0px 0px 0px`
-      : `0px 0px 0px 75px`,
-}));
-
-const Details2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Top2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Title2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 1)`,
-  fontStyle: theme.typography['Typography']['H4'].fontStyle,
-  fontFamily: theme.typography['Typography']['H4'].fontFamily,
-  fontWeight: theme.typography['Typography']['H4'].fontWeight,
-  fontSize: theme.typography['Typography']['H4'].fontSize,
-  letterSpacing: theme.typography['Typography']['H4'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H4'].lineHeight,
-  textDecoration: theme.typography['Typography']['H4'].textDecoration,
-  textTransform: theme.typography['Typography']['H4'].textTransform,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Price2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 1)`,
-  fontStyle: theme.typography['Typography']['H5'].fontStyle,
-  fontFamily: theme.typography['Typography']['H5'].fontFamily,
-  fontWeight: theme.typography['Typography']['H5'].fontWeight,
-  fontSize: theme.typography['Typography']['H5'].fontSize,
-  letterSpacing: theme.typography['Typography']['H5'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H5'].lineHeight,
-  textDecoration: theme.typography['Typography']['H5'].textDecoration,
-  textTransform: theme.typography['Typography']['H5'].textTransform,
-  margin: `6px 0px 0px 0px`,
-}));
-
-const Row2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `6px 0px 0px 0px`,
-});
-
-const Q402: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 2'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 2'].textTransform,
-  margin: `0px`,
-}));
-
-const Rating3: any = styled(Rating)(({ theme }: any) => ({
-  margin: `0px 0px 0px 6px`,
-}));
-
-const Description4: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `44px 0px 0px 0px`,
-});
-
-const Description5: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const ExperienceAnExquisit2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(80, 80, 80, 1)`,
-  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 1'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-}));
-
-const AddShare2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `44px 0px 0px 0px`,
-});
-
-const ShopBtn12: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Text']['Primary'],
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `10px 0px`,
-  boxSizing: `border-box`,
-  width: `200px`,
-  margin: `0px`,
-  overflow: `hidden`,
-}));
-
-const CheckOut2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(255, 255, 255, 1)`,
-  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 1'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  margin: `0px`,
-}));
-
-const IconButton2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px 0px 0px 30px`,
-});
-
-const Container2: any = styled('div')({
-  borderRadius: `48px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `4px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const IconShare2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `24px`,
-  height: `24px`,
-  margin: `0px`,
-});
-
-const Share2: any = styled('img')({
-  height: `16px`,
-  width: `16px`,
   position: `absolute`,
-  left: `4px`,
-  top: `4px`,
-});
-
-const DividerHorizontal2: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `44px 0px 0px 0px`,
-}));
-
-const Ingredients4: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
   isolation: `isolate`,
-  flexDirection: `column`,
+  flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `44px 0px 0px 0px`,
+  flex: `1`,
+  left: `0px`,
+  top: `0px`,
 });
 
-const Ingredients5: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const AppleCarrotBeetCeler2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(80, 80, 80, 1)`,
-  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 1'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-}));
+const Close1: any = styled('img')({
+  height: `14.41px`,
+  width: `14.41px`,
+  position: `absolute`,
+  left: `7px`,
+  top: `7px`,
+});
 
 function ProductPage(props: ProductPageProps): JSX.Element {
-  const { data } = useProductPage();
+  const { data, fns } = useProductPage();
 
   return (
     props.open && (
       <ScreenDesktop className={props.className} data={data}>
-        {!(data.currentVariant === 'ScreenTablet') &&
-          !(data.currentVariant === 'ScreenMobile') && (
-            <Col1 data={data}>
-              <Imagecontainer>
-                <ProductImage
-                  src={`assets/images/ProductPage_product_image.png`}
-                  loading="lazy"
-                  alt={'product image'}
-                />
-              </Imagecontainer>
-            </Col1>
-          )}
-        {!(data.currentVariant === 'ScreenTablet') &&
-          !(data.currentVariant === 'ScreenMobile') && (
-            <Col2 data={data}>
-              <Details>
-                <Top>
-                  <Title>{`Fancy Fusion`}</Title>
-                  <Price>{`$8.95`}</Price>
-                  <Row>
-                    <Q40>{`4.0`}</Q40>
-                    <Rating1 size={'small'} disabled={false} />
-                  </Row>
-                </Top>
-                <Description>
-                  <Description1>{`Description`}</Description1>
-                  <ExperienceAnExquisit>
-                    {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
-                  </ExperienceAnExquisit>
-                </Description>
-                <AddShare>
-                  <ShopBtn1>
-                    <CheckOut>{`ADD TO BAG`}</CheckOut>
-                  </ShopBtn1>
-                  <IconButton>
-                    <Container>
-                      <IconShare>
-                        <Share
-                          src={`assets/images/ProductPage_share.png`}
-                          loading="lazy"
-                          alt={'share'}
-                        />
-                      </IconShare>
-                    </Container>
-                  </IconButton>
-                </AddShare>
-                <DividerHorizontal orientation="horizontal" />
-                <Ingredients>
-                  <Ingredients1>{`Ingredients`}</Ingredients1>
-                  <AppleCarrotBeetCeler>
-                    {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
-                  </AppleCarrotBeetCeler>
-                </Ingredients>
-              </Details>
-            </Col2>
-          )}
-        {!(data.currentVariant === 'ScreenTablet') &&
-          !(data.currentVariant === 'ScreenMobile') && <Icon2 data={data} />}
-        {data.currentVariant === 'ScreenTablet' && <Icon3 data={data} />}
-        {data.currentVariant === 'ScreenTablet' && (
-          <Col11 data={data}>
-            <Imagecontainer1>
-              <ProductImage1
-                src={`assets/images/ProductPage_product_image_1.png`}
+        <Col1 data={data}>
+          <Imagecontainer data={data}>
+            <ProductImage
+              data={data}
+              src={`assets/images/ProductPage_product_image.png`}
+              loading="lazy"
+              alt={'product image'}
+            />
+          </Imagecontainer>
+        </Col1>
+        <Col2 data={data}>
+          <Details data={data}>
+            <Top data={data}>
+              <Title data={data}>{`Fancy Fusion`}</Title>
+              <Price data={data}>{`$8.95`}</Price>
+              <Row data={data}>
+                <Q40>{`4.0`}</Q40>
+                <Rating1 size={'small'} disabled={false} />
+              </Row>
+            </Top>
+            <Description data={data}>
+              <Description1 data={data}>{`Description`}</Description1>
+              <ExperienceAnExquisit data={data}>
+                {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+              </ExperienceAnExquisit>
+            </Description>
+            <AddShare data={data}>
+              <ShopBtn1 data={data}>
+                <CheckOut data={data}>{`ADD TO BAG`}</CheckOut>
+              </ShopBtn1>
+              <IconButton>
+                <Container>
+                  <IconShare>
+                    <Share
+                      src={`assets/images/ProductPage_share.png`}
+                      loading="lazy"
+                      alt={'share'}
+                    />
+                  </IconShare>
+                </Container>
+              </IconButton>
+            </AddShare>
+            <DividerHorizontal orientation="horizontal" />
+            <Ingredients>
+              <Ingredients1>{`Ingredients`}</Ingredients1>
+              <AppleCarrotBeetCeler>
+                {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
+              </AppleCarrotBeetCeler>
+            </Ingredients>
+          </Details>
+        </Col2>
+        <Close data={data}>
+          <Icon1 onClick={fns.onClose}>
+            <IconX>
+              <Close1
+                src={`assets/images/ProductPage_Close.png`}
                 loading="lazy"
-                alt={'product image'}
+                alt={'Close'}
               />
-            </Imagecontainer1>
-          </Col11>
-        )}
-        {data.currentVariant === 'ScreenTablet' && (
-          <Col21 data={data}>
-            <Details1>
-              <Top1>
-                <Title1>{`Fancy Fusion`}</Title1>
-                <Price1>{`$8.95`}</Price1>
-                <Row1>
-                  <Q401>{`4.0`}</Q401>
-                  <Rating2 size={'small'} disabled={false} />
-                </Row1>
-              </Top1>
-              <Description2>
-                <Description3>{`Description`}</Description3>
-                <ExperienceAnExquisit1>
-                  {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
-                </ExperienceAnExquisit1>
-              </Description2>
-              <AddShare1>
-                <ShopBtn11>
-                  <CheckOut1>{`ADD TO BAG`}</CheckOut1>
-                </ShopBtn11>
-                <IconButton1>
-                  <Container1>
-                    <IconShare1>
-                      <Share1
-                        src={`assets/images/ProductPage_share_1.png`}
-                        loading="lazy"
-                        alt={'share'}
-                      />
-                    </IconShare1>
-                  </Container1>
-                </IconButton1>
-              </AddShare1>
-              <DividerHorizontal1 orientation="horizontal" />
-              <Ingredients2>
-                <Ingredients3>{`Ingredients`}</Ingredients3>
-                <AppleCarrotBeetCeler1>
-                  {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
-                </AppleCarrotBeetCeler1>
-              </Ingredients2>
-            </Details1>
-          </Col21>
-        )}
-        {data.currentVariant === 'ScreenMobile' && <Icon4 data={data} />}
-        {data.currentVariant === 'ScreenMobile' && (
-          <Col12 data={data}>
-            <Imagecontainer2>
-              <ProductImage2
-                src={`assets/images/ProductPage_product_image_2.png`}
-                loading="lazy"
-                alt={'product image'}
-              />
-            </Imagecontainer2>
-          </Col12>
-        )}
-        {data.currentVariant === 'ScreenMobile' && (
-          <Col22 data={data}>
-            <Details2>
-              <Top2>
-                <Title2>{`Fancy Fusion`}</Title2>
-                <Price2>{`$8.95`}</Price2>
-                <Row2>
-                  <Q402>{`4.0`}</Q402>
-                  <Rating3 size={'small'} disabled={false} />
-                </Row2>
-              </Top2>
-              <Description4>
-                <Description5>{`Description`}</Description5>
-                <ExperienceAnExquisit2>
-                  {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
-                </ExperienceAnExquisit2>
-              </Description4>
-              <AddShare2>
-                <ShopBtn12>
-                  <CheckOut2>{`ADD TO BAG`}</CheckOut2>
-                </ShopBtn12>
-                <IconButton2>
-                  <Container2>
-                    <IconShare2>
-                      <Share2
-                        src={`assets/images/ProductPage_share_2.png`}
-                        loading="lazy"
-                        alt={'share'}
-                      />
-                    </IconShare2>
-                  </Container2>
-                </IconButton2>
-              </AddShare2>
-              <DividerHorizontal2 orientation="horizontal" />
-              <Ingredients4>
-                <Ingredients5>{`Ingredients`}</Ingredients5>
-                <AppleCarrotBeetCeler2>
-                  {`Apple, Carrot, Beet, Celery, Lemon (All Organic + Cold-Pressed), Organic Fermented Lemongrass`}
-                </AppleCarrotBeetCeler2>
-              </Ingredients4>
-            </Details2>
-          </Col22>
-        )}
+            </IconX>
+          </Icon1>
+        </Close>
       </ScreenDesktop>
     )
   );

@@ -23,6 +23,7 @@ const variantOptions = {
 };
 
 const useProductPage = () => {
+  const onClose = (): any => {};
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['ScreenDesktop']
   );
@@ -37,7 +38,7 @@ const useProductPage = () => {
 
   const data: any = { currentVariant };
 
-  const fns: any = { setCurrentVariant };
+  const fns: any = { setCurrentVariant ,onClose};
 
   return { data, fns };
 };
