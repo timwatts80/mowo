@@ -14,6 +14,7 @@
 import React, { useState } from 'react';
 
 const useProductCardList = () => {
+  const isItemVisible = (param1: any): any => {};
   const items = [
     {
       title: 'Product 1',
@@ -34,7 +35,7 @@ const useProductCardList = () => {
   let [index, setIndex] = useState();
   let data: any = { items, index};
 
-  const fns: any = {};
+  const fns: any = {isItemVisible};
 
   return { data, fns };
 };

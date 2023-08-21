@@ -20,16 +20,16 @@ import useProductCardList from 'components/ProductCardList/useProductCardList';
 
 const ProductCardList1: any = styled('div')({
   borderRadius: `0px`,
-  display: `flex`,
+  display: `grid`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
-  width: 'fit-content',
-  height: 'auto',
-  justifyContent: `space-between`,
-  alignItems: `center`,
+  width: `100%`,
+  height: `auto`,
   padding: `48px`,
   boxSizing: `border-box`,
+  gridTemplateColumns: `repeat(auto-fit, minmax(311px, 1fr))`,
+  columnGap: `20px`,
+  rowGap: `20px`,
 });
 
 const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
@@ -46,7 +46,7 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
     <ProductCardList1 className={props.className}>
       {data.items &&
         data.items.map((item: any, index: number) => {
-          return <ProductCardNew1 key={index} item={item} />;
+          return fns.isItemVisible(index) && <ProductCardNew1 key={index} />;
         })}
     </ProductCardList1>
   );
