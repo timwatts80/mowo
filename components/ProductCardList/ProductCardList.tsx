@@ -46,7 +46,19 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
     <ProductCardList1 className={props.className} gap={'20px'}>
       {data.items &&
         data.items.map((item: any, index: number) => {
-          return <ProductCardNew1 key={index} {...item} />;
+          return (
+            <Slideleft key={index}>
+              <Icon1>
+                <IconArrowLeft>
+                  <ArrowL
+                    src={`assets/images/ProductCardList_Arrow_L.png`}
+                    loading="lazy"
+                    alt={'Arrow L'}
+                  />
+                </IconArrowLeft>
+              </Icon1>
+            </Slideleft>
+          );
         })}
     </ProductCardList1>
   );
