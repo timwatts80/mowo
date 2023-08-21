@@ -228,8 +228,6 @@ const ButtonContained: any = styled(Button, {
 function ProductCardNew(props: ProductCardNewProps): JSX.Element {
   const { data, fns } = useProductCardNew();
 
-console.log(data.title);
-
   const ImagecontainerStateDefault = { height: `120px`, zIndex: `2` };
   const ImagecontainerStateHover = { height: `228px`, zIndex: `0` };
   const [ImagecontainerStateStyles, ImagecontainerStateApi] = useSpring(() => ({
@@ -414,7 +412,7 @@ console.log(data.title);
       <Imagecontainer data={data} style={{ ...ImagecontainerStateStyles }}>
         <ProductImage
           data={data}
-          src={fns.getImageSrc()}
+          src={data.items.image}
           loading="lazy"
           alt={'Product Image'}
           style={{ ...ProductImageStateStyles }}
