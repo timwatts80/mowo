@@ -163,8 +163,8 @@ import { Url } from "url";
 
 export interface ProductPageTestProps {
   className?: any;
-  open: any;
-  onClose: any;
+  open?: any;
+  onClose?: any;
 };
 
 
