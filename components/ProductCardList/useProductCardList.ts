@@ -20,19 +20,19 @@ const useProductCardList = () => {
   const items = [
     {
       product_id: 1,
-      image: product1,
+      image: { src: product1.src, alt: 'Product 1' },
       title: 'Product 1',
       description: 'Product 1 description',
     },
     {
       product_id: 2,
-      image: product2,
+      image: { src: product2.src, alt: 'Product 2' },
       title: 'Product 2',
       description: 'Product 2 description',
     },
     {
       product_id: 3,
-      image: product3,
+      image: { src: product3.src, alt: 'Product 3' },
       title: 'Product 3',
       description: 'Product 3 description',
     },
