@@ -13,10 +13,6 @@
  **********************************************************************/
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { SvgIcon } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { styled } from '@mui/material/styles';
 import ProductCardNew from 'components/ProductCardNew/ProductCardNew';
 import { ProductCardListProps } from 'types';
@@ -28,76 +24,47 @@ const ProductCardList1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100%',
-  height: 'auto',
-  justifyContent: `space-between`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `48px`,
   boxSizing: `border-box`,
+  height: 'auto',
+  width: 'fit-content',
+});
+
+const Productcardcontainer: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  zIndex: `1`,
+  margin: `0px`,
 });
 
 const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
   width: `311px`,
   height: `448px`,
-  zIndex: `0`,
   margin: `0px`,
 }));
 
-const Slideleft: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `10px`,
-  boxSizing: `border-box`,
-  width: `131px`,
-  height: `494px`,
-  margin: `0px`,
-  cursor: `pointer`,
-});
-
-const Slideleft1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `10px`,
-  boxSizing: `border-box`,
-  width: `131px`,
-  height: `494px`,
-  margin: `0px 0px 0px 30px`,
-  cursor: `pointer`,
-});
-
-
 function ProductCardList(props: ProductCardListProps): JSX.Element {
-  const { data, fns } = useProductCardList();
+  const { data } = useProductCardList();
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      <Slideleft onClick={fns.goLeft}>
-        <SvgIcon
-          component={ArrowBackIcon}
-          htmlColor={`rgba(0, 0, 0, 0.56)`}
-        ></SvgIcon>
-      </Slideleft>
-
-      {data.catalogitems &&
-        data.catalogitems.map((item: any, index: number) => {
-          return <ProductCardNew1 key={index} {...item} />
-
+      {data.items &&
+        data.items.map((item: any, index: number) => {
+          return (
+            <Productcardcontainer key={index}>
+              <ProductCardNew1 {...item} />
+            </Productcardcontainer>
+          );
         })}
-
-      <Slideleft1 onClick={fns.goRight}>
-        <SvgIcon
-          component={ArrowForwardIcon}
-          htmlColor={`rgba(0, 0, 0, 0.56)`}
-        ></SvgIcon>
-      </Slideleft1>
     </ProductCardList1>
   );
 }
