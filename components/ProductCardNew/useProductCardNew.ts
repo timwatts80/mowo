@@ -12,6 +12,7 @@
  **********************************************************************/
 
 import React from 'react';
+import useProductCardList from 'components/ProductCardList/useProductCardList';
 
 /* These are the possible values for the current variant. Use this to change the currentVariant dynamically.
 Please don't modify */
@@ -26,12 +27,13 @@ const useProductCardNew = () => {
   );
   const [previousVariant, setPreviousVariant] = React.useState<string>('');
 
-  const data: any = { currentVariant, previousVariant };
+  const { data } = useProductCardList();
+
   const getImageSrc = (): any => {};
 
   const fns: any = { getImageSrc, setCurrentVariant, setPreviousVariant };
 
-  return { data, fns };
+  return { data: { ...data, currentVariant, previousVariant }, fns };
 };
 
 export default useProductCardNew;
