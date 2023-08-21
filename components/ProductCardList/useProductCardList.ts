@@ -15,34 +15,86 @@ import React, { useState } from 'react';
 import product1 from 'public/assets/images/1.png';
 import product2 from 'public/assets/images/2.png';
 import product3 from 'public/assets/images/3.png';
+import product4 from 'public/assets/images/3.png';
+import product5 from 'public/assets/images/3.png';
+import product6 from 'public/assets/images/3.png';
+import product7 from 'public/assets/images/3.png';
+import product8 from 'public/assets/images/3.png';
+
 const useProductCardList = () => {
 
   const items = [
     {
       product_id: 1,
       image: { src: product1.src, alt: 'Product 1' },
-      title: 'Product 1',
-      description: 'Product 1 description',
+      title: 'Surface Go 3',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 2,
       image: { src: product2.src, alt: 'Product 2' },
-      title: 'Product 2',
-      description: 'Product 2 description',
+      title: 'Surface Laptop Go 2',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 3,
       image: { src: product3.src, alt: 'Product 3' },
-      title: 'Product 3',
-      description: 'Product 3 description',
+      title: 'Surface Pro 9',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
-  ]
+    {
+      product_id: 4,
+      image: { src: product4.src, alt: 'Product 4' },
+      title: 'Surface Laptop5',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
+    },
+    {
+      product_id: 5,
+      image: { src: product5.src, alt: 'Product 5' },
+      title: 'Surface Laptop Studio',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
+    },
+    {
+      product_id: 6,
+      image: { src: product6.src, alt: 'Product 6' },
+      title: 'Surface Studio 2+',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
+    },
+    {
+      product_id: 7,
+      image: { src: product7.src, alt: 'Product 7' },
+      title: 'Surface Hub 2S',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
+    },
+    {
+      product_id: 8,
+      image: { src: product8.src, alt: 'Product 8' },
+      title: 'Surface Duo 2',
+      description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
+    },
+  ];
 
-  let data: any = { items };
+  let [indicator, setIndicator] = useState(0);
+  let [numberofcards, setNumberofcards] = useState(4);
+  let catalogitems = items.slice(indicator, (numberofcards + indicator));
 
-  const fns: any = {};
+  let data: any = { catalogitems, items };
+  const goLeft = (): any => {
+    if (indicator > 0) {
+      setIndicator(indicator - 1);
+      let catalogitems = items.slice(indicator, (numberofcards + indicator));
+    }
+  };
+  const goRight = (): any => {
+    if (indicator < 4) {
+      setIndicator(indicator + 1);
+      let catalogitems = items.slice(indicator, (numberofcards + indicator));
+    }
+  };
 
+  let fns: any = { goLeft, goRight };
   return { data, fns };
+
 };
 
 export default useProductCardList;
