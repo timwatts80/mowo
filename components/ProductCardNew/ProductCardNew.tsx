@@ -16,6 +16,8 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardNewProps } from 'types';
+import { animated, useSpring, easings } from 'react-spring';
+import useProductCardNew from 'components/ProductCardNew/useProductCardNew';
 
 const StateDefault: any = styled('div')({
   borderRadius: `10px`,
@@ -31,49 +33,62 @@ const StateDefault: any = styled('div')({
   boxSizing: `border-box`,
 });
 
-const Imagecontainer: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Other']['Divider'],
-  borderRadius: `10px 10px 0px 0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-end`,
-  alignItems: `center`,
-  padding: `24px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  height: `120px`,
-  zIndex: `2`,
-  margin: `0px`,
-}));
+const Imagecontainer: any = animated(
+  styled('div', {
+    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+  })(({ theme, data }: any) => ({
+    backgroundColor: theme.palette['Other']['Divider'],
+    borderRadius: `10px 10px 0px 0px`,
+    display: `flex`,
+    position: `relative`,
+    isolation: `isolate`,
+    flexDirection: `column`,
+    justifyContent: `flex-end`,
+    alignItems: `center`,
+    padding: `24px`,
+    boxSizing: `border-box`,
+    alignSelf: `stretch`,
+    height: `120px`,
+    zIndex: `2`,
+    margin: `0px`,
+    flex: 'unset',
+  }))
+);
 
-const ProductImage: any = styled('img')({
-  height: '180px',
-  width: `263px`,
-  objectFit: `cover`,
-  zIndex: `0`,
-  position: `absolute`,
-  left: `24px`,
-  top: `-84px`,
-});
+const ProductImage: any = animated(
+  styled('img', {
+    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+  })(({ data }: any) => ({
+    height: '180px',
+    width: `263px`,
+    objectFit: `cover`,
+    zIndex: `0`,
+    position: `absolute`,
+    left: `24px`,
+    top: `-84px`,
+  }))
+);
 
-const Productcardbackgroun: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `absolute`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `108px`,
-  width: `311px`,
-  zIndex: `1`,
-  left: `0px`,
-  top: `120px`,
-});
+const Productcardbackgroun: any = animated(
+  styled('div', {
+    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+  })(({ data }: any) => ({
+    borderRadius: `0px`,
+    display: `flex`,
+    position: `absolute`,
+    isolation: `isolate`,
+    flexDirection: `column`,
+    justifyContent: `center`,
+    alignItems: `center`,
+    padding: `0px`,
+    boxSizing: `border-box`,
+    height: `108px`,
+    width: `311px`,
+    zIndex: `1`,
+    left: `0px`,
+    top: `120px`,
+  }))
+);
 
 const Rectangle182: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Other']['Divider'],
@@ -83,37 +98,45 @@ const Rectangle182: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Productinfocontainer: any = styled('div')({
-  backgroundColor: `rgba(192, 221, 128, 1)`,
-  boxShadow: `inset 0px 0px 30px rgba(153, 215, 18, 1), 0px 4px 30px rgba(238, 255, 200, 0.6)`,
-  borderRadius: `0px 0px 10px 10px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `24px`,
-  boxSizing: `border-box`,
-  width: `311px`,
-  zIndex: `0`,
-  margin: `0px`,
-});
+const Productinfocontainer: any = animated(
+  styled('div', {
+    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+  })(({ data }: any) => ({
+    backgroundColor: `rgba(192, 221, 128, 1)`,
+    boxShadow: `inset 0px 0px 30px rgba(153, 215, 18, 1), 0px 4px 30px rgba(238, 255, 200, 0.6)`,
+    borderRadius: `0px 0px 10px 10px`,
+    display: `flex`,
+    position: `relative`,
+    isolation: `isolate`,
+    flexDirection: `column`,
+    justifyContent: `center`,
+    alignItems: `center`,
+    padding: `24px`,
+    boxSizing: `border-box`,
+    width: `311px`,
+    zIndex: `0`,
+    margin: `0px`,
+  }))
+);
 
-const Titlecontainer: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  zIndex: `2`,
-  margin: `0px`,
-});
+const Titlecontainer: any = animated(
+  styled('div', {
+    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+  })(({ data }: any) => ({
+    borderRadius: `0px`,
+    display: `flex`,
+    position: `relative`,
+    isolation: `isolate`,
+    flexDirection: `row`,
+    justifyContent: `center`,
+    alignItems: `center`,
+    padding: `0px`,
+    boxSizing: `border-box`,
+    alignSelf: `stretch`,
+    zIndex: `2`,
+    margin: `0px`,
+  }))
+);
 
 const ProductTitle: any = styled('div')({
   textAlign: `center`,
@@ -130,20 +153,24 @@ const ProductTitle: any = styled('div')({
   margin: `0px`,
 });
 
-const Detailscontainer: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  zIndex: `1`,
-  margin: `16px 0px 0px 0px`,
-});
+const Detailscontainer: any = animated(
+  styled('div', {
+    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+  })(({ data }: any) => ({
+    borderRadius: `0px`,
+    display: `flex`,
+    position: `relative`,
+    isolation: `isolate`,
+    flexDirection: `row`,
+    justifyContent: `center`,
+    alignItems: `center`,
+    padding: `0px`,
+    boxSizing: `border-box`,
+    alignSelf: `stretch`,
+    zIndex: `1`,
+    margin: `16px 0px 0px 0px`,
+  }))
+);
 
 const Description: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -162,22 +189,28 @@ const Description: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Button1: any = styled('div')({
-  borderRadius: `10px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  zIndex: `0`,
-  margin: `16px 0px 0px 0px`,
-});
+const Button1: any = animated(
+  styled('div', {
+    shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+  })(({ data }: any) => ({
+    borderRadius: `10px`,
+    display: `flex`,
+    position: `relative`,
+    isolation: `isolate`,
+    flexDirection: `row`,
+    justifyContent: `center`,
+    alignItems: `center`,
+    padding: `0px`,
+    boxSizing: `border-box`,
+    alignSelf: `stretch`,
+    zIndex: `0`,
+    margin: `16px 0px 0px 0px`,
+  }))
+);
 
-const ButtonContained: any = styled(Button)(({ theme }: any) => ({
+const ButtonContained: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   margin: `0px`,
   color: theme.palette['Success']['Light'],
   fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
@@ -194,33 +227,230 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
 }));
 
 function ProductCardNew(props: ProductCardNewProps): JSX.Element {
+  const { data, fns } = useProductCardNew();
+
+  const ImagecontainerStateDefault = {
+    height: `120px`,
+    zIndex: `2`,
+    flex: 'unset',
+  };
+  const ImagecontainerStateHover = { height: '228px', zIndex: `0`, flex: `1` };
+  const [ImagecontainerStateStyles, ImagecontainerStateApi] = useSpring(() => ({
+    from: eval('Imagecontainer' + data.currentVariant),
+    config: { duration: 1000 },
+    delay: 500,
+  }));
+
+  const ProductImageStateDefault = {
+    height: '180px',
+    zIndex: `0`,
+    top: `-84px`,
+  };
+  const ProductImageStateHover = { height: `180px`, zIndex: `0`, top: `24px` };
+  const [ProductImageStateStyles, ProductImageStateApi] = useSpring(() => ({
+    from: eval('ProductImage' + data.currentVariant),
+    config: { duration: 1000 },
+    delay: 500,
+  }));
+
+  const ProductcardbackgrounStateDefault = {
+    height: `108px`,
+    zIndex: `1`,
+    top: `120px`,
+  };
+  const ProductcardbackgrounStateHover = {
+    height: `228px`,
+    zIndex: `0`,
+    top: `0px`,
+  };
+  const [ProductcardbackgrounStateStyles, ProductcardbackgrounStateApi] =
+    useSpring(() => ({
+      from: eval('Productcardbackgroun' + data.currentVariant),
+      config: { duration: 1000 },
+      delay: 500,
+    }));
+
+  const ProductinfocontainerStateDefault = { zIndex: `0` };
+  const ProductinfocontainerStateHover = { zIndex: `0` };
+  const [ProductinfocontainerStateStyles, ProductinfocontainerStateApi] =
+    useSpring(() => ({
+      from: eval('Productinfocontainer' + data.currentVariant),
+      config: { duration: 1000 },
+      delay: 500,
+    }));
+
+  const TitlecontainerStateDefault = { zIndex: `2` };
+  const TitlecontainerStateHover = { zIndex: `0` };
+  const [TitlecontainerStateStyles, TitlecontainerStateApi] = useSpring(() => ({
+    from: eval('Titlecontainer' + data.currentVariant),
+    config: { duration: 1000 },
+    delay: 500,
+  }));
+
+  const DetailscontainerStateDefault = { zIndex: `1` };
+  const DetailscontainerStateHover = { zIndex: `0` };
+  const [DetailscontainerStateStyles, DetailscontainerStateApi] = useSpring(
+    () => ({
+      from: eval('Detailscontainer' + data.currentVariant),
+      config: { duration: 1000 },
+      delay: 500,
+    })
+  );
+
+  const Button1StateDefault = { zIndex: `0` };
+  const Button1StateHover = { zIndex: `0` };
+  const [Button1StateStyles, Button1StateApi] = useSpring(() => ({
+    from: eval('Button1' + data.currentVariant),
+    config: { duration: 1000 },
+    delay: 500,
+  }));
+
+  const switchStateToStateDefault: (
+    duration: number,
+    delay: number,
+    easing: string
+  ) => void = (
+    duration: number = 0,
+    delay: number = 0,
+    easing: string = 'linear'
+  ) => {
+    ImagecontainerStateApi.start({
+      ...ImagecontainerStateDefault,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    ProductImageStateApi.start({
+      ...ProductImageStateDefault,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    ProductcardbackgrounStateApi.start({
+      ...ProductcardbackgrounStateDefault,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    ProductinfocontainerStateApi.start({
+      ...ProductinfocontainerStateDefault,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    TitlecontainerStateApi.start({
+      ...TitlecontainerStateDefault,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    DetailscontainerStateApi.start({
+      ...DetailscontainerStateDefault,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    Button1StateApi.start({
+      ...Button1StateDefault,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+  };
+
+  const switchStateToStateHover: (
+    duration: number,
+    delay: number,
+    easing: string
+  ) => void = (
+    duration: number = 0,
+    delay: number = 0,
+    easing: string = 'linear'
+  ) => {
+    ImagecontainerStateApi.start({
+      ...ImagecontainerStateHover,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    ProductImageStateApi.start({
+      ...ProductImageStateHover,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    ProductcardbackgrounStateApi.start({
+      ...ProductcardbackgrounStateHover,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    ProductinfocontainerStateApi.start({
+      ...ProductinfocontainerStateHover,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    TitlecontainerStateApi.start({
+      ...TitlecontainerStateHover,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    DetailscontainerStateApi.start({
+      ...DetailscontainerStateHover,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+    Button1StateApi.start({
+      ...Button1StateHover,
+      delay,
+      config: { duration, easing: easings[easing] },
+    });
+  };
   return (
-    <StateDefault className={props.className}>
-      <Imagecontainer>
+    <StateDefault
+      onMouseLeave={() => {
+        eval('switchStateTo' + data.previousVariant)(
+          0.35 * 1000,
+          0 * 1000,
+          'easeOutQuart'
+        );
+        fns.setPreviousVariant('StateHover');
+        fns.setCurrentVariant(data.previousVariant);
+      }}
+      onMouseEnter={() => {
+        switchStateToStateHover(0.35 * 1000, 0 * 1000, 'easeOutQuart');
+        fns.setPreviousVariant(data.currentVariant);
+        fns.setCurrentVariant('StateHover');
+      }}
+      className={props.className}
+    >
+      <Imagecontainer data={data} style={{ ...ImagecontainerStateStyles }}>
         <ProductImage
+          data={data}
           src={props.image.src}
           loading="lazy"
           alt={props.image.alt}
+          style={{ ...ProductImageStateStyles }}
         />
       </Imagecontainer>
       {false && (
-        <Productcardbackgroun>
+        <Productcardbackgroun
+          data={data}
+          style={{ ...ProductcardbackgrounStateStyles }}
+        >
           <Rectangle182></Rectangle182>
         </Productcardbackgroun>
       )}
-      <Productinfocontainer>
-        <Titlecontainer>
+      <Productinfocontainer
+        data={data}
+        style={{ ...ProductinfocontainerStateStyles }}
+      >
+        <Titlecontainer data={data} style={{ ...TitlecontainerStateStyles }}>
           <ProductTitle>{props.title}</ProductTitle>
         </Titlecontainer>
-        <Detailscontainer>
+        <Detailscontainer
+          data={data}
+          style={{ ...DetailscontainerStateStyles }}
+        >
           <Description>{props.description}</Description>
         </Detailscontainer>
-        <Button1>
+        <Button1 data={data} style={{ ...Button1StateStyles }}>
           <ButtonContained
             variant="contained"
             size={'large'}
             color={'info'}
             disabled={false}
+            data={data}
           >
             {'Device Details'}
           </ButtonContained>
