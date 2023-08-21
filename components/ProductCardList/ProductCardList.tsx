@@ -40,13 +40,13 @@ const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
 }));
 
 function ProductCardList(props: ProductCardListProps): JSX.Element {
-  const { data, fns } = useProductCardList();
+  const { data } = useProductCardList();
 
   return (
     <ProductCardList1 className={props.className}>
       {data.items &&
         data.items.map((item: any, index: number) => {
-          return fns.isItemVisible(index) && <ProductCardNew1 key={index} />;
+          return <ProductCardNew1 key={index} />;
         })}
     </ProductCardList1>
   );
