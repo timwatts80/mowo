@@ -57,8 +57,8 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      {data.items &&
-        data.items.map((item: any, index: number) => {
+      {data.catalogitems &&
+        data.catalogitems.map((item: any, index: number) => {
           return (
             <Productcardcontainer key={index}>
               <ProductCardNew1 {...item} />
