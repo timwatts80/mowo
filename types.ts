@@ -13,6 +13,8 @@
  *
  **********************************************************************/
 
+import { StaticImageData } from "next/image";
+import { Url } from "url";
 
 
 
@@ -137,39 +139,24 @@
 
 
 
-
-
-
-
-
-
+export interface items {
+  product_id: number;
+  title: string;
+  description: string;
+  image: StaticImageData;
+}
 
 
 
 export interface ProductCardNewProps {
   className?: any;
+  item: items[];
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export interface ProductCardListProps {
   className?: any;
+  item: items[];
 };
 
 

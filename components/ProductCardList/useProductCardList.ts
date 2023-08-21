@@ -11,9 +11,35 @@
  *
  **********************************************************************/
 
-import React from 'react';
+import React, { useState } from 'react';
+import { items } from 'types';
+import product1 from 'public/assets/images/1.png';
+import product2 from 'public/assets/images/2.png';
+import product3 from 'public/assets/images/3.png';
 const useProductCardList = () => {
-  const data: any = {};
+
+  const items = [
+    {
+      product_id: 1,
+      image: product1,
+      title: 'Product 1',
+      description: 'Product 1 description',
+    },
+    {
+      product_id: 2,
+      image: product2,
+      title: 'Product 2',
+      description: 'Product 2 description',
+    },
+    {
+      product_id: 3,
+      image: product3,
+      title: 'Product 3',
+      description: 'Product 3 description',
+    },
+  ]
+
+  let data: any = { items };
 
   const fns: any = {};
 

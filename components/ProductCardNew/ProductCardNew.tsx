@@ -16,7 +16,6 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardNewProps } from 'types';
-import useProductCardNew from 'components/ProductCardNew/useProductCardNew';
 
 const StateDefault: any = styled('div')({
   borderRadius: `10px`,
@@ -195,12 +194,15 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
 }));
 
 function ProductCardNew(props: ProductCardNewProps): JSX.Element {
-  const { data } = useProductCardNew();
 
   return (
     <StateDefault className={props.className}>
       <Imagecontainer>
-        <ProductImage src={props.src} loading="lazy" alt={'Product Image'} />
+        <ProductImage
+          src={''}
+          loading="lazy"
+          alt={'Product Image'}
+        />
       </Imagecontainer>
       {false && (
         <Productcardbackgroun>
@@ -209,10 +211,10 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
       )}
       <Productinfocontainer>
         <Titlecontainer>
-          <ProductTitle>{data.items.title}</ProductTitle>
+          <ProductTitle>{props.item.title}</ProductTitle>
         </Titlecontainer>
         <Detailscontainer>
-          <Description>{data.items.description}</Description>
+          <Description>{props.item}</Description>
         </Detailscontainer>
         <Button1>
           <ButtonContained
