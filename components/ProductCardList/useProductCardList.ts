@@ -22,6 +22,7 @@ import product7 from 'public/assets/images/7.png';
 import product8 from 'public/assets/images/8.png';
 
 const useProductCardList = () => {
+  const toggleDialog = (param1: any): any => {};
 
   const items = [
     {
@@ -92,7 +93,7 @@ const useProductCardList = () => {
     }
   };
 
-  let fns: any = { goLeft, goRight };
+  let fns: any = { goLeft, goRight ,toggleDialog};
   return { data, fns };
 
 };
