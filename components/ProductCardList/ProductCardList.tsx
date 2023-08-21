@@ -20,10 +20,11 @@ import useProductCardList from 'components/ProductCardList/useProductCardList';
 
 const ProductCardList1: any = styled('div')({
   borderRadius: `0px`,
-  display: `grid`,
+  display: `flex`,
   position: `relative`,
+  flexDirection: `row`,
   isolation: `isolate`,
-  width: 'fit-content',
+  width: '100%',
   gridTemplateColumns: `repeat(auto-fit, minmax(311px, 1fr))`,
   height: 'auto',
   columnGap: '30px',
@@ -44,9 +45,9 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      {props.item &&
-        props.item.map((itemx: any, index: number) => {
-          return <ProductCardNew1 key={index} item={itemx} />;
+      {data.items &&
+        data.items.map((item: any, index: number) => {
+          return <ProductCardNew1 key={index} {...item} />;
         })}
     </ProductCardList1>
   );

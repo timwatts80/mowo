@@ -12,7 +12,6 @@
  **********************************************************************/
 
 import React, { useState } from 'react';
-import { items } from 'types';
 import product1 from 'public/assets/images/1.png';
 import product2 from 'public/assets/images/2.png';
 import product3 from 'public/assets/images/3.png';

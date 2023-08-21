@@ -199,7 +199,7 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
     <StateDefault className={props.className}>
       <Imagecontainer>
         <ProductImage
-          src={''}
+          src={props.image.src}
           loading="lazy"
           alt={'Product Image'}
         />
@@ -211,10 +211,10 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
       )}
       <Productinfocontainer>
         <Titlecontainer>
-          <ProductTitle>{props.item.title}</ProductTitle>
+          <ProductTitle>{props.title}</ProductTitle>
         </Titlecontainer>
         <Detailscontainer>
-          <Description>{props.item}</Description>
+          <Description>{props.description}</Description>
         </Detailscontainer>
         <Button1>
           <ButtonContained

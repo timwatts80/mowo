@@ -137,26 +137,21 @@ import { Url } from "url";
 
 
 
-
-
-export interface items {
-  product_id: number;
-  title: string;
-  description: string;
-  image: StaticImageData;
-}
-
-
-
 export interface ProductCardNewProps {
   className?: any;
-  item: items[];
+  id: number;
+  title: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
 };
 
 
 export interface ProductCardListProps {
   className?: any;
-  item: items[];
+  item?: ProductCardNewProps[];
 };
 
 

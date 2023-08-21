@@ -18,14 +18,16 @@ import Menulinklist from 'components/Menulinklist/Menulinklist'
 import ProductCardList from 'components/ProductCardList/ProductCardList'
 import ProductCardNew from 'components/ProductCardNew/ProductCardNew'
 import { ProductList } from 'components/ProductList/ProductList'
+import { ProductCardListProps } from 'types'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
+    
   return (
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
-      <ProductList />
+      <ProductCardList />
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
       <CustomerCases />
