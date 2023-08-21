@@ -194,7 +194,6 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
 }));
 
 function ProductCardNew(props: ProductCardNewProps): JSX.Element {
-
   return (
     <StateDefault className={props.className}>
       <Imagecontainer>
