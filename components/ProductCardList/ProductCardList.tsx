@@ -13,11 +13,10 @@
  **********************************************************************/
 
 import React from 'react';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import SvgIcon from '@mui/material/SvgIcon';
 import { SvgIcon } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import IconArrowLeft1 from 'public/assets/images/_IconArrowLeft.svg';
 import { styled } from '@mui/material/styles';
-import ProductCardNew from 'components/ProductCardNew/ProductCardNew';
 import { ProductCardListProps } from 'types';
 import useProductCardList from 'components/ProductCardList/useProductCardList';
 
@@ -27,108 +26,57 @@ const ProductCardList1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `center`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `48px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: '100%',
+  width: 'fit-content',
 });
 
-const Productlistcontainer: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  overflow: `hidden`,
-  columnGap: `30px`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `100%`,
-  height: `auto`,
-  top: `0px`,
-});
-
-
-const Productcardcontainer: any = styled('div')({
+const SlideLeft: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  flexWrap: `wrap`,
-  flex: '1 1 20%',
-  columnGap: `30px`,
   justifyContent: `center`,
   alignItems: `center`,
-  width: '100%',
   padding: `0px`,
   boxSizing: `border-box`,
-  zIndex: `1`,
-});
-const SlideLeft: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `10px`,
-  boxSizing: `border-box`,
-  width: `131px`,
-  height: `494px`,
+  alignSelf: `stretch`,
+  width: `84px`,
+  zIndex: `3`,
   margin: `0px`,
   cursor: `pointer`,
 });
 
-const SlideRight: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `10px`,
-  boxSizing: `border-box`,
-  width: `131px`,
-  height: `494px`,
+const IconArrowLeft2: any = styled(SvgIcon)({
+  alignSelf: `stretch`,
+  flex: `1`,
+  position: `absolute`,
+  left: `24px`,
+  top: `343px`,
   margin: `0px`,
-  cursor: `pointer`,
 });
-
-const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
-  width: `311px`,
-  height: `448px`,
-  margin: `0px`,
-}));
 
 function ProductCardList(props: ProductCardListProps): JSX.Element {
   const { data, fns } = useProductCardList();
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      <Productlistcontainer>
-        <SlideLeft onClick={fns.goLeft}>
-          <SvgIcon
-            component={ArrowBackIcon}
-            htmlColor={`rgba(0, 0, 0, 0.56)`}
-          ></SvgIcon>
-        </SlideLeft>
-        <Productcardcontainer>
-          {data.catalogitems &&
-            data.catalogitems.map((item: any, index: number) => {
-              return <ProductCardNew1 key={index} {...item} />;
-            })}
-        </Productcardcontainer>
-        <SlideRight onClick={fns.goRight}>
-          <SvgIcon
-            component={ArrowForwardIcon}
-            htmlColor={`rgba(0, 0, 0, 0.56)`}
-          ></SvgIcon>
-        </SlideRight>
-      </Productlistcontainer>
+      {data.catalogitems &&
+        data.catalogitems.map((item: any, index: number) => {
+          return (
+            <SlideLeft onClick={fns.goLeft} key={index}>
+              <IconArrowLeft2
+                fontSize={'inherit'}
+                htmlColor="rgba(0, 0, 0, 1)"
+                component={IconArrowLeft1}
+              />
+            </SlideLeft>
+          );
+        })}
     </ProductCardList1>
   );
 }
