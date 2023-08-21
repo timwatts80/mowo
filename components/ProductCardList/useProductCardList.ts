@@ -15,11 +15,11 @@ import React, { useState } from 'react';
 import product1 from 'public/assets/images/1.png';
 import product2 from 'public/assets/images/2.png';
 import product3 from 'public/assets/images/3.png';
-import product4 from 'public/assets/images/3.png';
-import product5 from 'public/assets/images/3.png';
-import product6 from 'public/assets/images/3.png';
-import product7 from 'public/assets/images/3.png';
-import product8 from 'public/assets/images/3.png';
+import product4 from 'public/assets/images/4.png';
+import product5 from 'public/assets/images/5.png';
+import product6 from 'public/assets/images/6.png';
+import product7 from 'public/assets/images/7.png';
+import product8 from 'public/assets/images/8.png';
 
 const useProductCardList = () => {
 

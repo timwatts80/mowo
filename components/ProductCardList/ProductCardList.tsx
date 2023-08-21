@@ -13,6 +13,10 @@
  **********************************************************************/
 
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { SvgIcon } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { styled } from '@mui/material/styles';
 import ProductCardNew from 'components/ProductCardNew/ProductCardNew';
 import { ProductCardListProps } from 'types';
@@ -39,15 +43,61 @@ const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
+const Slideleft: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  width: `131px`,
+  height: `494px`,
+  margin: `0px`,
+  cursor: `pointer`,
+});
+
+const Slideleft1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  width: `131px`,
+  height: `494px`,
+  margin: `0px 0px 0px 30px`,
+  cursor: `pointer`,
+});
+
+
 function ProductCardList(props: ProductCardListProps): JSX.Element {
-  const { data } = useProductCardList();
+  const { data, fns } = useProductCardList();
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      {data.items &&
-        data.items.map((item: any, index: number) => {
-          return <ProductCardNew1 key={index} {...item} />;
+      <Slideleft onClick={fns.goLeft}>
+        <SvgIcon
+          component={ArrowBackIcon}
+          htmlColor={`rgba(0, 0, 0, 0.56)`}
+        ></SvgIcon>
+      </Slideleft>
+
+      {data.catalogitems &&
+        data.catalogitems.map((item: any, index: number) => {
+          return <ProductCardNew1 key={index} {...item} />
+
         })}
+
+      <Slideleft1 onClick={fns.goRight}>
+        <SvgIcon
+          component={ArrowForwardIcon}
+          htmlColor={`rgba(0, 0, 0, 0.56)`}
+        ></SvgIcon>
+      </Slideleft1>
     </ProductCardList1>
   );
 }
