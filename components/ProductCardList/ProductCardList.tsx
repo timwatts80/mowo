@@ -13,10 +13,11 @@
  **********************************************************************/
 
 import React from 'react';
-import SvgIcon from '@mui/material/SvgIcon';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { SvgIcon } from '@mui/material';
-import IconArrowLeft1 from 'public/assets/images/_IconArrowLeft.svg';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { styled } from '@mui/material/styles';
+import ProductCardNew from 'components/ProductCardNew/ProductCardNew';
 import { ProductCardListProps } from 'types';
 import useProductCardList from 'components/ProductCardList/useProductCardList';
 
@@ -26,57 +27,111 @@ const ProductCardList1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-start`,
+  justifyContent: `center`,
   alignItems: `center`,
   padding: `48px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: 'fit-content',
+  width: '100%',
 });
 
-const SlideLeft: any = styled('div')({
+const Productlistcontainer: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  overflow: `hidden`,
+  columnGap: `30px`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `100%`,
+  height: `auto`,
+  top: `0px`,
+});
+
+
+const Productcardcontainer: any = styled('div')({
   borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  flexWrap: `wrap`,
+  flex: '1 1 20%',
+  justifyContent: `center`,
+  alignItems: `center`,
+  width: '100%',
+  padding: `0px`,
+  boxSizing: `border-box`,
+  zIndex: `1`,
+});
+const SlideLeft: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `0px`,
+  padding: `10px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width: `84px`,
-  zIndex: `3`,
+  width: `131px`,
+  height: `494px`,
   margin: `0px`,
   cursor: `pointer`,
 });
 
-const IconArrowLeft2: any = styled(SvgIcon)({
-  alignSelf: `stretch`,
-  flex: `1`,
-  position: `absolute`,
-  left: `24px`,
-  top: `343px`,
+const SlideRight: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  width: `131px`,
+  height: `494px`,
   margin: `0px`,
+  cursor: `pointer`,
 });
+
+const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
+  width: `311px`,
+  height: `448px`,
+  margin: `0px`,
+}));
 
 function ProductCardList(props: ProductCardListProps): JSX.Element {
   const { data, fns } = useProductCardList();
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      {data.catalogitems &&
-        data.catalogitems.map((item: any, index: number) => {
-          return (
-            <SlideLeft onClick={fns.goLeft} key={index}>
-              <IconArrowLeft2
-                fontSize={'inherit'}
-                htmlColor="rgba(0, 0, 0, 1)"
-                component={IconArrowLeft1}
-              />
-            </SlideLeft>
-          );
-        })}
+      <Productlistcontainer>
+        <SlideLeft onClick={fns.goLeft}>
+          <SvgIcon
+            component={ArrowBackIcon}
+            htmlColor={`rgba(0, 0, 0, 0.56)`}
+          ></SvgIcon>
+        </SlideLeft>
+        <Productcardcontainer>
+          {data.catalogitems &&
+            data.catalogitems.map((item: any, index: number) => {
+              return (
+                <Productcardcontainer key={index}>
+                  <ProductCardNew1 {...item} />
+                </Productcardcontainer>
+              );
+            })}
+        </Productcardcontainer>
+        <SlideRight onClick={fns.goRight}>
+          <SvgIcon
+            component={ArrowForwardIcon}
+            htmlColor={`rgba(0, 0, 0, 0.56)`}
+          ></SvgIcon>
+        </SlideRight>
+      </Productlistcontainer>
     </ProductCardList1>
   );
 }
