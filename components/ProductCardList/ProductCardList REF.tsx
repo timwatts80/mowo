@@ -13,6 +13,9 @@
  **********************************************************************/
 
 import React from 'react';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { SvgIcon } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { styled } from '@mui/material/styles';
 import ProductCardNew from 'components/ProductCardNew/ProductCardNew';
 import { ProductCardListProps } from 'types';
@@ -22,33 +25,113 @@ const ProductCardList1: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
-  flexDirection: `row`,
   isolation: `isolate`,
-  width: '100%',
-  gridTemplateColumns: `repeat(auto-fit, minmax(311px, 1fr))`,
-  height: 'auto',
-  columnGap: '30px',
+  flexDirection: `row`,
+  justifyContent: `center`,
   alignItems: `center`,
   padding: `48px`,
   boxSizing: `border-box`,
+  height: 'auto',
+  width: '100%',
+});
+
+const Productlistcontainer: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  overflow: `hidden`,
+  columnGap: `30px`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `100%`,
+  height: `auto`,
+  top: `0px`,
+});
+
+
+const Productcardcontainer: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  flexWrap: `wrap`,
+  flex: '1 1 20%',
+  justifyContent: `center`,
+  alignItems: `center`,
+  width: '100%',
+  padding: `0px`,
+  boxSizing: `border-box`,
+  zIndex: `1`,
+});
+const SlideLeft: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  width: `131px`,
+  height: `494px`,
+  margin: `0px`,
+  cursor: `pointer`,
+});
+
+const SlideRight: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  width: `131px`,
+  height: `494px`,
+  margin: `0px`,
+  cursor: `pointer`,
 });
 
 const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
   width: `311px`,
   height: `448px`,
-  zIndex: `0`,
   margin: `0px`,
 }));
 
 function ProductCardList(props: ProductCardListProps): JSX.Element {
-  const { data } = useProductCardList();
+  const { data, fns } = useProductCardList();
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      {data.items &&
-        data.items.map((item: any, index: number) => {
-          return <ProductCardNew1 key={index} {...item} />;
-        })}
+      <Productlistcontainer>
+        <SlideLeft onClick={fns.goLeft}>
+          <SvgIcon
+            component={ArrowBackIcon}
+            htmlColor={`rgba(0, 0, 0, 0.56)`}
+          ></SvgIcon>
+        </SlideLeft>
+        <Productcardcontainer>
+          {data.catalogitems &&
+            data.catalogitems.map((item: any, index: number) => {
+              return (
+                <Productcardcontainer key={index}>
+                  <ProductCardNew1 {...item} />
+                </Productcardcontainer>
+              );
+            })}
+        </Productcardcontainer>
+        <SlideRight onClick={fns.goRight}>
+          <SvgIcon
+            component={ArrowForwardIcon}
+            htmlColor={`rgba(0, 0, 0, 0.56)`}
+          ></SvgIcon>
+        </SlideRight>
+      </Productlistcontainer>
     </ProductCardList1>
   );
 }

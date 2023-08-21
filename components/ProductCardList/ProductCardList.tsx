@@ -35,25 +35,12 @@ const ProductCardList1: any = styled('div')({
   width: '100%',
 });
 
-const Productcardcontainer: any = styled('div')({
-  borderRadius: `0px`,
+const Productlistcontainer: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  zIndex: `1`,
-  margin: `0px`,
-});
-
-const Frame43: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
+  overflow: `hidden`,
   columnGap: `30px`,
   justifyContent: `flex-start`,
   alignItems: `center`,
@@ -64,7 +51,23 @@ const Frame43: any = styled('div')({
   top: `0px`,
 });
 
-const Slideleft: any = styled('div')({
+
+const Productcardcontainer: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  flexWrap: `wrap`,
+  flex: '1 1 20%',
+  justifyContent: `center`,
+  alignItems: `center`,
+  width: '100%',
+  padding: `0px`,
+  boxSizing: `border-box`,
+  zIndex: `1`,
+});
+const SlideLeft: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -79,7 +82,7 @@ const Slideleft: any = styled('div')({
   cursor: `pointer`,
 });
 
-const Slideleft1: any = styled('div')({
+const SlideRight: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -105,28 +108,30 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      <Frame43>
-        <Slideleft onClick={fns.goLeft}>
+      <Productlistcontainer>
+        <SlideLeft onClick={fns.goLeft}>
           <SvgIcon
             component={ArrowBackIcon}
             htmlColor={`rgba(0, 0, 0, 0.56)`}
           ></SvgIcon>
-        </Slideleft>
-        {data.catalogitems &&
-          data.catalogitems.map((item: any, index: number) => {
-            return (
-              <Productcardcontainer key={index}>
-                <ProductCardNew1 {...item} />
-              </Productcardcontainer>
-            );
-          })}
-        <Slideleft1 onClick={fns.goRight}>
+        </SlideLeft>
+        <Productcardcontainer>
+          {data.catalogitems &&
+            data.catalogitems.map((item: any, index: number) => {
+              return (
+                <Productcardcontainer key={index}>
+                  <ProductCardNew1 {...item} />
+                </Productcardcontainer>
+              );
+            })}
+        </Productcardcontainer>
+        <SlideRight onClick={fns.goRight}>
           <SvgIcon
             component={ArrowForwardIcon}
             htmlColor={`rgba(0, 0, 0, 0.56)`}
           ></SvgIcon>
-        </Slideleft1>
-      </Frame43>
+        </SlideRight>
+      </Productlistcontainer>
     </ProductCardList1>
   );
 }
