@@ -397,13 +397,13 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
         eval('switchStateTo' + data.previousVariant)(
           0.35 * 1000,
           0 * 1000,
-          'easeInOutQuart'
+          'easeOutQuint'
         );
         fns.setPreviousVariant('StateHover');
         fns.setCurrentVariant(data.previousVariant);
       }}
       onMouseEnter={() => {
-        switchStateToStateHover(0.35 * 1000, 0 * 1000, 'easeInOutQuart');
+        switchStateToStateHover(0.35 * 1000, 0 * 1000, 'easeOutQuint');
         fns.setPreviousVariant(data.currentVariant);
         fns.setCurrentVariant('StateHover');
       }}
