@@ -16,6 +16,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardNewProps } from 'types';
+import useProductCardNew from 'components/ProductCardNew/useProductCardNew';
 
 const StateDefault: any = styled('div')({
   borderRadius: `10px`,
@@ -31,7 +32,9 @@ const StateDefault: any = styled('div')({
   boxSizing: `border-box`,
 });
 
-const Imagecontainer: any = styled('div')(({ theme }: any) => ({
+const Imagecontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ theme, fns }: any) => ({
   backgroundColor: theme.palette['Other']['Divider'],
   borderRadius: `10px 10px 0px 0px`,
   display: `flex`,
@@ -43,22 +46,26 @@ const Imagecontainer: any = styled('div')(({ theme }: any) => ({
   padding: `24px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `120px`,
-  zIndex: `2`,
+  height: fns.isHover ? `228px` : `120px`,
+  zIndex: fns.isHover ? 'unset' : `2`,
   margin: `0px`,
 }));
 
-const ProductImage: any = styled('img')({
-  height: '180px',
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
+  height: fns.isHover ? `180px` : '180px',
   width: `263px`,
   objectFit: `cover`,
-  zIndex: `0`,
+  zIndex: fns.isHover ? 'unset' : `0`,
   position: `absolute`,
   left: `24px`,
-  top: `-84px`,
-});
+  top: fns.isHover ? `24px` : `-84px`,
+}));
 
-const Productcardbackgroun: any = styled('div')({
+const Productcardbackgroun: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `absolute`,
@@ -68,12 +75,12 @@ const Productcardbackgroun: any = styled('div')({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  height: `108px`,
+  height: fns.isHover ? `228px` : `108px`,
   width: `311px`,
-  zIndex: `1`,
+  zIndex: fns.isHover ? 'unset' : `1`,
   left: `0px`,
-  top: `120px`,
-});
+  top: fns.isHover ? `0px` : `120px`,
+}));
 
 const Rectangle182: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Other']['Divider'],
@@ -83,7 +90,9 @@ const Rectangle182: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Productinfocontainer: any = styled('div')({
+const Productinfocontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
   backgroundColor: `rgba(192, 221, 128, 1)`,
   boxShadow: `inset 0px 0px 30px rgba(153, 215, 18, 1), 0px 4px 30px rgba(238, 255, 200, 0.6)`,
   borderRadius: `0px 0px 10px 10px`,
@@ -96,11 +105,13 @@ const Productinfocontainer: any = styled('div')({
   padding: `24px`,
   boxSizing: `border-box`,
   width: `311px`,
-  zIndex: `0`,
+  zIndex: fns.isHover ? 'unset' : `0`,
   margin: `0px`,
-});
+}));
 
-const Titlecontainer: any = styled('div')({
+const Titlecontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -111,9 +122,9 @@ const Titlecontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  zIndex: `2`,
+  zIndex: fns.isHover ? 'unset' : `2`,
   margin: `0px`,
-});
+}));
 
 const ProductTitle: any = styled('div')({
   textAlign: `center`,
@@ -130,7 +141,9 @@ const ProductTitle: any = styled('div')({
   margin: `0px`,
 });
 
-const Detailscontainer: any = styled('div')({
+const Detailscontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -141,9 +154,9 @@ const Detailscontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  zIndex: `1`,
+  zIndex: fns.isHover ? 'unset' : `1`,
   margin: `16px 0px 0px 0px`,
-});
+}));
 
 const Description: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
@@ -162,7 +175,9 @@ const Description: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Button1: any = styled('div')({
+const Button1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ fns }: any) => ({
   borderRadius: `10px`,
   display: `flex`,
   position: `relative`,
@@ -173,11 +188,13 @@ const Button1: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  zIndex: `0`,
+  zIndex: fns.isHover ? 'unset' : `0`,
   margin: `16px 0px 0px 0px`,
-});
+}));
 
-const ButtonContained: any = styled(Button)(({ theme }: any) => ({
+const ButtonContained: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ theme, fns }: any) => ({
   margin: `0px`,
   color: theme.palette['Success']['Light'],
   fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
@@ -194,33 +211,37 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
 }));
 
 function ProductCardNew(props: ProductCardNewProps): JSX.Element {
+  const { fns } = useProductCardNew();
+
   return (
     <StateDefault className={props.className}>
-      <Imagecontainer>
+      <Imagecontainer fns={fns}>
         <ProductImage
+          fns={fns}
           src={props.image.src}
           loading="lazy"
           alt={props.image.alt}
         />
       </Imagecontainer>
       {false && (
-        <Productcardbackgroun>
+        <Productcardbackgroun fns={fns}>
           <Rectangle182></Rectangle182>
         </Productcardbackgroun>
       )}
-      <Productinfocontainer>
-        <Titlecontainer>
+      <Productinfocontainer fns={fns}>
+        <Titlecontainer fns={fns}>
           <ProductTitle>{props.title}</ProductTitle>
         </Titlecontainer>
-        <Detailscontainer>
+        <Detailscontainer fns={fns}>
           <Description>{props.description}</Description>
         </Detailscontainer>
-        <Button1>
+        <Button1 fns={fns}>
           <ButtonContained
             variant="contained"
             size={'large'}
             color={'info'}
             disabled={false}
+            fns={fns}
           >
             {'Device Details'}
           </ButtonContained>

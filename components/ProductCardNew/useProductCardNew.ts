@@ -13,9 +13,10 @@
 
 import React from 'react';
 const useProductCardNew = () => {
+  const isHover = (): any => {};
   const data: any = {};
 
-  const fns: any = {};
+  const fns: any = {isHover};
 
   return { data, fns };
 };
