@@ -21,6 +21,7 @@ const variantOptions = {
 };
 
 const useProductCardNew = () => {
+  const toggleDialog = (): any => {};
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['StateDefault']
   );
@@ -28,7 +29,7 @@ const useProductCardNew = () => {
 
   const data: any = { currentVariant, previousVariant };
 
-  const fns: any = { setCurrentVariant, setPreviousVariant };
+  const fns: any = { setCurrentVariant, setPreviousVariant ,toggleDialog};
 
   return { data, fns };
 };

@@ -26,7 +26,7 @@ const StateDefault: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   height: `448px`,
-  width: `311px`,
+  width: '100%',
   justifyContent: `flex-end`,
   alignItems: `center`,
   padding: `0px`,
@@ -51,6 +51,7 @@ const Imagecontainer: any = animated(
     height: `120px`,
     zIndex: `2`,
     margin: `0px`,
+    flex: 'unset',
   }))
 );
 
@@ -228,8 +229,12 @@ const ButtonContained: any = styled(Button, {
 function ProductCardNew(props: ProductCardNewProps): JSX.Element {
   const { data, fns } = useProductCardNew();
 
-  const ImagecontainerStateDefault = { height: `120px`, zIndex: `2` };
-  const ImagecontainerStateHover = { height: `228px`, zIndex: `0` };
+  const ImagecontainerStateDefault = {
+    height: `120px`,
+    zIndex: `2`,
+    flex: 'unset',
+  };
+  const ImagecontainerStateHover = { height: '228px', zIndex: `0`, flex: `1` };
   const [ImagecontainerStateStyles, ImagecontainerStateApi] = useSpring(() => ({
     from: eval('Imagecontainer' + data.currentVariant),
     config: { duration: 1000 },
@@ -396,14 +401,14 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
       onMouseLeave={() => {
         eval('switchStateTo' + data.previousVariant)(
           0.35 * 1000,
-          0 * 1000,
-          'easeOutQuint'
+          0.25 * 1000,
+          'easeOutQuart'
         );
         fns.setPreviousVariant('StateHover');
         fns.setCurrentVariant(data.previousVariant);
       }}
       onMouseEnter={() => {
-        switchStateToStateHover(0.35 * 1000, 0 * 1000, 'easeOutQuint');
+        switchStateToStateHover(0.35 * 1000, 0.25 * 1000, 'easeOutQuart');
         fns.setPreviousVariant(data.currentVariant);
         fns.setCurrentVariant('StateHover');
       }}
@@ -445,6 +450,7 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
             size={'large'}
             color={'info'}
             disabled={false}
+            onClick={fns.toggleDialog}
             data={data}
           >
             {'Device Details'}
