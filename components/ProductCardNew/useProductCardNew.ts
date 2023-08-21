@@ -11,8 +11,11 @@
  *
  **********************************************************************/
 
-import React from 'react';
-import useProductCardList from 'components/ProductCardList/useProductCardList';
+import React, { useState } from 'react';
+
+import product1 from 'assets/images/1.png';
+import product2 from 'assets/images/2.png';
+import product3 from 'assets/images/3.png';
 
 /* These are the possible values for the current variant. Use this to change the currentVariant dynamically.
 Please don't modify */
@@ -27,13 +30,31 @@ const useProductCardNew = () => {
   );
   const [previousVariant, setPreviousVariant] = React.useState<string>('');
 
-  const { data } = useProductCardList();
+  const items = [
+    {
+      title: 'Product 1',
+      description: 'This is product 1',
+      image: product1,
+    },
+    {
+      title: 'Product 2',
+      description: 'This is product 2',
+      image: product2,
+    },
+    {
+      title: 'Product 3',
+      description: 'This is product 3',
+      image: product3,
+    },
+  ]
 
-  const getImageSrc = (): any => {};
+  let [ index, setIndex ] = useState();
 
-  const fns: any = { getImageSrc, setCurrentVariant, setPreviousVariant };
+  let data: any = { index, items };
 
-  return { data: { ...data, currentVariant, previousVariant }, fns };
+  const fns: any = { setCurrentVariant, setPreviousVariant };
+
+  return { data, fns };
 };
 
 export default useProductCardNew;

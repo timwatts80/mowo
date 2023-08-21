@@ -12,27 +12,11 @@
  **********************************************************************/
 
 import React, { useState } from 'react';
+import useProductCardNew from 'components/ProductCardNew/useProductCardNew';
 
 const useProductCardList = () => {
-  const items = [
-    {
-      title: 'Product 1',
-      description: 'This is product 1',
-      image: '',
-    },
-    {
-      title: 'Product 2',
-      description: 'This is product 2',
-      image: '',
-    },
-    {
-      title: 'Product 3',
-      description: 'This is product 3',
-      image: '',
-    },
-  ]
-  let [index, setIndex] = useState();
-  let data: any = { items, index};
+
+  const { data } = useProductCardNew();
 
   const fns: any = {};
 
