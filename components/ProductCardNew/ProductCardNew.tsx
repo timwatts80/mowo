@@ -450,7 +450,6 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
             size={'large'}
             color={'info'}
             disabled={false}
-            onClick={fns.toggleDialog}
             data={data}
           >
             {'Device Details'}
