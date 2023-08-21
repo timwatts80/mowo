@@ -13,6 +13,9 @@
  **********************************************************************/
 
 import React from 'react';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { SvgIcon } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { styled } from '@mui/material/styles';
 import ProductCardNew from 'components/ProductCardNew/ProductCardNew';
 import { ProductCardListProps } from 'types';
@@ -24,12 +27,12 @@ const ProductCardList1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-start`,
+  justifyContent: `center`,
   alignItems: `center`,
   padding: `48px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: 'fit-content',
+  width: '100%',
 });
 
 const Productcardcontainer: any = styled('div')({
@@ -46,6 +49,51 @@ const Productcardcontainer: any = styled('div')({
   margin: `0px`,
 });
 
+const Frame43: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  columnGap: `30px`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `100%`,
+  height: `auto`,
+  top: `0px`,
+});
+
+const Slideleft: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  width: `131px`,
+  height: `494px`,
+  margin: `0px`,
+  cursor: `pointer`,
+});
+
+const Slideleft1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `10px`,
+  boxSizing: `border-box`,
+  width: `131px`,
+  height: `494px`,
+  margin: `0px`,
+  cursor: `pointer`,
+});
+
 const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
   width: `311px`,
   height: `448px`,
@@ -53,18 +101,32 @@ const ProductCardNew1: any = styled(ProductCardNew)(({ theme }: any) => ({
 }));
 
 function ProductCardList(props: ProductCardListProps): JSX.Element {
-  const { data } = useProductCardList();
+  const { data, fns } = useProductCardList();
 
   return (
     <ProductCardList1 className={props.className} gap={'20px'}>
-      {data.catalogitems &&
-        data.catalogitems.map((item: any, index: number) => {
-          return (
-            <Productcardcontainer key={index}>
-              <ProductCardNew1 {...item} />
-            </Productcardcontainer>
-          );
-        })}
+      <Frame43>
+        <Slideleft onClick={fns.goLeft}>
+          <SvgIcon
+            component={ArrowBackIcon}
+            htmlColor={`rgba(0, 0, 0, 0.56)`}
+          ></SvgIcon>
+        </Slideleft>
+        {data.catalogitems &&
+          data.catalogitems.map((item: any, index: number) => {
+            return (
+              <Productcardcontainer key={index}>
+                <ProductCardNew1 {...item} />
+              </Productcardcontainer>
+            );
+          })}
+        <Slideleft1 onClick={fns.goRight}>
+          <SvgIcon
+            component={ArrowForwardIcon}
+            htmlColor={`rgba(0, 0, 0, 0.56)`}
+          ></SvgIcon>
+        </Slideleft1>
+      </Frame43>
     </ProductCardList1>
   );
 }
