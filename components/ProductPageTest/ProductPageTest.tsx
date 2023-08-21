@@ -16,23 +16,38 @@ import React from 'react';
 import { Rating, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductPageTestProps } from 'types';
+import useProductPageTest from 'components/ProductPageTest/useProductPageTest';
 
-const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
+const ScreenDesktop: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection:
+    data.currentVariant === 'ScreenTablet'
+      ? `column`
+      : data.currentVariant === 'ScreenMobile'
+      ? `column`
+      : `row`,
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `64px 48px`,
+  padding:
+    data.currentVariant === 'ScreenTablet'
+      ? `100px 70px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `60px 10px`
+      : `64px 48px`,
   boxSizing: `border-box`,
   height: 'auto',
 }));
 
-const Col1: any = styled('div')({
+const Col1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -42,10 +57,26 @@ const Col1: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  flex: `1`,
-  height: `307px`,
+  flex:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `1`,
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `492px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `268px`
+      : `307px`,
   margin: `0px`,
-});
+  alignSelf:
+    data.currentVariant === 'ScreenTablet'
+      ? `stretch`
+      : data.currentVariant === 'ScreenMobile'
+      ? `stretch`
+      : 'unset',
+}));
 
 const Imagecontainer: any = styled('div')({
   borderRadius: `0px`,
@@ -62,16 +93,30 @@ const Imagecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductImage: any = styled('img')({
-  height: `307px`,
-  width: `454.5px`,
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `492px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `268px`
+      : `307px`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? `628px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `355px`
+      : `454.5px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-});
+}));
 
-const Col2: any = styled('div')({
+const Col2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -81,9 +126,25 @@ const Col2: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px 0px 0px 75px`,
-});
+  flex:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `1`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `50px 0px 0px 0px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `40px 0px 0px 0px`
+      : `0px 0px 0px 75px`,
+  alignSelf:
+    data.currentVariant === 'ScreenTablet'
+      ? `stretch`
+      : data.currentVariant === 'ScreenMobile'
+      ? `stretch`
+      : 'unset',
+}));
 
 const Details: any = styled('div')({
   borderRadius: `0px`,
@@ -209,7 +270,9 @@ const ExperienceAnExquisit: any = styled('div')(({ theme }: any) => ({
   margin: `15px 0px 0px 0px`,
 }));
 
-const AddShare: any = styled('div')({
+const AddShare: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -220,9 +283,12 @@ const AddShare: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `44px 0px 0px 0px`,
-});
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+}));
 
-const ShopBtn1: any = styled('div')(({ theme }: any) => ({
+const ShopBtn1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   backgroundColor: theme.palette['Text']['Primary'],
   borderRadius: `0px`,
   display: `flex`,
@@ -233,7 +299,7 @@ const ShopBtn1: any = styled('div')(({ theme }: any) => ({
   alignItems: `center`,
   padding: `16px 0px`,
   boxSizing: `border-box`,
-  width: `327px`,
+  width: data.currentVariant === 'ScreenMobile' ? `265px` : `327px`,
   margin: `0px`,
   overflow: `hidden`,
 }));
@@ -356,7 +422,9 @@ const LoremIpsumDolorSitAm: any = styled('div')(({ theme }: any) => ({
   margin: `15px 0px 0px 0px`,
 }));
 
-const Close: any = styled('div')({
+const Close: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `absolute`,
@@ -366,10 +434,20 @@ const Close: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  left: `1018px`,
-  top: `34px`,
+  left:
+    data.currentVariant === 'ScreenTablet'
+      ? `720px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `337px`
+      : `1018px`,
+  top:
+    data.currentVariant === 'ScreenTablet'
+      ? `20px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px`
+      : `34px`,
   cursor: `pointer`,
-});
+}));
 
 const Icon1: any = styled('div')({
   borderRadius: `0px`,
@@ -411,19 +489,22 @@ const Close1: any = styled('img')({
 });
 
 function ProductPageTest(props: ProductPageTestProps): JSX.Element {
+  const { data } = useProductPageTest();
+
   return (
     props.open && (
-      <ScreenDesktop className={props.className}>
-        <Col1>
+      <ScreenDesktop className={props.className} data={data}>
+        <Col1 data={data}>
           <Imagecontainer>
             <ProductImage
+              data={data}
               src={`assets/images/ProductPageTest_product_image.png`}
               loading="lazy"
               alt={'product image'}
             />
           </Imagecontainer>
         </Col1>
-        <Col2>
+        <Col2 data={data}>
           <Details>
             <Top>
               <Title>{`Fancy Fusion`}</Title>
@@ -438,8 +519,8 @@ function ProductPageTest(props: ProductPageTestProps): JSX.Element {
                 {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
               </ExperienceAnExquisit>
             </Description>
-            <AddShare>
-              <ShopBtn1>
+            <AddShare data={data}>
+              <ShopBtn1 data={data}>
                 <CheckOut>{`ADD TO BAG`}</CheckOut>
               </ShopBtn1>
               <IconButton>
@@ -463,7 +544,7 @@ function ProductPageTest(props: ProductPageTestProps): JSX.Element {
             </Ingredients>
           </Details>
         </Col2>
-        <Close onClick={props.onClose}>
+        <Close onClick={props.onClose} data={data}>
           <Icon1>
             <IconX>
               <Close1
