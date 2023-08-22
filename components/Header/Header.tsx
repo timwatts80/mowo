@@ -20,6 +20,7 @@ import useHeader from 'components/Header/useHeader';
 
 const Property1Desktop: any = styled('div')({
   backgroundColor: `rgba(255, 255, 255, 1)`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -36,6 +37,7 @@ const Property1Desktop: any = styled('div')({
 });
 
 const Hero: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -52,6 +54,7 @@ const Hero: any = styled('div')({
 const FillHero: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -65,6 +68,7 @@ const FillHero: any = styled('div', {
 }));
 
 const LeftSide: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -79,6 +83,7 @@ const LeftSide: any = styled('div')({
 });
 
 const Text: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -104,7 +109,7 @@ const EmpoweringTheModernWSpan1: any = styled('span')({
   textTransform: `none`,
   textAlign: 'unset',
   fontSynthesis: 'unset',
-  width: 'unset',
+  alignSelf: 'unset',
   margin: 'unset',
 });
 
@@ -121,7 +126,7 @@ const EmpoweringTheModernWSpan2: any = styled('span')({
   textTransform: `none`,
   textAlign: 'unset',
   fontSynthesis: 'unset',
-  width: 'unset',
+  alignSelf: 'unset',
   margin: 'unset',
 });
 
@@ -138,7 +143,7 @@ const EmpoweringTheModernW: any = styled('div')({
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
-  width: `660px`,
+  alignSelf: `stretch`,
   margin: `0px`,
 });
 
@@ -150,16 +155,17 @@ const TransformYourOrganiz: any = styled('div')(({ theme }: any) => ({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: `33px`,
+  fontSize: `24px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
-  width: `660px`,
+  alignSelf: `stretch`,
   margin: `20px 0px 0px 0px`,
 }));
 
 const Btns: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -173,6 +179,7 @@ const Btns: any = styled('div')({
 });
 
 const BtnsPosition: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -181,7 +188,7 @@ const BtnsPosition: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `660px`,
+  flex: `1`,
   margin: `0px`,
 });
 
@@ -222,6 +229,7 @@ const ButtonOutlined: any = styled(Button, {
 }));
 
 const Video: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -232,6 +240,13 @@ const Video: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
+  margin: `0px`,
+});
+
+const Pic1: any = styled('img')({
+  height: `476px`,
+  width: `564px`,
+  objectFit: `cover`,
   margin: `0px`,
 });
 
@@ -249,24 +264,6 @@ const Pic: any = styled('div')({
   alignItems: `center`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Pic1: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_1.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `100%`,
-  backgroundRepeat: `no-repeat`,
-  borderRadius: `20px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  alignSelf: `stretch`,
-  flex: `1`,
   margin: `10px 0px 0px 0px`,
   overflow: `hidden`,
 });
@@ -274,7 +271,7 @@ const Pic1: any = styled('div')({
 const Pic2: any = styled('div')({
   backgroundImage: `url(assets/images/Header_Pic_2.png)`,
   backgroundPosition: `center`,
-  backgroundSize: `cover`,
+  backgroundSize: `100%`,
   backgroundRepeat: `no-repeat`,
   borderRadius: `20px`,
   display: `flex`,
@@ -307,7 +304,26 @@ const Pic3: any = styled('div')({
   overflow: `hidden`,
 });
 
+const Pic4: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_4.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
 const LeftSide1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -322,6 +338,7 @@ const LeftSide1: any = styled('div')({
 });
 
 const Text1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -403,6 +420,7 @@ const TransformYourOrganiz1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const Btns1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -416,6 +434,7 @@ const Btns1: any = styled('div')({
 });
 
 const BtnsPosition1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -469,6 +488,7 @@ const ButtonOutlined1: any = styled(Button, {
 const Video1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -482,8 +502,8 @@ const Video1: any = styled('div', {
   height: data.currentVariant === 'Property1Mobile' ? `631px` : 'unset',
 }));
 
-const Pic4: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_4.png)`,
+const Pic5: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_5.png)`,
   backgroundPosition: `center`,
   backgroundSize: `contain`,
   backgroundRepeat: `no-repeat`,
@@ -503,6 +523,7 @@ const Pic4: any = styled('div')({
 const LeftSide2: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -521,6 +542,7 @@ const Image1: any = styled('div')({
   backgroundPosition: `center`,
   backgroundSize: `contain`,
   backgroundRepeat: `no-repeat`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -533,6 +555,7 @@ const Image1: any = styled('div')({
 });
 
 const Text2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -614,6 +637,7 @@ const TransformYouOrganiza: any = styled('div')(({ theme }: any) => ({
 }));
 
 const Btns2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -627,6 +651,7 @@ const Btns2: any = styled('div')({
 });
 
 const BtnsPosition2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -723,10 +748,15 @@ function Header(props: HeaderProps): JSX.Element {
           {!(data.currentVariant === 'Property1Tablet') &&
             !(data.currentVariant === 'Property1Mobile') && (
               <Video>
-                <Pic></Pic>
-                {false && <Pic1></Pic1>}
+                <Pic1
+                  src={`assets/images/Header_Pic_1.png`}
+                  loading="lazy"
+                  alt={'Pic 1'}
+                />
+                {false && <Pic></Pic>}
                 {false && <Pic2></Pic2>}
                 {false && <Pic3></Pic3>}
+                {false && <Pic4></Pic4>}
               </Video>
             )}
           {data.currentVariant === 'Property1Tablet' && (
@@ -766,7 +796,7 @@ function Header(props: HeaderProps): JSX.Element {
           )}
           {data.currentVariant === 'Property1Tablet' && (
             <Video1 data={data}>
-              <Pic4></Pic4>
+              <Pic5></Pic5>
             </Video1>
           )}
           {data.currentVariant === 'Property1Mobile' && (
