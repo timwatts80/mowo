@@ -59,6 +59,7 @@ export interface ProductDialogProps {
   onClose: any;
   product_id: number;
   title: string;
+  subtitle: string;
   description: string;
   image: {
     src: string;
@@ -96,6 +97,7 @@ export interface ProductCardProps {
   onClose?: any;
   product_id: number;
   title: string;
+  subtitle?: string;
   description: string;
   image: {
     src: string;

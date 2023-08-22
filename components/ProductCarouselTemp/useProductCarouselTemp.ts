@@ -33,42 +33,49 @@ const useProductCarouselTemp = () => {
       product_id: 2,
       image: product2,
       title: "Surface Laptop Go 2",
+      subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
     {
       product_id: 3,
       image: product3,
       title: "Surface Pro 9",
+      subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
     {
       product_id: 4,
       image: product4,
       title: "Surface Laptop5",
+      subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
     {
       product_id: 5,
       image: product5,
       title: "Surface Laptop Studio",
+      subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
     {
       product_id: 6,
       image: product6,
       title: "Surface Studio 2+",
+      subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
     {
       product_id: 7,
       image: product7,
       title: "Surface Hub 2S",
+      subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
     {
       product_id: 8,
       image: product8,
       title: "Surface Duo 2",
+      subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     }
   ];
