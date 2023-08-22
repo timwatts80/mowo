@@ -423,43 +423,41 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
             <Thumbscontainer>
               <Imagecontainer>
                 <ProductImage
-                  src={`assets/images/ProductDialog_product_image.png`}
+                  src={props.image.src}
                   loading="lazy"
                   alt={'product image'}
                 />
               </Imagecontainer>
               <Thumbscarousel>
                 <ProductImage1
-                  src={`assets/images/ProductDialog_product_image_1.png`}
+                  src={props.image.src}
                   loading="lazy"
-                  alt={'product image'}
+                  alt={props.image.alt}
                 />
                 <ProductImage2
-                  src={`assets/images/ProductDialog_product_image_2.png`}
+                  src={props.image.src}
                   loading="lazy"
-                  alt={'product image'}
+                  alt={props.image.alt}
                 />
                 <ProductImage3
-                  src={`assets/images/ProductDialog_product_image_3.png`}
+                  src={props.image.src}
                   loading="lazy"
-                  alt={'product image'}
+                  alt={props.image.alt}
                 />
                 <ProductImage4
-                  src={`assets/images/ProductDialog_product_image_4.png`}
+                  src={props.image.src}
                   loading="lazy"
-                  alt={'product image'}
+                  alt={props.image.alt}
                 />
               </Thumbscarousel>
             </Thumbscontainer>
             <Details>
               <Top>
-                <Title>{`Fancy Fusion`}</Title>
+                <Title>{props.title}</Title>
                 <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
               </Top>
               <Description>
-                <ExperienceAnExquisit>
-                  {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
-                </ExperienceAnExquisit>
+                <ExperienceAnExquisit>{props.description}</ExperienceAnExquisit>
               </Description>
               <DividerHorizontal orientation="horizontal" />
               <Colors>
