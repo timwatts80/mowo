@@ -82,7 +82,7 @@ const Label: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
@@ -127,7 +127,7 @@ const Label1: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
@@ -172,7 +172,7 @@ const Label2: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
@@ -217,7 +217,7 @@ const Label3: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
@@ -262,7 +262,7 @@ const Label4: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
@@ -334,7 +334,7 @@ const Label5: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -345,14 +345,14 @@ const Body15: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -383,7 +383,7 @@ const Label6: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -394,14 +394,14 @@ const Body16: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -432,7 +432,7 @@ const Label7: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -443,14 +443,14 @@ const Body17: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -481,7 +481,7 @@ const Label8: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -492,14 +492,14 @@ const Body18: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -530,7 +530,7 @@ const Label9: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -541,14 +541,14 @@ const Body19: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -607,7 +607,7 @@ const Label10: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -618,14 +618,14 @@ const Body110: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -656,7 +656,7 @@ const Label11: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -667,14 +667,14 @@ const Body111: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -705,7 +705,7 @@ const Label12: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -716,14 +716,14 @@ const Body112: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -754,7 +754,7 @@ const Label13: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -765,14 +765,14 @@ const Body113: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -803,7 +803,7 @@ const Label14: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -814,14 +814,14 @@ const Body114: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -880,7 +880,7 @@ const Label15: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -891,14 +891,14 @@ const Body115: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -929,7 +929,7 @@ const Label16: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -940,14 +940,14 @@ const Body116: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -978,7 +978,7 @@ const Label17: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -989,14 +989,14 @@ const Body117: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -1027,7 +1027,7 @@ const Label18: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -1038,14 +1038,14 @@ const Body118: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
@@ -1076,7 +1076,7 @@ const Label19: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `16px`,
+  padding: `8px 16px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -1087,291 +1087,18 @@ const Body119: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   margin: `0px`,
 }));
 
 const DividerHorizontal14: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Frame155: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Frame1503: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const TableRow15: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Label20: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Body120: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  margin: `0px`,
-}));
-
-const DividerHorizontal15: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const TableRow16: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Label21: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Body121: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  margin: `0px`,
-}));
-
-const DividerHorizontal16: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const TableRow17: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Label22: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Body122: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  margin: `0px`,
-}));
-
-const DividerHorizontal17: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const TableRow18: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Label23: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Body123: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  margin: `0px`,
-}));
-
-const DividerHorizontal18: any = styled(Divider)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const TableRow19: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Label24: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Body124: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
-  margin: `0px`,
-}));
-
-const DividerHorizontal19: any = styled(Divider)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -1510,40 +1237,6 @@ function Table(props: TableProps): JSX.Element {
           </TableRow14>
         </Frame1502>
       </Frame154>
-      <Frame155>
-        <Frame1503>
-          <TableRow15>
-            <Label20>
-              <Body120>{`Body 1`}</Body120>
-            </Label20>
-            <DividerHorizontal15 orientation="horizontal" />
-          </TableRow15>
-          <TableRow16>
-            <Label21>
-              <Body121>{`Body 1`}</Body121>
-            </Label21>
-            <DividerHorizontal16 orientation="horizontal" />
-          </TableRow16>
-          <TableRow17>
-            <Label22>
-              <Body122>{`Body 1`}</Body122>
-            </Label22>
-            <DividerHorizontal17 orientation="horizontal" />
-          </TableRow17>
-          <TableRow18>
-            <Label23>
-              <Body123>{`Body 1`}</Body123>
-            </Label23>
-            <DividerHorizontal18 orientation="horizontal" />
-          </TableRow18>
-          <TableRow19>
-            <Label24>
-              <Body124>{`Body 1`}</Body124>
-            </Label24>
-            <DividerHorizontal19 orientation="horizontal" />
-          </TableRow19>
-        </Frame1503>
-      </Frame155>
     </Table1>
   );
 }
