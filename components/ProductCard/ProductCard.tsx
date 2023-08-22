@@ -283,7 +283,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           </Productinfocontainer>
         </ProductCardNew>
       </Productcardcontainer>
-      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
+      <Dialog
+        maxWidth={false}
+        open={data.isDialogOpen}
+        onClose={fns.toggleDialog}
+      >
         <Productdialogcontain>
           <ProductDialog1
             open={data.isDialogOpen}
