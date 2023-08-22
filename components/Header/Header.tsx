@@ -18,23 +18,25 @@ import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'types';
 import useHeader from 'components/Header/useHeader';
 
-const Property1Desktop: any = styled('div')({
+const ScreenDesktop: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   backgroundColor: `rgba(255, 255, 255, 1)`,
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `0px`,
+  padding: data.currentVariant === 'ScreenMobile' ? `30px 20px` : `0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
   margin: '0 auto',
   maxWidth: '1440px',
-});
+}));
 
 const Hero: any = styled('div')({
   borderRadius: `0px`,
@@ -58,16 +60,18 @@ const FillHero: any = styled('div', {
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: data.currentVariant === 'Property1Mobile' ? `column` : `row`,
+  flexDirection: data.currentVariant === 'ScreenMobile' ? `column` : `row`,
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
 }));
 
-const LeftSide: any = styled('div')({
+const LeftSide: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -79,8 +83,13 @@ const LeftSide: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: `0px`,
-});
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
+}));
 
 const Text: any = styled('div')({
   borderRadius: `0px`,
@@ -228,7 +237,9 @@ const ButtonOutlined: any = styled(Button, {
     theme.typography['Components']['Button Font - Large'].textTransform,
 }));
 
-const Video: any = styled('div')({
+const Video: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -240,8 +251,13 @@ const Video: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: `0px`,
-});
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
+}));
 
 const Pic1: any = styled('img')({
   height: `476px`,
@@ -322,7 +338,9 @@ const Pic4: any = styled('div')({
   overflow: `hidden`,
 });
 
-const LeftSide1: any = styled('div')({
+const LeftSide1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -330,12 +348,12 @@ const LeftSide1: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `45px 0px 60px 45px`,
+  padding: `45px 0px 60px 30px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
   flex: `1`,
-  margin: `0px`,
-});
+  margin: data.currentVariant === 'ScreenMobile' ? `10px 0px 0px 0px` : `0px`,
+  width: data.currentVariant === 'ScreenMobile' ? `379px` : 'unset',
+}));
 
 const Text1: any = styled('div')({
   borderRadius: `0px`,
@@ -343,7 +361,7 @@ const Text1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: `center`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
@@ -410,13 +428,13 @@ const TransformYourOrganiz1: any = styled('div')(({ theme }: any) => ({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: `24px`,
+  fontSize: `20px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
   alignSelf: `stretch`,
-  margin: `22px 0px 0px 0px`,
+  margin: `20px 0px 0px 0px`,
 }));
 
 const Btns1: any = styled('div')({
@@ -426,11 +444,11 @@ const Btns1: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `12px 90px 0px 0px`,
+  alignItems: `flex-start`,
+  padding: `0px 90px 0px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `30px 0px 0px 0px`,
+  margin: `40px 0px 0px 0px`,
 });
 
 const BtnsPosition1: any = styled('div')({
@@ -440,7 +458,7 @@ const BtnsPosition1: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
+  alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
@@ -485,7 +503,9 @@ const ButtonOutlined1: any = styled(Button, {
     theme.typography['Components']['Button Font - Large'].textTransform,
 }));
 
-const Video1: any = styled('div')({
+const Video1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -493,10 +513,23 @@ const Video1: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `15px 0px`,
+  padding: `60px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
+}));
+
+const Pic11: any = styled('img')({
+  height: `323px`,
+  width: `379px`,
+  objectFit: `cover`,
+  alignSelf: `stretch`,
   margin: `0px`,
 });
 
@@ -512,13 +545,69 @@ const Pic5: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
-  height: `452px`,
-  width: `330px`,
+  alignSelf: `stretch`,
+  flex: `1`,
   margin: `10px 0px 0px 0px`,
   overflow: `hidden`,
 });
 
-const Frame172: any = styled('div')({
+const Pic6: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_6.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `100%`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Pic7: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_7.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Pic8: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_8.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Video2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -529,14 +618,96 @@ const Frame172: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  width: data.currentVariant === 'ScreenMobile' ? 'unset' : `335px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 10px` : `0px`,
+  height: data.currentVariant === 'ScreenMobile' ? `230px` : 'unset',
+}));
+
+const Pic12: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `38px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `38px`
+      : `230px`,
+  width: `276px`,
+  objectFit: `cover`,
+  flex: `1`,
   margin: `0px`,
+}));
+
+const Pic9: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_9.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `contain`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
 });
 
-const Pic11: any = styled('img')({
-  height: `324px`,
-  width: `384px`,
-  objectFit: `cover`,
-  margin: `0px`,
+const Pic10: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_10.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `100%`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Pic13: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_11.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Pic14: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_12.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
 });
 
 const LeftSide2: any = styled('div', {
@@ -547,39 +718,19 @@ const LeftSide2: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `45px 30px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width: data.currentVariant === 'Property1Mobile' ? 'unset' : `375px`,
-  margin: `0px`,
-  height: data.currentVariant === 'Property1Mobile' ? `852px` : 'unset',
-}));
-
-const Frame173: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
+  justifyContent: `center`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Pic12: any = styled('img')({
-  height: `276px`,
-  width: `315px`,
-  objectFit: `cover`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
+  width: data.currentVariant === 'ScreenMobile' ? 'unset' : `335px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
+}));
 
 const Text2: any = styled('div')({
   borderRadius: `0px`,
@@ -592,7 +743,7 @@ const Text2: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `30px 0px 0px 0px`,
+  margin: `0px`,
 });
 
 const EmpoweringTheModernW2Span1: any = styled('span')({
@@ -646,7 +797,7 @@ const EmpoweringTheModernW2: any = styled('div')({
   margin: `0px`,
 });
 
-const TransformYouOrganiza: any = styled('div')(({ theme }: any) => ({
+const TransformYourOrganiz2: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -654,13 +805,13 @@ const TransformYouOrganiza: any = styled('div')(({ theme }: any) => ({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: `24px`,
+  fontSize: `20px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
   alignSelf: `stretch`,
-  margin: `22px 0px 0px 0px`,
+  margin: `20px 0px 0px 0px`,
 }));
 
 const Btns2: any = styled('div')({
@@ -670,11 +821,11 @@ const Btns2: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
+  alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `30px 0px 0px 0px`,
+  margin: `40px 0px 0px 0px`,
 });
 
 const BtnsPosition2: any = styled('div')({
@@ -684,7 +835,7 @@ const BtnsPosition2: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
+  alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
@@ -733,12 +884,12 @@ function Header(props: HeaderProps): JSX.Element {
   const { data } = useHeader();
 
   return (
-    <Property1Desktop className={props.className}>
+    <ScreenDesktop className={props.className} data={data}>
       <Hero>
         <FillHero data={data}>
-          {!(data.currentVariant === 'Property1Tablet') &&
-            !(data.currentVariant === 'Property1Mobile') && (
-              <LeftSide>
+          {!(data.currentVariant === 'ScreenTablet') &&
+            !(data.currentVariant === 'ScreenMobile') && (
+              <LeftSide data={data}>
                 <Text>
                   <EmpoweringTheModernW>
                     <EmpoweringTheModernWSpan1>{`EMPOWERING THE `}</EmpoweringTheModernWSpan1>
@@ -772,9 +923,9 @@ function Header(props: HeaderProps): JSX.Element {
                 </Btns>
               </LeftSide>
             )}
-          {!(data.currentVariant === 'Property1Tablet') &&
-            !(data.currentVariant === 'Property1Mobile') && (
-              <Video>
+          {!(data.currentVariant === 'ScreenTablet') &&
+            !(data.currentVariant === 'ScreenMobile') && (
+              <Video data={data}>
                 <Pic1
                   src={`assets/images/Header_Pic_1.png`}
                   loading="lazy"
@@ -786,8 +937,8 @@ function Header(props: HeaderProps): JSX.Element {
                 {false && <Pic4></Pic4>}
               </Video>
             )}
-          {data.currentVariant === 'Property1Tablet' && (
-            <LeftSide1>
+          {data.currentVariant === 'ScreenTablet' && (
+            <LeftSide1 data={data}>
               <Text1>
                 <EmpoweringTheModernW1>
                   <EmpoweringTheModernW1Span1>{`EMPOWERING THE `}</EmpoweringTheModernW1Span1>
@@ -821,35 +972,43 @@ function Header(props: HeaderProps): JSX.Element {
               </Btns1>
             </LeftSide1>
           )}
-          {data.currentVariant === 'Property1Tablet' && (
-            <Video1>
+          {data.currentVariant === 'ScreenTablet' && (
+            <Video1 data={data}>
+              <Pic11
+                src={`assets/images/Header_Pic_1_1.png`}
+                loading="lazy"
+                alt={'Pic 1'}
+              />
               {false && <Pic5></Pic5>}
-              <Frame172>
-                <Pic11
-                  src={`assets/images/Header_Pic_1_1.png`}
-                  loading="lazy"
-                  alt={'Pic 1'}
-                />
-              </Frame172>
+              {false && <Pic6></Pic6>}
+              {false && <Pic7></Pic7>}
+              {false && <Pic8></Pic8>}
             </Video1>
           )}
-          {data.currentVariant === 'Property1Mobile' && (
+          {data.currentVariant === 'ScreenMobile' && (
+            <Video2 data={data}>
+              <Pic12
+                data={data}
+                src={`assets/images/Header_Pic_1_2.png`}
+                loading="lazy"
+                alt={'Pic 1'}
+              />
+              {false && <Pic9></Pic9>}
+              {false && <Pic10></Pic10>}
+              {false && <Pic13></Pic13>}
+              {false && <Pic14></Pic14>}
+            </Video2>
+          )}
+          {data.currentVariant === 'ScreenMobile' && (
             <LeftSide2 data={data}>
-              <Frame173>
-                <Pic12
-                  src={`assets/images/Header_Pic_1_2.png`}
-                  loading="lazy"
-                  alt={'Pic 1'}
-                />
-              </Frame173>
               <Text2>
                 <EmpoweringTheModernW2>
-                  <EmpoweringTheModernW2Span1>{`EMPOWERING THE`}</EmpoweringTheModernW2Span1>
-                  <EmpoweringTheModernW2Span2>{` MODERN WORKPLACE`}</EmpoweringTheModernW2Span2>
+                  <EmpoweringTheModernW2Span1>{`EMPOWERING THE `}</EmpoweringTheModernW2Span1>
+                  <EmpoweringTheModernW2Span2>{`MODERN WORKPLACE`}</EmpoweringTheModernW2Span2>
                 </EmpoweringTheModernW2>
-                <TransformYouOrganiza>
-                  {`Transform you organization with Surface for Business, Microsoft 365, customized services and training by MOWO.`}
-                </TransformYouOrganiza>
+                <TransformYourOrganiz2>
+                  {`Transform your organization with Surface for Business, Microsoft 365, customized services and training by MOWO.`}
+                </TransformYourOrganiz2>
               </Text2>
               <Btns2>
                 <BtnsPosition2>
@@ -877,7 +1036,7 @@ function Header(props: HeaderProps): JSX.Element {
           )}
         </FillHero>
       </Hero>
-    </Property1Desktop>
+    </ScreenDesktop>
   );
 }
 
