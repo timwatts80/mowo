@@ -1776,7 +1776,7 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
             <Thumbscontainer>
               <Imagecontainer>
                 <ProductImage
-                  src={`assets/images/ProductDialog_product_image.png`}
+                  src={props.image.src}
                   loading="lazy"
                   alt={'product image'}
                 />
@@ -1806,7 +1806,7 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
             </Thumbscontainer>
             <Details>
               <Top>
-                <Title>{`Fancy Fusion`}</Title>
+                <Title>{props.title}</Title>
                 <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
               </Top>
               <Description>
