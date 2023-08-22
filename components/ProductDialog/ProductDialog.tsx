@@ -55,10 +55,10 @@ const Close: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `flex-end`,
   alignItems: `flex-start`,
-  padding: `20px`,
+  padding: `12px 20px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `68px`,
+  height: `52px`,
   margin: `0px`,
 });
 
@@ -110,7 +110,7 @@ const Contentcontainer: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `0px 48px 68px 48px`,
+  padding: `0px 48px 48px 48px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
