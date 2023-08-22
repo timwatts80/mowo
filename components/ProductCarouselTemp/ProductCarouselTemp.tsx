@@ -79,7 +79,7 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
       <Slider {...settings}>
         {data.products &&
           data.products.map((product: any, index: number) => {
-            return <ProductCard1 key={index} products={product} />;
+            return <ProductCard1 key={index} {...product} />;
           })}
       </Slider>
     </div>
