@@ -357,8 +357,8 @@ const EmpoweringTheModernW1Span1: any = styled('span')({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `57px`,
-  letterSpacing: `-3.42px`,
+  fontSize: `52px`,
+  letterSpacing: `-3.12px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -374,8 +374,8 @@ const EmpoweringTheModernW1Span2: any = styled('span')({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `57px`,
-  letterSpacing: `-3.42px`,
+  fontSize: `52px`,
+  letterSpacing: `-3.12px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -393,8 +393,8 @@ const EmpoweringTheModernW1: any = styled('div')({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `57px`,
-  letterSpacing: `-3.42px`,
+  fontSize: `52px`,
+  letterSpacing: `-3.12px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -410,7 +410,7 @@ const TransformYourOrganiz1: any = styled('div')(({ theme }: any) => ({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: `28px`,
+  fontSize: `24px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
@@ -485,9 +485,7 @@ const ButtonOutlined1: any = styled(Button, {
     theme.typography['Components']['Button Font - Large'].textTransform,
 }));
 
-const Video1: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Video1: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -498,9 +496,9 @@ const Video1: any = styled('div', {
   padding: `15px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  flex: `1`,
   margin: `0px`,
-  height: data.currentVariant === 'Property1Mobile' ? `631px` : 'unset',
-}));
+});
 
 const Pic5: any = styled('div')({
   backgroundImage: `url(assets/images/Header_Pic_5.png)`,
@@ -516,8 +514,29 @@ const Pic5: any = styled('div')({
   alignItems: `center`,
   height: `452px`,
   width: `330px`,
-  margin: `0px`,
+  margin: `10px 0px 0px 0px`,
   overflow: `hidden`,
+});
+
+const Frame172: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
+const Pic11: any = styled('img')({
+  height: `324px`,
+  width: `384px`,
+  objectFit: `cover`,
+  margin: `0px`,
 });
 
 const LeftSide2: any = styled('div', {
@@ -535,22 +554,30 @@ const LeftSide2: any = styled('div', {
   alignSelf: `stretch`,
   width: data.currentVariant === 'Property1Mobile' ? 'unset' : `375px`,
   margin: `0px`,
+  height: data.currentVariant === 'Property1Mobile' ? `852px` : 'unset',
 }));
 
-const Image1: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_image.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `contain`,
-  backgroundRepeat: `no-repeat`,
+const Frame173: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `210px`,
+  flex: `1`,
+  margin: `0px`,
+});
+
+const Pic12: any = styled('img')({
+  height: `276px`,
+  width: `315px`,
+  objectFit: `cover`,
+  alignSelf: `stretch`,
+  flex: `1`,
   margin: `0px`,
 });
 
@@ -795,13 +822,26 @@ function Header(props: HeaderProps): JSX.Element {
             </LeftSide1>
           )}
           {data.currentVariant === 'Property1Tablet' && (
-            <Video1 data={data}>
-              <Pic5></Pic5>
+            <Video1>
+              {false && <Pic5></Pic5>}
+              <Frame172>
+                <Pic11
+                  src={`assets/images/Header_Pic_1_1.png`}
+                  loading="lazy"
+                  alt={'Pic 1'}
+                />
+              </Frame172>
             </Video1>
           )}
           {data.currentVariant === 'Property1Mobile' && (
             <LeftSide2 data={data}>
-              <Image1></Image1>
+              <Frame173>
+                <Pic12
+                  src={`assets/images/Header_Pic_1_2.png`}
+                  loading="lazy"
+                  alt={'Pic 1'}
+                />
+              </Frame173>
               <Text2>
                 <EmpoweringTheModernW2>
                   <EmpoweringTheModernW2Span1>{`EMPOWERING THE`}</EmpoweringTheModernW2Span1>
