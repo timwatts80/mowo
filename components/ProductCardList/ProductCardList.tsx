@@ -115,7 +115,7 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
             htmlColor={`rgba(0, 0, 0, 0.56)`}
           ></SvgIcon>
         </SlideLeft>
-        <Productcardcontainer>
+
           {data.catalogitems &&
             data.catalogitems.map((item: any, index: number) => {
               return (
@@ -124,7 +124,7 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
                 </Productcardcontainer>
               );
             })}
-        </Productcardcontainer>
+
         <SlideRight onClick={fns.goRight}>
           <SvgIcon
             component={ArrowForwardIcon}
