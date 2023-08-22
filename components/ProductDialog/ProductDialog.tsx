@@ -75,6 +75,7 @@ const Icon1: any = styled('div')({
   width: `28px`,
   height: `28px`,
   margin: `0px`,
+  cursor: `pointer`,
 });
 
 const IconX: any = styled('div')({
@@ -433,101 +434,103 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
 
 function ProductDialog(props: ProductDialogProps): JSX.Element {
   return (
-    <ProductDialog1 className={props.className}>
-      <Pagecontainer>
-        <Close>
-          <Icon1>
-            <IconX>
-              <Close1
-                src={`assets/images/ProductDialog_Close.png`}
-                loading="lazy"
-                alt={'Close'}
-              />
-            </IconX>
-          </Icon1>
-        </Close>
-        <Contentcontainer>
-          <Productinfo>
-            <Thumbscontainer>
-              <Imagecontainer>
-                <ProductImage
-                  src={`assets/images/ProductDialog_product_image.png`}
+    props.open && (
+      <ProductDialog1 className={props.className}>
+        <Pagecontainer>
+          <Close>
+            <Icon1 onClick={props.onClose}>
+              <IconX>
+                <Close1
+                  src={`assets/images/ProductDialog_Close.png`}
                   loading="lazy"
-                  alt={'product image'}
+                  alt={'Close'}
                 />
-              </Imagecontainer>
-              <Thumbscarousel>
-                <ProductImage1
-                  src={`assets/images/ProductDialog_product_image_1.png`}
-                  loading="lazy"
-                  alt={'product image'}
-                />
-                <ProductImage2
-                  src={`assets/images/ProductDialog_product_image_2.png`}
-                  loading="lazy"
-                  alt={'product image'}
-                />
-                <ProductImage3
-                  src={`assets/images/ProductDialog_product_image_3.png`}
-                  loading="lazy"
-                  alt={'product image'}
-                />
-                <ProductImage4
-                  src={`assets/images/ProductDialog_product_image_4.png`}
-                  loading="lazy"
-                  alt={'product image'}
-                />
-              </Thumbscarousel>
-            </Thumbscontainer>
-            <Details>
-              <Top>
-                <Title>{`Fancy Fusion`}</Title>
-                <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
-              </Top>
-              <Description>
-                <ExperienceAnExquisit>
-                  {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
-                </ExperienceAnExquisit>
-              </Description>
-              <DividerHorizontal orientation="horizontal" />
-              <Colors>
-                <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
-                <Colorswatches>
-                  <Color1
-                    src={`assets/images/ProductDialog_color1.png`}
+              </IconX>
+            </Icon1>
+          </Close>
+          <Contentcontainer>
+            <Productinfo>
+              <Thumbscontainer>
+                <Imagecontainer>
+                  <ProductImage
+                    src={`assets/images/ProductDialog_product_image.png`}
                     loading="lazy"
-                    alt={'color1'}
+                    alt={'product image'}
                   />
-                  <Color2
-                    src={`assets/images/ProductDialog_color2.png`}
+                </Imagecontainer>
+                <Thumbscarousel>
+                  <ProductImage1
+                    src={`assets/images/ProductDialog_product_image_1.png`}
                     loading="lazy"
-                    alt={'color2'}
+                    alt={'product image'}
                   />
-                  <Color3
-                    src={`assets/images/ProductDialog_color3.png`}
+                  <ProductImage2
+                    src={`assets/images/ProductDialog_product_image_2.png`}
                     loading="lazy"
-                    alt={'color3'}
+                    alt={'product image'}
                   />
-                </Colorswatches>
-              </Colors>
-            </Details>
-          </Productinfo>
-          <Productstable>
-            <Table1 />
-          </Productstable>
-          <Frame156>
-            <ButtonContained
-              variant="contained"
-              size={'large'}
-              color={'warning'}
-              disabled={false}
-            >
-              {'Download Product Sheet'}
-            </ButtonContained>
-          </Frame156>
-        </Contentcontainer>
-      </Pagecontainer>
-    </ProductDialog1>
+                  <ProductImage3
+                    src={`assets/images/ProductDialog_product_image_3.png`}
+                    loading="lazy"
+                    alt={'product image'}
+                  />
+                  <ProductImage4
+                    src={`assets/images/ProductDialog_product_image_4.png`}
+                    loading="lazy"
+                    alt={'product image'}
+                  />
+                </Thumbscarousel>
+              </Thumbscontainer>
+              <Details>
+                <Top>
+                  <Title>{`Fancy Fusion`}</Title>
+                  <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
+                </Top>
+                <Description>
+                  <ExperienceAnExquisit>
+                    {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+                  </ExperienceAnExquisit>
+                </Description>
+                <DividerHorizontal orientation="horizontal" />
+                <Colors>
+                  <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
+                  <Colorswatches>
+                    <Color1
+                      src={`assets/images/ProductDialog_color1.png`}
+                      loading="lazy"
+                      alt={'color1'}
+                    />
+                    <Color2
+                      src={`assets/images/ProductDialog_color2.png`}
+                      loading="lazy"
+                      alt={'color2'}
+                    />
+                    <Color3
+                      src={`assets/images/ProductDialog_color3.png`}
+                      loading="lazy"
+                      alt={'color3'}
+                    />
+                  </Colorswatches>
+                </Colors>
+              </Details>
+            </Productinfo>
+            <Productstable>
+              <Table1 />
+            </Productstable>
+            <Frame156>
+              <ButtonContained
+                variant="contained"
+                size={'large'}
+                color={'warning'}
+                disabled={false}
+              >
+                {'Download Product Sheet'}
+              </ButtonContained>
+            </Frame156>
+          </Contentcontainer>
+        </Pagecontainer>
+      </ProductDialog1>
+    )
   );
 }
 
