@@ -87,6 +87,7 @@ const LogoSocial: any = styled('div')({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
+  width: `377px`,
   margin: `0px`,
   overflow: `hidden`,
 });
@@ -97,7 +98,7 @@ const LogoContainer: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-end`,
+  justifyContent: `center`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
@@ -119,7 +120,7 @@ const Logo: any = styled('div')({
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  width: `339px`,
+  width: `297px`,
   margin: `0px`,
   overflow: `hidden`,
 });
