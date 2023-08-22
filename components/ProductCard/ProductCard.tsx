@@ -275,7 +275,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                 size={'large'}
                 color={'info'}
                 disabled={false}
-                onClick={data.isDialogOpen}
+                onClick={fns.toggleDialog}
               >
                 {'Device Details'}
               </ButtonContained>
