@@ -20,6 +20,7 @@ import { ProductList } from 'components/ProductList/ProductList'
 import { ProductCardListProps } from 'types'
 import ProductPageTest from 'components/ProductPageTest/ProductPageTest'
 import ProductCard from 'components/ProductCard/ProductCard'
+import ProductCardNew from 'components/ProductCardNew/ProductCardNew'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -28,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
-      <ProductCard />
+      <ProductCardNew />
       {/* <ProductCardList /> */}
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />

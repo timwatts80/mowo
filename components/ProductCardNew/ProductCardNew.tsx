@@ -219,9 +219,9 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
       <Imagecontainer data={data}>
         <ProductImage
           data={data}
-          src={props.image.src}
+          src={props.image}
           loading="lazy"
-          alt={props.image.alt}
+          alt={props.image}
         />
       </Imagecontainer>
       {false && (
