@@ -25,7 +25,7 @@ const StateDefault: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   height: `448px`,
-  width: `311px`,
+  width: '100%',
   justifyContent: `flex-end`,
   alignItems: `center`,
   padding: `0px`,
