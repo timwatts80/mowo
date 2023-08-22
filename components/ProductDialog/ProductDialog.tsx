@@ -14,7 +14,6 @@
 
 import React from 'react';
 import { Divider, SvgIcon } from '@mui/material';
-import IconRight1 from 'public/assets/images/_IconRight.svg';
 import { styled } from '@mui/material/styles';
 import Table from 'components/Table/Table';
 import { ProductDialogProps } from 'types';
