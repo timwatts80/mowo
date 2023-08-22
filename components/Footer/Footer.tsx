@@ -44,7 +44,7 @@ const Cols: any = styled('div')({
   padding: `45px 60px 30px 60px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: '0 auto',
+  margin: `0px`,
   overflow: `hidden`,
 });
 
