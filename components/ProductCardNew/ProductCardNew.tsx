@@ -25,7 +25,7 @@ const StateDefault: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   height: `448px`,
-  width: '100%',
+  width: `311px`,
   justifyContent: `flex-end`,
   alignItems: `center`,
   padding: `0px`,
@@ -219,9 +219,9 @@ function ProductCardNew(props: ProductCardNewProps): JSX.Element {
       <Imagecontainer data={data}>
         <ProductImage
           data={data}
-          src={props.image}
+          src={props.image.src}
           loading="lazy"
-          alt={props.image}
+          alt={props.image.alt}
         />
       </Imagecontainer>
       {false && (
