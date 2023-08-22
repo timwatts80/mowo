@@ -13,7 +13,8 @@
  **********************************************************************/
 
 import React from 'react';
-import { Divider, Button } from '@mui/material';
+import { Divider, SvgIcon } from '@mui/material';
+import IconRight1 from 'public/assets/images/_IconRight.svg';
 import { styled } from '@mui/material/styles';
 import Table from 'components/Table/Table';
 import { ProductDialogProps } from 'types';
@@ -416,8 +417,79 @@ const Frame156: any = styled('div')({
   margin: `32px 0px 0px 0px`,
 });
 
-const ButtonContained: any = styled(Button)(({ theme }: any) => ({
+const ButtonContained: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: theme.palette['Warning']['Main'],
+  boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
+  borderRadius: `4px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
   margin: `0px`,
+  overflow: `hidden`,
+}));
+
+const Base: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `8px 22px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const MaskedIcon: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `18px`,
+  height: `22px`,
+  margin: `0px`,
+});
+
+const IconLeft: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `24px`,
+  height: `24px`,
+  left: `-6px`,
+  top: `-1px`,
+});
+
+const Vector: any = styled('img')({
+  height: `16.56px`,
+  width: `14px`,
+  position: `absolute`,
+  left: `2px`,
+  top: `3px`,
+});
+
+const Button1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
   color: theme.palette['Warning']['Contrast'],
   fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
   fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
@@ -430,7 +502,31 @@ const ButtonContained: any = styled(Button)(({ theme }: any) => ({
     theme.typography['Components']['Button Font - Large'].textDecoration,
   textTransform:
     theme.typography['Components']['Button Font - Large'].textTransform,
+  margin: `0px 0px 0px 8px`,
 }));
+
+const MaskedIcon1: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `18px`,
+  height: `22px`,
+  margin: `0px 0px 0px 8px`,
+});
+
+const IconRight2: any = styled(SvgIcon)({
+  width: `24px`,
+  height: `24px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `-1px`,
+});
 
 function ProductDialog(props: ProductDialogProps): JSX.Element {
   return (
@@ -518,13 +614,28 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
               <Table1 />
             </Productstable>
             <Frame156>
-              <ButtonContained
-                variant="contained"
-                size={'large'}
-                color={'warning'}
-                disabled={false}
-              >
-                {'Download Product Sheet'}
+              <ButtonContained>
+                <Base>
+                  <MaskedIcon>
+                    <IconLeft>
+                      <Vector
+                        src={`assets/images/ProductDialog_Vector.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                    </IconLeft>
+                  </MaskedIcon>
+                  <Button1>{`Download Product Sheet`}</Button1>
+                  {false && (
+                    <MaskedIcon1>
+                      <IconRight2
+                        fontSize={'inherit'}
+                        htmlColor="undefined"
+                        component={IconRight1}
+                      />
+                    </MaskedIcon1>
+                  )}
+                </Base>
               </ButtonContained>
             </Frame156>
           </Contentcontainer>
