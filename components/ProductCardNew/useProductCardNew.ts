@@ -13,6 +13,7 @@
 
 import React, { useState } from 'react';
 const useProductCardNew = () => {
+  const toggleDialog = (): any => {};
 
   const [isHover, setIsHover] = useState(false);
 
@@ -25,7 +26,7 @@ const useProductCardNew = () => {
   };
   const data: any = { handleMouseEnter, handleMouseLeave, isHover};
 
-  const fns: any = {};
+  const fns: any = {toggleDialog};
 
   return { data, fns };
 };
