@@ -405,89 +405,93 @@ const Table1: any = styled(Table)(({ theme }: any) => ({
 
 function ProductDialog(props: ProductDialogProps): JSX.Element {
   return (
-    <ProductDialog1 className={props.className}>
-      <Pagecontainer>
-        <Close>
-          <Icon1 onClick={props.onClose}>
-            <IconX>
-              <Close1
-                src={`assets/images/ProductDialog_Close.png`}
-                loading="lazy"
-                alt={'Close'}
-              />
-            </IconX>
-          </Icon1>
-        </Close>
-        <Contentcontainer>
-          <Productinfo>
-            <Thumbscontainer>
-              <Imagecontainer>
-                <ProductImage
-                  src={props.image.src}
+    props.open && (
+      <ProductDialog1 className={props.className}>
+        <Pagecontainer>
+          <Close>
+            <Icon1 onClick={props.onClose}>
+              <IconX>
+                <Close1
+                  src={`assets/images/ProductDialog_Close.png`}
                   loading="lazy"
-                  alt={props.image.alt}
+                  alt={'Close'}
                 />
-              </Imagecontainer>
-              <Thumbscarousel>
-                <ProductImage1
-                  src={props.image.src}
-                  loading="lazy"
-                  alt={props.image.alt}
-                />
-                <ProductImage2
-                  src={props.image.src}
-                  loading="lazy"
-                  alt={props.image.alt}
-                />
-                <ProductImage3
-                  src={props.image.src}
-                  loading="lazy"
-                  alt={props.image.alt}
-                />
-                <ProductImage4
-                  src={props.image.src}
-                  loading="lazy"
-                  alt={props.image.alt}
-                />
-              </Thumbscarousel>
-            </Thumbscontainer>
-            <Details>
-              <Top>
-                <Title>{props.title}</Title>
-                <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
-              </Top>
-              <Description>
-                <ExperienceAnExquisit>{props.description}</ExperienceAnExquisit>
-              </Description>
-              <DividerHorizontal orientation="horizontal" />
-              <Colors>
-                <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
-                <Colorswatches>
-                  <Color1
-                    src={`assets/images/ProductDialog_color1.png`}
+              </IconX>
+            </Icon1>
+          </Close>
+          <Contentcontainer>
+            <Productinfo>
+              <Thumbscontainer>
+                <Imagecontainer>
+                  <ProductImage
+                    src={props.image.src}
                     loading="lazy"
-                    alt={'color1'}
+                    alt={props.image.alt}
                   />
-                  <Color2
-                    src={`assets/images/ProductDialog_color2.png`}
+                </Imagecontainer>
+                <Thumbscarousel>
+                  <ProductImage1
+                    src={props.image.src}
                     loading="lazy"
-                    alt={'color2'}
+                    alt={props.image.alt}
                   />
-                  <Color3
-                    src={`assets/images/ProductDialog_color3.png`}
+                  <ProductImage2
+                    src={props.image.src}
                     loading="lazy"
-                    alt={'color3'}
+                    alt={props.image.alt}
                   />
-                </Colorswatches>
-              </Colors>
-            </Details>
-          </Productinfo>
-          <Productstable>
-            <Table1 />
-          </Productstable>
-        </Contentcontainer>
-      </Pagecontainer>
-    </ProductDialog1>
+                  <ProductImage3
+                    src={props.image.src}
+                    loading="lazy"
+                    alt={props.image.alt}
+                  />
+                  <ProductImage4
+                    src={props.image.src}
+                    loading="lazy"
+                    alt={props.image.alt}
+                  />
+                </Thumbscarousel>
+              </Thumbscontainer>
+              <Details>
+                <Top>
+                  <Title>{props.title}</Title>
+                  <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
+                </Top>
+                <Description>
+                  <ExperienceAnExquisit>
+                    {props.description}
+                  </ExperienceAnExquisit>
+                </Description>
+                <DividerHorizontal orientation="horizontal" />
+                <Colors>
+                  <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
+                  <Colorswatches>
+                    <Color1
+                      src={`assets/images/ProductDialog_color1.png`}
+                      loading="lazy"
+                      alt={'color1'}
+                    />
+                    <Color2
+                      src={`assets/images/ProductDialog_color2.png`}
+                      loading="lazy"
+                      alt={'color2'}
+                    />
+                    <Color3
+                      src={`assets/images/ProductDialog_color3.png`}
+                      loading="lazy"
+                      alt={'color3'}
+                    />
+                  </Colorswatches>
+                </Colors>
+              </Details>
+            </Productinfo>
+            <Productstable>
+              <Table1 />
+            </Productstable>
+          </Contentcontainer>
+        </Pagecontainer>
+      </ProductDialog1>
+    )
   );
 }
 
