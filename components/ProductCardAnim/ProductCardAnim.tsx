@@ -449,7 +449,7 @@ function ProductCardAnim(props: ProductCardAnimProps): JSX.Element {
           <Imagecontainer data={data} style={{ ...ImagecontainerStateStyles }}>
             <ProductImage
               data={data}
-              src={`assets/images/ProductCard_Product_Image.png`}
+              src={props.image.src}
               loading="lazy"
               alt={'Product Image'}
               style={{ ...ProductImageStateStyles }}
@@ -471,15 +471,13 @@ function ProductCardAnim(props: ProductCardAnimProps): JSX.Element {
               data={data}
               style={{ ...TitlecontainerStateStyles }}
             >
-              <ProductTitle>{`Surface Pro 9`}</ProductTitle>
+              <ProductTitle>{props.title}</ProductTitle>
             </Titlecontainer>
             <Detailscontainer
               data={data}
               style={{ ...DetailscontainerStateStyles }}
             >
-              <Description>
-                {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-              </Description>
+              <Description>{props.description}</Description>
             </Detailscontainer>
             <Button1 data={data} style={{ ...Button1StateStyles }}>
               <ButtonContained
