@@ -212,7 +212,7 @@ const ButtonContained: any = styled(Button, {
 }));
 
 function ProductCardNew(props: ProductCardNewProps): JSX.Element {
-  const { data } = useProductCardNew();
+  const { data, fns } = useProductCardNew();
 
   return (
     <StateDefault className={props.className}>

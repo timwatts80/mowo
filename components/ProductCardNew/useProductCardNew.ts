@@ -11,9 +11,19 @@
  *
  **********************************************************************/
 
-import React from 'react';
+import React, { useState } from 'react';
 const useProductCardNew = () => {
-  const data: any = {};
+
+  const [isHover, setIsHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
+  const data: any = { handleMouseEnter, handleMouseLeave, isHover};
 
   const fns: any = {};
 
