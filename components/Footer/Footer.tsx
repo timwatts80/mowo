@@ -33,9 +33,7 @@ const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   height: 'auto',
 }));
 
-const Cols: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Cols: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -46,16 +44,9 @@ const Cols: any = styled('div', {
   padding: `45px 60px 30px 60px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `229px`,
   margin: '0 auto',
   overflow: `hidden`,
-  maxWidth:
-    data.currentVariant === 'ScreenTablet'
-      ? `unset`
-      : data.currentVariant === 'ScreenMobile'
-      ? `unset`
-      : `1440px`,
-}));
+});
 
 const Frame168: any = styled('div')({
   borderRadius: `0px`,
@@ -64,7 +55,7 @@ const Frame168: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `center`,
-  alignItems: `flex-start`,
+  alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
@@ -78,7 +69,7 @@ const LeftRows: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: `flex-start`,
+  alignItems: `flex-end`,
   padding: `0px`,
   boxSizing: `border-box`,
   flex: `1`,
@@ -91,12 +82,11 @@ const LogoSocial: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
   margin: `0px`,
   overflow: `hidden`,
 });
@@ -107,11 +97,11 @@ const LogoContainer: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-start`,
+  justifyContent: `flex-end`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  flex: `1`,
+  alignSelf: `stretch`,
   height: `79px`,
   margin: `0px`,
 });
@@ -129,7 +119,7 @@ const Logo: any = styled('div')({
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  width: `227px`,
+  width: `339px`,
   margin: `0px`,
   overflow: `hidden`,
 });
@@ -140,12 +130,12 @@ const Social: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-start`,
+  justifyContent: `space-between`,
   alignItems: `center`,
   padding: `0px 30px`,
   boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px 0px 0px 10px`,
+  alignSelf: `stretch`,
+  margin: `10px 0px 0px 0px`,
   overflow: `hidden`,
 });
 
@@ -199,7 +189,7 @@ const InstagramContainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   height: `30px`,
-  margin: `0px 0px 0px 45px`,
+  margin: `0px`,
   overflow: `hidden`,
 });
 
@@ -254,7 +244,7 @@ const LinkedinContainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   height: `30px`,
-  margin: `0px 0px 0px 45px`,
+  margin: `0px`,
   overflow: `hidden`,
 });
 
@@ -293,7 +283,7 @@ const YoutubeContainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   height: `30px`,
-  margin: `0px 0px 0px 45px`,
+  margin: `0px`,
   overflow: `hidden`,
 });
 
@@ -491,7 +481,7 @@ const Stack: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `10px 0px 0px 0px`,
+  margin: `30px 0px 0px 0px`,
   overflow: `hidden`,
 });
 
@@ -501,7 +491,7 @@ const Frame1681: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-start`,
+  justifyContent: `center`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
@@ -2335,7 +2325,7 @@ function Footer(props: FooterProps): JSX.Element {
     <ScreenDesktop className={props.className}>
       {!(data.currentVariant === 'ScreenTablet') &&
         !(data.currentVariant === 'ScreenMobile') && (
-          <Cols data={data}>
+          <Cols>
             <Frame168>
               <LeftRows>
                 <LogoSocial>
