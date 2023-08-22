@@ -13,7 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
-import { Divider, SvgIcon } from '@mui/material';
+import { Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Table from 'components/Table/Table';
 import { ProductDialogProps } from 'types';
@@ -504,29 +504,6 @@ const Button1: any = styled('div')(({ theme }: any) => ({
   margin: `0px 0px 0px 8px`,
 }));
 
-const MaskedIcon1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `18px`,
-  height: `22px`,
-  margin: `0px 0px 0px 8px`,
-});
-
-const IconRight2: any = styled(SvgIcon)({
-  width: `24px`,
-  height: `24px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `-1px`,
-});
-
 function ProductDialog(props: ProductDialogProps): JSX.Element {
   return (
     props.open && (
@@ -625,15 +602,6 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
                     </IconLeft>
                   </MaskedIcon>
                   <Button1>{`Download Product Sheet`}</Button1>
-                  {false && (
-                    <MaskedIcon1>
-                      <IconRight2
-                        fontSize={'inherit'}
-                        htmlColor="undefined"
-                        component={IconRight1}
-                      />
-                    </MaskedIcon1>
-                  )}
                 </Base>
               </ButtonContained>
             </Frame156>
