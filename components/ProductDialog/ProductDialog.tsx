@@ -31,6 +31,7 @@ const ProductDialog1: any = styled('div')(({ theme }: any) => ({
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
+  zIndex: `9000`,
 }));
 
 const Pagecontainer: any = styled('div')({
@@ -76,7 +77,6 @@ const Icon1: any = styled('div')({
   width: `28px`,
   height: `28px`,
   margin: `0px`,
-  cursor: `pointer`,
 });
 
 const IconX: any = styled('div')({
@@ -408,7 +408,7 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
     <ProductDialog1 className={props.className}>
       <Pagecontainer>
         <Close>
-          <Icon1 onClick={props.onClose}>
+          <Icon1>
             <IconX>
               <Close1
                 src={`assets/images/ProductDialog_Close.png`}
@@ -423,41 +423,43 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
             <Thumbscontainer>
               <Imagecontainer>
                 <ProductImage
-                  src={props.image.src}
+                  src={`assets/images/ProductDialog_product_image.png`}
                   loading="lazy"
-                  alt={props.image.alt}
+                  alt={'product image'}
                 />
               </Imagecontainer>
               <Thumbscarousel>
                 <ProductImage1
-                  src={props.image.src}
+                  src={`assets/images/ProductDialog_product_image_1.png`}
                   loading="lazy"
-                  alt={props.image.alt}
+                  alt={'product image'}
                 />
                 <ProductImage2
-                  src={props.image.src}
+                  src={`assets/images/ProductDialog_product_image_2.png`}
                   loading="lazy"
-                  alt={props.image.alt}
+                  alt={'product image'}
                 />
                 <ProductImage3
-                  src={props.image.src}
+                  src={`assets/images/ProductDialog_product_image_3.png`}
                   loading="lazy"
-                  alt={props.image.alt}
+                  alt={'product image'}
                 />
                 <ProductImage4
-                  src={props.image.src}
+                  src={`assets/images/ProductDialog_product_image_4.png`}
                   loading="lazy"
-                  alt={props.image.alt}
+                  alt={'product image'}
                 />
               </Thumbscarousel>
             </Thumbscontainer>
             <Details>
               <Top>
-                <Title>{props.title}</Title>
+                <Title>{`Fancy Fusion`}</Title>
                 <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
               </Top>
               <Description>
-                <ExperienceAnExquisit>{props.description}</ExperienceAnExquisit>
+                <ExperienceAnExquisit>
+                  {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+                </ExperienceAnExquisit>
               </Description>
               <DividerHorizontal orientation="horizontal" />
               <Colors>
