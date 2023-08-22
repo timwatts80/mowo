@@ -1758,259 +1758,257 @@ const DividerHorizontal20: any = styled(Divider)(({ theme }: any) => ({
 
 function ProductDialog(props: ProductDialogProps): JSX.Element {
   return (
-    props.open && (
-      <ProductDialog1 className={props.className}>
-        <Pagecontainer>
-          <Close>
-            <Icon1 onClick={props.onClose}>
-              <IconX>
-                <Close1
-                  src={`assets/images/ProductDialog_Close.png`}
+    <ProductDialog1 className={props.className}>
+      <Pagecontainer>
+        <Close>
+          <Icon1 onClick={props.onClose}>
+            <IconX>
+              <Close1
+                src={`assets/images/ProductDialog_Close.png`}
+                loading="lazy"
+                alt={'Close'}
+              />
+            </IconX>
+          </Icon1>
+        </Close>
+        <Contentcontainer>
+          <Productinfo>
+            <Thumbscontainer>
+              <Imagecontainer>
+                <ProductImage
+                  src={`assets/images/ProductDialog_product_image.png`}
                   loading="lazy"
-                  alt={'Close'}
+                  alt={'product image'}
                 />
-              </IconX>
-            </Icon1>
-          </Close>
-          <Contentcontainer>
-            <Productinfo>
-              <Thumbscontainer>
-                <Imagecontainer>
-                  <ProductImage
-                    src={props.image.src}
+              </Imagecontainer>
+              <Thumbscarousel>
+                <ProductImage1
+                  src={`assets/images/ProductDialog_product_image_1.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+                <ProductImage2
+                  src={`assets/images/ProductDialog_product_image_2.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+                <ProductImage3
+                  src={`assets/images/ProductDialog_product_image_3.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+                <ProductImage4
+                  src={`assets/images/ProductDialog_product_image_4.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+              </Thumbscarousel>
+            </Thumbscontainer>
+            <Details>
+              <Top>
+                <Title>{`Fancy Fusion`}</Title>
+                <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
+              </Top>
+              <Description>
+                <ExperienceAnExquisit>
+                  {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+                </ExperienceAnExquisit>
+              </Description>
+              <DividerHorizontal orientation="horizontal" />
+              <Colors>
+                <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
+                <Colorswatches>
+                  <Color1
+                    src={`assets/images/ProductDialog_color1.png`}
                     loading="lazy"
-                    alt={props.image.alt}
+                    alt={'color1'}
                   />
-                </Imagecontainer>
-                <Thumbscarousel>
-                  <ProductImage1
-                    src={props.image.src}
+                  <Color2
+                    src={`assets/images/ProductDialog_color2.png`}
                     loading="lazy"
-                    alt={props.image.alt}
+                    alt={'color2'}
                   />
-                  <ProductImage2
-                    src={props.image.src}
+                  <Color3
+                    src={`assets/images/ProductDialog_color3.png`}
                     loading="lazy"
-                    alt={props.image.alt}
+                    alt={'color3'}
                   />
-                  <ProductImage3
-                    src={props.image.src}
-                    loading="lazy"
-                    alt={props.image.alt}
-                  />
-                  <ProductImage4
-                    src={props.image.src}
-                    loading="lazy"
-                    alt={props.image.alt}
-                  />
-                </Thumbscarousel>
-              </Thumbscontainer>
-              <Details>
-                <Top>
-                  <Title>{props.title}</Title>
-                  <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
-                </Top>
-                <Description>
-                  <ExperienceAnExquisit>
-                    {props.description}
-                  </ExperienceAnExquisit>
-                </Description>
-                <DividerHorizontal orientation="horizontal" />
-                <Colors>
-                  <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
-                  <Colorswatches>
-                    <Color1
-                      src={`assets/images/ProductDialog_color1.png`}
-                      loading="lazy"
-                      alt={'color1'}
-                    />
-                    <Color2
-                      src={`assets/images/ProductDialog_color2.png`}
-                      loading="lazy"
-                      alt={'color2'}
-                    />
-                    <Color3
-                      src={`assets/images/ProductDialog_color3.png`}
-                      loading="lazy"
-                      alt={'color3'}
-                    />
-                  </Colorswatches>
-                </Colors>
-              </Details>
-            </Productinfo>
-            <Productstable>
-              <Table>
-                <Frame149>
-                  <Frame147>
-                    <TableHeader>
-                      <Label>
-                        <Body1>{`Body 1`}</Body1>
-                      </Label>
-                    </TableHeader>
-                    <TableHeader1>
-                      <Label1>
-                        <Body11>{`Body 1`}</Body11>
-                      </Label1>
-                    </TableHeader1>
-                    <TableHeader2>
-                      <Label2>
-                        <Body12>{`Body 1`}</Body12>
-                      </Label2>
-                    </TableHeader2>
-                    <TableHeader3>
-                      <Label3>
-                        <Body13>{`Body 1`}</Body13>
-                      </Label3>
-                    </TableHeader3>
-                    <TableHeader4>
-                      <Label4>
-                        <Body14>{`Body 1`}</Body14>
-                      </Label4>
-                    </TableHeader4>
-                  </Frame147>
-                </Frame149>
-                <Frame152>
-                  <Frame150>
-                    <TableRow>
-                      <Label5>
-                        <Body15>{`Body 1`}</Body15>
-                      </Label5>
-                      <DividerHorizontal1 orientation="horizontal" />
-                    </TableRow>
-                    <TableRow1>
-                      <Label6>
-                        <Body16>{`Body 1`}</Body16>
-                      </Label6>
-                      <DividerHorizontal2 orientation="horizontal" />
-                    </TableRow1>
-                    <TableRow2>
-                      <Label7>
-                        <Body17>{`Body 1`}</Body17>
-                      </Label7>
-                      <DividerHorizontal3 orientation="horizontal" />
-                    </TableRow2>
-                    <TableRow3>
-                      <Label8>
-                        <Body18>{`Body 1`}</Body18>
-                      </Label8>
-                      <DividerHorizontal4 orientation="horizontal" />
-                    </TableRow3>
-                    <TableRow4>
-                      <Label9>
-                        <Body19>{`Body 1`}</Body19>
-                      </Label9>
-                      <DividerHorizontal5 orientation="horizontal" />
-                    </TableRow4>
-                  </Frame150>
-                </Frame152>
-                <Frame153>
-                  <Frame1501>
-                    <TableRow5>
-                      <Label10>
-                        <Body110>{`Body 1`}</Body110>
-                      </Label10>
-                      <DividerHorizontal6 orientation="horizontal" />
-                    </TableRow5>
-                    <TableRow6>
-                      <Label11>
-                        <Body111>{`Body 1`}</Body111>
-                      </Label11>
-                      <DividerHorizontal7 orientation="horizontal" />
-                    </TableRow6>
-                    <TableRow7>
-                      <Label12>
-                        <Body112>{`Body 1`}</Body112>
-                      </Label12>
-                      <DividerHorizontal8 orientation="horizontal" />
-                    </TableRow7>
-                    <TableRow8>
-                      <Label13>
-                        <Body113>{`Body 1`}</Body113>
-                      </Label13>
-                      <DividerHorizontal9 orientation="horizontal" />
-                    </TableRow8>
-                    <TableRow9>
-                      <Label14>
-                        <Body114>{`Body 1`}</Body114>
-                      </Label14>
-                      <DividerHorizontal10 orientation="horizontal" />
-                    </TableRow9>
-                  </Frame1501>
-                </Frame153>
-                <Frame154>
-                  <Frame1502>
-                    <TableRow10>
-                      <Label15>
-                        <Body115>{`Body 1`}</Body115>
-                      </Label15>
-                      <DividerHorizontal11 orientation="horizontal" />
-                    </TableRow10>
-                    <TableRow11>
-                      <Label16>
-                        <Body116>{`Body 1`}</Body116>
-                      </Label16>
-                      <DividerHorizontal12 orientation="horizontal" />
-                    </TableRow11>
-                    <TableRow12>
-                      <Label17>
-                        <Body117>{`Body 1`}</Body117>
-                      </Label17>
-                      <DividerHorizontal13 orientation="horizontal" />
-                    </TableRow12>
-                    <TableRow13>
-                      <Label18>
-                        <Body118>{`Body 1`}</Body118>
-                      </Label18>
-                      <DividerHorizontal14 orientation="horizontal" />
-                    </TableRow13>
-                    <TableRow14>
-                      <Label19>
-                        <Body119>{`Body 1`}</Body119>
-                      </Label19>
-                      <DividerHorizontal15 orientation="horizontal" />
-                    </TableRow14>
-                  </Frame1502>
-                </Frame154>
-                <Frame155>
-                  <Frame1503>
-                    <TableRow15>
-                      <Label20>
-                        <Body120>{`Body 1`}</Body120>
-                      </Label20>
-                      <DividerHorizontal16 orientation="horizontal" />
-                    </TableRow15>
-                    <TableRow16>
-                      <Label21>
-                        <Body121>{`Body 1`}</Body121>
-                      </Label21>
-                      <DividerHorizontal17 orientation="horizontal" />
-                    </TableRow16>
-                    <TableRow17>
-                      <Label22>
-                        <Body122>{`Body 1`}</Body122>
-                      </Label22>
-                      <DividerHorizontal18 orientation="horizontal" />
-                    </TableRow17>
-                    <TableRow18>
-                      <Label23>
-                        <Body123>{`Body 1`}</Body123>
-                      </Label23>
-                      <DividerHorizontal19 orientation="horizontal" />
-                    </TableRow18>
-                    <TableRow19>
-                      <Label24>
-                        <Body124>{`Body 1`}</Body124>
-                      </Label24>
-                      <DividerHorizontal20 orientation="horizontal" />
-                    </TableRow19>
-                  </Frame1503>
-                </Frame155>
-              </Table>
-            </Productstable>
-          </Contentcontainer>
-        </Pagecontainer>
-      </ProductDialog1>
-    )
+                </Colorswatches>
+              </Colors>
+            </Details>
+          </Productinfo>
+          <Productstable>
+            <Table>
+              <Frame149>
+                <Frame147>
+                  <TableHeader>
+                    <Label>
+                      <Body1>{`Body 1`}</Body1>
+                    </Label>
+                  </TableHeader>
+                  <TableHeader1>
+                    <Label1>
+                      <Body11>{`Body 1`}</Body11>
+                    </Label1>
+                  </TableHeader1>
+                  <TableHeader2>
+                    <Label2>
+                      <Body12>{`Body 1`}</Body12>
+                    </Label2>
+                  </TableHeader2>
+                  <TableHeader3>
+                    <Label3>
+                      <Body13>{`Body 1`}</Body13>
+                    </Label3>
+                  </TableHeader3>
+                  <TableHeader4>
+                    <Label4>
+                      <Body14>{`Body 1`}</Body14>
+                    </Label4>
+                  </TableHeader4>
+                </Frame147>
+              </Frame149>
+              <Frame152>
+                <Frame150>
+                  <TableRow>
+                    <Label5>
+                      <Body15>{`Body 1`}</Body15>
+                    </Label5>
+                    <DividerHorizontal1 orientation="horizontal" />
+                  </TableRow>
+                  <TableRow1>
+                    <Label6>
+                      <Body16>{`Body 1`}</Body16>
+                    </Label6>
+                    <DividerHorizontal2 orientation="horizontal" />
+                  </TableRow1>
+                  <TableRow2>
+                    <Label7>
+                      <Body17>{`Body 1`}</Body17>
+                    </Label7>
+                    <DividerHorizontal3 orientation="horizontal" />
+                  </TableRow2>
+                  <TableRow3>
+                    <Label8>
+                      <Body18>{`Body 1`}</Body18>
+                    </Label8>
+                    <DividerHorizontal4 orientation="horizontal" />
+                  </TableRow3>
+                  <TableRow4>
+                    <Label9>
+                      <Body19>{`Body 1`}</Body19>
+                    </Label9>
+                    <DividerHorizontal5 orientation="horizontal" />
+                  </TableRow4>
+                </Frame150>
+              </Frame152>
+              <Frame153>
+                <Frame1501>
+                  <TableRow5>
+                    <Label10>
+                      <Body110>{`Body 1`}</Body110>
+                    </Label10>
+                    <DividerHorizontal6 orientation="horizontal" />
+                  </TableRow5>
+                  <TableRow6>
+                    <Label11>
+                      <Body111>{`Body 1`}</Body111>
+                    </Label11>
+                    <DividerHorizontal7 orientation="horizontal" />
+                  </TableRow6>
+                  <TableRow7>
+                    <Label12>
+                      <Body112>{`Body 1`}</Body112>
+                    </Label12>
+                    <DividerHorizontal8 orientation="horizontal" />
+                  </TableRow7>
+                  <TableRow8>
+                    <Label13>
+                      <Body113>{`Body 1`}</Body113>
+                    </Label13>
+                    <DividerHorizontal9 orientation="horizontal" />
+                  </TableRow8>
+                  <TableRow9>
+                    <Label14>
+                      <Body114>{`Body 1`}</Body114>
+                    </Label14>
+                    <DividerHorizontal10 orientation="horizontal" />
+                  </TableRow9>
+                </Frame1501>
+              </Frame153>
+              <Frame154>
+                <Frame1502>
+                  <TableRow10>
+                    <Label15>
+                      <Body115>{`Body 1`}</Body115>
+                    </Label15>
+                    <DividerHorizontal11 orientation="horizontal" />
+                  </TableRow10>
+                  <TableRow11>
+                    <Label16>
+                      <Body116>{`Body 1`}</Body116>
+                    </Label16>
+                    <DividerHorizontal12 orientation="horizontal" />
+                  </TableRow11>
+                  <TableRow12>
+                    <Label17>
+                      <Body117>{`Body 1`}</Body117>
+                    </Label17>
+                    <DividerHorizontal13 orientation="horizontal" />
+                  </TableRow12>
+                  <TableRow13>
+                    <Label18>
+                      <Body118>{`Body 1`}</Body118>
+                    </Label18>
+                    <DividerHorizontal14 orientation="horizontal" />
+                  </TableRow13>
+                  <TableRow14>
+                    <Label19>
+                      <Body119>{`Body 1`}</Body119>
+                    </Label19>
+                    <DividerHorizontal15 orientation="horizontal" />
+                  </TableRow14>
+                </Frame1502>
+              </Frame154>
+              <Frame155>
+                <Frame1503>
+                  <TableRow15>
+                    <Label20>
+                      <Body120>{`Body 1`}</Body120>
+                    </Label20>
+                    <DividerHorizontal16 orientation="horizontal" />
+                  </TableRow15>
+                  <TableRow16>
+                    <Label21>
+                      <Body121>{`Body 1`}</Body121>
+                    </Label21>
+                    <DividerHorizontal17 orientation="horizontal" />
+                  </TableRow16>
+                  <TableRow17>
+                    <Label22>
+                      <Body122>{`Body 1`}</Body122>
+                    </Label22>
+                    <DividerHorizontal18 orientation="horizontal" />
+                  </TableRow17>
+                  <TableRow18>
+                    <Label23>
+                      <Body123>{`Body 1`}</Body123>
+                    </Label23>
+                    <DividerHorizontal19 orientation="horizontal" />
+                  </TableRow18>
+                  <TableRow19>
+                    <Label24>
+                      <Body124>{`Body 1`}</Body124>
+                    </Label24>
+                    <DividerHorizontal20 orientation="horizontal" />
+                  </TableRow19>
+                </Frame1503>
+              </Frame155>
+            </Table>
+          </Productstable>
+        </Contentcontainer>
+      </Pagecontainer>
+    </ProductDialog1>
   );
 }
 
