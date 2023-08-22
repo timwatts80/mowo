@@ -236,6 +236,7 @@ const Productdialogcontain: any = styled('div')({
   padding: `10px`,
   boxSizing: `border-box`,
   margin: `0px 0px 0px 18px`,
+  zIndex: `9000`,
 });
 
 const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
@@ -289,7 +290,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         onClose={fns.toggleDialog}
       >
         <Productdialogcontain>
-          <ProductDialog1 open={data.isDialogOpen} onClose={fns.toggleDialog} {...props} />
+          <ProductDialog1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
         </Productdialogcontain>
       </Dialog>
     </ProductCard1>
