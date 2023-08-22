@@ -19,7 +19,7 @@ import ProductDialog from 'components/ProductDialog/ProductDialog';
 import { ProductCardProps } from 'types';
 import useProductCard from 'components/ProductCard/useProductCard';
 
-const ProductCard1: any = styled('div')({
+const StateDefault: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -43,8 +43,6 @@ const Productcardcontainer: any = styled('div')({
   alignItems: `flex-start`,
   padding: `10px`,
   boxSizing: `border-box`,
-  width: `331px`,
-  height: `516px`,
   margin: `0px`,
 });
 
@@ -236,7 +234,6 @@ const Productdialogcontain: any = styled('div')({
   padding: `10px`,
   boxSizing: `border-box`,
   margin: `0px 0px 0px 18px`,
-  zIndex: `9000`,
 });
 
 const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
@@ -248,14 +245,14 @@ function ProductCard(props: ProductCardProps): JSX.Element {
   const { data, fns } = useProductCard();
 
   return (
-    <ProductCard1 className={props.className}>
+    <StateDefault className={props.className}>
       <Productcardcontainer>
         <ProductCardNew>
           <Imagecontainer>
             <ProductImage
-              src={props.image.src}
+              src={`assets/images/ProductCard_Product_Image.png`}
               loading="lazy"
-              alt={props.image.alt}
+              alt={'Product Image'}
             />
           </Imagecontainer>
           {false && (
@@ -265,10 +262,12 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           )}
           <Productinfocontainer>
             <Titlecontainer>
-              <ProductTitle>{props.title}</ProductTitle>
+              <ProductTitle>{`Surface Pro 9`}</ProductTitle>
             </Titlecontainer>
             <Detailscontainer>
-              <Description>{props.description}</Description>
+              <Description>
+                {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
+              </Description>
             </Detailscontainer>
             <Button1>
               <ButtonContained
@@ -276,7 +275,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
                 size={'large'}
                 color={'info'}
                 disabled={false}
-                onClick={fns.toggleDialog}
+                onClick={data.isDialogOpen}
               >
                 {'Device Details'}
               </ButtonContained>
@@ -284,11 +283,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           </Productinfocontainer>
         </ProductCardNew>
       </Productcardcontainer>
-      <Dialog
-        maxWidth={false}
-        open={data.isDialogOpen}
-        onClose={fns.toggleDialog}
-      >
+      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
         <Productdialogcontain>
           <ProductDialog1
             open={data.isDialogOpen}
@@ -297,7 +292,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           />
         </Productdialogcontain>
       </Dialog>
-    </ProductCard1>
+    </StateDefault>
   );
 }
 
