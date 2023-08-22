@@ -13,7 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
-import { Divider } from '@mui/material';
+import { Divider, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Table from 'components/Table/Table';
 import { ProductDialogProps } from 'types';
@@ -44,7 +44,6 @@ const Pagecontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   flex: `1`,
-  height: `864px`,
   margin: `0px`,
 });
 
@@ -76,7 +75,6 @@ const Icon1: any = styled('div')({
   width: `28px`,
   height: `28px`,
   margin: `0px`,
-  cursor: `pointer`,
 });
 
 const IconX: any = styled('div')({
@@ -403,95 +401,133 @@ const Table1: any = styled(Table)(({ theme }: any) => ({
   margin: `0px`,
 }));
 
+const Frame156: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-end`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `32px 0px 0px 0px`,
+});
+
+const ButtonContained: any = styled(Button)(({ theme }: any) => ({
+  margin: `0px`,
+  color: theme.palette['Warning']['Contrast'],
+  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Large'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Large'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Large'].textTransform,
+}));
+
 function ProductDialog(props: ProductDialogProps): JSX.Element {
   return (
-    props.open && (
-      <ProductDialog1 className={props.className}>
-        <Pagecontainer>
-          <Close>
-            <Icon1 onClick={props.onClose}>
-              <IconX>
-                <Close1
-                  src={`assets/images/ProductDialog_Close.png`}
+    <ProductDialog1 className={props.className}>
+      <Pagecontainer>
+        <Close>
+          <Icon1>
+            <IconX>
+              <Close1
+                src={`assets/images/ProductDialog_Close.png`}
+                loading="lazy"
+                alt={'Close'}
+              />
+            </IconX>
+          </Icon1>
+        </Close>
+        <Contentcontainer>
+          <Productinfo>
+            <Thumbscontainer>
+              <Imagecontainer>
+                <ProductImage
+                  src={`assets/images/ProductDialog_product_image.png`}
                   loading="lazy"
-                  alt={'Close'}
+                  alt={'product image'}
                 />
-              </IconX>
-            </Icon1>
-          </Close>
-          <Contentcontainer>
-            <Productinfo>
-              <Thumbscontainer>
-                <Imagecontainer>
-                  <ProductImage
-                    src={props.image.src}
+              </Imagecontainer>
+              <Thumbscarousel>
+                <ProductImage1
+                  src={`assets/images/ProductDialog_product_image_1.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+                <ProductImage2
+                  src={`assets/images/ProductDialog_product_image_2.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+                <ProductImage3
+                  src={`assets/images/ProductDialog_product_image_3.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+                <ProductImage4
+                  src={`assets/images/ProductDialog_product_image_4.png`}
+                  loading="lazy"
+                  alt={'product image'}
+                />
+              </Thumbscarousel>
+            </Thumbscontainer>
+            <Details>
+              <Top>
+                <Title>{`Fancy Fusion`}</Title>
+                <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
+              </Top>
+              <Description>
+                <ExperienceAnExquisit>
+                  {`Experience an exquisite blend of flavors in Fancy Fusion, where elegance meets innovation. Savor the refined taste of this captivating juice, crafted with finesse for a truly sophisticated palate.`}
+                </ExperienceAnExquisit>
+              </Description>
+              <DividerHorizontal orientation="horizontal" />
+              <Colors>
+                <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
+                <Colorswatches>
+                  <Color1
+                    src={`assets/images/ProductDialog_color1.png`}
                     loading="lazy"
-                    alt={'product image'}
+                    alt={'color1'}
                   />
-                </Imagecontainer>
-                <Thumbscarousel>
-                  <ProductImage1
-                    src={props.image.src}
+                  <Color2
+                    src={`assets/images/ProductDialog_color2.png`}
                     loading="lazy"
-                    alt={props.image.alt}
+                    alt={'color2'}
                   />
-                  <ProductImage2
-                    src={props.image.src}
+                  <Color3
+                    src={`assets/images/ProductDialog_color3.png`}
                     loading="lazy"
-                    alt={props.image.alt}
+                    alt={'color3'}
                   />
-                  <ProductImage3
-                    src={props.image.src}
-                    loading="lazy"
-                    alt={props.image.alt}
-                  />
-                  <ProductImage4
-                    src={props.image.src}
-                    loading="lazy"
-                    alt={props.image.alt}
-                  />
-                </Thumbscarousel>
-              </Thumbscontainer>
-              <Details>
-                <Top>
-                  <Title>{props.title}</Title>
-                  <Title1>{`Lorem Ipsum Dolor Sit Amet`}</Title1>
-                </Top>
-                <Description>
-                  <ExperienceAnExquisit>
-                    {props.description}
-                  </ExperienceAnExquisit>
-                </Description>
-                <DividerHorizontal orientation="horizontal" />
-                <Colors>
-                  <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
-                  <Colorswatches>
-                    <Color1
-                      src={`assets/images/ProductDialog_color1.png`}
-                      loading="lazy"
-                      alt={'color1'}
-                    />
-                    <Color2
-                      src={`assets/images/ProductDialog_color2.png`}
-                      loading="lazy"
-                      alt={'color2'}
-                    />
-                    <Color3
-                      src={`assets/images/ProductDialog_color3.png`}
-                      loading="lazy"
-                      alt={'color3'}
-                    />
-                  </Colorswatches>
-                </Colors>
-              </Details>
-            </Productinfo>
-            <Productstable>
-              <Table1 />
-            </Productstable>
-          </Contentcontainer>
-        </Pagecontainer>
-      </ProductDialog1>
-    )
+                </Colorswatches>
+              </Colors>
+            </Details>
+          </Productinfo>
+          <Productstable>
+            <Table1 />
+          </Productstable>
+          <Frame156>
+            <ButtonContained
+              variant="contained"
+              size={'large'}
+              color={'warning'}
+              disabled={false}
+            >
+              {'Download Product Sheet'}
+            </ButtonContained>
+          </Frame156>
+        </Contentcontainer>
+      </Pagecontainer>
+    </ProductDialog1>
   );
 }
 
