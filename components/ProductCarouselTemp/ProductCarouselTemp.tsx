@@ -15,11 +15,13 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import ProductCard from 'components/ProductCard/ProductCard';
+import ProductDialog from 'components/ProductDialog/ProductDialog';
 import { ProductCarouselTempProps } from 'types';
 import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCarouselTemp';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Product } from 'components/Product/Product';
 
 const ProductList1: any = styled('div')({
   display: `flex`,
@@ -75,11 +77,16 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
   };
 
   return (
-    <div style={{ width: '80%', maxWidth: '1440px', margin: '0 auto',}}>
+    <div style={{ width: '80%', maxWidth: '1440px', margin: '0 auto', }}>
       <Slider {...settings}>
         {data.products &&
           data.products.map((product: any, index: number) => {
-            return <ProductCard1 key={index} {...product} />;
+            return (
+              <div key={index}>
+
+                <ProductDialog {...product} />
+              </div>
+            );
           })}
       </Slider>
     </div>

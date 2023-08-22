@@ -63,6 +63,13 @@ export interface ProductDialogProps {
   className?: any;
   open: any;
   onClose: any;
+  product_id: number;
+  title: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
 };
 
 
