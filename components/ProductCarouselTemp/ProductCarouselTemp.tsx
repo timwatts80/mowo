@@ -81,12 +81,7 @@ function ProductCarouselTemp(props: ProductCarouselTempProps): JSX.Element {
       <Slider {...settings}>
         {data.products &&
           data.products.map((product: any, index: number) => {
-            return (
-              <div key={index}>
-                <ProductCard1 {...product} />
-                <ProductDialog {...product} />
-              </div>
-            );
+            return <ProductCard1 key={index} {...product} />;
           })}
       </Slider>
     </div>
