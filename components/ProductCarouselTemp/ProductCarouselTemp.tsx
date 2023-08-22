@@ -15,7 +15,6 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import ProductCard from 'components/ProductCard/ProductCard';
-import ProductDialog from 'components/ProductDialog/ProductDialog';
 import { ProductCarouselTempProps } from 'types';
 import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCarouselTemp';
 import Slider from 'react-slick';
