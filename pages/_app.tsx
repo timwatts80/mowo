@@ -16,10 +16,10 @@ import DialogSample from 'components/DialogSample/DialogSample'
 import ProductCarouselTemp from 'components/ProductCarouselTemp/ProductCarouselTemp'
 import Menulinklist from 'components/Menulinklist/Menulinklist'
 import ProductCardList from 'components/ProductCardList/ProductCardList'
-import ProductCardNew from 'components/ProductCardNew/ProductCardNew'
 import { ProductList } from 'components/ProductList/ProductList'
 import { ProductCardListProps } from 'types'
 import ProductPageTest from 'components/ProductPageTest/ProductPageTest'
+import ProductCard from 'components/ProductCard/ProductCard'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -28,7 +28,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
-      <ProductCardList />
+      <ProductCard />
+      {/* <ProductCardList /> */}
       <ModernWorkplace />
       <ProductSectionSurfaceHubDevice />
       <CustomerCases />

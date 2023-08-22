@@ -28,9 +28,9 @@
 
 export interface ProductCardProps {
   className?: any;
-  products: any;
-  open: any;
-  onClose: any;
+  products?: ProductCardNewProps[];
+  open?: any;
+  onClose?: any;
 };
 
 
