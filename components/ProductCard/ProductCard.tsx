@@ -117,7 +117,7 @@ const Rectangle182: any = styled('div')(({ theme }: any) => ({
 
 const Productinfocontainer: any = styled('div')({
   backgroundColor: `rgba(192, 221, 128, 1)`,
-  boxShadow: `inset 0px 0px 30px rgba(153, 215, 18, 1), 0px 4px 30px rgba(238, 255, 200, 0.6)`,
+  boxShadow: `inset 0px 0px 30px rgba(153, 215, 18, 1)`,
   borderRadius: `0px 0px 10px 10px`,
   display: `flex`,
   position: `relative`,
