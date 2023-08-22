@@ -233,14 +233,15 @@ const ClientCaseStudySlide: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: data.currentVariant === 'ScreenMobile' ? `682px` : `520px`,
+  height: data.currentVariant === 'ScreenMobile' ? 'unset' : `520px`,
   margin: `30px 0px 0px 0px`,
 }));
 
 const CaseBackground: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  borderRadius: `16px`,
+  borderRadius:
+    data.currentVariant === 'ScreenMobile' ? `16px 16px 0px 0px` : `16px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -257,6 +258,7 @@ const CaseBackground: any = styled('div', {
       : data.currentVariant === 'ScreenMobile'
       ? `stretch`
       : 'unset',
+  height: data.currentVariant === 'ScreenMobile' ? `216px` : 'unset',
 }));
 
 const Image1: any = styled('img')({
@@ -270,37 +272,36 @@ const CaseContent: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
-  borderRadius: `15px`,
+  borderRadius:
+    data.currentVariant === 'ScreenMobile' ? `0px 0px 15px 15px` : `15px`,
   display: `flex`,
-  position: `absolute`,
+  position: data.currentVariant === 'ScreenMobile' ? `relative` : `absolute`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `flex-start`,
-  padding: data.currentVariant === 'ScreenMobile' ? `15px 25px` : `45px`,
+  padding: data.currentVariant === 'ScreenMobile' ? `20px 15px` : `45px`,
   boxSizing: `border-box`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? `315px`
-      : `660px`,
   left:
     data.currentVariant === 'ScreenTablet'
       ? `296px`
       : data.currentVariant === 'ScreenMobile'
-      ? `0px`
-      : `660px`,
+      ? 'unset'
+      : `678px`,
   top:
     data.currentVariant === 'ScreenTablet'
       ? `117px`
       : data.currentVariant === 'ScreenMobile'
-      ? `245px`
+      ? 'unset'
       : `198px`,
   overflow: `hidden`,
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+  margin: data.currentVariant === 'ScreenMobile' ? `0px` : 'unset',
 }));
 
-const CaseText: any = styled('div')({
+const CaseText: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -310,9 +311,20 @@ const CaseText: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? 'unset'
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `552px`,
   margin: `0px`,
-});
+  alignSelf:
+    data.currentVariant === 'ScreenTablet'
+      ? `stretch`
+      : data.currentVariant === 'ScreenMobile'
+      ? `stretch`
+      : 'unset',
+}));
 
 const ReykjavikUniversity: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
@@ -348,7 +360,9 @@ const WithMicrosoftSurface: any = styled('div')(({ theme }: any) => ({
   margin: `12px 0px 0px 0px`,
 }));
 
-const ButtonContained: any = styled('div')(({ theme }: any) => ({
+const ButtonContained: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   backgroundColor: theme.palette['Success']['Main'],
   boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
   borderRadius: `4px`,
@@ -362,6 +376,7 @@ const ButtonContained: any = styled('div')(({ theme }: any) => ({
   boxSizing: `border-box`,
   margin: `30px 0px 0px 0px`,
   overflow: `hidden`,
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
 const Base: any = styled('div')({
@@ -469,7 +484,7 @@ Success Stories`
               />
             </CaseBackground>
             <CaseContent data={data}>
-              <CaseText>
+              <CaseText data={data}>
                 <ReykjavikUniversity>
                   {`Reykjavik University`}
                 </ReykjavikUniversity>
@@ -477,7 +492,7 @@ Success Stories`
                   {`With Microsoft Surface Studio devices in all classrooms at Reykjavík University the organization has taken a digital leap into the future. Teachers are integrating new tools and techniques in their teaching that resonate with the 21st century skills.`}
                 </WithMicrosoftSurface>
               </CaseText>
-              <ButtonContained>
+              <ButtonContained data={data}>
                 <Base>
                   <MaskedIcon>
                     <DownloadIcon>
