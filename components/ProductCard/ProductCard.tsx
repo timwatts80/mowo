@@ -252,9 +252,9 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         <ProductCardNew>
           <Imagecontainer>
             <ProductImage
-              src={`assets/images/ProductCard_Product_Image.png`}
+              src={props.image.src}
               loading="lazy"
-              alt={'Product Image'}
+              alt={props.image.alt}
             />
           </Imagecontainer>
           {false && (
@@ -264,12 +264,10 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           )}
           <Productinfocontainer>
             <Titlecontainer>
-              <ProductTitle>{`Surface Pro 9`}</ProductTitle>
+              <ProductTitle>{props.title}</ProductTitle>
             </Titlecontainer>
             <Detailscontainer>
-              <Description>
-                {`Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.`}
-              </Description>
+              <Description>{props.description}</Description>
             </Detailscontainer>
             <Button1>
               <ButtonContained
