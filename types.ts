@@ -221,12 +221,12 @@ export interface ProductCardProps {
 
 export interface ProductCardNewProps {
   className?: any;
-  id: number;
-  title: string;
-  description: string;
-  image: {
-    src: string;
-    alt: string;
+  product_id?: number;
+  title?: string;
+  description?: string;
+  image?: {
+    src?: string;
+    alt?: string;
   };
 };
 

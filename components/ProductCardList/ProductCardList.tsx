@@ -118,11 +118,7 @@ function ProductCardList(props: ProductCardListProps): JSX.Element {
 
           {data.catalogitems &&
             data.catalogitems.map((item: any, index: number) => {
-              return (
-                <Productcardcontainer key={index}>
-                  <ProductCardNew1 {...item} />
-                </Productcardcontainer>
-              );
+              return <ProductCardNew1 key={index} {...item} />;
             })}
 
         <SlideRight onClick={fns.goRight}>

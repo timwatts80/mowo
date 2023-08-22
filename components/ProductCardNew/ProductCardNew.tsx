@@ -17,6 +17,7 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardNewProps } from 'types';
 import useProductCardNew from 'components/ProductCardNew/useProductCardNew';
+import useProductCardList from 'components/ProductCardNew/useProductCardNew';
 
 const StateDefault: any = styled('div')({
   borderRadius: `10px`,
