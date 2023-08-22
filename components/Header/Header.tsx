@@ -18,23 +18,25 @@ import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'types';
 import useHeader from 'components/Header/useHeader';
 
-const ScreenDesktop: any = styled('div')({
+const ScreenDesktop: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   backgroundColor: `rgba(255, 255, 255, 1)`,
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `0px`,
+  padding: data.currentVariant === 'ScreenMobile' ? `30px 20px` : `0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
   height: 'auto',
   margin: '0 auto',
   maxWidth: '1440px',
-});
+}));
 
 const Hero: any = styled('div')({
   borderRadius: `0px`,
@@ -60,10 +62,10 @@ const FillHero: any = styled('div', {
   isolation: `isolate`,
   flexDirection: data.currentVariant === 'ScreenMobile' ? `column` : `row`,
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? 'unset' : `stretch`,
+  alignSelf: `stretch`,
   margin: `0px`,
 }));
 
@@ -81,7 +83,12 @@ const LeftSide: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 10px` : `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
 }));
 
 const Text: any = styled('div')({
@@ -244,7 +251,12 @@ const Video: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 10px` : `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
 }));
 
 const Pic1: any = styled('img')({
@@ -334,38 +346,14 @@ const LeftSide1: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: `flex-start`,
+  justifyContent: `center`,
   alignItems: `center`,
-  padding: `45px 30px`,
+  padding: `45px 0px 60px 30px`,
   boxSizing: `border-box`,
-  width: `375px`,
-  height: `852px`,
-  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 10px` : `0px`,
+  flex: `1`,
+  margin: data.currentVariant === 'ScreenMobile' ? `10px 0px 0px 0px` : `0px`,
+  width: data.currentVariant === 'ScreenMobile' ? `379px` : 'unset',
 }));
-
-const Frame173: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Pic11: any = styled('img')({
-  height: `276px`,
-  width: `315px`,
-  objectFit: `cover`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
 
 const Text1: any = styled('div')({
   borderRadius: `0px`,
@@ -373,12 +361,12 @@ const Text1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: `center`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `30px 0px 0px 0px`,
+  margin: `0px`,
 });
 
 const EmpoweringTheModernW1Span1: any = styled('span')({
@@ -387,8 +375,8 @@ const EmpoweringTheModernW1Span1: any = styled('span')({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `46px`,
-  letterSpacing: `-2.76px`,
+  fontSize: `52px`,
+  letterSpacing: `-3.12px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -404,8 +392,8 @@ const EmpoweringTheModernW1Span2: any = styled('span')({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `46px`,
-  letterSpacing: `-2.76px`,
+  fontSize: `52px`,
+  letterSpacing: `-3.12px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -416,15 +404,15 @@ const EmpoweringTheModernW1Span2: any = styled('span')({
 });
 
 const EmpoweringTheModernW1: any = styled('div')({
-  textAlign: `center`,
+  textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(0, 0, 0, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `46px`,
-  letterSpacing: `-2.76px`,
+  fontSize: `52px`,
+  letterSpacing: `-3.12px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -432,21 +420,21 @@ const EmpoweringTheModernW1: any = styled('div')({
   margin: `0px`,
 });
 
-const TransformYouOrganiza: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
+const TransformYourOrganiz1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: `24px`,
+  fontSize: `20px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
   alignSelf: `stretch`,
-  margin: `22px 0px 0px 0px`,
+  margin: `20px 0px 0px 0px`,
 }));
 
 const Btns1: any = styled('div')({
@@ -456,11 +444,11 @@ const Btns1: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
+  alignItems: `flex-start`,
+  padding: `0px 90px 0px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `30px 0px 0px 0px`,
+  margin: `40px 0px 0px 0px`,
 });
 
 const BtnsPosition1: any = styled('div')({
@@ -470,7 +458,7 @@ const BtnsPosition1: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
+  alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
@@ -515,171 +503,6 @@ const ButtonOutlined1: any = styled(Button, {
     theme.typography['Components']['Button Font - Large'].textTransform,
 }));
 
-const LeftSide2: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `45px 0px 60px 30px`,
-  boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px`,
-  width: data.currentVariant === 'ScreenMobile' ? `379px` : 'unset',
-}));
-
-const Text2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const EmpoweringTheModernW2Span1: any = styled('span')({
-  whiteSpace: `pre-wrap`,
-  color: `rgba(51, 51, 51, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `52px`,
-  letterSpacing: `-3.12px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
-  textAlign: 'unset',
-  fontSynthesis: 'unset',
-  alignSelf: 'unset',
-  margin: 'unset',
-});
-
-const EmpoweringTheModernW2Span2: any = styled('span')({
-  whiteSpace: `pre-wrap`,
-  color: `rgba(242, 80, 34, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `52px`,
-  letterSpacing: `-3.12px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
-  textAlign: 'unset',
-  fontSynthesis: 'unset',
-  alignSelf: 'unset',
-  margin: 'unset',
-});
-
-const EmpoweringTheModernW2: any = styled('div')({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `52px`,
-  letterSpacing: `-3.12px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const TransformYourOrganiz1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `20px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `20px 0px 0px 0px`,
-}));
-
-const Btns2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px 90px 0px 0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `40px 0px 0px 0px`,
-});
-
-const BtnsPosition2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const ButtonContained2: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-  color: theme.palette['Primary']['Contrast'],
-  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
-  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
-  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
-  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
-  letterSpacing:
-    theme.typography['Components']['Button Font - Large'].letterSpacing,
-  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
-  textDecoration:
-    theme.typography['Components']['Button Font - Large'].textDecoration,
-  textTransform:
-    theme.typography['Components']['Button Font - Large'].textTransform,
-}));
-
-const ButtonOutlined2: any = styled(Button, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  alignSelf: `stretch`,
-  margin: `22px 0px 0px 0px`,
-  color: theme.palette['Primary']['Main'],
-  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
-  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
-  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
-  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
-  letterSpacing:
-    theme.typography['Components']['Button Font - Large'].letterSpacing,
-  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
-  textDecoration:
-    theme.typography['Components']['Button Font - Large'].textDecoration,
-  textTransform:
-    theme.typography['Components']['Button Font - Large'].textTransform,
-}));
-
 const Video1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
@@ -694,10 +517,15 @@ const Video1: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
-  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 10px` : `0px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
 }));
 
-const Pic12: any = styled('img')({
+const Pic11: any = styled('img')({
   height: `323px`,
   width: `379px`,
   objectFit: `cover`,
@@ -777,15 +605,290 @@ const Pic8: any = styled('div')({
   overflow: `hidden`,
 });
 
+const Video2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width: data.currentVariant === 'ScreenMobile' ? 'unset' : `335px`,
+  margin: data.currentVariant === 'ScreenTablet' ? `0px 0px 0px 10px` : `0px`,
+  height: data.currentVariant === 'ScreenMobile' ? `230px` : 'unset',
+}));
+
+const Pic12: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `38px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `38px`
+      : `230px`,
+  width: `276px`,
+  objectFit: `cover`,
+  flex: `1`,
+  margin: `0px`,
+}));
+
+const Pic9: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_9.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `contain`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Pic10: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_10.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `100%`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Pic13: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_11.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const Pic14: any = styled('div')({
+  backgroundImage: `url(assets/images/Header_Pic_12.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `20px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `10px 0px 0px 0px`,
+  overflow: `hidden`,
+});
+
+const LeftSide2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  width: data.currentVariant === 'ScreenMobile' ? 'unset' : `335px`,
+  margin:
+    data.currentVariant === 'ScreenTablet'
+      ? `0px 0px 0px 10px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `10px 0px 0px 0px`
+      : `0px`,
+}));
+
+const Text2: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
+const EmpoweringTheModernW2Span1: any = styled('span')({
+  whiteSpace: `pre-wrap`,
+  color: `rgba(51, 51, 51, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `46px`,
+  letterSpacing: `-2.76px`,
+  textDecoration: `none`,
+  lineHeight: `100%`,
+  textTransform: `none`,
+  textAlign: 'unset',
+  fontSynthesis: 'unset',
+  alignSelf: 'unset',
+  margin: 'unset',
+});
+
+const EmpoweringTheModernW2Span2: any = styled('span')({
+  whiteSpace: `pre-wrap`,
+  color: `rgba(242, 80, 34, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `46px`,
+  letterSpacing: `-2.76px`,
+  textDecoration: `none`,
+  lineHeight: `100%`,
+  textTransform: `none`,
+  textAlign: 'unset',
+  fontSynthesis: 'unset',
+  alignSelf: 'unset',
+  margin: 'unset',
+});
+
+const EmpoweringTheModernW2: any = styled('div')({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(0, 0, 0, 1)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `46px`,
+  letterSpacing: `-2.76px`,
+  textDecoration: `none`,
+  lineHeight: `100%`,
+  textTransform: `none`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
+const TransformYourOrganiz2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `400`,
+  fontSize: `20px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
+  textTransform: `none`,
+  alignSelf: `stretch`,
+  margin: `20px 0px 0px 0px`,
+}));
+
+const Btns2: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `40px 0px 0px 0px`,
+});
+
+const BtnsPosition2: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `0px`,
+});
+
+const ButtonContained2: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  alignSelf: `stretch`,
+  margin: `0px`,
+  color: theme.palette['Primary']['Contrast'],
+  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Large'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Large'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Large'].textTransform,
+}));
+
+const ButtonOutlined2: any = styled(Button, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  alignSelf: `stretch`,
+  margin: `22px 0px 0px 0px`,
+  color: theme.palette['Primary']['Main'],
+  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Large'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Large'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Large'].textTransform,
+}));
+
 function Header(props: HeaderProps): JSX.Element {
   const { data } = useHeader();
 
   return (
-    <ScreenDesktop className={props.className}>
+    <ScreenDesktop className={props.className} data={data}>
       <Hero>
         <FillHero data={data}>
-          {!(data.currentVariant === 'ScreenMobile') &&
-            !(data.currentVariant === 'ScreenTablet') && (
+          {!(data.currentVariant === 'ScreenTablet') &&
+            !(data.currentVariant === 'ScreenMobile') && (
               <LeftSide data={data}>
                 <Text>
                   <EmpoweringTheModernW>
@@ -820,8 +923,8 @@ function Header(props: HeaderProps): JSX.Element {
                 </Btns>
               </LeftSide>
             )}
-          {!(data.currentVariant === 'ScreenMobile') &&
-            !(data.currentVariant === 'ScreenTablet') && (
+          {!(data.currentVariant === 'ScreenTablet') &&
+            !(data.currentVariant === 'ScreenMobile') && (
               <Video data={data}>
                 <Pic1
                   src={`assets/images/Header_Pic_1.png`}
@@ -834,23 +937,16 @@ function Header(props: HeaderProps): JSX.Element {
                 {false && <Pic4></Pic4>}
               </Video>
             )}
-          {data.currentVariant === 'ScreenMobile' && (
+          {data.currentVariant === 'ScreenTablet' && (
             <LeftSide1 data={data}>
-              <Frame173>
-                <Pic11
-                  src={`assets/images/Header_Pic_1_1.png`}
-                  loading="lazy"
-                  alt={'Pic 1'}
-                />
-              </Frame173>
               <Text1>
                 <EmpoweringTheModernW1>
-                  <EmpoweringTheModernW1Span1>{`EMPOWERING THE`}</EmpoweringTheModernW1Span1>
-                  <EmpoweringTheModernW1Span2>{` MODERN WORKPLACE`}</EmpoweringTheModernW1Span2>
+                  <EmpoweringTheModernW1Span1>{`EMPOWERING THE `}</EmpoweringTheModernW1Span1>
+                  <EmpoweringTheModernW1Span2>{`MODERN WORKPLACE`}</EmpoweringTheModernW1Span2>
                 </EmpoweringTheModernW1>
-                <TransformYouOrganiza>
-                  {`Transform you organization with Surface for Business, Microsoft 365, customized services and training by MOWO.`}
-                </TransformYouOrganiza>
+                <TransformYourOrganiz1>
+                  {`Transform your organization with Surface for Business, Microsoft 365, customized services and training by MOWO.`}
+                </TransformYourOrganiz1>
               </Text1>
               <Btns1>
                 <BtnsPosition1>
@@ -877,15 +973,42 @@ function Header(props: HeaderProps): JSX.Element {
             </LeftSide1>
           )}
           {data.currentVariant === 'ScreenTablet' && (
+            <Video1 data={data}>
+              <Pic11
+                src={`assets/images/Header_Pic_1_1.png`}
+                loading="lazy"
+                alt={'Pic 1'}
+              />
+              {false && <Pic5></Pic5>}
+              {false && <Pic6></Pic6>}
+              {false && <Pic7></Pic7>}
+              {false && <Pic8></Pic8>}
+            </Video1>
+          )}
+          {data.currentVariant === 'ScreenMobile' && (
+            <Video2 data={data}>
+              <Pic12
+                data={data}
+                src={`assets/images/Header_Pic_1_2.png`}
+                loading="lazy"
+                alt={'Pic 1'}
+              />
+              {false && <Pic9></Pic9>}
+              {false && <Pic10></Pic10>}
+              {false && <Pic13></Pic13>}
+              {false && <Pic14></Pic14>}
+            </Video2>
+          )}
+          {data.currentVariant === 'ScreenMobile' && (
             <LeftSide2 data={data}>
               <Text2>
                 <EmpoweringTheModernW2>
                   <EmpoweringTheModernW2Span1>{`EMPOWERING THE `}</EmpoweringTheModernW2Span1>
                   <EmpoweringTheModernW2Span2>{`MODERN WORKPLACE`}</EmpoweringTheModernW2Span2>
                 </EmpoweringTheModernW2>
-                <TransformYourOrganiz1>
+                <TransformYourOrganiz2>
                   {`Transform your organization with Surface for Business, Microsoft 365, customized services and training by MOWO.`}
-                </TransformYourOrganiz1>
+                </TransformYourOrganiz2>
               </Text2>
               <Btns2>
                 <BtnsPosition2>
@@ -910,19 +1033,6 @@ function Header(props: HeaderProps): JSX.Element {
                 </BtnsPosition2>
               </Btns2>
             </LeftSide2>
-          )}
-          {data.currentVariant === 'ScreenTablet' && (
-            <Video1 data={data}>
-              <Pic12
-                src={`assets/images/Header_Pic_1_2.png`}
-                loading="lazy"
-                alt={'Pic 1'}
-              />
-              {false && <Pic5></Pic5>}
-              {false && <Pic6></Pic6>}
-              {false && <Pic7></Pic7>}
-              {false && <Pic8></Pic8>}
-            </Video1>
           )}
         </FillHero>
       </Hero>
