@@ -22,20 +22,22 @@ import { SidebarProps } from 'types';
 const Sidebar1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Paper'],
   boxShadow: `0px 1px 8px rgba(0, 0, 0, 0.12), 0px 3px 4px rgba(0, 0, 0, 0.14), 0px 3px 3px rgba(0, 0, 0, 0.2)`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `22px 30px 75px 30px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: 'auto!important',
+  height: '100vh',
 }));
 
 const CloseFrame: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -49,6 +51,7 @@ const CloseFrame: any = styled('div')({
 });
 
 const Close: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -62,6 +65,7 @@ const Close: any = styled('div')({
 });
 
 const Icon1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -76,6 +80,7 @@ const Icon1: any = styled('div')({
 });
 
 const IconX: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `absolute`,
   isolation: `isolate`,
@@ -99,6 +104,7 @@ const Close1: any = styled('img')({
 });
 
 const Sidebarcontent: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -112,6 +118,7 @@ const Sidebarcontent: any = styled('div')({
 });
 
 const MenuItems: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -125,6 +132,7 @@ const MenuItems: any = styled('div')({
 });
 
 const LogoPosition: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -143,6 +151,7 @@ const Logo: any = styled('div')({
   backgroundPosition: `center`,
   backgroundSize: `contain`,
   backgroundRepeat: `no-repeat`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -156,6 +165,7 @@ const Logo: any = styled('div')({
 });
 
 const Items: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -169,6 +179,7 @@ const Items: any = styled('div')({
 });
 
 const Frame142: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -207,6 +218,7 @@ const Link6: any = styled(Link1)(({ theme }: any) => ({
 }));
 
 const Frame143: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
