@@ -2,45 +2,44 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import CustomerCases from 'components/CustomerCases/CustomerCases';
 
-interface ImageItem {
-  thumbnailUrl: string;
-  imageUrl: string;
-}
 
-const settings = {
-  slidesToShow: 5,      // Number of thumbnails visible at a time
-  slidesToScroll: 1,    // Number of thumbnails to scroll
-  infinite: false,      // Carousel doesn't wrap around
-  responsive: [
-    // Responsive settings go here if needed
-  ],
-};
+  
+  const imageItems = [
+    {
+      thumbnailUrl: 'https://img.icons8.com/?size=512&id=jf29BYdVb4ah&format=png',
+      imageUrl: <CustomerCases />,
+    },
+    {
+      thumbnailUrl: 'https://img.icons8.com/?size=512&id=mkkp6yt38FVq&format=png',
+      imageUrl: 'https://loremflickr.com/320/240/dog',
+    },
+    // ... Add more items as needed
+  ];
 
-const imageItems: ImageItem[] = [
-  {
-    thumbnailUrl: 'https://img.icons8.com/?size=512&id=jf29BYdVb4ah&format=png',
-    imageUrl: 'https://loremflickr.com/320/240',
-  },
-  {
-    thumbnailUrl: 'https://img.icons8.com/?size=512&id=mkkp6yt38FVq&format=png',
-    imageUrl: 'https://loremflickr.com/320/240',
-  },
-  // ... Add more items as needed
-];
-
-function CarouselTest() {
+function CarouselTest(): JSX.Element {
   const [selectedImageUrl, setSelectedImageUrl] = useState(imageItems[0].imageUrl);
 
-  // ...
+  const settings = {
+    dots: true, 
+    slidesToShow: 1,     
+    slidesToScroll: 1,   
+    infinite: true, 
+    arrows: true,   
+    responsive: [
+      // Responsive settings
+    ],
+  };
+  
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container" style={{ width: '75%', margin: '0 auto'}}>
       <div className="main-image">
-        <img src={selectedImageUrl} alt="Selected Product" />
+        {selectedImageUrl}
       </div>
       <Slider {...settings}>
-        {imageItems.map((item: ImageItem, index: number) => (
+        {imageItems.map((item, index) => (
           <div
             key={index}
             className="thumbnail"
