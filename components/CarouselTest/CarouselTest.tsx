@@ -5,11 +5,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import ClientCaseStudy from 'components/ClientCaseStudy/ClientCaseStudy';
 import ClientLogoCard from 'components/ClientLogoCard/ClientLogoCard';
 import useCarouselTest from './useCarouselTest';
+import { ClientCaseCarouselProps } from 'types';
 
 
-function CarouselTest(): JSX.Element {
+function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
     const { data } = useCarouselTest();
-    const [selectedImageUrl, setSelectedImageUrl] = useState(imageItems[0].imageUrl);
+
+    const [selectedImageUrl, setSelectedImageUrl] = useState(data.clientCases[0]);
 
     const settings = {
         dots: true,
@@ -22,23 +24,32 @@ function CarouselTest(): JSX.Element {
         ],
     };
 
+    const handleThumbnailClick = (item: any) => {
+        setSelectedImageUrl(item);
+    };
 
     return (
         <div className="carousel-container" style={{ width: '75%', margin: '0 auto' }}>
-            <div className="main-image">
-                {selectedImageUrl}
-            </div>
             <Slider {...settings}>
-                {imageItems.map((item, index) => (
-                    <div
-                        key={index}
-                        className="thumbnail"
-                        onClick={() => setSelectedImageUrl(item.imageUrl)}
-                    >
-                        {item.thumbnailUrl}
-                    </div>
-                ))}
+                {data.clientCases &&
+                    data.clientCases.map((item: any, index: number) => (
+                        <div
+                            key={index}
+                            {...item}
+                            className="thumbnail"
+                            onClick={() => handleThumbnailClick(item)}
+                        >
+                            <ClientLogoCard logo={item.logo} />
+                        </div>
+                    ))}
             </Slider>
+            <div className="main-image">
+                <ClientCaseStudy
+                    bgimage={selectedImageUrl.bgimage}
+                    title={selectedImageUrl.title}
+                    description={selectedImageUrl.description}
+                />
+            </div>
         </div>
     );
 }

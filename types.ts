@@ -107,10 +107,15 @@ export interface ClientCaseStudyProps {
   className?: any;
   bgimage: {
     src: string;
-    alt: string;
+    alt?: string;
   };
   title: string;
   description: string;
+};
+
+export interface ClientCaseCarouselProps {
+  className?: any;
+
 };
 
 
