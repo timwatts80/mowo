@@ -29,6 +29,7 @@ const ScreenDesktop: any = styled('div', {
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
+  margin: `0px auto`,
   boxSizing: `border-box`,
   height: 'auto',
   maxWidth:
@@ -53,7 +54,7 @@ const ClientCaseStudySlide: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: data.currentVariant === 'ScreenMobile' ? 'unset' : `520px`,
-  margin: `0px`,
+  margin: `75px 0px`,
 }));
 
 const CaseBackground: any = styled('div', {
