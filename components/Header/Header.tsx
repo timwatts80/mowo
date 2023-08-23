@@ -321,7 +321,7 @@ const Pic3: any = styled('div')({
 });
 
 const Pic4: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_4.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -534,7 +534,7 @@ const Pic11: any = styled('img')({
 });
 
 const Pic5: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_5.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `contain`,
   backgroundRepeat: `no-repeat`,
@@ -552,7 +552,7 @@ const Pic5: any = styled('div')({
 });
 
 const Pic6: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_6.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `100%`,
   backgroundRepeat: `no-repeat`,
@@ -570,7 +570,7 @@ const Pic6: any = styled('div')({
 });
 
 const Pic7: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_7.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -588,7 +588,7 @@ const Pic7: any = styled('div')({
 });
 
 const Pic8: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_8.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -639,7 +639,7 @@ const Pic12: any = styled('img', {
 }));
 
 const Pic9: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_9.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `contain`,
   backgroundRepeat: `no-repeat`,
@@ -657,7 +657,7 @@ const Pic9: any = styled('div')({
 });
 
 const Pic10: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_10.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `100%`,
   backgroundRepeat: `no-repeat`,
@@ -675,7 +675,7 @@ const Pic10: any = styled('div')({
 });
 
 const Pic13: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_11.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
@@ -693,7 +693,7 @@ const Pic13: any = styled('div')({
 });
 
 const Pic14: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_12.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
