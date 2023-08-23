@@ -27,7 +27,12 @@ const ScreenDesktop: any = styled('div', {
   position: `sticky`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100vw',
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? `768px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `375px`
+      : `1320px`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
