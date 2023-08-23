@@ -27,12 +27,7 @@ const ScreenDesktop: any = styled('div', {
   position: `sticky`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? `768px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `375px`
-      : `1320px`,
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -264,9 +259,16 @@ const Sidebarcontainer: any = styled('div')({
   maxWidth: '100%',
 });
 
-const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
+const Sidebar1: any = styled(Sidebar, {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   alignSelf: `stretch`,
-  height: `754px`,
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `366px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `366px`
+      : `255px`,
   margin: `0px`,
 }));
 
@@ -324,12 +326,16 @@ function Navbar(props: NavbarProps): JSX.Element {
       </ToolBar>
       <Dialog
         id={'mobile_menu'}
-        maxWidth={'lg'}
+        maxWidth={'false'}
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >
         <Sidebarcontainer>
-          <Sidebar1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
+          <Sidebar1
+            data={data}
+            open={data.isDialogOpen}
+            onClose={fns.toggleDialog}
+          />
         </Sidebarcontainer>
       </Dialog>
     </ScreenDesktop>
