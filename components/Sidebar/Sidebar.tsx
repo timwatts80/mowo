@@ -115,7 +115,6 @@ const Sidebarcontent: any = styled('div')({
   boxSizing: `border-box`,
   width: '100%',
   margin: `0px`,
-  maxWidth: '384px',
 });
 
 const MenuItems: any = styled('div')({
