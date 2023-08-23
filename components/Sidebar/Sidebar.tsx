@@ -27,13 +27,13 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: 'auto',
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `22px 0px 75px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
+  height: 'auto',
 }));
 
 const CloseFrame: any = styled('div')({
