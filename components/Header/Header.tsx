@@ -927,7 +927,7 @@ function Header(props: HeaderProps): JSX.Element {
             !(data.currentVariant === 'ScreenMobile') && (
               <Video data={data}>
                 <Pic1
-                  src={`assets/images/Header_Pic_1.png`}
+                  src={`assets/images/Header_Pic.png`}
                   loading="lazy"
                   alt={'Pic 1'}
                 />
