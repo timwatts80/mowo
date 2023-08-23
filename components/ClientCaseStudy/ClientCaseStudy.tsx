@@ -45,7 +45,7 @@ const ClientCaseStudySlide: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: data.currentVariant === 'ScreenMobile' ? 'unset' : `520px`,
-  margin: `0px`,
+  margin: `75px 0px`,
 }));
 
 const CaseBackground: any = styled('div', {
