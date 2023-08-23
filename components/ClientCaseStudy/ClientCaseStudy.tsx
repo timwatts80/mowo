@@ -104,7 +104,7 @@ const CaseContent: any = styled('div', {
   boxSizing: `border-box`,
   width:
     data.currentVariant === 'ScreenTablet'
-      ? 'unset'
+      ? `356px`
       : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `601px`,
