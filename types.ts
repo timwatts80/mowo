@@ -94,6 +94,10 @@
 
 export interface ClientLogoCardProps {
   className?: any;
+  logo: {
+    src: string;
+    alt: string;
+  };
 };
 
 
@@ -101,6 +105,12 @@ export interface ClientLogoCardProps {
 
 export interface ClientCaseStudyProps {
   className?: any;
+  bgimage: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  description: string;
 };
 
 
