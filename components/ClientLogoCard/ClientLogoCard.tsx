@@ -27,8 +27,8 @@ const ClientLogoCard1: any = styled('div')(({ theme }: any) => ({
   alignItems: `flex-start`,
   padding: `16px`,
   boxSizing: `border-box`,
-  height: 'auto',
-  width: 'fit-content',
+  height: `92px`,
+  width: `212px`,
 }));
 
 const HaskolinnLogo1: any = styled('img')({
