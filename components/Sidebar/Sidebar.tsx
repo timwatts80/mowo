@@ -27,13 +27,13 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100vw',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `22px 30px 75px 30px`,
+  padding: `22px 0px 75px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: '100vh',
+  height: 'auto',
 }));
 
 const CloseFrame: any = styled('div')({
@@ -44,7 +44,7 @@ const CloseFrame: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-end`,
-  padding: `0px`,
+  padding: `0px 30px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -113,8 +113,9 @@ const Sidebarcontent: any = styled('div')({
   alignItems: `center`,
   padding: `35px 0px 0px 0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
+  width: '100%',
   margin: `0px`,
+  maxWidth: '384px',
 });
 
 const MenuItems: any = styled('div')({
@@ -142,14 +143,13 @@ const LogoPosition: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `90px`,
   margin: `0px`,
 });
 
 const Logo: any = styled('div')({
   backgroundImage: `url(assets/images/sidebar_logo.png)`,
   backgroundPosition: `center`,
-  backgroundSize: `contain`,
+  backgroundSize: `100%`,
   backgroundRepeat: `no-repeat`,
   borderRadius: `0px`,
   display: `flex`,
@@ -158,8 +158,8 @@ const Logo: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
-  alignSelf: `stretch`,
-  flex: `1`,
+  height: `76px`,
+  width: `384px`,
   margin: `0px`,
   overflow: `hidden`,
 });
