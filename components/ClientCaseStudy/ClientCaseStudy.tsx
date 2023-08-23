@@ -30,6 +30,7 @@ const ScreenDesktop: any = styled('div', {
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
+  margin: `68px 0px 0px 0px`,
   boxSizing: `border-box`,
   height: 'auto',
   maxWidth:
@@ -90,9 +91,13 @@ const Casecontentcontainer: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
+  display: `absolute`,
+  position: `absolute`,
   isolation: `isolate`,
+  top: 
+    data.currentVariant === 'ScreenMobile'
+      ? `300px`
+      :`250px`,
   flexDirection:
     data.currentVariant === 'ScreenTablet'
       ? `row`

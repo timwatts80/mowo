@@ -265,10 +265,10 @@ const Sidebar1: any = styled(Sidebar, {
   alignSelf: `stretch`,
   height:
     data.currentVariant === 'ScreenTablet'
-      ? `366px`
+      ? `auto`
       : data.currentVariant === 'ScreenMobile'
-      ? `366px`
-      : `255px`,
+      ? `auto`
+      : `auto`,
   margin: `0px`,
 }));
 

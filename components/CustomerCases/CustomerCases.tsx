@@ -16,6 +16,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { CustomerCasesProps } from 'types';
 import useCustomerCases from 'components/CustomerCases/useCustomerCases';
+import CarouselTest from 'components/CarouselTest/CarouselTest';
 
 const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(248, 248, 248, 1)`,
@@ -466,49 +467,7 @@ Success Stories`
         <RevolutionizingTheWo data={data}>
           {`Revolutionizing the workplace with Microsoft Surface products, we deliver tailored solutions and training to elevate efficiency, inspire collaboration, and drive success for businesses of all sizes.`}
         </RevolutionizingTheWo>
-        <ClientSlider data={data}>
-          <Frame157 data={data}>
-            <CustomerCard>
-              <Logo></Logo>
-            </CustomerCard>
-            <CustomerCard1 data={data}>
-              <Logo1></Logo1>
-            </CustomerCard1>
-          </Frame157>
-          <ClientCaseStudySlide data={data}>
-            <CaseBackground data={data}>
-              <Image1
-                src={`assets/images/CustomerCases_image.png`}
-                loading="lazy"
-                alt={'image'}
-              />
-            </CaseBackground>
-            <CaseContent data={data}>
-              <CaseText data={data}>
-                <ReykjavikUniversity>
-                  {`Reykjavik University`}
-                </ReykjavikUniversity>
-                <WithMicrosoftSurface>
-                  {`With Microsoft Surface Studio devices in all classrooms at Reykjavík University the organization has taken a digital leap into the future. Teachers are integrating new tools and techniques in their teaching that resonate with the 21st century skills.`}
-                </WithMicrosoftSurface>
-              </CaseText>
-              <ButtonContained data={data}>
-                <Base>
-                  <MaskedIcon>
-                    <DownloadIcon>
-                      <Vector
-                        src={`assets/images/CustomerCases_Vector.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                    </DownloadIcon>
-                  </MaskedIcon>
-                  <Button1>{`Download customer case`}</Button1>
-                </Base>
-              </ButtonContained>
-            </CaseContent>
-          </ClientCaseStudySlide>
-        </ClientSlider>
+        <CarouselTest />
       </Rows>
     </ScreenDesktop>
   );

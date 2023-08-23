@@ -15,7 +15,7 @@ function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
 
     const settings = {
         dots: true,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         infinite: true,
         arrows: true,
@@ -29,7 +29,7 @@ function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
     };
 
     return (
-        <div className="carousel-container" style={{ width: '75%', margin: '0 auto' }}>
+        <div className="carousel-container" style={{ width: '75%', margin: '50px auto 250px', height: 'auto' }}>
             <Slider {...settings}>
                 {data.clientCases &&
                     data.clientCases.map((item: any, index: number) => (
