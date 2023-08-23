@@ -26,12 +26,12 @@ const ScreenDesktop: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: '100%',
   maxWidth:
     data.currentVariant === 'ScreenTablet'
       ? `unset`
@@ -40,9 +40,7 @@ const ScreenDesktop: any = styled('div', {
       : `1320px`,
 }));
 
-const ClientCaseStudySlide: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const ClientCaseStudySlide: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -52,9 +50,9 @@ const ClientCaseStudySlide: any = styled('div', {
   alignItems: `flex-end`,
   padding: `0px`,
   boxSizing: `border-box`,
+  alignSelf: `stretch`,
   margin: `0px`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
-}));
+});
 
 const CaseBackground: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -68,11 +66,10 @@ const CaseBackground: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
+  alignSelf: `stretch`,
   height: data.currentVariant === 'ScreenMobile' ? 'unset' : `450px`,
   margin: `0px`,
   overflow: `hidden`,
-  width: data.currentVariant === 'ScreenTablet' ? `768px` : 'unset',
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
 const Image1: any = styled('img', {
@@ -89,6 +86,33 @@ const Image1: any = styled('img', {
   margin: `0px`,
 }));
 
+const Casecontentcontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection:
+    data.currentVariant === 'ScreenTablet'
+      ? `row`
+      : data.currentVariant === 'ScreenMobile'
+      ? `row`
+      : `column`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-end`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? `356px`
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `601px`,
+  margin: `0px`,
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+}));
+
 const CaseContent: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
@@ -102,15 +126,20 @@ const CaseContent: any = styled('div', {
   alignItems: `flex-start`,
   padding: `45px`,
   boxSizing: `border-box`,
-  width:
+  alignSelf:
     data.currentVariant === 'ScreenTablet'
-      ? `356px`
+      ? 'unset'
       : data.currentVariant === 'ScreenMobile'
       ? 'unset'
-      : `601px`,
+      : `stretch`,
   margin: `0px`,
   overflow: `hidden`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+  flex:
+    data.currentVariant === 'ScreenTablet'
+      ? `1`
+      : data.currentVariant === 'ScreenMobile'
+      ? `1`
+      : 'unset',
 }));
 
 const CaseText: any = styled('div')({
@@ -270,7 +299,7 @@ function ClientCaseStudy(props: ClientCaseStudyProps): JSX.Element {
 
   return (
     <ScreenDesktop className={props.className} data={data}>
-      <ClientCaseStudySlide data={data}>
+      <ClientCaseStudySlide>
         <CaseBackground data={data}>
           <Image1
             data={data}
@@ -279,37 +308,39 @@ function ClientCaseStudy(props: ClientCaseStudyProps): JSX.Element {
             alt={props.bgimage.alt}
           />
         </CaseBackground>
-        <CaseContent data={data}>
-          <CaseText>
-            <ReykjavikUniversity>{props.title}</ReykjavikUniversity>
-            <WithMicrosoftSurface>{props.description}</WithMicrosoftSurface>
-          </CaseText>
-          <ButtonContained
-            variant="contained"
-            size={'large'}
-            color={'success'}
-            disabled={false}
-            data={data}
-          >
-            {'Download Customer Case'}
-          </ButtonContained>
-          {false && (
-            <ButtonContained1>
-              <Base>
-                <MaskedIcon>
-                  <DownloadIcon>
-                    <Vector
-                      src={`assets/images/ClientCaseStudy_Vector.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </DownloadIcon>
-                </MaskedIcon>
-                <Button1>{`Download customer case`}</Button1>
-              </Base>
-            </ButtonContained1>
-          )}
-        </CaseContent>
+        <Casecontentcontainer data={data}>
+          <CaseContent data={data}>
+            <CaseText>
+              <ReykjavikUniversity>{props.title}</ReykjavikUniversity>
+              <WithMicrosoftSurface>{props.description}</WithMicrosoftSurface>
+            </CaseText>
+            <ButtonContained
+              variant="contained"
+              size={'large'}
+              color={'success'}
+              disabled={false}
+              data={data}
+            >
+              {'Download Customer Case'}
+            </ButtonContained>
+            {false && (
+              <ButtonContained1>
+                <Base>
+                  <MaskedIcon>
+                    <DownloadIcon>
+                      <Vector
+                        src={`assets/images/ClientCaseStudy_Vector.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                    </DownloadIcon>
+                  </MaskedIcon>
+                  <Button1>{`Download customer case`}</Button1>
+                </Base>
+              </ButtonContained1>
+            )}
+          </CaseContent>
+        </Casecontentcontainer>
       </ClientCaseStudySlide>
     </ScreenDesktop>
   );
