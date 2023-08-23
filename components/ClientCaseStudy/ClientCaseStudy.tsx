@@ -13,6 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ClientCaseStudyProps } from 'types';
 import useClientCaseStudy from 'components/ClientCaseStudy/useClientCaseStudy';
@@ -25,13 +26,12 @@ const ScreenDesktop: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
-  margin: `0px auto`,
   boxSizing: `border-box`,
   height: 'auto',
+  width: 'fit-content',
   maxWidth:
     data.currentVariant === 'ScreenTablet'
       ? `unset`
@@ -52,16 +52,14 @@ const ClientCaseStudySlide: any = styled('div', {
   alignItems: `flex-end`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  height: data.currentVariant === 'ScreenMobile' ? 'unset' : `520px`,
-  margin: `75px 0px`,
+  margin: `0px`,
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
 const CaseBackground: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  borderRadius:
-    data.currentVariant === 'ScreenMobile' ? `16px 16px 0px 0px` : `16px`,
+  borderRadius: `16px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -70,10 +68,11 @@ const CaseBackground: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
+  height: data.currentVariant === 'ScreenMobile' ? 'unset' : `450px`,
   margin: `0px`,
   overflow: `hidden`,
-  height: data.currentVariant === 'ScreenMobile' ? `216px` : 'unset',
+  width: data.currentVariant === 'ScreenTablet' ? `768px` : 'unset',
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
 const Image1: any = styled('img', {
@@ -87,12 +86,6 @@ const Image1: any = styled('img', {
       ? `1320px`
       : '100%',
   objectFit: `cover`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `stretch`,
   margin: `0px`,
 }));
 
@@ -100,36 +93,27 @@ const CaseContent: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   backgroundColor: `rgba(241, 241, 241, 0.95)`,
-  borderRadius:
-    data.currentVariant === 'ScreenMobile' ? `0px 0px 15px 15px` : `15px`,
+  borderRadius: `15px`,
   display: `flex`,
-  position: data.currentVariant === 'ScreenMobile' ? `relative` : `absolute`,
+  position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `flex-start`,
-  padding: data.currentVariant === 'ScreenMobile' ? `20px 15px` : `45px`,
+  padding: `45px`,
   boxSizing: `border-box`,
-  left:
+  width:
     data.currentVariant === 'ScreenTablet'
-      ? `296px`
+      ? 'unset'
       : data.currentVariant === 'ScreenMobile'
       ? 'unset'
-      : `678px`,
-  top:
-    data.currentVariant === 'ScreenTablet'
-      ? `117px`
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `198px`,
+      : `601px`,
+  margin: `0px`,
   overflow: `hidden`,
   alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
-  margin: data.currentVariant === 'ScreenMobile' ? `0px` : 'unset',
 }));
 
-const CaseText: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const CaseText: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -139,20 +123,9 @@ const CaseText: any = styled('div', {
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width:
-    data.currentVariant === 'ScreenTablet'
-      ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `552px`,
+  alignSelf: `stretch`,
   margin: `0px`,
-  alignSelf:
-    data.currentVariant === 'ScreenTablet'
-      ? `stretch`
-      : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
-}));
+});
 
 const ReykjavikUniversity: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
@@ -188,9 +161,25 @@ const WithMicrosoftSurface: any = styled('div')(({ theme }: any) => ({
   margin: `12px 0px 0px 0px`,
 }));
 
-const ButtonContained: any = styled('div', {
+const ButtonContained: any = styled(Button, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
+  margin: `30px 0px 0px 0px`,
+  color: theme.palette['Success']['Contrast'],
+  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
+  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
+  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
+  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
+  letterSpacing:
+    theme.typography['Components']['Button Font - Large'].letterSpacing,
+  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
+  textDecoration:
+    theme.typography['Components']['Button Font - Large'].textDecoration,
+  textTransform:
+    theme.typography['Components']['Button Font - Large'].textTransform,
+}));
+
+const ButtonContained1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Success']['Main'],
   boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
   borderRadius: `4px`,
@@ -202,9 +191,9 @@ const ButtonContained: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
+  height: `42px`,
   margin: `30px 0px 0px 0px`,
   overflow: `hidden`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
 const Base: any = styled('div')({
@@ -265,17 +254,14 @@ const Button1: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Success']['Contrast'],
-  fontStyle: theme.typography['Components']['Button Font - Large'].fontStyle,
-  fontFamily: theme.typography['Components']['Button Font - Large'].fontFamily,
-  fontWeight: theme.typography['Components']['Button Font - Large'].fontWeight,
-  fontSize: theme.typography['Components']['Button Font - Large'].fontSize,
-  letterSpacing:
-    theme.typography['Components']['Button Font - Large'].letterSpacing,
-  lineHeight: theme.typography['Components']['Button Font - Large'].lineHeight,
-  textDecoration:
-    theme.typography['Components']['Button Font - Large'].textDecoration,
-  textTransform:
-    theme.typography['Components']['Button Font - Large'].textTransform,
+  fontStyle: `italic`,
+  fontFamily: `Inter`,
+  fontWeight: `500`,
+  fontSize: `15px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `26px`,
+  textTransform: `uppercase`,
   margin: `0px 0px 0px 8px`,
 }));
 
@@ -294,24 +280,35 @@ function ClientCaseStudy(props: ClientCaseStudyProps): JSX.Element {
           />
         </CaseBackground>
         <CaseContent data={data}>
-          <CaseText data={data}>
+          <CaseText>
             <ReykjavikUniversity>{props.title}</ReykjavikUniversity>
             <WithMicrosoftSurface>{props.description}</WithMicrosoftSurface>
           </CaseText>
-          <ButtonContained data={data}>
-            <Base>
-              <MaskedIcon>
-                <DownloadIcon>
-                  <Vector
-                    src={`assets/images/ClientCaseStudy_Vector.png`}
-                    loading="lazy"
-                    alt={'Vector'}
-                  />
-                </DownloadIcon>
-              </MaskedIcon>
-              <Button1>{`Download customer case`}</Button1>
-            </Base>
+          <ButtonContained
+            variant="contained"
+            size={'large'}
+            color={'success'}
+            disabled={false}
+            data={data}
+          >
+            {'Download Customer Case'}
           </ButtonContained>
+          {false && (
+            <ButtonContained1>
+              <Base>
+                <MaskedIcon>
+                  <DownloadIcon>
+                    <Vector
+                      src={`assets/images/ClientCaseStudy_Vector.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                  </DownloadIcon>
+                </MaskedIcon>
+                <Button1>{`Download customer case`}</Button1>
+              </Base>
+            </ButtonContained1>
+          )}
         </CaseContent>
       </ClientCaseStudySlide>
     </ScreenDesktop>
