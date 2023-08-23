@@ -28,7 +28,7 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   isolation: `isolate`,
   flexDirection: `column`,
   height: 'auto',
-  width: '100%',
+  width: `768px`,
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `22px 0px 75px 0px`,
