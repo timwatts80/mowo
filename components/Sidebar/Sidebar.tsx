@@ -111,9 +111,9 @@ const Sidebarcontent: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `35px 0px 0px 0px`,
+  padding: `35px 180px 0px 180px`,
   boxSizing: `border-box`,
-  width: `384px`,
+  alignSelf: `stretch`,
   margin: `0px`,
 });
 
@@ -142,25 +142,17 @@ const LogoPosition: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  height: `77px`,
   margin: `0px`,
 });
 
-const Logo: any = styled('div')({
-  backgroundImage: `url(assets/images/sidebar_logo.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `100%`,
-  backgroundRepeat: `no-repeat`,
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  height: `76px`,
-  width: `384px`,
+const MowoLogo: any = styled('img')({
+  height: `77px`,
+  width: `408px`,
+  objectFit: `cover`,
+  alignSelf: `stretch`,
+  flex: `1`,
   margin: `0px`,
-  overflow: `hidden`,
 });
 
 const Items: any = styled('div')({
@@ -272,7 +264,11 @@ function Sidebar(props: SidebarProps): JSX.Element {
         <Sidebarcontent>
           <MenuItems>
             <LogoPosition>
-              <Logo></Logo>
+              <MowoLogo
+                src={`assets/images/sidebar_MOWO_Logo.png`}
+                loading="lazy"
+                alt={'MOWO Logo'}
+              />
             </LogoPosition>
             <Items>
               {false && (
