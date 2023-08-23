@@ -71,7 +71,12 @@ const Image1: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height: `450px`,
-  width: `1320px`,
+  width:
+    data.currentVariant === 'ScreenTablet'
+      ? `1320px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `1320px`
+      : '100%',
   objectFit: `cover`,
   alignSelf:
     data.currentVariant === 'ScreenTablet'
