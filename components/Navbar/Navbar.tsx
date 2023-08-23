@@ -18,11 +18,11 @@ import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
 import { NavbarProps } from 'types';
 import useNavbar from 'components/Navbar/useNavbar';
-import { Fullscreen } from '@mui/icons-material';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `sticky`,
   isolation: `isolate`,
@@ -41,6 +41,7 @@ const ToolBar: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   backgroundColor: theme.palette['MOWO']['white-75'],
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -64,6 +65,7 @@ const ToolBar: any = styled('div', {
 }));
 
 const Logocontainer: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -86,6 +88,7 @@ const MowoLogo: any = styled('img')({
 const MenuItems: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -184,6 +187,7 @@ const Contact: any = styled('div')(({ theme }: any) => ({
 }));
 
 const HamburgerMenu: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -221,6 +225,7 @@ const ButtonContained: any = styled(Button, {
 }));
 
 const HamburgerMenu1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -240,6 +245,7 @@ const Hamburger1: any = styled('img')({
 });
 
 const Sidebarcontainer: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -251,7 +257,6 @@ const Sidebarcontainer: any = styled('div')({
   alignSelf: `stretch`,
   margin: `0px`,
   maxWidth: '100%',
-  width: '100vw',
 });
 
 const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
