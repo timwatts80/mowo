@@ -324,7 +324,7 @@ function Navbar(props: NavbarProps): JSX.Element {
       </ToolBar>
       <Dialog
         id={'mobile_menu'}
-        maxWidth={'false'}
+        maxWidth={'lg'}
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >
