@@ -31,7 +31,7 @@ const ScreenDesktop: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: 'fit-content',
+  width: '100%',
   maxWidth:
     data.currentVariant === 'ScreenTablet'
       ? `unset`
