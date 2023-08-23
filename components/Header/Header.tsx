@@ -285,7 +285,7 @@ const Pic: any = styled('div')({
 });
 
 const Pic2: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_2.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `100%`,
   backgroundRepeat: `no-repeat`,
@@ -303,7 +303,7 @@ const Pic2: any = styled('div')({
 });
 
 const Pic3: any = styled('div')({
-  backgroundImage: `url(assets/images/Header_Pic_3.png)`,
+  backgroundImage: `url(assets/images/Header_Pic.png)`,
   backgroundPosition: `center`,
   backgroundSize: `cover`,
   backgroundRepeat: `no-repeat`,
