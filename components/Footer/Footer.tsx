@@ -539,7 +539,9 @@ const Frame184: any = styled('div')({
   margin: `4px 0px 0px 0px`,
 });
 
-const Figmalogocontainer: any = styled('div')({
+const FigmaContainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -549,13 +551,14 @@ const Figmalogocontainer: any = styled('div')({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `21px`,
-  height: `21px`,
+  width: data.currentVariant === 'Mobile' ? `20px` : `21px`,
   margin: `0px`,
   overflow: `hidden`,
-});
+}));
 
-const Figma: any = styled('div')({
+const Figma: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -565,51 +568,61 @@ const Figma: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  height: `18px`,
-  width: `18px`,
+  height: `21px`,
+  width: data.currentVariant === 'Mobile' ? `20px` : `21px`,
   margin: `0px`,
   overflow: `hidden`,
-});
+}));
 
-const Vector6: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
+const Vector6: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `6.22px`,
+  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: `9px`,
+  left: data.currentVariant === 'Mobile' ? `10px` : `11px`,
+  top: `7px`,
+}));
+
+const Vector7: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `6.22px`,
+  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
+  position: `absolute`,
+  left: data.currentVariant === 'Mobile' ? `4px` : `5px`,
+  top: `14px`,
+}));
+
+const Vector8: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `6.22px`,
+  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
+  position: `absolute`,
+  left: data.currentVariant === 'Mobile' ? `10px` : `11px`,
   top: `1px`,
-});
+}));
 
-const Vector7: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
+const Vector9: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `6.22px`,
+  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: `9px`,
-  top: `6px`,
-});
-
-const Vector8: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
+  left: data.currentVariant === 'Mobile' ? `4px` : `5px`,
   top: `1px`,
-});
+}));
 
-const Vector9: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
+const Vector10: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: `6.22px`,
+  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: `4px`,
-  top: `6px`,
-});
-
-const Vector10: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `12px`,
-});
+  left: data.currentVariant === 'Mobile' ? `4px` : `5px`,
+  top: `7px`,
+}));
 
 const Questlogocontainer: any = styled('div')({
   borderRadius: `0px`,
@@ -805,35 +818,40 @@ T. +354 647 2666`}
             </SiteDesignedInFigmaB1>
           </SiteDesignedInFigmaB>
           <Frame184>
-            <Figmalogocontainer>
-              <Figma>
+            <FigmaContainer data={data}>
+              <Figma data={data}>
                 <Vector6
+                  data={data}
                   src={`assets/images/Footer_Vector_6.png`}
                   loading="lazy"
                   alt={'Vector'}
                 />
                 <Vector7
+                  data={data}
                   src={`assets/images/Footer_Vector_7.png`}
                   loading="lazy"
                   alt={'Vector'}
                 />
                 <Vector8
+                  data={data}
                   src={`assets/images/Footer_Vector_8.png`}
                   loading="lazy"
                   alt={'Vector'}
                 />
                 <Vector9
+                  data={data}
                   src={`assets/images/Footer_Vector_9.png`}
                   loading="lazy"
                   alt={'Vector'}
                 />
                 <Vector10
+                  data={data}
                   src={`assets/images/Footer_Vector_10.png`}
                   loading="lazy"
                   alt={'Vector'}
                 />
               </Figma>
-            </Figmalogocontainer>
+            </FigmaContainer>
             <Questlogocontainer>
               <QuestLogoTraced>
                 <Layer8
