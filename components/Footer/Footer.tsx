@@ -555,10 +555,60 @@ const Figmalogocontainer: any = styled('div')({
   overflow: `hidden`,
 });
 
-const Vector6: any = styled('img')({
-  height: `16px`,
-  width: `10.67px`,
+const Figma: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: `18px`,
+  width: `18px`,
   margin: `0px`,
+  overflow: `hidden`,
+});
+
+const Vector6: any = styled('img')({
+  height: `5.33px`,
+  width: `5.33px`,
+  position: `absolute`,
+  left: `9px`,
+  top: `1px`,
+});
+
+const Vector7: any = styled('img')({
+  height: `5.33px`,
+  width: `5.33px`,
+  position: `absolute`,
+  left: `9px`,
+  top: `6px`,
+});
+
+const Vector8: any = styled('img')({
+  height: `5.33px`,
+  width: `5.33px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `1px`,
+});
+
+const Vector9: any = styled('img')({
+  height: `5.33px`,
+  width: `5.33px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `6px`,
+});
+
+const Vector10: any = styled('img')({
+  height: `5.33px`,
+  width: `5.33px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `12px`,
 });
 
 const Questlogocontainer: any = styled('div')({
@@ -615,7 +665,7 @@ const Nextjslogocontainer: any = styled('div')({
   overflow: `hidden`,
 });
 
-const Vector7: any = styled('img')({
+const Vector11: any = styled('img')({
   height: `18px`,
   width: `18px`,
   margin: `0px`,
@@ -756,11 +806,33 @@ T. +354 647 2666`}
           </SiteDesignedInFigmaB>
           <Frame184>
             <Figmalogocontainer>
-              <Vector6
-                src={`assets/images/Footer_Vector_6.png`}
-                loading="lazy"
-                alt={'Vector'}
-              />
+              <Figma>
+                <Vector6
+                  src={`assets/images/Footer_Vector_6.png`}
+                  loading="lazy"
+                  alt={'Vector'}
+                />
+                <Vector7
+                  src={`assets/images/Footer_Vector_7.png`}
+                  loading="lazy"
+                  alt={'Vector'}
+                />
+                <Vector8
+                  src={`assets/images/Footer_Vector_8.png`}
+                  loading="lazy"
+                  alt={'Vector'}
+                />
+                <Vector9
+                  src={`assets/images/Footer_Vector_9.png`}
+                  loading="lazy"
+                  alt={'Vector'}
+                />
+                <Vector10
+                  src={`assets/images/Footer_Vector_10.png`}
+                  loading="lazy"
+                  alt={'Vector'}
+                />
+              </Figma>
             </Figmalogocontainer>
             <Questlogocontainer>
               <QuestLogoTraced>
@@ -772,8 +844,8 @@ T. +354 647 2666`}
               </QuestLogoTraced>
             </Questlogocontainer>
             <Nextjslogocontainer>
-              <Vector7
-                src={`assets/images/Footer_Vector_7.png`}
+              <Vector11
+                src={`assets/images/Footer_Vector_11.png`}
                 loading="lazy"
                 alt={'Vector'}
               />
