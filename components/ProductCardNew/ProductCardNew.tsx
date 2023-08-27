@@ -57,13 +57,11 @@ const Imagecontainer: any = styled('div', {
 const ProductImage: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: data.isHover ? `180px` : '180px',
+  height: data.isHover ? `180px` : '200px',
   width: `263px`,
   objectFit: `cover`,
   zIndex: data.isHover ? 'unset' : `0`,
-  position: `absolute`,
-  left: `24px`,
-  top: data.isHover ? `24px` : `-84px`,
+  margin: `0px`,
 }));
 
 const Productcardbackgroun: any = styled('div', {
