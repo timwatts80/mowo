@@ -30,7 +30,6 @@ const ScreenDesktop: any = styled('div', {
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
-  margin: `68px 0px 0px 0px`,
   boxSizing: `border-box`,
   height: 'auto',
   maxWidth:
@@ -91,13 +90,9 @@ const Casecontentcontainer: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
-  display: `absolute`,
-  position: `absolute`,
+  display: `flex`,
+  position: 'absolute',
   isolation: `isolate`,
-  top: 
-    data.currentVariant === 'ScreenMobile'
-      ? `300px`
-      :`250px`,
   flexDirection:
     data.currentVariant === 'ScreenTablet'
       ? `row`
@@ -108,6 +103,12 @@ const Casecontentcontainer: any = styled('div', {
   alignItems: `flex-end`,
   padding: `0px`,
   boxSizing: `border-box`,
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `497px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `457px`
+      : `349px`,
   width:
     data.currentVariant === 'ScreenTablet'
       ? `356px`
@@ -115,6 +116,7 @@ const Casecontentcontainer: any = styled('div', {
       ? 'unset'
       : `601px`,
   margin: `0px`,
+  top: '250px',
   alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
