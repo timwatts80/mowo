@@ -17,7 +17,6 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProductCardNewProps } from 'types';
 import useProductCardNew from 'components/ProductCardNew/useProductCardNew';
-import useProductCardList from 'components/ProductCardNew/useProductCardNew';
 
 const StateDefault: any = styled('div')({
   borderRadius: `10px`,
@@ -26,11 +25,12 @@ const StateDefault: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   height: `448px`,
-  width: `311px`,
+  width: '100%',
   justifyContent: `flex-end`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
+  maxWidth: '311px',
 });
 
 const Imagecontainer: any = styled('div', {
@@ -50,6 +50,7 @@ const Imagecontainer: any = styled('div', {
   height: data.isHover ? 'unset' : `120px`,
   zIndex: data.isHover ? 'unset' : `2`,
   margin: `0px`,
+  width: '100%',
   flex: data.isHover ? `1` : 'unset',
 }));
 
@@ -78,7 +79,7 @@ const Productcardbackgroun: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   height: data.isHover ? `228px` : `108px`,
-  width: `311px`,
+  width: '100%',
   zIndex: data.isHover ? 'unset' : `1`,
   left: `0px`,
   top: data.isHover ? `0px` : `120px`,
@@ -106,9 +107,10 @@ const Productinfocontainer: any = styled('div', {
   alignItems: `center`,
   padding: `24px`,
   boxSizing: `border-box`,
-  width: `311px`,
+  alignSelf: `stretch`,
   zIndex: data.isHover ? 'unset' : `0`,
   margin: `0px`,
+  width: '100%',
 }));
 
 const Titlecontainer: any = styled('div', {
