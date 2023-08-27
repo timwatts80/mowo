@@ -22,7 +22,9 @@
 
 
 
-
+export interface CarouselContainerProps {
+  className?: any;
+};
 
 
 

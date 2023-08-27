@@ -6,7 +6,25 @@ import ClientCaseStudy from 'components/ClientCaseStudy/ClientCaseStudy';
 import ClientLogoCard from 'components/ClientLogoCard/ClientLogoCard';
 import useCarouselTest from './useCarouselTest';
 import { ClientCaseCarouselProps } from 'types';
+import { CarouselContainerProps } from 'types';
+import styled from '@emotion/styled';
 
+const CarouselContainer: any = styled('div')({
+    position: `relative`,
+    isolation: `isolate`,
+    flexDirection: `row`,
+    width: '85%',
+    justifyContent: `flex-start`,
+    alignItems: `center`,
+    padding: `0px`,
+    margin: '50px auto 250px',
+    boxSizing: `border-box`,
+    height: 'auto',
+});
+
+const MainImage: any = styled('div')({
+    marginTop: '50px',
+});
 
 function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
     const { data } = useCarouselTest();
@@ -29,7 +47,7 @@ function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
     };
 
     return (
-        <div className="carousel-container" style={{ width: '75%', margin: '50px auto 250px', height: 'auto' }}>
+        <CarouselContainer className="carousel-container">
             <Slider {...settings}>
                 {data.clientCases &&
                     data.clientCases.map((item: any, index: number) => (
@@ -43,14 +61,14 @@ function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
                         </div>
                     ))}
             </Slider>
-            <div className="main-image">
+            <MainImage className="main-image">
                 <ClientCaseStudy
                     bgimage={selectedImageUrl.bgimage}
                     title={selectedImageUrl.title}
                     description={selectedImageUrl.description}
                 />
-            </div>
-        </div>
+            </MainImage>
+        </CarouselContainer>
     );
 }
 

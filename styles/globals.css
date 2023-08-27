@@ -51,6 +51,14 @@ body {
   color: black;
 }
 
+.carousel-container .slick-slider .slick-prev {
+ left: 0;
+}
+
+.carousel-container .slick-slider .slick-next {
+  right: 0;
+}
+
 /* End Product Slider */
 
 /* Mobile Menu Dialog */

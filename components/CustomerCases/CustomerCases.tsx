@@ -48,7 +48,7 @@ const Rows: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `60px 45px`
       : data.currentVariant === 'ScreenMobile'
-      ? `30px`
+      ? `16px`
       : `48px 60px`,
   boxSizing: `border-box`,
   flex: `1`,
