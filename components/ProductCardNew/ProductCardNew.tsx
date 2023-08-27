@@ -128,6 +128,7 @@ const Titlecontainer: any = styled('div', {
   alignSelf: `stretch`,
   zIndex: data.isHover ? 'unset' : `2`,
   margin: `0px`,
+  width: '100%',
 }));
 
 const ProductTitle: any = styled('div')({
@@ -160,6 +161,7 @@ const Detailscontainer: any = styled('div', {
   alignSelf: `stretch`,
   zIndex: data.isHover ? 'unset' : `1`,
   margin: `16px 0px 0px 0px`,
+  width: '100%',
 }));
 
 const Description: any = styled('div')(({ theme }: any) => ({
@@ -194,6 +196,7 @@ const Button1: any = styled('div', {
   alignSelf: `stretch`,
   zIndex: data.isHover ? 'unset' : `0`,
   margin: `16px 0px 0px 0px`,
+  width: '100%',
 }));
 
 const ButtonContained: any = styled(Button, {
