@@ -14,9 +14,6 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import Figmalogocontainer from 'components/Figmalogocontainer/Figmalogocontainer';
-import Questlogocontainer from 'components/Questlogocontainer/Questlogocontainer';
-import Nextjslogocontainer from 'components/Nextjslogocontainer/Nextjslogocontainer';
 import { FooterProps } from 'types';
 import useFooter from 'components/Footer/useFooter';
 
@@ -542,29 +539,87 @@ const Frame184: any = styled('div')({
   margin: `4px 0px 0px 0px`,
 });
 
-const Figmalogocontainer1: any = styled(Figmalogocontainer)(
-  ({ theme }: any) => ({
-    width: `21px`,
-    height: `21px`,
-    margin: `0px`,
-  })
-);
+const Figmalogocontainer: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `21px`,
+  height: `21px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
 
-const Questlogocontainer1: any = styled(Questlogocontainer)(
-  ({ theme }: any) => ({
-    width: `21px`,
-    height: `21px`,
-    margin: `0px 0px 0px 20px`,
-  })
-);
+const Vector6: any = styled('img')({
+  height: `16px`,
+  width: `10.67px`,
+  margin: `0px`,
+});
 
-const Nextjslogocontainer1: any = styled(Nextjslogocontainer)(
-  ({ theme }: any) => ({
-    width: `21px`,
-    height: `21px`,
-    margin: `0px 0px 0px 20px`,
-  })
-);
+const Questlogocontainer: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `21px`,
+  height: `21px`,
+  margin: `0px 0px 0px 20px`,
+  overflow: `hidden`,
+});
+
+const QuestLogoTraced: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: `17.98px`,
+  width: `18px`,
+  margin: `0px`,
+});
+
+const Layer8: any = styled('img')({
+  height: `17.98px`,
+  width: `18px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const Nextjslogocontainer: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `21px`,
+  height: `21px`,
+  margin: `0px 0px 0px 20px`,
+  overflow: `hidden`,
+});
+
+const Vector7: any = styled('img')({
+  height: `18px`,
+  width: `18px`,
+  margin: `0px`,
+});
 
 const ColorStroke: any = styled('div')({
   borderRadius: `0px`,
@@ -700,9 +755,29 @@ T. +354 647 2666`}
             </SiteDesignedInFigmaB1>
           </SiteDesignedInFigmaB>
           <Frame184>
-            <Figmalogocontainer1 />
-            <Questlogocontainer1 />
-            <Nextjslogocontainer1 />
+            <Figmalogocontainer>
+              <Vector6
+                src={`assets/images/Footer_Vector_6.png`}
+                loading="lazy"
+                alt={'Vector'}
+              />
+            </Figmalogocontainer>
+            <Questlogocontainer>
+              <QuestLogoTraced>
+                <Layer8
+                  src={`assets/images/Footer_Layer_8.png`}
+                  loading="lazy"
+                  alt={'Layer 8'}
+                />
+              </QuestLogoTraced>
+            </Questlogocontainer>
+            <Nextjslogocontainer>
+              <Vector7
+                src={`assets/images/Footer_Vector_7.png`}
+                loading="lazy"
+                alt={'Vector'}
+              />
+            </Nextjslogocontainer>
           </Frame184>
         </Attribution>
       </Box1>
