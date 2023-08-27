@@ -18,9 +18,7 @@ import { styled } from '@mui/material/styles';
 import { ClientCaseStudyProps } from 'types';
 import useClientCaseStudy from 'components/ClientCaseStudy/useClientCaseStudy';
 
-const ScreenDesktop: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const ScreenDesktop: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -32,13 +30,7 @@ const ScreenDesktop: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
-  maxWidth:
-    data.currentVariant === 'ScreenTablet'
-      ? `unset`
-      : data.currentVariant === 'ScreenMobile'
-      ? `unset`
-      : `1320px`,
-}));
+});
 
 const ClientCaseStudySlide: any = styled('div')({
   borderRadius: `0px`,
@@ -321,7 +313,7 @@ function ClientCaseStudy(props: ClientCaseStudyProps): JSX.Element {
   const { data } = useClientCaseStudy();
 
   return (
-    <ScreenDesktop className={props.className} data={data}>
+    <ScreenDesktop className={props.className}>
       <ClientCaseStudySlide>
         <CaseBackground data={data}>
           <Image1
