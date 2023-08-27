@@ -14,10 +14,13 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
+import Figmalogocontainer from 'components/Figmalogocontainer/Figmalogocontainer';
+import Questlogocontainer from 'components/Questlogocontainer/Questlogocontainer';
+import Nextjslogocontainer from 'components/Nextjslogocontainer/Nextjslogocontainer';
 import { FooterProps } from 'types';
 import useFooter from 'components/Footer/useFooter';
 
-const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
+const Desktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(248, 248, 248, 1)`,
   borderRadius: `0px`,
   display: `flex`,
@@ -33,7 +36,7 @@ const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   height: 'auto',
 }));
 
-const Cols: any = styled('div')({
+const Box1: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -41,58 +44,55 @@ const Cols: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `45px 60px 30px 60px`,
+  padding: `30px 45px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
   overflow: `hidden`,
 });
 
-const Frame168: any = styled('div')({
+const Box2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection: data.currentVariant === 'Mobile' ? `column` : `row`,
   justifyContent: `center`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
-});
+}));
 
-const LeftRows: any = styled('div')({
+const LogoSocial: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: `flex-end`,
-  padding: `0px`,
+  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-end`,
+  padding:
+    data.currentVariant === 'Tablet'
+      ? `8px 10px`
+      : data.currentVariant === 'Mobile'
+      ? `8px 10px`
+      : `8px 32px`,
   boxSizing: `border-box`,
-  flex: `1`,
+  flex: data.currentVariant === 'Mobile' ? 'unset' : `1`,
   margin: `0px`,
   overflow: `hidden`,
-});
+  alignSelf: data.currentVariant === 'Mobile' ? `stretch` : 'unset',
+}));
 
-const LogoSocial: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `377px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const LogoContainer: any = styled('div')({
+const LogoContainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -100,32 +100,38 @@ const LogoContainer: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: `0px`,
+  padding: data.currentVariant === 'Mobile' ? `12px` : `0px 12px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  height: `79px`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? 'unset'
+      : data.currentVariant === 'Mobile'
+      ? 'unset'
+      : `264px`,
   margin: `0px`,
-});
+}));
 
-const Logo: any = styled('div')({
-  backgroundImage: `url(assets/images/Footer_logo.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `cover`,
-  backgroundRepeat: `no-repeat`,
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  alignSelf: `stretch`,
-  width: `297px`,
+const MowoLogo2: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height:
+    data.currentVariant === 'Tablet'
+      ? `38.91px`
+      : data.currentVariant === 'Mobile'
+      ? `38.91px`
+      : `51px`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? `200px`
+      : data.currentVariant === 'Mobile'
+      ? `200px`
+      : `262px`,
   margin: `0px`,
-  overflow: `hidden`,
-});
+}));
 
-const Social: any = styled('div')({
+const Social: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -133,12 +139,22 @@ const Social: any = styled('div')({
   flexDirection: `row`,
   justifyContent: `space-between`,
   alignItems: `center`,
-  padding: `0px 30px`,
+  padding: data.currentVariant === 'Tablet' ? `0px 12px` : `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `10px 0px 0px 0px`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? `224px`
+      : data.currentVariant === 'Mobile'
+      ? `200px`
+      : `264px`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `18px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `10px 0px 0px 0px`
+      : `24px 0px 0px 0px`,
   overflow: `hidden`,
-});
+}));
 
 const FacebookContainer: any = styled('div')({
   borderRadius: `0px`,
@@ -312,37 +328,54 @@ const Vector5: any = styled('img')({
   top: `4px`,
 });
 
-const RightRows: any = styled('div')({
+const Contact: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: `flex-start`,
-  padding: `0px`,
+  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
+  padding:
+    data.currentVariant === 'Tablet'
+      ? `15px 10px`
+      : data.currentVariant === 'Mobile'
+      ? `15px 10px`
+      : `15px 30px`,
   boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px 0px 0px 130px`,
+  alignSelf: `stretch`,
+  flex: data.currentVariant === 'Mobile' ? 'unset' : `1`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `0px 0px 0px 20px`
+      : data.currentVariant === 'Mobile'
+      ? `20px 0px 0px 0px`
+      : `0px 0px 0px 100px`,
   overflow: `hidden`,
-});
+}));
 
-const UpperRow: any = styled('div')({
+const UpperRow: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: `flex-start`,
+  justifyContent: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
   overflow: `hidden`,
-});
+}));
 
-const MowoEhf: any = styled('div')(({ theme }: any) => ({
+const MowoEhf: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -350,7 +383,12 @@ const MowoEhf: any = styled('div')(({ theme }: any) => ({
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `30px`,
+  fontSize:
+    data.currentVariant === 'Tablet'
+      ? `26px`
+      : data.currentVariant === 'Mobile'
+      ? `26px`
+      : `30px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
@@ -358,195 +396,140 @@ const MowoEhf: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const LowerRow: any = styled('div')({
+const LowerRow: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection: data.currentVariant === 'Mobile' ? `column` : `row`,
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `0px`,
+  margin:
+    data.currentVariant === 'Tablet' ? `12px 0px 0px 0px` : `9px 0px 0px 0px`,
   overflow: `hidden`,
-});
+}));
 
-const LeftText: any = styled('div')({
+const Kt5002200820T3546472: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: data.currentVariant === 'Mobile' ? `center` : `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `400`,
+  fontSize:
+    data.currentVariant === 'Tablet'
+      ? `16px`
+      : data.currentVariant === 'Mobile'
+      ? `14px`
+      : `18px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  alignSelf: `stretch`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? `123px`
+      : data.currentVariant === 'Mobile'
+      ? 'unset'
+      : `138px`,
+  margin: `0px`,
+}));
+
+const Knarrarvogur4104Reyk: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: data.currentVariant === 'Mobile' ? `center` : `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `400`,
+  fontSize:
+    data.currentVariant === 'Tablet'
+      ? `16px`
+      : data.currentVariant === 'Mobile'
+      ? `14px`
+      : `18px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  alignSelf: `stretch`,
+  width:
+    data.currentVariant === 'Tablet'
+      ? `106px`
+      : data.currentVariant === 'Mobile'
+      ? 'unset'
+      : `120px`,
+  margin:
+    data.currentVariant === 'Mobile' ? `4px 0px 0px 0px` : `0px 0px 0px 8px`,
+}));
+
+const Attribution: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+  alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `145px`,
-  margin: `0px`,
-  overflow: `hidden`,
+  alignSelf: `stretch`,
+  margin: `15px 0px 0px 0px`,
 });
 
-const Kt5002200820: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `18px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const T3546472666: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `18px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const RightText: any = styled('div')({
+const SiteDesignedInFigmaB: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `column`,
+  flexDirection: `row`,
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px 0px 0px 15px`,
+  alignItems: `center`,
+  padding: data.currentVariant === 'Mobile' ? `10px` : `0px`,
   boxSizing: `border-box`,
-  width: `135px`,
+  alignSelf: `stretch`,
   margin: `0px`,
-  overflow: `hidden`,
-});
+}));
 
-const Knarrarvogur4: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
+const SiteDesignedInFigmaB1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `18px`,
+  fontWeight: `700`,
+  fontSize:
+    data.currentVariant === 'Tablet'
+      ? `14px`
+      : data.currentVariant === 'Mobile'
+      ? `12px`
+      : `16px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `150%`,
   textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Q104Reykjavík: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `18px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Stack: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `30px 0px 0px 0px`,
-  overflow: `hidden`,
-});
-
-const Frame1681: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
-});
-
-const Frame169: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `201px`,
-  margin: `0px`,
-});
-
-const SiteDesignedIn: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  width: `120px`,
-  margin: `0px`,
 }));
 
-const FigmaContainer: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `6px`,
-  boxSizing: `border-box`,
-  width: `30px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Figma: any = styled('div')({
+const Frame184: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -556,220 +539,32 @@ const Figma: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  height: `18px`,
-  width: `18px`,
-  margin: `0px`,
-  overflow: `hidden`,
+  margin: `4px 0px 0px 0px`,
 });
 
-const Vector6: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `9px`,
-  top: `6px`,
-});
+const Figmalogocontainer1: any = styled(Figmalogocontainer)(
+  ({ theme }: any) => ({
+    width: `21px`,
+    height: `21px`,
+    margin: `0px`,
+  })
+);
 
-const Vector7: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `12px`,
-});
+const Questlogocontainer1: any = styled(Questlogocontainer)(
+  ({ theme }: any) => ({
+    width: `21px`,
+    height: `21px`,
+    margin: `0px 0px 0px 20px`,
+  })
+);
 
-const Vector8: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `9px`,
-  top: `1px`,
-});
-
-const Vector9: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `1px`,
-});
-
-const Vector10: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `6px`,
-});
-
-const Figma1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  width: `51px`,
-  margin: `0px`,
-}));
-
-const Frame171: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const BuiltWith: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  width: `77px`,
-  margin: `0px`,
-}));
-
-const QuestContainer: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `6px`,
-  boxSizing: `border-box`,
-  width: `30px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const QuestLogoTraced: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `17.98px`,
-  width: `18px`,
-  margin: `0px`,
-});
-
-const Layer8: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Quest: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  width: `49px`,
-  margin: `0px`,
-}));
-
-const Frame170: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-});
-
-const DeployedWith: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  width: `108px`,
-  margin: `0px`,
-}));
-
-const NextJsContainer: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `6px`,
-  boxSizing: `border-box`,
-  width: `30px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector11: any = styled('img')({
-  height: `18px`,
-  width: `18px`,
-  margin: `0px`,
-});
-
-const NextJs: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  width: `57px`,
-  margin: `0px`,
-}));
+const Nextjslogocontainer1: any = styled(Nextjslogocontainer)(
+  ({ theme }: any) => ({
+    width: `21px`,
+    height: `21px`,
+    margin: `0px 0px 0px 20px`,
+  })
+);
 
 const ColorStroke: any = styled('div')({
   borderRadius: `0px`,
@@ -817,2000 +612,107 @@ const Rectangle176: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const Rows: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `30px 45px 0px 45px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const TopRow: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `15px 0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const LeftRows1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const LogoContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Logo1: any = styled('div')({
-  backgroundImage: `url(assets/images/Footer_logo_1.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `contain`,
-  backgroundRepeat: `no-repeat`,
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Social1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `space-between`,
-  alignItems: `flex-start`,
-  padding: `0px 15px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-  overflow: `hidden`,
-});
-
-const FacebookContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const FacebookNegative1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `24px`,
-  width: `24px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector12: any = styled('img')({
-  height: `23.85px`,
-  width: `24px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const InstagramContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const InstagramNegative1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `24px`,
-  width: `24px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector13: any = styled('img')({
-  height: `24px`,
-  width: `23.99px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Vector14: any = styled('img')({
-  height: `12.33px`,
-  width: `12.33px`,
-  position: `absolute`,
-  left: `6px`,
-  top: `6px`,
-});
-
-const Vector15: any = styled('img')({
-  height: `2.88px`,
-  width: `2.88px`,
-  position: `absolute`,
-  left: `17px`,
-  top: `4px`,
-});
-
-const LinkedinContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const LinkedInNegative1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `24px`,
-  height: `24px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector16: any = styled('img')({
-  height: `24px`,
-  width: `24px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const YoutubeContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const YouTubeNegative1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `24px`,
-  height: `24px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector17: any = styled('img')({
-  height: `16.88px`,
-  width: `24px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `4px`,
-});
-
-const RightRows1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `15px 0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px 0px 0px 30px`,
-  overflow: `hidden`,
-});
-
-const UpperRow1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const MowoEhf1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `26px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
-  margin: `0px`,
-}));
-
-const LowerRow1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `9px 0px 0px 0px`,
-  overflow: `hidden`,
-});
-
-const LeftText1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width: `145px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Kt50022008201: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const T35464726661: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const RightText1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  width: `179px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Knarrarvogur41: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Q104Reykjavík1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `16px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const BottomRow: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-end`,
-  padding: `18px 0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-  overflow: `hidden`,
-});
-
-const Frame164: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `105px`,
-  margin: `0px`,
-});
-
-const SiteDesignedIn1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px`,
-}));
-
-const FigmaContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `40.33px`,
-  height: `21px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Figma2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `18px`,
-  width: `18px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector18: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `9px`,
-  top: `6px`,
-});
-
-const Vector19: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `12px`,
-});
-
-const Vector20: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `9px`,
-  top: `1px`,
-});
-
-const Vector21: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `1px`,
-});
-
-const Vector22: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `6px`,
-});
-
-const Frame165: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `112px`,
-  margin: `0px`,
-});
-
-const FigmaBuiltWith: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px`,
-}));
-
-const QuestContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `40.33px`,
-  height: `21px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const QuestLogoTraced1: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `17.98px`,
-  width: `18px`,
-  margin: `0px`,
-});
-
-const Layer1: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer2: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer3: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer4: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer5: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer6: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer7: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer81: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Frame166: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `140px`,
-  margin: `0px`,
-});
-
-const QuestDeployedWith: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px`,
-}));
-
-const NextJsContainer1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `40.33px`,
-  height: `21px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector23: any = styled('img')({
-  height: `18px`,
-  width: `18px`,
-  margin: `0px`,
-});
-
-const Frame167: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-end`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `50px`,
-  margin: `0px`,
-});
-
-const NextJs1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px`,
-}));
-
-const ColorStroke1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Rectangle1731: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Secondary']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
-const Rectangle1741: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Success']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
-const Rectangle1751: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Primary']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
-const Rectangle1761: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Warning']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
-const Rows1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `30px 30px 15px 30px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const TopRow1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const LogoContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Logo2: any = styled('div')({
-  backgroundImage: `url(assets/images/Footer_logo_2.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `contain`,
-  backgroundRepeat: `no-repeat`,
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Social2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-start`,
-  padding: `6px 0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const FacebookContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const FacebookNegative2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `30px`,
-  width: `30px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector24: any = styled('img')({
-  height: `29.82px`,
-  width: `30px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const InstagramContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `5px 15px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const InstagramNegative2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `30px`,
-  height: `30px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector25: any = styled('img')({
-  height: `29.99px`,
-  width: `29.98px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Vector26: any = styled('img')({
-  height: `15.41px`,
-  width: `15.41px`,
-  position: `absolute`,
-  left: `7px`,
-  top: `7px`,
-});
-
-const Vector27: any = styled('img')({
-  height: `3.6px`,
-  width: `3.6px`,
-  position: `absolute`,
-  left: `21px`,
-  top: `5px`,
-});
-
-const LinkedinContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `5px 16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const LinkedInNegative2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `30px`,
-  height: `30px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector28: any = styled('img')({
-  height: `30px`,
-  width: `30px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const YoutubeContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `5px 16px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const YouTubeNegative2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `30px`,
-  height: `30px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector29: any = styled('img')({
-  height: `21.1px`,
-  width: `30px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `4px`,
-});
-
-const MiddleRow: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `30px 0px 0px 0px`,
-  overflow: `hidden`,
-});
-
-const MowoEhf2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `22px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Kt50022008202: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `6px 0px 0px 0px`,
-}));
-
-const T35464726662: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `6px 0px 0px 0px`,
-}));
-
-const Knarrarvogur42: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `6px 0px 0px 0px`,
-}));
-
-const Q104Reykjavík2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `14px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `6px 0px 0px 0px`,
-}));
-
-const BottomRows: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-end`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `30px 0px 0px 0px`,
-});
-
-const TopRow2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const SiteDesignedIn2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `12px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px`,
-}));
-
-const FigmaContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px 0px 0px 6px`,
-  overflow: `hidden`,
-});
-
-const Figma3: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `18px`,
-  width: `18px`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const Vector30: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `9px`,
-  top: `6px`,
-});
-
-const Vector31: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `12px`,
-});
-
-const Vector32: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `9px`,
-  top: `1px`,
-});
-
-const Vector33: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `1px`,
-});
-
-const Vector34: any = styled('img')({
-  height: `5.33px`,
-  width: `5.33px`,
-  position: `absolute`,
-  left: `4px`,
-  top: `6px`,
-});
-
-const FigmaBuiltWith1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `12px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px 0px 0px 6px`,
-}));
-
-const BottomRow1: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `6px 0px 0px 0px`,
-});
-
-const QuestContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-  overflow: `hidden`,
-});
-
-const QuestLogoTraced2: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `17.98px`,
-  width: `18px`,
-  margin: `0px`,
-});
-
-const Layer11: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer21: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer31: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer41: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer51: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer61: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer71: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Layer82: any = styled('img')({
-  height: `17.98px`,
-  width: `18px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Quest1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `12px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px 0px 0px 6px`,
-}));
-
-const DeployedWith1: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `12px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px 0px 0px 6px`,
-}));
-
-const NextJsContainer2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `center`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `22px`,
-  margin: `0px 0px 0px 6px`,
-  overflow: `hidden`,
-});
-
-const Vector35: any = styled('img')({
-  height: `18px`,
-  width: `18px`,
-  margin: `0px`,
-});
-
-const NextJs2: any = styled('div')(({ theme }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `12px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `150%`,
-  textTransform: `none`,
-  margin: `0px 0px 0px 6px`,
-}));
-
-const ColorStroke2: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Rectangle1732: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Secondary']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
-const Rectangle1742: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Success']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
-const Rectangle1752: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Primary']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
-const Rectangle1762: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['Warning']['Main'],
-  borderRadius: `0px`,
-  flex: `1`,
-  height: `15px`,
-  margin: `0px`,
-}));
-
 function Footer(props: FooterProps): JSX.Element {
   const { data } = useFooter();
 
   return (
-    <ScreenDesktop className={props.className}>
-      {!(data.currentVariant === 'ScreenTablet') &&
-        !(data.currentVariant === 'ScreenMobile') && (
-          <Cols>
-            <Frame168>
-              <LeftRows>
-                <LogoSocial>
-                  <LogoContainer>
-                    <Logo></Logo>
-                  </LogoContainer>
-                  <Social>
-                    <FacebookContainer>
-                      <FacebookNegative>
-                        <Vector
-                          src={`assets/images/Footer_Vector.png`}
-                          loading="lazy"
-                          alt={'Vector'}
-                        />
-                      </FacebookNegative>
-                    </FacebookContainer>
-                    <InstagramContainer>
-                      <InstagramNegative>
-                        <Vector1
-                          src={`assets/images/Footer_Vector_1.png`}
-                          loading="lazy"
-                          alt={'Vector'}
-                        />
-                        <Vector2
-                          src={`assets/images/Footer_Vector_2.png`}
-                          loading="lazy"
-                          alt={'Vector'}
-                        />
-                        <Vector3
-                          src={`assets/images/Footer_Vector_3.png`}
-                          loading="lazy"
-                          alt={'Vector'}
-                        />
-                      </InstagramNegative>
-                    </InstagramContainer>
-                    <LinkedinContainer>
-                      <LinkedInNegative>
-                        <Vector4
-                          src={`assets/images/Footer_Vector_4.png`}
-                          loading="lazy"
-                          alt={'Vector'}
-                        />
-                      </LinkedInNegative>
-                    </LinkedinContainer>
-                    <YoutubeContainer>
-                      <YouTubeNegative>
-                        <Vector5
-                          src={`assets/images/Footer_Vector_5.png`}
-                          loading="lazy"
-                          alt={'Vector'}
-                        />
-                      </YouTubeNegative>
-                    </YoutubeContainer>
-                  </Social>
-                </LogoSocial>
-              </LeftRows>
-              <RightRows>
-                <UpperRow>
-                  <MowoEhf>{`MOWO ehf.`}</MowoEhf>
-                </UpperRow>
-                <LowerRow>
-                  <LeftText>
-                    <Kt5002200820>{`kt. 500220 - 0820`}</Kt5002200820>
-                    <T3546472666>{`T. +354 647 2666`}</T3546472666>
-                  </LeftText>
-                  <RightText>
-                    <Knarrarvogur4>{`Knarrarvogur 4`}</Knarrarvogur4>
-                    <Q104Reykjavík>{`104 Reykjavík`}</Q104Reykjavík>
-                  </RightText>
-                </LowerRow>
-              </RightRows>
-            </Frame168>
-            <Stack>
-              <Frame1681>
-                <Frame169>
-                  <SiteDesignedIn>{`Site designed in`}</SiteDesignedIn>
-                  <FigmaContainer>
-                    <Figma>
-                      <Vector6
-                        src={`assets/images/Footer_Vector_6.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                      <Vector7
-                        src={`assets/images/Footer_Vector_7.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                      <Vector8
-                        src={`assets/images/Footer_Vector_8.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                      <Vector9
-                        src={`assets/images/Footer_Vector_9.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                      <Vector10
-                        src={`assets/images/Footer_Vector_10.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                    </Figma>
-                  </FigmaContainer>
-                  <Figma1>{`Figma,`}</Figma1>
-                </Frame169>
-                <Frame171>
-                  <BuiltWith>{` built with`}</BuiltWith>
-                  <QuestContainer>
-                    <QuestLogoTraced>
-                      <Layer8
-                        src={`assets/images/Footer_Layer_8.png`}
-                        loading="lazy"
-                        alt={'Layer 8'}
-                      />
-                    </QuestLogoTraced>
-                  </QuestContainer>
-                  <Quest>{`Quest,`}</Quest>
-                </Frame171>
-                <Frame170>
-                  <DeployedWith>{`deployed with`}</DeployedWith>
-                  <NextJsContainer>
-                    <Vector11
-                      src={`assets/images/Footer_Vector_11.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </NextJsContainer>
-                  <NextJs>{`Next.JS`}</NextJs>
-                </Frame170>
-              </Frame1681>
-            </Stack>
-          </Cols>
-        )}
-      {!(data.currentVariant === 'ScreenTablet') &&
-        !(data.currentVariant === 'ScreenMobile') && (
-          <ColorStroke>
-            <Rectangle173></Rectangle173>
-            <Rectangle174></Rectangle174>
-            <Rectangle175></Rectangle175>
-            <Rectangle176></Rectangle176>
-          </ColorStroke>
-        )}
-      {data.currentVariant === 'ScreenTablet' && (
-        <Rows>
-          <TopRow>
-            <LeftRows1>
-              <LogoContainer1>
-                <Logo1></Logo1>
-              </LogoContainer1>
-              <Social1>
-                <FacebookContainer1>
-                  <FacebookNegative1>
-                    <Vector12
-                      src={`assets/images/Footer_Vector_12.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </FacebookNegative1>
-                </FacebookContainer1>
-                <InstagramContainer1>
-                  <InstagramNegative1>
-                    <Vector13
-                      src={`assets/images/Footer_Vector_13.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                    <Vector14
-                      src={`assets/images/Footer_Vector_14.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                    <Vector15
-                      src={`assets/images/Footer_Vector_15.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </InstagramNegative1>
-                </InstagramContainer1>
-                <LinkedinContainer1>
-                  <LinkedInNegative1>
-                    <Vector16
-                      src={`assets/images/Footer_Vector_16.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </LinkedInNegative1>
-                </LinkedinContainer1>
-                <YoutubeContainer1>
-                  <YouTubeNegative1>
-                    <Vector17
-                      src={`assets/images/Footer_Vector_17.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </YouTubeNegative1>
-                </YoutubeContainer1>
-              </Social1>
-            </LeftRows1>
-            <RightRows1>
-              <UpperRow1>
-                <MowoEhf1>{`MOWO ehf.`}</MowoEhf1>
-              </UpperRow1>
-              <LowerRow1>
-                <LeftText1>
-                  <Kt50022008201>{`kt. 500220 - 0820`}</Kt50022008201>
-                  <T35464726661>{`T. +354 647 2666`}</T35464726661>
-                </LeftText1>
-                <RightText1>
-                  <Knarrarvogur41>{`Knarrarvogur 4`}</Knarrarvogur41>
-                  <Q104Reykjavík1>{`104 Reykjavík`}</Q104Reykjavík1>
-                </RightText1>
-              </LowerRow1>
-            </RightRows1>
-          </TopRow>
-          <BottomRow>
-            <Frame164>
-              <SiteDesignedIn1>{`Site designed in`}</SiteDesignedIn1>
-            </Frame164>
-            <FigmaContainer1>
-              <Figma2>
-                <Vector18
-                  src={`assets/images/Footer_Vector_18.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector19
-                  src={`assets/images/Footer_Vector_19.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector20
-                  src={`assets/images/Footer_Vector_20.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector21
-                  src={`assets/images/Footer_Vector_21.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector22
-                  src={`assets/images/Footer_Vector_22.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-              </Figma2>
-            </FigmaContainer1>
-            <Frame165>
-              <FigmaBuiltWith>{`Figma, built with`}</FigmaBuiltWith>
-            </Frame165>
-            <QuestContainer1>
-              <QuestLogoTraced1>
-                <Layer1
-                  src={`assets/images/Footer_Layer_1.png`}
-                  loading="lazy"
-                  alt={'Layer 1'}
-                />
-                <Layer2
-                  src={`assets/images/Footer_Layer_2.png`}
-                  loading="lazy"
-                  alt={'Layer 2'}
-                />
-                <Layer3
-                  src={`assets/images/Footer_Layer_3.png`}
-                  loading="lazy"
-                  alt={'Layer 3'}
-                />
-                <Layer4
-                  src={`assets/images/Footer_Layer_4.png`}
-                  loading="lazy"
-                  alt={'Layer 4'}
-                />
-                <Layer5
-                  src={`assets/images/Footer_Layer_5.png`}
-                  loading="lazy"
-                  alt={'Layer 5'}
-                />
-                <Layer6
-                  src={`assets/images/Footer_Layer_6.png`}
-                  loading="lazy"
-                  alt={'Layer 6'}
-                />
-                <Layer7
-                  src={`assets/images/Footer_Layer_7.png`}
-                  loading="lazy"
-                  alt={'Layer 7'}
-                />
-                <Layer81
-                  src={`assets/images/Footer_Layer_8_1.png`}
-                  loading="lazy"
-                  alt={'Layer 8'}
-                />
-              </QuestLogoTraced1>
-            </QuestContainer1>
-            <Frame166>
-              <QuestDeployedWith>{`Quest, deployed with`}</QuestDeployedWith>
-            </Frame166>
-            <NextJsContainer1>
-              <Vector23
-                src={`assets/images/Footer_Vector_23.png`}
+    <Desktop className={props.className}>
+      <Box1>
+        <Box2 data={data}>
+          <LogoSocial data={data}>
+            <LogoContainer data={data}>
+              <MowoLogo2
+                data={data}
+                src={`assets/images/Footer_MOWO_Logo_2.png`}
                 loading="lazy"
-                alt={'Vector'}
+                alt={'MOWO Logo 2'}
               />
-            </NextJsContainer1>
-            <Frame167>
-              <NextJs1>{`Next.JS`}</NextJs1>
-            </Frame167>
-          </BottomRow>
-        </Rows>
-      )}
-      {data.currentVariant === 'ScreenTablet' && (
-        <ColorStroke1>
-          <Rectangle1731></Rectangle1731>
-          <Rectangle1741></Rectangle1741>
-          <Rectangle1751></Rectangle1751>
-          <Rectangle1761></Rectangle1761>
-        </ColorStroke1>
-      )}
-      {data.currentVariant === 'ScreenMobile' && (
-        <Rows1>
-          <TopRow1>
-            <LogoContainer2>
-              <Logo2></Logo2>
-            </LogoContainer2>
-            <Social2>
-              <FacebookContainer2>
-                <FacebookNegative2>
-                  <Vector24
-                    src={`assets/images/Footer_Vector_24.png`}
+            </LogoContainer>
+            <Social data={data}>
+              <FacebookContainer>
+                <FacebookNegative>
+                  <Vector
+                    src={`assets/images/Footer_Vector.png`}
                     loading="lazy"
                     alt={'Vector'}
                   />
-                </FacebookNegative2>
-              </FacebookContainer2>
-              <InstagramContainer2>
-                <InstagramNegative2>
-                  <Vector25
-                    src={`assets/images/Footer_Vector_25.png`}
+                </FacebookNegative>
+              </FacebookContainer>
+              <InstagramContainer>
+                <InstagramNegative>
+                  <Vector1
+                    src={`assets/images/Footer_Vector_1.png`}
                     loading="lazy"
                     alt={'Vector'}
                   />
-                  <Vector26
-                    src={`assets/images/Footer_Vector_26.png`}
+                  <Vector2
+                    src={`assets/images/Footer_Vector_2.png`}
                     loading="lazy"
                     alt={'Vector'}
                   />
-                  <Vector27
-                    src={`assets/images/Footer_Vector_27.png`}
+                  <Vector3
+                    src={`assets/images/Footer_Vector_3.png`}
                     loading="lazy"
                     alt={'Vector'}
                   />
-                </InstagramNegative2>
-              </InstagramContainer2>
-              <LinkedinContainer2>
-                <LinkedInNegative2>
-                  <Vector28
-                    src={`assets/images/Footer_Vector_28.png`}
+                </InstagramNegative>
+              </InstagramContainer>
+              <LinkedinContainer>
+                <LinkedInNegative>
+                  <Vector4
+                    src={`assets/images/Footer_Vector_4.png`}
                     loading="lazy"
                     alt={'Vector'}
                   />
-                </LinkedInNegative2>
-              </LinkedinContainer2>
-              <YoutubeContainer2>
-                <YouTubeNegative2>
-                  <Vector29
-                    src={`assets/images/Footer_Vector_29.png`}
+                </LinkedInNegative>
+              </LinkedinContainer>
+              <YoutubeContainer>
+                <YouTubeNegative>
+                  <Vector5
+                    src={`assets/images/Footer_Vector_5.png`}
                     loading="lazy"
                     alt={'Vector'}
                   />
-                </YouTubeNegative2>
-              </YoutubeContainer2>
-            </Social2>
-          </TopRow1>
-          <MiddleRow>
-            <MowoEhf2>{`MOWO ehf.`}</MowoEhf2>
-            <Kt50022008202>{`kt. 500220 - 0820`}</Kt50022008202>
-            <T35464726662>{`T. +354 647 2666`}</T35464726662>
-            <Knarrarvogur42>{`Knarrarvogur 4`}</Knarrarvogur42>
-            <Q104Reykjavík2>{`104 Reykjavík`}</Q104Reykjavík2>
-          </MiddleRow>
-          <BottomRows>
-            <TopRow2>
-              <SiteDesignedIn2>{`Site designed in`}</SiteDesignedIn2>
-              <FigmaContainer2>
-                <Figma3>
-                  <Vector30
-                    src={`assets/images/Footer_Vector_30.png`}
-                    loading="lazy"
-                    alt={'Vector'}
-                  />
-                  <Vector31
-                    src={`assets/images/Footer_Vector_31.png`}
-                    loading="lazy"
-                    alt={'Vector'}
-                  />
-                  <Vector32
-                    src={`assets/images/Footer_Vector_32.png`}
-                    loading="lazy"
-                    alt={'Vector'}
-                  />
-                  <Vector33
-                    src={`assets/images/Footer_Vector_33.png`}
-                    loading="lazy"
-                    alt={'Vector'}
-                  />
-                  <Vector34
-                    src={`assets/images/Footer_Vector_34.png`}
-                    loading="lazy"
-                    alt={'Vector'}
-                  />
-                </Figma3>
-              </FigmaContainer2>
-              <FigmaBuiltWith1>{`Figma, built with`}</FigmaBuiltWith1>
-            </TopRow2>
-            <BottomRow1>
-              <QuestContainer2>
-                <QuestLogoTraced2>
-                  <Layer11
-                    src={`assets/images/Footer_Layer_1_1.png`}
-                    loading="lazy"
-                    alt={'Layer 1'}
-                  />
-                  <Layer21
-                    src={`assets/images/Footer_Layer_2_1.png`}
-                    loading="lazy"
-                    alt={'Layer 2'}
-                  />
-                  <Layer31
-                    src={`assets/images/Footer_Layer_3_1.png`}
-                    loading="lazy"
-                    alt={'Layer 3'}
-                  />
-                  <Layer41
-                    src={`assets/images/Footer_Layer_4_1.png`}
-                    loading="lazy"
-                    alt={'Layer 4'}
-                  />
-                  <Layer51
-                    src={`assets/images/Footer_Layer_5_1.png`}
-                    loading="lazy"
-                    alt={'Layer 5'}
-                  />
-                  <Layer61
-                    src={`assets/images/Footer_Layer_6_1.png`}
-                    loading="lazy"
-                    alt={'Layer 6'}
-                  />
-                  <Layer71
-                    src={`assets/images/Footer_Layer_7_1.png`}
-                    loading="lazy"
-                    alt={'Layer 7'}
-                  />
-                  <Layer82
-                    src={`assets/images/Footer_Layer_8_2.png`}
-                    loading="lazy"
-                    alt={'Layer 8'}
-                  />
-                </QuestLogoTraced2>
-              </QuestContainer2>
-              <Quest1>{`Quest, `}</Quest1>
-              <DeployedWith1>{`deployed with`}</DeployedWith1>
-              <NextJsContainer2>
-                <Vector35
-                  src={`assets/images/Footer_Vector_35.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-              </NextJsContainer2>
-              <NextJs2>{`Next.JS`}</NextJs2>
-            </BottomRow1>
-          </BottomRows>
-        </Rows1>
-      )}
-      {data.currentVariant === 'ScreenMobile' && (
-        <ColorStroke2>
-          <Rectangle1732></Rectangle1732>
-          <Rectangle1742></Rectangle1742>
-          <Rectangle1752></Rectangle1752>
-          <Rectangle1762></Rectangle1762>
-        </ColorStroke2>
-      )}
-    </ScreenDesktop>
+                </YouTubeNegative>
+              </YoutubeContainer>
+            </Social>
+          </LogoSocial>
+          <Contact data={data}>
+            <UpperRow data={data}>
+              <MowoEhf data={data}>{`MOWO ehf.`}</MowoEhf>
+            </UpperRow>
+            <LowerRow data={data}>
+              <Kt5002200820T3546472 data={data}>
+                {`kt. 500220 - 0820
+T. +354 647 2666`}
+              </Kt5002200820T3546472>
+              <Knarrarvogur4104Reyk data={data}>
+                {`Knarrarvogur 4
+104 Reykjavík`}
+              </Knarrarvogur4104Reyk>
+            </LowerRow>
+          </Contact>
+        </Box2>
+        <Attribution>
+          <SiteDesignedInFigmaB data={data}>
+            <SiteDesignedInFigmaB1 data={data}>
+              {`Site designed in Figma, built with Quest, deployed with Next.JS`}
+            </SiteDesignedInFigmaB1>
+          </SiteDesignedInFigmaB>
+          <Frame184>
+            <Figmalogocontainer1 />
+            <Questlogocontainer1 />
+            <Nextjslogocontainer1 />
+          </Frame184>
+        </Attribution>
+      </Box1>
+      <ColorStroke>
+        <Rectangle173></Rectangle173>
+        <Rectangle174></Rectangle174>
+        <Rectangle175></Rectangle175>
+        <Rectangle176></Rectangle176>
+      </ColorStroke>
+    </Desktop>
   );
 }
 
