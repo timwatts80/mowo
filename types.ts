@@ -23,6 +23,10 @@
 
 
 
+export interface ClientCarouselProps {
+  className?: any;
+};
+
 export interface ClientCaseStudyProps {
   className?: any;
   bgimage: {
@@ -32,7 +36,6 @@ export interface ClientCaseStudyProps {
   title: string;
   description: string;
 };
-
 
 
 

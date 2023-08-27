@@ -3,7 +3,7 @@ import logo1 from "public/assets/images/Haskolinn Logo.png";
 import logo2 from "public/assets/images/Arion Banki Logo.png";
 import bgimage1 from "public/assets/images/CustomerCases_case_background.png";
 import bgimage2 from "public/assets/images/arion_banki_bg_image.jpeg";
-import { ClientCaseStudyProps } from "types";
+import useClientCarouselResponsiveSize from "./useClientCarouselResponsiveSize";
 
 const useCarouselTest = () => {
 

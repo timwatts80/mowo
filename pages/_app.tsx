@@ -18,7 +18,7 @@ import Menulinklist from 'components/Menulinklist/Menulinklist'
 import { ProductList } from 'components/ProductList/ProductList'
 import ProductPageTest from 'components/ProductPageTest/ProductPageTest'
 import ProductCard from 'components/ProductCard/ProductCard'
-import CarouselTest from 'components/CarouselTest/CarouselTest'
+import CarouselTest from 'components/ClientCarousel/ClientCarousel'
 
 
 

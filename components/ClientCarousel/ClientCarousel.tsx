@@ -4,22 +4,28 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ClientCaseStudy from 'components/ClientCaseStudy/ClientCaseStudy';
 import ClientLogoCard from 'components/ClientLogoCard/ClientLogoCard';
-import useCarouselTest from './useCarouselTest';
+import useClientCarousel from './useClientCarousel';
 import { ClientCaseCarouselProps } from 'types';
-import { CarouselContainerProps } from 'types';
 import styled from '@emotion/styled';
+import { useMediaQuery } from '@mui/material';
 
-const CarouselContainer: any = styled('div')({
+const CarouselContainer: any = styled('div')(({ data }: any) => {
+  const ScreenMobile = useMediaQuery('(max-width:497px)');
+  const ScreenTablet = useMediaQuery('(max-width:999px)');
+  const paddingValue = ScreenMobile ? `0px` : ScreenTablet ? `30px` : `100px`;
+
+  return {
     position: `relative`,
     isolation: `isolate`,
     flexDirection: `row`,
     width: '100%',
     justifyContent: `flex-start`,
     alignItems: `center`,
-    padding: `0px`,
+    padding: paddingValue,
     margin: '50px auto 250px',
     boxSizing: `border-box`,
     height: 'auto',
+  };
 });
 
 const MainImage: any = styled('div')({
@@ -27,7 +33,7 @@ const MainImage: any = styled('div')({
 });
 
 function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
-    const { data } = useCarouselTest();
+    const { data } = useClientCarousel();
 
     const [selectedImageUrl, setSelectedImageUrl] = useState(data.clientCases[0]);
 

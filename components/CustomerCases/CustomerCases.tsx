@@ -16,7 +16,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { CustomerCasesProps } from 'types';
 import useCustomerCases from 'components/CustomerCases/useCustomerCases';
-import CarouselTest from 'components/CarouselTest/CarouselTest';
+import CarouselTest from 'components/ClientCarousel/ClientCarousel';
 
 const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(248, 248, 248, 1)`,
