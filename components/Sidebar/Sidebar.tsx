@@ -21,7 +21,7 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Paper'],
   borderRadius: `0px`,
   display: `flex`,
-  position: `relative`,
+  position: 'absolute',
   isolation: `isolate`,
   flexDirection: `column`,
   width: '100%',
