@@ -61,9 +61,11 @@ function Link1(props: Link1Props): JSX.Element {
         color={'primary'}
         disabled={false}
         underline={'always'}
+        href={props.href}
+        data={'data'}
         data={data}
       >
-        {'Link'}
+        {props.menuLink.title}
       </Link2>
     </StateDefault>
   );
