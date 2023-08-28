@@ -60,7 +60,7 @@ function Link1(props: Link1Props): JSX.Element {
       <Link2
         color={'primary'}
         disabled={false}
-        underline={'always'}
+        underline={'none'}
         href={props.href}
         data={data}
       >
