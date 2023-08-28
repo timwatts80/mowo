@@ -15,7 +15,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Link1 from 'components/Link1/Link1';
+import Link1 from 'components/Link1/linkREF';
 import Menulinklist from 'components/Menulinklist/Menulinklist';
 import { SidebarProps } from 'types';
 
@@ -270,14 +270,14 @@ function Sidebar(props: SidebarProps): JSX.Element {
                 alt={'MOWO Logo'}
               />
             </LogoPosition>
-            <Items>
+            <Items onClick={props.onClose}>
               {false && (
                 <Frame142>
-                  <Link2 />
-                  <Link3 />
-                  <Link4 />
-                  <Link5 />
-                  <Link6 />
+                  <Link2 {...props}/>
+                  <Link3 {...props}/>
+                  <Link4 {...props}/>
+                  <Link5 {...props}/>
+                  <Link6 {...props}/>
                 </Frame142>
               )}
               <Frame143>
@@ -288,6 +288,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
                 size={'medium'}
                 color={'primary'}
                 disabled={false}
+                onClick={props.onClose}
               >
                 {'Book a meeting'}
               </ButtonContained>

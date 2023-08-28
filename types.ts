@@ -2337,7 +2337,8 @@ export interface ProductCardTempProps {
 export interface Link1Props {
   className?: any;
   menuLinks: any;
-  href: URL
+  href: URL,
+  onClose: any;
 }
 
 
@@ -2455,6 +2456,7 @@ export interface Link1Props {
 
 export interface MenulinklistProps {
   className?: any;
+  onClose: any;
 };
 
 

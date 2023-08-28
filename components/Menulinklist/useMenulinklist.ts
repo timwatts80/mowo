@@ -17,27 +17,22 @@ const menuLinks = [
   {
     id: 1,
     title: "Modern Workplace",
-    url: "/",
+    url: "#modern-workplace",
   },
   {
     id: 2,
-    title: "Solutions",
-    url: "/",
+    title: "Devices",
+    url: "#products",
   },
   {
     id: 3,
-    title: "Devices",
-    url: "#product-section",
+    title: "Customer Cases",
+    url: "#cases",
   },
   {
     id: 4,
-    title: "Cases",
-    url: "/",
-  },
-  {
-    id: 5,
     title: "Contact",
-    url: "/",
+    url: "#contact",
   },
 ];
 
