@@ -30,7 +30,7 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   padding: `22px 0px 75px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: 'auto',
+  height: '100vh',
 }));
 
 const CloseFrame: any = styled('div')({

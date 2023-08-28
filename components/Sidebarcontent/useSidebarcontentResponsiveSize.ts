@@ -16,17 +16,17 @@ const useSidebarcontentResponsiveSize = () => {
   const [variant, setVariant] = React.useState<string>('ScreenTablet');
 
   React.useEffect(() => {
-    const handlerScreenTablet = (e) =>
+    const handlerScreenTablet = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'ScreenTablet' : size));
-    const ScreenTabletSize = window.matchMedia('(max-width: 400px)');
+    const ScreenTabletSize = window.matchMedia('(max-width: 768px)');
     setVariant((size: string) =>
       ScreenTabletSize.matches ? 'ScreenTablet' : size
     );
     ScreenTabletSize.addEventListener('change', handlerScreenTablet);
 
-    const handlerScreenMobile = (e) =>
+    const handlerScreenMobile = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'ScreenMobile' : size));
-    const ScreenMobileSize = window.matchMedia('(min-width: 400px)');
+    const ScreenMobileSize = window.matchMedia('(min-width: 375px)');
     setVariant((size: string) =>
       ScreenMobileSize.matches ? 'ScreenMobile' : size
     );
