@@ -78,7 +78,7 @@ const Imagecontainer: any = styled('div', {
   padding: `12px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: data.isHover ? '206px' : `120px`,
+  height: data.isHover,
   zIndex: `2`,
   margin: `0px`,
   transition: 'height 0.3s cubic-bezier(0.67, 0.85, 0.75, 1)',
@@ -251,13 +251,13 @@ const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
 }));
 
 function ProductCard(props: ProductCardProps): JSX.Element {
-  const { data, fns } = useProductCard();
+  const { data, fns } = useProductCard(props);
 
   return (
     <StateDefault className={props.className}>
       <Productcardcontainer>
         <ProductCardNew>
-          <Imagecontainer data={data}>
+          <Imagecontainer onMouseEnter={fns.handleMouseEnter} data={data}>
             <ProductImage
               src={props.image.src}
               loading="lazy"
