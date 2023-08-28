@@ -162,6 +162,8 @@ const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
   textTransform: `none`,
+  flex: `1`,
+  height: `64px`,
   margin: `0px`,
 }));
 
