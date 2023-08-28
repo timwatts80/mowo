@@ -2882,6 +2882,7 @@ export interface ProductCardTempProps {
 export interface MenulinklistProps {
   className?: any;
   onClose: any;
+  url: URL;
 };
 
 
