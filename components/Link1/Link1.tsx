@@ -62,7 +62,6 @@ function Link1(props: Link1Props): JSX.Element {
         disabled={false}
         underline={'always'}
         href={props.href}
-        data={'data'}
         data={data}
       >
         {props.menuLink.title}
