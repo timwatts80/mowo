@@ -78,7 +78,7 @@ const Imagecontainer: any = styled('div', {
   padding: `12px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: data.isHover,
+  height: data.isHover ? '206px' : `120px`,
   zIndex: `2`,
   margin: `0px`,
   transition: 'height 0.3s cubic-bezier(0.67, 0.85, 0.75, 1)',
