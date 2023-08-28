@@ -133,7 +133,7 @@ const CaseContent: any = styled('div', {
   flexDirection: `column`,
   justifyContent:
     data.currentVariant === 'ScreenMobile' ? `flex-start` : `center`,
-  alignItems: `flex-start`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding:
     data.currentVariant === 'ScreenTablet'
       ? `30px`
@@ -171,15 +171,22 @@ const CaseText: any = styled('div')({
   margin: `0px`,
 });
 
-const ReykjavikUniversity: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
+const ReykjavikUniversity: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: data.currentVariant === 'ScreenMobile' ? `center` : `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `30px`,
+  fontSize:
+    data.currentVariant === 'ScreenTablet'
+      ? `26px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `24px`
+      : `30px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
@@ -188,15 +195,22 @@ const ReykjavikUniversity: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const WithMicrosoftSurface: any = styled('div')(({ theme }: any) => ({
-  textAlign: `left`,
+const WithMicrosoftSurface: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: data.currentVariant === 'ScreenMobile' ? `center` : `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: `18px`,
+  fontSize:
+    data.currentVariant === 'ScreenTablet'
+      ? `16px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `14px`
+      : `18px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `150%`,
@@ -326,8 +340,12 @@ function ClientCaseStudy(props: ClientCaseStudyProps): JSX.Element {
         <Casecontentcontainer data={data}>
           <CaseContent data={data}>
             <CaseText>
-              <ReykjavikUniversity>{props.title}</ReykjavikUniversity>
-              <WithMicrosoftSurface>{props.description}</WithMicrosoftSurface>
+              <ReykjavikUniversity data={data}>
+                {props.title}
+              </ReykjavikUniversity>
+              <WithMicrosoftSurface data={data}>
+                {props.description}
+              </WithMicrosoftSurface>
             </CaseText>
             <ButtonContained
               variant="contained"
