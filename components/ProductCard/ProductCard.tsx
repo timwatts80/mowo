@@ -78,10 +78,11 @@ const Imagecontainer: any = styled('div', {
   padding: `12px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: data.isHover ? '250px' : `120px`,
+  height: data.isHover ? '206px' : `120px`,
   zIndex: `2`,
   margin: `0px`,
   width: '100%',
+  transition: 'height 0.3s cubic-bezier(0.67, 0.85, 0.75, 1)',
 }));
 
 const ProductImage: any = styled('img')({
@@ -254,7 +255,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
 
   return (
     <StateDefault className={props.className}>
-      <Productcardcontainer>
+      <Productcardcontainer onMouseEnter={fns.handleMouseEnter} onMouseLeave={fns.handleMouseLeave} isHover={data.isHover}>
         <ProductCardNew>
           <Imagecontainer data={data}>
             <ProductImage
