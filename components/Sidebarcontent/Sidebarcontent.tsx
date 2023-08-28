@@ -145,7 +145,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
         </LogoPosition>
         <Items>
           <Frame143>
-            <Menulinklist1 {...props}/>
+            <Menulinklist1 {...props} />
           </Frame143>
           <ButtonContained
             variant="contained"
