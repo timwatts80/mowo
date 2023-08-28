@@ -263,12 +263,6 @@ const Sidebar1: any = styled(Sidebar, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   alignSelf: `stretch`,
-  height:
-    data.currentVariant === 'ScreenTablet'
-      ? `366px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `366px`
-      : `255px`,
   margin: `0px`,
 }));
 
