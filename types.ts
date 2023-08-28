@@ -148,6 +148,17 @@ export interface ProductDialogProps {
 
 export interface ContentcontainerProps {
   className?: any;
+  products?: any;
+  open?: any;
+  onClose?: any;
+  product_id: number;
+  title: string;
+  subtitle?: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
 };
 
 
