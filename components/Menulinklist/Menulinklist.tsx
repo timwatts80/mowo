@@ -40,10 +40,10 @@ function Menulinklist(props: MenulinklistProps): JSX.Element {
   const { data } = useMenulinklist();
 
   return (
-    <Menulinklist1 className={props.className}>
+    <Menulinklist1 className={props.className} {...props}>
       {data.menuLinks &&
         data.menuLinks.map((menuLink: any, index: number) => {
-          return <Link2 key={index} href={menuLink.url} menuLinks={menuLink}></Link2>;
+          return <Link2 key={index} href={menuLink.url} menuLink={menuLink}></Link2>;
         })}
     </Menulinklist1>
   );

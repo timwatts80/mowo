@@ -203,7 +203,7 @@ export interface Link1Props {
   menuLinks: any;
   href: URL,
   onClose: any;
-  ;
+  menuLink: any;
 }
 
 

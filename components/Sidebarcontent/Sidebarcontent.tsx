@@ -133,7 +133,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
   const { data } = useSidebarcontent();
 
   return (
-    <ScreenTablet className={props.className} data={data} {...props}>
+    <ScreenTablet className={props.className} data={data}>
       <MenuItems>
         <LogoPosition>
           <MowoLogo
@@ -145,7 +145,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
         </LogoPosition>
         <Items>
           <Frame143>
-            <Menulinklist1 />
+            <Menulinklist1 {...props}/>
           </Frame143>
           <ButtonContained
             variant="contained"
