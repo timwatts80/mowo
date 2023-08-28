@@ -25,7 +25,7 @@ const StateDefault: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: `1449px`,
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -43,7 +43,7 @@ const Productcardcontainer: any = styled('div')({
   alignItems: `flex-start`,
   padding: `10px`,
   boxSizing: `border-box`,
-  width: `331px`,
+  width: '100%',
   margin: `0px`,
   maxWidth: '325px',
 });
@@ -233,12 +233,12 @@ const Productdialogcontain: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
+  flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `10px`,
+  padding: `0px`,
   boxSizing: `border-box`,
-  margin: `0px 0px 0px 18px`,
-  flexDirection: 'column',
+  margin: `0px`,
 });
 
 const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
