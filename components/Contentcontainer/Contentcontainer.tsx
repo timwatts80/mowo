@@ -79,7 +79,12 @@ const Thumbscontainer: any = styled('div', {
       : data.currentVariant === 'Property1Variant3'
       ? 'unset'
       : `1`,
-  height: `420px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? 'unset'
+      : data.currentVariant === 'Property1Variant3'
+      ? 'unset'
+      : `420px`,
   margin: `0px`,
   alignSelf:
     data.currentVariant === 'Property1Variant2'
@@ -89,7 +94,9 @@ const Thumbscontainer: any = styled('div', {
       : 'unset',
 }));
 
-const Imagecontainer: any = styled('div')({
+const Imagecontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `10px`,
   display: `flex`,
   position: `relative`,
@@ -100,19 +107,34 @@ const Imagecontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  flex: `1`,
+  flex:
+    data.currentVariant === 'Property1Variant2'
+      ? 'unset'
+      : data.currentVariant === 'Property1Variant3'
+      ? 'unset'
+      : `1`,
   margin: `0px`,
   overflow: `hidden`,
-});
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `307px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `257px`
+      : 'unset',
+}));
 
-const ProductImage: any = styled('img')({
-  height: `307px`,
-  width: `475px`,
+const ProductImage: any = styled('img', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  height: data.currentVariant === 'Property1Variant3' ? `257px` : `307px`,
+  width: data.currentVariant === 'Property1Variant3' ? `342px` : `475px`,
   objectFit: `cover`,
   margin: `0px`,
-});
+}));
 
-const Thumbscarousel: any = styled('div')({
+const Thumbscarousel: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -123,14 +145,24 @@ const Thumbscarousel: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `89px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `136px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `62px`
+      : `89px`,
   margin: `24px 0px 0px 0px`,
-});
+}));
 
 const ProductImage1: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: `89px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `136px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `62px`
+      : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
       ? `168px`
@@ -146,7 +178,12 @@ const ProductImage1: any = styled('img', {
 const ProductImage2: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: `89px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `136px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `62px`
+      : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
       ? `168px`
@@ -162,7 +199,12 @@ const ProductImage2: any = styled('img', {
 const ProductImage3: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: `89px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `136px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `62px`
+      : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
       ? `168px`
@@ -178,7 +220,12 @@ const ProductImage3: any = styled('img', {
 const ProductImage4: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: `89px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `136px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `62px`
+      : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
       ? `168px`
@@ -493,14 +540,15 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
     <Property1Default className={props.className} data={data}>
       <Productinfo data={data}>
         <Thumbscontainer data={data}>
-          <Imagecontainer>
+          <Imagecontainer data={data}>
             <ProductImage
+              data={data}
               src={props.image.src}
               loading="lazy"
               alt={'product image'}
             />
           </Imagecontainer>
-          <Thumbscarousel>
+          <Thumbscarousel data={data}>
             <ProductImage1
               data={data}
               src={`assets/images/contentcontainer_product_image_1.png`}
