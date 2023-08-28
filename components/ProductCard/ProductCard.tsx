@@ -78,7 +78,7 @@ const Imagecontainer: any = styled('div', {
   padding: `12px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: data.height,
+  height: data.isHover,
   zIndex: `2`,
   margin: `0px`,
   width: '100%',
