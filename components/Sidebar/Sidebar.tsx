@@ -13,14 +13,12 @@
  **********************************************************************/
 
 import React from 'react';
-import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Menulinklist from 'components/Menulinklist/Menulinklist';
+import Sidebarcontent from 'components/Sidebarcontent/Sidebarcontent';
 import { SidebarProps } from 'types';
 
 const Sidebar1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Paper'],
-  boxShadow: `0px 1px 8px rgba(0, 0, 0, 0.12), 0px 3px 4px rgba(0, 0, 0, 0.14), 0px 3px 3px rgba(0, 0, 0, 0.2)`,
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -102,106 +100,9 @@ const Close1: any = styled('img')({
   top: `7px`,
 });
 
-const Sidebarcontent: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `35px 180px 0px 180px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
+const Sidebarcontent1: any = styled(Sidebarcontent)(({ theme }: any) => ({
+  width: `400px`,
   margin: `0px`,
-});
-
-const MenuItems: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const LogoPosition: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  height: `53px`,
-  width: `280px`,
-  margin: `0px`,
-});
-
-const MowoLogo: any = styled('img')({
-  height: `53px`,
-  width: `280px`,
-  objectFit: `cover`,
-  alignSelf: `stretch`,
-  flex: `1`,
-  margin: `0px`,
-});
-
-const Items: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-});
-
-const Frame143: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
-});
-
-const Menulinklist1: any = styled(Menulinklist)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const ButtonContained: any = styled(Button)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-  color: theme.palette['Primary']['Contrast'],
-  fontStyle: theme.typography['Components']['Button Font - Medium'].fontStyle,
-  fontFamily: theme.typography['Components']['Button Font - Medium'].fontFamily,
-  fontWeight: theme.typography['Components']['Button Font - Medium'].fontWeight,
-  fontSize: theme.typography['Components']['Button Font - Medium'].fontSize,
-  letterSpacing:
-    theme.typography['Components']['Button Font - Medium'].letterSpacing,
-  lineHeight: theme.typography['Components']['Button Font - Medium'].lineHeight,
-  textDecoration:
-    theme.typography['Components']['Button Font - Medium'].textDecoration,
-  textTransform:
-    theme.typography['Components']['Button Font - Medium'].textTransform,
 }));
 
 function Sidebar(props: SidebarProps): JSX.Element {
@@ -221,30 +122,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
             </Icon1>
           </Close>
         </CloseFrame>
-        <Sidebarcontent>
-          <MenuItems>
-            <LogoPosition>
-              <MowoLogo
-                src={`assets/images/sidebar_MOWO_Logo.png`}
-                loading="lazy"
-                alt={'MOWO Logo'}
-              />
-            </LogoPosition>
-            <Items>
-              <Frame143>
-                <Menulinklist1 />
-              </Frame143>
-              <ButtonContained
-                variant="contained"
-                size={'medium'}
-                color={'primary'}
-                disabled={false}
-              >
-                {'Book a meeting'}
-              </ButtonContained>
-            </Items>
-          </MenuItems>
-        </Sidebarcontent>
+        <Sidebarcontent1 />
       </Sidebar1>
     )
   );
