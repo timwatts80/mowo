@@ -64,7 +64,7 @@ function Link1(props: Link1Props): JSX.Element {
   const { data } = useLink1();
 
   return (
-    <StateDefault className={props.className} data={data} {...props}>
+    <StateDefault className={props.className} data={data}>
       <ModernWorkplace data={data} href={props.href}>
         {props.menuLinks.title}
       </ModernWorkplace>
