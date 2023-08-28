@@ -44,6 +44,7 @@ const Pagecontainer: any = styled('div')({
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
+  width: '100%',
 });
 
 const Close: any = styled('div')({
@@ -102,7 +103,6 @@ const Close1: any = styled('img')({
 });
 
 const Contentcontainer1: any = styled(Contentcontainer)(({ theme }: any) => ({
-  width: `1080px`,
   margin: `0px`,
 }));
 
@@ -122,7 +122,7 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
               </IconX>
             </Icon1>
           </Close>
-          <Contentcontainer1 {...props}/>
+          <Contentcontainer1 {...props} />
         </Pagecontainer>
       </ProductDialog1>
     )
