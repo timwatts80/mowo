@@ -255,14 +255,13 @@ function ProductCard(props: ProductCardProps): JSX.Element {
 
   return (
     <StateDefault className={props.className}>
-      <Productcardcontainer>
+      <Productcardcontainer
+        onMouseLeave={fns.handleMouseLeave}
+        onMouseEnter={fns.handleMouseEnter}
+        isHover={data.isHover}
+      >
         <ProductCardNew>
-          <Imagecontainer
-            onMouseLeave={fns.handleMouseLeave}
-            onMouseEnter={fns.handleMouseEnter}
-            data={data}
-            isHover={data.isHover}
-          >
+          <Imagecontainer data={data}>
             <ProductImage
               src={props.image.src}
               loading="lazy"
