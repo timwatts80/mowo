@@ -194,6 +194,7 @@ export interface SidebarProps {
 
 export interface SidebarcontentProps {
   className?: any;
+  onClose?: any;
 };
 
 
