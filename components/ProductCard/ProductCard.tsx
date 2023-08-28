@@ -25,12 +25,12 @@ const StateDefault: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  width: '100%',
+  width: `1449px`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  height: 'auto',
+  height: `726px`,
 });
 
 const Productcardcontainer: any = styled('div')({
