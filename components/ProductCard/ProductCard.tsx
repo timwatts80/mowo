@@ -233,12 +233,12 @@ const Productdialogcontain: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `10px`,
   boxSizing: `border-box`,
   margin: `0px 0px 0px 18px`,
+  flexDirection: 'column',
 });
 
 const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
