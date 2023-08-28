@@ -251,7 +251,7 @@ const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
 }));
 
 function ProductCard(props: ProductCardProps): JSX.Element {
-  const { data, fns } = useProductCard(props);
+  const { data, fns } = useProductCard();
 
   return (
     <StateDefault className={props.className}>
