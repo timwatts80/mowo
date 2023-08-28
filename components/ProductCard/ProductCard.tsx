@@ -45,7 +45,7 @@ const Productcardcontainer: any = styled('div')({
   boxSizing: `border-box`,
   width: `331px`,
   margin: `0px`,
-  maxWidth: '300px',
+  maxWidth: '325px',
 });
 
 const ProductCardNew: any = styled('div')({
@@ -149,20 +149,21 @@ const Titlecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductTitle: any = styled('div')({
+const ProductTitle: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 1)`,
   fontStyle: `normal`,
-  fontFamily: `Open Sans`,
+  fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `28px`,
-  letterSpacing: `-0.8399999737739563px`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
   textDecoration: `none`,
+  lineHeight: `133.39999914169312%`,
   textTransform: `none`,
   margin: `0px`,
-});
+}));
 
 const Detailscontainer: any = styled('div')({
   borderRadius: `0px`,
