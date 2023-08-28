@@ -25,12 +25,12 @@ const StateDefault: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
-  width: 'fit-content',
 });
 
 const Productcardcontainer: any = styled('div')({
@@ -43,7 +43,9 @@ const Productcardcontainer: any = styled('div')({
   alignItems: `flex-start`,
   padding: `10px`,
   boxSizing: `border-box`,
+  width: `331px`,
   margin: `0px`,
+  maxWidth: '300px',
 });
 
 const ProductCardNew: any = styled('div')({
@@ -56,9 +58,10 @@ const ProductCardNew: any = styled('div')({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `311px`,
+  flex: `1`,
   height: `448px`,
   margin: `0px`,
+  width: '100%',
 });
 
 const Imagecontainer: any = styled('div')(({ theme }: any) => ({
@@ -70,22 +73,22 @@ const Imagecontainer: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   justifyContent: `flex-end`,
   alignItems: `center`,
-  padding: `24px`,
+  padding: `24px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `120px`,
   zIndex: `2`,
   margin: `0px`,
+  width: '100%',
 }));
 
 const ProductImage: any = styled('img')({
-  height: `180px`,
-  width: `263px`,
+  height: `200px`,
+  width: '100%',
   objectFit: `cover`,
+  alignSelf: `stretch`,
   zIndex: `0`,
-  position: `absolute`,
-  left: `24px`,
-  top: `-84px`,
+  margin: `0px`,
 });
 
 const Productcardbackgroun: any = styled('div')({
@@ -99,7 +102,7 @@ const Productcardbackgroun: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   height: `108px`,
-  width: `311px`,
+  width: '100%',
   zIndex: `1`,
   left: `0px`,
   top: `120px`,
@@ -125,9 +128,10 @@ const Productinfocontainer: any = styled('div')({
   alignItems: `center`,
   padding: `24px`,
   boxSizing: `border-box`,
-  width: `311px`,
+  alignSelf: `stretch`,
   zIndex: `0`,
   margin: `0px`,
+  width: '100%',
 });
 
 const Titlecontainer: any = styled('div')({
@@ -265,9 +269,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
               <ProductTitle>{props.title}</ProductTitle>
             </Titlecontainer>
             <Detailscontainer>
-              <Description>
-                {props.description}
-              </Description>
+              <Description>{props.description}</Description>
             </Detailscontainer>
             <Button1>
               <ButtonContained
