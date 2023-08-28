@@ -242,7 +242,6 @@ const Productdialogcontain: any = styled('div')({
 });
 
 const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
-  width: `1080px`,
   margin: `0px`,
 }));
 
