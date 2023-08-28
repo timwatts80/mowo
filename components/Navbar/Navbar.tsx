@@ -13,7 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
-import { Button, Dialog } from '@mui/material';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Sidebar from 'components/Sidebar/Sidebar';
 import { NavbarProps } from 'types';
@@ -265,10 +265,10 @@ const Sidebar1: any = styled(Sidebar, {
   alignSelf: `stretch`,
   height:
     data.currentVariant === 'ScreenTablet'
-      ? `auto`
+      ? `366px`
       : data.currentVariant === 'ScreenMobile'
-      ? `auto`
-      : `auto`,
+      ? `366px`
+      : `255px`,
   margin: `0px`,
 }));
 
@@ -324,20 +324,16 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu1>
         )}
       </ToolBar>
-      <Dialog
-        id={'mobile_menu'}
-        maxWidth={false}
-        open={data.isDialogOpen}
-        onClose={fns.toggleDialog}
-      >
-        <Sidebarcontainer>
+      {(data.currentVariant === 'ScreenTablet' ||
+        data.currentVariant === 'ScreenMobile') && (
+        <Sidebarcontainer props={data.isDialogOpen}>
           <Sidebar1
             data={data}
             open={data.isDialogOpen}
             onClose={fns.toggleDialog}
           />
         </Sidebarcontainer>
-      </Dialog>
+      )}
     </ScreenDesktop>
   );
 }
