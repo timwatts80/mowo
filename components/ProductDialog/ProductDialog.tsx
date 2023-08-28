@@ -50,7 +50,7 @@ const Pagecontainer: any = styled('div')({
 const Close: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
-  position: `relative`,
+  position: `sticky`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-end`,
@@ -60,6 +60,8 @@ const Close: any = styled('div')({
   alignSelf: `stretch`,
   height: `52px`,
   margin: `0px`,
+  top: `0`,
+  zIndex: `3000`,
 });
 
 const Icon1: any = styled('div')({
