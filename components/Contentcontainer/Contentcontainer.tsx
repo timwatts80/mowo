@@ -117,7 +117,7 @@ const Imagecontainer: any = styled('div', {
   overflow: `hidden`,
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `456px`
+      ? `299px`
       : data.currentVariant === 'Property1Variant3'
       ? `257px`
       : 'unset',
@@ -128,13 +128,13 @@ const ProductImage: any = styled('img', {
 })(({ data }: any) => ({
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `456px`
+      ? `299px`
       : data.currentVariant === 'Property1Variant3'
       ? `257px`
       : `307px`,
   width:
     data.currentVariant === 'Property1Variant2'
-      ? `708px`
+      ? `464px`
       : data.currentVariant === 'Property1Variant3'
       ? `342px`
       : `475px`,
@@ -157,9 +157,9 @@ const Thumbscarousel: any = styled('div', {
   alignSelf: `stretch`,
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `136px`
+      ? 'unset'
       : data.currentVariant === 'Property1Variant3'
-      ? `62px`
+      ? 'unset'
       : `89px`,
   margin: `24px 0px 0px 0px`,
 }));
@@ -169,18 +169,23 @@ const ProductImage1: any = styled('img', {
 })(({ data }: any) => ({
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `136px`
+      ? `111px`
       : data.currentVariant === 'Property1Variant3'
       ? `62px`
       : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
-      ? `168px`
+      ? `159px`
       : data.currentVariant === 'Property1Variant3'
       ? `76.75px`
       : `110px`,
   objectFit: `cover`,
-  alignSelf: `stretch`,
+  alignSelf:
+    data.currentVariant === 'Property1Variant2'
+      ? 'unset'
+      : data.currentVariant === 'Property1Variant3'
+      ? 'unset'
+      : `stretch`,
   flex: `1`,
   margin: `0px`,
 }));
@@ -190,20 +195,28 @@ const ProductImage2: any = styled('img', {
 })(({ data }: any) => ({
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `136px`
+      ? `111px`
       : data.currentVariant === 'Property1Variant3'
       ? `62px`
       : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
-      ? `168px`
+      ? `159px`
       : data.currentVariant === 'Property1Variant3'
       ? `76.75px`
       : `110px`,
   objectFit: `cover`,
-  alignSelf: `stretch`,
+  alignSelf:
+    data.currentVariant === 'Property1Variant2'
+      ? 'unset'
+      : data.currentVariant === 'Property1Variant3'
+      ? 'unset'
+      : `stretch`,
   flex: `1`,
-  margin: `0px 0px 0px 12px`,
+  margin:
+    data.currentVariant === 'Property1Variant2'
+      ? `0px 0px 0px 24px`
+      : `0px 0px 0px 12px`,
 }));
 
 const ProductImage3: any = styled('img', {
@@ -211,20 +224,28 @@ const ProductImage3: any = styled('img', {
 })(({ data }: any) => ({
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `136px`
+      ? `111px`
       : data.currentVariant === 'Property1Variant3'
       ? `62px`
       : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
-      ? `168px`
+      ? `159px`
       : data.currentVariant === 'Property1Variant3'
       ? `76.75px`
       : `110px`,
   objectFit: `cover`,
-  alignSelf: `stretch`,
+  alignSelf:
+    data.currentVariant === 'Property1Variant2'
+      ? 'unset'
+      : data.currentVariant === 'Property1Variant3'
+      ? 'unset'
+      : `stretch`,
   flex: `1`,
-  margin: `0px 0px 0px 12px`,
+  margin:
+    data.currentVariant === 'Property1Variant2'
+      ? `0px 0px 0px 24px`
+      : `0px 0px 0px 12px`,
 }));
 
 const ProductImage4: any = styled('img', {
@@ -232,20 +253,28 @@ const ProductImage4: any = styled('img', {
 })(({ data }: any) => ({
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `136px`
+      ? `111px`
       : data.currentVariant === 'Property1Variant3'
       ? `62px`
       : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
-      ? `168px`
+      ? `159px`
       : data.currentVariant === 'Property1Variant3'
       ? `76.75px`
       : `110px`,
   objectFit: `cover`,
-  alignSelf: `stretch`,
+  alignSelf:
+    data.currentVariant === 'Property1Variant2'
+      ? 'unset'
+      : data.currentVariant === 'Property1Variant3'
+      ? 'unset'
+      : `stretch`,
   flex: `1`,
-  margin: `0px 0px 0px 12px`,
+  margin:
+    data.currentVariant === 'Property1Variant2'
+      ? `0px 0px 0px 24px`
+      : `0px 0px 0px 12px`,
 }));
 
 const Details: any = styled('div', {
@@ -294,14 +323,14 @@ const Title: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(0, 0, 0, 1)`,
-  fontStyle: theme.typography['Typography']['H3'].fontStyle,
-  fontFamily: theme.typography['Typography']['H3'].fontFamily,
-  fontWeight: theme.typography['Typography']['H3'].fontWeight,
-  fontSize: theme.typography['Typography']['H3'].fontSize,
-  letterSpacing: theme.typography['Typography']['H3'].letterSpacing,
-  lineHeight: theme.typography['Typography']['H3'].lineHeight,
-  textDecoration: theme.typography['Typography']['H3'].textDecoration,
-  textTransform: theme.typography['Typography']['H3'].textTransform,
+  fontStyle: theme.typography['Typography']['H4'].fontStyle,
+  fontFamily: theme.typography['Typography']['H4'].fontFamily,
+  fontWeight: theme.typography['Typography']['H4'].fontWeight,
+  fontSize: theme.typography['Typography']['H4'].fontSize,
+  letterSpacing: theme.typography['Typography']['H4'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H4'].lineHeight,
+  textDecoration: theme.typography['Typography']['H4'].textDecoration,
+  textTransform: theme.typography['Typography']['H4'].textTransform,
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -342,14 +371,14 @@ const ExperienceAnExquisit: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(80, 80, 80, 1)`,
-  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
-  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
-  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
-  fontSize: theme.typography['Typography']['Body 1'].fontSize,
-  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
-  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
-  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
-  textTransform: theme.typography['Typography']['Body 1'].textTransform,
+  fontStyle: theme.typography['Typography']['Body 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 2'].textTransform,
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -378,14 +407,14 @@ const ColorsAvailable: any = styled('div')(({ theme }: any) => ({
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: theme.palette['Text']['Primary'],
-  fontStyle: theme.typography['Components']['Alert Title'].fontStyle,
-  fontFamily: theme.typography['Components']['Alert Title'].fontFamily,
-  fontWeight: theme.typography['Components']['Alert Title'].fontWeight,
-  fontSize: theme.typography['Components']['Alert Title'].fontSize,
-  letterSpacing: theme.typography['Components']['Alert Title'].letterSpacing,
-  lineHeight: theme.typography['Components']['Alert Title'].lineHeight,
-  textDecoration: theme.typography['Components']['Alert Title'].textDecoration,
-  textTransform: theme.typography['Components']['Alert Title'].textTransform,
+  fontStyle: theme.typography['Typography']['Subtitle 2'].fontStyle,
+  fontFamily: theme.typography['Typography']['Subtitle 2'].fontFamily,
+  fontWeight: theme.typography['Typography']['Subtitle 2'].fontWeight,
+  fontSize: theme.typography['Typography']['Subtitle 2'].fontSize,
+  letterSpacing: theme.typography['Typography']['Subtitle 2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Subtitle 2'].lineHeight,
+  textDecoration: theme.typography['Typography']['Subtitle 2'].textDecoration,
+  textTransform: theme.typography['Typography']['Subtitle 2'].textTransform,
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -405,20 +434,20 @@ const Colorswatches: any = styled('div')({
 });
 
 const Color1: any = styled('img')({
-  height: `48px`,
-  width: `48px`,
+  height: `32px`,
+  width: `32px`,
   margin: `0px`,
 });
 
 const Color2: any = styled('img')({
-  height: `48px`,
-  width: `48px`,
+  height: `32px`,
+  width: `32px`,
   margin: `0px 0px 0px 12px`,
 });
 
 const Color3: any = styled('img')({
-  height: `48px`,
-  width: `48px`,
+  height: `32px`,
+  width: `32px`,
   margin: `0px 0px 0px 12px`,
 });
 
@@ -555,19 +584,19 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
               data={data}
               src={props.image.src}
               loading="lazy"
-              alt={'product image'}
+              alt={props.image.alt}
             />
           </Imagecontainer>
           <Thumbscarousel data={data}>
             <ProductImage1
               data={data}
-              src={`assets/images/contentcontainer_product_image_1.png`}
+              src={props.image.src}
               loading="lazy"
-              alt={'product image'}
+              alt={props.image.alt}
             />
             <ProductImage2
               data={data}
-              src={`assets/images/contentcontainer_product_image_2.png`}
+              src={props.image.src}
               loading="lazy"
               alt={'product image'}
             />
