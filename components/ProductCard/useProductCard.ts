@@ -24,12 +24,12 @@ const useProductCard = () => {
     setIsHover(false);
   };
 
-  let data: any = {isDialogOpen};
+  let data: any = {isDialogOpen, handleMouseEnter, handleMouseLeave, isHover};
   const toggleDialog = (param1:any): any => {
     setIsDialogOpen(!isDialogOpen);
   };
 
-  const fns: any = { toggleDialog, handleMouseEnter, handleMouseLeave, isHover };
+  const fns: any = { toggleDialog, setIsHover };
 
   return { data, fns };
 };
