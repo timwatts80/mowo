@@ -73,7 +73,7 @@ function Link1(props: Link1Props): JSX.Element {
       onClick={props.onClose}
       tabIndex={0}
       >
-      <ModernWorkplace data={data} fns={fns} href={props.href}>{props.menuLinks.title}</ModernWorkplace>
+      <ModernWorkplace data={data} href={props.href}>{props.menuLinks.title}</ModernWorkplace>
     </StateDefault>
   );
 }

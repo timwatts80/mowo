@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import Link1 from 'components/Link1/linkREF';
+import Link1 from 'components/Link1/Link1';
 import { MenulinklistProps } from 'types';
 import useMenulinklist from 'components/Menulinklist/useMenulinklist';
 

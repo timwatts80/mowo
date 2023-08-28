@@ -15,7 +15,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Link1 from 'components/Link1/linkREF';
+import Link1 from 'components/Link1/Link1';
 import Menulinklist from 'components/Menulinklist/Menulinklist';
 import { SidebarProps } from 'types';
 
