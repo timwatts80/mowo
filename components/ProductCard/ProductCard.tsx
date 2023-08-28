@@ -30,7 +30,7 @@ const StateDefault: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  height: `726px`,
+  height: 'auto',
 });
 
 const Productcardcontainer: any = styled('div')({
