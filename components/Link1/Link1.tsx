@@ -36,7 +36,7 @@ const StateDefault: any = styled('div', {
     : 'unset',
 }));
 
-const ModernWorkplace: any = styled('div', {
+const ModernWorkplace: any = styled('a', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   textAlign: `center`,
@@ -61,7 +61,7 @@ const ModernWorkplace: any = styled('div', {
 }));
 
 function Link1(props: Link1Props): JSX.Element {
-  const { data } = useLink1(props);
+  const { data } = useLink1();
 
   return (
     <StateDefault className={props.className} data={data}>
