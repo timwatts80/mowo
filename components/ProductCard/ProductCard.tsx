@@ -73,7 +73,7 @@ const Imagecontainer: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   justifyContent: `flex-end`,
   alignItems: `center`,
-  padding: `24px 0px`,
+  padding: `12px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `120px`,
