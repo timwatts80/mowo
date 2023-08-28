@@ -15,7 +15,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Link1 from 'components/Link1/Link1';
 import Menulinklist from 'components/Menulinklist/Menulinklist';
 import { SidebarProps } from 'types';
 
@@ -27,13 +26,13 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100vw',
+  width: '100%',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `22px 0px 75px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: '100vh',
+  height: 'auto',
 }));
 
 const CloseFrame: any = styled('div')({
@@ -141,14 +140,14 @@ const LogoPosition: any = styled('div')({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  height: `77px`,
+  height: `53px`,
+  width: `280px`,
   margin: `0px`,
 });
 
 const MowoLogo: any = styled('img')({
-  height: `77px`,
-  width: `408px`,
+  height: `53px`,
+  width: `280px`,
   objectFit: `cover`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -168,45 +167,6 @@ const Items: any = styled('div')({
   alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
 });
-
-const Frame142: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-});
-
-const Link2: any = styled(Link1)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `0px`,
-}));
-
-const Link3: any = styled(Link1)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-}));
-
-const Link4: any = styled(Link1)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-}));
-
-const Link5: any = styled(Link1)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-}));
-
-const Link6: any = styled(Link1)(({ theme }: any) => ({
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-}));
 
 const Frame143: any = styled('div')({
   borderRadius: `0px`,
@@ -271,15 +231,6 @@ function Sidebar(props: SidebarProps): JSX.Element {
               />
             </LogoPosition>
             <Items>
-              {false && (
-                <Frame142>
-                  <Link2 />
-                  <Link3 />
-                  <Link4 />
-                  <Link5 />
-                  <Link6 />
-                </Frame142>
-              )}
               <Frame143>
                 <Menulinklist1 />
               </Frame143>
