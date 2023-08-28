@@ -27,13 +27,13 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: '100vw',
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `22px 0px 75px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: 'auto',
+  height: '100vh',
 }));
 
 const CloseFrame: any = styled('div')({
@@ -270,14 +270,14 @@ function Sidebar(props: SidebarProps): JSX.Element {
                 alt={'MOWO Logo'}
               />
             </LogoPosition>
-            <Items onClick={props.onClose}>
+            <Items>
               {false && (
                 <Frame142>
-                  <Link2 {...props}/>
-                  <Link3 {...props}/>
-                  <Link4 {...props}/>
-                  <Link5 {...props}/>
-                  <Link6 {...props}/>
+                  <Link2 />
+                  <Link3 />
+                  <Link4 />
+                  <Link5 />
+                  <Link6 />
                 </Frame142>
               )}
               <Frame143>
@@ -288,7 +288,6 @@ function Sidebar(props: SidebarProps): JSX.Element {
                 size={'medium'}
                 color={'primary'}
                 disabled={false}
-                onClick={props.onClose}
               >
                 {'Book a meeting'}
               </ButtonContained>
