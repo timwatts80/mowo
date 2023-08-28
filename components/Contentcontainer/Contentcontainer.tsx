@@ -117,7 +117,7 @@ const Imagecontainer: any = styled('div', {
   overflow: `hidden`,
   height:
     data.currentVariant === 'Property1Variant2'
-      ? `307px`
+      ? `456px`
       : data.currentVariant === 'Property1Variant3'
       ? `257px`
       : 'unset',
@@ -126,8 +126,18 @@ const Imagecontainer: any = styled('div', {
 const ProductImage: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: data.currentVariant === 'Property1Variant3' ? `257px` : `307px`,
-  width: data.currentVariant === 'Property1Variant3' ? `342px` : `475px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `456px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `257px`
+      : `307px`,
+  width:
+    data.currentVariant === 'Property1Variant2'
+      ? `708px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `342px`
+      : `475px`,
   objectFit: `cover`,
   margin: `0px`,
 }));
