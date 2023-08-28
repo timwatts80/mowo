@@ -35,7 +35,7 @@ const StateDefault: any = styled('div', {
     : 'unset',
 }));
 
-const ModernWorkplace: any = styled('div', {
+const ModernWorkplace: any = styled('a', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   textAlign: `center`,
@@ -72,7 +72,7 @@ function Link1(props: Link1Props): JSX.Element {
       onMouseLeave={fns.handleMouseLeave}
       tabIndex={0}
       >
-      <ModernWorkplace data={data} fns={fns}>{props.menuLinks.title}</ModernWorkplace>
+      <ModernWorkplace data={data} fns={fns} href={props.href}>{props.menuLinks.title}</ModernWorkplace>
     </StateDefault>
   );
 }

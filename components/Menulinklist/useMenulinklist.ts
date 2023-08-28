@@ -27,7 +27,7 @@ const menuLinks = [
   {
     id: 3,
     title: "Devices",
-    url: "/",
+    url: "#product-section",
   },
   {
     id: 4,

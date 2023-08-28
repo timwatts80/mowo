@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <Header />
       <ModernWorkplace />
-      <ProductSectionSurfaceHubDevice />
+      <ProductSectionSurfaceHubDevice id="product-section"/>
       <CustomerCases />
       <ContactUs />
       <Footer />

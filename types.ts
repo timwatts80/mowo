@@ -98,9 +98,6 @@ export interface ProductCardProps {
     src: string;
     alt: string;
   };
-  prop1: any;
-  prop1: any;
-  prop1: any;
 };
 
 
@@ -2340,6 +2337,7 @@ export interface ProductCardTempProps {
 export interface Link1Props {
   className?: any;
   menuLinks: any;
+  href: URL
 }
 
 
@@ -3287,6 +3285,7 @@ export interface ContactUsSampleProps {
 
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
+  id?: any;
 }
 
 
