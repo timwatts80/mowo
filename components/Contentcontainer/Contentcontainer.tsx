@@ -162,6 +162,34 @@ const Thumbscarousel: any = styled('div', {
       ? 'unset'
       : `89px`,
   margin: `24px 0px 0px 0px`,
+  width: '100%',
+}));
+
+const Frame185: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? 'unset'
+      : data.currentVariant === 'Property1Variant3'
+      ? `62px`
+      : `89px`,
+  margin: `0px`,
+  flex:
+    data.currentVariant === 'Property1Variant2'
+      ? `1`
+      : data.currentVariant === 'Property1Variant3'
+      ? `1`
+      : 'unset',
 }));
 
 const ProductImage1: any = styled('img', {
@@ -171,7 +199,7 @@ const ProductImage1: any = styled('img', {
     data.currentVariant === 'Property1Variant2'
       ? `111px`
       : data.currentVariant === 'Property1Variant3'
-      ? `62px`
+      ? `60px`
       : `89px`,
   width:
     data.currentVariant === 'Property1Variant2'
@@ -180,15 +208,96 @@ const ProductImage1: any = styled('img', {
       ? `76.75px`
       : `110px`,
   objectFit: `cover`,
-  alignSelf:
+  flex:
     data.currentVariant === 'Property1Variant2'
       ? 'unset'
       : data.currentVariant === 'Property1Variant3'
       ? 'unset'
-      : `stretch`,
-  flex: `1`,
+      : `1`,
   margin: `0px`,
+  alignSelf:
+    data.currentVariant === 'Property1Variant2'
+      ? `stretch`
+      : data.currentVariant === 'Property1Variant3'
+      ? `stretch`
+      : 'unset',
 }));
+
+const Rectangle183: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  backgroundColor: `rgba(161, 161, 161, 1)`,
+  borderRadius: `0px`,
+  height:
+    data.currentVariant === 'Property1Variant2'
+      ? `111px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `61px`
+      : `90px`,
+  width:
+    data.currentVariant === 'Property1Variant2'
+      ? `159px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `77px`
+      : `110px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+  opacity: `.8`,
+}));
+
+const Icon1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  opacity: `0.800000011920929`,
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: `56px`,
+  width: `56px`,
+  left:
+    data.currentVariant === 'Property1Variant2'
+      ? `52px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `10px`
+      : `27px`,
+  top:
+    data.currentVariant === 'Property1Variant2'
+      ? `27px`
+      : data.currentVariant === 'Property1Variant3'
+      ? `3px`
+      : `16px`,
+}));
+
+const PlayMedia: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `absolute`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  left: `10px`,
+  top: `10px`,
+});
+
+const PlayMedia1: any = styled('img')({
+  height: `36px`,
+  width: `36px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+});
 
 const ProductImage2: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -588,12 +697,24 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
             />
           </Imagecontainer>
           <Thumbscarousel data={data}>
-            <ProductImage1
-              data={data}
-              src={props.image.src}
-              loading="lazy"
-              alt={props.image.alt}
-            />
+            <Frame185 data={data}>
+              <ProductImage1
+                data={data}
+                src={props.image.src}
+                loading="lazy"
+                alt={props.image.alt}
+              />
+              <Rectangle183 data={data}></Rectangle183>
+              <Icon1 data={data}>
+                <PlayMedia>
+                  <PlayMedia1
+                    src={`assets/images/contentcontainer_playMedia.png`}
+                    loading="lazy"
+                    alt={'playMedia'}
+                  />
+                </PlayMedia>
+              </Icon1>
+            </Frame185>
             <ProductImage2
               data={data}
               src={props.image.src}
@@ -602,15 +723,15 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
             />
             <ProductImage3
               data={data}
-              src={`assets/images/contentcontainer_product_image_3.png`}
+              src={props.image.src}
               loading="lazy"
-              alt={'product image'}
+              alt={props.image.alt}
             />
             <ProductImage4
               data={data}
-              src={`assets/images/contentcontainer_product_image_4.png`}
+              src={props.image.src}
               loading="lazy"
-              alt={'product image'}
+              alt={props.image.alt}
             />
           </Thumbscarousel>
         </Thumbscontainer>
