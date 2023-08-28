@@ -22,7 +22,7 @@ const CarouselContainer: any = styled('div')(({ data }: any) => {
     justifyContent: `flex-start`,
     alignItems: `center`,
     padding: paddingValue,
-    margin: '50px auto 250px',
+    margin: '50px auto 125px',
     boxSizing: `border-box`,
     height: 'auto',
   };
