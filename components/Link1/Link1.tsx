@@ -13,6 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
+import { Link as MUILink } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link1Props } from 'types';
 import useLink1 from 'components/Link1/useLink1';
@@ -36,17 +37,30 @@ const StateDefault: any = styled('div', {
     : 'unset',
 }));
 
-const ModernWorkplace: any = styled('a', {
+const Link2: any = styled(MUILink, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
+  margin: data.isHover
+    ? `0px 0px 0px 10px`
+    : data.isFocus
+    ? `0px 0px 0px 10px`
+    : `0px`,
+  color: theme.palette['Primary']['Main'],
+  fontStyle: theme.typography['Typography']['Body 2 Link'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 2 Link'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 2 Link'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 2 Link'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 2 Link'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 2 Link'].lineHeight,
+  textDecoration: `'initial'`,
+  textTransform: theme.typography['Typography']['Body 2 Link'].textTransform,
+}));
+
+const ModernWorkplace: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
-  color: data.isHover
-    ? theme.palette['Primary']['Main']
-    : data.isFocus
-    ? theme.palette['Primary']['Main']
-    : `rgba(0, 0, 0, 0.98)`,
+  color: `rgba(0, 0, 0, 0.98)`,
   fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
   fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
   fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
@@ -55,21 +69,74 @@ const ModernWorkplace: any = styled('a', {
   lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
   textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
   textTransform: theme.typography['Typography']['Body 1'].textTransform,
-  flex: data.isFocus ? 'unset' : `1`,
-  margin: `0px`,
-  width: data.isFocus ? `248px` : 'unset',
+  flex: `1`,
+  margin: `0px 0px 0px 10px`,
+}));
+
+const ModernWorkplace1: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['Primary']['Main'],
+  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 1'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 1'].textTransform,
+  flex: `1`,
+  margin: data.isHover ? `0px` : `0px 0px 0px 10px`,
+}));
+
+const ModernWorkplace2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['Primary']['Main'],
+  fontStyle: theme.typography['Typography']['Body 1'].fontStyle,
+  fontFamily: theme.typography['Typography']['Body 1'].fontFamily,
+  fontWeight: theme.typography['Typography']['Body 1'].fontWeight,
+  fontSize: theme.typography['Typography']['Body 1'].fontSize,
+  letterSpacing: theme.typography['Typography']['Body 1'].letterSpacing,
+  lineHeight: theme.typography['Typography']['Body 1'].lineHeight,
+  textDecoration: theme.typography['Typography']['Body 1'].textDecoration,
+  textTransform: theme.typography['Typography']['Body 1'].textTransform,
+  width: `248px`,
+  margin: data.isFocus ? `0px` : `0px 0px 0px 10px`,
 }));
 
 function Link1(props: Link1Props): JSX.Element {
-  const { data } = useLink1();
-
-  console.log(props.href); // Add this line to log the href value
+  const { data } = useLink1(props);
 
   return (
     <StateDefault className={props.className} data={data}>
-      <ModernWorkplace data={data} href={props.href}>
-        {props.menuLink.title}
-      </ModernWorkplace>
+      {!data.isHover && !data.isFocus && (
+        <Link2
+          color={'primary'}
+          disabled={false}
+          underline={'always'}
+          data={data}
+        >
+          {'Link'}
+        </Link2>
+      )}
+      {!data.isHover && !data.isFocus && (
+        <ModernWorkplace href={props.href}>
+          {props.menuLinks.title}
+        </ModernWorkplace>
+      )}
+      {data.isHover && (
+        <ModernWorkplace1 data={data}>{`Modern Workplace`}</ModernWorkplace1>
+      )}
+      {data.isFocus && (
+        <ModernWorkplace2 data={data}>{`Modern Workplace`}</ModernWorkplace2>
+      )}
     </StateDefault>
   );
 }
