@@ -64,7 +64,29 @@ const ProductCardNew: any = styled('div')({
   width: '100%',
 });
 
-const Imagecontainer: any = styled('div')(({ theme }: any) => ({
+// const Imagecontainer: any = styled('div', {
+//   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+// })(({ theme, data }: any) => ({
+//   backgroundColor: theme.palette['Other']['Divider'],
+//   borderRadius: `10px 10px 0px 0px`,
+//   display: `flex`,
+//   position: `relative`,
+//   isolation: `isolate`,
+//   flexDirection: `column`,
+//   justifyContent: `flex-end`,
+//   alignItems: `center`,
+//   padding: `24px`,
+//   boxSizing: `border-box`,
+//   alignSelf: `stretch`,
+//   height: data.isHover ? 'unset' : `120px`,
+//   zIndex: data.isHover ? 'unset' : `2`,
+//   margin: `0px`,
+//   width: '100%',
+// }));
+
+const Imagecontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
+})(({ theme, fns }: any) => ({
   backgroundColor: theme.palette['Other']['Divider'],
   borderRadius: `10px 10px 0px 0px`,
   display: `flex`,
@@ -73,14 +95,32 @@ const Imagecontainer: any = styled('div')(({ theme }: any) => ({
   flexDirection: `column`,
   justifyContent: `flex-end`,
   alignItems: `center`,
-  padding: `12px 0px`,
+  padding: `24px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `120px`,
-  zIndex: `2`,
+  height: fns.isHover ? 'unset' : `120px`,
+  zIndex: fns.isHover ? 'unset' : `2`,
   margin: `0px`,
   width: '100%',
 }));
+
+// const Imagecontainer: any = styled('div')(({ theme }: any) => ({
+//   backgroundColor: theme.palette['Other']['Divider'],
+//   borderRadius: `10px 10px 0px 0px`,
+//   display: `flex`,
+//   position: `relative`,
+//   isolation: `isolate`,
+//   flexDirection: `column`,
+//   justifyContent: `flex-end`,
+//   alignItems: `center`,
+//   padding: `12px 0px`,
+//   boxSizing: `border-box`,
+//   alignSelf: `stretch`,
+//   height: `120px`,
+//   zIndex: `2`,
+//   margin: `0px`,
+//   width: '100%',
+// }));
 
 const ProductImage: any = styled('img')({
   height: `200px`,

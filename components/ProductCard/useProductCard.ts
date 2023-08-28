@@ -11,16 +11,25 @@
  *
  **********************************************************************/
 
-import React from 'react';
+import React, { useState } from 'react';
 const useProductCard = () => {
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+  const [isHover, setIsHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
 
   let data: any = {isDialogOpen};
   const toggleDialog = (param1:any): any => {
     setIsDialogOpen(!isDialogOpen);
   };
 
-  let fns: any = { toggleDialog };
+  const fns: any = { toggleDialog, handleMouseEnter, handleMouseLeave, isHover };
 
   return { data, fns };
 };
