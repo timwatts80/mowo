@@ -36,7 +36,7 @@ const ScreenTablet: any = styled('div', {
       : `35px 0px 0px 0px`,
   boxSizing: `border-box`,
   height: 'auto',
-  maxWidth: data.currentVariant === 'ScreenMobile' ? `200px` : `400px`,
+  maxWidth: data.currentVariant === 'ScreenMobile' ? `unset` : `400px`,
 }));
 
 const MenuItems: any = styled('div')({
