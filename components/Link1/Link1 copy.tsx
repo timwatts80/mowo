@@ -20,6 +20,7 @@ import useLink1 from 'components/Link1/useLink1';
 const StateDefault: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -60,20 +61,13 @@ const ModernWorkplace: any = styled('a', {
 }));
 
 function Link1(props: Link1Props): JSX.Element {
-  const { data, fns } = useLink1();
+  const { data } = useLink1();
 
   return (
-    <StateDefault 
-      className={props.className}
-      data={data}
-      onFocus={fns.handleFocus}
-      onBlur={fns.handleBlur}
-      onMouseEnter={fns.handleMouseEnter}
-      onMouseLeave={fns.handleMouseLeave}
-      onClick={props.onClose}
-      tabIndex={0}
-      >
-      <ModernWorkplace data={data} href={props.href}>{props.menuLinks.title}</ModernWorkplace>
+    <StateDefault className={props.className} data={data}>
+      <ModernWorkplace data={data} href={props.href}>
+        {props.menuLink.title}
+      </ModernWorkplace>
     </StateDefault>
   );
 }
