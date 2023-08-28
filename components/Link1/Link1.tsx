@@ -53,7 +53,7 @@ const Link2: any = styled(MUILink, {
 }));
 
 function Link1(props: Link1Props): JSX.Element {
-  const { data } = useLink1(props);
+  const { data } = useLink1();
 
   return (
     <StateDefault className={props.className} data={data}>
