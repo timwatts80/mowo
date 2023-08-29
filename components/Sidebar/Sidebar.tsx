@@ -21,7 +21,7 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Paper'],
   borderRadius: `0px`,
   display: `flex`,
-  position: 'absolute',
+  position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   width: '100%',
@@ -30,7 +30,7 @@ const Sidebar1: any = styled('div')(({ theme }: any) => ({
   padding: `22px 0px 75px 0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-  height: '100vh',
+  height: 'auto',
 }));
 
 const CloseFrame: any = styled('div')({
@@ -58,7 +58,6 @@ const Close: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   margin: `0px`,
-  cursor: `pointer`,
 });
 
 const Icon1: any = styled('div')({
@@ -107,24 +106,22 @@ const Sidebarcontent1: any = styled(Sidebarcontent)(({ theme }: any) => ({
 
 function Sidebar(props: SidebarProps): JSX.Element {
   return (
-    props.open && (
-      <Sidebar1 className={props.className}>
-        <CloseFrame>
-          <Close onClick={props.onClose}>
-            <Icon1>
-              <IconX>
-                <Close1
-                  src={`assets/images/sidebar_Close.png`}
-                  loading="lazy"
-                  alt={'Close'}
-                />
-              </IconX>
-            </Icon1>
-          </Close>
-        </CloseFrame>
-        <Sidebarcontent1 onClick={props.onClose} />
-      </Sidebar1>
-    )
+    <Sidebar1 className={props.className}>
+      <CloseFrame>
+        <Close>
+          <Icon1>
+            <IconX>
+              <Close1
+                src={`assets/images/sidebar_Close.png`}
+                loading="lazy"
+                alt={'Close'}
+              />
+            </IconX>
+          </Icon1>
+        </Close>
+      </CloseFrame>
+      <Sidebarcontent1 />
+    </Sidebar1>
   );
 }
 
