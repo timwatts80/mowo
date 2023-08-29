@@ -19,7 +19,7 @@ import Menulinklist from 'components/Menulinklist/Menulinklist';
 import { SidebarcontentProps } from 'types';
 import useSidebarcontent from 'components/Sidebarcontent/useSidebarcontent';
 
-const ScreenTablet: any = styled('div', {
+const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
@@ -36,7 +36,6 @@ const ScreenTablet: any = styled('div', {
       : `35px 0px 0px 0px`,
   boxSizing: `border-box`,
   height: 'auto',
-  maxWidth: data.currentVariant === 'ScreenMobile' ? `300px` : `400px`,
 }));
 
 const MenuItems: any = styled('div')({
@@ -65,7 +64,6 @@ const LogoPosition: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
-  width: '100%',
 });
 
 const MowoLogo3: any = styled('img', {
@@ -93,7 +91,6 @@ const Items: any = styled('div')({
 
 const Menulinklist1: any = styled(Menulinklist)(({ theme }: any) => ({
   alignSelf: `stretch`,
-  width: `100%`,
   margin: `0px`,
 }));
 
@@ -120,7 +117,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
   const { data } = useSidebarcontent();
 
   return (
-    <ScreenTablet className={props.className} data={data}>
+    <ScreenDesktop className={props.className} data={data}>
       <MenuItems>
         <LogoPosition>
           <MowoLogo3
@@ -131,7 +128,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
           />
         </LogoPosition>
         <Items>
-          <Menulinklist1 {...props} />
+          <Menulinklist1 />
           <ButtonContained
             variant="contained"
             size={'medium'}
@@ -143,7 +140,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
           </ButtonContained>
         </Items>
       </MenuItems>
-    </ScreenTablet>
+    </ScreenDesktop>
   );
 }
 
