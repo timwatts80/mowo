@@ -260,9 +260,7 @@ const Sidebarcontainer: any = styled('div')({
   top: '0px',
 });
 
-const Sidebar1: any = styled(Sidebar, {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const Sidebar1: any = styled(Sidebar)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -322,11 +320,7 @@ function Navbar(props: NavbarProps): JSX.Element {
       {(data.currentVariant === 'ScreenTablet' ||
         data.currentVariant === 'ScreenMobile') && (
         <Sidebarcontainer props={data.isDialogOpen}>
-          <Sidebar1
-            data={data}
-            open={data.isDialogOpen}
-            onClose={fns.toggleDialog}
-          />
+          <Sidebar1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
         </Sidebarcontainer>
       )}
     </ScreenDesktop>
