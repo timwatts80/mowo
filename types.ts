@@ -475,7 +475,6 @@ export interface Link1Props {
   href: URL,
   onClose: any;
   menuLink: any;
-  ;
 }
 
 
