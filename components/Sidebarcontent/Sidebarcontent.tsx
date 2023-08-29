@@ -83,7 +83,7 @@ const Items: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `0px`,
+  padding: `0px 40px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
