@@ -40,7 +40,7 @@ const ScreenDesktop: any = styled('div', {
 const ToolBar: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
-  backgroundColor: theme.palette['MOWO']['white-75'],
+  backgroundColor: theme.palette['MOWO']['white-100'],
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
