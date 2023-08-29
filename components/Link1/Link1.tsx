@@ -56,7 +56,7 @@ function Link1(props: Link1Props): JSX.Element {
   const { data } = useLink1();
 
   return (
-    <StateDefault className={props.className} data={data}>
+    <StateDefault className={props.className} data={data} {...props}>
       <Link2
         color={'primary'}
         disabled={false}
