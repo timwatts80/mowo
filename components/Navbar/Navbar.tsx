@@ -41,6 +41,7 @@ const ToolBar: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   backgroundColor: theme.palette['MOWO']['white-100'],
+  boxShadow: theme.customShadows['switchShadow'].boxShadow,
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
