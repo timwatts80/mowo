@@ -106,24 +106,22 @@ const Sidebarcontent1: any = styled(Sidebarcontent)(({ theme }: any) => ({
 
 function Sidebar(props: SidebarProps): JSX.Element {
   return (
-    props.open && (
-      <Sidebar1 className={props.className}>
-        <CloseFrame>
-          <Close>
-            <Icon1>
-              <IconX>
-                <Close1
-                  src={`assets/images/sidebar_Close.png`}
-                  loading="lazy"
-                  alt={'Close'}
-                />
-              </IconX>
-            </Icon1>
-          </Close>
-        </CloseFrame>
-        <Sidebarcontent1 />
-      </Sidebar1>
-    )
+    <Sidebar1 className={props.className}>
+      <CloseFrame>
+        <Close>
+          <Icon1>
+            <IconX>
+              <Close1
+                src={`assets/images/sidebar_Close.png`}
+                loading="lazy"
+                alt={'Close'}
+              />
+            </IconX>
+          </Icon1>
+        </Close>
+      </CloseFrame>
+      <Sidebarcontent1 />
+    </Sidebar1>
   );
 }
 
