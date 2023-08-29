@@ -68,12 +68,12 @@ const LogoPosition: any = styled('div')({
   width: '100%',
 });
 
-const MowoLogo: any = styled('img', {
+const MowoLogo3: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: data.currentVariant === 'ScreenMobile' ? `47px` : `61px`,
-  width: data.currentVariant === 'ScreenMobile' ? `214px` : '100%',
-  objectFit: data.currentVariant === 'ScreenMobile' ? 'unset' : `cover`,
+  height: data.currentVariant === 'ScreenMobile' ? `42px` : `64px`,
+  width: data.currentVariant === 'ScreenMobile' ? `214px` : `324px`,
+  objectFit: `cover`,
   margin: `0px`,
 }));
 
@@ -89,20 +89,6 @@ const Items: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `26px 0px 0px 0px`,
-});
-
-const Frame143: any = styled('div')({
-  borderRadius: `0px`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `column`,
-  justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `0px`,
 });
 
 const Menulinklist1: any = styled(Menulinklist)(({ theme }: any) => ({
@@ -136,17 +122,15 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
     <ScreenTablet className={props.className} data={data}>
       <MenuItems>
         <LogoPosition>
-          <MowoLogo
+          <MowoLogo3
             data={data}
-            src={`assets/images/sidebarcontent_MOWO_Logo.png`}
+            src={`assets/images/Sidebarcontent_MOWO_Logo_3.png`}
             loading="lazy"
-            alt={'MOWO Logo'}
+            alt={'MOWO Logo 3'}
           />
         </LogoPosition>
         <Items>
-          <Frame143>
-            <Menulinklist1 {...props} />
-          </Frame143>
+          <Menulinklist1 {...props} />
           <ButtonContained
             variant="contained"
             size={'medium'}
