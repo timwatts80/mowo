@@ -16,7 +16,7 @@ const useContentcontainerResponsiveSize = () => {
   const [variant, setVariant] = React.useState<string>('Property1Default');
 
   React.useEffect(() => {
-    const handlerProperty1Variant3 = (e) =>
+    const handlerProperty1Variant3 = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'Property1Variant3' : size));
     const Property1Variant3Size = window.matchMedia('(max-width: 572px)');
     setVariant((size: string) =>
@@ -24,7 +24,7 @@ const useContentcontainerResponsiveSize = () => {
     );
     Property1Variant3Size.addEventListener('change', handlerProperty1Variant3);
 
-    const handlerProperty1Variant2 = (e) =>
+    const handlerProperty1Variant2 = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'Property1Variant2' : size));
     const Property1Variant2Size = window.matchMedia(
       '(min-width: 572px) and (max-width: 924px)'
@@ -34,7 +34,7 @@ const useContentcontainerResponsiveSize = () => {
     );
     Property1Variant2Size.addEventListener('change', handlerProperty1Variant2);
 
-    const handlerProperty1Default = (e) =>
+    const handlerProperty1Default = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'Property1Default' : size));
     const Property1DefaultSize = window.matchMedia('(min-width: 924px)');
     setVariant((size: string) =>
