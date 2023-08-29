@@ -93,6 +93,7 @@ const Items: any = styled('div')({
 
 const Menulinklist1: any = styled(Menulinklist)(({ theme }: any) => ({
   alignSelf: `stretch`,
+  width: `100%`,
   margin: `0px`,
 }));
 
