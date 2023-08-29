@@ -65,6 +65,7 @@ const LogoPosition: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
+  width: '100%',
 });
 
 const MowoLogo: any = styled('img', {
@@ -137,7 +138,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
         <LogoPosition>
           <MowoLogo
             data={data}
-            src={`assets/images/sidebarcontent_MOWO_Logo.png`}
+            src={`assets/images/Sidebarcontent_MOWO_Logo.png`}
             loading="lazy"
             alt={'MOWO Logo'}
           />
