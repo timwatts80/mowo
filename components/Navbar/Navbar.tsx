@@ -257,6 +257,7 @@ const Sidebarcontainer: any = styled('div')({
   alignSelf: `stretch`,
   margin: `0px`,
   maxWidth: '100%',
+  top: '0px',
 });
 
 const Sidebar1: any = styled(Sidebar, {
@@ -320,7 +321,7 @@ function Navbar(props: NavbarProps): JSX.Element {
       </ToolBar>
       {(data.currentVariant === 'ScreenTablet' ||
         data.currentVariant === 'ScreenMobile') && (
-        <Sidebarcontainer props={data.isDialogOpen}>
+        <Sidebarcontainer props={data.isDialogOpen} postition={'absolute'}>
           <Sidebar1
             data={data}
             open={data.isDialogOpen}
