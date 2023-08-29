@@ -123,7 +123,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
             </Close>
           </CloseFrame>
         )}
-        <Sidebarcontent1 />
+        <Sidebarcontent1 onClick={props.onClose} />
       </Sidebar1>
     )
   );
