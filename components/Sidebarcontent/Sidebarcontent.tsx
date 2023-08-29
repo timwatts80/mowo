@@ -138,7 +138,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
         <LogoPosition>
           <MowoLogo
             data={data}
-            src={`assets/images/Sidebarcontent_MOWO_Logo.png`}
+            src={`assets/images/sidebarcontent_MOWO_Logo.png`}
             loading="lazy"
             alt={'MOWO Logo'}
           />
