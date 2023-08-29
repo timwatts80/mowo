@@ -43,7 +43,7 @@ function Menulinklist(props: MenulinklistProps): JSX.Element {
     <Menulinklist1 className={props.className} {...props}>
       {data.menuLinks &&
         data.menuLinks.map((menuLink: any, index: number) => {
-          return <Link2 key={index} href={menuLink.url} menuLink={menuLink}></Link2>;
+          return <Link2 key={index} href={menuLink.url} menuLink={menuLink} {...props}></Link2>;
         })}
     </Menulinklist1>
   );

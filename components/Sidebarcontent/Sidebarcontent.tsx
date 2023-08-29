@@ -128,7 +128,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
           />
         </LogoPosition>
         <Items>
-          <Menulinklist1 onClick={props.onClose} />
+          <Menulinklist1 {...props} />
           <ButtonContained
             variant="contained"
             size={'medium'}
