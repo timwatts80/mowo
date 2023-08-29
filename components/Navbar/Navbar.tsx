@@ -247,7 +247,7 @@ const Hamburger1: any = styled('img')({
 const Sidebarcontainer: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
-  position: `relative`,
+  position: 'absolute',
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
@@ -321,7 +321,7 @@ function Navbar(props: NavbarProps): JSX.Element {
       </ToolBar>
       {(data.currentVariant === 'ScreenTablet' ||
         data.currentVariant === 'ScreenMobile') && (
-        <Sidebarcontainer props={data.isDialogOpen} postition={'absolute'}>
+        <Sidebarcontainer props={data.isDialogOpen}>
           <Sidebar1
             data={data}
             open={data.isDialogOpen}
