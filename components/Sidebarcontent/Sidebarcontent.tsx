@@ -36,6 +36,7 @@ const ScreenTablet: any = styled('div', {
       : `35px 0px 0px 0px`,
   boxSizing: `border-box`,
   height: 'auto',
+  maxWidth: data.currentVariant === 'ScreenMobile' ? `300px` : `400px`,
 }));
 
 const MenuItems: any = styled('div')({
@@ -69,11 +70,10 @@ const LogoPosition: any = styled('div')({
 const MowoLogo: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: data.currentVariant === 'ScreenMobile' ? `53px` : `61px`,
-  width: data.currentVariant === 'ScreenMobile' ? `288px` : `326px`,
-  objectFit: `cover`,
+  height: data.currentVariant === 'ScreenMobile' ? `47px` : `61px`,
+  width: data.currentVariant === 'ScreenMobile' ? `214px` : '100%',
+  objectFit: data.currentVariant === 'ScreenMobile' ? 'unset' : `cover`,
   margin: `0px`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
 const Items: any = styled('div')({
@@ -137,7 +137,7 @@ function Sidebarcontent(props: SidebarcontentProps): JSX.Element {
         <LogoPosition>
           <MowoLogo
             data={data}
-            src={`assets/images/Sidebarcontent_MOWO_Logo.png`}
+            src={`assets/images/sidebarcontent_MOWO_Logo.png`}
             loading="lazy"
             alt={'MOWO Logo'}
           />
