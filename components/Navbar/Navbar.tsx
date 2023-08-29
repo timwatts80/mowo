@@ -247,7 +247,7 @@ const Hamburger1: any = styled('img')({
 const Sidebarcontainer: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
-  position: 'absolute',
+  position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `flex-start`,
