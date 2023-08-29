@@ -315,9 +315,12 @@ function Navbar(props: NavbarProps): JSX.Element {
           </HamburgerMenu1>
         )}
       </ToolBar>
-      <Sidebarcontainer props={data.isDialogOpen}>
-        <Sidebar1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
-      </Sidebarcontainer>
+      {(data.currentVariant === 'ScreenTablet' ||
+        data.currentVariant === 'ScreenMobile') && (
+        <Sidebarcontainer props={data.isDialogOpen}>
+          <Sidebar1 open={data.isDialogOpen} onClose={fns.toggleDialog} />
+        </Sidebarcontainer>
+      )}
     </ScreenDesktop>
   );
 }
