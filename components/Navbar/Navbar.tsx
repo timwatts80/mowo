@@ -281,7 +281,7 @@ function Navbar(props: NavbarProps): JSX.Element {
           !(data.currentVariant === 'ScreenMobile') && (
             <MenuItems data={data}>
               <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
-              <Solutions>{`Solutions`}</Solutions>
+
               <Devices>{`Devices`}</Devices>
               <Cases>{`Cases`}</Cases>
               <Contact>{`Contact`}</Contact>
