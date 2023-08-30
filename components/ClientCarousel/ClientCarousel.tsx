@@ -39,7 +39,7 @@ function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
 
     const settings = {
         dots: true,
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
         arrows: true,
