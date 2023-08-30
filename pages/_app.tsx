@@ -19,6 +19,8 @@ import { ProductList } from 'components/ProductList/ProductList'
 import ProductPageTest from 'components/ProductPageTest/ProductPageTest'
 import ProductCard from 'components/ProductCard/ProductCard'
 import CarouselTest from 'components/ClientCarousel/ClientCarousel'
+import ProductThumbCarousel from 'components/ProductThumbCarousel/ProductThumbCarousel'
+import image1 from '../public/assets/images/1.png'
 
 
 

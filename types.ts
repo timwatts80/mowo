@@ -1359,13 +1359,13 @@ export interface ProductDialogProps {
 
 
 
-
-
-
-
-
-
-
+export interface ProductThumbCarouselProps {
+  className?: any;
+  image?: {
+    src: string;
+    alt: string;
+  };
+};
 
 
 
