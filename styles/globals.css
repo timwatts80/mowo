@@ -74,3 +74,13 @@ body {
 .css-zw3mfo-MuiModal-root-MuiDialog-root {
   z-index: 9999;
 }
+
+.product-thumb-container {
+  max-width: 400px;
+}
+
+@media (max-width: 1104px) {
+  .product-thumb-container {
+  max-width: 100%;
+}
+}
