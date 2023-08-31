@@ -303,6 +303,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
           <ProductDialog1
             open={data.isDialogOpen}
             onClose={fns.toggleDialog}
+            productIndex={props.product_id}
             {...props}
           />
         </Productdialogcontain>

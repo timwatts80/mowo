@@ -63,7 +63,6 @@ const Productinfo: any = styled('div', {
 }));
 
 const Imagecontainer: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: `rgba(248, 248, 248, 1)`,
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -388,7 +387,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
     <Property1Default className={props.className} data={data}>
       <Productinfo data={data}>
         <Imagecontainer>
-          <ProductThumbCarousel1 />
+          <ProductThumbCarousel1 {...props}/>
         </Imagecontainer>
         <Details data={data}>
           <Top>

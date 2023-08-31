@@ -128,6 +128,10 @@ export interface ContentcontainerProps {
     src: string;
     alt: string;
   };
+  images: {
+    src: string;
+    alt: string;
+  };
 };
 
 
@@ -1216,6 +1220,10 @@ export interface ProductDialogProps {
     src: string;
     alt: string;
   };
+  images: {
+    src: string;
+    alt: string;
+  };
 };
 
 
@@ -1379,7 +1387,16 @@ export interface ProductDialogProps {
 
 export interface ProductThumbCarouselProps {
   className?: any;
+  product_id: number;
+  images?: {
+    src: string;
+    alt: string;
+  };
   image?: {
+    src: string;
+    alt: string;
+  };
+  image1?: {
     src: string;
     alt: string;
   };

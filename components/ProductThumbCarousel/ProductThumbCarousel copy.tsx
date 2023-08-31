@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -24,6 +24,7 @@ const CarouselContainer: any = styled('div')(({ data }: any) => {
         justifyContent: `flex-start`,
         alignItems: `center`,
         padding: paddingValue,
+        margin: '50px auto 125px',
         boxSizing: `border-box`,
         height: 'auto',
     };
@@ -49,59 +50,37 @@ const ProductThumb: any = styled('img')({
     maxWidth: `100px`,
 });
 
-
 function CarouselTest(props: ProductThumbCarouselProps): JSX.Element {
     const { data } = useProductCarouselTemp();
 
-    const selectedProductImages = data.products[props.product_id]?.images || [];
+    const [selectedProductIndex, setSelectedProductIndex] = useState(0);
+    const selectedProduct = data.products[selectedProductIndex];
 
-    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-    const settings = {
-        dots: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: true,
-        responsive: [
-            // Responsive settings
-            {
-                breakpoint: 572, // mobile breakpoint
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ],
+    const handleThumbnailClick = (productIndex: number, imageIndex: number) => {
+        setSelectedProductIndex(productIndex);
     };
 
-    const handleThumbnailClick = (index: number) => {
-        setSelectedImageIndex(index);
-      };
-    
-
     return (  
-        <CarouselContainer className="thumb-carousel-container" >
+        <CarouselContainer className="thumb-carousel-container" {...props}>
             <MainImage className="main-image">
                 <ImageContainer className="image-container">
-                <Image src={selectedProductImages[selectedImageIndex]?.src} alt={selectedProductImages[selectedImageIndex]?.alt} />
+                    <img src={selectedProduct.images[0].src} alt={selectedProduct.images[0].alt} />
                 </ImageContainer>
             </MainImage>
-            <Slider {...settings}>
-                {selectedProductImages &&
-                    selectedProductImages.map((image: any, index: number) => (
-                        <ProductThumb
-                            key={index}
+            <div className="thumbnails">
+                {selectedProduct.images.map((image: any, imageIndex: number) => (
+                    <div key={imageIndex} className="thumbnail">
+                        <img
                             src={image.src}
-                            alt={`Thumbnail ${index + 1}`}
-                            className={`thumbnail ${selectedImageIndex === index && selectedImageIndex === index ? 'active' : ''}`}
-                            onClick={() => handleThumbnailClick(index)}
+                            alt={image.alt}
+                            onClick={() => handleThumbnailClick(selectedProductIndex, imageIndex)}
                         />
-                        )
-                        )}
-            </Slider>
+                    </div>
+                ))}
+            </div>
         </CarouselContainer>
     );
 }
 
 export default CarouselTest;
+
