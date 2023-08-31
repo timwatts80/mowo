@@ -49,9 +49,7 @@ const Productinfo: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection:
-    data.currentVariant === 'ScreenTablet'
-      ? `column`
-      : data.currentVariant === 'ScreenMobile'
+    data.currentVariant === 'ScreenTablet' || data.currentVariant === 'ScreenMobile'
       ? `column`
       : `row`,
   justifyContent: `flex-start`,
@@ -61,6 +59,7 @@ const Productinfo: any = styled('div', {
   alignSelf: `stretch`,
   margin: `0px`,
 }));
+
 
 const Imagecontainer: any = styled('div')({
   borderRadius: `0px`,
@@ -75,7 +74,10 @@ const Imagecontainer: any = styled('div')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-  maxWidth: '400px',
+  maxWidth: `400px`,
+  '@media (max-width: 768px)': {
+    maxWidth: `100%`,
+  },
 });
 
 const ProductThumbCarousel1: any = styled(ProductThumbCarousel)(
