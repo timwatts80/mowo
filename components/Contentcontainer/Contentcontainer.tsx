@@ -49,9 +49,7 @@ const Productinfo: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection:
-    data.currentVariant === 'ScreenTablet'
-      ? `column`
-      : data.currentVariant === 'ScreenMobile'
+    data.currentVariant === 'ScreenTablet' || data.currentVariant === 'ScreenMobile'
       ? `column`
       : `row`,
   justifyContent: `flex-start`,
@@ -62,7 +60,10 @@ const Productinfo: any = styled('div', {
   margin: `0px`,
 }));
 
-const Imagecontainer: any = styled('div')({
+
+const Imagecontainer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -75,8 +76,7 @@ const Imagecontainer: any = styled('div')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-  maxWidth: '400px',
-});
+}));
 
 const ProductThumbCarousel1: any = styled(ProductThumbCarousel)(
   ({ theme }: any) => ({

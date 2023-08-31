@@ -17,14 +17,14 @@ import useContentcontainerResponsiveSize from './useContentcontainerResponsiveSi
 /* These are the possible values for the current variant. Use this to change the currentVariant dynamically.
 Please don't modify */
 const variantOptions = {
-  Property1Default: 'Property1Default',
-  Property1Variant2: 'Property1Variant2',
-  Property1Variant3: 'Property1Variant3',
+  ScreenDesktop: 'ScreenDesktop',
+  ScreenTablet: 'ScreenTablet',
+  ScreenMobile: 'ScreenMobile',
 };
 
 const useContentcontainer = () => {
   const [currentVariant, setCurrentVariant] = React.useState<string>(
-    variantOptions['Property1Default']
+    variantOptions['ScreenDesktop']
   );
 
   const breakpointsVariant = useContentcontainerResponsiveSize();
@@ -33,7 +33,7 @@ const useContentcontainer = () => {
     if (breakpointsVariant !== currentVariant) {
       setCurrentVariant(breakpointsVariant);
     }
-  }, [breakpointsVariant]);
+  }, [breakpointsVariant, currentVariant]);
 
   const data: any = { currentVariant };
 

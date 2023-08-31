@@ -10,17 +10,6 @@ import { ThemeProvider } from '@emotion/react'
 import React from 'react'
 import ContactUs from 'components/ContactUs/ContactUs'
 import Navbar from 'components/Navbar/Navbar'
-import Sidebar from 'components/Sidebar/Sidebar'
-import DialogSample from 'components/DialogSample/DialogSample'
-import ProductCarouselTemp from 'components/ProductCarouselTemp/ProductCarouselTemp'
-import Menulinklist from 'components/Menulinklist/Menulinklist'
-import ProductPageTest from 'components/ProductPageTest/ProductPageTest'
-import ProductCard from 'components/ProductCard/ProductCard'
-import CarouselTest from 'components/ClientCarousel/ClientCarousel'
-import ProductThumbCarousel from 'components/ProductThumbCarousel/ProductThumbCarousel'
-import image1 from '../public/assets/images/1.png'
-
-
 
 function MyApp({ Component, pageProps }: AppProps) {
 

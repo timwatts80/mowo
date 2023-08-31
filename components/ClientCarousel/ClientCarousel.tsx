@@ -32,14 +32,14 @@ const MainImage: any = styled('div')({
     marginTop: '50px',
 });
 
-function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
+function ClientLogoCarousel(props: ClientCaseCarouselProps): JSX.Element {
     const { data } = useClientCarousel();
 
     const [selectedImageUrl, setSelectedImageUrl] = useState(data.clientCases[0]);
 
     const settings = {
         dots: true,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         infinite: true,
         arrows: true,
@@ -85,4 +85,4 @@ function CarouselTest(props: ClientCaseCarouselProps): JSX.Element {
     );
 }
 
-export default CarouselTest;
+export default ClientLogoCarousel;

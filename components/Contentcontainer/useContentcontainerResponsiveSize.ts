@@ -27,7 +27,7 @@ const useContentcontainerResponsiveSize = () => {
     const handlerScreenTablet = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'ScreenTablet' : size));
     const ScreenTabletSize = window.matchMedia(
-      '(min-width: 572px) and (max-width: 924px)'
+      '(min-width: 572px) and (max-width: 1104px)'
     );
     setVariant((size: string) =>
       ScreenTabletSize.matches ? 'ScreenTablet' : size
@@ -36,11 +36,17 @@ const useContentcontainerResponsiveSize = () => {
 
     const handlerScreenDesktop = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'ScreenDesktop' : size));
-    const ScreenDesktopSize = window.matchMedia('(min-width: 924px)');
+    const ScreenDesktopSize = window.matchMedia('(min-width: 1104px)');
     setVariant((size: string) =>
       ScreenDesktopSize.matches ? 'ScreenDesktop' : size
     );
     ScreenDesktopSize.addEventListener('change', handlerScreenDesktop);
+
+    return () => {
+      ScreenMobileSize.removeEventListener('change', handlerScreenMobile);
+      ScreenTabletSize.removeEventListener('change', handlerScreenTablet);
+      ScreenDesktopSize.removeEventListener('change', handlerScreenDesktop);
+    };
   }, []);
 
   return variant;
