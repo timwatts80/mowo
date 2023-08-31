@@ -12,14 +12,46 @@
  **********************************************************************/
 
 import React, { useState } from 'react';
-import product1 from 'public/assets/images/1.png';
-import product2 from 'public/assets/images/2.png';
-import product3 from 'public/assets/images/3.png';
-import product4 from 'public/assets/images/4.png';
-import product5 from 'public/assets/images/5.png';
-import product6 from 'public/assets/images/6.png';
-import product7 from 'public/assets/images/7.png';
-import product8 from 'public/assets/images/8.png';
+import product1_1 from 'public/assets/images/1-1.png';
+import product1_2 from 'public/assets/images/1-2.png';
+import product1_3 from 'public/assets/images/1-3.png';
+import product1_4 from 'public/assets/images/1-4.png';
+import product1_5 from 'public/assets/images/1-5.png';
+import product2_1 from 'public/assets/images/2-1.png';
+import product2_2 from 'public/assets/images/2-2.png';
+import product2_3 from 'public/assets/images/2-3.png';
+import product2_4 from 'public/assets/images/2-4.png';
+import product2_5 from 'public/assets/images/2-5.png';
+import product3_1 from 'public/assets/images/3-1.png';
+import product3_2 from 'public/assets/images/3-2.png';
+import product3_3 from 'public/assets/images/3-3.png';
+import product3_4 from 'public/assets/images/3-4.png';
+import product3_5 from 'public/assets/images/3-5.png';
+import product4_1 from 'public/assets/images/4-1.png';
+import product4_2 from 'public/assets/images/4-2.png';
+import product4_3 from 'public/assets/images/4-3.png';
+import product4_4 from 'public/assets/images/4-4.png';
+import product4_5 from 'public/assets/images/4-5.png';
+import product5_1 from 'public/assets/images/5-1.png';
+import product5_2 from 'public/assets/images/5-2.png';
+import product5_3 from 'public/assets/images/5-3.png';
+import product5_4 from 'public/assets/images/5-4.png';
+import product5_5 from 'public/assets/images/5-5.png';
+import product6_1 from 'public/assets/images/6-1.png';
+import product6_2 from 'public/assets/images/6-2.png';
+import product6_3 from 'public/assets/images/6-3.png';
+import product6_4 from 'public/assets/images/6-4.png';
+import product6_5 from 'public/assets/images/6-5.png';
+import product7_1 from 'public/assets/images/7-1.png';
+import product7_2 from 'public/assets/images/7-2.png';
+import product7_3 from 'public/assets/images/7-3.png';
+import product7_4 from 'public/assets/images/7-4.png';
+import product7_5 from 'public/assets/images/7-5.png';
+import product8_1 from 'public/assets/images/8-1.png';
+import product8_2 from 'public/assets/images/8-2.png';
+import product8_3 from 'public/assets/images/8-3.png';
+import product8_4 from 'public/assets/images/8-4.png';
+import product8_5 from 'public/assets/images/8-5.png';
 
 const useProductCardList = () => {
   const toggleDialog = (param1: any): any => {};
@@ -27,49 +59,81 @@ const useProductCardList = () => {
   const items = [
     {
       product_id: 1,
-      image: { src: product1.src, alt: 'Product 1' },
+      image1_1: { src: product1_1.src, alt: 'Product 1-1' },
+      image1_2: { src: product1_2.src, alt: 'Product 1-2' },
+      image1_3: { src: product1_3.src, alt: 'Product 1-3' },
+      image1_4: { src: product1_4.src, alt: 'Product 1-4' },
+      image1_5: { src: product1_5.src, alt: 'Product 1-5' },
       title: 'Surface Go 3',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 2,
-      image: { src: product2.src, alt: 'Product 2' },
+      image2_1: { src: product2_1.src, alt: 'Product 2-1' },
+      image2_2: { src: product2_2.src, alt: 'Product 2-2' },
+      image2_3: { src: product2_3.src, alt: 'Product 2-3' },
+      image2_4: { src: product2_4.src, alt: 'Product 2-4' },
+      image2_5: { src: product2_5.src, alt: 'Product 2-5' },
       title: 'Surface Laptop Go 2',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 3,
-      image: { src: product3.src, alt: 'Product 3' },
+      image3_1: { src: product3_1.src, alt: 'Product 3-1' },
+      image3_2: { src: product3_2.src, alt: 'Product 3-2' },
+      image3_3: { src: product3_3.src, alt: 'Product 3-3' },
+      image3_4: { src: product3_4.src, alt: 'Product 3-4' },
+      image3_5: { src: product3_5.src, alt: 'Product 3-5' },
       title: 'Surface Pro 9',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 4,
-      image: { src: product4.src, alt: 'Product 4' },
+      image4_1: { src: product4_1.src, alt: 'Product 4-1' },
+      image4_2: { src: product4_2.src, alt: 'Product 4-2' },
+      image4_3: { src: product4_3.src, alt: 'Product 4-3' },
+      image4_4: { src: product4_4.src, alt: 'Product 4-4' },
+      image4_5: { src: product4_5.src, alt: 'Product 4-5' },
       title: 'Surface Laptop5',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 5,
-      image: { src: product5.src, alt: 'Product 5' },
+      image5_1: { src: product5_1.src, alt: 'Product 5-1' },
+      image5_2: { src: product5_2.src, alt: 'Product 5-2' },
+      image5_3: { src: product5_3.src, alt: 'Product 5-3' },
+      image5_4: { src: product5_4.src, alt: 'Product 5-4' },
+      image5_5: { src: product5_5.src, alt: 'Product 5-5' },
       title: 'Surface Laptop Studio',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 6,
-      image: { src: product6.src, alt: 'Product 6' },
+      image6_1: { src: product6_1.src, alt: 'Product 6-1' },
+      image6_2: { src: product6_2.src, alt: 'Product 6-2' },
+      image6_3: { src: product6_3.src, alt: 'Product 6-3' },
+      image6_4: { src: product6_4.src, alt: 'Product 6-4' },
+      image6_5: { src: product6_5.src, alt: 'Product 6-5' },
       title: 'Surface Studio 2+',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 7,
-      image: { src: product7.src, alt: 'Product 7' },
+      image7_1: { src: product7_1.src, alt: 'Product 7-1' },
+      image7_2: { src: product7_2.src, alt: 'Product 7-2' },
+      image7_3: { src: product7_3.src, alt: 'Product 7-3' },
+      image7_4: { src: product7_4.src, alt: 'Product 7-4' },
+      image7_5: { src: product7_5.src, alt: 'Product 7-5' },
       title: 'Surface Hub 2S',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
     {
       product_id: 8,
-      image: { src: product8.src, alt: 'Product 8' },
+      image8_1: { src: product8_1.src, alt: 'Product 8-1' },
+      image8_2: { src: product8_2.src, alt: 'Product 8-2' },
+      image8_3: { src: product8_3.src, alt: 'Product 8-3' },
+      image8_4: { src: product8_4.src, alt: 'Product 8-4' },
+      image8_5: { src: product8_5.src, alt: 'Product 8-5' },
       title: 'Surface Duo 2',
       description: 'Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move.',
     },
