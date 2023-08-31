@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
+      <ProductThumbCarousel />
       <div id="modern-workplace"></div>
       <ModernWorkplace />
       <div id="products"></div>
