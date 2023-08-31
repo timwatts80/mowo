@@ -36,7 +36,30 @@ const useNavbar = () => {
     }
   }, [breakpointsVariant]);
 
-  let data: any = { currentVariant, isDialogOpen };
+  const menuLinks = [
+    {
+      id: 1,
+      title: "Modern Workplace",
+      url: "#modern-workplace",
+    },
+    {
+      id: 2,
+      title: "Devices",
+      url: "#products",
+    },
+    {
+      id: 3,
+      title: "Customer Cases",
+      url: "#cases",
+    },
+    {
+      id: 4,
+      title: "Contact",
+      url: "#contact",
+    },
+  ];
+
+  let data: any = { currentVariant, isDialogOpen, menuLinks };
   const toggleDialog = (): any => {
     setIsDialogOpen(!isDialogOpen)
   };

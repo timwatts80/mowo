@@ -107,7 +107,25 @@ const MenuItems: any = styled('div', {
       : 'unset',
 }));
 
-const ModernWorkplace: any = styled('div')(({ theme }: any) => ({
+const MenuLink: any = styled('div')(({ theme }: any) => ({
+  display: `flex`,
+  gap: `20px`,
+  textAlign: `left`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: theme.palette['Text']['Primary'],
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `400`,
+  fontSize: `21px`,
+  letterSpacing: `0.15000000596046448px`,
+  textDecoration: `none`,
+  lineHeight: `160.0000023841858%`,
+  textTransform: `none`,
+  margin: `0px`,
+}));
+
+const Link: any = styled('a')(({ theme }: any) => ({
   textAlign: `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -279,12 +297,13 @@ function Navbar(props: NavbarProps): JSX.Element {
         </Logocontainer>
         {!(data.currentVariant === 'ScreenTablet') &&
           !(data.currentVariant === 'ScreenMobile') && (
-            <MenuItems data={data}>
-              <ModernWorkplace>{`Modern Workplace`}</ModernWorkplace>
-
-              <Devices>{`Devices`}</Devices>
-              <Cases>{`Cases`}</Cases>
-              <Contact>{`Contact`}</Contact>
+            <MenuItems data={data} {...props}>
+              <MenuLink>
+                {data.menuLinks &&
+                  data.menuLinks.map((menuLink: any, index: number) => {
+                    return <Link key={index} href={menuLink.url} menuLink={menuLink} >{menuLink.title}</Link>;
+                  })}
+              </MenuLink>
               {false && (
                 <HamburgerMenu>
                   <Hamburger

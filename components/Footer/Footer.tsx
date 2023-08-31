@@ -55,7 +55,7 @@ const Box2: any = styled('div', {
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: data.currentVariant === 'Mobile' ? `column` : `row`,
+  flexDirection: data.currentVariant === 'ScreenMobile' ? `column` : `row`,
   justifyContent: `center`,
   alignItems: `center`,
   padding: `0px`,
@@ -73,18 +73,18 @@ const LogoSocial: any = styled('div', {
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-end`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-end`,
   padding:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `8px 10px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `8px 10px`
       : `8px 32px`,
   boxSizing: `border-box`,
-  flex: data.currentVariant === 'Mobile' ? 'unset' : `1`,
+  flex: data.currentVariant === 'ScreenMobile' ? 'unset' : `1`,
   margin: `0px`,
   overflow: `hidden`,
-  alignSelf: data.currentVariant === 'Mobile' ? `stretch` : 'unset',
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
 const LogoContainer: any = styled('div', {
@@ -97,12 +97,12 @@ const LogoContainer: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: data.currentVariant === 'Mobile' ? `12px` : `0px 12px`,
+  padding: data.currentVariant === 'ScreenMobile' ? `12px` : `0px 12px`,
   boxSizing: `border-box`,
   width:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? 'unset'
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `264px`,
   margin: `0px`,
@@ -112,15 +112,15 @@ const MowoLogo2: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `38.91px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `38.91px`
       : `51px`,
   width:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `200px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `200px`
       : `262px`,
   margin: `0px`,
@@ -136,18 +136,18 @@ const Social: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `space-between`,
   alignItems: `center`,
-  padding: data.currentVariant === 'Tablet' ? `0px 12px` : `0px`,
+  padding: data.currentVariant === 'ScreenTablet' ? `0px 12px` : `0px`,
   boxSizing: `border-box`,
   width:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `224px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `200px`
       : `264px`,
   margin:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `18px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `10px 0px 0px 0px`
       : `24px 0px 0px 0px`,
   overflow: `hidden`,
@@ -334,20 +334,20 @@ const Contact: any = styled('div', {
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `15px 10px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `15px 10px`
       : `15px 30px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  flex: data.currentVariant === 'Mobile' ? 'unset' : `1`,
+  flex: data.currentVariant === 'ScreenMobile' ? 'unset' : `1`,
   margin:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `0px 0px 0px 20px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `20px 0px 0px 0px`
       : `0px 0px 0px 100px`,
   overflow: `hidden`,
@@ -361,7 +361,7 @@ const UpperRow: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
+  justifyContent: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
@@ -381,9 +381,9 @@ const MowoEhf: any = styled('div', {
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
   fontSize:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `26px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `26px`
       : `30px`,
   letterSpacing: `0px`,
@@ -400,21 +400,21 @@ const LowerRow: any = styled('div', {
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: data.currentVariant === 'Mobile' ? `column` : `row`,
+  flexDirection: data.currentVariant === 'ScreenMobile' ? `column` : `row`,
   justifyContent: `flex-start`,
-  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin:
-    data.currentVariant === 'Tablet' ? `12px 0px 0px 0px` : `9px 0px 0px 0px`,
+    data.currentVariant === 'ScreenTablet' ? `12px 0px 0px 0px` : `9px 0px 0px 0px`,
   overflow: `hidden`,
 }));
 
 const Kt5002200820T3546472: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
-  textAlign: data.currentVariant === 'Mobile' ? `center` : `left`,
+  textAlign: data.currentVariant === 'ScreenMobile' ? `center` : `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
@@ -422,9 +422,9 @@ const Kt5002200820T3546472: any = styled('div', {
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
   fontSize:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `16px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `14px`
       : `18px`,
   letterSpacing: `0px`,
@@ -433,9 +433,9 @@ const Kt5002200820T3546472: any = styled('div', {
   textTransform: `none`,
   alignSelf: `stretch`,
   width:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `123px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `138px`,
   margin: `0px`,
@@ -444,7 +444,7 @@ const Kt5002200820T3546472: any = styled('div', {
 const Knarrarvogur4104Reyk: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
-  textAlign: data.currentVariant === 'Mobile' ? `center` : `left`,
+  textAlign: data.currentVariant === 'ScreenMobile' ? `center` : `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
@@ -452,9 +452,9 @@ const Knarrarvogur4104Reyk: any = styled('div', {
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
   fontSize:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `16px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `14px`
       : `18px`,
   letterSpacing: `0px`,
@@ -463,13 +463,13 @@ const Knarrarvogur4104Reyk: any = styled('div', {
   textTransform: `none`,
   alignSelf: `stretch`,
   width:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `106px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `120px`,
   margin:
-    data.currentVariant === 'Mobile' ? `4px 0px 0px 0px` : `0px 0px 0px 8px`,
+    data.currentVariant === 'ScreenMobile' ? `4px 0px 0px 0px` : `0px 0px 0px 8px`,
 }));
 
 const Attribution: any = styled('div')({
@@ -496,7 +496,7 @@ const SiteDesignedInFigmaB: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: data.currentVariant === 'Mobile' ? `10px` : `0px`,
+  padding: data.currentVariant === 'ScreenMobile' ? `10px` : `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
@@ -513,9 +513,9 @@ const SiteDesignedInFigmaB1: any = styled('div', {
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
   fontSize:
-    data.currentVariant === 'Tablet'
+    data.currentVariant === 'ScreenTablet'
       ? `14px`
-      : data.currentVariant === 'Mobile'
+      : data.currentVariant === 'ScreenMobile'
       ? `12px`
       : `16px`,
   letterSpacing: `0px`,
@@ -551,7 +551,7 @@ const FigmaContainer: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: data.currentVariant === 'Mobile' ? `20px` : `21px`,
+  width: data.currentVariant === 'ScreenMobile' ? `20px` : `21px`,
   margin: `0px`,
   overflow: `hidden`,
 }));
@@ -569,7 +569,7 @@ const Figma: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   height: `21px`,
-  width: data.currentVariant === 'Mobile' ? `20px` : `21px`,
+  width: data.currentVariant === 'ScreenMobile' ? `20px` : `21px`,
   margin: `0px`,
   overflow: `hidden`,
 }));
@@ -578,9 +578,9 @@ const Vector6: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height: `6.22px`,
-  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
+  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'Mobile' ? `10px` : `11px`,
+  left: data.currentVariant === 'ScreenMobile' ? `10px` : `11px`,
   top: `7px`,
 }));
 
@@ -588,9 +588,9 @@ const Vector7: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height: `6.22px`,
-  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
+  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'Mobile' ? `4px` : `5px`,
+  left: data.currentVariant === 'ScreenMobile' ? `4px` : `5px`,
   top: `14px`,
 }));
 
@@ -598,9 +598,9 @@ const Vector8: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height: `6.22px`,
-  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
+  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'Mobile' ? `10px` : `11px`,
+  left: data.currentVariant === 'ScreenMobile' ? `10px` : `11px`,
   top: `1px`,
 }));
 
@@ -608,9 +608,9 @@ const Vector9: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height: `6.22px`,
-  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
+  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'Mobile' ? `4px` : `5px`,
+  left: data.currentVariant === 'ScreenMobile' ? `4px` : `5px`,
   top: `1px`,
 }));
 
@@ -618,9 +618,9 @@ const Vector10: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height: `6.22px`,
-  width: data.currentVariant === 'Mobile' ? `5.93px` : `6.22px`,
+  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'Mobile' ? `4px` : `5px`,
+  left: data.currentVariant === 'ScreenMobile' ? `4px` : `5px`,
   top: `7px`,
 }));
 

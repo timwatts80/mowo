@@ -20,7 +20,7 @@ const CarouselContainer: any = styled('div')(({ data }: any) => {
         position: `relative`,
         isolation: `isolate`,
         flexDirection: `row`,
-        maxWidth: `400px`,
+        width: `100%`,
         justifyContent: `flex-start`,
         alignItems: `center`,
         padding: paddingValue,

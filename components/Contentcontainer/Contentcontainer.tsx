@@ -70,6 +70,7 @@ const Imagecontainer: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
+  maxWidth: `400px`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
@@ -80,6 +81,7 @@ const Imagecontainer: any = styled('div')(({ theme }: any) => ({
 const ProductThumbCarousel1: any = styled(ProductThumbCarousel)(
   ({ theme }: any) => ({
     alignSelf: `stretch`,
+    maxWidth: `400px`,
     flex: `1`,
     margin: `0px`,
   })
@@ -387,7 +389,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
     <Property1Default className={props.className} data={data}>
       <Productinfo data={data}>
         <Imagecontainer>
-          <ProductThumbCarousel1 {...props}/>
+          <ProductThumbCarousel1 className="thumb-carousel-container" {...props}/>
         </Imagecontainer>
         <Details data={data}>
           <Top>
