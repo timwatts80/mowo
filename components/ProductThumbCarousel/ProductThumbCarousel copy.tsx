@@ -6,7 +6,6 @@ import ClientCaseStudy from 'components/ClientCaseStudy/ClientCaseStudy';
 import ClientLogoCard from 'components/ClientLogoCard/ClientLogoCard';
 import useProductThumbCarousel from './useProductThumbCarousel';
 import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCarouselTemp';
-import useProductCardList from 'components/ProductCardList/useProductCardList';
 import { ProductThumbCarouselProps } from 'types';
 import styled from '@emotion/styled';
 import { useMediaQuery } from '@mui/material';
