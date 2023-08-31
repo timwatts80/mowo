@@ -20,7 +20,7 @@ import Table from 'components/Table/Table';
 import { ContentcontainerProps } from 'types';
 import useContentcontainer from 'components/Contentcontainer/useContentcontainer';
 
-const Property1Default: any = styled('div', {
+const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
@@ -32,9 +32,9 @@ const Property1Default: any = styled('div', {
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding:
-    data.currentVariant === 'Property1Variant2'
+    data.currentVariant === 'ScreenTablet'
       ? `0px 30px 30px 30px`
-      : data.currentVariant === 'Property1Variant3'
+      : data.currentVariant === 'ScreenMobile'
       ? `0px 16px 16px 16px`
       : `0px 48px 48px 48px`,
   boxSizing: `border-box`,
@@ -49,9 +49,9 @@ const Productinfo: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection:
-    data.currentVariant === 'Property1Variant2'
+    data.currentVariant === 'ScreenTablet'
       ? `column`
-      : data.currentVariant === 'Property1Variant3'
+      : data.currentVariant === 'ScreenMobile'
       ? `column`
       : `row`,
   justifyContent: `flex-start`,
@@ -62,7 +62,7 @@ const Productinfo: any = styled('div', {
   margin: `0px`,
 }));
 
-const Imagecontainer: any = styled('div')(({ theme }: any) => ({
+const Imagecontainer: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -70,18 +70,16 @@ const Imagecontainer: any = styled('div')(({ theme }: any) => ({
   flexDirection: `row`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  maxWidth: `400px`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-}));
+});
 
 const ProductThumbCarousel1: any = styled(ProductThumbCarousel)(
   ({ theme }: any) => ({
     alignSelf: `stretch`,
-    maxWidth: `400px`,
     flex: `1`,
     margin: `0px`,
   })
@@ -101,15 +99,15 @@ const Details: any = styled('div', {
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex:
-    data.currentVariant === 'Property1Variant2'
+    data.currentVariant === 'ScreenTablet'
       ? 'unset'
-      : data.currentVariant === 'Property1Variant3'
+      : data.currentVariant === 'ScreenMobile'
       ? 'unset'
       : `1`,
   margin:
-    data.currentVariant === 'Property1Variant2'
+    data.currentVariant === 'ScreenTablet'
       ? `32px 0px 0px 0px`
-      : data.currentVariant === 'Property1Variant3'
+      : data.currentVariant === 'ScreenMobile'
       ? `32px 0px 0px 0px`
       : `0px 0px 0px 32px`,
 }));
@@ -386,10 +384,10 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
   const { data } = useContentcontainer();
 
   return (
-    <Property1Default className={props.className} data={data}>
+    <ScreenDesktop className={props.className} data={data}>
       <Productinfo data={data}>
         <Imagecontainer>
-          <ProductThumbCarousel1 className="thumb-carousel-container" {...props}/>
+          <ProductThumbCarousel1 {...props} />
         </Imagecontainer>
         <Details data={data}>
           <Top>
@@ -441,7 +439,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
       <Productstable>
         <Table1 />
       </Productstable>
-    </Property1Default>
+    </ScreenDesktop>
   );
 }
 
