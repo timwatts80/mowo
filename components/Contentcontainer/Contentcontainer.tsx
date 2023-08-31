@@ -49,7 +49,9 @@ const Productinfo: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection:
-    data.currentVariant === 'ScreenTablet' || data.currentVariant === 'ScreenMobile'
+    data.currentVariant === 'ScreenTablet'
+      ? `column`
+      : data.currentVariant === 'ScreenMobile'
       ? `column`
       : `row`,
   justifyContent: `flex-start`,
@@ -59,7 +61,6 @@ const Productinfo: any = styled('div', {
   alignSelf: `stretch`,
   margin: `0px`,
 }));
-
 
 const Imagecontainer: any = styled('div')({
   borderRadius: `0px`,
@@ -385,7 +386,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
   return (
     <ScreenDesktop className={props.className} data={data}>
       <Productinfo data={data}>
-        <Imagecontainer>
+        <Imagecontainer className={'product-thumb-container'}>
           <ProductThumbCarousel1 {...props} />
         </Imagecontainer>
         <Details data={data}>
