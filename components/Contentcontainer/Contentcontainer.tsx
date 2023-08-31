@@ -75,6 +75,7 @@ const Imagecontainer: any = styled('div')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
+  maxWidth: '400px',
 });
 
 const ProductThumbCarousel1: any = styled(ProductThumbCarousel)(
