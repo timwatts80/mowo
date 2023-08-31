@@ -20,7 +20,6 @@ import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCar
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Product } from 'components/Product/Product';
 
 const ProductList1: any = styled('div')({
   display: `flex`,
