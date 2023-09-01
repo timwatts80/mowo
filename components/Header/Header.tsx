@@ -17,6 +17,7 @@ import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'types';
 import useHeader from 'components/Header/useHeader';
+import Link from 'next/link';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -916,6 +917,7 @@ function Header(props: HeaderProps): JSX.Element {
                       color={'primary'}
                       disabled={false}
                       data={data}
+                      href="#products"
                     >
                       {'See devices'}
                     </ButtonOutlined>
@@ -1021,6 +1023,7 @@ function Header(props: HeaderProps): JSX.Element {
                   >
                     {'Book a meeting'}
                   </ButtonContained2>
+                  <Link href="/#products">
                   <ButtonOutlined2
                     variant="outlined"
                     size={'large'}
@@ -1030,6 +1033,7 @@ function Header(props: HeaderProps): JSX.Element {
                   >
                     {'See devices'}
                   </ButtonOutlined2>
+                  </Link>
                 </BtnsPosition2>
               </Btns2>
             </LeftSide2>

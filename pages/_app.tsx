@@ -10,7 +10,6 @@ import { ThemeProvider } from '@emotion/react'
 import React from 'react'
 import ContactUs from 'components/ContactUs/ContactUs'
 import Navbar from 'components/Navbar/Navbar'
-import ReactPlayer from 'react-player'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
