@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import ClientCaseStudy from 'components/ClientCaseStudy/ClientCaseStudy';
 import ClientLogoCard from 'components/ClientLogoCard/ClientLogoCard';
 import useProductThumbCarousel from './useProductThumbCarousel';
-import useProductCarouselTemp from 'components/ProductCarouselTemp/useProductCarouselTemp';
+import useProductCarouselTemp from 'components/ProductCarousel/useProductCarousel';
 import { ProductThumbCarouselProps } from 'types';
 import styled from '@emotion/styled';
 import { useMediaQuery } from '@mui/material';

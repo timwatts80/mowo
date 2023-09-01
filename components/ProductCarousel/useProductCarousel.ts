@@ -12,6 +12,7 @@
  **********************************************************************/
 
 import React from 'react';
+import videoThumb from 'public/assets/images/black.png';
 import product1 from 'public/assets/images/1.png';
 import product1_1 from 'public/assets/images/1-1.png';
 import product1_2 from 'public/assets/images/1-2.png';
@@ -61,17 +62,18 @@ import product8_3 from 'public/assets/images/8-3.png';
 import product8_4 from 'public/assets/images/8-4.png';
 import product8_5 from 'public/assets/images/8-5.png';
 
-const useProductCarouselTemp = () => {
+const useProductCarousel = () => {
 
   const products = [
     {
       product_id: 0,
       image: { src: product1.src, alt: 'Product 1' },
       images: [
-        { src: product1_1.src, alt: 'Product 1-1' },
-        { src: product1_2.src, alt: 'Product 1-2' },
-        { src: product1_3.src, alt: 'Product 1-3' },
-        { src: product1_4.src, alt: 'Product 1-4' },
+        { src: 'https://www.youtube.com/watch?v=0f8Eo-tIA2o', alt: 'Product 1-1', type: 'video' },
+        { src: product1_1.src, alt: 'Product 1-1', type: 'image' },
+        { src: product1_2.src, alt: 'Product 1-2', type: 'image' },
+        { src: product1_3.src, alt: 'Product 1-3', type: 'image' },
+        { src: product1_4.src, alt: 'Product 1-4', type: 'image' },
       ],
       title: "Surface Go 3",
       subtitle: "Subtitle Here",
@@ -81,10 +83,10 @@ const useProductCarouselTemp = () => {
       product_id: 1,
       image: { src: product2.src, alt: 'Product 2' },
       images: [
-        { src: product2_1.src, alt: 'Product 2-1' },
-        { src: product2_2.src, alt: 'Product 2-2' },
-        { src: product2_3.src, alt: 'Product 2-3' },
-        { src: product2_4.src, alt: 'Product 2-4' },
+        { src: product2_1.src, alt: 'Product 2-1', type: 'image' },
+        { src: product2_2.src, alt: 'Product 2-2', type: 'image' },
+        { src: product2_3.src, alt: 'Product 2-3', type: 'image' },
+        { src: product2_4.src, alt: 'Product 2-4', type: 'image' },
       ],
       title: "Surface Go 3",
       subtitle: "Subtitle Here",
@@ -94,10 +96,10 @@ const useProductCarouselTemp = () => {
       product_id: 2,
       image: { src: product3.src, alt: 'Product 3' },
       images: [
-        { src: product3_1.src, alt: 'Product 3-1' },
-        { src: product3_2.src, alt: 'Product 3-2' },
-        { src: product3_3.src, alt: 'Product 3-3' },
-        { src: product3_4.src, alt: 'Product 3-4' },
+        { src: product3_1.src, alt: 'Product 3-1', type: 'image' },
+        { src: product3_2.src, alt: 'Product 3-2', type: 'image' },
+        { src: product3_3.src, alt: 'Product 3-3', type: 'image' },
+        { src: product3_4.src, alt: 'Product 3-4', type: 'image' },
       ],
       title: "Surface Pro 9",
       subtitle: "Subtitle Here",
@@ -107,10 +109,10 @@ const useProductCarouselTemp = () => {
       product_id: 3,
       image: { src: product4.src, alt: 'Product 4' },
       images: [
-        { src: product4_1.src, alt: 'Product 4-1' },
-        { src: product4_2.src, alt: 'Product 4-2' },
-        { src: product4_3.src, alt: 'Product 4-3' },
-        { src: product4_4.src, alt: 'Product 4-4' },
+        { src: product4_1.src, alt: 'Product 4-1', type: 'image' },
+        { src: product4_2.src, alt: 'Product 4-2', type: 'image' },
+        { src: product4_3.src, alt: 'Product 4-3', type: 'image' },
+        { src: product4_4.src, alt: 'Product 4-4', type: 'image' },
       ],
       title: "Surface Laptop5",
       subtitle: "Subtitle Here",
@@ -120,10 +122,10 @@ const useProductCarouselTemp = () => {
       product_id: 4,
       image: { src: product5.src, alt: 'Product 5' },
       images: [
-        { src: product5_1.src, alt: 'Product 5-1' },
-        { src: product5_2.src, alt: 'Product 5-2' },
-        { src: product5_3.src, alt: 'Product 5-3' },
-        { src: product5_4.src, alt: 'Product 5-4' },
+        { src: product5_1.src, alt: 'Product 5-1', type: 'image' },
+        { src: product5_2.src, alt: 'Product 5-2', type: 'image' },
+        { src: product5_3.src, alt: 'Product 5-3', type: 'image' },
+        { src: product5_4.src, alt: 'Product 5-4', type: 'image' },
       ],
       title: "Surface Laptop Studio",
       subtitle: "Subtitle Here",
@@ -133,10 +135,10 @@ const useProductCarouselTemp = () => {
       product_id: 5,
       image: { src: product6.src, alt: 'Product 6' },
       images: [
-        { src: product6_1.src, alt: 'Product 6-1' },
-        { src: product6_2.src, alt: 'Product 6-2' },
-        { src: product6_3.src, alt: 'Product 6-3' },
-        { src: product6_4.src, alt: 'Product 6-4' },
+        { src: product6_1.src, alt: 'Product 6-1', type: 'image' },
+        { src: product6_2.src, alt: 'Product 6-2', type: 'image' },
+        { src: product6_3.src, alt: 'Product 6-3', type: 'image' },
+        { src: product6_4.src, alt: 'Product 6-4', type: 'image' },
       ],
       title: "Surface Studio 2+",
       subtitle: "Subtitle Here",
@@ -146,10 +148,10 @@ const useProductCarouselTemp = () => {
       product_id: 6,
       image: { src: product7.src, alt: 'Product 7' },
       images: [
-        { src: product7_1.src, alt: 'Product 7-1' },
-        { src: product7_2.src, alt: 'Product 7-2' },
-        { src: product7_3.src, alt: 'Product 7-3' },
-        { src: product7_4.src, alt: 'Product 7-4' },
+        { src: product7_1.src, alt: 'Product 7-1', type: 'image' },
+        { src: product7_2.src, alt: 'Product 7-2', type: 'image' },
+        { src: product7_3.src, alt: 'Product 7-3', type: 'image' },
+        { src: product7_4.src, alt: 'Product 7-4', type: 'image' },
       ],
       title: "Surface Hub 2S",
       subtitle: "Subtitle Here",
@@ -159,10 +161,10 @@ const useProductCarouselTemp = () => {
       product_id: 7,
       image: { src: product8.src, alt: 'Product 8' },
       images: [
-        { src: product8_1.src, alt: 'Product 8-1' },
-        { src: product8_2.src, alt: 'Product 8-2' },
-        { src: product8_3.src, alt: 'Product 8-3' },
-        { src: product8_3.src, alt: 'Product 8-3' },
+        { src: product8_1.src, alt: 'Product 8-1', type: 'image' },
+        { src: product8_2.src, alt: 'Product 8-2', type: 'image' },
+        { src: product8_3.src, alt: 'Product 8-3', type: 'image' },
+        { src: product8_3.src, alt: 'Product 8-3', type: 'image' },
       ],
       title: "Surface Duo 2",
       subtitle: "Subtitle Here",
@@ -177,4 +179,4 @@ const useProductCarouselTemp = () => {
   return { data, fns };
 };
 
-export default useProductCarouselTemp;
+export default useProductCarousel;

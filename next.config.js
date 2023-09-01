@@ -11,7 +11,12 @@ module.exports = {
       test: /.svg$/i,
       issuer: /.[jt]sx?$/,
       use: ["@svgr/webpack"],
-    });
+    },
+    {
+      test: /\.(mp4|webm)$/,
+      type: "asset/resource", // Use built-in asset handling
+    }
+    );
 
     return config
   },

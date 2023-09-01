@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import ProductCarouselTemp from 'components/ProductCarouselTemp/ProductCarouselTemp';
+import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
 
@@ -178,7 +178,7 @@ const Box1: any = styled('div')({
   margin: `15px 0px 0px 0px`,
 });
 
-const ProductCarousel1: any = styled(ProductCarouselTemp)(({ theme }: any) => ({
+const ProductCarousel1: any = styled(ProductCarousel)(({ theme }: any) => ({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
