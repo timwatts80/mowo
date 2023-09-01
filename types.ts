@@ -127,17 +127,6 @@ export interface ClientCaseStudyProps {
   description: string;
 };
 
-export interface ProductCardNewProps {
-  className?: any;
-  product_id: number;
-  title: string;
-  description: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-};
-
 export interface ClientCarouselProps {
   className?: any;
 };
@@ -196,22 +185,11 @@ export interface ProductDialog1Props {
   onClose: any;
 };
 
-export interface ProductPageTestProps {
-  className?: any;
-  open?: any;
-  onClose?: any;
-};
-
 export interface ProductPageProps {
   className?: any;
   open: any;
   onClose: any;
   products: any;
-};
-
-export interface ProductCardListProps {
-  className?: any;
-  item?: ProductCardNewProps[];
 };
 
 export interface ContactUsProps {
@@ -221,13 +199,6 @@ export interface ContactUsProps {
 export interface ModernWorkplaceProps {
   className?: any;
 }
-
-export interface Card27Props {
-  className?: any;
-  open?: any;
-  onClose?: any;
-  products: any;
-};
 
 export interface ProductModalProps {
   className?: any;

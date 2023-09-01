@@ -83,12 +83,13 @@ const useProductCarousel = () => {
       product_id: 1,
       image: { src: product2.src, alt: 'Product 2' },
       images: [
+        { src: 'https://www.youtube.com/watch?v=TaAlizedT7o', alt: 'Product 1-1', type: 'video' },
         { src: product2_1.src, alt: 'Product 2-1', type: 'image' },
         { src: product2_2.src, alt: 'Product 2-2', type: 'image' },
         { src: product2_3.src, alt: 'Product 2-3', type: 'image' },
         { src: product2_4.src, alt: 'Product 2-4', type: 'image' },
       ],
-      title: "Surface Go 3",
+      title: "Surface Laptop 3",
       subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
@@ -96,6 +97,7 @@ const useProductCarousel = () => {
       product_id: 2,
       image: { src: product3.src, alt: 'Product 3' },
       images: [
+        { src: 'https://www.youtube.com/watch?v=oMu-E3knVHU', alt: 'Product 1-1', type: 'video' },
         { src: product3_1.src, alt: 'Product 3-1', type: 'image' },
         { src: product3_2.src, alt: 'Product 3-2', type: 'image' },
         { src: product3_3.src, alt: 'Product 3-3', type: 'image' },
@@ -109,12 +111,13 @@ const useProductCarousel = () => {
       product_id: 3,
       image: { src: product4.src, alt: 'Product 4' },
       images: [
+        { src: 'https://www.youtube.com/watch?v=9_FQW36r0n8', alt: 'Product 1-1', type: 'video' },
         { src: product4_1.src, alt: 'Product 4-1', type: 'image' },
         { src: product4_2.src, alt: 'Product 4-2', type: 'image' },
         { src: product4_3.src, alt: 'Product 4-3', type: 'image' },
         { src: product4_4.src, alt: 'Product 4-4', type: 'image' },
       ],
-      title: "Surface Laptop5",
+      title: "Surface Laptop 5",
       subtitle: "Subtitle Here",
       description: "Surface Pro 5. Elegant design meets workplace mobility. Redefining productivity on the move."
     },
@@ -122,6 +125,7 @@ const useProductCarousel = () => {
       product_id: 4,
       image: { src: product5.src, alt: 'Product 5' },
       images: [
+        { src: 'https://www.youtube.com/watch?v=iOb31Uc4XKM', alt: 'Product 1-1', type: 'video' },
         { src: product5_1.src, alt: 'Product 5-1', type: 'image' },
         { src: product5_2.src, alt: 'Product 5-2', type: 'image' },
         { src: product5_3.src, alt: 'Product 5-3', type: 'image' },
@@ -135,6 +139,7 @@ const useProductCarousel = () => {
       product_id: 5,
       image: { src: product6.src, alt: 'Product 6' },
       images: [
+        { src: 'https://www.youtube.com/watch?v=fsQSWu8gBUs', alt: 'Product 1-1', type: 'video' },
         { src: product6_1.src, alt: 'Product 6-1', type: 'image' },
         { src: product6_2.src, alt: 'Product 6-2', type: 'image' },
         { src: product6_3.src, alt: 'Product 6-3', type: 'image' },
@@ -148,6 +153,7 @@ const useProductCarousel = () => {
       product_id: 6,
       image: { src: product7.src, alt: 'Product 7' },
       images: [
+        { src: 'https://www.youtube.com/watch?v=SNmrxh-ACwQ', alt: 'Product 1-1', type: 'video' },
         { src: product7_1.src, alt: 'Product 7-1', type: 'image' },
         { src: product7_2.src, alt: 'Product 7-2', type: 'image' },
         { src: product7_3.src, alt: 'Product 7-3', type: 'image' },
@@ -161,6 +167,7 @@ const useProductCarousel = () => {
       product_id: 7,
       image: { src: product8.src, alt: 'Product 8' },
       images: [
+        { src: 'https://www.youtube.com/watch?v=QYF6LaLcq90', alt: 'Product 1-1', type: 'video' },
         { src: product8_1.src, alt: 'Product 8-1', type: 'image' },
         { src: product8_2.src, alt: 'Product 8-2', type: 'image' },
         { src: product8_3.src, alt: 'Product 8-3', type: 'image' },
