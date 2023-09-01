@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ClientCaseStudy from 'components/ClientCaseStudy/ClientCaseStudy';
 import ClientLogoCard from 'components/ClientLogoCard/ClientLogoCard';
-import useClientCarousel from './useClientCarousel';
+import useClientLogoCarousel from './useClientLogoCarousel';
 import { ClientCaseCarouselProps } from 'types';
 import styled from '@emotion/styled';
 import { useMediaQuery } from '@mui/material';
@@ -33,7 +33,7 @@ const MainImage: any = styled('div')({
 });
 
 function ClientLogoCarousel(props: ClientCaseCarouselProps): JSX.Element {
-    const { data } = useClientCarousel();
+    const { data } = useClientLogoCarousel();
 
     const [selectedImageUrl, setSelectedImageUrl] = useState(data.clientCases[0]);
 

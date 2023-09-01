@@ -131,9 +131,10 @@ const CaseContent: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
+  height: `100%`,
   justifyContent:
-    data.currentVariant === 'ScreenMobile' ? `flex-start` : `center`,
-  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
+    data.currentVariant === 'ScreenMobile' ? `flex-start` : `flex-start`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `flex-start` : `flex-start`,
   padding:
     data.currentVariant === 'ScreenTablet'
       ? `30px`
@@ -168,6 +169,7 @@ const CaseText: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  height: `100%`,
   margin: `0px`,
 });
 

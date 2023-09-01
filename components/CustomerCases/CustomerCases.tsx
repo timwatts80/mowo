@@ -16,7 +16,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { CustomerCasesProps } from 'types';
 import useCustomerCases from 'components/CustomerCases/useCustomerCases';
-import CarouselTest from 'components/ClientCarousel/ClientCarousel';
+import ClientLogoCarousel from 'components/ClientLogoCarousel/ClientLogoCarousel';
 
 const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(248, 248, 248, 1)`,
@@ -48,8 +48,8 @@ const Rows: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `60px 45px`
       : data.currentVariant === 'ScreenMobile'
-      ? `16px`
-      : `48px 60px`,
+        ? `16px`
+        : `48px 60px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
@@ -71,8 +71,8 @@ const EmpoweringSuccessSto: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `48px`
       : data.currentVariant === 'ScreenMobile'
-      ? `39px`
-      : `56px`,
+        ? `39px`
+        : `56px`,
   letterSpacing: `-0.5px`,
   textDecoration: `none`,
   lineHeight: `100%`,
@@ -95,8 +95,8 @@ const RevolutionizingTheWo: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `23px`
       : data.currentVariant === 'ScreenMobile'
-      ? `20px`
-      : `27px`,
+        ? `20px`
+        : `27px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
@@ -128,8 +128,8 @@ const ClientSlider: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `stretch`
       : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
+        ? `stretch`
+        : 'unset',
 }));
 
 const Frame157: any = styled('div', {
@@ -257,8 +257,8 @@ const CaseBackground: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `stretch`
       : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
+        ? `stretch`
+        : 'unset',
   height: data.currentVariant === 'ScreenMobile' ? `216px` : 'unset',
 }));
 
@@ -287,14 +287,14 @@ const CaseContent: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `296px`
       : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `678px`,
+        ? 'unset'
+        : `678px`,
   top:
     data.currentVariant === 'ScreenTablet'
       ? `117px`
       : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `198px`,
+        ? 'unset'
+        : `198px`,
   overflow: `hidden`,
   alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
   margin: data.currentVariant === 'ScreenMobile' ? `0px` : 'unset',
@@ -316,15 +316,15 @@ const CaseText: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? 'unset'
       : data.currentVariant === 'ScreenMobile'
-      ? 'unset'
-      : `552px`,
+        ? 'unset'
+        : `552px`,
   margin: `0px`,
   alignSelf:
     data.currentVariant === 'ScreenTablet'
       ? `stretch`
       : data.currentVariant === 'ScreenMobile'
-      ? `stretch`
-      : 'unset',
+        ? `stretch`
+        : 'unset',
 }));
 
 const ReykjavikUniversity: any = styled('div')(({ theme }: any) => ({
@@ -460,14 +460,13 @@ function CustomerCases(props: CustomerCasesProps): JSX.Element {
       <Rows data={data}>
         <EmpoweringSuccessSto data={data}>
           {data.currentVariant === 'ScreenMobile'
-            ? `Empowering
-Success Stories`
+            ? `Empowering Success Stories`
             : `Empowering Success Stories`}
         </EmpoweringSuccessSto>
         <RevolutionizingTheWo data={data}>
           {`Revolutionizing the workplace with Microsoft Surface products, we deliver tailored solutions and training to elevate efficiency, inspire collaboration, and drive success for businesses of all sizes.`}
         </RevolutionizingTheWo>
-        <CarouselTest />
+        <ClientLogoCarousel />
       </Rows>
     </ScreenDesktop>
   );
