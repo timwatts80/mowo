@@ -14,6 +14,12 @@
  **********************************************************************/
 
 
+
+export interface HeaderProps {
+  className?: any;
+}
+
+
 export interface ContentcontainerProps {
   className?: any;
   products?: any;
@@ -33,10 +39,12 @@ export interface ContentcontainerProps {
   };
 };
 
+
 export interface SidebarcontentProps {
   className?: any;
   onClose?: any;
 };
+
 
 export interface MenulinklistProps {
   className?: any;
@@ -44,17 +52,20 @@ export interface MenulinklistProps {
   url: URL;
 };
 
+
 export interface SidebarProps {
   className?: any;
   open: any;
   onClose: any;
 }
 
+
 export interface NavbarProps {
   className?: any;
   open?: any;
   onClose?: any;
 }
+
 
 export interface Link1Props {
   className?: any;
@@ -63,6 +74,7 @@ export interface Link1Props {
   onClose: any;
   menuLink: any;
 }
+
 
 export interface ProductCardProps {
   className?: any;
@@ -78,6 +90,7 @@ export interface ProductCardProps {
     alt: string;
   };
 };
+
 
 export interface ProductDialogProps {
   className?: any;
@@ -96,6 +109,7 @@ export interface ProductDialogProps {
     alt: string;
   };
 };
+
 
 export interface ProductThumbCarouselProps {
   product_id: number;
@@ -117,6 +131,7 @@ export interface ProductThumbCarouselProps {
   };
 };
 
+
 export interface ClientCaseStudyProps {
   className?: any;
   bgimage: {
@@ -127,21 +142,21 @@ export interface ClientCaseStudyProps {
   description: string;
 };
 
+
 export interface ClientCarouselProps {
   className?: any;
 };
+
 
 export interface CarouselContainerProps {
   className?: any;
 };
 
+
 export interface FooterProps {
   className?: any;
 }
 
-export interface HeaderProps {
-  className?: any;
-}
 
 export interface ClientLogoCardProps {
   className?: any;
@@ -151,18 +166,22 @@ export interface ClientLogoCardProps {
   };
 };
 
+
 export interface ClientCaseCarouselProps {
   className?: any;
 
 };
 
+
 export interface CustomerCasesProps {
   className?: any;
 }
 
+
 export interface TableProps {
   className?: any;
 };
+
 
 export interface ProductCardAnimProps {
   className?: any;
@@ -175,15 +194,18 @@ export interface ProductCardAnimProps {
   };
 };
 
+
 export interface ProductCard1Props {
   className?: any;
 };
+
 
 export interface ProductDialog1Props {
   className?: any;
   open: any;
   onClose: any;
 };
+
 
 export interface ProductPageProps {
   className?: any;
@@ -192,13 +214,16 @@ export interface ProductPageProps {
   products: any;
 };
 
+
 export interface ContactUsProps {
   className?: any;
 };
 
+
 export interface ModernWorkplaceProps {
   className?: any;
 }
+
 
 export interface ProductModalProps {
   className?: any;
@@ -206,9 +231,11 @@ export interface ProductModalProps {
   onClose: any;
 };
 
+
 export interface DialogSampleProps {
   className?: any;
 };
+
 
 export interface ContactUsSampleProps {
   className?: any;
@@ -216,14 +243,17 @@ export interface ContactUsSampleProps {
   onClose: any;
 };
 
+
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
   id?: any;
 }
 
+
 export interface ProductCarouselProps {
   className?: any;
 };
+
 
 export interface ProductBoxProps {
   className?: any;
@@ -231,45 +261,56 @@ export interface ProductBoxProps {
   data?: any;
 };
 
+
 export interface ProductBox2Props {
   className?: any;
 };
+
 
 export interface ProductListProps {
   className?: any;
 };
 
+
 export interface ProductBox1Props {
   className?: any;
 };
+
 
 export interface Frame139Props {
   className?: any;
 };
 
+
 export interface ProductBox7Props {
   className?: any;
 };
+
 
 export interface ProductBox6Props {
   className?: any;
 };
 
+
 export interface ProductBox5Props {
   className?: any;
 };
+
 
 export interface ProductBox4Props {
   className?: any;
 };
 
+
 export interface ProductBox3Props {
   className?: any;
 };
 
+
 export interface CustomerCardProps {
   className?: any;
 }
+
 
 export interface MowoFunProps {
   className?: any;

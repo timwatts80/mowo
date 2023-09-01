@@ -14,10 +14,10 @@
 
 import React from 'react';
 import { Button } from '@mui/material';
+import Link from 'next/link';
 import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'types';
 import useHeader from 'components/Header/useHeader';
-import Link from 'next/link';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -911,16 +911,21 @@ function Header(props: HeaderProps): JSX.Element {
                     >
                       {'Book a meeting'}
                     </ButtonContained>
-                    <ButtonOutlined
-                      variant="outlined"
-                      size={'large'}
-                      color={'primary'}
-                      disabled={false}
-                      data={data}
-                      href="#products"
+                    <Link
+                      href="/#products"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      {'See devices'}
-                    </ButtonOutlined>
+                      <ButtonOutlined
+                        variant="outlined"
+                        size={'large'}
+                        color={'primary'}
+                        disabled={false}
+                        data={data}
+                      >
+                        {'See devices'}
+                      </ButtonOutlined>
+                    </Link>
                   </BtnsPosition>
                 </Btns>
               </LeftSide>
@@ -1023,7 +1028,6 @@ function Header(props: HeaderProps): JSX.Element {
                   >
                     {'Book a meeting'}
                   </ButtonContained2>
-                  <Link href="/#products">
                   <ButtonOutlined2
                     variant="outlined"
                     size={'large'}
@@ -1033,7 +1037,6 @@ function Header(props: HeaderProps): JSX.Element {
                   >
                     {'See devices'}
                   </ButtonOutlined2>
-                  </Link>
                 </BtnsPosition2>
               </Btns2>
             </LeftSide2>
