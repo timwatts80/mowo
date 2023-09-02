@@ -966,15 +966,21 @@ function Header(props: HeaderProps): JSX.Element {
                   >
                     {'Book a meeting'}
                   </ButtonContained1>
-                  <ButtonOutlined1
-                    variant="outlined"
-                    size={'large'}
-                    color={'primary'}
-                    disabled={false}
-                    data={data}
+                  <Link
+                    href="/#products"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {'See devices'}
-                  </ButtonOutlined1>
+                    <ButtonOutlined1
+                      variant="outlined"
+                      size={'large'}
+                      color={'primary'}
+                      disabled={false}
+                      data={data}
+                    >
+                      {'See devices'}
+                    </ButtonOutlined1>
+                  </Link>
                 </BtnsPosition1>
               </Btns1>
             </LeftSide1>
@@ -1028,15 +1034,21 @@ function Header(props: HeaderProps): JSX.Element {
                   >
                     {'Book a meeting'}
                   </ButtonContained2>
-                  <ButtonOutlined2
-                    variant="outlined"
-                    size={'large'}
-                    color={'primary'}
-                    disabled={false}
-                    data={data}
+                  <Link
+                    href="/#products"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {'See devices'}
-                  </ButtonOutlined2>
+                    <ButtonOutlined2
+                      variant="outlined"
+                      size={'large'}
+                      color={'primary'}
+                      disabled={false}
+                      data={data}
+                    >
+                      {'See devices'}
+                    </ButtonOutlined2>
+                  </Link>
                 </BtnsPosition2>
               </Btns2>
             </LeftSide2>
