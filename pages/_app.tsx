@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
-      <ProductCardSample />
+      {/* <ProductCardSample /> */}
       <div id="modern-workplace"></div>
       <ModernWorkplace />
       <div id="products"></div>
