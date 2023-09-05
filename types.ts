@@ -23,6 +23,8 @@
 
 export interface ProductCardSampleProps {
   className?: any;
+  open?: any;
+  onClose?: any;
 };
 
 

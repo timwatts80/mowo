@@ -10,6 +10,7 @@ import { ThemeProvider } from '@emotion/react'
 import React from 'react'
 import ContactUs from 'components/ContactUs/ContactUs'
 import Navbar from 'components/Navbar/Navbar'
+import ProductCardSample from 'components/ProductCardSample/ProductCardSample'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
+      <ProductCardSample />
       <div id="modern-workplace"></div>
       <ModernWorkplace />
       <div id="products"></div>
