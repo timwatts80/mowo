@@ -196,7 +196,26 @@ const DividerHorizontal: any = styled(Divider)(({ theme }: any) => ({
   margin: `26px 0px 0px 0px`,
 }));
 
-const Colors: any = styled('div')({
+const Frame186: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: data.currentVariant === 'ScreenMobile' ? `column` : `row`,
+  justifyContent: `flex-start`,
+  alignItems:
+    data.currentVariant === 'ScreenMobile' ? `flex-start` : `flex-end`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  alignSelf: `stretch`,
+  margin: `26px 0px 0px 0px`,
+}));
+
+const Colors: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -206,9 +225,9 @@ const Colors: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-});
+  margin: `0px`,
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+}));
 
 const ColorsAvailable: any = styled('div')(({ theme }: any) => ({
   textAlign: `left`,
@@ -259,7 +278,9 @@ const Color3: any = styled('img')({
   margin: `0px 0px 0px 12px`,
 });
 
-const Frame156: any = styled('div')({
+const Frame156: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -269,9 +290,13 @@ const Frame156: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
-  margin: `26px 0px 0px 0px`,
-});
+  flex: data.currentVariant === 'ScreenMobile' ? 'unset' : `1`,
+  margin:
+    data.currentVariant === 'ScreenMobile'
+      ? `26px 0px 0px 0px`
+      : `0px 0px 0px 26px`,
+  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+}));
 
 const ButtonContained: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Warning']['Main'],
@@ -285,6 +310,7 @@ const ButtonContained: any = styled('div')(({ theme }: any) => ({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
+  alignSelf: `stretch`,
   margin: `0px`,
   overflow: `hidden`,
 }));
@@ -398,42 +424,44 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
             <ExperienceAnExquisit>{props.description}</ExperienceAnExquisit>
           </Description>
           <DividerHorizontal orientation="horizontal" />
-          <Colors>
-            <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
-            <Colorswatches>
-              <Color1
-                src={`assets/images/contentcontainer_color1.png`}
-                loading="lazy"
-                alt={'color1'}
-              />
-              <Color2
-                src={`assets/images/contentcontainer_color2.png`}
-                loading="lazy"
-                alt={'color2'}
-              />
-              <Color3
-                src={`assets/images/contentcontainer_color3.png`}
-                loading="lazy"
-                alt={'color3'}
-              />
-            </Colorswatches>
-          </Colors>
-          <Frame156>
-            <ButtonContained>
-              <Base>
-                <MaskedIcon>
-                  <IconLeft>
-                    <Vector
-                      src={`assets/images/contentcontainer_Vector.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </IconLeft>
-                </MaskedIcon>
-                <Button1>{`Download Product Sheet`}</Button1>
-              </Base>
-            </ButtonContained>
-          </Frame156>
+          <Frame186 data={data}>
+            <Colors data={data}>
+              <ColorsAvailable>{`Colors Available`}</ColorsAvailable>
+              <Colorswatches>
+                <Color1
+                  src={`assets/images/contentcontainer_color1.png`}
+                  loading="lazy"
+                  alt={'color1'}
+                />
+                <Color2
+                  src={`assets/images/contentcontainer_color2.png`}
+                  loading="lazy"
+                  alt={'color2'}
+                />
+                <Color3
+                  src={`assets/images/contentcontainer_color3.png`}
+                  loading="lazy"
+                  alt={'color3'}
+                />
+              </Colorswatches>
+            </Colors>
+            <Frame156 data={data}>
+              <ButtonContained>
+                <Base>
+                  <MaskedIcon>
+                    <IconLeft>
+                      <Vector
+                        src={`assets/images/contentcontainer_Vector.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                    </IconLeft>
+                  </MaskedIcon>
+                  <Button1>{`Download Product Sheet`}</Button1>
+                </Base>
+              </ButtonContained>
+            </Frame156>
+          </Frame186>
         </Details>
       </Productinfo>
       <Productstable>
