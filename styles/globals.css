@@ -76,7 +76,7 @@ body {
 
 /* Modal */
 
-.css-zw3mfo-MuiModal-root-MuiDialog-root {
+.MuiDialog-root {
   z-index: 9999;
 }
 
