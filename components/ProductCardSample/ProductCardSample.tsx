@@ -290,7 +290,11 @@ function ProductCardSample(props: ProductCardSampleProps): JSX.Element {
           </Productinfocontainer>
         </ProductCardNew>
       </Productcardcontainer>
-      <Dialog open={data.isDialogOpen} onClose={fns.toggleDialog}>
+      <Dialog
+        maxWidth={'lg'}
+        open={data.isDialogOpen}
+        onClose={fns.toggleDialog}
+      >
         <Productdialogcontain>
           <ContentcontainerSamp1
             open={data.isDialogOpen}
