@@ -111,7 +111,7 @@ function CarouselTest(props: ProductThumbCarouselProps): JSX.Element {
   
     const settings = {
         dots: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         infinite: true,
         arrows: true,
