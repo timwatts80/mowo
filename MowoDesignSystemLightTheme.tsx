@@ -10,6 +10,7 @@ import IconInfo from "./public/assets/images/_IconInfo.svg";
 import IconSuccess from "./public/assets/images/_IconSuccess.svg"; 
 import IconUnchecked from "./public/assets/images/_IconUnchecked.svg"; 
 import IconChecked from "./public/assets/images/_IconChecked.svg"; 
+import IconMixed from "./public/assets/images/_IconMixed.svg"; 
   
 const globalTheme: any = createTheme({
   palette: {
@@ -175,8 +176,8 @@ const globalTheme: any = createTheme({
    "Typography": {
      "H1": {
        "fontStyle": "normal",
-       "fontFamily": "Poppins",
-       "fontWeight": 800,
+       "fontFamily": "Segoe UI",
+       "fontWeight": 700,
        "fontSize": "72px",
        "letterSpacing": "-2.16px",
        "textDecoration": "none",
@@ -185,7 +186,7 @@ const globalTheme: any = createTheme({
      },
      "H2": {
        "fontStyle": "normal",
-       "fontFamily": "Poppins",
+       "fontFamily": "Segoe UI",
        "fontWeight": 700,
        "fontSize": "60px",
        "letterSpacing": "-3px",
@@ -195,7 +196,7 @@ const globalTheme: any = createTheme({
      },
      "H3": {
        "fontStyle": "normal",
-       "fontFamily": "Poppins",
+       "fontFamily": "Segoe UI",
        "fontWeight": 700,
        "fontSize": "48px",
        "letterSpacing": "-1.44px",
@@ -205,8 +206,8 @@ const globalTheme: any = createTheme({
      },
      "H4": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
-       "fontWeight": 800,
+       "fontFamily": "Segoe UI",
+       "fontWeight": 700,
        "fontSize": "34px",
        "letterSpacing": "-1.36px",
        "textDecoration": "none",
@@ -215,9 +216,9 @@ const globalTheme: any = createTheme({
      },
      "H5": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
-       "fontWeight": 800,
-       "fontSize": "24px",
+       "fontFamily": "Segoe UI",
+       "fontWeight": 400,
+       "fontSize": "20px",
        "letterSpacing": "0px",
        "textDecoration": "none",
        "lineHeight": "28px",
@@ -225,8 +226,8 @@ const globalTheme: any = createTheme({
      },
      "H6": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
-       "fontWeight": 600,
+       "fontFamily": "Segoe UI",
+       "fontWeight": 700,
        "fontSize": "22px",
        "letterSpacing": "0px",
        "textDecoration": "none",
@@ -234,7 +235,7 @@ const globalTheme: any = createTheme({
      },
      "Body 1": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "20px",
        "letterSpacing": "0px",
@@ -244,7 +245,7 @@ const globalTheme: any = createTheme({
      },
      "Body 2": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "16px",
        "letterSpacing": "0px",
@@ -254,7 +255,7 @@ const globalTheme: any = createTheme({
      },
      "Body 3": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "14px",
        "letterSpacing": "0px",
@@ -264,7 +265,7 @@ const globalTheme: any = createTheme({
      },
      "Body 1 Link": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "20px",
        "letterSpacing": "0px",
@@ -273,7 +274,7 @@ const globalTheme: any = createTheme({
      },
      "Body 2 Link": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "16px",
        "letterSpacing": "0px",
@@ -283,7 +284,7 @@ const globalTheme: any = createTheme({
      },
      "Body 3 Link": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "14px",
        "letterSpacing": "0px",
@@ -293,7 +294,7 @@ const globalTheme: any = createTheme({
      },
      "Caption": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "12px",
        "letterSpacing": "0px",
@@ -303,8 +304,8 @@ const globalTheme: any = createTheme({
      },
      "Overline": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
-       "fontWeight": 600,
+       "fontFamily": "Segoe UI",
+       "fontWeight": 700,
        "fontSize": "12px",
        "letterSpacing": "0.12px",
        "textDecoration": "none",
@@ -313,8 +314,8 @@ const globalTheme: any = createTheme({
      },
      "Subtitle 2": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
-       "fontWeight": 500,
+       "fontFamily": "Segoe UI",
+       "fontWeight": 700,
        "fontSize": "14px",
        "letterSpacing": "0.014000000208616257px",
        "textDecoration": "none",
@@ -323,7 +324,7 @@ const globalTheme: any = createTheme({
      },
      "Subtitle 1": {
        "fontStyle": "normal",
-       "fontFamily": "Inter",
+       "fontFamily": "Segoe UI",
        "fontWeight": 400,
        "fontSize": "16px",
        "letterSpacing": "0.024000000953674317px",
@@ -792,12 +793,88 @@ const questTheme = createTheme({
             color: `rgba(0, 0, 0, 0.26)`,  
           }, 
         }, 
+        textSizeLarge: {
+          padding: `8px 22px`, 
+          borderRadius: `4px`, 
+          height: `42px`, 
+        }, 
+        textSizeMedium: {
+          padding: `6px 16px`, 
+          borderRadius: `4px`, 
+          height: `36px`, 
+        }, 
+        textSizeSmall: {
+          padding: `4px 10px`, 
+          borderRadius: `4px`, 
+          height: `30px`, 
+        }, 
+        textPrimary: {
+          color: `rgba(242, 80, 34, 1)`,  
+          "&:hover": {
+            backgroundColor: globalTheme.palette["Primary"]["Shades"]["4p"], 
+            color: `rgba(242, 80, 34, 1)`,  
+          }, 
+          "&:disabled": {
+            color: `rgba(0, 0, 0, 0.26)`,  
+          }, 
+        }, 
+        textSecondary: {
+          color: `rgba(0, 164, 239, 1)`,  
+          "&:hover": {
+            backgroundColor: globalTheme.palette["Secondary"]["Shades"]["4p"], 
+            color: `rgba(0, 164, 239, 1)`,  
+          }, 
+          "&:disabled": {
+            color: `rgba(0, 0, 0, 0.26)`,  
+          }, 
+        }, 
+        textError: {
+          color: `rgba(242, 80, 34, 1)`,  
+          "&:hover": {
+            backgroundColor: globalTheme.palette["Error"]["Shades"]["4p"], 
+            color: `rgba(242, 80, 34, 1)`,  
+          }, 
+          "&:disabled": {
+            color: `rgba(0, 0, 0, 0.26)`,  
+          }, 
+        }, 
+        textSuccess: {
+          color: `rgba(127, 186, 0, 1)`,  
+          "&:hover": {
+            backgroundColor: globalTheme.palette["Success"]["Shades"]["4p"], 
+            color: `rgba(127, 186, 0, 1)`,  
+          }, 
+          "&:disabled": {
+            color: `rgba(0, 0, 0, 0.26)`,  
+          }, 
+        }, 
+        textInfo: {
+          color: `rgba(51, 51, 51, 1)`,  
+          "&:hover": {
+            backgroundColor: globalTheme.palette["Info"]["Shades"]["4p"], 
+            color: `rgba(51, 51, 51, 1)`,  
+          }, 
+          "&:disabled": {
+            color: `rgba(0, 0, 0, 0.26)`,  
+          }, 
+        }, 
+        textWarning: {
+          color: `rgba(255, 185, 0, 1)`,  
+          "&:hover": {
+            backgroundColor: globalTheme.palette["Warning"]["Shades"]["4p"], 
+            color: `rgba(255, 185, 0, 1)`,  
+          }, 
+          "&:disabled": {
+            color: `rgba(0, 0, 0, 0.26)`,  
+          }, 
+        }, 
       }
     },
     MuiCheckbox: {
       defaultProps: {
         icon: <SvgIcon component={IconUnchecked } />,
         checkedIcon: <SvgIcon component={IconChecked} />,
+        indeterminateIcon: <SvgIcon component={IconMixed} />,
       },
       styleOverrides: {
         root: {
@@ -821,43 +898,55 @@ const questTheme = createTheme({
     MuiSwitch: {
       styleOverrides: {
         switchBase: {
-          "&.MuiSwitch-colorPrimary*": {
+          "&.MuiSwitch-colorPrimary": {
+            color: "rgba(254, 254, 254, 1)",
+            "&.Mui-checked": {
+              color: "rgba(242, 80, 34, 1)",
+              "&:hover": {
+                backgroundColor: "undefined"
+              }
+            }
           },
           "&.MuiSwitch-colorSecondary": {
+            color: "rgba(254, 254, 254, 1)",
             "&.Mui-checked": {
-              color: "undefined",
+              color: "rgba(0, 164, 239, 1)",
               "&:hover": {
                 backgroundColor: "undefined"
               }
             }
           },
           "&.MuiSwitch-colorError": {
+            color: "rgba(254, 254, 254, 1)",
             "&.Mui-checked": {
-              color: "undefined",
+              color: "rgba(242, 80, 34, 1)",
               "&:hover": {
                 backgroundColor: "undefined"
               }
             }
           },
           "&.MuiSwitch-colorWarning": {
+            color: "rgba(254, 254, 254, 1)",
             "&.Mui-checked": {
-              color: "undefined",
+              color: "rgba(255, 185, 0, 1)",
               "&:hover": {
                 backgroundColor: "undefined"
               }
             }
           },
           "&.MuiSwitch-colorSuccess": {
+            color: "rgba(254, 254, 254, 1)",
             "&.Mui-checked": {
-              color: "undefined",
+              color: "rgba(127, 186, 0, 1)",
               "&:hover": {
                 backgroundColor: "undefined"
               }
             }
           },
           "&.MuiSwitch-colorInfo": {
+            color: "rgba(254, 254, 254, 1)",
             "&.Mui-checked": {
-              color: "undefined",
+              color: "rgba(51, 51, 51, 1)",
               "&:hover": {
                 backgroundColor: "undefined"
               }
@@ -866,6 +955,7 @@ const questTheme = createTheme({
         },
         track: {
           ".MuiSwitch-colorPrimary + &": {
+            backgroundColor: "rgba(0, 0, 0, 0.3)"
           },
           ".MuiSwitch-colorSecondary + &": {
             backgroundColor: "rgba(0, 0, 0, 0.3)"
