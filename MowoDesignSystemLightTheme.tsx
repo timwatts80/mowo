@@ -10,7 +10,7 @@ import IconInfo from "./public/assets/images/_IconInfo.svg";
 import IconSuccess from "./public/assets/images/_IconSuccess.svg"; 
 import IconUnchecked from "./public/assets/images/_IconUnchecked.svg"; 
 import IconChecked from "./public/assets/images/_IconChecked.svg"; 
-import IconMixed from "./public/assets/images/_IconMixed.svg"; 
+import IconMixed from "./public/assets/images/_IconMixed.svg";
   
 const globalTheme: any = createTheme({
   palette: {
