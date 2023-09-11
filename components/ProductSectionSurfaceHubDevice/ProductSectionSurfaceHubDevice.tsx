@@ -161,10 +161,10 @@ const UnleashingPotentialF: any = styled('div', {
 }));
 
 const Box1: any = styled('div')({
-  backgroundImage: `url(assets/images/ProductSectionSurfaceHubdevices_Box.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `cover`,
-  backgroundRepeat: `no-repeat`,
+  // backgroundImage: `url(assets/images/ProductSectionSurfaceHubdevices_Box.png)`,
+  // backgroundPosition: `center`,
+  // backgroundSize: `cover`,
+  // backgroundRepeat: `no-repeat`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -195,7 +195,7 @@ function ProductSectionSurfaceHubDevice(
         <SurfaceInnovation data={data}>
           <SurfaceInnovationSpan1
             data={data}
-          >{`Surface `}</SurfaceInnovationSpan1>
+          >{data.headerContent[0].title1} </SurfaceInnovationSpan1>
           <SurfaceInnovationSpan2
             data={data}
           >{`Innovation`}</SurfaceInnovationSpan2>
@@ -206,7 +206,7 @@ function ProductSectionSurfaceHubDevice(
         <Box1>
           <ProductCarousel1 />
         </Box1>
-      </Rows>
+      </Rows> 
     </ScreenDesktop>
   );
 }
