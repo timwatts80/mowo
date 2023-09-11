@@ -194,10 +194,12 @@ function SectionHeader(props: SectionHeaderProps): JSX.Element {
   return (
     <ScreenDesktop className={props.className}>
       <Titlecontainer>
-        <Title1 data={data}>{props.title1}</Title1>
-        <Title2 data={data}>{props.title2}</Title2>
+        <Title1 data={data}>{data.headerContent.title1}</Title1>
+        <Title2 data={data}>{data.headerContent.title2}</Title2>
       </Titlecontainer>
-      <LoremIpsumDolorSitAm data={data}>{props.tagline}</LoremIpsumDolorSitAm>
+      <LoremIpsumDolorSitAm data={data}>
+        {data.headerContent.tagline}
+      </LoremIpsumDolorSitAm>
     </ScreenDesktop>
   );
 }
