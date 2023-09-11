@@ -15,7 +15,6 @@
 import React from 'react';
 import { Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import ProductThumbCarousel from 'components/ProductThumbCarousel/ProductThumbCarousel';
 import Table from 'components/Table/Table';
 import { ContentcontainerProps } from 'types';
 import useContentcontainer from 'components/Contentcontainer/useContentcontainer';
@@ -77,13 +76,19 @@ const Imagecontainer: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductThumbCarousel1: any = styled(ProductThumbCarousel)(
-  ({ theme }: any) => ({
-    alignSelf: `stretch`,
-    flex: `1`,
-    margin: `0px`,
-  })
-);
+const ProductThumbCarousel: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(248, 248, 248, 1)`,
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  alignSelf: `stretch`,
+  flex: `1`,
+  margin: `0px`,
+}));
 
 const Details: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -413,7 +418,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
     <ScreenDesktop className={props.className} data={data}>
       <Productinfo data={data}>
         <Imagecontainer className={'product-thumb-container'}>
-          <ProductThumbCarousel1 {...props} />
+          <ProductThumbCarousel></ProductThumbCarousel>
         </Imagecontainer>
         <Details data={data}>
           <Top>
