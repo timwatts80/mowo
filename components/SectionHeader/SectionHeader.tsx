@@ -26,7 +26,7 @@ const ScreenDesktop: any = styled('div')({
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `0px`,
+  padding: `24px 0px`,
   boxSizing: `border-box`,
   height: 'auto',
 });
@@ -37,8 +37,8 @@ const Title1Title2Span1: any = styled('span', {
   whiteSpace: `pre-wrap`,
   color: `rgba(51, 51, 51, 1)`,
   fontStyle: `normal`,
-  fontFamily: data.currentVariant === 'ScreenMobile' ? `Inter` : `Poppins`,
-  fontWeight: data.currentVariant === 'ScreenMobile' ? `800` : `700`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
   fontSize:
     data.currentVariant === 'ScreenTablet'
       ? `48px`
@@ -66,8 +66,8 @@ const Title1Title2Span2: any = styled('span', {
   whiteSpace: `pre-wrap`,
   color: `rgba(0, 164, 239, 1)`,
   fontStyle: `normal`,
-  fontFamily: data.currentVariant === 'ScreenMobile' ? `Inter` : `Poppins`,
-  fontWeight: data.currentVariant === 'ScreenMobile' ? `800` : `700`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
   fontSize:
     data.currentVariant === 'ScreenTablet'
       ? `48px`
@@ -148,7 +148,9 @@ const Title1Title2: any = styled('div', {
   margin: `0px`,
 }));
 
-const LoremIpsumDolorSitAm: any = styled('div')(({ theme }: any) => ({
+const LoremIpsumDolorSitAm: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -162,7 +164,10 @@ const LoremIpsumDolorSitAm: any = styled('div')(({ theme }: any) => ({
   textDecoration: theme.typography['Typography']['H5'].textDecoration,
   textTransform: theme.typography['Typography']['H5'].textTransform,
   alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
+  margin:
+    data.currentVariant === 'ScreenMobile'
+      ? `12px 0px 0px 0px`
+      : `16px 0px 0px 0px`,
 }));
 
 function SectionHeader(props: SectionHeaderProps): JSX.Element {
@@ -174,7 +179,7 @@ function SectionHeader(props: SectionHeaderProps): JSX.Element {
         <Title1Title2Span1 data={data}>{`Title1 `}</Title1Title2Span1>
         <Title1Title2Span2 data={data}>{`Title2`}</Title1Title2Span2>
       </Title1Title2>
-      <LoremIpsumDolorSitAm>
+      <LoremIpsumDolorSitAm data={data}>
         {`Lorem ipsum dolor sit amet`}
       </LoremIpsumDolorSitAm>
     </ScreenDesktop>
