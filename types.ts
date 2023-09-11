@@ -582,10 +582,6 @@ export interface ProductModalProps {
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
   id?: any;
-  title1: string;
-  title2: string;
-  tagline: string;
-  index: any;
 }
 
 

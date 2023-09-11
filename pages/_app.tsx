@@ -22,9 +22,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div id="modern-workplace"></div>
       <ModernWorkplace />
       <div id="products"></div>
-      <ProductSectionSurfaceHubDevice/>
-      <ProductSectionSurfaceHubDevice/>
-      <ProductSectionSurfaceHubDevice/>
+      <ProductSectionSurfaceHubDevice />
+      <ProductSectionSurfaceHubDevice />
+      <ProductSectionSurfaceHubDevice />
       <div id="cases"></div>
       <CustomerCases />
       <div id="contact"></div>
