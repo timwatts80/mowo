@@ -12,6 +12,7 @@ import ContactUs from 'components/ContactUs/ContactUs'
 import Navbar from 'components/Navbar/Navbar'
 import ProductCardSample from 'components/ProductCardSample/ProductCardSample'
 import Contentcontainer from 'components/Contentcontainer/Contentcontainer'
+import SectionHeader from 'components/SectionHeader/SectionHeader'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
+      <SectionHeader />
       <div id="modern-workplace"></div>
       <ModernWorkplace />
       <div id="products"></div>
