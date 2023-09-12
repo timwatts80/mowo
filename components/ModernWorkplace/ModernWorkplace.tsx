@@ -549,8 +549,8 @@ const Mediacontainer1: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `flex-start`,
-  alignSelf: `stretch`,
-  height: `468px`,
+  height: `509px`,
+  width: '100%',
   margin: `0px`,
   overflow: `hidden`,
 });
@@ -923,8 +923,8 @@ const Mediacontainer2: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `center`,
   alignItems: `flex-start`,
-  alignSelf: `stretch`,
-  height: `219px`,
+  height: `236px`,
+  width: '100%',
   margin: `0px`,
   overflow: `hidden`,
 });
