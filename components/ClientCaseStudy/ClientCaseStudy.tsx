@@ -32,6 +32,7 @@ const ScreenDesktop: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
+  margin: '0 auto',
   maxWidth:
     data.currentVariant === 'ScreenTablet'
       ? `unset`
@@ -51,7 +52,7 @@ const ClientCaseStudySlide: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: '0 auto',
+  margin: `0px`,
 });
 
 const CaseBackground: any = styled('div')({
@@ -67,7 +68,7 @@ const CaseBackground: any = styled('div')({
   alignSelf: `stretch`,
   height: '1000px',
   margin: `0px`,
-  overflow: `hidden`,
+  overflow: 'hidden',
   maxHeight: '550px',
 });
 
