@@ -28,16 +28,22 @@ const CarouselContainer: any = styled('div')(({ data }: any) => {
     };
 });
 
-const MainImage: any = styled('div')({
+const MainImage: any = styled('div')(({ data }: any) => {
+    const ScreenMobile = useMediaQuery('(max-width:497px)');
+    const ScreenTablet = useMediaQuery('(max-width:768px)');
+
+    return {
     position: `relative`,
     width: `100%`,
+    height: ScreenMobile ? `200px` : ScreenTablet ? `300px` : `375px`,
+    margin: `auto auto 30px`,
+    };
 });
 
 const ImageContainer: any = styled('div')({
-    margin: `0 auto 20px`,
+    margin: `0 auto`,
     width: `100%`,
-    height: `auto`,
-    maxWidth: `476px`,
+    height: `100%`,
 });
 
 const Image: any = styled('div')({
@@ -146,7 +152,7 @@ function CarouselTest(props: ProductThumbCarouselProps): JSX.Element {
             <MainImage className="main-image">
                 <ImageContainer className="image-container">
                     {isVideo ? (
-                        <ReactPlayer url={selectedImage?.src} controls width="100%" height="280px" />
+                        <ReactPlayer url={selectedImage?.src} controls width="100%" height="100%" />
                     ) : (
                         <Image style={{ backgroundImage: `url(${selectedImage?.src})` }} alt={selectedImage?.alt} />
                     )}
@@ -169,67 +175,4 @@ function CarouselTest(props: ProductThumbCarouselProps): JSX.Element {
   }
   
   export default CarouselTest;
-  
 
-// function CarouselTest(props: ProductThumbCarouselProps): JSX.Element {
-//     const { data } = useProductCarouselTemp();
-
-//     const selectedProductImages = data.products[props.product_id]?.images || [];
-
-//     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-//     const settings = {
-//         dots: false,
-//         slidesToShow: 3,
-//         slidesToScroll: 1,
-//         infinite: true,
-//         arrows: true,
-//         responsive: [
-//             // Responsive settings
-//             {
-//                 breakpoint: 1104, // tablet breakpoint
-//                 settings: {
-//                     slidesToShow: 4,
-//                     slidesToScroll: 1,
-//                 }
-//             },
-//             {
-//                 breakpoint: 572, // mobile breakpoint
-//                 settings: {
-//                     slidesToShow: 3,
-//                     slidesToScroll: 1,
-//                 }
-//             }
-//         ],
-//     };
-
-//     const handleThumbnailClick = (index: number) => {
-//         setSelectedImageIndex(index);
-//       };
-    
-
-//     return (  
-//         <CarouselContainer className="thumb-carousel-container" >
-//             <MainImage className="main-image">
-//                 <ImageContainer className="image-container">
-//                     <Image src={selectedProductImages[selectedImageIndex]?.src} alt={selectedProductImages[selectedImageIndex]?.alt} />
-//                 </ImageContainer>
-//             </MainImage>
-//             <Slider {...settings}>
-//                 {selectedProductImages &&
-//                     selectedProductImages.map((image: any, index: number) => (
-//                         <ProductThumb
-//                             key={index}
-//                             src={image.src}
-//                             alt={`Thumbnail ${index + 1}`}
-//                             className={`thumbnail ${selectedImageIndex === index && selectedImageIndex === index ? 'active' : ''}`}
-//                             onClick={() => handleThumbnailClick(index)}
-//                         />
-//                         )
-//                         )}
-//             </Slider>
-//         </CarouselContainer>
-//     );
-// }
-
-// export default CarouselTest;
