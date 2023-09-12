@@ -22,7 +22,7 @@ const variantOptions = {
   ScreenMobile: 'ScreenMobile',
 };
 
-const useSectionHeader = () => {
+const useSectionHeader = (index: number) => {
   const [currentVariant, setCurrentVariant] = React.useState<string>(
     variantOptions['ScreenDesktop']
   );
@@ -35,7 +35,25 @@ const useSectionHeader = () => {
     }
   }, [breakpointsVariant]);
 
-  const data: any = { currentVariant };
+  const headerContent = [
+    {
+      title1: 'Surface',
+      title2: 'Innovation',
+      tagline: 'Unleashing Potential for Your Modern Workplace',
+    },
+    {
+      title1: 'Seamless',
+      title2: 'Enhancements',
+      tagline: 'Tailored Accessories for Your Surface Journey',
+    },
+    {
+      title1: 'Hub',
+      title2: 'Essentials',
+      tagline: 'Amplifying Your Surface Hub Experience',
+    }
+  ];
+
+  const data: any = { currentVariant, headerContent: headerContent[index] };
 
   const fns: any = { setCurrentVariant };
 

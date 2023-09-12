@@ -20,13 +20,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={MowoDesignSystemLightTheme}>
       <Navbar />
       <Header />
-      <SectionHeader />
       <div id="modern-workplace"></div>
       <ModernWorkplace />
       <div id="products"></div>
-      <ProductSectionSurfaceHubDevice />
-      <ProductSectionSurfaceHubDevice />
-      <ProductSectionSurfaceHubDevice />
+      <ProductSectionSurfaceHubDevice index={0}/>
+      <ProductSectionSurfaceHubDevice index={1}/>
+      <ProductSectionSurfaceHubDevice index={2}/>
       <div id="cases"></div>
       <CustomerCases />
       <div id="contact"></div>

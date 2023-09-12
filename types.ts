@@ -36,42 +36,13 @@
 
 export interface SectionHeaderProps {
   className?: any;
+  headerContent?:{
+    title1: any;
+    title2: any;
+    tagline: any;
+  }[];
+  index: number;
 };
-
-
-
-
-
-
-
-
-
-
-export interface IconMixedProps {
-  className?: any;
-};
-
-
-
-
-
-
-
-export interface IconCheckedProps {
-  className?: any;
-};
-
-
-
-
-
-
-
-
-export interface IconUncheckedProps {
-  className?: any;
-};
-
 
 
 
@@ -868,6 +839,7 @@ export interface ProductModalProps {
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
   id?: any;
+  index: number;
 }
 
 

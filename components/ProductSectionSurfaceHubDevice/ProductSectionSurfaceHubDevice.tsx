@@ -17,6 +17,7 @@ import { styled } from '@mui/material/styles';
 import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -192,17 +193,7 @@ function ProductSectionSurfaceHubDevice(
   return (
     <ScreenDesktop className={props.className} data={data}>
       <Rows>
-        <SurfaceInnovation data={data}>
-          <SurfaceInnovationSpan1
-            data={data}
-          >{data.headerContent[0].title1} </SurfaceInnovationSpan1>
-          <SurfaceInnovationSpan2
-            data={data}
-          >{`Innovation`}</SurfaceInnovationSpan2>
-        </SurfaceInnovation>
-        <UnleashingPotentialF data={data}>
-          {`Unleashing Potential for Your Modern Workplace`}
-        </UnleashingPotentialF>
+        <SectionHeader {...props}/>
         <Box1>
           <ProductCarousel1 />
         </Box1>

@@ -189,7 +189,7 @@ const LoremIpsumDolorSitAm: any = styled('div', {
 }));
 
 function SectionHeader(props: SectionHeaderProps): JSX.Element {
-  const { data } = useSectionHeader();
+  const { data } = useSectionHeader(props.index);
 
   return (
     <ScreenDesktop className={props.className}>
