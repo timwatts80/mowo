@@ -414,7 +414,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
     <ScreenDesktop className={props.className} data={data}>
       <Productinfo data={data}>
         <Imagecontainer className={'product-thumb-container'}>
-          <ProductThumbCarousel1 />
+          <ProductThumbCarousel1 {...props} />
         </Imagecontainer>
         <Details data={data}>
           <Top>
