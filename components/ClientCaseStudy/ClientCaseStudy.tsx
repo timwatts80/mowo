@@ -103,12 +103,7 @@ const Casecontentcontainer: any = styled('div', {
       : data.currentVariant === 'ScreenMobile'
       ? `row`
       : `column`,
-  justifyContent:
-    data.currentVariant === 'ScreenTablet'
-      ? `center`
-      : data.currentVariant === 'ScreenMobile'
-      ? `center`
-      : `flex-start`,
+  justifyContent: `flex-start`,
   alignItems:
     data.currentVariant === 'ScreenTablet'
       ? `flex-start`
@@ -148,8 +143,7 @@ const CaseContent: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent:
-    data.currentVariant === 'ScreenMobile' ? `flex-start` : `center`,
+  justifyContent: `flex-start`,
   alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding:
     data.currentVariant === 'ScreenTablet'
@@ -158,6 +152,7 @@ const CaseContent: any = styled('div', {
       ? `17px`
       : `45px`,
   boxSizing: `border-box`,
+  height: `100%`,
   alignSelf:
     data.currentVariant === 'ScreenTablet'
       ? 'unset'
