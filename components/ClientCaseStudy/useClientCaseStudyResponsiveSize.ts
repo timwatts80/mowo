@@ -27,7 +27,7 @@ const useClientCaseStudyResponsiveSize = () => {
     const handlerScreenTablet = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'ScreenTablet' : size));
     const ScreenTabletSize = window.matchMedia(
-      '(min-width: 497px) and (max-width: 999px)'
+      '(min-width: 497px) and (max-width: 1104px)'
     );
     setVariant((size: string) =>
       ScreenTabletSize.matches ? 'ScreenTablet' : size
