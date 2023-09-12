@@ -19,6 +19,7 @@ import useModernWorkplace from 'components/ModernWorkplace/useModernWorkplace';
 
 const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(248, 248, 248, 1)`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -35,6 +36,7 @@ const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
 const Rows: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -43,10 +45,10 @@ const Rows: any = styled('div', {
   alignItems: `center`,
   padding:
     data.currentVariant === 'ScreenTablet'
-      ? `60px 60px 45px 60px`
-      : data.currentVariant === 'ScreenMobile'
       ? `60px 45px 45px 45px`
-      : `90px 90px 75px 90px`,
+      : data.currentVariant === 'ScreenMobile'
+      ? `60px 30px 45px 30px`
+      : `90px 60px 75px 60px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: '0 auto',
@@ -61,14 +63,14 @@ const Rows: any = styled('div', {
 
 const UnleashThePowerOfModSpan1: any = styled('span', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   whiteSpace: `pre-wrap`,
   color: `rgba(51, 51, 51, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `56px`,
-  letterSpacing: `-0.5px`,
+  fontSize: `60px`,
+  letterSpacing: `-3px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -80,14 +82,14 @@ const UnleashThePowerOfModSpan1: any = styled('span', {
 
 const UnleashThePowerOfModSpan2: any = styled('span', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   whiteSpace: `pre-wrap`,
   color: `rgba(255, 185, 0, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `56px`,
-  letterSpacing: `-0.5px`,
+  fontSize: `60px`,
+  letterSpacing: `-3px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -99,19 +101,19 @@ const UnleashThePowerOfModSpan2: any = styled('span', {
 
 const UnleashThePowerOfMod: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(0, 0, 0, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `56px`,
-  letterSpacing: `-0.5px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
+  fontStyle: theme.typography['Typography']['H2'].fontStyle,
+  fontFamily: theme.typography['Typography']['H2'].fontFamily,
+  fontWeight: theme.typography['Typography']['H2'].fontWeight,
+  fontSize: theme.typography['Typography']['H2'].fontSize,
+  letterSpacing: theme.typography['Typography']['H2'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H2'].lineHeight,
+  textDecoration: theme.typography['Typography']['H2'].textDecoration,
+  textTransform: theme.typography['Typography']['H2'].textTransform,
   alignSelf: `stretch`,
   margin:
     data.currentVariant === 'ScreenTablet'
@@ -128,14 +130,14 @@ const MowoConvergesThePowe: any = styled('div', {
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `27px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
+  fontStyle: theme.typography['Typography']['H5'].fontStyle,
+  fontFamily: theme.typography['Typography']['H5'].fontFamily,
+  fontWeight: theme.typography['Typography']['H5'].fontWeight,
+  fontSize: theme.typography['Typography']['H5'].fontSize,
+  letterSpacing: theme.typography['Typography']['H5'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H5'].lineHeight,
+  textDecoration: theme.typography['Typography']['H5'].textDecoration,
+  textTransform: theme.typography['Typography']['H5'].textTransform,
   alignSelf: `stretch`,
   margin:
     data.currentVariant === 'ScreenMobile'
@@ -146,6 +148,7 @@ const MowoConvergesThePowe: any = styled('div', {
 const Cols: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -162,17 +165,14 @@ const Cols: any = styled('div', {
   overflow: `hidden`,
 }));
 
-const LeftCol: any = styled('div')({
-  backgroundImage: `url(assets/images/ModernWorkplace_left_col.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `cover`,
-  backgroundRepeat: `no-repeat`,
+const Mediacontainer: any = styled('div')({
+  backgroundColor: `rgba(196, 196, 196, 1)`,
   borderRadius: `20px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
+  flexDirection: `column`,
+  justifyContent: `center`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
   flex: `1`,
@@ -180,7 +180,16 @@ const LeftCol: any = styled('div')({
   overflow: `hidden`,
 });
 
-const RightCol: any = styled('div')({
+const MediacontainerIFrame: any = styled('iframe')({
+  width: `100%`,
+  height: `100%`,
+  position: `absolute`,
+  zIndex: `-1000`,
+  border: `0px`,
+});
+
+const Contentcontainer: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -194,6 +203,7 @@ const RightCol: any = styled('div')({
 });
 
 const TopRow: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -271,6 +281,7 @@ const ExpertlyUnitingMicro: any = styled('div')(({ theme }: any) => ({
 }));
 
 const MiddleRow: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -348,6 +359,7 @@ const CateringToYourUnique: any = styled('div')(({ theme }: any) => ({
 }));
 
 const BottomRow: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -426,14 +438,14 @@ const MoreThanAVendorWeReY: any = styled('div')(({ theme }: any) => ({
 
 const UnleashThePowerOfMod1Span1: any = styled('span', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   whiteSpace: `pre-wrap`,
   color: `rgba(51, 51, 51, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
   fontSize: `48px`,
-  letterSpacing: `-0.5px`,
+  letterSpacing: `-1.44px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -445,14 +457,14 @@ const UnleashThePowerOfMod1Span1: any = styled('span', {
 
 const UnleashThePowerOfMod1Span2: any = styled('span', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   whiteSpace: `pre-wrap`,
   color: `rgba(255, 185, 0, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
   fontSize: `48px`,
-  letterSpacing: `-0.5px`,
+  letterSpacing: `-1.44px`,
   textDecoration: `none`,
   lineHeight: `100%`,
   textTransform: `none`,
@@ -464,19 +476,19 @@ const UnleashThePowerOfMod1Span2: any = styled('span', {
 
 const UnleashThePowerOfMod1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(0, 0, 0, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize: `48px`,
-  letterSpacing: `-0.5px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
+  fontStyle: theme.typography['Typography']['H3'].fontStyle,
+  fontFamily: theme.typography['Typography']['H3'].fontFamily,
+  fontWeight: theme.typography['Typography']['H3'].fontWeight,
+  fontSize: theme.typography['Typography']['H3'].fontSize,
+  letterSpacing: theme.typography['Typography']['H3'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H3'].lineHeight,
+  textDecoration: theme.typography['Typography']['H3'].textDecoration,
+  textTransform: theme.typography['Typography']['H3'].textTransform,
   alignSelf: `stretch`,
   margin:
     data.currentVariant === 'ScreenTablet'
@@ -493,14 +505,14 @@ const MowoConvergesThePowe1: any = styled('div', {
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize: `23px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
+  fontStyle: theme.typography['Typography']['H5'].fontStyle,
+  fontFamily: theme.typography['Typography']['H5'].fontFamily,
+  fontWeight: theme.typography['Typography']['H5'].fontWeight,
+  fontSize: theme.typography['Typography']['H5'].fontSize,
+  letterSpacing: theme.typography['Typography']['H5'].letterSpacing,
+  lineHeight: theme.typography['Typography']['H5'].lineHeight,
+  textDecoration: theme.typography['Typography']['H5'].textDecoration,
+  textTransform: theme.typography['Typography']['H5'].textTransform,
   alignSelf: `stretch`,
   margin:
     data.currentVariant === 'ScreenMobile'
@@ -511,12 +523,13 @@ const MowoConvergesThePowe1: any = styled('div', {
 const Cols1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `center`,
-  alignItems: `flex-start`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
   padding: `30px 0px 0px 0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
@@ -527,25 +540,23 @@ const Cols1: any = styled('div', {
   overflow: `hidden`,
 }));
 
-const LeftCol1: any = styled('div')({
-  backgroundImage: `url(assets/images/ModernWorkplace_left_col_1.png)`,
-  backgroundSize: `cover`,
-  backgroundRepeat: `no-repeat`,
+const Mediacontainer1: any = styled('div')({
+  backgroundColor: `rgba(196, 196, 196, 1)`,
   borderRadius: `20px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
+  flexDirection: `column`,
+  justifyContent: `center`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  flex: `1`,
+  height: `468px`,
   margin: `0px`,
   overflow: `hidden`,
-  backgroundPosition: 'left center',
 });
 
-const RightCol1: any = styled('div')({
+const Contentcontainer1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -554,12 +565,13 @@ const RightCol1: any = styled('div')({
   alignItems: `flex-start`,
   padding: `15px 0px`,
   boxSizing: `border-box`,
-  flex: `1`,
-  margin: `0px 0px 0px 30px`,
+  alignSelf: `stretch`,
+  margin: `30px 0px 0px 0px`,
   overflow: `hidden`,
 });
 
 const TopRow1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -638,6 +650,7 @@ const ExpertlyUnitingMicro1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const MiddleRow1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -716,6 +729,7 @@ const CateringToYourUnique1: any = styled('div')(({ theme }: any) => ({
 }));
 
 const BottomRow1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -795,16 +809,16 @@ const MoreThanAVendorWeReY1: any = styled('div')(({ theme }: any) => ({
 
 const UnleashThePowerOfMod2Span1: any = styled('span', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   whiteSpace: `pre-wrap`,
   color: `rgba(51, 51, 51, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `39px`,
-  letterSpacing: `-0.5px`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
   textDecoration: `none`,
-  lineHeight: `100%`,
+  lineHeight: `133.39999914169312%`,
   textTransform: `none`,
   textAlign: 'unset',
   fontSynthesis: 'unset',
@@ -814,16 +828,16 @@ const UnleashThePowerOfMod2Span1: any = styled('span', {
 
 const UnleashThePowerOfMod2Span2: any = styled('span', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   whiteSpace: `pre-wrap`,
   color: `rgba(255, 185, 0, 1)`,
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `39px`,
-  letterSpacing: `-0.5px`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
   textDecoration: `none`,
-  lineHeight: `100%`,
+  lineHeight: `133.39999914169312%`,
   textTransform: `none`,
   textAlign: 'unset',
   fontSynthesis: 'unset',
@@ -833,7 +847,7 @@ const UnleashThePowerOfMod2Span2: any = styled('span', {
 
 const UnleashThePowerOfMod2: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -841,10 +855,10 @@ const UnleashThePowerOfMod2: any = styled('div', {
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize: `39px`,
-  letterSpacing: `-0.5px`,
+  fontSize: `24px`,
+  letterSpacing: `0px`,
   textDecoration: `none`,
-  lineHeight: `100%`,
+  lineHeight: `133.39999914169312%`,
   textTransform: `none`,
   alignSelf: `stretch`,
   margin: data.currentVariant === 'ScreenMobile' ? `0px` : `18px 0px 0px 0px`,
@@ -875,6 +889,7 @@ const MowoConvergesThePowe2: any = styled('div', {
 const Rows1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -891,25 +906,23 @@ const Rows1: any = styled('div', {
   overflow: `hidden`,
 }));
 
-const TopRow2: any = styled('div')({
-  backgroundImage: `url(assets/images/ModernWorkplace_top_row.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `cover`,
-  backgroundRepeat: `no-repeat`,
-  borderRadius: `20px`,
+const Mediacontainer2: any = styled('div')({
+  backgroundColor: `rgba(196, 196, 196, 1)`,
+  borderRadius: `12px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
+  flexDirection: `column`,
+  justifyContent: `center`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  height: `272px`,
+  height: `219px`,
   margin: `0px`,
   overflow: `hidden`,
 });
 
-const BottomRow2: any = styled('div')({
+const Contentcontainer2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -923,7 +936,8 @@ const BottomRow2: any = styled('div')({
   overflow: `hidden`,
 });
 
-const TopRow3: any = styled('div')({
+const TopRow2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1005,6 +1019,7 @@ const ExpertlyUnitingMicro2: any = styled('div')(({ theme }: any) => ({
 }));
 
 const MiddleRow2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1085,7 +1100,8 @@ const CateringToYourUnique2: any = styled('div')(({ theme }: any) => ({
   margin: `3px 0px 0px 0px`,
 }));
 
-const BottomRow3: any = styled('div')({
+const BottomRow2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1167,6 +1183,7 @@ const MoreThanAVendorWeReY2: any = styled('div')(({ theme }: any) => ({
 }));
 
 const ColorStroke: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -1181,6 +1198,7 @@ const ColorStroke: any = styled('div')({
 
 const Rectangle173: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Secondary']['Main'],
+  borderRadius: `0px`,
   flex: `1`,
   height: `15px`,
   margin: `0px`,
@@ -1188,6 +1206,7 @@ const Rectangle173: any = styled('div')(({ theme }: any) => ({
 
 const Rectangle174: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Success']['Main'],
+  borderRadius: `0px`,
   flex: `1`,
   height: `15px`,
   margin: `0px`,
@@ -1195,6 +1214,7 @@ const Rectangle174: any = styled('div')(({ theme }: any) => ({
 
 const Rectangle175: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Primary']['Main'],
+  borderRadius: `0px`,
   flex: `1`,
   height: `15px`,
   margin: `0px`,
@@ -1202,6 +1222,7 @@ const Rectangle175: any = styled('div')(({ theme }: any) => ({
 
 const Rectangle176: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Warning']['Main'],
+  borderRadius: `0px`,
   flex: `1`,
   height: `15px`,
   margin: `0px`,
@@ -1233,8 +1254,15 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
         {!(data.currentVariant === 'ScreenTablet') &&
           !(data.currentVariant === 'ScreenMobile') && (
             <Cols data={data}>
-              <LeftCol></LeftCol>
-              <RightCol>
+              <Mediacontainer>
+                <MediacontainerIFrame
+                  src={
+                    'https://www.youtube.com/embed/Z9bTeU3VwIw?autoplay=1&controls=0&mute=1&playsinline=1&loop=0'
+                  }
+                  allow="autoplay; fullscreen; picture-in-picture"
+                ></MediacontainerIFrame>
+              </Mediacontainer>
+              <Contentcontainer>
                 <TopRow>
                   <CuttingEdgeSynergy>
                     <CuttingEdgeSynergySpan1>{`Cutting-Edge `}</CuttingEdgeSynergySpan1>
@@ -1262,7 +1290,7 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
                     {`More than a vendor, we're your tech ally offering unparalleled support. More than a vendor, we're your tech ally offering unparalleled support.`}
                   </MoreThanAVendorWeReY>
                 </BottomRow>
-              </RightCol>
+              </Contentcontainer>
             </Cols>
           )}
         {data.currentVariant === 'ScreenTablet' && (
@@ -1282,8 +1310,8 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
         )}
         {data.currentVariant === 'ScreenTablet' && (
           <Cols1 data={data}>
-            <LeftCol1></LeftCol1>
-            <RightCol1>
+            <Mediacontainer1></Mediacontainer1>
+            <Contentcontainer1>
               <TopRow1>
                 <CuttingEdgeSynergy1>
                   <CuttingEdgeSynergy1Span1>{`Cutting-Edge `}</CuttingEdgeSynergy1Span1>
@@ -1311,7 +1339,7 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
                   {`More than a vendor, we're your tech ally offering unparalleled support. More than a vendor, we're your tech ally offering unparalleled support.`}
                 </MoreThanAVendorWeReY1>
               </BottomRow1>
-            </RightCol1>
+            </Contentcontainer1>
           </Cols1>
         )}
         {data.currentVariant === 'ScreenMobile' && (
@@ -1331,9 +1359,9 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
         )}
         {data.currentVariant === 'ScreenMobile' && (
           <Rows1 data={data}>
-            <TopRow2></TopRow2>
-            <BottomRow2>
-              <TopRow3>
+            <Mediacontainer2></Mediacontainer2>
+            <Contentcontainer2>
+              <TopRow2>
                 <CuttingEdgeSynergy2>
                   <CuttingEdgeSynergy2Span1>{`Cutting-Edge `}</CuttingEdgeSynergy2Span1>
                   <CuttingEdgeSynergy2Span2>{`Synergy`}</CuttingEdgeSynergy2Span2>
@@ -1341,7 +1369,7 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
                 <ExpertlyUnitingMicro2>
                   {`Expertly uniting Microsoft Surface's prowess with your business vision. Expertly uniting Microsoft Surface's prowess with your business vision.`}
                 </ExpertlyUnitingMicro2>
-              </TopRow3>
+              </TopRow2>
               <MiddleRow2>
                 <PersonalizedProgress2>
                   <PersonalizedProgress2Span1>{`Personalized `}</PersonalizedProgress2Span1>
@@ -1351,7 +1379,7 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
                   {`Catering to your uniqueness, we shape tech solutions for your exact needs. Catering to your uniqueness, we shape tech solutions for your exact needs.`}
                 </CateringToYourUnique2>
               </MiddleRow2>
-              <BottomRow3>
+              <BottomRow2>
                 <CommittedPartnership2>
                   <CommittedPartnership2Span1>{`Committed `}</CommittedPartnership2Span1>
                   <CommittedPartnership2Span2>{`Partnership`}</CommittedPartnership2Span2>
@@ -1359,8 +1387,8 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
                 <MoreThanAVendorWeReY2>
                   {`More than a vendor, we're your tech ally offering unparalleled support. More than a vendor, we're your tech ally offering unparalleled support.`}
                 </MoreThanAVendorWeReY2>
-              </BottomRow3>
-            </BottomRow2>
+              </BottomRow2>
+            </Contentcontainer2>
           </Rows1>
         )}
       </Rows>
