@@ -208,7 +208,7 @@ const globalTheme: any = createTheme({
        "fontStyle": "normal",
        "fontFamily": "Segoe UI",
        "fontWeight": 700,
-       "fontSize": "34px",
+       "fontSize": "24px",
        "letterSpacing": "-1.36px",
        "textDecoration": "none",
        "lineHeight": "100%",
@@ -227,8 +227,8 @@ const globalTheme: any = createTheme({
      "H6": {
        "fontStyle": "normal",
        "fontFamily": "Segoe UI",
-       "fontWeight": 700,
-       "fontSize": "22px",
+       "fontWeight": 400,
+       "fontSize": "16px",
        "letterSpacing": "0px",
        "textDecoration": "none",
        "textTransform": "none"

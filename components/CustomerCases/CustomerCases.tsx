@@ -93,10 +93,10 @@ const RevolutionizingTheWo: any = styled('div', {
   fontWeight: `400`,
   fontSize:
     data.currentVariant === 'ScreenTablet'
-      ? `23px`
-      : data.currentVariant === 'ScreenMobile'
-        ? `20px`
-        : `27px`,
+    ? theme.typography['Typography']['H5'].fontSize
+    : data.currentVariant === 'ScreenMobile'
+    ? theme.typography['Typography']['H6'].fontSize
+    : theme.typography['Typography']['H5'].fontSize,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,

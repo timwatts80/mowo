@@ -23,10 +23,10 @@ const ScreenDesktop: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: '100%!important',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
-  padding: `24px 0px`,
+  padding: `24px`,
   boxSizing: `border-box`,
   height: 'auto',
 });
@@ -176,7 +176,12 @@ const LoremIpsumDolorSitAm: any = styled('div', {
   fontStyle: theme.typography['Typography']['H5'].fontStyle,
   fontFamily: theme.typography['Typography']['H5'].fontFamily,
   fontWeight: theme.typography['Typography']['H5'].fontWeight,
-  fontSize: theme.typography['Typography']['H5'].fontSize,
+  fontSize: 
+    data.currentVariant === 'ScreenTablet'
+    ? theme.typography['Typography']['H5'].fontSize
+    : data.currentVariant === 'ScreenMobile'
+    ? theme.typography['Typography']['H6'].fontSize
+    : theme.typography['Typography']['H5'].fontSize,
   letterSpacing: theme.typography['Typography']['H5'].letterSpacing,
   lineHeight: theme.typography['Typography']['H5'].lineHeight,
   textDecoration: theme.typography['Typography']['H5'].textDecoration,

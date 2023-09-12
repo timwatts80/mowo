@@ -882,7 +882,12 @@ const MowoConvergesThePowe2: any = styled('div', {
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: `20px`,
+  fontSize: 
+    data.currentVariant === 'ScreenTablet'
+    ? theme.typography['Typography']['H5'].fontSize
+    : data.currentVariant === 'ScreenMobile'
+    ? theme.typography['Typography']['H6'].fontSize
+    : theme.typography['Typography']['H5'].fontSize,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
