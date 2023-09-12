@@ -248,7 +248,7 @@ const Productdialogcontain: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   flex: `1`,
-  margin: `0px 0px 0px 50px`,
+  margin: `0px`,
   width: '100%',
 });
 
