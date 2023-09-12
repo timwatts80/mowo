@@ -249,10 +249,10 @@ const Productdialogcontain: any = styled('div')({
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px 0px 0px 50px`,
+  width: '100%',
 });
 
 const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
-  width: `1080px`,
   margin: `0px`,
 }));
 
