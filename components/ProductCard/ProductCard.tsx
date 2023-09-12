@@ -248,7 +248,7 @@ const Productdialogcontain: any = styled('div')({
   height: '85vh',
 });
 
-const ProductDialog2: any = styled(ProductDialog2)(({ theme }: any) => ({
+const ProductDialog3: any = styled(ProductDialog2)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
 }));
@@ -303,7 +303,7 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         onClose={fns.toggleDialog}
       >
         <Productdialogcontain>
-          <ProductDialog2 open={data.isDialogOpen} onClose={fns.toggleDialog} />
+          <ProductDialog3 open={data.isDialogOpen} onClose={fns.toggleDialog} />
         </Productdialogcontain>
       </Dialog>
     </StateDefault>
