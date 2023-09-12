@@ -14,15 +14,16 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
+import SectionHeader from 'components/SectionHeader/SectionHeader';
 import ProductCarousel from 'components/ProductCarousel/ProductCarousel';
 import { ProductSectionSurfaceHubDeviceProps } from 'types';
 import useProductSectionSurfaceHubDevice from 'components/ProductSectionSurfaceHubDevice/useProductSectionSurfaceHubDevice';
-import SectionHeader from 'components/SectionHeader/SectionHeader';
 
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   backgroundColor: `rgba(255, 255, 255, 1)`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -47,6 +48,7 @@ const ScreenDesktop: any = styled('div', {
 }));
 
 const Rows: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -60,112 +62,24 @@ const Rows: any = styled('div')({
   overflow: `hidden`,
 });
 
-const SurfaceInnovationSpan1: any = styled('span', {
+const SectionHeader1: any = styled(SectionHeader, {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  whiteSpace: `pre-wrap`,
-  color: `rgba(51, 51, 51, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize:
+})(({ theme, data }: any) => ({
+  width:
     data.currentVariant === 'ScreenTablet'
-      ? `48px`
+      ? `768px`
       : data.currentVariant === 'ScreenMobile'
-      ? `39px`
-      : `56px`,
-  letterSpacing: `-0.5px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
-  textAlign: 'unset',
-  fontSynthesis: 'unset',
-  alignSelf: 'unset',
-  margin: 'unset',
-}));
-
-const SurfaceInnovationSpan2: any = styled('span', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  whiteSpace: `pre-wrap`,
-  color:
-    data.currentVariant === 'ScreenTablet'
-      ? `rgba(0, 0, 0, 1)`
-      : data.currentVariant === 'ScreenMobile'
-      ? `rgba(0, 0, 0, 1)`
-      : `rgba(0, 164, 239, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize:
-    data.currentVariant === 'ScreenTablet'
-      ? `48px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `39px`
-      : `56px`,
-  letterSpacing: `-0.5px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
-  textAlign: 'unset',
-  fontSynthesis: 'unset',
-  alignSelf: 'unset',
-  margin: 'unset',
-}));
-
-const SurfaceInnovation: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(0, 0, 0, 1)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `700`,
-  fontSize:
-    data.currentVariant === 'ScreenTablet'
-      ? `48px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `39px`
-      : `56px`,
-  letterSpacing: `-0.5px`,
-  textDecoration: `none`,
-  lineHeight: `100%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
+      ? `375px`
+      : `1440px`,
   margin: `0px`,
 }));
 
-const UnleashingPotentialF: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  textAlign: `center`,
-  whiteSpace: `pre-wrap`,
-  fontSynthesis: `none`,
-  color: `rgba(51, 51, 51, 0.75)`,
-  fontStyle: `normal`,
-  fontFamily: `Segoe UI`,
-  fontWeight: `400`,
-  fontSize:
-    data.currentVariant === 'ScreenTablet'
-      ? `23px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `20px`
-      : `27px`,
-  letterSpacing: `0px`,
-  textDecoration: `none`,
-  lineHeight: `133.39999914169312%`,
-  textTransform: `none`,
-  alignSelf: `stretch`,
-  margin: `15px 0px 0px 0px`,
-}));
-
 const Box1: any = styled('div')({
-  // backgroundImage: `url(assets/images/ProductSectionSurfaceHubdevices_Box.png)`,
-  // backgroundPosition: `center`,
-  // backgroundSize: `cover`,
-  // backgroundRepeat: `no-repeat`,
+  backgroundImage: `url(assets/images/ProductSectionSurfaceHubdevices_Box.png)`,
+  backgroundPosition: `center`,
+  backgroundSize: `cover`,
+  backgroundRepeat: `no-repeat`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -193,11 +107,11 @@ function ProductSectionSurfaceHubDevice(
   return (
     <ScreenDesktop className={props.className} data={data}>
       <Rows>
-        <SectionHeader {...props}/>
+        <SectionHeader1 data={data} {...props} />
         <Box1>
           <ProductCarousel1 />
         </Box1>
-      </Rows> 
+      </Rows>
     </ScreenDesktop>
   );
 }
