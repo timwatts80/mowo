@@ -399,7 +399,7 @@ const Productstable: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `32px 0px 0px 0px`,
+  margin: `50px 0px 0px 0px`,
 });
 
 const Table1: any = styled(Table)(({ theme }: any) => ({
@@ -414,7 +414,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
     <ScreenDesktop className={props.className} data={data}>
       <Productinfo data={data}>
         <Imagecontainer className={'product-thumb-container'}>
-          <ProductThumbCarousel1 {...props} />
+          <ProductThumbCarousel1 />
         </Imagecontainer>
         <Details data={data}>
           <Top>
