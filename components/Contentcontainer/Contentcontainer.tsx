@@ -72,7 +72,6 @@ const Imagecontainer: any = styled('div')({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: `50%`,
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
