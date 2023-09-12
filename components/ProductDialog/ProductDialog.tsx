@@ -122,7 +122,7 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
               </IconX>
             </Icon1>
           </Close>
-          <Contentcontainer1 />
+          <Contentcontainer1 {...props} />
         </Pagecontainer>
       </ScreenDesktop>
     )
