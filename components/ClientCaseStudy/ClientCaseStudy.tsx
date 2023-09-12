@@ -66,10 +66,9 @@ const CaseBackground: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: '1000px',
+  height: 'fit-content',
   margin: `0px`,
   overflow: 'hidden',
-  maxHeight: 'fit-content',
 });
 
 const Image1: any = styled('img', {
