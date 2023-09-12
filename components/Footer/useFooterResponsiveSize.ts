@@ -16,13 +16,13 @@ const useFooterResponsiveSize = () => {
   const [variant, setVariant] = React.useState<string>('Desktop');
 
   React.useEffect(() => {
-    const handlerMobile = (e) =>
+    const handlerMobile = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'Mobile' : size));
     const MobileSize = window.matchMedia('(max-width: 575px)');
     setVariant((size: string) => (MobileSize.matches ? 'Mobile' : size));
     MobileSize.addEventListener('change', handlerMobile);
 
-    const handlerTablet = (e) =>
+    const handlerTablet = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'Tablet' : size));
     const TabletSize = window.matchMedia(
       '(min-width: 575px) and (max-width: 1108px)'
@@ -30,7 +30,7 @@ const useFooterResponsiveSize = () => {
     setVariant((size: string) => (TabletSize.matches ? 'Tablet' : size));
     TabletSize.addEventListener('change', handlerTablet);
 
-    const handlerDesktop = (e) =>
+    const handlerDesktop = (e: { matches: any; }) =>
       setVariant((size: string) => (e.matches ? 'Desktop' : size));
     const DesktopSize = window.matchMedia('(min-width: 1108px)');
     setVariant((size: string) => (DesktopSize.matches ? 'Desktop' : size));
