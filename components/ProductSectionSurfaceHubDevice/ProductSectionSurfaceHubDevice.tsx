@@ -75,10 +75,7 @@ const SectionHeader1: any = styled(SectionHeader, {
 }));
 
 const Box1: any = styled('div')({
-  backgroundImage: `url(assets/images/ProductSectionSurfaceHubdevices_Box.png)`,
-  backgroundPosition: `center`,
-  backgroundSize: `cover`,
-  backgroundRepeat: `no-repeat`,
+  backgroundColor: `rgba(255, 255, 255, 0)`,
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
