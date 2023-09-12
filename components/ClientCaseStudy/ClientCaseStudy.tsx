@@ -51,7 +51,7 @@ const ClientCaseStudySlide: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `0px`,
+  margin: '0 auto',
 });
 
 const CaseBackground: any = styled('div')({
@@ -66,7 +66,7 @@ const CaseBackground: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: '1000px',
-  margin: '0 auto',
+  margin: `0px`,
   overflow: `hidden`,
   maxHeight: '550px',
 });
