@@ -130,7 +130,12 @@ const Casecontentcontainer: any = styled('div', {
       ? 'unset'
       : `601px`,
   margin: `0px`,
-  top: '325px',
+  top:
+    data.currentVariant === 'ScreenTablet'
+      ? `225px`
+      : data.currentVariant === 'ScreenMobile'
+      ? 'unset'
+      : `325px`,
   alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
