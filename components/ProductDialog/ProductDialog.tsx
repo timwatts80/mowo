@@ -44,6 +44,7 @@ const Pagecontainer: any = styled('div')({
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
+  width: '100%',
 });
 
 const Close: any = styled('div')({
@@ -122,11 +123,7 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
               </IconX>
             </Icon1>
           </Close>
-<<<<<<< HEAD
           <Contentcontainer1 {...props} />
-=======
-          <Contentcontainer1 {...props}/>
->>>>>>> c242f51 (update)
         </Pagecontainer>
       </ScreenDesktop>
     )
