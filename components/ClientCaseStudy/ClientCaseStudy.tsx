@@ -66,7 +66,7 @@ const CaseBackground: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: '1000px',
-  margin: `0px`,
+  margin: '0 auto',
   overflow: `hidden`,
   maxHeight: '550px',
 });
