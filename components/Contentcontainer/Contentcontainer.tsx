@@ -75,6 +75,7 @@ const Imagecontainer: any = styled('div')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
+  width: '50%',
 });
 
 const ProductThumbCarousel1: any = styled(ProductThumbCarousel)(
@@ -413,7 +414,7 @@ function Contentcontainer(props: ContentcontainerProps): JSX.Element {
     <ScreenDesktop className={props.className} data={data}>
       <Productinfo data={data}>
         <Imagecontainer className={'product-thumb-container'}>
-          <ProductThumbCarousel1 {...props}/>
+          <ProductThumbCarousel1 />
         </Imagecontainer>
         <Details data={data}>
           <Top>
