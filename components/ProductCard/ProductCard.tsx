@@ -249,7 +249,6 @@ const Productdialogcontain: any = styled('div')({
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px 0px 0px 50px`,
-  height: '85vh',
 });
 
 const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
