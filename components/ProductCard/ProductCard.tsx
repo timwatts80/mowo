@@ -15,7 +15,7 @@
 import React from 'react';
 import { Button, Dialog } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import ProductDialog from 'components/ProductDialog/ProductDialog';
+import ProductDialog1 from 'components/ProductDialog1/ProductDialog1';
 import { ProductCardProps } from 'types';
 import useProductCard from 'components/ProductCard/useProductCard';
 
@@ -246,7 +246,8 @@ const Productdialogcontain: any = styled('div')({
   margin: `0px`,
 });
 
-const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
+const ProductDialog11: any = styled(ProductDialog1)(({ theme }: any) => ({
+  width: `1080px`,
   margin: `0px`,
 }));
 
@@ -295,16 +296,12 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         </ProductCardNew>
       </Productcardcontainer>
       <Dialog
-        maxWidth={'lg'}
+        maxWidth={'xl'}
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >
         <Productdialogcontain>
-          <ProductDialog1
-            open={data.isDialogOpen}
-            onClose={fns.toggleDialog}
-            {...props}
-          />
+          <ProductDialog11 />
         </Productdialogcontain>
       </Dialog>
     </StateDefault>
