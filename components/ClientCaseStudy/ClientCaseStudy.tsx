@@ -85,7 +85,7 @@ const Image1: any = styled('img', {
       ? `1320px`
       : data.currentVariant === 'ScreenMobile'
       ? `1320px`
-      : 'auto',
+      : '100%',
   objectFit: `cover`,
   margin: `0px`,
 }));
