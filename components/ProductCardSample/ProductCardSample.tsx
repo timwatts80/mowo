@@ -291,7 +291,7 @@ function ProductCardSample(props: ProductCardSampleProps): JSX.Element {
         </ProductCardNew>
       </Productcardcontainer>
       <Dialog
-        maxWidth={'lg'}
+        maxWidth={'xl'}
         open={data.isDialogOpen}
         onClose={fns.toggleDialog}
       >
