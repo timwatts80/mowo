@@ -514,9 +514,27 @@ const FooterAttribution: any = styled('div', {
   margin: `0px`,
 }));
 
-const SiteDesignedIn: any = styled('div', {
+const Frame192: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px`,
+}));
+
+const SiteDesignedIn: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -529,17 +547,10 @@ const SiteDesignedIn: any = styled('div', {
   textDecoration: `none`,
   lineHeight: `150%`,
   textTransform: `none`,
-  margin:
-    data.currentVariant === 'Tablet'
-      ? `3.3514492511749268px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
-      ? `2.5732316970825195px 0px 0px 0px`
-      : `0px`,
+  margin: `0px`,
 }));
 
-const Frame187: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Frame187: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -549,13 +560,8 @@ const Frame187: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'Tablet'
-      ? `3.3514492511749268px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
-      ? `2.5732316970825195px 0px 0px 0px`
-      : `0px 0px 0px 4px`,
-}));
+  margin: `0px 0px 0px 4px`,
+});
 
 const FigmaContainer: any = styled('div')({
   borderRadius: `0px`,
@@ -644,7 +650,7 @@ const FigmaBuiltWith: any = styled('div')(({ theme }: any) => ({
   margin: `0px 0px 0px 4px`,
 }));
 
-const Frame188: any = styled('div', {
+const Frame193: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
@@ -653,7 +659,7 @@ const Frame188: any = styled('div', {
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
+  alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   margin:
@@ -663,6 +669,19 @@ const Frame188: any = styled('div', {
       ? `2.5732316970825195px 0px 0px 0px`
       : `0px 0px 0px 4px`,
 }));
+
+const Frame188: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+});
 
 const Questlogocontainer: any = styled('div')({
   borderRadius: `0px`,
@@ -718,9 +737,7 @@ const QuestDeployedWith: any = styled('div')(({ theme }: any) => ({
   margin: `0px 0px 0px 4px`,
 }));
 
-const Frame189: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Frame189: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -730,13 +747,8 @@ const Frame189: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'Tablet'
-      ? `3.3514492511749268px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
-      ? `2.5732316970825195px 0px 0px 0px`
-      : `0px 0px 0px 4px`,
-}));
+  margin: `0px 0px 0px 4px`,
+});
 
 const Nextjslogocontainer: any = styled('div')({
   borderRadius: `0px`,
@@ -1050,9 +1062,27 @@ const NextJs1: any = styled('div')(({ theme }: any) => ({
   margin: `0px 0px 0px 3.3514492511749268px`,
 }));
 
-const SiteDesignedIn2: any = styled('div', {
+const Frame194: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `0px`
+      : `0px 0px 0px 4px`,
+}));
+
+const SiteDesignedIn2: any = styled('div')(({ theme }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -1065,17 +1095,10 @@ const SiteDesignedIn2: any = styled('div', {
   textDecoration: `none`,
   lineHeight: `150%`,
   textTransform: `none`,
-  margin:
-    data.currentVariant === 'Tablet'
-      ? `3.3514492511749268px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
-      ? `0px`
-      : `0px 0px 0px 4px`,
+  margin: `0px`,
 }));
 
-const Frame1872: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Frame1872: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -1085,13 +1108,8 @@ const Frame1872: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'Tablet'
-      ? `3.3514492511749268px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
-      ? `2.5732316970825195px 0px 0px 0px`
-      : `0px 0px 0px 4px`,
-}));
+  margin: `3px 0px 0px 0px`,
+});
 
 const FigmaContainer2: any = styled('div')({
   borderRadius: `0px`,
@@ -1180,14 +1198,14 @@ const FigmaBuiltWith2: any = styled('div')(({ theme }: any) => ({
   margin: `0px 0px 0px 2.5732316970825195px`,
 }));
 
-const Frame1882: any = styled('div', {
+const Frame195: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
@@ -1199,6 +1217,19 @@ const Frame1882: any = styled('div', {
       ? `2.5732316970825195px 0px 0px 0px`
       : `0px 0px 0px 4px`,
 }));
+
+const Frame1882: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+});
 
 const Questlogocontainer2: any = styled('div')({
   borderRadius: `0px`,
@@ -1254,9 +1285,7 @@ const QuestDeployedWith2: any = styled('div')(({ theme }: any) => ({
   margin: `0px 0px 0px 2.5732316970825195px`,
 }));
 
-const Frame1892: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Frame1892: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -1266,13 +1295,8 @@ const Frame1892: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin:
-    data.currentVariant === 'Tablet'
-      ? `3.3514492511749268px 0px 0px 0px`
-      : data.currentVariant === 'Mobile'
-      ? `2.5732316970825195px 0px 0px 0px`
-      : `0px 0px 0px 4px`,
-}));
+  margin: `3px 0px 0px 0px`,
+});
 
 const Nextjslogocontainer2: any = styled('div')({
   borderRadius: `0px`,
@@ -1443,74 +1467,70 @@ T. +354 647 2666`}
           <FooterAttribution data={data}>
             {!(data.currentVariant === 'Tablet') &&
               !(data.currentVariant === 'Mobile') && (
-                <SiteDesignedIn data={data}>
-                  {`Site designed in `}
-                </SiteDesignedIn>
+                <Frame192 data={data}>
+                  <SiteDesignedIn>{`Site designed in `}</SiteDesignedIn>
+                  <Frame187>
+                    <FigmaContainer>
+                      <Figma>
+                        <Vector6
+                          src={`assets/images/Footer_Vector_6.png`}
+                          loading="lazy"
+                          alt={'Vector'}
+                        />
+                        <Vector7
+                          src={`assets/images/Footer_Vector_7.png`}
+                          loading="lazy"
+                          alt={'Vector'}
+                        />
+                        <Vector8
+                          src={`assets/images/Footer_Vector_8.png`}
+                          loading="lazy"
+                          alt={'Vector'}
+                        />
+                        <Vector9
+                          src={`assets/images/Footer_Vector_9.png`}
+                          loading="lazy"
+                          alt={'Vector'}
+                        />
+                        <Vector10
+                          src={`assets/images/Footer_Vector_10.png`}
+                          loading="lazy"
+                          alt={'Vector'}
+                        />
+                      </Figma>
+                    </FigmaContainer>
+                    <FigmaBuiltWith>{`Figma, built with `}</FigmaBuiltWith>
+                  </Frame187>
+                </Frame192>
               )}
             {!(data.currentVariant === 'Tablet') &&
               !(data.currentVariant === 'Mobile') && (
-                <Frame187 data={data}>
-                  <FigmaContainer>
-                    <Figma>
-                      <Vector6
-                        src={`assets/images/Footer_Vector_6.png`}
+                <Frame193 data={data}>
+                  <Frame188>
+                    <Questlogocontainer>
+                      <QuestLogoTraced>
+                        <Layer8
+                          src={`assets/images/Footer_Layer_8.png`}
+                          loading="lazy"
+                          alt={'Layer 8'}
+                        />
+                      </QuestLogoTraced>
+                    </Questlogocontainer>
+                    <QuestDeployedWith>
+                      {`Quest, deployed with `}
+                    </QuestDeployedWith>
+                  </Frame188>
+                  <Frame189>
+                    <Nextjslogocontainer>
+                      <Vector11
+                        src={`assets/images/Footer_Vector_11.png`}
                         loading="lazy"
                         alt={'Vector'}
                       />
-                      <Vector7
-                        src={`assets/images/Footer_Vector_7.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                      <Vector8
-                        src={`assets/images/Footer_Vector_8.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                      <Vector9
-                        src={`assets/images/Footer_Vector_9.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                      <Vector10
-                        src={`assets/images/Footer_Vector_10.png`}
-                        loading="lazy"
-                        alt={'Vector'}
-                      />
-                    </Figma>
-                  </FigmaContainer>
-                  <FigmaBuiltWith>{`Figma, built with `}</FigmaBuiltWith>
-                </Frame187>
-              )}
-            {!(data.currentVariant === 'Tablet') &&
-              !(data.currentVariant === 'Mobile') && (
-                <Frame188 data={data}>
-                  <Questlogocontainer>
-                    <QuestLogoTraced>
-                      <Layer8
-                        src={`assets/images/Footer_Layer_8.png`}
-                        loading="lazy"
-                        alt={'Layer 8'}
-                      />
-                    </QuestLogoTraced>
-                  </Questlogocontainer>
-                  <QuestDeployedWith>
-                    {`Quest, deployed with `}
-                  </QuestDeployedWith>
-                </Frame188>
-              )}
-            {!(data.currentVariant === 'Tablet') &&
-              !(data.currentVariant === 'Mobile') && (
-                <Frame189 data={data}>
-                  <Nextjslogocontainer>
-                    <Vector11
-                      src={`assets/images/Footer_Vector_11.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </Nextjslogocontainer>
-                  <NextJs>{`Next.JS`}</NextJs>
-                </Frame189>
+                    </Nextjslogocontainer>
+                    <NextJs>{`Next.JS`}</NextJs>
+                  </Frame189>
+                </Frame193>
               )}
             {data.currentVariant === 'Tablet' && (
               <Frame190 data={data}>
@@ -1578,71 +1598,69 @@ T. +354 647 2666`}
               </Frame191>
             )}
             {data.currentVariant === 'Mobile' && (
-              <SiteDesignedIn2 data={data}>
-                {`Site designed in `}
-              </SiteDesignedIn2>
+              <Frame194 data={data}>
+                <SiteDesignedIn2>{`Site designed in `}</SiteDesignedIn2>
+                <Frame1872>
+                  <FigmaContainer2>
+                    <Figma2>
+                      <Vector18
+                        src={`assets/images/Footer_Vector_18.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector19
+                        src={`assets/images/Footer_Vector_19.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector20
+                        src={`assets/images/Footer_Vector_20.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector21
+                        src={`assets/images/Footer_Vector_21.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector22
+                        src={`assets/images/Footer_Vector_22.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                    </Figma2>
+                  </FigmaContainer2>
+                  <FigmaBuiltWith2>{`Figma, built with `}</FigmaBuiltWith2>
+                </Frame1872>
+              </Frame194>
             )}
             {data.currentVariant === 'Mobile' && (
-              <Frame1872 data={data}>
-                <FigmaContainer2>
-                  <Figma2>
-                    <Vector18
-                      src={`assets/images/Footer_Vector_18.png`}
+              <Frame195 data={data}>
+                <Frame1882>
+                  <Questlogocontainer2>
+                    <QuestLogoTraced2>
+                      <Layer82
+                        src={`assets/images/Footer_Layer_8_2.png`}
+                        loading="lazy"
+                        alt={'Layer 8'}
+                      />
+                    </QuestLogoTraced2>
+                  </Questlogocontainer2>
+                  <QuestDeployedWith2>
+                    {`Quest, deployed with `}
+                  </QuestDeployedWith2>
+                </Frame1882>
+                <Frame1892>
+                  <Nextjslogocontainer2>
+                    <Vector23
+                      src={`assets/images/Footer_Vector_23.png`}
                       loading="lazy"
                       alt={'Vector'}
                     />
-                    <Vector19
-                      src={`assets/images/Footer_Vector_19.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                    <Vector20
-                      src={`assets/images/Footer_Vector_20.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                    <Vector21
-                      src={`assets/images/Footer_Vector_21.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                    <Vector22
-                      src={`assets/images/Footer_Vector_22.png`}
-                      loading="lazy"
-                      alt={'Vector'}
-                    />
-                  </Figma2>
-                </FigmaContainer2>
-                <FigmaBuiltWith2>{`Figma, built with `}</FigmaBuiltWith2>
-              </Frame1872>
-            )}
-            {data.currentVariant === 'Mobile' && (
-              <Frame1882 data={data}>
-                <Questlogocontainer2>
-                  <QuestLogoTraced2>
-                    <Layer82
-                      src={`assets/images/Footer_Layer_8_2.png`}
-                      loading="lazy"
-                      alt={'Layer 8'}
-                    />
-                  </QuestLogoTraced2>
-                </Questlogocontainer2>
-                <QuestDeployedWith2>
-                  {`Quest, deployed with `}
-                </QuestDeployedWith2>
-              </Frame1882>
-            )}
-            {data.currentVariant === 'Mobile' && (
-              <Frame1892 data={data}>
-                <Nextjslogocontainer2>
-                  <Vector23
-                    src={`assets/images/Footer_Vector_23.png`}
-                    loading="lazy"
-                    alt={'Vector'}
-                  />
-                </Nextjslogocontainer2>
-                <NextJs2>{`Next.JS`}</NextJs2>
-              </Frame1892>
+                  </Nextjslogocontainer2>
+                  <NextJs2>{`Next.JS`}</NextJs2>
+                </Frame1892>
+              </Frame195>
             )}
           </FooterAttribution>
         </Attribution>
