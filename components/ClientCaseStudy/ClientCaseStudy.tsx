@@ -18,7 +18,9 @@ import { styled } from '@mui/material/styles';
 import { ClientCaseStudyProps } from 'types';
 import useClientCaseStudy from 'components/ClientCaseStudy/useClientCaseStudy';
 
-const ScreenDesktop: any = styled('div')({
+const ScreenDesktop: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -30,7 +32,13 @@ const ScreenDesktop: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   height: 'auto',
-});
+  maxWidth:
+    data.currentVariant === 'ScreenTablet'
+      ? `unset`
+      : data.currentVariant === 'ScreenMobile'
+      ? `unset`
+      : `1080px`,
+}));
 
 const ClientCaseStudySlide: any = styled('div')({
   borderRadius: `0px`,
@@ -46,9 +54,7 @@ const ClientCaseStudySlide: any = styled('div')({
   margin: `0px`,
 });
 
-const CaseBackground: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const CaseBackground: any = styled('div')({
   borderRadius: `16px`,
   display: `flex`,
   position: `relative`,
@@ -59,21 +65,27 @@ const CaseBackground: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: data.currentVariant === 'ScreenMobile' ? 'unset' : `450px`,
+  height: '1000px',
   margin: `0px`,
   overflow: `hidden`,
-}));
+  maxHeight: '550px',
+});
 
 const Image1: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  height: `450px`,
+  height:
+    data.currentVariant === 'ScreenTablet'
+      ? `450px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `450px`
+      : '100%',
   width:
     data.currentVariant === 'ScreenTablet'
       ? `1320px`
       : data.currentVariant === 'ScreenMobile'
       ? `1320px`
-      : '100%',
+      : 'auto',
   objectFit: `cover`,
   margin: `0px`,
 }));
@@ -107,9 +119,9 @@ const Casecontentcontainer: any = styled('div', {
   boxSizing: `border-box`,
   height:
     data.currentVariant === 'ScreenTablet'
-      ? '350px'
+      ? 'unset'
       : data.currentVariant === 'ScreenMobile'
-      ? '300px'
+      ? 'unset'
       : `349px`,
   width:
     data.currentVariant === 'ScreenTablet'
@@ -131,10 +143,9 @@ const CaseContent: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: `100%`,
   justifyContent:
-    data.currentVariant === 'ScreenMobile' ? `flex-start` : `flex-start`,
-  alignItems: data.currentVariant === 'ScreenMobile' ? `flex-start` : `flex-start`,
+    data.currentVariant === 'ScreenMobile' ? `flex-start` : `center`,
+  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding:
     data.currentVariant === 'ScreenTablet'
       ? `30px`
@@ -169,7 +180,6 @@ const CaseText: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  height: `100%`,
   margin: `0px`,
 });
 
@@ -329,9 +339,9 @@ function ClientCaseStudy(props: ClientCaseStudyProps): JSX.Element {
   const { data } = useClientCaseStudy();
 
   return (
-    <ScreenDesktop className={props.className}>
+    <ScreenDesktop className={props.className} data={data}>
       <ClientCaseStudySlide>
-        <CaseBackground data={data}>
+        <CaseBackground>
           <Image1
             data={data}
             src={props.bgimage.src}
