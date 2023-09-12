@@ -59,7 +59,7 @@ const Rows: any = styled('div', {
 
 const EmpoweringSuccessSto: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -69,10 +69,10 @@ const EmpoweringSuccessSto: any = styled('div', {
   fontWeight: `700`,
   fontSize:
     data.currentVariant === 'ScreenTablet'
-      ? `48px`
-      : data.currentVariant === 'ScreenMobile'
-        ? `39px`
-        : `56px`,
+    ? theme.typography['Typography']['H3'].fontSize
+    : data.currentVariant === 'ScreenMobile'
+    ? theme.typography['Typography']['H4'].fontSize
+    : theme.typography['Typography']['H2'].fontSize,
   letterSpacing: `-0.5px`,
   textDecoration: `none`,
   lineHeight: `100%`,
