@@ -555,6 +555,14 @@ const Mediacontainer1: any = styled('div')({
   overflow: `hidden`,
 });
 
+const Mediacontainer1IFrame: any = styled('iframe')({
+  width: `100%`,
+  height: `100%`,
+  position: `absolute`,
+  zIndex: `-1000`,
+  border: `0px`,
+});
+
 const Contentcontainer1: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
@@ -908,7 +916,7 @@ const Rows1: any = styled('div', {
 
 const Mediacontainer2: any = styled('div')({
   backgroundColor: `rgba(196, 196, 196, 1)`,
-  borderRadius: `12px`,
+  borderRadius: `20px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -919,6 +927,14 @@ const Mediacontainer2: any = styled('div')({
   height: `219px`,
   margin: `0px`,
   overflow: `hidden`,
+});
+
+const Mediacontainer2IFrame: any = styled('iframe')({
+  width: `100%`,
+  height: `100%`,
+  position: `absolute`,
+  zIndex: `-1000`,
+  border: `0px`,
 });
 
 const Contentcontainer2: any = styled('div')({
@@ -1310,7 +1326,14 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
         )}
         {data.currentVariant === 'ScreenTablet' && (
           <Cols1 data={data}>
-            <Mediacontainer1></Mediacontainer1>
+            <Mediacontainer1>
+              <Mediacontainer1IFrame
+                src={
+                  'https://www.youtube.com/embed/Z9bTeU3VwIw?autoplay=1&controls=0&mute=1&playsinline=1&loop=0'
+                }
+                allow="autoplay; fullscreen; picture-in-picture"
+              ></Mediacontainer1IFrame>
+            </Mediacontainer1>
             <Contentcontainer1>
               <TopRow1>
                 <CuttingEdgeSynergy1>
@@ -1359,7 +1382,14 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
         )}
         {data.currentVariant === 'ScreenMobile' && (
           <Rows1 data={data}>
-            <Mediacontainer2></Mediacontainer2>
+            <Mediacontainer2>
+              <Mediacontainer2IFrame
+                src={
+                  'https://www.youtube.com/embed/Z9bTeU3VwIw?autoplay=1&controls=0&mute=1&playsinline=1&loop=0'
+                }
+                allow="autoplay; fullscreen; picture-in-picture"
+              ></Mediacontainer2IFrame>
+            </Mediacontainer2>
             <Contentcontainer2>
               <TopRow2>
                 <CuttingEdgeSynergy2>
