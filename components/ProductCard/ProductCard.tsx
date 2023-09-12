@@ -132,6 +132,7 @@ const Productinfocontainer: any = styled('div')({
   padding: `24px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  height: `246px`,
   zIndex: `0`,
   margin: `0px`,
   width: '100%',
@@ -148,6 +149,7 @@ const Titlecontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  flex: `1`,
   zIndex: `2`,
   margin: `0px`,
 });
@@ -181,6 +183,7 @@ const Detailscontainer: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  flex: `1`,
   zIndex: `1`,
   margin: `16px 0px 0px 0px`,
 });
@@ -213,6 +216,7 @@ const Button1: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
+  flex: `1`,
   zIndex: `0`,
   margin: `16px 0px 0px 0px`,
 });
@@ -244,12 +248,12 @@ const Productdialogcontain: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   flex: `1`,
-  margin: `0px`,
+  margin: `0px 0px 0px 50px`,
   height: '85vh',
 });
 
-const ProductDialog3: any = styled(ProductDialog)(({ theme }: any) => ({
-  alignSelf: `stretch`,
+const ProductDialog1: any = styled(ProductDialog)(({ theme }: any) => ({
+  width: `1080px`,
   margin: `0px`,
 }));
 
@@ -303,7 +307,11 @@ function ProductCard(props: ProductCardProps): JSX.Element {
         onClose={fns.toggleDialog}
       >
         <Productdialogcontain>
-          <ProductDialog3 open={data.isDialogOpen} onClose={fns.toggleDialog} {...props}/>
+          <ProductDialog1
+            open={data.isDialogOpen}
+            onClose={fns.toggleDialog}
+            {...props}
+          />
         </Productdialogcontain>
       </Dialog>
     </StateDefault>
