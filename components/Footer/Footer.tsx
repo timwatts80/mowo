@@ -55,7 +55,7 @@ const Box2: any = styled('div', {
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: data.currentVariant === 'ScreenMobile' ? `column` : `row`,
+  flexDirection: data.currentVariant === 'Mobile' ? `column` : `row`,
   justifyContent: `center`,
   alignItems: `center`,
   padding: `0px`,
@@ -73,18 +73,18 @@ const LogoSocial: any = styled('div', {
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-end`,
+  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-end`,
   padding:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `8px 10px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `8px 10px`
       : `8px 32px`,
   boxSizing: `border-box`,
-  flex: data.currentVariant === 'ScreenMobile' ? 'unset' : `1`,
+  flex: data.currentVariant === 'Mobile' ? 'unset' : `1`,
   margin: `0px`,
   overflow: `hidden`,
-  alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
+  alignSelf: data.currentVariant === 'Mobile' ? `stretch` : 'unset',
 }));
 
 const LogoContainer: any = styled('div', {
@@ -97,12 +97,12 @@ const LogoContainer: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `center`,
   alignItems: `center`,
-  padding: data.currentVariant === 'ScreenMobile' ? `12px` : `0px 12px`,
+  padding: data.currentVariant === 'Mobile' ? `12px` : `0px 12px`,
   boxSizing: `border-box`,
   width:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? 'unset'
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? 'unset'
       : `264px`,
   margin: `0px`,
@@ -112,15 +112,15 @@ const MowoLogo2: any = styled('img', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   height:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `38.91px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `38.91px`
       : `51px`,
   width:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `200px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `200px`
       : `262px`,
   margin: `0px`,
@@ -136,18 +136,18 @@ const Social: any = styled('div', {
   flexDirection: `row`,
   justifyContent: `space-between`,
   alignItems: `center`,
-  padding: data.currentVariant === 'ScreenTablet' ? `0px 12px` : `0px`,
+  padding: data.currentVariant === 'Tablet' ? `0px 12px` : `0px`,
   boxSizing: `border-box`,
   width:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `224px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `200px`
       : `264px`,
   margin:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `18px 0px 0px 0px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `10px 0px 0px 0px`
       : `24px 0px 0px 0px`,
   overflow: `hidden`,
@@ -334,20 +334,20 @@ const Contact: any = styled('div', {
   isolation: `isolate`,
   flexDirection: `column`,
   justifyContent: `center`,
-  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
+  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
   padding:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `15px 10px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `15px 10px`
       : `15px 30px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  flex: data.currentVariant === 'ScreenMobile' ? 'unset' : `1`,
+  flex: data.currentVariant === 'Mobile' ? 'unset' : `1`,
   margin:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `0px 0px 0px 20px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `20px 0px 0px 0px`
       : `0px 0px 0px 100px`,
   overflow: `hidden`,
@@ -361,7 +361,7 @@ const UpperRow: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
-  justifyContent: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
+  justifyContent: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
@@ -381,9 +381,9 @@ const MowoEhf: any = styled('div', {
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
   fontSize:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `26px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `26px`
       : `30px`,
   letterSpacing: `0px`,
@@ -400,21 +400,21 @@ const LowerRow: any = styled('div', {
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: data.currentVariant === 'ScreenMobile' ? `column` : `row`,
+  flexDirection: data.currentVariant === 'Mobile' ? `column` : `row`,
   justifyContent: `flex-start`,
-  alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
+  alignItems: data.currentVariant === 'Mobile' ? `center` : `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin:
-    data.currentVariant === 'ScreenTablet' ? `12px 0px 0px 0px` : `9px 0px 0px 0px`,
+    data.currentVariant === 'Tablet' ? `12px 0px 0px 0px` : `9px 0px 0px 0px`,
   overflow: `hidden`,
 }));
 
 const Kt5002200820T3546472: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
-  textAlign: data.currentVariant === 'ScreenMobile' ? `center` : `left`,
+  textAlign: data.currentVariant === 'Mobile' ? `center` : `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
@@ -422,9 +422,9 @@ const Kt5002200820T3546472: any = styled('div', {
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
   fontSize:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `16px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `14px`
       : `18px`,
   letterSpacing: `0px`,
@@ -433,9 +433,9 @@ const Kt5002200820T3546472: any = styled('div', {
   textTransform: `none`,
   alignSelf: `stretch`,
   width:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `123px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? 'unset'
       : `138px`,
   margin: `0px`,
@@ -444,7 +444,7 @@ const Kt5002200820T3546472: any = styled('div', {
 const Knarrarvogur4104Reyk: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
-  textAlign: data.currentVariant === 'ScreenMobile' ? `center` : `left`,
+  textAlign: data.currentVariant === 'Mobile' ? `center` : `left`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
   color: `rgba(51, 51, 51, 0.75)`,
@@ -452,9 +452,9 @@ const Knarrarvogur4104Reyk: any = styled('div', {
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
   fontSize:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `16px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? `14px`
       : `18px`,
   letterSpacing: `0px`,
@@ -463,16 +463,18 @@ const Knarrarvogur4104Reyk: any = styled('div', {
   textTransform: `none`,
   alignSelf: `stretch`,
   width:
-    data.currentVariant === 'ScreenTablet'
+    data.currentVariant === 'Tablet'
       ? `106px`
-      : data.currentVariant === 'ScreenMobile'
+      : data.currentVariant === 'Mobile'
       ? 'unset'
       : `120px`,
   margin:
-    data.currentVariant === 'ScreenMobile' ? `4px 0px 0px 0px` : `0px 0px 0px 8px`,
+    data.currentVariant === 'Mobile' ? `4px 0px 0px 0px` : `0px 0px 0px 8px`,
 }));
 
-const Attribution: any = styled('div')({
+const Attribution: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -482,27 +484,37 @@ const Attribution: any = styled('div')({
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
+  alignSelf: data.currentVariant === 'Mobile' ? 'unset' : `stretch`,
   margin: `15px 0px 0px 0px`,
-});
+  width: data.currentVariant === 'Mobile' ? `281.97px` : 'unset',
+}));
 
-const SiteDesignedInFigmaB: any = styled('div', {
+const FooterAttribution: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
-  flexDirection: `row`,
+  flexDirection:
+    data.currentVariant === 'Tablet'
+      ? `column`
+      : data.currentVariant === 'Mobile'
+      ? `column`
+      : `row`,
   justifyContent: `flex-start`,
-  alignItems: `center`,
-  padding: data.currentVariant === 'ScreenMobile' ? `10px` : `0px`,
+  alignItems:
+    data.currentVariant === 'Tablet'
+      ? `center`
+      : data.currentVariant === 'Mobile'
+      ? `center`
+      : `flex-start`,
+  padding: `0px`,
   boxSizing: `border-box`,
-  alignSelf: `stretch`,
   margin: `0px`,
 }));
 
-const SiteDesignedInFigmaB1: any = styled('div', {
+const SiteDesignedIn: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   textAlign: `center`,
@@ -512,36 +524,40 @@ const SiteDesignedInFigmaB1: any = styled('div', {
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `700`,
-  fontSize:
-    data.currentVariant === 'ScreenTablet'
-      ? `14px`
-      : data.currentVariant === 'ScreenMobile'
-      ? `12px`
-      : `16px`,
+  fontSize: `16px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `150%`,
   textTransform: `none`,
-  flex: `1`,
-  margin: `0px`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px`,
 }));
 
-const Frame184: any = styled('div')({
+const Frame187: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+  alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  margin: `4px 0px 0px 0px`,
-});
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
+}));
 
-const FigmaContainer: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const FigmaContainer: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -551,14 +567,12 @@ const FigmaContainer: any = styled('div', {
   alignItems: `center`,
   padding: `0px`,
   boxSizing: `border-box`,
-  width: data.currentVariant === 'ScreenMobile' ? `20px` : `21px`,
+  width: `21px`,
   margin: `0px`,
   overflow: `hidden`,
-}));
+});
 
-const Figma: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Figma: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -569,59 +583,85 @@ const Figma: any = styled('div', {
   padding: `0px`,
   boxSizing: `border-box`,
   height: `21px`,
-  width: data.currentVariant === 'ScreenMobile' ? `20px` : `21px`,
+  width: `21px`,
   margin: `0px`,
   overflow: `hidden`,
-}));
+});
 
-const Vector6: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Vector6: any = styled('img')({
   height: `6.22px`,
-  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
+  width: `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'ScreenMobile' ? `10px` : `11px`,
+  left: `11px`,
   top: `7px`,
-}));
+});
 
-const Vector7: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Vector7: any = styled('img')({
   height: `6.22px`,
-  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
+  width: `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'ScreenMobile' ? `4px` : `5px`,
+  left: `5px`,
   top: `14px`,
-}));
+});
 
-const Vector8: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Vector8: any = styled('img')({
   height: `6.22px`,
-  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
+  width: `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'ScreenMobile' ? `10px` : `11px`,
+  left: `11px`,
   top: `1px`,
-}));
+});
 
-const Vector9: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Vector9: any = styled('img')({
   height: `6.22px`,
-  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
+  width: `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'ScreenMobile' ? `4px` : `5px`,
+  left: `5px`,
   top: `1px`,
-}));
+});
 
-const Vector10: any = styled('img', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+const Vector10: any = styled('img')({
   height: `6.22px`,
-  width: data.currentVariant === 'ScreenMobile' ? `5.93px` : `6.22px`,
+  width: `6.22px`,
   position: `absolute`,
-  left: data.currentVariant === 'ScreenMobile' ? `4px` : `5px`,
+  left: `5px`,
   top: `7px`,
+});
+
+const FigmaBuiltWith: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `16px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 4px`,
+}));
+
+const Frame188: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
 }));
 
 const Questlogocontainer: any = styled('div')({
@@ -636,7 +676,7 @@ const Questlogocontainer: any = styled('div')({
   boxSizing: `border-box`,
   width: `21px`,
   height: `21px`,
-  margin: `0px 0px 0px 20px`,
+  margin: `0px`,
   overflow: `hidden`,
 });
 
@@ -662,6 +702,42 @@ const Layer8: any = styled('img')({
   top: `0px`,
 });
 
+const QuestDeployedWith: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `16px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 4px`,
+}));
+
+const Frame189: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
+}));
+
 const Nextjslogocontainer: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
@@ -674,7 +750,7 @@ const Nextjslogocontainer: any = styled('div')({
   boxSizing: `border-box`,
   width: `21px`,
   height: `21px`,
-  margin: `0px 0px 0px 20px`,
+  margin: `0px`,
   overflow: `hidden`,
 });
 
@@ -683,6 +759,558 @@ const Vector11: any = styled('img')({
   width: `18px`,
   margin: `0px`,
 });
+
+const NextJs: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `16px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 4px`,
+}));
+
+const Frame190: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
+}));
+
+const SiteDesignedIn1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `13.405797004699707px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px`,
+}));
+
+const Frame1871: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px 0px 0px 3px`,
+});
+
+const FigmaContainer1: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `17.6px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const Figma1: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: `17.6px`,
+  width: `17.6px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const Vector12: any = styled('img')({
+  height: `5.21px`,
+  width: `5.21px`,
+  position: `absolute`,
+  left: `9px`,
+  top: `6px`,
+});
+
+const Vector13: any = styled('img')({
+  height: `5.21px`,
+  width: `5.21px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `11px`,
+});
+
+const Vector14: any = styled('img')({
+  height: `5.21px`,
+  width: `5.21px`,
+  position: `absolute`,
+  left: `9px`,
+  top: `1px`,
+});
+
+const Vector15: any = styled('img')({
+  height: `5.21px`,
+  width: `5.21px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `1px`,
+});
+
+const Vector16: any = styled('img')({
+  height: `5.21px`,
+  width: `5.21px`,
+  position: `absolute`,
+  left: `4px`,
+  top: `6px`,
+});
+
+const FigmaBuiltWith1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `13.405797004699707px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 3.3514492511749268px`,
+}));
+
+const Frame191: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
+}));
+
+const Frame1881: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px`,
+});
+
+const Questlogocontainer1: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `17.6px`,
+  height: `17.6px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const QuestLogoTraced1: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: `15.07px`,
+  width: `15.08px`,
+  margin: `0px`,
+});
+
+const Layer81: any = styled('img')({
+  height: `15.07px`,
+  width: `15.08px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const QuestDeployedWith1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `13.405797004699707px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 3.3514492511749268px`,
+}));
+
+const Frame1891: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin: `0px 0px 0px 3px`,
+});
+
+const Nextjslogocontainer1: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `17.6px`,
+  height: `17.6px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const Vector17: any = styled('img')({
+  height: `15.08px`,
+  width: `15.08px`,
+  margin: `0px`,
+});
+
+const NextJs1: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `13.405797004699707px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 3.3514492511749268px`,
+}));
+
+const SiteDesignedIn2: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `10.292926788330078px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `0px`
+      : `0px 0px 0px 4px`,
+}));
+
+const Frame1872: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
+}));
+
+const FigmaContainer2: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `13.51px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const Figma2: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: `13.51px`,
+  width: `13.51px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const Vector18: any = styled('img')({
+  height: `4px`,
+  width: `4px`,
+  position: `absolute`,
+  left: `7px`,
+  top: `5px`,
+});
+
+const Vector19: any = styled('img')({
+  height: `4px`,
+  width: `4px`,
+  position: `absolute`,
+  left: `3px`,
+  top: `9px`,
+});
+
+const Vector20: any = styled('img')({
+  height: `4px`,
+  width: `4px`,
+  position: `absolute`,
+  left: `7px`,
+  top: `1px`,
+});
+
+const Vector21: any = styled('img')({
+  height: `4px`,
+  width: `4px`,
+  position: `absolute`,
+  left: `3px`,
+  top: `1px`,
+});
+
+const Vector22: any = styled('img')({
+  height: `4px`,
+  width: `4px`,
+  position: `absolute`,
+  left: `3px`,
+  top: `5px`,
+});
+
+const FigmaBuiltWith2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `10.292926788330078px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 2.5732316970825195px`,
+}));
+
+const Frame1882: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
+}));
+
+const Questlogocontainer2: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `13.51px`,
+  height: `13.51px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const QuestLogoTraced2: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  height: `11.57px`,
+  width: `11.58px`,
+  margin: `0px`,
+});
+
+const Layer82: any = styled('img')({
+  height: `11.57px`,
+  width: `11.58px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const QuestDeployedWith2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `10.292926788330078px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 2.5732316970825195px`,
+}));
+
+const Frame1892: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  margin:
+    data.currentVariant === 'Tablet'
+      ? `3.3514492511749268px 0px 0px 0px`
+      : data.currentVariant === 'Mobile'
+      ? `2.5732316970825195px 0px 0px 0px`
+      : `0px 0px 0px 4px`,
+}));
+
+const Nextjslogocontainer2: any = styled('div')({
+  borderRadius: `0px`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `column`,
+  justifyContent: `center`,
+  alignItems: `center`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `13.51px`,
+  height: `13.51px`,
+  margin: `0px`,
+  overflow: `hidden`,
+});
+
+const Vector23: any = styled('img')({
+  height: `11.58px`,
+  width: `11.58px`,
+  margin: `0px`,
+});
+
+const NextJs2: any = styled('div')(({ theme }: any) => ({
+  textAlign: `center`,
+  whiteSpace: `pre-wrap`,
+  fontSynthesis: `none`,
+  color: `rgba(51, 51, 51, 0.75)`,
+  fontStyle: `normal`,
+  fontFamily: `Segoe UI`,
+  fontWeight: `700`,
+  fontSize: `10.292926788330078px`,
+  letterSpacing: `0px`,
+  textDecoration: `none`,
+  lineHeight: `150%`,
+  textTransform: `none`,
+  margin: `0px 0px 0px 2.5732316970825195px`,
+}));
 
 const ColorStroke: any = styled('div')({
   borderRadius: `0px`,
@@ -811,64 +1439,212 @@ T. +354 647 2666`}
             </LowerRow>
           </Contact>
         </Box2>
-        <Attribution>
-          <SiteDesignedInFigmaB data={data}>
-            <SiteDesignedInFigmaB1 data={data}>
-              {`Site designed in Figma, built with Quest, deployed with Next.JS`}
-            </SiteDesignedInFigmaB1>
-          </SiteDesignedInFigmaB>
-          <Frame184>
-            <FigmaContainer data={data}>
-              <Figma data={data}>
-                <Vector6
-                  data={data}
-                  src={`assets/images/Footer_Vector_6.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector7
-                  data={data}
-                  src={`assets/images/Footer_Vector_7.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector8
-                  data={data}
-                  src={`assets/images/Footer_Vector_8.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector9
-                  data={data}
-                  src={`assets/images/Footer_Vector_9.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-                <Vector10
-                  data={data}
-                  src={`assets/images/Footer_Vector_10.png`}
-                  loading="lazy"
-                  alt={'Vector'}
-                />
-              </Figma>
-            </FigmaContainer>
-            <Questlogocontainer>
-              <QuestLogoTraced>
-                <Layer8
-                  src={`assets/images/Footer_Layer_8.png`}
-                  loading="lazy"
-                  alt={'Layer 8'}
-                />
-              </QuestLogoTraced>
-            </Questlogocontainer>
-            <Nextjslogocontainer>
-              <Vector11
-                src={`assets/images/Footer_Vector_11.png`}
-                loading="lazy"
-                alt={'Vector'}
-              />
-            </Nextjslogocontainer>
-          </Frame184>
+        <Attribution data={data}>
+          <FooterAttribution data={data}>
+            {!(data.currentVariant === 'Tablet') &&
+              !(data.currentVariant === 'Mobile') && (
+                <SiteDesignedIn data={data}>
+                  {`Site designed in `}
+                </SiteDesignedIn>
+              )}
+            {!(data.currentVariant === 'Tablet') &&
+              !(data.currentVariant === 'Mobile') && (
+                <Frame187 data={data}>
+                  <FigmaContainer>
+                    <Figma>
+                      <Vector6
+                        src={`assets/images/Footer_Vector_6.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector7
+                        src={`assets/images/Footer_Vector_7.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector8
+                        src={`assets/images/Footer_Vector_8.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector9
+                        src={`assets/images/Footer_Vector_9.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector10
+                        src={`assets/images/Footer_Vector_10.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                    </Figma>
+                  </FigmaContainer>
+                  <FigmaBuiltWith>{`Figma, built with `}</FigmaBuiltWith>
+                </Frame187>
+              )}
+            {!(data.currentVariant === 'Tablet') &&
+              !(data.currentVariant === 'Mobile') && (
+                <Frame188 data={data}>
+                  <Questlogocontainer>
+                    <QuestLogoTraced>
+                      <Layer8
+                        src={`assets/images/Footer_Layer_8.png`}
+                        loading="lazy"
+                        alt={'Layer 8'}
+                      />
+                    </QuestLogoTraced>
+                  </Questlogocontainer>
+                  <QuestDeployedWith>
+                    {`Quest, deployed with `}
+                  </QuestDeployedWith>
+                </Frame188>
+              )}
+            {!(data.currentVariant === 'Tablet') &&
+              !(data.currentVariant === 'Mobile') && (
+                <Frame189 data={data}>
+                  <Nextjslogocontainer>
+                    <Vector11
+                      src={`assets/images/Footer_Vector_11.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                  </Nextjslogocontainer>
+                  <NextJs>{`Next.JS`}</NextJs>
+                </Frame189>
+              )}
+            {data.currentVariant === 'Tablet' && (
+              <Frame190 data={data}>
+                <SiteDesignedIn1>{`Site designed in `}</SiteDesignedIn1>
+                <Frame1871>
+                  <FigmaContainer1>
+                    <Figma1>
+                      <Vector12
+                        src={`assets/images/Footer_Vector_12.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector13
+                        src={`assets/images/Footer_Vector_13.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector14
+                        src={`assets/images/Footer_Vector_14.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector15
+                        src={`assets/images/Footer_Vector_15.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                      <Vector16
+                        src={`assets/images/Footer_Vector_16.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                    </Figma1>
+                  </FigmaContainer1>
+                  <FigmaBuiltWith1>{`Figma, built with `}</FigmaBuiltWith1>
+                </Frame1871>
+              </Frame190>
+            )}
+            {data.currentVariant === 'Tablet' && (
+              <Frame191 data={data}>
+                <Frame1881>
+                  <Questlogocontainer1>
+                    <QuestLogoTraced1>
+                      <Layer81
+                        src={`assets/images/Footer_Layer_8_1.png`}
+                        loading="lazy"
+                        alt={'Layer 8'}
+                      />
+                    </QuestLogoTraced1>
+                  </Questlogocontainer1>
+                  <QuestDeployedWith1>
+                    {`Quest, deployed with `}
+                  </QuestDeployedWith1>
+                </Frame1881>
+                <Frame1891>
+                  <Nextjslogocontainer1>
+                    <Vector17
+                      src={`assets/images/Footer_Vector_17.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                  </Nextjslogocontainer1>
+                  <NextJs1>{`Next.JS`}</NextJs1>
+                </Frame1891>
+              </Frame191>
+            )}
+            {data.currentVariant === 'Mobile' && (
+              <SiteDesignedIn2 data={data}>
+                {`Site designed in `}
+              </SiteDesignedIn2>
+            )}
+            {data.currentVariant === 'Mobile' && (
+              <Frame1872 data={data}>
+                <FigmaContainer2>
+                  <Figma2>
+                    <Vector18
+                      src={`assets/images/Footer_Vector_18.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                    <Vector19
+                      src={`assets/images/Footer_Vector_19.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                    <Vector20
+                      src={`assets/images/Footer_Vector_20.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                    <Vector21
+                      src={`assets/images/Footer_Vector_21.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                    <Vector22
+                      src={`assets/images/Footer_Vector_22.png`}
+                      loading="lazy"
+                      alt={'Vector'}
+                    />
+                  </Figma2>
+                </FigmaContainer2>
+                <FigmaBuiltWith2>{`Figma, built with `}</FigmaBuiltWith2>
+              </Frame1872>
+            )}
+            {data.currentVariant === 'Mobile' && (
+              <Frame1882 data={data}>
+                <Questlogocontainer2>
+                  <QuestLogoTraced2>
+                    <Layer82
+                      src={`assets/images/Footer_Layer_8_2.png`}
+                      loading="lazy"
+                      alt={'Layer 8'}
+                    />
+                  </QuestLogoTraced2>
+                </Questlogocontainer2>
+                <QuestDeployedWith2>
+                  {`Quest, deployed with `}
+                </QuestDeployedWith2>
+              </Frame1882>
+            )}
+            {data.currentVariant === 'Mobile' && (
+              <Frame1892 data={data}>
+                <Nextjslogocontainer2>
+                  <Vector23
+                    src={`assets/images/Footer_Vector_23.png`}
+                    loading="lazy"
+                    alt={'Vector'}
+                  />
+                </Nextjslogocontainer2>
+                <NextJs2>{`Next.JS`}</NextJs2>
+              </Frame1892>
+            )}
+          </FooterAttribution>
         </Attribution>
       </Box1>
       <ColorStroke>
