@@ -17,9 +17,9 @@ import { styled } from '@mui/material/styles';
 import Contentcontainer from 'components/Contentcontainer/Contentcontainer';
 import { ProductDialogProps } from 'types';
 
-const ProductDialog1: any = styled('div')(({ theme }: any) => ({
+const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
-  borderRadius: `0px`,
+  borderRadius: `8px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -44,13 +44,12 @@ const Pagecontainer: any = styled('div')({
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
-  width: '100%',
 });
 
 const Close: any = styled('div')({
   borderRadius: `0px`,
   display: `flex`,
-  position: `sticky`,
+  position: `relative`,
   isolation: `isolate`,
   flexDirection: `row`,
   justifyContent: `flex-end`,
@@ -60,8 +59,6 @@ const Close: any = styled('div')({
   alignSelf: `stretch`,
   height: `52px`,
   margin: `0px`,
-  top: `0`,
-  zIndex: `3000`,
 });
 
 const Icon1: any = styled('div')({
@@ -105,13 +102,14 @@ const Close1: any = styled('img')({
 });
 
 const Contentcontainer1: any = styled(Contentcontainer)(({ theme }: any) => ({
+  alignSelf: `stretch`,
   margin: `0px`,
 }));
 
 function ProductDialog(props: ProductDialogProps): JSX.Element {
   return (
     props.open && (
-      <ProductDialog1 className={props.className}>
+      <ScreenDesktop className={props.className}>
         <Pagecontainer>
           <Close>
             <Icon1 onClick={props.onClose}>
@@ -124,9 +122,9 @@ function ProductDialog(props: ProductDialogProps): JSX.Element {
               </IconX>
             </Icon1>
           </Close>
-          <Contentcontainer1 {...props} />
+          <Contentcontainer1 />
         </Pagecontainer>
-      </ProductDialog1>
+      </ScreenDesktop>
     )
   );
 }
