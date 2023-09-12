@@ -143,7 +143,7 @@ const CaseContent: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: `flex-start`,
+  justifyContent: `space-between`,
   alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding:
     data.currentVariant === 'ScreenTablet'
