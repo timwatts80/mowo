@@ -29,7 +29,7 @@ const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
-  height: '85vh',
+  height: 'auto',
 }));
 
 const Pagecontainer: any = styled('div')({
