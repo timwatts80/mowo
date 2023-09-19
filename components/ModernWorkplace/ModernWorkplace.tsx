@@ -882,12 +882,7 @@ const MowoConvergesThePowe2: any = styled('div', {
   fontStyle: `normal`,
   fontFamily: `Segoe UI`,
   fontWeight: `400`,
-  fontSize: 
-    data.currentVariant === 'ScreenTablet'
-    ? theme.typography['Typography']['H5'].fontSize
-    : data.currentVariant === 'ScreenMobile'
-    ? theme.typography['Typography']['H6'].fontSize
-    : theme.typography['Typography']['H5'].fontSize,
+  fontSize: `20px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
@@ -1278,7 +1273,7 @@ function ModernWorkplace(props: ModernWorkplaceProps): JSX.Element {
               <Mediacontainer>
                 <MediacontainerIFrame
                   src={
-                    'https://www.youtube.com/embed/Z9bTeU3VwIw?autoplay=1&controls=0&mute=1&playsinline=1&loop=0'
+                    'https://www.youtube.com/embed/Z9bTeU3VwIw?autoplay=1&controls=1&mute=1&playsinline=1&loop=0'
                   }
                   allow="autoplay; fullscreen; picture-in-picture"
                 ></MediacontainerIFrame>
