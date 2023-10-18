@@ -13,6 +13,12 @@
  *
  **********************************************************************/
 
+export interface ProductSectionSurfaceHubDeviceProps {
+  className?: any;
+  id?: any;
+  index: number;
+}
+
 export interface Link1Props {
   className?: any;
   menuLinks: any;
@@ -27,12 +33,6 @@ export interface ModernWorkplaceProps {
 
 export interface FooterProps {
   className?: any;
-}
-
-export interface ProductSectionSurfaceHubDeviceProps {
-  className?: any;
-  id?: any;
-  index: number;
 }
 
 export interface ContactUsProps {

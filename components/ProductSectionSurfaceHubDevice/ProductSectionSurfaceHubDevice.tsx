@@ -52,16 +52,18 @@ const Rows: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `60px 0px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
   overflow: `hidden`,
+  justifyContent: 'center',
 });
 
-const Intro: any = styled('div')({
+const Intro: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ data }: any) => ({
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
@@ -73,7 +75,13 @@ const Intro: any = styled('div')({
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   margin: `0px`,
-});
+  maxWidth:
+    data.currentVariant === 'ScreenTablet'
+      ? `unset`
+      : data.currentVariant === 'ScreenMobile'
+      ? `unset`
+      : `1080px`,
+}));
 
 const SurfaceInnovationSpan1: any = styled('span', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
@@ -239,7 +247,7 @@ function ProductSectionSurfaceHubDevice(
   return (
     <ScreenDesktop className={props.className} data={data}>
       <Rows>
-        <Intro>
+        <Intro data={data}>
           <SurfaceInnovation data={data}>
             <SurfaceInnovationSpan1
               data={data}
