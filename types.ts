@@ -15,6 +15,8 @@
 
 export interface HubEssentialsProps {
   className?: any;
+  id?: any;
+  index: number;
 };
 
 export interface ProductSectionSurfaceHubDeviceProps {

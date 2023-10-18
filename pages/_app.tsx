@@ -13,6 +13,7 @@ import Navbar from 'components/Navbar/Navbar'
 import ProductCardSample from 'components/ProductCardSample/ProductCardSample'
 import Contentcontainer from 'components/Contentcontainer/Contentcontainer'
 import SectionHeader from 'components/SectionHeader/SectionHeader'
+import HubEssentials from 'components/HubEssentials/HubEssentials'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div id="products"></div>
       <ProductSectionSurfaceHubDevice index={0}/>
       <ProductSectionSurfaceHubDevice index={1}/>
-      <ProductSectionSurfaceHubDevice index={2}/>
+      <HubEssentials index={2}/>
       <div id="cases"></div>
       <CustomerCases />
       <div id="contact"></div>
