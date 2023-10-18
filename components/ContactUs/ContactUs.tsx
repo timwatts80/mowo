@@ -22,6 +22,7 @@ const Desktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
   backgroundColor: theme.palette['Background']['Background'],
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -65,6 +66,7 @@ const Form1: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   backgroundColor: `rgba(255, 255, 255, 1)`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -154,6 +156,7 @@ const ContactUs1: any = styled('div')({
 });
 
 const Frame3: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -167,6 +170,7 @@ const Frame3: any = styled('div')({
 });
 
 const Row1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -190,6 +194,7 @@ const TextFieldStandard1: any = styled(TextField)({
 });
 
 const Row2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -218,6 +223,7 @@ const TextFieldStandard4: any = styled(TextField)({
 });
 
 const Btm: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -238,6 +244,7 @@ const ButtonContained: any = styled(Button)({
 const Frame141: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -281,6 +288,7 @@ const ÞaðErLíkaSpurningUmA: any = styled('div')({
 const Frame139: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -325,6 +333,7 @@ const Form11: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   backgroundColor: `rgba(255, 255, 255, 1)`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -414,6 +423,7 @@ const ContactUs2: any = styled('div')({
 });
 
 const Frame31: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -427,6 +437,7 @@ const Frame31: any = styled('div')({
 });
 
 const Row11: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -450,6 +461,7 @@ const TextFieldStandard6: any = styled(TextField)({
 });
 
 const Row21: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -478,6 +490,7 @@ const TextFieldStandard9: any = styled(TextField)({
 });
 
 const Btm1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -498,6 +511,7 @@ const ButtonContained1: any = styled(Button)({
 const Frame140: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -542,6 +556,7 @@ const Form12: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
   backgroundColor: `rgba(255, 255, 255, 1)`,
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -656,6 +671,7 @@ const TextFieldStandard14: any = styled(TextField)({
 });
 
 const Btm2: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,

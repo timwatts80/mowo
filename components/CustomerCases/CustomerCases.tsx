@@ -16,7 +16,6 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { CustomerCasesProps } from 'types';
 import useCustomerCases from 'components/CustomerCases/useCustomerCases';
-import ClientLogoCarousel from 'components/ClientLogoCarousel/ClientLogoCarousel';
 
 const ScreenDesktop: any = styled('div')(({ theme }: any) => ({
   backgroundColor: `rgba(248, 248, 248, 1)`,
@@ -48,8 +47,8 @@ const Rows: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `60px 45px`
       : data.currentVariant === 'ScreenMobile'
-        ? `16px`
-        : `48px 60px`,
+      ? `30px`
+      : `48px 60px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
@@ -59,7 +58,7 @@ const Rows: any = styled('div', {
 
 const EmpoweringSuccessSto: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+})(({ data }: any) => ({
   textAlign: `center`,
   whiteSpace: `pre-wrap`,
   fontSynthesis: `none`,
@@ -69,10 +68,10 @@ const EmpoweringSuccessSto: any = styled('div', {
   fontWeight: `700`,
   fontSize:
     data.currentVariant === 'ScreenTablet'
-    ? theme.typography['Typography']['H3'].fontSize
-    : data.currentVariant === 'ScreenMobile'
-    ? theme.typography['Typography']['H4'].fontSize
-    : theme.typography['Typography']['H2'].fontSize,
+      ? `48px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `39px`
+      : `56px`,
   letterSpacing: `-0.5px`,
   textDecoration: `none`,
   lineHeight: `100%`,
@@ -93,10 +92,10 @@ const RevolutionizingTheWo: any = styled('div', {
   fontWeight: `400`,
   fontSize:
     data.currentVariant === 'ScreenTablet'
-    ? theme.typography['Typography']['H5'].fontSize
-    : data.currentVariant === 'ScreenMobile'
-    ? theme.typography['Typography']['H6'].fontSize
-    : theme.typography['Typography']['H5'].fontSize,
+      ? `23px`
+      : data.currentVariant === 'ScreenMobile'
+      ? `20px`
+      : `27px`,
   letterSpacing: `0px`,
   textDecoration: `none`,
   lineHeight: `133.39999914169312%`,
@@ -128,8 +127,8 @@ const ClientSlider: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `stretch`
       : data.currentVariant === 'ScreenMobile'
-        ? `stretch`
-        : 'unset',
+      ? `stretch`
+      : 'unset',
 }));
 
 const Frame157: any = styled('div', {
@@ -257,8 +256,8 @@ const CaseBackground: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `stretch`
       : data.currentVariant === 'ScreenMobile'
-        ? `stretch`
-        : 'unset',
+      ? `stretch`
+      : 'unset',
   height: data.currentVariant === 'ScreenMobile' ? `216px` : 'unset',
 }));
 
@@ -287,14 +286,14 @@ const CaseContent: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `296px`
       : data.currentVariant === 'ScreenMobile'
-        ? 'unset'
-        : `678px`,
+      ? 'unset'
+      : `678px`,
   top:
     data.currentVariant === 'ScreenTablet'
       ? `117px`
       : data.currentVariant === 'ScreenMobile'
-        ? 'unset'
-        : `198px`,
+      ? 'unset'
+      : `198px`,
   overflow: `hidden`,
   alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
   margin: data.currentVariant === 'ScreenMobile' ? `0px` : 'unset',
@@ -316,15 +315,15 @@ const CaseText: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? 'unset'
       : data.currentVariant === 'ScreenMobile'
-        ? 'unset'
-        : `552px`,
+      ? 'unset'
+      : `552px`,
   margin: `0px`,
   alignSelf:
     data.currentVariant === 'ScreenTablet'
       ? `stretch`
       : data.currentVariant === 'ScreenMobile'
-        ? `stretch`
-        : 'unset',
+      ? `stretch`
+      : 'unset',
 }));
 
 const ReykjavikUniversity: any = styled('div')(({ theme }: any) => ({
@@ -460,13 +459,56 @@ function CustomerCases(props: CustomerCasesProps): JSX.Element {
       <Rows data={data}>
         <EmpoweringSuccessSto data={data}>
           {data.currentVariant === 'ScreenMobile'
-            ? `Empowering Success Stories`
+            ? `Empowering
+Success Stories`
             : `Empowering Success Stories`}
         </EmpoweringSuccessSto>
         <RevolutionizingTheWo data={data}>
           {`Revolutionizing the workplace with Microsoft Surface products, we deliver tailored solutions and training to elevate efficiency, inspire collaboration, and drive success for businesses of all sizes.`}
         </RevolutionizingTheWo>
-        <ClientLogoCarousel />
+        <ClientSlider data={data}>
+          <Frame157 data={data}>
+            <CustomerCard>
+              <Logo></Logo>
+            </CustomerCard>
+            <CustomerCard1 data={data}>
+              <Logo1></Logo1>
+            </CustomerCard1>
+          </Frame157>
+          <ClientCaseStudySlide data={data}>
+            <CaseBackground data={data}>
+              <Image1
+                src={`assets/images/CustomerCases_image.png`}
+                loading="lazy"
+                alt={'image'}
+              />
+            </CaseBackground>
+            <CaseContent data={data}>
+              <CaseText data={data}>
+                <ReykjavikUniversity>
+                  {`Reykjavik University`}
+                </ReykjavikUniversity>
+                <WithMicrosoftSurface>
+                  {`With Microsoft Surface Studio devices in all classrooms at Reykjavík University the organization has taken a digital leap into the future. Teachers are integrating new tools and techniques in their teaching that resonate with the 21st century skills.`}
+                </WithMicrosoftSurface>
+              </CaseText>
+              <ButtonContained data={data}>
+                <Base>
+                  <MaskedIcon>
+                    <DownloadIcon>
+                      <Vector
+                        src={`assets/images/CustomerCases_Vector.png`}
+                        loading="lazy"
+                        alt={'Vector'}
+                      />
+                    </DownloadIcon>
+                  </MaskedIcon>
+                  <Button1>{`Download customer case`}</Button1>
+                </Base>
+              </ButtonContained>
+            </CaseContent>
+          </ClientCaseStudySlide>
+        </ClientSlider>
       </Rows>
     </ScreenDesktop>
   );

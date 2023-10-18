@@ -16,14 +16,14 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import Link1 from 'components/Link1/Link1';
 import { MenulinklistProps } from 'types';
-import useMenulinklist from 'components/Menulinklist/useMenulinklist';
 
 const Menulinklist1: any = styled('div')({
+  borderRadius: `0px`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: `400px`,
   justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `0px`,
@@ -33,18 +33,14 @@ const Menulinklist1: any = styled('div')({
 
 const Link2: any = styled(Link1)(({ theme }: any) => ({
   alignSelf: `stretch`,
+  height: `42px`,
   margin: `0px`,
 }));
 
 function Menulinklist(props: MenulinklistProps): JSX.Element {
-  const { data } = useMenulinklist();
-
   return (
-    <Menulinklist1 className={props.className} {...props}>
-      {data.menuLinks &&
-        data.menuLinks.map((menuLink: any, index: number) => {
-          return <Link2 key={index} href={menuLink.url} menuLink={menuLink} ></Link2>;
-        })}
+    <Menulinklist1 className={props.className}>
+      <Link2 {...props} />
     </Menulinklist1>
   );
 }

@@ -22,7 +22,7 @@ import useHeader from 'components/Header/useHeader';
 const ScreenDesktop: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ data }: any) => ({
-  backgroundColor: `rgba(255, 255, 255, 1.0)`,
+  backgroundColor: `rgba(255, 255, 255, 1)`,
   borderRadius: `0px`,
   display: `flex`,
   position: `relative`,

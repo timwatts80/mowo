@@ -4,158 +4,144 @@ import { createTheme } from '@mui/material/styles';
 
 import SvgIcon from '@mui/material/SvgIcon';
 
-import IconAlert from './public/assets/images/_IconAlert_1.svg';
-import IconAlert1 from './public/assets/images/_IconAlert_1.svg';
 import IconInfo from './public/assets/images/_IconInfo.svg';
+import IconAlert from './public/assets/images/_IconAlert_1.svg';
+import IconInfo1 from './public/assets/images/_IconInfo.svg';
 import IconSuccess from './public/assets/images/_IconSuccess.svg';
 import IconUnchecked from './public/assets/images/_IconUnchecked.svg';
 import IconChecked from './public/assets/images/_IconChecked.svg';
 import IconMixed from './public/assets/images/_IconMixed.svg';
 
-const lightGlobalTheme: any = createTheme({
+const darkGlobalTheme: any = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
     primary: {
-      main: 'rgba(242, 80, 34, 1)',
-      contrastText: 'rgba(255, 255, 255, 1)',
+      main: 'rgba(208, 207, 246, 1)',
+      contrastText: 'rgba(0, 0, 0, 0.9)',
     },
     secondary: {
-      main: 'rgba(0, 164, 239, 1)',
-      contrastText: 'rgba(255, 255, 255, 1)',
+      main: 'rgba(194, 238, 252, 1)',
+      contrastText: 'rgba(0, 0, 0, 0.9)',
     },
     error: {
-      main: 'rgba(242, 80, 34, 1)',
-      contrastText: 'rgba(255, 255, 255, 1)',
+      main: 'rgba(249, 206, 219, 1)',
+      contrastText: 'rgba(0, 0, 0, 0.9)',
     },
     warning: {
-      main: 'rgba(255, 185, 0, 1)',
-      contrastText: 'rgba(255, 255, 255, 1)',
+      main: 'rgba(251, 220, 191, 1)',
+      contrastText: 'rgba(0, 0, 0, 0.9)',
     },
     success: {
-      main: 'rgba(127, 186, 0, 1)',
-      contrastText: 'rgba(255, 255, 255, 1)',
+      main: 'rgba(205, 239, 208, 1)',
+      contrastText: 'rgba(0, 0, 0, 0.9)',
     },
     info: {
-      main: 'rgba(51, 51, 51, 1)',
-      contrastText: 'rgba(255, 255, 255, 1)',
+      main: 'rgba(205, 232, 252, 1)',
+      contrastText: 'rgba(0, 0, 0, 0.9)',
     },
     text: {
-      primary: 'rgba(0, 0, 0, 1)',
-      secondary: 'rgba(85, 85, 85, 1)',
-      disabled: 'rgba(176, 176, 176, 1)',
+      primary: 'rgba(255, 255, 255, 1)',
+      secondary: 'rgba(207, 207, 207, 1)',
+      disabled: 'rgba(175, 175, 175, 1)',
     },
     action: {
-      active: 'rgba(0, 0, 0, 0.54)',
-      selected: 'rgba(0, 0, 0, 0.08)',
-      focus: 'rgba(0, 0, 0, 0.12)',
+      active: 'rgba(255, 255, 255, 0.54)',
+      selected: 'rgba(255, 255, 255, 0.08)',
+      focus: 'rgba(255, 255, 255, 0.12)',
     },
     Primary: {
-      Main: 'rgba(242, 80, 34, 1)',
-      Contrast: 'rgba(255, 255, 255, 1)',
+      Main: 'rgba(208, 207, 246, 1)',
+      Contrast: 'rgba(0, 0, 0, 0.9)',
       Shades: {
-        '4p': 'rgba(242, 80, 34, 0.04)',
-        '8p': 'rgba(242, 80, 34, 0.08)',
-        '12p': 'rgba(242, 80, 34, 0.12)',
-        '30p': 'rgba(242, 80, 34, 0.3)',
-        '50p': 'rgba(242, 80, 34, 0.5)',
+        '4p': 'rgba(208, 207, 246, 0.04)',
+        '8p': 'rgba(208, 207, 246, 0.08)',
+        '12p': 'rgba(208, 207, 246, 0.12)',
+        '30p': 'rgba(208, 207, 246, 0.3)',
+        '50p': 'rgba(208, 207, 246, 0.5)',
       },
     },
     Secondary: {
-      Main: 'rgba(0, 164, 239, 1)',
-      Contrast: 'rgba(255, 255, 255, 1)',
+      Main: 'rgba(194, 238, 252, 1)',
+      Contrast: 'rgba(0, 0, 0, 0.9)',
       Shades: {
-        '4p': 'rgba(0, 164, 239, 0.04)',
-        '8p': 'rgba(0, 164, 239, 0.08)',
-        '12p': 'rgba(0, 164, 239, 0.12)',
-        '30p': 'rgba(0, 164, 239, 0.3)',
-        '50p': 'rgba(0, 164, 239, 0.5)',
+        '4p': 'rgba(194, 238, 252, 0.04)',
+        '8p': 'rgba(194, 238, 252, 0.08)',
+        '12p': 'rgba(194, 238, 252, 0.12)',
+        '30p': 'rgba(194, 238, 252, 0.3)',
+        '50p': 'rgba(194, 238, 252, 0.5)',
       },
     },
     Error: {
-      Main: 'rgba(242, 80, 34, 1)',
-      Contrast: 'rgba(255, 255, 255, 1)',
+      Main: 'rgba(249, 206, 219, 1)',
+      Contrast: 'rgba(0, 0, 0, 0.9)',
       Shades: {
-        '4p': 'rgba(233, 78, 124, 0.04)',
-        '8p': 'rgba(233, 78, 124, 0.08)',
-        '12p': 'rgba(233, 78, 124, 0.12)',
-        '30p': 'rgba(233, 78, 124, 0.3)',
-        '50p': 'rgba(233, 78, 124, 0.5)',
+        '4p': 'rgba(249, 206, 219, 0.04)',
+        '8p': 'rgba(249, 206, 219, 0.08)',
+        '12p': 'rgba(249, 206, 219, 0.12)',
+        '30p': 'rgba(249, 206, 219, 0.3)',
+        '50p': 'rgba(249, 206, 219, 0.5)',
       },
     },
     Warning: {
-      Main: 'rgba(255, 185, 0, 1)',
-      Contrast: 'rgba(255, 255, 255, 1)',
+      Main: 'rgba(251, 220, 191, 1)',
+      Contrast: 'rgba(0, 0, 0, 0.9)',
       Shades: {
-        '4p': 'rgba(255, 185, 0, 0.04)',
-        '8p': 'rgba(255, 185, 0, 0.08)',
-        '12p': 'rgba(255, 185, 0, 0.12)',
-        '30p': 'rgba(255, 185, 0, 0.3)',
-        '50p': 'rgba(255, 185, 0, 0.5)',
+        '4p': 'rgba(251, 220, 191, 0.04)',
+        '8p': 'rgba(251, 220, 191, 0.08)',
+        '12p': 'rgba(251, 220, 191, 0.12)',
+        '30p': 'rgba(251, 220, 191, 0.3)',
+        '50p': 'rgba(251, 220, 191, 0.5)',
       },
     },
     Info: {
-      Main: 'rgba(51, 51, 51, 1)',
-      Contrast: 'rgba(255, 255, 255, 1)',
+      Main: 'rgba(205, 232, 252, 1)',
+      Contrast: 'rgba(0, 0, 0, 0.9)',
       Shades: {
-        '4p': 'rgba(83, 177, 245, 0.04)',
-        '8p': 'rgba(83, 177, 245, 0.08)',
-        '12p': 'rgba(83, 177, 245, 0.12)',
-        '30p': 'rgba(83, 177, 245, 0.3)',
-        '50p': 'rgba(83, 177, 245, 0.5)',
+        '4p': 'rgba(205, 232, 252, 0.04)',
+        '8p': 'rgba(205, 232, 252, 0.08)',
+        '12p': 'rgba(205, 232, 252, 0.12)',
+        '30p': 'rgba(205, 232, 252, 0.3)',
+        '50p': 'rgba(205, 232, 252, 0.5)',
       },
     },
     Success: {
-      Main: 'rgba(127, 186, 0, 1)',
-      Contrast: 'rgba(255, 255, 255, 1)',
+      Main: 'rgba(205, 239, 208, 1)',
+      Contrast: 'rgba(0, 0, 0, 0.9)',
       Shades: {
-        '4p': 'rgba(127, 186, 0, 0.04)',
-        '8p': 'rgba(127, 186, 0, 0.08)',
-        '12p': 'rgba(127, 186, 0, 0.12)',
-        '30p': 'rgba(127, 186, 0, 0.3)',
-        '50p': 'rgba(127, 186, 0, 0.5)',
+        '4p': 'rgba(205, 239, 208, 0.04)',
+        '8p': 'rgba(205, 239, 208, 0.08)',
+        '12p': 'rgba(205, 239, 208, 0.12)',
+        '30p': 'rgba(205, 239, 208, 0.3)',
+        '50p': 'rgba(205, 239, 208, 0.5)',
       },
     },
     Text: {
-      Primary: 'rgba(0, 0, 0, 1)',
-      Secondary: 'rgba(85, 85, 85, 1)',
-      Disabled: 'rgba(176, 176, 176, 1)',
+      Primary: 'rgba(255, 255, 255, 1)',
+      Secondary: 'rgba(207, 207, 207, 1)',
+      Disabled: 'rgba(175, 175, 175, 1)',
     },
     Action: {
-      'Active (54p)': 'rgba(0, 0, 0, 0.54)',
-      Hover: 'rgba(0, 0, 0, 0.04)',
-      'Selected (8p)': 'rgba(0, 0, 0, 0.08)',
-      Disabled: 'rgba(0, 0, 0, 0.26)',
-      'Disabled Background': 'rgba(0, 0, 0, 0.12)',
-      'Focus (12p)': 'rgba(0, 0, 0, 0.12)',
+      'Active (54p)': 'rgba(255, 255, 255, 0.54)',
+      Hover: 'rgba(255, 255, 255, 0.16)',
+      'Selected (8p)': 'rgba(255, 255, 255, 0.08)',
+      Disabled: 'rgba(255, 255, 255, 0.4)',
+      'Disabled Background': 'rgba(255, 255, 255, 0.22)',
+      'Focus (12p)': 'rgba(255, 255, 255, 0.12)',
     },
     Background: {
-      Background: 'rgba(254, 254, 254, 1)',
-      Paper: 'rgba(255, 255, 255, 1)',
+      Background: 'rgba(18, 18, 18, 1)',
+      Paper: {},
     },
     Other: {
-      Divider: 'rgba(224, 224, 224, 1)',
-      'Border (23p)': 'rgba(0, 0, 0, 0.23)',
-      'Backdrop Overlay': 'rgba(0, 0, 0, 0.5)',
-      'Standard Input Line': 'rgba(0, 0, 0, 0.42)',
-      'Filled Input Background': 'rgba(0, 0, 0, 0.1)',
-      Snackbar: 'rgba(50, 50, 50, 1)',
-      Tooltip: 'rgba(44, 44, 44, 1)',
-      'Rating Active': 'rgba(245, 196, 21, 1)',
-      'focus-ring-color': 'rgba(87, 54, 255, 1)',
-    },
-    MOWO: {
-      'black-100': 'rgba(51, 51, 51, 1)',
-      'black-75': 'rgba(51, 51, 51, 0.75)',
-      'grey-95': 'rgba(241, 241, 241, 0.95)',
-      'light-grey-100': 'rgba(248, 248, 248, 1)',
-      'white-100': 'rgba(255, 255, 255, 1)',
-      'white-75': 'rgba(255, 255, 255, 0.75)',
-    },
-    Microsoft: {
-      blue: 'rgba(0, 164, 239, 1)',
-      green: 'rgba(127, 186, 0, 1)',
-      red: 'rgba(242, 80, 34, 1)',
-      yellow: 'rgba(255, 185, 0, 1)',
+      Divider: 'rgba(255, 255, 255, 0.15)',
+      'Border (23p)': 'rgba(255, 255, 255, 0.23)',
+      'Backdrop Overlay': 'rgba(255, 255, 255, 0.5)',
+      'Standard Input Line': 'rgba(255, 255, 255, 0.42)',
+      'Filled Input Background': 'rgba(255, 255, 255, 0.1)',
+      Snackbar: 'rgba(215, 215, 215, 1)',
+      Tooltip: 'rgba(228, 228, 228, 1)',
+      'Rating Active': 'rgba(252, 243, 198, 1)',
+      'focus-ring-color': 'rgba(206, 196, 254, 1)',
     },
     Common: {
       Black: {
@@ -524,7 +510,7 @@ const lightGlobalTheme: any = createTheme({
   },
 } as any);
 
-const lightQuestTheme = createTheme(
+const darkQuestTheme = createTheme(
   {
     components: {
       MuiButtonBase: {
@@ -535,27 +521,27 @@ const lightQuestTheme = createTheme(
       MuiAlert: {
         defaultProps: {
           iconMapping: {
-            error: <SvgIcon component={IconAlert} />,
-            warning: <SvgIcon component={IconAlert1} />,
-            info: <SvgIcon component={IconInfo} />,
+            error: <SvgIcon component={IconInfo} />,
+            warning: <SvgIcon component={IconAlert} />,
+            info: <SvgIcon component={IconInfo1} />,
             success: <SvgIcon component={IconSuccess} />,
           },
         },
         styleOverrides: {
           filledError: {
-            backgroundColor: lightGlobalTheme.palette['Error']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Error']['Main'],
             borderRadius: `4px`,
           },
           filledWarning: {
-            backgroundColor: lightGlobalTheme.palette['Warning']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Warning']['Main'],
             borderRadius: `4px`,
           },
           filledInfo: {
-            backgroundColor: lightGlobalTheme.palette['Info']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Info']['Main'],
             borderRadius: `4px`,
           },
           filledSuccess: {
-            backgroundColor: lightGlobalTheme.palette['Success']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Success']['Main'],
             borderRadius: `4px`,
           },
         },
@@ -568,30 +554,30 @@ const lightQuestTheme = createTheme(
           square: {},
           circular: {},
           colorDefault: {
-            color: lightGlobalTheme.palette['Text']['Secondary'],
+            color: darkGlobalTheme.palette['Text']['Secondary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Avatar Initials']
+              darkGlobalTheme.typography['Components']['Avatar Initials']
                 .textTransform,
           },
         },
@@ -614,93 +600,93 @@ const lightQuestTheme = createTheme(
             height: `30px`,
           },
           containedPrimary: {
-            backgroundColor: lightGlobalTheme.palette['Primary']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Primary']['Main'],
             boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
-            color: `rgba(255, 255, 255, 1)`,
+            color: `rgba(0, 0, 0, 0.9)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Primary']['Dark'],
+              backgroundColor: darkGlobalTheme.palette['Primary']['Dark'],
               boxShadow: `0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px rgba(0, 0, 0, 0.2)`,
-              color: `rgba(255, 255, 255, 1)`,
+              color: `rgba(0, 0, 0, 0.9)`,
             },
             '&:disabled': {
               backgroundColor:
-                lightGlobalTheme.palette['Action']['Disabled Background'],
-              color: `rgba(0, 0, 0, 0.26)`,
+                darkGlobalTheme.palette['Action']['Disabled Background'],
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           containedSecondary: {
-            backgroundColor: lightGlobalTheme.palette['Secondary']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Secondary']['Main'],
             boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
-            color: `rgba(255, 255, 255, 1)`,
+            color: `rgba(0, 0, 0, 0.9)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Secondary']['Dark'],
+              backgroundColor: darkGlobalTheme.palette['Secondary']['Dark'],
               boxShadow: `0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px rgba(0, 0, 0, 0.2)`,
-              color: `rgba(255, 255, 255, 1)`,
+              color: `rgba(0, 0, 0, 0.9)`,
             },
             '&:disabled': {
               backgroundColor:
-                lightGlobalTheme.palette['Action']['Disabled Background'],
-              color: `rgba(0, 0, 0, 0.26)`,
+                darkGlobalTheme.palette['Action']['Disabled Background'],
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           containedError: {
-            backgroundColor: lightGlobalTheme.palette['Error']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Error']['Main'],
             boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
-            color: `rgba(255, 255, 255, 1)`,
+            color: `rgba(0, 0, 0, 0.9)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Error']['Dark'],
+              backgroundColor: darkGlobalTheme.palette['Error']['Dark'],
               boxShadow: `0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px rgba(0, 0, 0, 0.2)`,
-              color: `rgba(255, 255, 255, 1)`,
+              color: `rgba(0, 0, 0, 0.9)`,
             },
             '&:disabled': {
               backgroundColor:
-                lightGlobalTheme.palette['Action']['Disabled Background'],
-              color: `rgba(0, 0, 0, 0.26)`,
+                darkGlobalTheme.palette['Action']['Disabled Background'],
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           containedSuccess: {
-            backgroundColor: lightGlobalTheme.palette['Success']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Success']['Main'],
             boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
-            color: `rgba(255, 255, 255, 1)`,
+            color: `rgba(0, 0, 0, 0.9)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Success']['Dark'],
+              backgroundColor: darkGlobalTheme.palette['Success']['Dark'],
               boxShadow: `0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px rgba(0, 0, 0, 0.2)`,
-              color: `rgba(255, 255, 255, 1)`,
+              color: `rgba(0, 0, 0, 0.9)`,
             },
             '&:disabled': {
               backgroundColor:
-                lightGlobalTheme.palette['Action']['Disabled Background'],
-              color: `rgba(0, 0, 0, 0.26)`,
+                darkGlobalTheme.palette['Action']['Disabled Background'],
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           containedInfo: {
-            backgroundColor: lightGlobalTheme.palette['Info']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Info']['Main'],
             boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
-            color: `rgba(171, 223, 58, 1)`,
+            color: `rgba(0, 0, 0, 0.9)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Info']['Dark'],
+              backgroundColor: darkGlobalTheme.palette['Info']['Dark'],
               boxShadow: `0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px rgba(0, 0, 0, 0.2)`,
-              color: `rgba(171, 223, 58, 1)`,
+              color: `rgba(0, 0, 0, 0.9)`,
             },
             '&:disabled': {
               backgroundColor:
-                lightGlobalTheme.palette['Action']['Disabled Background'],
-              color: `rgba(0, 0, 0, 0.26)`,
+                darkGlobalTheme.palette['Action']['Disabled Background'],
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           containedWarning: {
-            backgroundColor: lightGlobalTheme.palette['Warning']['Main'],
+            backgroundColor: darkGlobalTheme.palette['Warning']['Main'],
             boxShadow: `0px 1px 5px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.2)`,
-            color: `rgba(255, 255, 255, 1)`,
+            color: `rgba(0, 0, 0, 0.9)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Warning']['Dark'],
+              backgroundColor: darkGlobalTheme.palette['Warning']['Dark'],
               boxShadow: `0px 1px 10px rgba(0, 0, 0, 0.12), 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 2px 4px rgba(0, 0, 0, 0.2)`,
-              color: `rgba(255, 255, 255, 1)`,
+              color: `rgba(0, 0, 0, 0.9)`,
             },
             '&:disabled': {
               backgroundColor:
-                lightGlobalTheme.palette['Action']['Disabled Background'],
-              color: `rgba(0, 0, 0, 0.26)`,
+                darkGlobalTheme.palette['Action']['Disabled Background'],
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           outlinedSizeLarge: {
@@ -721,102 +707,101 @@ const lightQuestTheme = createTheme(
           outlinedPrimary: {
             border: `1px solid rgba(242, 80, 34, 0.5)`,
             boxSizing: `border-box`,
-            color: `rgba(242, 80, 34, 1)`,
+            color: `rgba(208, 207, 246, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Primary']['Shades']['4p'],
+                darkGlobalTheme.palette['Primary']['Shades']['8p'],
               border: `1px solid rgba(242, 80, 34, 0.5)`,
               boxSizing: `border-box`,
-              color: `rgba(242, 80, 34, 1)`,
+              color: `rgba(208, 207, 246, 1)`,
             },
             '&:disabled': {
               border: `1px solid rgba(0, 0, 0, 0.12)`,
               boxSizing: `border-box`,
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           outlinedSecondary: {
             border: `1px solid rgba(0, 164, 239, 0.5)`,
             boxSizing: `border-box`,
-            color: `rgba(0, 164, 239, 1)`,
+            color: `rgba(194, 238, 252, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Secondary']['Shades']['4p'],
+                darkGlobalTheme.palette['Secondary']['Shades']['8p'],
               border: `1px solid rgba(0, 164, 239, 0.5)`,
               boxSizing: `border-box`,
-              color: `rgba(0, 164, 239, 1)`,
+              color: `rgba(194, 238, 252, 1)`,
             },
             '&:disabled': {
               border: `1px solid rgba(0, 0, 0, 0.12)`,
               boxSizing: `border-box`,
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           outlinedError: {
             border: `1px solid rgba(233, 78, 124, 0.5)`,
             boxSizing: `border-box`,
-            color: `rgba(242, 80, 34, 1)`,
+            color: `rgba(249, 206, 219, 1)`,
             '&:hover': {
-              backgroundColor:
-                lightGlobalTheme.palette['Error']['Shades']['4p'],
+              backgroundColor: darkGlobalTheme.palette['Error']['Shades']['8p'],
               border: `1px solid rgba(233, 78, 124, 0.5)`,
               boxSizing: `border-box`,
-              color: `rgba(242, 80, 34, 1)`,
+              color: `rgba(249, 206, 219, 1)`,
             },
             '&:disabled': {
               border: `1px solid rgba(0, 0, 0, 0.12)`,
               boxSizing: `border-box`,
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           outlinedSuccess: {
             border: `1px solid rgba(127, 186, 0, 0.5)`,
             boxSizing: `border-box`,
-            color: `rgba(127, 186, 0, 1)`,
+            color: `rgba(205, 239, 208, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Success']['Shades']['4p'],
+                darkGlobalTheme.palette['Success']['Shades']['8p'],
               border: `1px solid rgba(127, 186, 0, 0.5)`,
               boxSizing: `border-box`,
-              color: `rgba(127, 186, 0, 1)`,
+              color: `rgba(205, 239, 208, 1)`,
             },
             '&:disabled': {
               border: `1px solid rgba(0, 0, 0, 0.12)`,
               boxSizing: `border-box`,
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           outlinedInfo: {
             border: `1px solid rgba(83, 177, 245, 0.5)`,
             boxSizing: `border-box`,
-            color: `rgba(51, 51, 51, 1)`,
+            color: `rgba(205, 232, 252, 1)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Info']['Shades']['4p'],
+              backgroundColor: darkGlobalTheme.palette['Info']['Shades']['8p'],
               border: `1px solid rgba(83, 177, 245, 0.5)`,
               boxSizing: `border-box`,
-              color: `rgba(51, 51, 51, 1)`,
+              color: `rgba(205, 232, 252, 1)`,
             },
             '&:disabled': {
               border: `1px solid rgba(0, 0, 0, 0.12)`,
               boxSizing: `border-box`,
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           outlinedWarning: {
             border: `1px solid rgba(255, 185, 0, 0.5)`,
             boxSizing: `border-box`,
-            color: `rgba(255, 185, 0, 1)`,
+            color: `rgba(251, 220, 191, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Warning']['Shades']['4p'],
+                darkGlobalTheme.palette['Warning']['Shades']['8p'],
               border: `1px solid rgba(255, 185, 0, 0.5)`,
               boxSizing: `border-box`,
-              color: `rgba(255, 185, 0, 1)`,
+              color: `rgba(251, 220, 191, 1)`,
             },
             '&:disabled': {
               border: `1px solid rgba(0, 0, 0, 0.12)`,
               boxSizing: `border-box`,
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           textSizeLarge: {
@@ -835,68 +820,67 @@ const lightQuestTheme = createTheme(
             height: `30px`,
           },
           textPrimary: {
-            color: `rgba(242, 80, 34, 1)`,
+            color: `rgba(208, 207, 246, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Primary']['Shades']['4p'],
-              color: `rgba(242, 80, 34, 1)`,
+                darkGlobalTheme.palette['Primary']['Shades']['8p'],
+              color: `rgba(208, 207, 246, 1)`,
             },
             '&:disabled': {
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           textSecondary: {
-            color: `rgba(0, 164, 239, 1)`,
+            color: `rgba(194, 238, 252, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Secondary']['Shades']['4p'],
-              color: `rgba(0, 164, 239, 1)`,
+                darkGlobalTheme.palette['Secondary']['Shades']['8p'],
+              color: `rgba(194, 238, 252, 1)`,
             },
             '&:disabled': {
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           textError: {
-            color: `rgba(242, 80, 34, 1)`,
+            color: `rgba(249, 206, 219, 1)`,
             '&:hover': {
-              backgroundColor:
-                lightGlobalTheme.palette['Error']['Shades']['4p'],
-              color: `rgba(242, 80, 34, 1)`,
+              backgroundColor: darkGlobalTheme.palette['Error']['Shades']['8p'],
+              color: `rgba(249, 206, 219, 1)`,
             },
             '&:disabled': {
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           textSuccess: {
-            color: `rgba(127, 186, 0, 1)`,
+            color: `rgba(205, 239, 208, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Success']['Shades']['4p'],
-              color: `rgba(127, 186, 0, 1)`,
+                darkGlobalTheme.palette['Success']['Shades']['8p'],
+              color: `rgba(205, 239, 208, 1)`,
             },
             '&:disabled': {
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           textInfo: {
-            color: `rgba(51, 51, 51, 1)`,
+            color: `rgba(205, 232, 252, 1)`,
             '&:hover': {
-              backgroundColor: lightGlobalTheme.palette['Info']['Shades']['4p'],
-              color: `rgba(51, 51, 51, 1)`,
+              backgroundColor: darkGlobalTheme.palette['Info']['Shades']['8p'],
+              color: `rgba(205, 232, 252, 1)`,
             },
             '&:disabled': {
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
           textWarning: {
-            color: `rgba(255, 185, 0, 1)`,
+            color: `rgba(251, 220, 191, 1)`,
             '&:hover': {
               backgroundColor:
-                lightGlobalTheme.palette['Warning']['Shades']['4p'],
-              color: `rgba(255, 185, 0, 1)`,
+                darkGlobalTheme.palette['Warning']['Shades']['8p'],
+              color: `rgba(251, 220, 191, 1)`,
             },
             '&:disabled': {
-              color: `rgba(0, 0, 0, 0.26)`,
+              color: `rgba(255, 255, 255, 0.4)`,
             },
           },
         },
@@ -931,7 +915,7 @@ const lightQuestTheme = createTheme(
             '&.MuiSwitch-colorPrimary': {
               color: 'rgba(254, 254, 254, 1)',
               '&.Mui-checked': {
-                color: 'rgba(242, 80, 34, 1)',
+                color: 'rgba(208, 207, 246, 1)',
                 '&:hover': {
                   backgroundColor: 'undefined',
                 },
@@ -940,7 +924,7 @@ const lightQuestTheme = createTheme(
             '&.MuiSwitch-colorSecondary': {
               color: 'rgba(254, 254, 254, 1)',
               '&.Mui-checked': {
-                color: 'rgba(0, 164, 239, 1)',
+                color: 'rgba(194, 238, 252, 1)',
                 '&:hover': {
                   backgroundColor: 'undefined',
                 },
@@ -949,7 +933,7 @@ const lightQuestTheme = createTheme(
             '&.MuiSwitch-colorError': {
               color: 'rgba(254, 254, 254, 1)',
               '&.Mui-checked': {
-                color: 'rgba(242, 80, 34, 1)',
+                color: 'rgba(249, 206, 219, 1)',
                 '&:hover': {
                   backgroundColor: 'undefined',
                 },
@@ -958,7 +942,7 @@ const lightQuestTheme = createTheme(
             '&.MuiSwitch-colorWarning': {
               color: 'rgba(254, 254, 254, 1)',
               '&.Mui-checked': {
-                color: 'rgba(255, 185, 0, 1)',
+                color: 'rgba(251, 220, 191, 1)',
                 '&:hover': {
                   backgroundColor: 'undefined',
                 },
@@ -967,7 +951,7 @@ const lightQuestTheme = createTheme(
             '&.MuiSwitch-colorSuccess': {
               color: 'rgba(254, 254, 254, 1)',
               '&.Mui-checked': {
-                color: 'rgba(127, 186, 0, 1)',
+                color: 'rgba(205, 239, 208, 1)',
                 '&:hover': {
                   backgroundColor: 'undefined',
                 },
@@ -976,7 +960,7 @@ const lightQuestTheme = createTheme(
             '&.MuiSwitch-colorInfo': {
               color: 'rgba(254, 254, 254, 1)',
               '&.Mui-checked': {
-                color: 'rgba(51, 51, 51, 1)',
+                color: 'rgba(205, 232, 252, 1)',
                 '&:hover': {
                   backgroundColor: 'undefined',
                 },
@@ -985,22 +969,22 @@ const lightQuestTheme = createTheme(
           },
           track: {
             '.MuiSwitch-colorPrimary + &': {
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
             },
             '.MuiSwitch-colorSecondary + &': {
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
             },
             '.MuiSwitch-colorError + &': {
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
             },
             '.MuiSwitch-colorWarning + &': {
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
             },
             '.MuiSwitch-colorSuccess + &': {
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
             },
             '.MuiSwitch-colorInfo + &': {
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              backgroundColor: 'rgba(255, 255, 255, 0.3)',
             },
           },
         },
@@ -1008,53 +992,47 @@ const lightQuestTheme = createTheme(
       MuiInput: {
         styleOverrides: {
           root: {
-            color: lightGlobalTheme.palette['Text']['Primary'],
+            color: darkGlobalTheme.palette['Text']['Primary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Input Text'].fontStyle,
+              darkGlobalTheme.typography['Components']['Input Text'].fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontFamily,
+              darkGlobalTheme.typography['Components']['Input Text'].fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontWeight,
+              darkGlobalTheme.typography['Components']['Input Text'].fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Input Text'].fontSize,
+              darkGlobalTheme.typography['Components']['Input Text'].fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .lineHeight,
+              darkGlobalTheme.typography['Components']['Input Text'].lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textTransform,
           },
           sizeSmall: {
-            color: lightGlobalTheme.palette['Text']['Primary'],
+            color: darkGlobalTheme.palette['Text']['Primary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Input Text'].fontStyle,
+              darkGlobalTheme.typography['Components']['Input Text'].fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontFamily,
+              darkGlobalTheme.typography['Components']['Input Text'].fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontWeight,
+              darkGlobalTheme.typography['Components']['Input Text'].fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Input Text'].fontSize,
+              darkGlobalTheme.typography['Components']['Input Text'].fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .lineHeight,
+              darkGlobalTheme.typography['Components']['Input Text'].lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textTransform,
           },
         },
@@ -1070,28 +1048,25 @@ const lightQuestTheme = createTheme(
         styleOverrides: {
           root: {},
           sizeSmall: {
-            color: lightGlobalTheme.palette['Text']['Secondary'],
+            color: darkGlobalTheme.palette['Text']['Primary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Input Text'].fontStyle,
+              darkGlobalTheme.typography['Components']['Input Text'].fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontFamily,
+              darkGlobalTheme.typography['Components']['Input Text'].fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontWeight,
+              darkGlobalTheme.typography['Components']['Input Text'].fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Input Text'].fontSize,
+              darkGlobalTheme.typography['Components']['Input Text'].fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .lineHeight,
+              darkGlobalTheme.typography['Components']['Input Text'].lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textTransform,
           },
         },
@@ -1099,53 +1074,47 @@ const lightQuestTheme = createTheme(
       MuiFilledInput: {
         styleOverrides: {
           root: {
-            color: lightGlobalTheme.palette['Text']['Primary'],
+            color: darkGlobalTheme.palette['Text']['Primary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Input Text'].fontStyle,
+              darkGlobalTheme.typography['Components']['Input Text'].fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontFamily,
+              darkGlobalTheme.typography['Components']['Input Text'].fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontWeight,
+              darkGlobalTheme.typography['Components']['Input Text'].fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Input Text'].fontSize,
+              darkGlobalTheme.typography['Components']['Input Text'].fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .lineHeight,
+              darkGlobalTheme.typography['Components']['Input Text'].lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textTransform,
           },
           sizeSmall: {
-            color: lightGlobalTheme.palette['Text']['Primary'],
+            color: darkGlobalTheme.palette['Text']['Primary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Input Text'].fontStyle,
+              darkGlobalTheme.typography['Components']['Input Text'].fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontFamily,
+              darkGlobalTheme.typography['Components']['Input Text'].fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontWeight,
+              darkGlobalTheme.typography['Components']['Input Text'].fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Input Text'].fontSize,
+              darkGlobalTheme.typography['Components']['Input Text'].fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .lineHeight,
+              darkGlobalTheme.typography['Components']['Input Text'].lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textTransform,
           },
         },
@@ -1153,60 +1122,54 @@ const lightQuestTheme = createTheme(
       MuiOutlinedInput: {
         styleOverrides: {
           root: {
-            color: lightGlobalTheme.palette['Text']['Primary'],
+            color: darkGlobalTheme.palette['Text']['Primary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Input Text'].fontStyle,
+              darkGlobalTheme.typography['Components']['Input Text'].fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontFamily,
+              darkGlobalTheme.typography['Components']['Input Text'].fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontWeight,
+              darkGlobalTheme.typography['Components']['Input Text'].fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Input Text'].fontSize,
+              darkGlobalTheme.typography['Components']['Input Text'].fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .lineHeight,
+              darkGlobalTheme.typography['Components']['Input Text'].lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textTransform,
           },
           sizeSmall: {
-            color: lightGlobalTheme.palette['Text']['Primary'],
+            color: darkGlobalTheme.palette['Text']['Primary'],
             fontStyle:
-              lightGlobalTheme.typography['Components']['Input Text'].fontStyle,
+              darkGlobalTheme.typography['Components']['Input Text'].fontStyle,
             fontFamily:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontFamily,
+              darkGlobalTheme.typography['Components']['Input Text'].fontFamily,
             fontWeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .fontWeight,
+              darkGlobalTheme.typography['Components']['Input Text'].fontWeight,
             fontSize:
-              lightGlobalTheme.typography['Components']['Input Text'].fontSize,
+              darkGlobalTheme.typography['Components']['Input Text'].fontSize,
             letterSpacing:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .letterSpacing,
             lineHeight:
-              lightGlobalTheme.typography['Components']['Input Text']
-                .lineHeight,
+              darkGlobalTheme.typography['Components']['Input Text'].lineHeight,
             textDecoration:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textDecoration,
             textTransform:
-              lightGlobalTheme.typography['Components']['Input Text']
+              darkGlobalTheme.typography['Components']['Input Text']
                 .textTransform,
           },
         },
       },
     },
   },
-  lightGlobalTheme
+  darkGlobalTheme
 );
 
-export default lightQuestTheme;
+export default darkQuestTheme;

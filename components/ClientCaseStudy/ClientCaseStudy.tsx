@@ -103,7 +103,12 @@ const Casecontentcontainer: any = styled('div', {
       : data.currentVariant === 'ScreenMobile'
       ? `row`
       : `column`,
-  justifyContent: `flex-start`,
+  justifyContent:
+    data.currentVariant === 'ScreenTablet'
+      ? `center`
+      : data.currentVariant === 'ScreenMobile'
+      ? `center`
+      : `flex-start`,
   alignItems:
     data.currentVariant === 'ScreenTablet'
       ? `flex-start`
@@ -129,8 +134,8 @@ const Casecontentcontainer: any = styled('div', {
     data.currentVariant === 'ScreenTablet'
       ? `225px`
       : data.currentVariant === 'ScreenMobile'
-      ? '275px'
-      : `250px`,
+      ? 'unset'
+      : `325px`,
   alignSelf: data.currentVariant === 'ScreenMobile' ? `stretch` : 'unset',
 }));
 
@@ -143,7 +148,8 @@ const CaseContent: any = styled('div', {
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  justifyContent: `space-between`,
+  justifyContent:
+    data.currentVariant === 'ScreenMobile' ? `flex-start` : `center`,
   alignItems: data.currentVariant === 'ScreenMobile' ? `center` : `flex-start`,
   padding:
     data.currentVariant === 'ScreenTablet'
@@ -152,7 +158,6 @@ const CaseContent: any = styled('div', {
       ? `17px`
       : `45px`,
   boxSizing: `border-box`,
-  height: `100%`,
   alignSelf:
     data.currentVariant === 'ScreenTablet'
       ? 'unset'
