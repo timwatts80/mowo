@@ -13,6 +13,10 @@
  *
  **********************************************************************/
 
+export interface HubEssentialsProps {
+  className?: any;
+};
+
 export interface ProductSectionSurfaceHubDeviceProps {
   className?: any;
   id?: any;
