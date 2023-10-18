@@ -52,13 +52,13 @@ const Rows: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
+  justifyContent: `flex-start`,
   alignItems: `center`,
   padding: `60px 0px`,
   boxSizing: `border-box`,
   flex: `1`,
   margin: `0px`,
   overflow: `hidden`,
-  justifyContent: 'center',
 });
 
 const Intro: any = styled('div', {
@@ -74,7 +74,7 @@ const Intro: any = styled('div', {
   padding: `24px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  margin: `0px`,
+  margin: '0px auto',
   maxWidth:
     data.currentVariant === 'ScreenTablet'
       ? `unset`
